@@ -9,11 +9,11 @@ ms.assetid: cc764f3b-6921-486a-8f44-c6ccd1249acd
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
 ms.openlocfilehash: 194a8a7398e163f0c37164a8724f98b16444984b
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457218"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499131"
 ---
 # <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 
@@ -80,7 +80,7 @@ Navigieren Sie zu `http://localhost:xxxx/HelloWorld/Welcome`. Die `Welcome`-Meth
 
 ![](adding-a-controller/_static/image7.png)
 
-Im obigen Beispiel wird das URL-Segment (`Parameters`) nicht verwendet. die Parameter `name` und `numTimes` werden als [Abfrage](http://en.wikipedia.org/wiki/Query_string)Zeichenfolgen weitergegeben. Mit dem Zeichen „?“ (Fragezeichen) in der obigen URL ist ein Trennzeichen, und die Abfrage Zeichenfolgen folgen. Das Zeichen &amp; trennt Abfragezeichenfolgen.
+Im obigen Beispiel wird das URL-Segment (`Parameters`) nicht verwendet. die Parameter `name` und `numTimes` werden als [Abfrage](http://en.wikipedia.org/wiki/Query_string)Zeichenfolgen weitergegeben. Das Platzhalterzeichen ? (Fragezeichen) in der obigen URL ist ein Trennzeichen, und die Abfrage Zeichenfolgen folgen. Das Zeichen &amp; trennt Abfragezeichenfolgen.
 
 Ersetzen Sie die Willkommens Methode durch den folgenden Code:
 

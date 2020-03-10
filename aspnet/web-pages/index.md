@@ -1,24 +1,24 @@
 ---
 uid: web-pages/index
-title: ASP.NET Web Pages | Microsoft-Dokumentation
+title: ASP.net Web Pages | Microsoft-Dokumentation
 author: rick-anderson
-description: Herunterladen Sie WebMatrix, und erfahren Sie, wie Sie schnell zu Webseiten in eine einfache Möglichkeit zum Kombinieren von Servercode mit HTML erstellen.
+description: Webmatrix herunterladen & erfahren Sie, wie Sie schnell Webseiten auf eine einfachere Weise erstellen, um Servercode mit HTML zu kombinieren.
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 5418ba96-ff49-4a43-9cbb-09dea4949d23
 msc.legacyurl: /web-pages
 msc.type: categoryindex
 ms.openlocfilehash: 56bf82e22b3562893ef842a90d42aa7b6ff5858f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114528"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520671"
 ---
 # <a name="aspnet-web-pages"></a>ASP.NET Web Pages
 
 > [!NOTE] 
-> WebMatrix wird nicht mehr als eine integrierte Entwicklungsumgebung für ASP.NET Web Pages empfohlen. Verwendung [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio-Code](https://code.visualstudio.com/).
+> Webmatrix wird nicht mehr als integrierte Entwicklungsumgebung für ASP.net Web Pages empfohlen. Verwenden Sie [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio Code](https://code.visualstudio.com/).
 
 - [Empfehlungen](overview/index.md)
 
@@ -90,7 +90,7 @@ ms.locfileid: "65114528"
         - [Paralleles Ausführen verschiedener ASP.NET Web Pages-Versionen](overview/releases/running-v1-and-v2-sites-side-by-side.md)
 - [Videos](videos/index.md)
 
-    - [Introduction (Einführung)](videos/introduction/index.md)
+    - [Einführung](videos/introduction/index.md)
 
         - [5-minütige Einführung zu ASP.NET Web Pages](videos/introduction/5-minute-introduction-to-aspnet-web-pages.md)
         - [Installieren und Verwenden des Microsoft WebMatrix-Tools](videos/introduction/install-and-use-the-microsoft-webmatrix-tool.md)
@@ -102,7 +102,7 @@ ms.locfileid: "65114528"
         - [Erstellen einer Seite zum Bearbeiten von Daten in WebMatrix](videos/introduction/create-an-edit-data-page-in-webmatrix.md)
         - [Erstellen einer Seite zum Löschen von Daten in WebMatrix](videos/introduction/create-a-delete-data-page-in-webmatrix.md)
         - [Veröffentlichen einer Website im Internet mithilfe von WebMatrix](videos/introduction/publish-a-website-to-the-internet-using-webmatrix.md)
-    - [ASP.NET Razor-Seiten](videos/aspnet-razor-pages/index.md)
+    - [ASP.net Razor Pages](videos/aspnet-razor-pages/index.md)
 
         - [Erste Schritte mit WebMatrix und ASP.NET Web Pages](videos/aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
         - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](videos/aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)

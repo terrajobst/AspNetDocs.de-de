@@ -9,11 +9,11 @@ ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
 ms.openlocfilehash: a9d39547c94a63003442ba6fe1257693dde24b05
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621789"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513711"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Transformationen der Datei "Web. config"
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie Sie den Prozess der Änderung der Datei " *Web. config* " automatisieren, wenn Sie Sie in verschiedenen Ziel Umgebungen bereitstellen. Die meisten Anwendungen verfügen über Einstellungen in der Datei " *Web. config* ", die sich bei der Bereitstellung der Anwendung unterscheiden müssen. Wenn Sie den Prozess der Durchführung dieser Änderungen automatisieren, müssen Sie Sie nicht jedes Mal manuell ausführen, wenn Sie bereitstellen, was mühsam und fehleranfällig wäre.
 
@@ -47,7 +47,7 @@ Wenn sich die Einstellungen für die *Web. config* -Datei, die Sie ändern möch
 
 Erweitern Sie in **Projektmappen-Explorer**den Eintrag *Web. config* , um die Transformations Dateien *Web. Debug. config* und *Web. Release. config* anzuzeigen, die standardmäßig für die beiden Standardbuildkonfigurationen erstellt werden.
 
-![Web. config_transform_files](web-config-transformations/_static/image1.png)
+![Web.config_transform_files](web-config-transformations/_static/image1.png)
 
 Sie können Transformations Dateien für benutzerdefinierte Buildkonfigurationen erstellen, indem Sie mit der rechten Maustaste auf die Datei Web. config klicken und **Konfigurations Transformationen hinzufügen** aus dem Kontextmenü auswählen. Für dieses Tutorial müssen Sie dies nicht tun, und die Menüoption ist deaktiviert, da Sie keine benutzerdefinierten Buildkonfigurationen erstellt haben.
 
@@ -130,11 +130,11 @@ Diese Transformation gehört zu den Transformations Dateien für Veröffentlichu
 > [!NOTE]
 > Da diese Einstellung im `<appSettings>`-Element enthalten ist, haben Sie eine weitere Alternative zum Angeben der Transformation bei der Bereitstellung für Web-Apps in Azure App Service siehe [Angeben von Web. config-Einstellungen in Azure](#watransforms) weiter oben in diesem Thema.
 
-## <a name="setting-connection-strings"></a>Verbindungs Zeichenfolgen festlegen
+## <a name="setting-connection-strings"></a>Festlegen von Verbindungszeichenfolgen
 
 Obwohl die Standard Transformations Datei ein Beispiel enthält, das zeigt, wie eine Verbindungs Zeichenfolge aktualisiert wird, müssen Sie in den meisten Fällen keine Verbindungs Zeichenfolgen-Transformationen einrichten, da Sie Verbindungs Zeichenfolgen im Veröffentlichungs Profil angeben können. Dies wird in den Tutorials bereitstellen [für IIS](deploying-to-iis.md) und bereitstellen [in der Produktion](deploying-to-production.md) durchführen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Mit Web. config-Transformationen haben Sie nun so viele Schritte ausgeführt, wie Sie es mit *Web. config* -Transformationen durchführen können, bevor Sie die Veröffentlichungs Profile erstellen, und Sie haben eine Vorschau der bereitgestellten Web. config-Datei gesehen.
 

@@ -9,11 +9,11 @@ ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
 ms.openlocfilehash: cab9acb1ffd75cca87f6c575a6abdd000235828e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635682"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520311"
 ---
 # <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Grundlegendes zu Authentifizierungs- und Profilanwendungsdiensten von ASP.NET AJAX
 
@@ -57,20 +57,20 @@ Nachdem der AJAX-Authentifizierungsdienst aktiviert und konfiguriert wurde, kann
 
 Mit der Login ()-Methode wird eine Anforderung zum Authentifizieren der Anmelde Informationen des Benutzers gestartet. Diese Methode ist asynchron und blockiert nicht die Ausführung.
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| userName | Erforderlich Der zu authentifizier Ende Benutzername. |
-| -Kennwort | Optional (standardmäßig NULL). Das Kennwort des Benutzers. |
+| userName | Erforderlich. Der zu authentifizier Ende Benutzername. |
+| password | Optional (standardmäßig NULL). Das Kennwort des Benutzers. |
 | isPersistent | Optional (Standardwert: false). Gibt an, ob das Authentifizierungs Cookie des Benutzers Sitzungs übergreifend beibehalten werden soll. False gibt an, dass der Benutzer sich abmeldet, wenn der Browser geschlossen wird oder die Sitzung abläuft. |
-| Umleitungs | Optional (standardmäßig NULL). Die URL, an die der Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter NULL oder eine leere Zeichenfolge ist, erfolgt keine Umleitung. |
+| redirectUrl | Optional (standardmäßig NULL). Die URL, an die der Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter NULL oder eine leere Zeichenfolge ist, erfolgt keine Umleitung. |
 | customInfo | Optional (standardmäßig NULL). Dieser Parameter wird derzeit nicht verwendet und ist für die zukünftige Verwendung reserviert. |
-| logincompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die defaultloginabgeschlossene-Eigenschaft. |
+| loginCompletedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die defaultloginabgeschlossene-Eigenschaft. |
 | failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung fehlgeschlagen ist. Wenn angegeben, überschreibt dieser Parameter die defaultFailedCallback-Eigenschaft. |
 | userContext | Optional (standardmäßig NULL). Benutzerdefinierte Benutzer Kontext Daten, die an die Rückruf Funktionen übermittelt werden sollen. |
 
-*Rückgabewert:*
+*Return Value* (Rückgabewert):
 
 Diese Funktion enthält keinen Rückgabewert. Beim Abschluss eines Aufrufes der Funktion werden jedoch einige Verhaltensweisen berücksichtigt:
 
@@ -82,16 +82,16 @@ Diese Funktion enthält keinen Rückgabewert. Beim Abschluss eines Aufrufes der 
 
 Die Logout ()-Methode entfernt das Cookie für Anmelde Informationen und meldet den aktuellen Benutzer aus der Webanwendung ab.
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| Umleitungs | Optional (standardmäßig NULL). Die URL, an die der Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter NULL oder eine leere Zeichenfolge ist, erfolgt keine Umleitung. |
-| logoutcompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Abmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die defaultlogoutabgeschlossene-Eigenschaft. |
+| redirectUrl | Optional (standardmäßig NULL). Die URL, an die der Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter NULL oder eine leere Zeichenfolge ist, erfolgt keine Umleitung. |
+| logoutCompletedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Abmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die defaultlogoutabgeschlossene-Eigenschaft. |
 | failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung fehlgeschlagen ist. Wenn angegeben, überschreibt dieser Parameter die defaultFailedCallback-Eigenschaft. |
 | userContext | Optional (standardmäßig NULL). Benutzerdefinierte Benutzer Kontext Daten, die an die Rückruf Funktionen übermittelt werden sollen. |
 
-*Rückgabewert:*
+*Return Value* (Rückgabewert):
 
 Diese Funktion enthält keinen Rückgabewert. Beim Abschluss eines Aufrufes der Funktion werden jedoch einige Verhaltensweisen berücksichtigt:
 
@@ -107,9 +107,9 @@ Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Sign
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample2.js)]
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
 | error | Gibt die Fehlerinformationen an. |
 | userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Login-oder Abmelde-Funktion bereitgestellt wurden. |
@@ -123,11 +123,11 @@ Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Sign
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample3.js)]
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| Validierungs Anmelde Informationen | Gibt an, ob der Benutzer gültige Anmelde Informationen angegeben hat. `true`, wenn sich der Benutzer erfolgreich angemeldet hat. Andernfalls `false`. |
+| validCredentials | Gibt an, ob der Benutzer gültige Anmelde Informationen angegeben hat. `true`, wenn sich der Benutzer erfolgreich angemeldet hat. Andernfalls `false`. |
 | userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Login-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
@@ -139,11 +139,11 @@ Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Sign
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample4.js)]
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| Ergebnis | Dieser Parameter wird immer `null`. Es ist für die zukünftige Verwendung reserviert. |
+| result | Dieser Parameter wird immer `null`. Es ist für die zukünftige Verwendung reserviert. |
 | userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Login-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
@@ -203,12 +203,12 @@ Das Feldeigenschaften macht alle konfigurierten Profildaten als untergeordnete E
 
 Lädt eine ausgewählte Liste oder alle Eigenschaften vom Server.
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| PropertyNames | Optional (standardmäßig NULL). Die Eigenschaften, die vom Server geladen werden sollen. |
-| loadcompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen wird, wenn der Ladevorgang abgeschlossen ist. |
+| propertyNames | Optional (standardmäßig NULL). Die Eigenschaften, die vom Server geladen werden sollen. |
+| loadCompletedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen wird, wenn der Ladevorgang abgeschlossen ist. |
 | failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn ein Fehler auftritt. |
 | userContext | Optional (standardmäßig NULL). Kontextinformationen, die an die Rückruffunktion übermittelt werden sollen. |
 
@@ -220,12 +220,12 @@ Wenn der `propertyNames`-Parameter nicht angegeben wird, werden alle Lese konfig
 
 Die Save ()-Methode speichert die angegebene Eigenschaften Liste (oder alle Eigenschaften) im ASP.NET Profil des Benutzers.
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| PropertyNames | Optional (standardmäßig NULL). Die Eigenschaften, die auf dem Server gespeichert werden sollen. |
-| savecompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen wird, wenn der Speichervorgang abgeschlossen ist. |
+| propertyNames | Optional (standardmäßig NULL). Die Eigenschaften, die auf dem Server gespeichert werden sollen. |
+| saveCompletedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen wird, wenn der Speichervorgang abgeschlossen ist. |
 | failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn ein Fehler auftritt. |
 | userContext | Optional (standardmäßig NULL). Kontextinformationen, die an die Rückruffunktion übermittelt werden sollen. |
 
@@ -241,9 +241,9 @@ Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Sign
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample9.js)]
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
 | Fehler | Gibt die Fehlerinformationen an. |
 | userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Load-oder Save-Funktion bereitgestellt wurden. |
@@ -257,11 +257,11 @@ Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Sign
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample10.js)]
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| numpropssaved | Gibt die Anzahl der gespeicherten Eigenschaften an. |
+| numPropsSaved | Gibt die Anzahl der gespeicherten Eigenschaften an. |
 | userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Load-oder Save-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
@@ -273,11 +273,11 @@ Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Sign
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample11.js)]
 
-*Metern*
+*Parameter:*
 
-| **Parameter Name** | **D.h.** |
+| **Parametername** | **Bedeutung** |
 | --- | --- |
-| numpropsloaded | Gibt die Anzahl der geladenen Eigenschaften an. |
+| numPropsLoaded | Gibt die Anzahl der geladenen Eigenschaften an. |
 | userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Load-oder Save-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
@@ -331,7 +331,7 @@ Um den Pfad Programm gesteuert im Skript festzulegen, verwenden Sie die `path`-E
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample16.aspx)]
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 ASP.NET Services (insbesondere die Profilerstellung, die Mitgliedschaft und die Authentifizierungsdienste) lassen sich problemlos im Client Browser für JavaScript verfügbar machen. Dies ermöglicht es Entwicklern, Ihren Client seitigen Code nahtlos in den Authentifizierungsmechanismus zu integrieren, ohne abhängig von Steuerelementen wie z. b. Update Panel, um die Arbeit zu erledigen. Profildaten können auch über den Client geschützt werden, indem Webkonfigurations Einstellungen genutzt werden. Standardmäßig sind keine Daten verfügbar, und Entwickler müssen sich für Profil Eigenschaften entscheiden.
 

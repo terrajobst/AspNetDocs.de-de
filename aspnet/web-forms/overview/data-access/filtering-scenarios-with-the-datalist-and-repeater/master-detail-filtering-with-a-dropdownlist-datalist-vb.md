@@ -9,11 +9,11 @@ ms.assetid: ad0f1014-1eff-465f-bdc6-93058de00e44
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 537f8e76bc0cbfa759a014b63ae5f68b5d3ca64d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74629864"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491085"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>Filtern von Master-/Detailberichten mit einem DropDownList-Steuerelement (VB)
 
@@ -115,7 +115,7 @@ Beim ersten Besuch der Seite "`FilterByDropDownList.aspx`" ist das erste Listene
 
 Um der Dropdown Liste ein neues Listenelement hinzuzufügen, klicken Sie auf die Eigenschaftenfenster, und klicken Sie dann auf die Auslassungs Punkte in der `Items`-Eigenschaft. Fügen Sie ein neues Listenelement mit dem `Text` "--wählen Sie eine Kategorie--" und die `Value` `0`hinzu.
 
-![Hinzufügen einer](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image27.png)
+![Hinzufügen eines](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image27.png)
 
 **Abbildung 11**: Hinzufügen eines Listen Elements "--wählen Sie eine Kategorie"
 
@@ -137,7 +137,7 @@ Der Grund, warum wir den Wert `0` für das Listenelement "--wählen Sie eine Kat
 
 Wenn Sie *alle* Produkte anzeigen möchten, wenn die Option "--wählen Sie eine Kategorie" ausgewählt ist, verwenden Sie stattdessen den Wert `-1`. Der Leser, der sich in der *Master/Detail-Filterung mit einem Dropdown List* -Tutorial befand, erinnert, dass wir die `GetProductsByCategoryID(categoryID)`-Methode der `ProductsBLL` Klasse aktualisiert haben, damit bei der Übergabe eines *`categoryID`* Werts `-1` alle Produktdaten Sätze zurückgegeben werden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wenn hierarchisch verwandte Daten angezeigt werden, ist es häufig hilfreich, die Daten mithilfe von Master-/Detailberichten darzustellen, von denen der Benutzer mit der Verwendung der Daten vom oberen Rand der Hierarchie beginnen und Details anzeigen kann. In diesem Tutorial wurde das Entwickeln eines einfachen Master/Detail-Berichts untersucht, der die Produkte einer ausgewählten Kategorie anzeigt. Dies wurde erreicht, indem eine Dropdown Liste für die Liste der Kategorien und ein DataList für die Produkte verwendet wurde, die zur ausgewählten Kategorie gehören.
 
@@ -145,7 +145,7 @@ Im nächsten Tutorial untersuchen wir die Trennung der Master-und Detaildaten S�
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

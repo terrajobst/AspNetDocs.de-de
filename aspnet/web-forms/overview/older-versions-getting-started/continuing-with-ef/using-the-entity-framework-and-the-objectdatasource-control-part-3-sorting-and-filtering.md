@@ -1,154 +1,154 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering
-title: 'Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern | Microsoft-Dokumentation'
+title: 'Verwenden des Entity Framework 4,0 und des ObjectDataSource-Steuer Elements, Teil 3: Sortieren und Filtern | Microsoft-Dokumentation'
 author: tdykstra
-description: Dieser tutorialreihe erstellt in der Contoso University-Webanwendung, die von den ersten Schritten mit der Entity Framework 4.0-Tutorial-Reihe erstellt wird. ICH...
+description: Diese tutorialreihe basiert auf der Webanwendung der Website von "Web", die in der tutorialreihe für die ersten Schritte mit Entity Framework 4,0 erstellt wurde. I...
 ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: 2990bd10-590d-43d5-9529-6b503ce5455d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering
 msc.type: authoredcontent
 ms.openlocfilehash: 603120864528b9a5ff81214270eb9a7f1b68b347
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130674"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512715"
 ---
-# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern
+# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>Verwenden des Entity Framework 4,0 und des ObjectDataSource-Steuer Elements, Teil 3: Sortieren und Filtern
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-> Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
+> Diese tutorialreihe basiert auf der Webanwendung der Website von "Web", die in der tutorialreihe für die ersten Schritte [mit Entity Framework 4,0](https://asp.net/entity-framework/tutorials#Getting%20Started) erstellt wurde. Wenn Sie die vorherigen Tutorials nicht durchgearbeitet haben, können Sie die Anwendung, die Sie erstellt haben, als Ausgangspunkt für dieses Tutorial [herunterladen](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) . Sie können auch [die Anwendung herunterladen](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , die von der kompletten tutorialreihe erstellt wird. Wenn Sie Fragen zu den Tutorials haben, können Sie Sie im ASP.net- [Entity Framework Forum](https://forums.asp.net/1227.aspx)Posten.
 
-Im vorherigen Tutorial, die Sie implementiert des Repository-Musters in einer n-schichtige Webanwendung, die das Entity Framework verwendet und die `ObjectDataSource` Steuerelement. Dieses Tutorial veranschaulicht das Sortieren und Filtern und Verarbeiten von Master / Detail-Szenarien. Fügen Sie die folgenden Erweiterungen der *Departments.aspx* Seite:
+Im vorherigen Tutorial haben Sie das Repository-Muster in einer n-Tier-Webanwendung implementiert, die die Entity Framework und das `ObjectDataSource`-Steuerelement verwendet. In diesem Tutorial wird gezeigt, wie Sie das Sortieren und Filtern durchführen und Master/Detail-Szenarien verarbeiten. Die folgenden Erweiterungen werden der Seite " *Departments. aspx* " hinzugefügt:
 
-- Ein Textfeld, um den Benutzern ermöglichen, Abteilungen anhand des Namens auszuwählen.
-- Eine Liste der Kurse jeder Abteilung, die im Raster angezeigt wird.
-- Die Fähigkeit, indem Sie auf Spaltenüberschriften sortieren.
+- Ein Textfeld, in dem Benutzer Abteilungen nach Namen auswählen können.
+- Eine Liste der Kurse für jede Abteilung, die im Raster angezeigt wird.
+- Die Sortier Fähigkeit durch Klicken auf Spaltenüberschriften.
 
-[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image1.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image1.png)
 
-## <a name="adding-the-ability-to-sort-gridview-columns"></a>Hinzufügen der Funktion zum Sortieren von GridView-Spalten
+## <a name="adding-the-ability-to-sort-gridview-columns"></a>Hinzufügen der Möglichkeit zum Sortieren von GridView-Spalten
 
-Öffnen der *Departments.aspx* Seite, und fügen eine `SortParameterName="sortExpression"` -Attribut auf die `ObjectDataSource` Steuerelement mit dem Namen `DepartmentsObjectDataSource`. (Später erstellen Sie eine `GetDepartments` -Methode, die einen namens Parameter `sortExpression`.) Das Markup für das Anfangstag des Steuerelements ähnelt nun dem folgenden Beispiel.
+Öffnen Sie die Seite " *Departments. aspx* ", und fügen Sie dem `ObjectDataSource` Steuerelement mit dem Namen `DepartmentsObjectDataSource`ein `SortParameterName="sortExpression"` Attribut hinzu. (Später erstellen Sie eine `GetDepartments`-Methode, die einen Parameter mit dem Namen "`sortExpression`" annimmt.) Das Markup für das öffnende Tag des-Steuer Elements ähnelt nun dem folgenden Beispiel.
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample1.aspx)]
 
-Hinzufügen der `AllowSorting="true"` Attribut an das öffnende Tag das `GridView` Steuerelement. Das Markup für das Anfangstag des Steuerelements ähnelt nun dem folgenden Beispiel.
+Fügen Sie das `AllowSorting="true"`-Attribut zum öffnenden Tag des `GridView` Steuer Elements hinzu. Das Markup für das öffnende Tag des-Steuer Elements ähnelt nun dem folgenden Beispiel.
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample2.aspx)]
 
-In *Departments.aspx.cs*, legen Sie die Standardsortierreihenfolge durch Aufrufen der `GridView` des Steuerelements `Sort` Methode aus der `Page_Load` Methode:
+Legen Sie in *Departments.aspx.cs*die Standard Sortierreihenfolge fest, indem Sie die `Sort` Methode des `GridView`-Steuer Elements von der `Page_Load`-Methode aufrufen:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample3.cs)]
 
-Sie können den Code, der zum Sortieren oder Filtern in der Business Logic-Klasse oder die "Repository"-Klasse hinzufügen. Wenn der Business Logic-Klasse verwendet wird, Sortier- oder Filterkriterien Arbeit ausgeführt, nachdem die Daten aus der Datenbank abgerufen werden, da die Business Logic-Klasse mit arbeitet ein `IEnumerable` Repository zurückgegebenes Objekt. Wenn Sie sortieren und Filtern von Code in der repositoryklasse hinzufügen, und Sie dies, bevor Sie eine LINQ-Ausdruck tun oder Objektabfrage konvertiert wurde ein `IEnumerable` Objekts, die Befehle werden durch übergeben werden, in der Datenbank für die Verarbeitung, die in der Regel effizienter ist. In diesem Tutorial implementieren Sie sortieren und Filtern in einer Weise, die bewirkt, dass die Verarbeitung von der Datenbank ausgeführt werden – d. h. im Repository.
+Sie können Code hinzufügen, der die Geschäftslogik Klasse oder die Repository-Klasse sortiert oder filtert. Wenn Sie in der Geschäftslogik Klasse Vorgehen, wird die Sortierung oder Filterung durchgeführt, nachdem die Daten aus der Datenbank abgerufen wurden, da die Geschäftslogik Klasse mit einem vom Repository zurückgegebenen `IEnumerable` Objekt arbeitet. Wenn Sie Sortier-und Filterungs Code in der Repository-Klasse hinzufügen und diesen Vorgang vor dem Konvertieren eines LINQ-Ausdrucks oder einer Objekt Abfrage in ein `IEnumerable` Objekt ausführen, werden die Befehle zur Verarbeitung an die Datenbank weitergegeben, was in der Regel effizienter ist. In diesem Tutorial implementieren Sie das Sortieren und Filtern auf eine Weise, die bewirkt, dass die Verarbeitung von der Datenbank ausgeführt wird, d. –. im Repository.
 
-Um Sortierung Funktion hinzuzufügen, müssen Sie die Repository-Schnittstelle und Repositoryklassen auch hinsichtlich der Business Logic-Klasse eine neue Methode hinzufügen. In der *ISchoolRepository.cs* Datei, fügen Sie einen neuen `GetDepartments` Methode, eine `sortExpression` Parameter, der verwendet wird, um die Liste von Abteilungen zu sortieren, die zurückgegeben wird:
+Zum Hinzufügen der Sortierfunktion müssen Sie der Repository-Schnittstelle und den Repository-Klassen sowie der Geschäftslogik Klasse eine neue Methode hinzufügen. Fügen Sie in der Datei *ISchoolRepository.cs* eine neue `GetDepartments`-Methode hinzu, die einen `sortExpression` Parameter annimmt, der zum Sortieren der Liste der zurückgegebenen Abteilungen verwendet wird:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample4.cs)]
 
-Die `sortExpression` -Parameter wird die Spalte, nach denen sortiert und die Sortierreihenfolge angeben.
+Der `sortExpression`-Parameter gibt die Spalte an, nach der sortiert werden soll, und die Sortierrichtung.
 
-Fügen Sie Code für die neue Methode, um die *SchoolRepository.cs* Datei:
+Fügen Sie der Datei *SchoolRepository.cs* Code für die neue Methode hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample5.cs)]
 
-Ändern Sie die vorhandene parameterlosen `GetDepartments` Methode, die die neue Methode aufgerufen:
+Ändern Sie die vorhandene Parameter lose `GetDepartments`-Methode, um die neue Methode aufzurufen:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample6.cs)]
 
-Fügen Sie in das Testprojekt, und die folgende neue Methode zum *MockSchoolRepository.cs*:
+Fügen Sie im Testprojekt die folgende neue Methode zu *MockSchoolRepository.cs*hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample7.cs)]
 
-Wenn Sie möchten alle Komponententests zu erstellen, die von dieser Methode zurückgeben einer sortierten Liste abhing, müssen Sie würde die Liste zu sortieren, bevor sie zurückgegeben wird. Tests wird nicht wie in diesem Tutorial erstellen Sie damit die Methode nur die unsortierte Liste von Abteilungen zurückgeben kann.
+Wenn Sie Komponententests erstellen, die von dieser Methode abhängen, die eine sortierte Liste zurückgibt, müssen Sie die Liste vor der Rückgabe sortieren. In diesem Tutorial erstellen Sie keine Tests, sodass die Methode nur die unsortierte Liste der Abteilungen zurückgeben kann.
 
-In der *SchoolBL.cs* Datei, die der Business Logic-Klasse die folgende neue Methode hinzufügen:
+Fügen Sie in der Datei *SchoolBL.cs* der Geschäftslogik Klasse die folgende neue Methode hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample8.cs)]
 
-Dieser Code übergibt der Sortierparameter an die Repository-Methode.
+Dieser Code übergibt den Sort-Parameter an die Repository-Methode.
 
-Führen Sie die *Departments.aspx* Seite.
+Führen Sie die Seite " *Departments. aspx* " aus.
 
 [![Image02](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image3.png)
 
-Sie können jetzt eine beliebige Spaltenüberschrift, um nach dieser Spalte sortieren klicken. Wenn die Spalte bereits sortiert ist, kehrt das Klicken auf die Überschrift die Sortierrichtung.
+Sie können jetzt auf eine beliebige Spaltenüberschrift klicken, um nach dieser Spalte zu sortieren. Wenn die Spalte bereits sortiert ist, wird durch Klicken auf die Überschrift die Sortierreihenfolge umgekehrt.
 
 ## <a name="adding-a-search-box"></a>Hinzufügen eines Suchfelds
 
-In diesem Abschnitt werden Sie ein Textfeld Suche hinzufügen, verknüpfen Sie es mit der `ObjectDataSource` Steuerelement, mit einem Steuerelementparameter, und fügen Sie eine Methode zur Business Logic Klasse, um die Filterung von versionsbereichen.
+In diesem Abschnitt fügen Sie ein Such Textfeld hinzu, verknüpfen es mit dem `ObjectDataSource`-Steuerelement mithilfe eines Control-Parameters und fügen der Geschäftslogik Klasse eine Methode hinzu, um das Filtern zu unterstützen.
 
-Öffnen der *Departments.aspx* Seite, und fügen Sie das folgende Markup zwischen die Überschrift und die erste `ObjectDataSource` Steuerelement:
+Öffnen Sie die Seite " *Departments. aspx* ", und fügen Sie das folgende Markup zwischen der Überschrift und dem ersten `ObjectDataSource` Steuerelement hinzu:
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample9.aspx)]
 
-In der `ObjectDataSource` Steuerelement mit dem Namen `DepartmentsObjectDataSource`, gehen Sie folgendermaßen vor:
+Gehen Sie im `ObjectDataSource` Steuerelement mit dem Namen `DepartmentsObjectDataSource`folgendermaßen vor:
 
-- Hinzufügen einer `SelectParameters` -Element für einen Parameter namens `nameSearchString` abruft, die in eingegebenen Wert die `SearchTextBox` Steuerelement.
-- Ändern der `SelectMethod` -Attributwert auf `GetDepartmentsByName`. (Sie müssen diese Methode später erstellen.)
+- Fügen Sie ein `SelectParameters`-Element für einen Parameter mit dem Namen `nameSearchString` hinzu, der den im `SearchTextBox`-Steuerelement eingegebenen Wert abruft.
+- Ändern Sie den Wert des `SelectMethod` Attributs in `GetDepartmentsByName`. (Sie erstellen diese Methode später.)
 
-Das Markup für die `ObjectDataSource` Steuerelement wird jetzt im folgende Beispiel ähnelt:
+Das Markup für das `ObjectDataSource`-Steuerelement ähnelt nun dem folgenden Beispiel:
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample10.aspx)]
 
-In *ISchoolRepository.cs*, Hinzufügen einer `GetDepartmentsByName` Methode, die beide akzeptiert `sortExpression` und `nameSearchString` Parameter:
+Fügen Sie in *ISchoolRepository.cs*eine `GetDepartmentsByName` Methode hinzu, die sowohl `sortExpression` als auch `nameSearchString` Parameter annimmt:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample11.cs)]
 
-In *SchoolRepository.cs*, fügen Sie die folgende neue Methode hinzu:
+Fügen Sie in *SchoolRepository.cs*die folgende neue Methode hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample12.cs)]
 
-Dieser Code verwendet ein `Where` Methode zum Auswählen von Elementen, die die Suchzeichenfolge enthalten. Wenn die Suchzeichenfolge leer ist, werden alle Datensätze ausgewählt werden. Beachten Sie, dass, wenn Sie die Methode ruft zusammen in einer Anweisung wie folgt angeben (`Include`, klicken Sie dann `OrderBy`, klicken Sie dann `Where`), wird die `Where` Methode muss immer in der letzten.
+In diesem Code wird eine `Where`-Methode verwendet, um Elemente auszuwählen, die die Such Zeichenfolge enthalten. Wenn die Such Zeichenfolge leer ist, werden alle Datensätze ausgewählt. Beachten Sie Folgendes: Wenn Sie Methodenaufrufe in einer Anweisung wie diesem angeben (`Include`und dann `OrderBy`, dann `Where`), muss die `Where` Methode immer "Last" lauten.
 
-Ändern Sie die vorhandene `GetDepartments` Methode, eine `sortExpression` Parameter, um die neue Methode aufrufen:
+Ändern Sie die vorhandene `GetDepartments`-Methode, die einen `sortExpression`-Parameter annimmt, um die neue Methode aufzurufen:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample13.cs)]
 
-In *MockSchoolRepository.cs* in das Testprojekt, und fügen Sie die folgende neue Methode hinzu:
+Fügen Sie in *MockSchoolRepository.cs* im Testprojekt die folgende neue Methode hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample14.cs)]
 
-In *SchoolBL.cs*, fügen Sie die folgende neue Methode hinzu:
+Fügen Sie in *SchoolBL.cs*die folgende neue Methode hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample15.cs)]
 
-Führen Sie die *Departments.aspx* Seite, und geben Sie eine Suchzeichenfolge, um sicherzustellen, dass die Auswahllogik funktioniert. Lassen Sie das Textfeld leer, und versuchen Sie es einer Suche, um sicherzustellen, dass alle Datensätze zurückgegeben werden.
+Führen Sie die Seite *Departments. aspx* aus, und geben Sie eine Such Zeichenfolge ein, um sicherzustellen, dass die Auswahl Logik funktioniert Lassen Sie das Textfeld leer, und versuchen Sie eine Suche, um sicherzustellen, dass alle Datensätze zurückgegeben werden.
 
 [![Image03](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image6.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image5.png)
 
-## <a name="adding-a-details-column-for-each-grid-row"></a>Hinzufügen einer Detailspalte für jede Zeile des Datenblatts
+## <a name="adding-a-details-column-for-each-grid-row"></a>Hinzufügen einer Detail Spalte für jede Raster Zeile
 
-Als Nächstes möchten Sie alle Kurse für jede Abteilung in der rechten Zelle des Rasters angezeigt. Zu diesem Zweck verwenden Sie eine geschachtelte `GridView` Kontrolle und Databind damit Daten aus der `Courses` Navigationseigenschaft der `Department` Entität.
+Als nächstes möchten Sie alle Kurse der einzelnen Abteilungen sehen, die in der rechten Zelle des Rasters angezeigt werden. Zu diesem Zweck verwenden Sie ein geändertes `GridView`-Steuerelement und verbinden es mit Daten aus der `Courses`-Navigations Eigenschaft der `Department`-Entität.
 
-Open *Departments.aspx* und im Markup für die `GridView` zu steuern, geben Sie einen Handler für die `RowDataBound` Ereignis. Das Markup für das Anfangstag des Steuerelements ähnelt nun dem folgenden Beispiel.
+Öffnen Sie " *Departments. aspx* ", und geben Sie im Markup für das `GridView` Steuerelement einen Handler für das `RowDataBound` Ereignis an. Das Markup für das öffnende Tag des-Steuer Elements ähnelt nun dem folgenden Beispiel.
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample16.aspx)]
 
-Fügen Sie einen neuen `TemplateField` Element an, nach der `Administrator` Vorlagenfeld:
+Fügen Sie ein neues `TemplateField`-Element nach dem `Administrator` Vorlagen Feld hinzu:
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample17.aspx)]
 
-Dieses Markup erstellt eine geschachtelte `GridView` Steuerelement, das der Kursnummer und Titel der Liste der Kurse anzeigt. Es wird eine Datenquelle nicht angegeben, da Databind wird es im Code in die `RowDataBound` Handler.
+Dieses Markup erstellt ein geschsted `GridView` Steuerelement, das die Kursnummer und den Titel einer Liste von Kursen anzeigt. Es wird keine Datenquelle angegeben, da Sie Sie im Code in den `RowDataBound`-Handler übernehmen.
 
-Open *Departments.aspx.cs* und fügen Sie den folgenden Ereignishandler für die `RowDataBound` Ereignis:
+Öffnen Sie *Departments.aspx.cs* , und fügen Sie den folgenden Handler für das `RowDataBound`-Ereignis hinzu:
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample18.cs)]
 
-Dieser Code Ruft die `Department` Entität aus den Ereignisargumenten, konvertiert die `Courses` Navigationseigenschaft für eine `List` Sammlung und stellt die geschachtelte `GridView` der Auflistung.
+Dieser Code Ruft die `Department`-Entität aus den Ereignis Argumenten ab, konvertiert die `Courses`-Navigations Eigenschaft in eine `List`-Auflistung und stellt der der-Auflistung hinzugefügten `GridView`.
 
-Öffnen der *SchoolRepository.cs* Datei, und geben Sie eager Loading für die `Courses` Navigationseigenschaft durch Aufrufen der `Include` -Methode in der die Objektabfrage, die Sie, in Erstellen der `GetDepartmentsByName` Methode. Die `return` -Anweisung in der `GetDepartmentsByName` Methode ähnelt nun dem folgenden Beispiel.
+Öffnen Sie die Datei *SchoolRepository.cs* , und geben Sie Eager Loading für die `Courses` Navigations Eigenschaft an, indem Sie die `Include`-Methode in der Objekt Abfrage aufrufen, die Sie in der `GetDepartmentsByName`-Methode erstellen. Die `return`-Anweisung in der `GetDepartmentsByName`-Methode ähnelt nun dem folgenden Beispiel.
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/samples/sample19.cs)]
 
-Führen Sie die Seite. Neben den sortieren und Filtern die Funktion, die Sie zuvor hinzugefügt haben, zeigt das GridView-Steuerelement jetzt geschachtelte Kursdetails für jede Abteilung.
+Führen Sie die Seite aus. Zusätzlich zu den Sortier-und Filterfunktionen, die Sie zuvor hinzugefügt haben, zeigt das GridView-Steuerelement jetzt geschamelte Kursdetails für jede Abteilung an.
 
-[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image7.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image7.png)
 
-Dies schließt die Einführung zu sortieren, Filtern und Master / Detail-Szenarien ab. Im nächsten Tutorial sehen Sie, wie Parallelität behandelt werden.
+Dadurch wird die Einführung in Sortier-, Filter-und Master/Detail-Szenarien vervollständigt. Im nächsten Tutorial erfahren Sie, wie Sie Parallelität verarbeiten.
 
 > [!div class="step-by-step"]
 > [Zurück](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

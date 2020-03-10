@@ -9,11 +9,11 @@ ms.assetid: 9410a23c-9697-4f07-bd71-e62b0ceac655
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 49b09cbf0f12f7c7233c3bb2a8b3b2c073bf117e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573402"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78495243"
 ---
 # <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>Eine Übersicht über das Bearbeiten und Löschen von Daten im DataList (VB)
 
@@ -282,7 +282,7 @@ Wenn Sie auf die Schaltfläche "Löschen" klicken, wird ein Postback ausgelöst 
 
 Nach dem Löschen des Produkts ist es wichtig, dass die Daten erneut an den DataList (`DataList1.DataBind()`) gebunden werden, andernfalls zeigt der DataList weiterhin das Produkt an, das soeben gelöscht wurde.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Obwohl das DataList-Steuerelemente nicht den Punkt hat und auf Bearbeitung und Löschung der Unterstützung durch das GridView-Steuerelemente klickt, kann es mit einem kurzen Code verbessert werden, um diese Funktionen einzuschließen. In diesem Tutorial haben Sie erfahren, wie Sie eine zweispaltige Auflistung von Produkten erstellen, die gelöscht werden können und deren Name und Preis bearbeitet werden können. Das Hinzufügen von Unterstützung für Bearbeitung und Löschung besteht darin, die entsprechenden websteuer Elemente in den `ItemTemplate` und `EditItemTemplate`einzuschließen, die entsprechenden Ereignishandler zu erstellen, die vom Benutzer eingegebenen und die Primärschlüssel Werte zu lesen und mit der Geschäftslogik Schicht zu interagieren.
 
@@ -292,7 +292,7 @@ In zukünftigen Tutorials erfahren Sie, wie Sie die Benutzeroberflächen Bearbei
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

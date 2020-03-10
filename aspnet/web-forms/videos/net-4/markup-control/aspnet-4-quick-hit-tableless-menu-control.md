@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/net-4/markup-control/aspnet-4-quick-hit-tableless-menu-control
-title: Tabellenloses Menu-Steuerelement | Microsoft-Dokumentation
+title: Menü Steuerelement mit tablless | Microsoft-Dokumentation
 author: JoeStagner
-description: In diesem Video sehen Sie wie HTML mithilfe von semantischer Markupcode, bestehend aus eine ungeordnete Liste und Listenelemente in den ASP.NET Menu-Steuerelement gerendert wird
+description: In diesem Video erfahren Sie, wie das ASP.net-Menü Steuerelement HTML mithilfe des semantischen Markups rendert, das aus einer ungeordneten Liste und Listenelementen besteht.
 ms.author: riande
 ms.date: 11/16/2009
 ms.assetid: 5eabcaab-5f95-4052-9a92-f5cf332b35a5
 msc.legacyurl: /web-forms/videos/net-4/markup-control/aspnet-4-quick-hit-tableless-menu-control
 msc.type: video
 ms.openlocfilehash: 39e566a431d0e6382954c2cc2773451d20bc382b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402777"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517407"
 ---
-# <a name="aspnet-4-quick-hit--tableless-menu-control"></a>ASP.NET 4 "Schnelle Hit" – Tabellenloses Menu-Steuerelement
+# <a name="aspnet-4-quick-hit--tableless-menu-control"></a>ASP.NET 4 "schnell Treffer" – tablless Menu-Steuerelement
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-In diesem Video sehen Sie wie HTML mithilfe von semantischer Markupcode, bestehend aus eine ungeordnete Liste und Listenelemente in den ASP.NET Menu-Steuerelement gerendert wird 
+In diesem Video erfahren Sie, wie das ASP.net-Menü Steuerelement HTML mithilfe des semantischen Markups rendert, das aus einer ungeordneten Liste und Listenelementen besteht. 
 
-[&#9654;Sehen Sie sich Video (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-tableless-menu-control)
+[&#9654;Video ansehen (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-tableless-menu-control)
 
 > [!div class="step-by-step"]
 > [Zurück](aspnet-4-quick-hit-table-free-templated-controls.md)

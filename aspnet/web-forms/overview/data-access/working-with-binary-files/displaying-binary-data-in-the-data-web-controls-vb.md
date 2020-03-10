@@ -9,11 +9,11 @@ ms.assetid: 9201656a-e1c2-4020-824b-18fb632d2925
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 27c901af092aa990f557750dc5d2c42ba2644c02
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640913"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489099"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>Anzeigen von Binärdaten in den Datenwebsteuerelementen (VB)
 
@@ -180,7 +180,7 @@ Nehmen Sie sich einen Moment Zeit, um diese Seite über einen Browser anzuzeigen
 
 **Abbildung 13**: das Bild der Kategorie wird für jede Zeile angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-binary-data-in-the-data-web-controls-vb/_static/image20.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wurde das präsentieren von Binärdaten untersucht. Wie die Daten dargestellt werden, hängt von der Art der Daten ab. Bei den PDF-Datei Dateien haben wir dem Benutzer einen Ansichts Prospekt Link angeboten, der den Benutzer beim Klicken direkt in die PDF-Datei aufgenommen hat. Für das Bild der Kategorie wurde zuerst eine Seite zum Abrufen und Zurückgeben der Binärdaten aus der Datenbank erstellt. Anschließend wird diese Seite verwendet, um jedes Bild der Kategorie in einer GridView anzuzeigen.
 
@@ -188,7 +188,7 @@ Nachdem wir uns nun mit dem Anzeigen von Binärdaten beschäftigt haben, können
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

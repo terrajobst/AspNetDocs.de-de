@@ -9,11 +9,11 @@ ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 55c667800a9fb19d200bcf4b68e2c59ca4ef5d0e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74622231"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481863"
 ---
 # <a name="using-templatefields-in-the-detailsview-control-c"></a>Verwenden von TemplateFields im DetailsView-Steuerelement (C#)
 
@@ -37,7 +37,7 @@ Die gleichen templatefields-Funktionen, die in der GridView verfügbar sind, ste
 
 **Abbildung 1**: zwei templatefields-Zeichen werden verwendet, um die Anzeige anzupassen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image3.png))
 
-Fangen wir an!
+Erste Schritte
 
 ## <a name="step-1-binding-the-data-to-the-detailsview"></a>Schritt 1: Binden der Daten an die DetailsView
 
@@ -153,7 +153,7 @@ Dies bewirkt, dass die `DisplayDiscontinuedAsYESorNO`-Methode aufgerufen wird, w
 
 **Abbildung 10**: Ja oder keine Werte werden jetzt in der nicht mehr unterstützten Zeile angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image30.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das TemplateField im DetailsView-Steuerelement ermöglicht ein höheres Maß an Flexibilität beim Anzeigen von Daten, als für die anderen Feld Steuerelemente verfügbar sind, und eignet sich ideal für Situationen, in denen Folgendes gilt:
 
@@ -167,7 +167,7 @@ Das FormView-Steuerelement bietet ein höheres Maß an Flexibilität beim Konfig
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

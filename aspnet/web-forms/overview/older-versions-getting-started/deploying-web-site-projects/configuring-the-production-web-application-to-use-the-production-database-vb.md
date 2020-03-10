@@ -9,11 +9,11 @@ ms.assetid: a64a7aa0-6608-449e-83bf-1ef8cceee504
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 7fe4f545a76992ad687827af447d9a9e95bea73f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633676"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78516621"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>Konfigurieren der Produktionswebanwendung mithilfe der Produktionsdatenbank (VB)
 
@@ -121,13 +121,13 @@ Mit dieser Änderung enthalten die Entwicklungs-und Produktionsumgebungen diesel
 > [!NOTE]
 > Sie können die Informationen für ein beliebiges `Web.config` Element in einer separaten Datei angeben und das `configSource`-Attribut verwenden, um in `Web.config`auf diese Datei zu verweisen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Datengesteuerte Anwendungen verwenden in der Regel verschiedene Datenbanken in den Entwicklungs-und Produktionsumgebungen. Folglich müssen die in der Konfiguration der Webanwendung gespeicherten Daten bankverbindungs Zeichenfolgen pro Umgebung eindeutig sein. In diesem Tutorial haben wir erläutert, wie Sie die Verbindungs Zeichenfolge für die Produktionsdatenbank ermitteln und wie Sie eindeutige Informationen zur Verbindungs Zeichenfolge in den beiden Umgebungen verwalten können.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

@@ -9,11 +9,11 @@ ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5dc4d0b6ac9bf3aa2baa54fe9f5d4149494e47d2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74584759"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78501447"
 ---
 # <a name="batch-inserting-c"></a>Einfügen in Batches (C#)
 
@@ -100,7 +100,7 @@ Wenn Sie dieses Markup eingegeben haben, kehren Sie zum Designansicht zurück. D
 
 Nun können Sie die websteuer Elemente zur einfügeschnittstelle hinzufügen. Ziehen Sie zwei Dropdown Listen aus der Toolbox in die entsprechenden Zellen in der Tabelle 1 für den Lieferanten und eine für die Kategorie.
 
-Legen Sie für die Eigenschaft "Lieferant DropDownList s `ID`" den Wert `Suppliers` fest, und binden Sie ihn an eine neue ObjectDataSource namens `SuppliersDataSource`. Konfigurieren Sie die neue ObjectDataSource, um Ihre Daten aus der `SuppliersBLL` Klasse `GetSuppliers` Methode abzurufen, und legen Sie die Dropdown Liste Update Registerkarte auf (keine) fest. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Legen Sie für die Eigenschaft "Lieferant DropDownList s `ID`" den Wert `Suppliers` fest, und binden Sie ihn an eine neue ObjectDataSource namens `SuppliersDataSource`. Konfigurieren Sie die neue ObjectDataSource, um Ihre Daten aus der `SuppliersBLL` Klasse `GetSuppliers` Methode abzurufen, und legen Sie die Dropdown Liste Update Registerkarte auf (keine) fest. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![konfigurieren Sie die ObjectDataSource für die Verwendung der Methode getsuppliers der suppliersbll-Klasse.](batch-inserting-cs/_static/image20.png)](batch-inserting-cs/_static/image19.png)
 
@@ -120,7 +120,7 @@ Nachdem diese beiden Dropdown Listen hinzugefügt und an ordnungsgemäß konfigu
 
 **Abbildung 9**: die Kopfzeile enthält jetzt die Dropdown Listen `Suppliers` und `Categories` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](batch-inserting-cs/_static/image27.png))
 
-Wir müssen nun die Textfelder erstellen, um den Namen und den Preis für jedes neue Produkt zu erfassen. Ziehen Sie ein TextBox-Steuerelement aus der Toolbox auf den Designer für jeden der fünf Product Name-und Price-Zeilen. Legen Sie die `ID` Eigenschaften der Textfelder auf `ProductName1`, `UnitPrice1`, `ProductName2`, `UnitPrice2`, `ProductName3`usw. fest.
+Wir müssen nun die Textfelder erstellen, um den Namen und den Preis für jedes neue Produkt zu erfassen. Ziehen Sie ein TextBox-Steuerelement aus der Toolbox auf den Designer für jeden der fünf Product Name-und Price-Zeilen. Legen Sie die `ID` Eigenschaften der Textfelder auf `ProductName1`, `UnitPrice1`, `ProductName2`, `UnitPrice2`, `ProductName3`usw. fest.`UnitPrice3`
 
 Fügen Sie ein CompareValidator nach jedem der Einheitspreis-Textfelder hinzu, und legen Sie die `ControlToValidate`-Eigenschaft auf die entsprechende `ID`fest. Legen Sie außerdem die Eigenschaft `Operator` auf `GreaterThanEqual`, `ValueToCompare` auf 0 und `Type` auf `Currency`fest. Diese Einstellungen weisen das CompareValidator an, sicherzustellen, dass der Preis, falls eingegeben, ein gültiger Währungswert ist, der größer oder gleich 0 (null) ist. Legen Sie die `Text`-Eigenschaft auf \*fest, und `ErrorMessage` auf den Preis muss größer oder gleich 0 (null) sein. Außerdem sollten Sie keine Währungssymbole weglassen.
 
@@ -219,7 +219,7 @@ In Abbildung s 13, 14 und 15 werden die Einfüge-und Anzeige Schnittstellen in A
 > [!NOTE]
 > Die in diesem Tutorial verwendete Batch-Einfügungs Logik umschließt die Einfügungen innerhalb des Umfangs der Transaktion. Um dies zu überprüfen, führen Sie absichtlich einen Fehler auf Datenbankebene ein. Anstatt z. b. die neue `ProductsRow` Instanz s `CategoryID` Eigenschaft dem ausgewählten Wert in der `Categories` DropDownList zuzuweisen, weisen Sie ihn einem Wert wie `i * 5`zu. Hier ist `i` der Schleifen Indexer und hat Werte zwischen 1 und 5. Beim Hinzufügen von zwei oder mehr Produkten in Batch INSERT hat das erste Produkt daher einen gültigen `CategoryID` Wert (5), nachfolgende Produkte verfügen jedoch über `CategoryID` Werte, die nicht mit `CategoryID` Werten in der `Categories` Tabelle identisch sind. Dies hat zur Folge, dass während der ersten `INSERT` erfolgreich ist, dass nachfolgende mit einer Verletzung der Fremdschlüssel Einschränkung fehlschlagen. Da die Batch Einfügung atomarisch ist, wird für den ersten `INSERT` ein Rollback ausgeführt, und die Datenbank wird vor Beginn des Batch Einfügungs Prozesses in den Zustand zurückversetzt.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem und den beiden vorherigen Tutorials haben wir Schnittstellen erstellt, die das Aktualisieren, löschen und Einfügen von Daten Batches ermöglichen, die alle die Transaktionsunterstützung verwendet haben, die wir der Datenzugriffs Ebene im Tutorial Wrapping von Daten [Bank Änderungen innerhalb einer Transaktion](wrapping-database-modifications-within-a-transaction-cs.md) hinzugefügt haben. In bestimmten Szenarien verbessern diese Benutzeroberflächen für die Batch Verarbeitung die Effizienz von Endbenutzern erheblich, indem die Anzahl der Klicks, Postbacks und Tastatur-zu-Maus-Kontextwechsel gesenkt werden, während gleichzeitig die Integrität der zugrunde liegenden Daten gewahrt bleibt.
 
@@ -227,7 +227,7 @@ In diesem Tutorial wird die Arbeit mit Batch Daten behandelt. Der nächste Satz 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

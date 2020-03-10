@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow
-title: 'ASP.NET MVC MVC Storefront Part 19: Verarbeiten von Bestellungen mit Windows-Workflow | Microsoft-Dokumentation'
+title: 'ASP.NET MVC-MVC Store Front, Teil 19: Verarbeiten von Bestellungen mit Windows Workflow | Microsoft-Dokumentation'
 author: robconery
-description: In dieser Folge ich einführen von Windows-Workflow und Spitzen, um zu ermitteln, wie gut sie für verschiedene Prozesse auf der Website funktioniert.
+description: In dieser Folge führe ich Windows Workflow ein und klicke darauf, um zu sehen, wie gut es für verschiedene Prozesse auf der Website funktioniert.
 ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: 3d08b4c5-a92f-4f75-aa10-5c2e9da8c114
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow
 msc.type: video
 ms.openlocfilehash: 17cdc46ec0605180bb7d98d0fa3796fde28ba686
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420002"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450621"
 ---
-# <a name="aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow"></a>ASP.NET MVC MVC Storefront Part 19: Verarbeiten von Bestellungen mit Windows Workflow
+# <a name="aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow"></a>ASP.NET MVC-MVC Store Front, Teil 19: Verarbeiten von Bestellungen mit Windows Workflow
 
-durch [Rob Conery](https://github.com/robconery)
+von [Rob](https://github.com/robconery) -Konstante
 
-In dieser Folge ich einführen von Windows-Workflow und Spitzen, um zu ermitteln, wie gut sie für verschiedene Prozesse auf der Website funktioniert.
+In dieser Folge führe ich Windows Workflow ein und klicke darauf, um zu sehen, wie gut es für verschiedene Prozesse auf der Website funktioniert.
 
-[&#9654;Sehen Sie sich Video (43 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow)
+[&#9654;Video ansehen (43 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow)
 
 > [!div class="step-by-step"]
 > [Zurück](aspnet-mvc-storefront-part-18-creating-an-experience.md)

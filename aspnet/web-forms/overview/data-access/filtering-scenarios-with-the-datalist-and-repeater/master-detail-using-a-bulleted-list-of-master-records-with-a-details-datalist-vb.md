@@ -9,11 +9,11 @@ ms.assetid: ee20742f-6fb7-49a0-a009-058fe363aacb
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 81d72c666925e89729464e7ea696bde8d323e277
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74641738"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78490689"
 ---
 # <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>Master-/Detailbericht mit einer Aufzählung der Masterdatensätze und einem DataList-Steuerelement für die Details (VB)
 
@@ -228,7 +228,7 @@ Mit diesen Ergänzungen ist unser Tutorial fertig! Nehmen Sie sich einen Moment 
 
 **Abbildung 15**: Klicken auf die Kategorie "Produktion" listet die passenden Produkte auf der rechten Seite auf ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image43.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wie in diesem Tutorial erläutert, können Master/Detail-Berichte auf zwei Seiten verteilt oder konsolidiert werden. Wenn Sie einen Master-/Detailbericht auf einer einzelnen Seite anzeigen, werden jedoch einige Herausforderungen hinsichtlich der optimalen Anordnung der Master-und Detaildaten Sätze auf der Seite eingeführt. In der *Master-/Details-Verwendung eines auswählbaren Master GridView-Tutorials mit einem Detail DetailsView* -Tutorial haben wir die Detaildaten Sätze oberhalb der Master Datensätze angezeigt. in diesem Tutorial haben wir CSS-Techniken verwendet, damit die Master Datensätze auf der linken Seite der Details verankert werden.
 
@@ -238,7 +238,7 @@ In diesem Tutorial wird die Untersuchung von Master-/Detailberichten mit DataLis
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -246,7 +246,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [CSS-Positionierung](http://www.brainjar.com/css/positioning/) Weitere Informationen zum Positionieren von Elementen mit CSS
 - Anordnen [von Inhalten mit HTML](http://www.w3schools.com/html/html_layout.asp) mithilfe von `<table>` s und anderen HTML-Elementen für die Positionierung
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -255,4 +255,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Prüfer für dieses Tutorial war Zack Jones. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](master-detail-filtering-acess-two-pages-datalist-vb.md)
+> [Previous](master-detail-filtering-acess-two-pages-datalist-vb.md)

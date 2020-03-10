@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/http-message-handlers
-title: HTTP-Meldungshandler in der ASP.NET Web-API – ASP.NET 4.x
+title: HTTP-Nachrichten Handler in ASP.net-Web-API-ASP.NET 4. x
 author: MikeWasson
-description: Einen Überblick über die HTTP-Meldungshandler in der ASP.NET Web-API für ASP.NET 4.x
+description: Übersicht über HTTP-Nachrichten Handler in ASP.net-Web-API für ASP.NET 4. x
 ms.author: riande
 ms.date: 02/13/2012
 ms.custom: seoapril2019
@@ -10,144 +10,144 @@ ms.assetid: 9002018b-3aa3-4358-bb1c-fbb5bc751d01
 msc.legacyurl: /web-api/overview/advanced/http-message-handlers
 msc.type: authoredcontent
 ms.openlocfilehash: a8e6f1da8df4802e1acf7779a2fc75bfe8ab876f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115550"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504927"
 ---
-# <a name="http-message-handlers-in-aspnet-web-api"></a>HTTP-Meldungshandler in der ASP.NET Web-API
+# <a name="http-message-handlers-in-aspnet-web-api"></a>HTTP-Nachrichten Handler in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-Ein *Meldungshandler* ist eine Klasse, die eine HTTP-Anforderung empfängt, und gibt eine HTTP-Antwort zurück. Meldungshandler abgeleitet werden, von der abstrakten **HttpMessageHandler** Klasse.
+Ein *Nachrichten Handler* ist eine Klasse, die eine HTTP-Anforderung empfängt und eine HTTP-Antwort zurückgibt. Meldungs Handler werden von der abstrakten **httpmessagehandler** -Klasse abgeleitet.
 
-In der Regel eine Reihe von Meldungshandler verkettet werden. Der erste Handler eine HTTP-Anforderung empfängt, erfolgt die Verarbeitung und gibt die Anforderung an dem nächsten Handler. An einem bestimmten Punkt wird die Antwort wird erstellt und wird wieder die Kette. Dieses Muster wird aufgerufen, eine *Delegieren* Handler.
+In der Regel werden eine Reihe von Meldungs Handlern verkettet. Der erste Handler empfängt eine HTTP-Anforderung, verarbeitet einige Verarbeitungsschritte und übergibt die Anforderung an den nächsten Handler. An einem bestimmten Punkt wird die Antwort erstellt, und die Kette wird wieder hergestellt. Dieses Muster wird als *delegier ender* Handler bezeichnet.
 
 ![](http-message-handlers/_static/image1.png)
 
-## <a name="server-side-message-handlers"></a>Serverseitige-Meldungshandler
+## <a name="server-side-message-handlers"></a>Server seitige Meldungs Handler
 
-Auf der Serverseite verwendet die Web-API-Pipeline einige integrierte-Meldungshandler:
+Auf der Serverseite verwendet die Web-API-Pipeline einige integrierte Nachrichten Handler:
 
-- **HttpServer** vom Host der Anforderung ab.
-- **HttpRoutingDispatcher** sendet die Anforderung auf Grundlage der Route.
-- **HttpControllerDispatcher** sendet die Anforderung an einen Web-API-Controller.
+- **HTTPServer** Ruft die Anforderung vom Host ab.
+- **Httproutingdispatcher** sendet die Anforderung basierend auf der Route.
+- **Httpcontrollerdispatcher** sendet die Anforderung an einen Web-API-Controller.
 
-Sie können benutzerdefinierte Handler zur Pipeline hinzufügen. Nachrichtenhandler sind gut für die übergreifende Probleme, die auf der Ebene der HTTP-Nachrichten (statt über Controlleraktionen) ausgeführt werden. Beispielsweise können ein Nachrichtenhandler:
+Sie können der Pipeline benutzerdefinierte Handler hinzufügen. Meldungs Handler sind für übergreifende Aspekte geeignet, die auf der Ebene von HTTP-Nachrichten (anstelle von Controller Aktionen) funktionieren. Ein Meldungs Handler könnte beispielsweise Folgendes:
 
-- Lesen oder Ändern von Anforderungsheadern.
-- Hinzufügen eines Antwortheaders zu antworten.
-- Überprüfen Sie Anforderungen, bevor sie den Controller erreichen.
+- Lesen oder Ändern von Anforderungs Headern.
+- Fügen Sie Antworten einen Antwortheader hinzu.
+- Überprüfen Sie die Anforderungen, bevor Sie den Controller erreichen.
 
-Dieses Diagramm zeigt zwei benutzerdefinierte Handler, die in der Pipeline eingefügt:
+Dieses Diagramm zeigt zwei benutzerdefinierte Handler, die in die Pipeline eingefügt werden:
 
 ![](http-message-handlers/_static/image2.png)
 
 > [!NOTE]
-> Klicken Sie auf der Clientseite verwendet "HttpClient" auch Meldungshandler. Weitere Informationen finden Sie unter [HttpClient-Meldungshandler](httpclient-message-handlers.md).
+> Auf der Clientseite verwendet httpclient auch Nachrichten Handler. Weitere Informationen finden Sie unter [HttpClient](httpclient-message-handlers.md)-Meldungs Handler.
 
-## <a name="custom-message-handlers"></a>Benutzerdefinierte Meldungshandler
+## <a name="custom-message-handlers"></a>Benutzerdefinierte Meldungs Handler
 
-Zum Schreiben von eines benutzerdefinierten Nachrichtenhandler abgeleitet **System.Net.Http.DelegatingHandler** und überschreiben die **SendAsync** Methode. Diese Methode hat die folgende Signatur:
+Zum Schreiben eines benutzerdefinierten Nachrichten Handlers leiten Sie von **System .net. http. delegatinghandler** ab und überschreiben die **SendAsync** -Methode. Diese Methode hat die folgende Signatur:
 
 [!code-csharp[Main](http-message-handlers/samples/sample1.cs)]
 
-Die Methode akzeptiert eine **HttpRequestMessage** als Eingabe und asynchron gibt ein **HttpResponseMessage**. Eine typische Implementierung führt Folgendes aus:
+Die Methode nimmt eine **httprequestmessage** als Eingabe an und gibt asynchron eine **httpresponsmessage**zurück. Eine typische-Implementierung führt Folgendes aus:
 
-1. Verarbeitet die Anforderungsnachricht an.
-2. Rufen Sie `base.SendAsync` zum Senden der Anforderung an den inneren Handler.
+1. Verarbeiten Sie die Anforderungs Nachricht.
+2. Ruft `base.SendAsync` auf, um die Anforderung an den inneren Handler zu senden.
 3. Der innere Handler gibt eine Antwortnachricht zurück. (Dieser Schritt ist asynchron.)
-4. Die Antwort zu verarbeiten und an den Aufrufer zurückgeben.
+4. Verarbeiten Sie die Antwort und geben Sie Sie an den Aufrufer zurück.
 
-Hier ist ein sehr einfaches Beispiel:
+Im folgenden finden Sie ein einfaches Beispiel:
 
 [!code-csharp[Main](http-message-handlers/samples/sample2.cs)]
 
 > [!NOTE]
-> Der Aufruf von `base.SendAsync` ist asynchron. Wenn der Handler für alle Vorgänge nach dem Aufruf ausführt, verwenden Sie die **"await"** -Schlüsselwort, wie gezeigt.
+> Der Aufruf von `base.SendAsync` ist asynchron. Wenn der Handler nach diesem-Befehl eine beliebige Aufgabe durchführt, verwenden Sie das **Erwartungs Wort,** wie gezeigt.
 
-Ein delegierender Handler kann den inneren Handler auch überspringen und direkt die Antwort zu erstellen:
+Ein delegier ender Handler kann auch den inneren Handler überspringen und die Antwort direkt erstellen:
 
 [!code-csharp[Main](http-message-handlers/samples/sample3.cs)]
 
-Wenn eine Delegierung Ereignishandler erstellt die Antwort ohne `base.SendAsync`, die Anforderung wird übersprungen, den Rest der Pipeline. Dies kann nach einem Handler nützlich sein, der die Anforderung (erstellen eine Fehlerantwort) überprüft.
+Wenn ein delegier Ende Handler die Antwort erstellt, ohne `base.SendAsync`zu aufrufen, überspringt die Anforderung den Rest der Pipeline. Dies kann für einen Handler nützlich sein, der die Anforderung überprüft (Erstellen einer Fehler Antwort).
 
 ![](http-message-handlers/_static/image3.png)
 
-## <a name="adding-a-handler-to-the-pipeline"></a>Hinzufügen eines Handlers für die Pipeline
+## <a name="adding-a-handler-to-the-pipeline"></a>Hinzufügen eines Handlers zur Pipeline
 
-Um einen Meldungshandler auf dem Server hinzuzufügen, fügen Sie den Handler, der die **HttpConfiguration.MessageHandlers** Auflistung. Wenn Sie die Vorlage "ASP.NET MVC 4-Webanwendung" verwendet, um das Projekt zu erstellen, erreichen Sie dies in der **WebApiConfig** Klasse:
+Zum Hinzufügen eines Nachrichten Handlers auf der Serverseite fügen Sie den Handler der **httpconfiguration. messagehandlers** -Auflistung hinzu. Wenn Sie die Vorlage "ASP.NET MVC 4-Webanwendung" verwendet haben, um das Projekt zu erstellen, können Sie dies innerhalb der **webapiconfig** -Klasse tun:
 
 [!code-csharp[Main](http-message-handlers/samples/sample4.cs)]
 
-Message-Ereignishandler werden aufgerufen, in der gleichen Reihenfolge, die sie in angezeigt werden **MessageHandlers** Auflistung. Da sie geschachtelt sind, wird die Response-Nachricht in die andere Richtung übertragen. Der letzte Handler ist, also den ersten, die Response-Nachricht.
+Meldungs Handler werden in derselben Reihenfolge aufgerufen, in der Sie in der **messagehandlers** -Auflistung angezeigt werden. Da Sie eingebettet sind, wird die Antwortnachricht in der anderen Richtung bewegt. Das heißt, der letzte Handler ist der erste, der die Antwortnachricht erhält.
 
-Beachten Sie, dass Sie nicht der internen Handler festlegen müssen. die Web-API-Framework wird automatisch der Meldungshandler hergestellt.
+Beachten Sie, dass Sie die inneren Handler nicht festlegen müssen. das Web-API-Framework verbindet automatisch die Nachrichten Handler.
 
-Möchten [Selbsthosting](../older-versions/self-host-a-web-api.md), erstellen Sie eine Instanz von der **HttpSelfHostConfiguration** -Klasse und die Handler zum Hinzufügen der **MessageHandlers** Auflistung.
+Wenn Sie [selbst Hosting](../older-versions/self-host-a-web-api.md)haben, erstellen Sie eine Instanz der **httpselfhostconfiguration** -Klasse, und fügen Sie die Handler der **messagehandlers** -Auflistung hinzu.
 
 [!code-csharp[Main](http-message-handlers/samples/sample5.cs)]
 
-Jetzt sehen wir uns einige Beispiele für benutzerdefinierte Meldungshandler.
+Sehen wir uns nun einige Beispiele für benutzerdefinierte Meldungs Handler an.
 
-## <a name="example-x-http-method-override"></a>Beispiel: X-HTTP-Method-Override
+## <a name="example-x-http-method-override"></a>Beispiel: X-http-Method-override
 
-X-HTTP-Method-Override ist einem nicht standardmäßigen HTTP-Header. Es dient für Clients, die bestimmte HTTP-Anforderungstypen, z. B. PUT oder DELETE senden können. Stattdessen wird der Client sendet eine POST-Anforderung, und legt den X-HTTP-Method-Override-Header auf die gewünschte Methode. Zum Beispiel:
+X-http-Method-override ist ein nicht-Standard-HTTP-Header. Es ist für Clients konzipiert, die bestimmte HTTP-Anforderungs Typen, z. b. Put oder DELETE, nicht senden können. Stattdessen sendet der Client eine Post-Anforderung und legt den Header "X-http-Method-override" auf die gewünschte Methode fest. Beispiel:
 
 [!code-console[Main](http-message-handlers/samples/sample6.cmd)]
 
-Hier ist ein Meldungshandler, das Unterstützung für X-HTTP-Method-Override aus:
+Hier ist ein Meldungs Handler, der die Unterstützung für X-http-Method-override hinzufügt:
 
 [!code-csharp[Main](http-message-handlers/samples/sample7.cs)]
 
-In der **SendAsync** -Methode, der Handler überprüft wird, gibt an, ob die Anforderungsnachricht für eine POST-Anforderung ist, und ob es sich um den X-HTTP-Method-Override-Header enthält. Wenn dies der Fall ist, überprüft den Wert von Header und ändert anschließend die Anforderungsmethode. Der Handler zum Schluss ruft `base.SendAsync` die Nachricht an den nächsten Handler übergeben.
+In der **SendAsync** -Methode überprüft der Handler, ob die Anforderungs Nachricht eine Post-Anforderung ist und ob Sie den Header "X-http-Method-override" enthält. Wenn dies der Fall ist, wird der Header Wert überprüft und dann die Anforderungs Methode geändert. Schließlich ruft der Handler `base.SendAsync` auf, um die Nachricht an den nächsten Handler zu übergeben.
 
-Wenn die Anforderung erreicht den **HttpControllerDispatcher** -Klasse, **HttpControllerDispatcher** leitet die Anforderung, die basierend auf dem die aktualisierte Anforderungsmethode.
+Wenn die Anforderung die **httpcontrollerdispatcher** -Klasse erreicht, leitet **httpcontrollerdispatcher** die Anforderung basierend auf der aktualisierten Anforderungs Methode weiter.
 
-## <a name="example-adding-a-custom-response-header"></a>Beispiel: Hinzufügen eines benutzerdefinierten Antwortheaders
+## <a name="example-adding-a-custom-response-header"></a>Beispiel: Hinzufügen eines benutzerdefinierten Antwort Headers
 
-Hier ist ein Message-Handler, der einen benutzerdefinierten Header zu jeder Response-Nachricht hinzufügt:
+Hier ist ein Meldungs Handler, der jeder Antwortnachricht einen benutzerdefinierten Header hinzufügt:
 
 [!code-csharp[Main](http-message-handlers/samples/sample8.cs)]
 
-Zunächst ruft der Handler `base.SendAsync` die Anforderung an den inneren Meldungshandler übergeben. Der innere Handler gibt eine Antwortnachricht zurück, sondern nur asynchron mit einem **Aufgabe&lt;T&gt;**  Objekt. Die Response-Nachricht ist nicht verfügbar, bis `base.SendAsync` asynchron abgeschlossen.
+Zuerst ruft der Handler `base.SendAsync` auf, um die Anforderung an den inneren Nachrichten Handler zu übergeben. Der innere Handler gibt eine Antwortnachricht zurück, aber dies erfolgt asynchron mit einem **Task&lt;t&gt;** -Objekts. Die Antwortnachricht ist erst verfügbar, wenn `base.SendAsync` asynchron abgeschlossen ist.
 
-Dieses Beispiel verwendet die **"await"** Schlüsselwort, um die Aufgaben asynchron nach `SendAsync` abgeschlossen ist. Wenn Sie .NET Framework 4.0 ausgerichtet sind, verwenden Sie die **Aufgabe**&lt;T&gt;**. ContinueWith** Methode:
+In diesem Beispiel wird das **-Schlüsselwort** mit dem Erwartungs Wort zum asynchronen Ausführen von arbeiten nach Abschluss `SendAsync` verwendet Wenn Sie .NET Framework 4,0 verwenden, verwenden Sie den **Task**&lt;t&gt; **. ContinueWith** -Methode:
 
 [!code-csharp[Main](http-message-handlers/samples/sample9.cs)]
 
-## <a name="example-checking-for-an-api-key"></a>Beispiel: Überprüfen für einen API-Schlüssel
+## <a name="example-checking-for-an-api-key"></a>Beispiel: Überprüfen auf einen API-Schlüssel
 
-Einige Webdienste werden Clients für einen API-Schlüssel in der Anforderung angeben müssen. Das folgende Beispiel zeigt, wie ein Meldungshandler Anforderungen für einen gültigen API-Schlüssel überprüfen kann:
+Einige Webdienste erfordern, dass Clients einen API-Schlüssel in Ihre Anforderung einschließen. Das folgende Beispiel zeigt, wie ein Nachrichten Handler Anforderungen auf einen gültigen API-Schlüssel überprüfen kann:
 
 [!code-csharp[Main](http-message-handlers/samples/sample10.cs)]
 
-Dieser Handler sucht nach den API-Schlüssel in der URI-Abfragezeichenfolge. (In diesem Beispiel wird davon ausgegangen, dass der Schlüssel eine statische Zeichenfolge. "Eine realen Implementierung würden wahrscheinlich eine komplexere Validierung verwenden.) Wenn die Abfragezeichenfolge der Schlüssel enthält, übergibt der Handler für die Anforderung an den inneren Handler.
+Dieser Handler sucht in der URI-Abfrage Zeichenfolge nach dem API-Schlüssel. (In diesem Beispiel wird davon ausgegangen, dass es sich bei dem Schlüssel um eine statische Zeichenfolge handelt. Eine wirkliche Implementierung würde wahrscheinlich eine komplexere Validierung verwenden.) Wenn die Abfrage Zeichenfolge den Schlüssel enthält, übergibt der Handler die Anforderung an den inneren Handler.
 
-Wenn die Anforderung nicht über einen gültigen Schlüssel verfügt, erstellt der Handler für eine Antwortnachricht mit dem Status 403, verboten. In diesem Fall ruft der Handler für nicht auf `base.SendAsync`, also der innere Handler empfängt die Anforderung, noch wird des Controllers. Der Controller kann daher davon ausgehen, dass alle eingehende Anforderungen über einen gültigen API-Schlüssel verfügen.
+Wenn die Anforderung keinen gültigen Schlüssel hat, erstellt der Handler eine Antwortnachricht mit dem Status 403, verboten. In diesem Fall ruft der Handler `base.SendAsync`nicht auf, sodass der innere Handler die Anforderung nie empfängt, und auch nicht den Controller. Daher kann der Controller davon ausgehen, dass alle eingehenden Anforderungen über einen gültigen API-Schlüssel verfügen.
 
 > [!NOTE]
-> Wenn der API-Schlüssel nur für bestimmte Controlleraktionen gilt, erwägen Sie, die einen Aktionsfilter anstelle eines meldungshandlers. Aktionsfilter werden nach dem URI routing ausgeführt wird.
+> Wenn der API-Schlüssel nur für bestimmte Controller Aktionen gilt, empfiehlt es sich, anstelle eines Nachrichten Handlers einen Aktionsfilter zu verwenden. Aktionsfilter werden nach dem URI-Routing ausgeführt.
 
-## <a name="per-route-message-handlers"></a>Pro-Route-Meldungshandler
+## <a name="per-route-message-handlers"></a>Nachrichten Handler pro Route
 
--Handler in der **HttpConfiguration.MessageHandlers** Auflistung global angewendet werden.
+Handler in der **httpconfiguration. messagehandlers** -Auflistung gelten global.
 
-Alternativ können Sie einen Meldungshandler für eine bestimmte Route hinzufügen, wenn Sie die Route definieren:
+Alternativ können Sie einen Nachrichten Handler zu einer bestimmten Route hinzufügen, wenn Sie die Route definieren:
 
 [!code-csharp[Main](http-message-handlers/samples/sample11.cs?highlight=16)]
 
-In diesem Beispiel, wenn der Anforderungs-URI "Route2", entspricht die Anforderung wird gesendet `MessageHandler2`. Das folgende Diagramm zeigt die Pipeline für diese zwei Routen:
+In diesem Beispiel wird die Anforderung an `MessageHandler2`gesendet, wenn der Anforderungs-URI "Route2" entspricht. Das folgende Diagramm zeigt die Pipeline für diese beiden Routen:
 
 ![](http-message-handlers/_static/image4.png)
 
-Beachten Sie, dass `MessageHandler2` ersetzt das standardmäßige **HttpControllerDispatcher**. In diesem Beispiel `MessageHandler2` erstellt die Antwort und -Anforderungen, die mit "Route2" Gehen Sie niemals auf einen Controller übereinstimmen. Dadurch können Sie den gesamten Web-API-Controller-Mechanismus durch Ihren eigenen benutzerdefinierten Endpunkt zu ersetzen.
+Beachten Sie, dass `MessageHandler2` den Standardwert **httpcontrollerdispatcher**ersetzt. In diesem Beispiel erstellt `MessageHandler2` die Antwort, und Anforderungen, die "Route2" entsprechen, werden nie an einen Controller gesendet. Auf diese Weise können Sie den gesamten Web-API-Controller Mechanismus durch ihren eigenen benutzerdefinierten Endpunkt ersetzen.
 
-Alternativ kann ein Message-Handler pro Route an Delegieren **HttpControllerDispatcher**, die dann an einen Controller sendet.
+Alternativ kann ein Nachrichten Handler pro Route an **httpcontrollerdispatcher**delegieren, der dann an einen Controller weitergeleitet wird.
 
 ![](http-message-handlers/_static/image5.png)
 
-Der folgende Code zeigt, wie Sie diese Route zu konfigurieren:
+Der folgende Code zeigt, wie Sie diese Route konfigurieren:
 
 [!code-csharp[Main](http-message-handlers/samples/sample12.cs)]

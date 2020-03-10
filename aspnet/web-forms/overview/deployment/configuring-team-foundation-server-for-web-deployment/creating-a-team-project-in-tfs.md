@@ -1,201 +1,201 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
-title: Erstellen eines Teamprojekts in TFS | Microsoft-Dokumentation
+title: Erstellen eines Team Projekts in TFS | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Thema wird beschrieben, wie Sie ein neues Teamprojekt in Team Foundation Server (TFS) 2010 erstellen.
+description: In diesem Thema wird beschrieben, wie ein neues Teamprojekt in Team Foundation Server (TFS) 2010 erstellt wird.
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
 ms.openlocfilehash: d12e0636ce3b6239d125305db4354278f9f24960
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108772"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519561"
 ---
 # <a name="creating-a-team-project-in-tfs"></a>Erstellen eines Teamprojekts in TFS
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird beschrieben, wie Sie ein neues Teamprojekt in Team Foundation Server (TFS) 2010 erstellen.
+> In diesem Thema wird beschrieben, wie ein neues Teamprojekt in Team Foundation Server (TFS) 2010 erstellt wird.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-## <a name="task-overview"></a>Übersicht über den Task
+## <a name="task-overview"></a>Aufgaben Übersicht
 
-Für das Bereitstellen und ein neues Teamprojekt in TFS verwenden, müssen Sie die folgenden allgemeinen Schritte ausführen:
+Zum Bereitstellen und Verwenden eines neuen Teamprojekts in TFS müssen Sie die folgenden Schritte ausführen:
 
-- Erteilen Sie Berechtigungen für den Benutzer, der das neue Teamprojekt erstellen sollen.
+- Erteilen Sie dem Benutzer, der das neue Teamprojekt erstellt, Berechtigungen.
 - Erstellen Sie das Teamprojekt.
-- Gewähren von Berechtigungen Sie für die Teammitglieder, die auf das Projekt zu funktionieren.
-- Überprüfen Sie in Teil des Inhalts.
+- Erteilen von Berechtigungen für Teammitglieder, die an dem Projekt arbeiten werden.
+- Überprüfen Sie einige Inhalte.
 
-In diesem Thema wird gezeigt, wie Sie diese Schritte ausführen, und es erkennt, die Benutzer und die Auftrags-Rollen, die wahrscheinlich für jede Prozedur verantwortlich sind. Denken Sie daran, dass Sie abhängig von der Struktur Ihrer Organisation, diese Aufgaben die Verantwortung für eine andere Person sein kann.
+In diesem Thema wird erläutert, wie Sie diese Prozeduren ausführen, und es werden die Benutzer und Auftrags Rollen identifiziert, die wahrscheinlich für die einzelnen Prozeduren verantwortlich sind. Beachten Sie, dass in Abhängigkeit von der Struktur Ihrer Organisation jede dieser Aufgaben die Verantwortung einer anderen Person haben kann.
 
-Die Aufgaben und exemplarische Vorgehensweisen in diesem Thema wird davon ausgegangen, die Sie installiert und konfiguriert TFS, und Sie eine Teamprojektsammlung im Rahmen des Konfigurationsvorgangs erstellt haben. Weitere Informationen zu diesen Annahmen und weitere allgemeine Informationen zu dem Szenario, finden Sie unter [konfigurieren Sie eine TFS-Build-Server für die Webbereitstellung](configuring-a-tfs-build-server-for-web-deployment.md).
+Bei den Aufgaben und exemplarischen Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie TFS installiert und konfiguriert haben und dass Sie im Rahmen des Konfigurations Vorgangs eine Teamprojekt Sammlung erstellt haben. Weitere Informationen zu diesen Annahmen und allgemeine Hintergrundinformationen zu diesem Szenario finden Sie unter [Konfigurieren eines TFS-Buildservers für die Webbereitstellung](configuring-a-tfs-build-server-for-web-deployment.md).
 
-## <a name="grant-permissions-to-the-team-project-creator"></a>Gewähren von Berechtigungen für den Teamprojektersteller
+## <a name="grant-permissions-to-the-team-project-creator"></a>Erteilen von Berechtigungen für den Team Projekt Ersteller
 
-Um ein neues Teamprojekt erstellen zu können, benötigen Sie diese Berechtigungen:
+Um ein neues Teamprojekt zu erstellen, benötigen Sie diese Berechtigungen:
 
-- Sie benötigen die **neue Projekte erstellen** -Berechtigung für die TFS-Anwendungsebene. Sie erteilen diese Berechtigung in der Regel durch Hinzufügen von Benutzern, die **Projektauflistungsadministratoren** TFS-Gruppe. Die **Team Foundation-Administratoren** globale Gruppe enthält auch diese Berechtigung.
-- Sie benötigen die Berechtigung zum Erstellen neuer Team-Standorte innerhalb der SharePoint-Websitesammlung, die die TFS-Teamprojektsammlung entspricht. Sie erteilen diese Berechtigung in der Regel durch Hinzufügen des Benutzers zu einer SharePoint-Gruppe mit **Vollzugriff** Rechte auf dem SharePoint-websiteauflistung.
-- Wenn Sie SQL Server Reporting Services-Funktionen verwenden, müssen Sie Mitglied werden die **Team Foundation-Inhalts-Manager** Rolle in Reporting Services.
+- Sie müssen über die Berechtigung " **neue Projekte erstellen** " für die TFS-Anwendungsebene verfügen. Diese Berechtigung erteilen Sie in der Regel, indem Sie der TFS-Gruppe der **Projekt Sammlungs Administratoren** Benutzer hinzufügen. Die globale Gruppe **Team Foundation-Administratoren** enthält auch diese Berechtigung.
+- Sie müssen über die Berechtigung zum Erstellen neuer Team Sites innerhalb der SharePoint-Website Sammlung verfügen, die der TFS-Teamprojekt Sammlung entspricht. Sie erteilen diese Berechtigung in der Regel, indem Sie den Benutzer einer SharePoint-Gruppe mit **voll** Zugriffsrechten für die SharePoint-Website Sammlung hinzufügen.
+- Wenn Sie SQL Server Reporting Services Features verwenden, müssen Sie Mitglied der Rolle " **Team Foundation-Inhalts-Manager** " in Reporting Services sein.
 
-### <a name="who-performs-these-procedures"></a>Wem diese Verfahren werden?
+### <a name="who-performs-these-procedures"></a>Wer führt diese Prozeduren aus?
 
-In der Regel führt die Person oder Gruppe, die die TFS-Bereitstellung verwaltet auch diese Verfahren aus.
+In der Regel führt die Person oder Gruppe, die die TFS-Bereitstellung verwaltet, auch diese Verfahren aus.
 
-Da dies einen weitreichenden Satz von Berechtigungen ist, werden neue Teamprojekte in der Regel von einer kleinen Gruppe von Benutzern mit Verantwortung für die Verwaltung einer TFS-Bereitstellung erstellt. Entwickler nicht in der Regel die erforderlichen Berechtigungen zum Erstellen neuer Teamprojekte erhält.
+Da es sich hierbei um einen Berechtigungs Satz mit hohen Berechtigungen handelt, werden neue Team Projekte in der Regel von einer kleinen Teilmenge von Benutzern erstellt, die für die Verwaltung einer TFS-Bereitstellung zuständig sind. Entwicklern werden normalerweise nicht die Berechtigungen erteilt, die zum Erstellen neuer Team Projekte erforderlich sind.
 
 ### <a name="grant-permissions-in-tfs"></a>Erteilen von Berechtigungen in TFS
 
-Wenn Sie einen Benutzer zum Erstellen neuer Teamprojekte aktivieren möchten, ist die allgemeine erste Aufgabe beim Hinzufügen des Benutzers, der **Projektauflistungsadministratoren** für die Teamprojektsammlung.
+Wenn Sie einem Benutzer das Erstellen neuer Team Projekte ermöglichen möchten, besteht die erste allgemeine Aufgabe darin, den Benutzer der Gruppe Projekt Auflistungs **Administratoren** für die Teamprojekt Sammlung hinzuzufügen.
 
-**Einen Benutzer der Gruppe Administratoren der Projektsammlung hinzufügen**
+**So fügen Sie der Gruppe "Projekt Auflistungs Administratoren" einen Benutzer hinzu**
 
-1. Auf dem TFS-Server auf die **starten** , zeigen Sie auf **Programme**, klicken Sie auf **Microsoft Team Foundation Server 2010**, und klicken Sie dann auf **Team Foundation -Verwaltungskonsole**.
-2. Erweitern Sie in der Strukturansicht Navigation **Anwendungsebene**, und klicken Sie dann auf **Team Project Collections**.
+1. Zeigen Sie auf dem TFS-Server im Menü **Start** auf **Alle Programme**, klicken Sie auf **Microsoft Team Foundation Server 2010**, und klicken Sie dann auf **Team Foundation-Verwaltungskonsole**.
+2. Erweitern Sie in der Navigationsstruktur Ansicht den Knoten **Anwendungsebene**, und klicken Sie dann auf **Team Projekt Sammlungen**.
 
     ![](creating-a-team-project-in-tfs/_static/image1.png)
-3. In der **Team Project Collections** wählen Sie im Bereich der teamprojektauflistung, die Sie verwalten möchten.
+3. Wählen Sie im Bereich **Teamprojekt Sammlungen** die Teamprojekt Sammlung aus, die Sie verwalten möchten.
 
     ![](creating-a-team-project-in-tfs/_static/image2.png)
-4. Auf der **allgemeine** auf **Gruppenmitgliedschaft**.
+4. Klicken Sie auf der Registerkarte **Allgemein** auf **Gruppenmitgliedschaft**.
 
     ![](creating-a-team-project-in-tfs/_static/image3.png)
-5. In der **globale Gruppen** wählen Sie im Dialogfeld die **Projektauflistungsadministratoren** gruppieren, und klicken Sie dann auf **Eigenschaften**.
-6. In der **Team Foundation Server-Gruppeneigenschaften** wählen Sie im Dialogfeld **Windows-Benutzer oder Gruppe**, und klicken Sie dann auf **hinzufügen**.
+5. Wählen Sie im Dialogfeld **globale Gruppen** die Gruppe **Projekt** Auflistungs Administratoren aus, und klicken Sie dann auf **Eigenschaften**.
+6. Wählen Sie im Dialogfeld **Eigenschaften von Team Foundation Server Gruppe** die Option **Windows-Benutzer oder-Gruppe**aus, und klicken Sie dann auf **Hinzufügen**.
 
     ![](creating-a-team-project-in-tfs/_static/image4.png)
-7. In der **Auswahl von Benutzern, Computern oder Gruppen** Dialogfeld geben der Benutzernamen des Benutzers neue Teamprojekte erstellt werden sollen. Klicken Sie auf **Namen überprüfen**, und klicken Sie dann auf **OK** .
+7. Geben Sie im Dialogfeld **Benutzer, Computer oder Gruppen auswählen** den Benutzernamen des Benutzers ein, in dem Sie neue Team Projekte erstellen möchten, klicken Sie auf **Namen überprüfen**, und klicken Sie dann auf **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image5.png)
-8. In der **Team Foundation Server-Gruppeneigenschaften** Dialogfeld klicken Sie auf **OK**.
-9. In der **globale Gruppen** Dialogfeld klicken Sie auf **schließen**.
+8. Klicken Sie im Dialogfeld **Eigenschaften von Team Foundation Server Gruppe** auf **OK**.
+9. Klicken Sie im Dialogfeld **globale Gruppen** auf **Schließen**.
 
-### <a name="grant-permissions-in-sharepoint-services"></a>Erteilen von Berechtigungen in SharePointServices
+### <a name="grant-permissions-in-sharepoint-services"></a>Erteilen von Berechtigungen in SharePoint Services
 
-Als Nächstes müssen Sie neue Teamwebsites in der SharePoint-Websitesammlung zu erstellen, die die TFS-Teamprojektsammlung entspricht, die Benutzer die Berechtigung gewähren.
+Als nächstes müssen Sie dem Benutzer die Berechtigung zum Erstellen neuer Team Sites in der SharePoint-Website Sammlung erteilen, die der TFS-Teamprojekt Sammlung entspricht.
 
-**Erteilen von Vollzugriffsberechtigungen für die SharePoint-Websitesammlung**
+**So erteilen Sie voll Zugriffsberechtigungen für die SharePoint-Website Sammlung**
 
-1. In der Team Foundation Server-Verwaltungskonsole auf der **Team Project Collections** Seite, wählen Sie die Teamprojektsammlung, die Sie verwalten möchten.
-2. Auf der **SharePoint-Website** Registerkarte, beachten Sie den Wert der **aktueller Standardort der Website** URL.
+1. Wählen Sie in der Team Foundation Server-Verwaltungskonsole auf der Seite **Teamprojekt Sammlungen** die Teamprojekt Sammlung aus, die Sie verwalten möchten.
+2. Notieren Sie sich auf der Registerkarte **SharePoint-Website** den Wert der **aktuellen Standard Website** -URL.
 
     ![](creating-a-team-project-in-tfs/_static/image6.png)
-3. Öffnen Sie Internet Explorer, und fahren Sie mit der URL, die Sie in Schritt 2 notiert haben.
+3. Öffnen Sie Internet Explorer, und navigieren Sie dann zu der URL, die Sie in Schritt 2 notiert haben.
 
     > [!NOTE]
-    > Wenn Sie nicht auf Windows als Benutzer, die die Teamprojektsammlung erstellt hat angemeldet sind, müssen Sie in SharePoint als dieser Benutzer melden Sie sich um fortzufahren.
-4. Auf der **Websiteaktionen** Menü klicken Sie auf **Standorteinstellungen**.
+    > Wenn Sie als Benutzer, der die Teamprojekt Sammlung erstellt hat, nicht bei Windows angemeldet sind, müssen Sie sich bei SharePoint als dieser Benutzer anmelden, um den Vorgang fortzusetzen.
+4. Klicken Sie im Menü **Websiteaktionen** auf **Siteeinstellungen**.
 
     ![](creating-a-team-project-in-tfs/_static/image7.png)
-5. Auf der **Standorteinstellungen** Seite **Benutzern und Berechtigungen**, klicken Sie auf **Personen und Gruppen**.
-6. Klicken Sie im linken Bereich auf **Gruppen**.
+5. Klicken Sie auf der Seite **Site Einstellungen** unter **Benutzer und Berechtigungen**auf **Personen und Gruppen**.
+6. Klicken Sie im linken Navigationsbereich auf **Gruppen**.
 
     ![](creating-a-team-project-in-tfs/_static/image8.png)
-7. Auf der **Personen und Gruppen: Alle Gruppen** auf **Gruppen einrichten für diesen Standort**.
+7. Klicken Sie auf der Seite **Personen und Gruppen: alle Gruppen** auf **Gruppen für diesen Standort einrichten**.
 
     ![](creating-a-team-project-in-tfs/_static/image9.png)
 
    > [!NOTE]
-   > Erhalten Sie möglicherweise eine <strong>HTTP 404 Not Found</strong> Fehler aufgrund eines doppelten Codierung HTTP-Fehlers. In diesem Fall ersetzen Sie dabei die URL:   
-   > `[site_collection_URL]/_layouts/permsetup.aspx` Zum Beispiel:  
+   > Aufgrund eines doppelten http-Codierungs Fehlers erhalten Sie möglicherweise die Fehlermeldung " <strong>HTTP 404 nicht gefunden</strong> ". Ersetzen Sie in diesem Fall die URL durch Folgendes:   
+   > Beispiel: `[site_collection_URL]/_layouts/permsetup.aspx`  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
-8. Auf der **Gruppen einrichten für diesen Standort** Seite fügen Sie den Benutzer, die Teamprojekte zu erstellen, wird die **Besitzer** gruppieren, und klicken Sie dann auf **OK**.
+8. Fügen Sie auf der Seite **Gruppen für diese Site einrichten** den Benutzer, der Team Projekte erstellt, der Gruppe **Besitzer** hinzu, und klicken Sie dann auf **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
 
-Weitere Informationen zum Aktivieren von Benutzern die Erstellung neuer Teamprojekte innerhalb einer Teamprojektsammlung finden Sie unter [Festlegen von Administratorberechtigungen für Teamprojektsammlungen](https://msdn.microsoft.com/library/dd547204.aspx).
+Weitere Informationen zum Aktivieren von Benutzern für das Erstellen neuer Team Projekte in einer Teamprojekt Auflistung finden Sie unter [Festlegen von Administrator Berechtigungen für Teamprojekt Sammlungen](https://msdn.microsoft.com/library/dd547204.aspx).
 
-## <a name="create-a-new-team-project-and-add-users"></a>Ein neues Teamprojekt erstellen und Hinzufügen von Benutzern
+## <a name="create-a-new-team-project-and-add-users"></a>Erstellen eines neuen Team Projekts und Hinzufügen von Benutzern
 
-Nachdem Sie die erforderlichen Berechtigungen verfügen, können Sie mithilfe der **Team Explorer** Fenster in Visual Studio 2010 zum Erstellen eines neuen Teamprojekts. Dieser Ansatz bietet einen Assistenten, der alle erforderlichen Informationen erfasst und führt die erforderlichen Aufgaben in TFS, SharePoint und SQL Server Reporting Services. Sie müssen auch zum Gewähren von Berechtigungen für das neue Teamprojekt für Mitglied des Entwicklerteams, aktivieren sie zum Hinzufügen und Ändern des Inhalts.
+Sobald Sie über die erforderlichen Berechtigungen verfügen, können Sie das **Team Explorer** Fenster in Visual Studio 2010 verwenden, um ein neues Team Projekt zu erstellen. Dieser Ansatz stellt einen Assistenten bereit, der alle erforderlichen Informationen sammelt und die erforderlichen Aufgaben in TFS, SharePoint und SQL Server Reporting Services ausführt. Außerdem müssen Sie den Mitgliedern des Entwicklerteams Berechtigungen für das neue Teamprojekt erteilen, damit Sie Inhalte hinzufügen und ändern können.
 
-### <a name="who-performs-these-procedures"></a>Wem diese Verfahren werden?
+### <a name="who-performs-these-procedures"></a>Wer führt diese Prozeduren aus?
 
-In der Regel führt ein TFS-Administrator oder Teamleiter sind Entwickler diese Verfahren aus.
+In der Regel führt entweder ein TFS-Administrator oder ein Entwicklerteam Leiter diese Verfahren aus.
 
-### <a name="create-a-new-team-project"></a>Erstellen Sie ein neues Teamprojekt
+### <a name="create-a-new-team-project"></a>Neues Team Projekt erstellen
 
-Im nächste Verfahren wird beschrieben, erstellen Sie ein neues Teamprojekt in TFS 2010.
+Im nächsten Verfahren wird das Erstellen eines neuen Teamprojekts in TFS 2010 beschrieben.
 
-**Um ein neues Teamprojekt zu erstellen.**
+**So erstellen Sie ein neues Teamprojekt**
 
-1. Auf der **starten** Startmenü **Programme**, klicken Sie auf **Microsoft Visual Studio 2010**, mit der rechten Maustaste **Microsoft Visual Studio 2010**, und klicken Sie dann auf **als Administrator ausführen**.
-
-    > [!NOTE]
-    > Wenn Sie nicht Visual Studio 2010 als Administrator ausführen, schlägt der Assistent für neue Teamprojekte im letzten Schritt fehl.
-2. Wenn die **User Account Control** klicken Sie im angezeigten Dialogfeld **Ja**.
-3. In Visual Studio auf die **Team** Menü klicken Sie auf **Herstellen einer Verbindung mit Team Foundation Server**.
+1. Zeigen Sie im Menü **Start** auf **Alle Programme**, klicken Sie auf **Microsoft Visual Studio 2010**, klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2010**, und klicken Sie dann auf **als Administrator ausführen**.
 
     > [!NOTE]
-    > Wenn Sie bereits eine Verbindung mit einem TFS-Server konfiguriert haben, können Sie die Schritte 4 bis 7 weglassen.
-4. In der **Verbindung mit Teamprojekt** Dialogfeld klicken Sie auf **Server**.
-5. In der **Team Foundation Server hinzufügen/entfernen** Dialogfeld klicken Sie auf **hinzufügen**.
-6. In der **Team Foundation Server hinzufügen** Dialogfeld Geben Sie die Details Ihrer TFS-Instanz, und klicken Sie dann auf **OK**.
+    > Wenn Sie Visual Studio 2010 nicht als Administrator ausführen, schlägt der Assistent für neue Team Projekte im letzten Schritt fehl.
+2. Wenn das Dialogfeld **Benutzerkontensteuerung** angezeigt wird, klicken Sie auf **Ja**.
+3. Klicken Sie in Visual Studio im Menü **Team** auf **Verbindung mit Team Foundation Server herstellen**.
+
+    > [!NOTE]
+    > Wenn Sie bereits eine Verbindung mit einem TFS-Server konfiguriert haben, können Sie die Schritte 4-7 weglassen.
+4. Klicken Sie im Dialogfeld **Verbindung mit Team Projekt** auf **Server**.
+5. Klicken Sie im Dialogfeld **Team Foundation Server hinzufügen/entfernen** auf **Hinzufügen**.
+6. Geben Sie im Dialogfeld **Team Foundation Server hinzufügen** die Details der TFS-Instanz an, und klicken Sie dann auf **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image11.png)
-7. In der **Team Foundation Server hinzufügen/entfernen** Dialogfeld klicken Sie auf **schließen**.
-8. In der **Herstellen einer Verbindung mit Teamprojekt** wählen Sie im Dialogfeld die TFS-Instanz, die Sie eine Verbindung herstellen, wählen Sie das Team möchten die projektauflistung zu hinzu, und klicken Sie dann auf **Connect**.
+7. Klicken Sie im Dialogfeld **Team Foundation Server hinzufügen/entfernen** auf **Schließen**.
+8. Wählen Sie im Dialogfeld **mit Team Projekt verbinden** die TFS-Instanz aus, mit der Sie eine Verbindung herstellen möchten, wählen Sie die Team Projekt Sammlung aus, die Sie hinzufügen möchten, und klicken Sie dann auf **verbinden**.
 
     ![](creating-a-team-project-in-tfs/_static/image12.png)
-9. In der **Team Explorer** der rechten Maustaste auf das Team die Projektsammlung, und klicken Sie dann auf **neues Teamprojekt**.
+9. Klicken Sie im **Team Explorer** Fenster mit der rechten Maustaste auf die Teamprojekt Sammlung, und klicken Sie dann auf **Neues Team Projekt**.
 
     ![](creating-a-team-project-in-tfs/_static/image13.png)
-10. In der **neues Teamprojekt** Dialogfeld Geben Sie einen Namen und eine Beschreibung für das Teamprojekt, und klicken Sie dann auf **Weiter**.
+10. Geben Sie im Dialogfeld **Neues Team Projekt** einen Namen und eine Beschreibung für das Teamprojekt ein, und klicken Sie dann auf **weiter**.
 
     > [!NOTE]
-    > Wenn Ihr Teamprojekt Leerzeichen enthält, können Sie einige Probleme auftreten, auf das Internet Information Services (IIS)-Webbereitstellungstool (Web Deploy) verwenden Sie zum Bereitstellen von Paketen aus den Ausgabepfad. Leerzeichen im Pfad können viel zum Ausführen von Befehlen mit Web Deploy erschweren.
+    > Wenn das Teamprojekt Leerzeichen enthält, treten möglicherweise Probleme auf, wenn Sie das Webbereitstellungs Tool (Web deploy) Internetinformationsdienste (IIS) verwenden, um Pakete über den Ausgabepfad bereitzustellen. Leerzeichen im Pfad können das Ausführen Web deploy Befehle viel schwieriger machen.
 
     ![](creating-a-team-project-in-tfs/_static/image14.png)
-11. Auf der **Auswählen einer Prozessvorlage** Seite, wählen Sie eine Prozessvorlage, die Sie verwenden, um den Entwicklungsprozess zu verwalten, und klicken Sie dann auf möchten **Weiter**.
+11. Wählen Sie auf der Seite **Prozess Vorlage auswählen** die Prozess Vorlage aus, die Sie zum Verwalten des Entwicklungsprozesses verwenden möchten, und klicken Sie dann auf **weiter**.
 
     > [!NOTE]
-    > Weitere Informationen zu Prozessvorlagen für TFS finden Sie unter [Prozessvorlagen und Tools](https://msdn.microsoft.com/vstudio/aa718795).
-12. Auf der **Teamwebsiteeinstellungen** Seite, übernehmen Sie die Standardeinstellungen unverändert, und klicken Sie dann auf **Weiter**.
-13. Mit dieser Einstellung erstellt oder identifiziert wird, eine SharePoint-Teamwebsite, die mit dem TFS-Teamprojekt zugeordnet ist. Ihr Entwicklungsteam können diese Website verwalten Dokumentation, Diskussionsthemen teilnehmen, Wiki-Seiten erstellen und verschiedene andere Aufgaben, die nicht mit Code verknüpft sind. Weitere Informationen finden Sie unter [Interaktionen zwischen SharePoint-Produkte und Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx).
-14. Auf der **Quellcode-Verwaltungseinstellungen geben** Seite, übernehmen Sie die Standardeinstellungen unverändert, und klicken Sie dann auf **Weiter**.
-15. Diese Einstellung identifiziert, oder die Position in der TFS-Ordnerhierarchie, die als einen Stammordner für Ihre Inhalte fungieren wird erstellt.
-16. Auf der **Teamprojekteinstellungen bestätigen** auf **Fertig stellen**.
-17. Wenn das neue Teamprojekt wird erfolgreich erstellt, auf die **Teamprojekt wurde erstellt** auf **schließen**.
+    > Weitere Informationen zu Prozessvorlagen für TFS finden Sie unter [Prozessvorlagen und-Tools](https://msdn.microsoft.com/vstudio/aa718795).
+12. Überlassen Sie auf der Seite " **Team Site Einstellungen** " die Standardeinstellungen unverändert, und klicken Sie dann auf **weiter**.
+13. Mit dieser Einstellung wird eine SharePoint-Team Website erstellt oder identifiziert, die dem TFS-Teamprojekt zugeordnet ist. Das Entwicklungsteam kann diese Website zum Verwalten der Dokumentation, zur Teilnahme an Diskussions Threads, zum Erstellen von Wiki-Seiten und zum Ausführen verschiedener anderer Aufgaben verwenden, die nicht mit Code verknüpft sind. Weitere Informationen finden Sie unter [Interaktionen zwischen SharePoint-Produkten und Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx).
+14. Überlassen Sie auf der Seite Quell Code Verwaltungs **Einstellungen angeben** die Standardeinstellungen unverändert, und klicken Sie dann auf **weiter**.
+15. Mit dieser Einstellung wird der Speicherort in der TFS-Ordnerhierarchie identifiziert oder erstellt, der als Stamm Ordner für Ihre Inhalte fungiert.
+16. Klicken Sie auf der Seite **Team Projekteinstellungen bestätigen** auf **Fertig**stellen.
+17. Wenn das neue Teamprojekt erfolgreich erstellt wurde, klicken Sie auf der Seite **Teamprojekt erstellt** auf **Schließen**.
 
-### <a name="add-users-to-a-team-project"></a>Hinzufügen von Benutzern zu einem Teamprojekt
+### <a name="add-users-to-a-team-project"></a>Hinzufügen von Benutzern zu einem Team Projekt
 
-Nun, dass Sie das neue Teamprojekt erstellt haben, können Sie Berechtigungen für Benutzer, damit sie beginnen, hinzufügen und die Zusammenarbeit an Inhalten können gewähren.
+Nachdem Sie das neue Teamprojekt erstellt haben, können Sie Benutzern Berechtigungen erteilen, damit Sie mit dem Hinzufügen und zusammenarbeiten von Inhalten beginnen können.
 
-**Hinzufügen von Benutzern zu einem Teamprojekt**
+**So fügen Sie einem Teamprojekt Benutzer hinzu**
 
-1. In Visual Studio 2010 in der **Team Explorer** Fenster mit der rechten Maustaste in des Teamprojekts, zeigen Sie auf **Teamprojekteinstellungen**, und klicken Sie dann auf **Gruppenmitgliedschaft**.
+1. Klicken Sie in Visual Studio 2010 im Fenster **Team Explorer** mit der rechten Maustaste auf das Teamprojekt, zeigen Sie auf **Teamprojekt Einstellungen**, und klicken Sie dann auf **Gruppenmitgliedschaft**.
 
     ![](creating-a-team-project-in-tfs/_static/image15.png)
-2. Um einen Benutzer hinzufügen, ändern und Entfernen von Code in der quellcodeverwaltung zu aktivieren, müssen Sie ihn hinzufügen der **Mitwirkende** Gruppe.
-3. In der **Projektgruppen** wählen Sie im Dialogfeld die **Mitwirkende** gruppieren, und klicken Sie dann auf **Eigenschaften**.
+2. Um es Benutzern zu ermöglichen, Code unter der Quell Code Verwaltung hinzuzufügen, zu ändern und zu entfernen, müssen Sie Sie der Gruppe **mitwirk** Ende hinzufügen.
+3. Wählen Sie im Dialogfeld **Projektgruppen** die Gruppe **mitwirk** Ende aus, und klicken Sie dann auf **Eigenschaften**.
 
     ![](creating-a-team-project-in-tfs/_static/image16.png)
-4. In der **Team Foundation Server-Gruppeneigenschaften** wählen Sie im Dialogfeld **Windows-Benutzer oder Gruppe**, und klicken Sie dann auf **hinzufügen**.
+4. Wählen Sie im Dialogfeld **Eigenschaften von Team Foundation Server Gruppe** die Option **Windows-Benutzer oder-Gruppe**aus, und klicken Sie dann auf **Hinzufügen**.
 
     ![](creating-a-team-project-in-tfs/_static/image17.png)
-5. In der **Auswahl von Benutzern, Computern oder Gruppen** Dialogfeld geben der Benutzernamen des Benutzers mit dem Teamprojekt hinzufügen möchten. Klicken Sie auf **Namen überprüfen**, und klicken Sie dann auf **OK**.
+5. Geben Sie im Dialogfeld **Benutzer, Computer oder Gruppen auswählen** den Benutzernamen des Benutzers ein, den Sie dem Teamprojekt hinzufügen möchten, klicken Sie auf **Namen überprüfen**, und klicken Sie dann auf **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image18.png)
-6. In der **Team Foundation Server-Gruppeneigenschaften** Dialogfeld klicken Sie auf **OK**.
-7. In der **Projektgruppen** Dialogfeld klicken Sie auf **schließen**.
+6. Klicken Sie im Dialogfeld **Eigenschaften von Team Foundation Server Gruppe** auf **OK**.
+7. Klicken Sie im Dialogfeld **Projektgruppen** auf **Schließen**.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-An diesem Punkt das neue Teamprojekt ist einsatzbereit, und Ihr Entwicklerteam kann beginnen, Hinzufügen von Inhalt und die Zusammenarbeit bei der Entwicklung.
+An diesem Punkt ist Ihr neues Teamprojekt einsatzbereit, und Ihr Entwicklerteam kann mit dem Hinzufügen von Inhalten und der Zusammenarbeit am Entwicklungsprozess beginnen.
 
-Im nächsten Thema, [Inhalten zur Quellcodeverwaltung hinzufügen](adding-content-to-source-control.md), beschreibt, wie Sie Inhalte zur quellcodeverwaltung hinzufügen.
+Im nächsten Thema, [Hinzufügen von Inhalt zur Quell](adding-content-to-source-control.md)Code Verwaltung, wird beschrieben, wie Inhalt zur Quell Code Verwaltung hinzugefügt wird.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Umfassendere Anleitung zum Erstellen von Teamprojekten in TFS finden Sie [Erstellen eines Teamprojekts](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx). Weitere Informationen zum Aktivieren von Benutzern die Erstellung neuer Teamprojekte innerhalb einer Teamprojektsammlung finden Sie unter [Festlegen von Administratorberechtigungen für Teamprojektsammlungen](https://msdn.microsoft.com/library/dd547204.aspx). Weitere Informationen zum Hinzufügen von Benutzern zu Teamprojekten finden Sie unter [Hinzufügen von Benutzern zu Teamprojekten](https://msdn.microsoft.com/library/bb558971.aspx).
+Eine umfassendere Anleitung zum Erstellen von Team Projekten in TFS finden Sie unter [Erstellen eines Teamprojekts](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx). Weitere Informationen zum Aktivieren von Benutzern für das Erstellen neuer Team Projekte in einer Teamprojekt Auflistung finden Sie unter [Festlegen von Administrator Berechtigungen für Teamprojekt Sammlungen](https://msdn.microsoft.com/library/dd547204.aspx). Weitere Informationen zum Hinzufügen von Benutzern zu Team Projekten finden [Sie unter Hinzufügen von Benutzern zu Team Projekten](https://msdn.microsoft.com/library/bb558971.aspx).
 
 > [!div class="step-by-step"]
 > [Zurück](configuring-team-foundation-server-for-web-deployment.md)

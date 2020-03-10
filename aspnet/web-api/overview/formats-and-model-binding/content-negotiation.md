@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/content-negotiation
-title: Inhaltsaushandlung in der ASP.NET Web-API – ASP.NET 4.x
+title: Inhaltsaushandlung in ASP.net-Web-API-ASP.NET 4. x
 author: MikeWasson
-description: Beschreibt, wie HTTP-Aushandlung von Inhalten für ASP.NET von ASP.NET Web-API implementiert 4.x.
+description: Beschreibt, wie ASP.net-Web-API die http-Inhaltsaushandlung für ASP.NET 4. x implementiert.
 ms.author: riande
 ms.date: 05/20/2012
 ms.custom: seoapril2019
@@ -10,34 +10,34 @@ ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
 ms.openlocfilehash: cb6668ff6de276d3778ce11f27ce597d8bf1f9c7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59380158"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504657"
 ---
-# <a name="content-negotiation-in-aspnet-web-api"></a>Aushandlung von Inhalten in ASP.NET Web-API
+# <a name="content-negotiation-in-aspnet-web-api"></a>Inhalts Aushandlung in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-In diesem Artikel wird beschrieben, wie die Aushandlung von Inhalten für ASP.NET von ASP.NET Web-API implementiert 4.x.
+In diesem Artikel wird beschrieben, wie ASP.net-Web-API die Inhaltsaushandlung für ASP.NET 4. x implementiert.
 
-Die HTTP-Spezifikation (RFC 2616) definiert die Aushandlung von Inhalten als "der Vorgang der Auswahl der besten Darstellung für eine bestimmte Antwort, wenn mehrere Darstellungen verfügbar sind." Der primäre Mechanismus für die Content Negotiation in HTTP gibt, dass diese Header anfordern:
+Die HTTP-Spezifikation (RFC 2616) definiert die Inhaltsaushandlung als "der Prozess der Auswahl der optimalen Darstellung für eine bestimmte Antwort, wenn mehrere Darstellungen verfügbar sind". Der primäre Mechanismus für die Inhaltsaushandlung in http sind folgende Anforderungs Header:
 
-- **Akzeptiert:** Welche Medientypen sind zulässig, für die Antwort, z. B. "Application/Json", "Application/Xml" oder einen benutzerdefinierten Media-Typ, z. B. &quot;application/vnd.example+xml&quot;
-- **Accept-Charset:** Welche Zeichensätze sind zulässig, z. B. UTF-8 oder ISO 8859-1.
-- **Accept-Encoding:** Welche inhaltscodierungen sind zulässig, z. B. Gzip.
-- **Accept-Language:** Die bevorzugte Sprache wie z. B. "En-us".
+- **Akzeptieren:** Welche Medientypen für die Antwort zulässig sind, z. b. "application/json", "Application/XML" oder ein benutzerdefinierter Medientyp, z. b. &quot;application/vnd. example + XML&quot;
+- **Accept-Charset:** Die zulässigen Zeichensätze, wie z. b. UTF-8 oder ISO 8859-1.
+- **Accept-Encoding:** Welche Inhalts Codierungen zulässig sind, z. b. gzip.
+- **Accept-Language:** Die bevorzugte natürliche Sprache, wie z. b. "en-US".
 
-Der Server kann auch andere Teile der HTTP-Anforderung überprüfen. Z. B. wenn die Anforderung einen X-Requested-With-Header enthält, kann, der angibt, einer AJAX-Anforderung, die Server standardmäßig in JSON, wenn keine Accept-Header vorhanden ist.
+Der Server kann auch andere Teile der HTTP-Anforderung überprüfen. Wenn die Anforderung z. b. einen X-angeforderten-with-Header enthält, der eine AJAX-Anforderung angibt, wird der Server möglicherweise standardmäßig JSON verwendet, wenn kein Accept-Header vorhanden ist.
 
-In diesem Artikel betrachten wir, wie Web-API den Accept "und" Accept-Charset-Header verwendet. (Zu diesem Zeitpunkt besteht keine integrierte Unterstützung für den Accept-Encoding "oder" Accept-Language.)
+In diesem Artikel wird erläutert, wie die Web-API die Accept-und Accept-Charset-Header verwendet. (Zu diesem Zeitpunkt gibt es keine integrierte Unterstützung für Accept-Encoding oder Accept-Language.)
 
 ## <a name="serialization"></a>Serialisierung
 
-Wenn ein Web-API-Controller im CLR-Typ eine Ressource zurückgibt, wird die Pipeline serialisiert den Rückgabewert und schreibt sie in den HTTP-Antworttext.
+Wenn ein Web-API-Controller eine Ressource als CLR-Typ zurückgibt, serialisiert die Pipeline den Rückgabewert und schreibt ihn in den HTTP-Antworttext.
 
-Betrachten Sie beispielsweise die folgende Controlleraktion:
+Sehen Sie sich beispielsweise die folgende Controller Aktion an:
 
 [!code-csharp[Main](content-negotiation/samples/sample1.cs)]
 
@@ -45,64 +45,64 @@ Ein Client kann diese HTTP-Anforderung senden:
 
 [!code-console[Main](content-negotiation/samples/sample2.cmd)]
 
-Im Gegenzug kann der Server senden:
+Als Antwort sendet der Server möglicherweise Folgendes:
 
 [!code-console[Main](content-negotiation/samples/sample3.cmd)]
 
-In diesem Beispiel ist der Client angefordert hat, JSON, Javascript oder "anything" (\*/\*). Der Server hat eine JSON-Darstellung der `Product` Objekt. Beachten Sie, die der Content-Type-Header in der Antwort, um festgelegt wird &quot;Application/Json&quot;.
+In diesem Beispiel hat der Client entweder JSON, JavaScript oder "Anything" (\*/\*) angefordert. Der Server hat mit einer JSON-Darstellung des `Product` Objekts geantwortet. Beachten Sie, dass der Content-Type-Header in der Antwort auf &quot;Application/JSON-&quot;festgelegt ist.
 
-Ein Controller kann auch Zurückgeben einer **HttpResponseMessage** Objekt. Rufen Sie zum Angeben einer CLR-Objekt, für den Antworttext der **CreateResponse** Erweiterungsmethode:
+Ein Controller kann auch ein **HttpResponseMessage** -Objekt zurückgeben. Um ein CLR-Objekt für den Antworttext anzugeben, müssen Sie die Erweiterungsmethode " **samateresponse** " aufrufen:
 
 [!code-csharp[Main](content-negotiation/samples/sample4.cs)]
 
-Diese Option erhalten Sie mehr Kontrolle über die Details der Antwort. Festlegen den Statuscode HTTP-Header hinzufügen und so weiter.
+Diese Option ermöglicht Ihnen mehr Kontrolle über die Details der Antwort. Sie können den Statuscode festlegen, HTTP-Header hinzufügen usw.
 
-Das Objekt, das die Ressource serialisiert wird aufgerufen, eine *medienformatierer*. Medienformatierer leiten Sie von der **MediaTypeFormatter** Klasse. Web-API stellt medienformatierer für XML und JSON, und Sie können benutzerdefinierte Formatierer zur Unterstützung anderer Medientypen erstellen. Weitere Informationen über das Schreiben eines benutzerdefinierten Formatierers finden Sie unter [Medienformatierer](media-formatters.md).
+Das Objekt, das die Ressource serialisiert, wird als *medienformatierer*bezeichnet. Medien Formatierer werden von der **mediatypeer Formatter** -Klasse abgeleitet. Die Web-API stellt medienformatierer für XML und JSON bereit, und Sie können benutzerdefinierte Formatierer erstellen, um andere Medientypen zu unterstützen. Weitere Informationen zum Schreiben eines benutzerdefinierten Formatierers finden Sie unter [medienformatierer](media-formatters.md).
 
-## <a name="how-content-negotiation-works"></a>Wie funktioniert der Aushandlung
+## <a name="how-content-negotiation-works"></a>So funktioniert die Inhalts Aushandlung
 
-Die Pipeline ruft zunächst die **IContentNegotiator** -Diensts von der **HttpConfiguration** Objekt. Er ruft auch die Liste der medienformatierer aus der **HttpConfiguration.Formatters** Auflistung.
+Zuerst Ruft die Pipeline den **icontentvermittler** -Dienst aus dem **httpconfiguration** -Objekt ab. Außerdem wird die Liste der Medien Formatierer aus der **httpconfiguration. Formatierungs Programme** -Auflistung abgerufen.
 
-Als Nächstes die Pipeline ruft **IContentNegotiator.Negotiate**, und übergeben Sie:
+Als nächstes Ruft die Pipeline **icontentverhandlers. aushandeln**auf und übergibt Folgendes:
 
-- Der Typ des zu serialisierenden Objekts
-- Die Auflistung der medienformatierer
+- Der Typ des zu serialisierenden Objekts.
+- Die Auflistung der Medien Formatierer.
 - Die HTTP-Anforderung
 
-Die **Negotiate** Methodenrückgabe zwei Angaben:
+Von der **Aushandlungs** Methode werden zwei Informationen zurückgegeben:
 
-- Die zu verwendende Formatierer
-- Der Medientyp für die Antwort
+- Zu verwendende Formatierer
+- Der Medientyp für die Antwort.
 
-Wenn kein Formatierer gefunden wird, die **Negotiate** Methodenrückgabe **null**, und der Client empfängt HTTP-Fehler 406 (nicht akzeptabel).
+Wenn kein Formatierer gefunden wird, gibt die **Aushandlungs** Methode **null**zurück, und der Client empfängt den HTTP-Fehler 406 (nicht akzeptabel).
 
-Der folgende Code zeigt, wie ein Controller die Aushandlung von Inhalten direkt aufrufen kann:
+Der folgende Code zeigt, wie ein Controller die Inhaltsaushandlung direkt aufrufen kann:
 
 [!code-csharp[Main](content-negotiation/samples/sample5.cs)]
 
-Dieser Code entspricht, was die Pipeline automatisch ausgeführt.
+Dieser Code entspricht dem automatischen Funktionsumfang der Pipeline.
 
-## <a name="default-content-negotiator"></a>Standardmäßigen Negotiator
+## <a name="default-content-negotiator"></a>Standard inhaltsverhandler
 
-Die **DefaultContentNegotiator** Klasse stellt die Standardimplementierung von **IContentNegotiator**. Verschiedene Kriterien verwendet, um ein Formatierungsprogramm zu wählen.
+Die **defaultcontentverhandlerklasse** stellt die Standard Implementierung von **icontentvermittler**bereit. Es werden verschiedene Kriterien verwendet, um einen Formatierer auszuwählen.
 
-Zunächst muss der Formatierer den Typ serialisieren können. Dies wird durch den Aufruf überprüft **MediaTypeFormatter.CanWriteType**.
+Zuerst muss der Formatierer den Typ serialisieren können. Dies wird durch den Aufruf von **mediatypformatter. CanWrite tetype**überprüft.
 
-Als Nächstes das inhaltsaushandlungsmodul jeder Formatierer untersucht und ausgewertet wird, wie gut sie die HTTP-Anforderung übereinstimmt. Um die Übereinstimmung zu evaluieren, untersucht das inhaltsaushandlungsmodul zwei Dinge in das Formatierungsprogramm:
+Als Nächstes untersucht der inhaltsverhandler jeden Formatierer und wertet aus, wie gut er mit der HTTP-Anforderung übereinstimmt. Zum Auswerten der Übereinstimmung prüft der inhaltsverhandler zwei Dinge im Formatierer:
 
-- Die **SupportedMediaTypes** -Auflistung, die eine Liste der unterstützten Medientypen enthält. Das inhaltsaushandlungsmodul versucht, diese Liste für die Anforderung Accept-Header. Beachten Sie, dass der Accept-Header Bereiche enthalten kann. Beispielsweise ist "Text/Plain" eine Übereinstimmung für den Text /\* oder \* / \*.
-- Die **MediaTypeMappings** -Auflistung, die eine Liste der enthält **MediaTypeMapping** Objekte. Die **MediaTypeMapping** -Klasse stellt ein allgemeines Verfahren zum HTTP-Anforderungen mit Medientypen überein. Beispielsweise können sie einen benutzerdefinierten HTTP-Header einen bestimmten Medientyp zuordnen.
+- Die **supportedmediatypes** -Auflistung, die eine Liste der unterstützten Medientypen enthält. Der inhaltsverhander versucht, diese Liste mit dem Accept-Header der Anforderung abzugleichen. Beachten Sie, dass der Accept-Header Bereiche enthalten kann. "Text/Plain" ist z. b. eine Entsprechung für Text/\* oder \*/\*.
+- Die **mediatypeer Mappings** -Auflistung, die eine Liste von **mediatypeer Mapping** -Objekten enthält. Die **mediatypeer Mapping** -Klasse stellt eine generische Methode zum Zuordnen von HTTP-Anforderungen mit Medientypen bereit. Beispielsweise kann ein benutzerdefinierter HTTP-Header einem bestimmten Medientyp zugeordnet werden.
 
-Es sind mehrere übereinstimmt, die Übereinstimmung mit der höchsten Qualität Faktor gewinnt. Zum Beispiel:
+Wenn mehrere Übereinstimmungen vorhanden sind, gewinnt die Übereinstimmung mit dem höchsten Qualitätsfaktor. Beispiel:
 
 [!code-console[Main](content-negotiation/samples/sample6.cmd)]
 
-In diesem Beispiel hat Application/Json eine implizite Qualitätsfaktor 1.0, daher ist es bevorzugt über Application/Xml.
+In diesem Beispiel hat Application/JSON einen impliziten Qualitätsfaktor von 1,0, daher wird er gegenüber Application/XML bevorzugt.
 
-Wenn keine Übereinstimmungen gefunden werden, versucht das inhaltsaushandlungsmodul entsprechend auf den Medientyp des Anforderungstexts, sofern vorhanden. Wenn die Anforderung JSON-Daten enthält, sucht das inhaltsaushandlungsmodul z. B. für ein JSON-Formatierungsprogramm.
+Wenn keine Übereinstimmungen gefunden werden, versucht der inhaltsverhandler, ggf. mit dem Medientyp des Anforderungs Texts abzugleichen. Wenn die Anforderung beispielsweise JSON-Daten enthält, sucht der inhaltsverhandler nach einem JSON-Formatierer.
 
-Wenn noch keine Übereinstimmungen vorhanden sind, wählt das inhaltsaushandlungsmodul einfach das erste Formatierungsprogramm, das den Typ serialisieren kann.
+Wenn noch keine Übereinstimmungen vorhanden sind, wählt der Inhalts Vermittler einfach das erste formatierungprogramm aus, das den Typ serialisieren kann.
 
 ## <a name="selecting-a-character-encoding"></a>Auswählen einer Zeichencodierung
 
-Nachdem ein Formatierer ausgewählt wurde, das inhaltsaushandlungsmodul wählt die beste zeichencodierung anhand der **SupportedEncodings** Eigenschaft für das Formatierungsprogramm und Abgleichen mit dem Accept-Charset-Header in der Anforderung (falls vorhanden).
+Nachdem ein Formatierungs Programm ausgewählt wurde, wählt der inhaltsverhandler die beste Zeichencodierung aus, indem er die **supportedencodings** -Eigenschaft des Formatierungs Programms prüft und ihn mit dem Accept-Charset-Header in der Anforderung abruft (sofern vorhanden).

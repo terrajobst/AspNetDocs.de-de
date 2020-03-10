@@ -1,229 +1,229 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
-title: Erstellen eine Serverfarm mit Webfarmframework | Microsoft-Dokumentation
+title: Erstellen einer Server Farm mit dem Webfarm Framework | Microsoft-Dokumentation
 author: jrjlee
-description: Dieses Thema beschreibt, wie Sie mit der Web Farm Framework (WFF) 2.0 zum Erstellen und Konfigurieren einer Webfarm-Server aus einer Auflistung von Servern.
+description: In diesem Thema wird beschrieben, wie das Web Farm Framework (WFF) 2,0 verwendet wird, um eine Webserver Farm aus einer Sammlung von Servern zu erstellen und zu konfigurieren.
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 656dd06d-806c-467c-863d-9fc45e5ba3ab
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
 ms.openlocfilehash: 204996514bed336e60ab77f184a923f04e7e2bba
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106905"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517497"
 ---
 # <a name="creating-a-server-farm-with-the-web-farm-framework"></a>Erstellen einer Serverfarm mit dem Webfarmframework
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Dieses Thema beschreibt, wie Sie mit der Web Farm Framework (WFF) 2.0 zum Erstellen und Konfigurieren einer Webfarm-Server aus einer Auflistung von Servern.
+> In diesem Thema wird beschrieben, wie das Web Farm Framework (WFF) 2,0 verwendet wird, um eine Webserver Farm aus einer Sammlung von Servern zu erstellen und zu konfigurieren.
 
-WFF können Sie Web Platform-Produkte und Komponenten, Webanwendungen, Websites und Konfigurationseinstellungen auf mehrere Lastenausgleich-Webserver zu synchronisieren. In Szenarien, in denen man mehr als eine Webserver, wie z.B. Staging-und produktionsumgebungen, kann dies den Prozess für Bereitstellung und Konfiguration-GUIs erheblich vereinfachen. Sie können eine Webanwendung auf einem einzelnen Server bereitstellen&#x2014;der *Primärserver*&#x2014;und WFF werden automatisch repliziert, die dieser Webanwendung auf alle anderen Webservern in der Serverfarm.
+Mit WFF können Sie Webplattform-Produkte und-Komponenten, Webanwendungen, Websites und Konfigurationseinstellungen auf mehreren Webservern mit Lastenausgleich synchronisieren. In Szenarien, in denen Sie mehr als einen Webserver benötigen, wie etwa Staging-und Produktionsumgebungen, kann dies den Bereitstellungs-und Konfigurationsprozess erheblich vereinfachen. Sie können eine Webanwendung auf einem einzelnen Server&#x2014;auf dem *primären Server*&#x2014;bereitstellen, und WFF repliziert diese Webanwendung automatisch auf allen anderen Webservern in der Serverfarm.
 
-## <a name="understanding-the-web-farm-framework"></a>Grundlegendes zu Webfarmframework
+## <a name="understanding-the-web-farm-framework"></a>Grundlegendes zum Webfarm-Framework
 
-Sie können die WFF 2.0 verwenden, bereitstellen, verwalten und Bereitstellen von Inhalten für eine Gruppe von Webservern. Eine WFF-Bereitstellung besteht aus drei der wichtigsten Serverrollen:
+Sie können WFF 2,0 verwenden, um Inhalte für eine Gruppe von Webservern bereitzustellen, zu verwalten und bereitzustellen. Eine WFF-Bereitstellung besteht aus drei wichtigen Server Rollen:
 
-- Die *Controllerserver*. Sie verwenden diesen Server zum Erstellen und Konfigurieren von WFF-Serverfarmen. Der Controller-Server verwaltet die Synchronisierung von webplattformkomponenten, Konfigurationseinstellungen und Anwendungen zwischen den Webservern in einer Serverfarm. Sie WFF-2.0 installieren, auf dem Controllerserver, und der Controller-Server wird wiederum der WFF-Agent auf allen Servern in einer Serverfarm installiert. Der Controller-Server gehört nicht grundsätzlich zu keiner WFF-Serverfarm und ein einzelnen Controller-Server kann mehrere Serverfarmen verwalten. In diesem Szenario verwenden Sie eine einzelne WFF-Controller-Server zu erstellen und Verwalten der staging-Serverfarm und die Serverfarm für die Produktion.
-- Die *Primärserver*. Jede WFF-Server-Farm enthält einen einzelnen primären Server. Wenn Sie Webkomponenten für die Plattform zu installieren oder Bereitstellen von Anwendungen auf dem primären Server, synchronisiert der WFF Ihre Änderungen an allen anderen Servern in der Serverfarm.
-- Die *Sekundärserver*. Jede WFF-Server-Farm enthält mindestens einen sekundären Server. Mit dem primären Server vorgenommene Änderungen werden auf jedem sekundären Server innerhalb der Serverfarm repliziert.
+- Der *Controller Server*. Sie verwenden diesen Server, um WFF-Serverfarmen zu erstellen und zu konfigurieren. Der Controller Server verwaltet die Synchronisierung von webplatt Form Komponenten, Konfigurationseinstellungen und Anwendungen zwischen den Webservern in einer Serverfarm. Sie installieren WFF 2,0 auf dem Controller Server, und der Controller Server installiert wiederum den WFF-Agent auf allen Servern in einer Serverfarm. Der Controller Server gehört nicht konzeptionell zu einer WFF-Serverfarm, und ein einzelner Controller Server kann mehrere Serverfarmen verwalten. In diesem Szenario verwenden Sie einen einzelnen WFF-Controller Server, um die stagingserverfarm und die Produktionsserver Farm zu erstellen und zu verwalten.
+- Der *primäre Server*. Jede WFF-Serverfarm enthält einen einzelnen primären Server. Wenn Sie webplatt Form Komponenten installieren oder Anwendungen auf dem primären Server bereitstellen, synchronisiert das WFF die Änderungen mit allen anderen Servern in der Serverfarm.
+- Der *sekundäre Server*. Jede WFF-Serverfarm umfasst mindestens einen sekundären Server. Alle Änderungen, die Sie am primären Server vornehmen, werden auf jeden sekundären Server innerhalb der Serverfarm repliziert.
 
-Dies zeigt, wie diese Serverrollen für die Staging- und produktionsumgebungen Umgebungen von Fabrikam, Inc. beziehen:
+Dies zeigt die Beziehung zwischen diesen Server Rollen und den Staging-und Produktionsumgebungen von Fabrikam, Inc.:
 
 ![](creating-a-server-farm-with-the-web-farm-framework/_static/image1.png)
 
-In diesem Szenario werden die Staging- und produktionsumgebung sowohl als WFF-Serverfarmen konfiguriert. Einem einzelnen WFF-Controller-Server verwaltet die beiden Farmen. In der Serverfarm werden alle Änderungen an den primären Server auf jedem sekundären Server repliziert.
+In diesem Szenario sind die Stagingumgebung und die Produktionsumgebung beide als WFF-Serverfarmen konfiguriert. Ein einzelner WFF-Controller Server verwaltet beide Farmen. In jeder Serverfarm werden alle Änderungen am primären Server auf jedem sekundären Server repliziert.
 
-Bevor Sie beginnen, konfigurieren Sie Ihre Umgebungen Staging und Produktion, empfehlen wir, lesen Sie diesen Artikel mit den grundlegenden Konzepten von WFF 2.0 vertraut:
+Bevor Sie mit der Konfiguration der Staging-und Produktionsumgebungen beginnen, sollten Sie diese Artikel lesen, um sich mit den wichtigsten Konzepten von WFF 2,0 vertraut zu machen:
 
-- [Übersicht über das Webfarmframework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805126)
-- [Das Einrichten einer Serverfarm mit Web Farm Framework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805127)
-- [System- und Plattformanforderungen zum Webfarmframework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805128)
+- [Übersicht über das Web Farm Framework 2,0 für IIS 7](https://go.microsoft.com/?linkid=9805126)
+- [Einrichten einer Server Farm mit dem Webfarm-Framework 2,0 für IIS 7](https://go.microsoft.com/?linkid=9805127)
+- [System-und Platt Form Anforderungen für das Web Farm Framework 2,0 für IIS 7](https://go.microsoft.com/?linkid=9805128)
 
-## <a name="task-overview"></a>Übersicht über den Task
+## <a name="task-overview"></a>Aufgaben Übersicht
 
-Um die Aufgaben und exemplarische Vorgehensweisen in diesem Thema abzuschließen, benötigen Sie mindestens drei Server&#x2014;einen WFF-Controller, eine primäre Web-Server für die Serverfarm und einen oder mehrere sekundäre Webserver für die Serverfarm. Sie können weitere sekundäre Server mit einer Serverfarm WFF zu einem beliebigen Zeitpunkt hinzufügen. Auf einer hohen Ebene zum Erstellen und Konfigurieren einer WFF-Serverfarm für die Staging- oder produktionsumgebung Umgebung benötigen Sie zu:
+Um die Aufgaben und exemplarischen Vorgehensweisen in diesem Thema abzuschließen, benötigen Sie mindestens drei Server&#x2014;, einen WFF-Controller, einen primären Webserver für die Serverfarm und einen oder mehrere sekundäre Webserver für die Serverfarm. Sie können einer WFF-Serverfarm jederzeit weitere sekundäre Server hinzufügen. Auf hoher Ebene müssen Sie Folgendes tun, um eine WFF-Serverfarm für ihre Staging-oder Produktionsumgebung zu erstellen und zu konfigurieren:
 
-- Erstellen Sie einen Controllerserver, durch die Installation von Internet Information Services (IIS) 7.5 und WFF-2.0.
-- Bereiten Sie primäre und sekundäre Server, indem Sie eine allgemeine Administratorkonto erstellen und Konfigurieren von Firewallausnahmen.
-- Konfigurieren Sie die Serverfarm mit IIS-Manager auf dem Controllerserver.
-- Konfigurieren des Lastenausgleichs mit IIS Application Request Routing (ARR) oder eine alternative Technologie für den Lastenausgleich.
+- Erstellen Sie einen Controller Server, indem Sie Internetinformationsdienste (IIS) 7,5 und WFF 2,0 installieren.
+- Bereiten Sie primäre und sekundäre Server vor, indem Sie ein gemeinsames Administrator Konto erstellen und Firewallausnahmen konfigurieren.
+- Konfigurieren Sie die Serverfarm mithilfe von IIS-Manager auf dem Controller Server.
+- Konfigurieren Sie den Lastenausgleich mithilfe von IIS Application Request Routing (arr) oder einer alternativen Lasten Ausgleichs Technologie.
 
-Die Aufgaben und exemplarische Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie mit "sauberen" Server-Builds, die unter Windows Server 2008 R2 beginnen. Bevor Sie beginnen, können Sie für jeden Server, stellen Sie sicher, dass:
+Bei den Aufgaben und exemplarischen Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie mit Clean Server Builds beginnen, die Windows Server 2008 R2 ausführen. Bevor Sie beginnen, stellen Sie für jeden Server Folgendes sicher:
 
 - Windows Server 2008 R2 Service Pack 1 und alle verfügbaren Updates werden installiert.
-- Der Server ist die Domäne eingebunden.
-- Der Server hat eine statische IP-Adresse.
+- Der Server ist einer Domäne beigetreten.
+- Der Server verfügt über eine statische IP-Adresse.
 
 > [!NOTE]
-> Weitere Informationen zum Einbinden von Computern in einer Domäne, finden Sie unter [Hinzufügen von Computern zur Domäne und Anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren von statischen IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx).
+> Weitere Informationen zum Hinzufügen von Computern zu einer Domäne finden Sie unter [Hinzufügen von Computern zur Domäne und anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren statischer IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx).
 
-## <a name="create-the-wff-controller-server"></a>Erstellen Sie den WFF-Controller-Server
+## <a name="create-the-wff-controller-server"></a>Erstellen des WFF-Controller Servers
 
-Um einen WFF-Controller-Server zu erstellen, müssen Sie IIS 7 oder höher und WFF 2.0 oder höher installieren. Im Hintergrund verwendet WFF das IIS-Webbereitstellungstool (Web Deploy) 2.x auf die Server in der Farm zu synchronisieren. Wenn Sie den Webplattform-Installer verwenden, um WFF zu installieren, wird automatisch das Installationsprogramm herunterladen und installieren Sie Web Deploy für Sie.
+Zum Erstellen eines WFF-Controller Servers müssen Sie IIS 7 oder höher und WFF 2,0 oder höher installieren. Im Untertitel verwendet WFF das IIS-Webbereitstellungs Tool (Web deploy) 2. x, um die Server in der Farm zu synchronisieren. Wenn Sie den Webplattform-Installer zum Installieren von WFF verwenden, lädt der Installer automatisch Web deploy für Sie herunter und installiert sie.
 
-**Um den WFF-Controller-Server zu erstellen.**
+**So erstellen Sie den WFF-Controller Server**
 
-1. Herunterladen und Installieren der [Webplattform-Installer](https://go.microsoft.com/?linkid=9739157).
-2. Am oberen Rand der **Web Platform Installer 3.0** Fenster, klicken Sie auf **Produkte**.
-3. Klicken Sie auf der linken Seite des Fensters, klicken Sie im Navigationsbereich auf **Server**.
-4. In der **empfohlenen IIS 7-Konfiguration** auf **hinzufügen**.
-5. In der <strong>Web Farm Framework 2.</strong> <em>x</em> auf <strong>hinzufügen</strong>.
+1. Herunterladen und Installieren des [Webplattform-Installers](https://go.microsoft.com/?linkid=9739157).
+2. Klicken Sie oben im Fenster **Webplattform-Installer 3,0** auf **Produkte**.
+3. Klicken Sie auf der linken Seite des Fensters im Navigationsbereich auf **Server**.
+4. Klicken Sie in der Zeile mit der **empfohlenen IIS 7-Konfiguration** auf **Hinzufügen**.
+5. Im <strong>Webfarm Framework 2.</strong> <em>x</em> Zeile, klicken Sie auf <strong>Hinzufügen</strong>.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
-6. Klicken Sie auf **Installieren**. Beachten Sie, dass der Webplattform-Installer die Installationsliste das Tool zur Webbereitstellung, zusammen mit verschiedenen anderen Abhängigkeiten hinzugefügt hat.
+6. Klicken Sie auf **Installieren**. Beachten Sie, dass der Webplattform-Installer der Installationsliste das Webbereitstellungs Tool zusammen mit verschiedenen anderen Abhängigkeiten hinzugefügt hat.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image3.png)
-7. Lesen Sie die Lizenzbedingungen, und wenn Sie den Bedingungen zustimmen, klicken Sie auf **akzeptieren**.
-8. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig stellen**, und schließen Sie dann die **Web Platform Installer 3.0** Fenster.
+7. Lesen Sie die Lizenzbedingungen, und klicken Sie auf **akzeptieren**, wenn Sie den Bedingungen zustimmen.
+8. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig**stellen, und schließen Sie dann das Fenster **Webplattform-Installer 3,0** .
 
-## <a name="configure-the-primary-and-secondary-servers"></a>Konfigurieren Sie die primären und sekundären Server
+## <a name="configure-the-primary-and-secondary-servers"></a>Konfigurieren der primären und sekundären Server
 
-Vor der Erstellung einer WFF-Serverfarm sollten Sie einige Vorbereitungsaufgaben zur auf den Servern ausführen, die der Farm bilden:
+Bevor Sie eine WFF-Serverfarm erstellen, sollten Sie einige Vorbereitungsaufgaben auf den Webservern ausführen, die die Farm bilden:
 
-- Hinzufügen von Firewallausnahmen, ermöglichen die **Kernnetzwerk**, **Remoteverwaltung**, und **Datei- und Druckerfreigabe** Funktionen für die Kommunikation mit dem WFF-Controller-Server .
-- Erstellen Sie ein Domänenkonto (z. B. **FABRIKAM\stagingfarm**) in Active Directory und fügen sie der lokalen Administratorgruppe auf jedem Server hinzu. Sie verwenden dieses Konto als das Server-Farm-Administratorkonto beim Erstellen der Serverfarm.
+- Fügen Sie Firewallausnahmen hinzu, um die Kommunikation zwischen den Funktionen **Netzwerk**, **Remote Verwaltung**und **Datei-und Druckerfreigabe** mit dem WFF-Controller Server zuzulassen.
+- Erstellen Sie in Active Directory ein Domänen Konto (z. b. **fabrikam\stagingfarm**), und fügen Sie es der lokalen Gruppe Administratoren auf jedem Server hinzu. Sie verwenden dieses Konto als Administrator Konto für die Serverfarm, wenn Sie die Serverfarm erstellen.
 
-Weitere Informationen zum Konfigurieren von dieser Firewallausnahmen in der Windows-Firewall finden Sie unter [System- und Plattformanforderungen für mit der Web Farm Framework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805128). Andere Firewallsysteme finden Sie in der Produktdokumentation.
+Weitere Informationen zum Konfigurieren dieser Firewallausnahmen in der Windows-Firewall finden Sie unter [System-und Platt Form Anforderungen für das Web Farm Framework 2,0 für IIS 7](https://go.microsoft.com/?linkid=9805128). Informationen zu anderen Firewallsystemen finden Sie in der Produktdokumentation.
 
-Sie können im nächste Verfahren verwenden, ein Domänenkonto der lokalen Administratorengruppe in Windows Server 2008 R2 hinzu. Führen Sie dieses Verfahren auf jedem Server, die Sie mit der Serverfarm hinzufügen möchten&#x2014;in anderen Worten, das gleiche Domänenkonto auf der lokalen Administratorgruppe auf dem primären Server und auf jedem sekundären Server hinzufügen.
+Sie können das nächste Verfahren verwenden, um der lokalen Administrator Gruppe in Windows Server 2008 R2 ein Domänen Konto hinzuzufügen. Führen Sie diese Schritte auf jedem Server aus, den Sie der Serverfarm&#x2014;hinzufügen möchten. Fügen Sie der lokalen Gruppe Administratoren auf dem primären Server und auf jedem sekundären Server das gleiche Domänen Konto hinzu.
 
-**Ein Domänenkonto der lokalen Administratorgruppe hinzu**
+**So fügen Sie der lokalen Gruppe "Administratoren" ein Domänen Konto hinzu**
 
-1. Auf der **starten** Startmenü **Verwaltung**, und klicken Sie dann auf **Server-Manager**.
-2. In der **Server-Manager** Fenster im Strukturansichtsbereich, erweitern Sie **Konfiguration**, erweitern Sie **lokale Benutzer und Gruppen**, und klicken Sie dann auf **Gruppen**.
+1. Zeigen Sie im **Startmenü** auf **Verwaltung**, und klicken Sie dann auf **Server-Manager**.
+2. Erweitern Sie im Fenster **Server-Manager** im Struktur Ansichts Bereich **Konfiguration**, erweitern Sie **lokale Benutzer und Gruppen**, und klicken Sie dann auf **Gruppen**.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image4.png)
-3. In der **Gruppen** Bereich doppelklicken Sie auf **Administratoren**.
-4. In der **Administratoreigenschaften** Dialogfeld klicken Sie auf **hinzufügen**.
-5. In der **Auswahl von Benutzern, Computern, Dienstkonten oder Gruppen** (Dialogfeld), Typ (oder Durchsuchen) auf Ihrem Domänenkonto anzumelden (z. B. **FABRIKAM\stagingfarm**), und klicken Sie dann auf **OK**.
+3. Doppelklicken Sie im Bereich **Gruppen** auf **Administratoren**.
+4. Klicken Sie im Dialogfeld **Administrator Eigenschaften** auf **Hinzufügen**.
+5. Geben Sie im Dialogfeld **Benutzer, Computer, Dienst Konten oder Gruppen auswählen** das Domänen Konto (oder durchsuchen) (z. b. **fabrikam\stagingfarm**) ein, und klicken Sie dann auf **OK**.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image5.png)
-6. In der **Administratoreigenschaften** Dialogfeld klicken Sie auf **OK**.
+6. Klicken Sie im Dialogfeld **Administrator Eigenschaften** auf **OK**.
 
-Ihre Server sind jetzt mit einer Serverfarm hinzugefügt werden. Wenn der primäre Server, können Sie den Server, um die Anforderungen Ihrer Anwendung vor oder nach dem Erstellen der Serverfarm konfigurieren&#x2014;in beiden Fällen werden die WFF Server synchronisiert, durch die Bereitstellung der gleichen Produkte, Komponenten oder der Konfiguration mit Ihren sekundären Servern. Aus Gründen der Einfachheit halber wird in in diesem Tutorial davon ausgegangen, dass Sie den primären Server konfigurieren müssen, wenn Sie die Serverfarm erstellt haben.
+Ihre Server können nun einer Serverfarm hinzugefügt werden. Im Fall des primären Servers können Sie den Server so konfigurieren, dass er die Anwendungsanforderungen erfüllt, bevor oder nachdem Sie die Serverfarm&#x2014;in beiden Fällen erstellt haben. das WFF synchronisiert die Server, indem die gleichen Produkte, Komponenten oder Konfigurationen auf den sekundären Servern bereitgestellt werden. Der Einfachheit halber wird in diesem Tutorial davon ausgegangen, dass Sie den primären Server konfigurieren, wenn Sie die Serverfarm erstellt haben.
 
-## <a name="create-the-wff-server-farm"></a>Erstellen Sie die WFF-Serverfarm
+## <a name="create-the-wff-server-farm"></a>Erstellen der WFF-Server Farm
 
-An diesem Punkt sind alle Ihre Server mit einer Serverfarm WFF hinzugefügt werden:
+An diesem Punkt können alle Ihre Server einer WFF-Serverfarm hinzugefügt werden:
 
-- Sie haben die WFF auf Controller-Server installiert.
-- Sie haben die Firewallausnahmen auf Ihre primären und sekundären Webserver konfiguriert.
-- Sie haben ein Domänenkonto zur lokalen Administratorgruppe auf Ihren Webservern mit primären und sekundären hinzugefügt.
+- Sie haben WFF auf dem Controller Server installiert.
+- Sie haben Firewallausnahmen auf den primären und sekundären Webservern konfiguriert.
+- Sie haben der lokalen Gruppe "Administratoren" auf Ihren primären und sekundären Webservern ein Domänen Konto hinzugefügt.
 
-Der nächste Schritt ist die Erstellung die Serverfarm in WFF. Sie können in IIS-Manager auf dem WFF-Controller-Server dazu.
+Der nächste Schritt ist das Erstellen der Serverfarm in WFF. Dies können Sie über den IIS-Manager auf dem WFF Controller-Server tun.
 
-**Um eine WFF-Serverfarm zu erstellen.**
+**So erstellen Sie eine WFF-Serverfarm**
 
-1. Auf dem WFF-Controller-Server auf die **starten** , zeigen Sie auf **Verwaltung**, und klicken Sie dann auf **(Internet Information Services, IIS) Manager**.
-2. In der **Verbindungen** Bereich, erweitern Sie den lokalen Server-Knoten, mit der rechten Maustaste **Serverfarmen**, und klicken Sie dann auf **Serverfarm erstellen**.
-3. In der **Serverfarm erstellen** Dialogfeld geben einen aussagekräftigen Namen für die Serverfarm (z. B. **Staging Farm**), und wählen Sie dann **Serverfarm bereitstellen**.
-4. Geben Sie den Benutzernamen und das Kennwort des Domänenkontos ein, dem Sie der lokalen Administratorengruppe auf jedem Server hinzugefügt haben.
+1. Zeigen Sie auf dem WFF-Controller Server im **Startmenü** auf **Verwaltung**, und klicken Sie dann auf **Internetinformationsdienste (IIS)-Manager**.
+2. Erweitern Sie im Bereich **Verbindungen** den Knoten lokaler Server, klicken Sie mit der rechten Maustaste auf **Serverfarmen**, und klicken Sie dann auf **Server Farm erstellen**.
+3. Geben Sie im Dialogfeld **Server Farm erstellen** einen aussagekräftigen Namen für die Server Farm ein (z. b. Stagingfarm), und wählen Sie dann **Server Farm bereit**stellen aus.
+4. Geben Sie den Benutzernamen und das Kennwort des Domänen Kontos ein, das Sie der lokalen Administrator Gruppe auf den einzelnen Servern hinzugefügt haben.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image6.png)
 5. Klicken Sie auf **Weiter**.
-6. Auf der **Hinzufügen von Servern** Seite Geben Sie den vollqualifizierten Domänennamen (FQDN) des primären Servers, auf **Primärserver**, und klicken Sie dann auf **hinzufügen**.
-7. An diesem Punkt versucht WFF wenden Sie sich an den primären Server mit den Anmeldeinformationen, die Sie angegeben haben. Wenn die Verbindung erfolgreich ist, wird der primäre Server in der Tabelle hinzugefügt werden, auf die **Hinzufügen von Servern** Seite.
+6. Geben Sie auf der Seite **Server hinzufügen** den voll qualifizierten Domänen Namen (FQDN) des primären Servers ein, wählen Sie **primärer Server**aus, und klicken Sie dann auf **Hinzufügen**.
+7. An diesem Punkt versucht WFF, den primären Server mit den von Ihnen angegebenen Anmelde Informationen zu kontaktieren. Wenn die Verbindung erfolgreich hergestellt wird, wird der primäre Server der Tabelle auf der Seite **Server hinzufügen** hinzugefügt.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image7.png)
 
     > [!NOTE]
-    > Sie haben vielleicht bemerkt, die **Server steht für den Lastenausgleich** ist standardmäßig aktiviert. WFF verwendet das IIS-ARR-Modul zum Lastenausgleich zu implementieren und Anforderungen auf die Webserver in Ihrer Serverfarm zu verteilen. Sie würden nur deaktivieren, in den meisten Szenarien die **Server ist für Lastenausgleich verfügbar** option, wenn Sie eine Drittanbieter-lastenausgleichslösung stattdessen verwenden möchten.
-8. Auf der **Hinzufügen von Servern** Seite Geben Sie den FQDN Ihres ersten sekundären Servers, und klicken Sie dann auf **hinzufügen**.
+    > Sie haben möglicherweise bemerkt, dass der **Server für den Lastenausgleich verfügbar** ist. ist standardmäßig ausgewählt. WFF verwendet das IIS arr-Modul, um den Lastenausgleich zu implementieren und damit Anforderungen über die Webserver in der Serverfarm zu verteilen. In den meisten Szenarien löschen Sie nur die Option **Server ist für den Lastenausgleich verfügbar** , wenn Sie stattdessen eine Lasten Ausgleichs Lösung eines Drittanbieters verwenden möchten.
+8. Geben Sie auf der Seite **Server hinzufügen** den voll qualifizierten Namen des ersten sekundären Servers ein, und klicken Sie dann auf **Hinzufügen**.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image8.png)
-9. Wiederholen Sie Schritt 7 für alle weiteren sekundären Server in der Farm aus, und klicken Sie dann auf **Fertig stellen**.
+9. Wiederholen Sie Schritt 7 für alle zusätzlichen sekundären Server in der Farm, und klicken Sie dann auf **Fertig**stellen.
 
-Die WFF-Server-Farm wird nun ausgeführt. Alle Web-Plattform-Produkten oder -Komponenten, die Sie installieren, auf dem primären Server und -Webanwendungen oder Inhalte, die Sie auf dem primären Server werden automatisch auf allen sekundären Servern bereitgestellt werden.
+Ihre WFF-Serverfarm ist nun in Betrieb. Alle Webplattform-Produkte oder-Komponenten, die Sie auf dem primären Server installieren, sowie alle Webanwendungen oder-Inhalte, die Sie auf dem primären Server bereitstellen, werden automatisch auf allen sekundären Servern bereitgestellt.
 
-WFF ist eine umfassende und komplexes Thema, und Sie können weitere Informationen auf der [Microsoft Web Farm Framework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805129) Website. Vorerst, gibt es jedoch zwei Features stehen zur Verfügung, denen Sie berücksichtigen müssen:
+WFF ist ein umfassendes und komplexes Thema. Weitere Informationen hierzu finden Sie auf der Website [Microsoft Web Farm Framework 2,0 for IIS 7](https://go.microsoft.com/?linkid=9805129) . Es gibt jedoch zwei Featurebereiche, die Sie beachten sollten:
 
-- *Bereitstellung von Anwendungen auf* ist der Prozess, der Inhalt vom primären Server, z. B. Webanwendungen und Konfigurationseinstellungen auf allen sekundären Servern in der Farm repliziert. Z. B. Wenn Sie die beispiellösung Contact Manager an Ihrem primären Stagingserver bereitstellen, wird der WFF-Bereitstellungsprozess der Anwendung dieser Lösung bereitstellen für alle sekundären staging-Server. Standardmäßig wird der Bereitstellungsprozess für die Anwendung alle 30 Sekunden ausgeführt.
-- *Plattformbereitstellung* ist der Prozess, der Web-Plattform-Produkte und Komponenten auf dem primären Server an alle sekundären Server in der Serverfarm synchronisiert wird. Z. B. bei der Installation von ASP.NET MVC 3 auf Ihrem primären Stagingserver verwendet im Rahmen des Bereitstellungsprozesses für die Plattform des Webplattform-Installers ASP.NET MVC 3 auf allen sekundären staging Servern installieren. Im Rahmen des Bereitstellungsprozesses für die Plattform wird standardmäßig alle fünf Minuten ausgeführt.
+- Die *Anwendungs Bereitstellung* ist der Prozess, bei dem Inhalte vom primären Server wie Webanwendungen und Konfigurationseinstellungen auf allen sekundären Servern in der Serverfarm repliziert werden. Wenn Sie z. b. die Kontakt-Manager-Beispiellösung auf dem primären Stagingserver bereitstellen, wird diese Lösung vom WFF-Anwendungs Bereitstellungs Prozess auf allen sekundären Stagingservern bereitgestellt. Der Anwendungs Bereitstellungs Prozess wird standardmäßig alle 30 Sekunden ausgeführt.
+- Die *Platt Form Bereitstellung* ist der Prozess, bei dem Webplattform-Produkte und-Komponenten vom primären Server auf alle sekundären Server in der Serverfarm synchronisiert werden. Wenn Sie z. b. ASP.NET MVC 3 auf Ihrem primären Stagingserver installieren, verwendet der Platt Form Bereitstellungs Prozess den Webplattform-Installer, um ASP.NET MVC 3 auf allen sekundären Stagingservern zu installieren. Standardmäßig wird der Platt Form Bereitstellungs Prozess alle fünf Minuten ausgeführt.
 
-Sie können auf Ihre WFF-Controller-Server auf dem IIS-Manager grundlegenden Anwendungs- und Einstellungen für die Bereitstellung der Plattform verwalten.
+Sie können die grundlegenden Einstellungen für die Anwendungs-und Platt Form Bereitstellung im IIS-Manager auf dem WFF Controller-Server verwalten.
 
-**Untersuchen der Anwendungs- und Plattformebene, die Einstellungen für die Bereitstellung**
+**Anwendungs-und Platt Form Bereitstellungs Einstellungen erkunden**
 
-1. Im IIS-Manager in der **Verbindungen** Bereich Ihrer Serverfarm auswählen.
+1. Wählen Sie im IIS-Manager im Bereich **Verbindungen** die Serverfarm aus.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image9.png)
-2. In der **Serverfarm** Bereich doppelklicken Sie auf **Anwendungsbereitstellung**.
+2. Doppelklicken Sie im Bereich **Server Farm** auf **Anwendungs Bereitstellung**.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image10.png)
-3. Wie Sie sehen können, ist derzeit die Serverfarm konfiguriert, um webeinstellungen Inhalte und Konfigurationen zwischen dem primären Server und die sekundären Server alle 30 Sekunden zu synchronisieren.
-4. Klicken Sie auf **wieder**, und doppelklicken Sie dann auf **Plattformbereitstellung**.
+3. Wie Sie sehen können, ist die Serverfarm zurzeit so konfiguriert, dass Webinhalts-und Konfigurationseinstellungen zwischen dem primären Server und den sekundären Servern alle 30 Sekunden synchronisiert werden.
+4. Klicken Sie auf **zurück**, und doppelklicken Sie dann auf **Platt Form Bereitstellung**.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image11.png)
-5. Wie Sie sehen können, ist derzeit die Serverfarm konfiguriert, um alle fünf Minuten Web-Plattform-Produkte und Komponenten, die zwischen dem primären Server und den sekundären Servern zu synchronisieren.
+5. Wie Sie sehen, ist die Serverfarm zurzeit so konfiguriert, dass Webplattform-Produkte und-Komponenten zwischen dem primären Server und den sekundären Servern alle fünf Minuten synchronisiert werden.
 6. Klicken Sie auf **Zurück**.
-7. Erzwingen Sie die Serverfarm mit Web-Plattformprodukte sofort synchronisiert in die **Aktionen** Bereich, klicken Sie auf **Plattform bereitstellen**.
+7. Um zu erzwingen, dass die Serverfarm Webplattform-Produkte sofort synchronisiert, klicken Sie im **Aktions** Bereich auf **Plattform bereit**stellen.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image12.png)
 
     > [!NOTE]
-    > Plattformbereitstellung kann einige Zeit dauern. Der Installer-Prozess, die im Hintergrund auf den sekundären Servern in einer Serverfarm ausgeführt wird.
-8. Nachdem Sie ausreichend Zeit für die auf den Abschluss des Bereitstellungsvorgangs eingeräumt haben, können Sie überprüfen, dass die Produkte und Komponenten, die Sie an den primären Server hinzugefügt haben, nun auf den sekundären Servern repliziert wurden. Sie können z. B. an einem sekundären Server anmelden und Verwenden der **Server-Manager** Fenster, um sicherzustellen, dass die Webserverrolle installiert wurde.
+    > Die Platt Form Bereitstellung kann einige Zeit in Anspruch nehmen. Der Installationsprogramm Prozess wird im Hintergrund auf den sekundären Servern in der Serverfarm ausgeführt.
+8. Nachdem Sie genügend Zeit für den Abschluss des Bereitstellungs Vorgangs erhalten haben, können Sie überprüfen, ob die Produkte und Komponenten, die Sie dem primären Server hinzugefügt haben, nun auf den sekundären Servern repliziert wurden. Beispielsweise können Sie sich an einem sekundären Server anmelden und das **Server-Manager** Fenster verwenden, um zu überprüfen, ob die Webserver Rolle installiert wurde.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image13.png)
-9. Sie können auch überprüfen, dass die Liste der installierten Programme um sicherzustellen, dass verschiedene webplattformkomponenten hinzugefügt wurden.
+9. Sie können auch die Liste der installierten Programme überprüfen, um zu überprüfen, ob verschiedene Webplattform-Komponenten hinzugefügt wurden.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image14.png)
 
-## <a name="configure-load-balancing"></a>Konfigurieren des Lastenausgleichs
+## <a name="configure-load-balancing"></a>Konfigurieren des Lasten Ausgleichs
 
-Bei der Erstellung einer Webfarm müssen Sie eine Form des Lastenausgleichs zum Verteilen von HTTP-Anforderungen zwischen Ihre Webserver einrichten. Dies kann es sich um Windows Server 2008 Netzwerklastenausgleich, IIS-ARR, oder ein Drittanbieter-Software oder Hardware-basierten Lösung mit Lastenausgleich sein.
+Wenn Sie eine Webfarm erstellen, müssen Sie eine Art von Lastenausgleich einrichten, um HTTP-Anforderungen zwischen ihren Webservern zu verteilen. Dabei kann es sich um den Netzwerk Lastenausgleich von Windows Server 2008, IIS ARR oder eine softwarebasierte oder hardwarebasierte Lösung für den Lastenausgleich von Drittanbietern handeln.
 
-WFF dient Sie eng mit IIS ARR. integrieren Um diese Integration nutzen zu können, müssen Sie das ARR-Modul auf dem WFF-Controller-Server installieren. Sie anweisen, klicken Sie dann Ihren Web-Datenverkehr an den Controllerserver, in der Regel durch die Datensätze des Domain Name System (DNS) konfigurieren. Der Controller-Server wird dann eingehende Anforderungen zwischen den Servern in der Farm, die basierend auf der serververfügbarkeit und verschiedene andere Kriterien verteilen.
+WFF ist für die enge Integration in IIS arr konzipiert. Um diese Integration nutzen zu können, müssen Sie das arr-Modul auf dem WFF-Controller Server installieren. Anschließend leiten Sie den gesamten Webdatenverkehr an den Controller Server weiter, indem Sie in der Regel Domain Name System (DNS)-Einträge konfigurieren. Der Controller Server verteilt dann eingehende Anforderungen auf Grundlage der Serververfügbarkeit und verschiedener anderer Kriterien auf die Server in der Farm.
 
 > [!NOTE]
-> Sie müssen keine ARR mit WFF verwenden; Sie können WFF zum Arbeiten mit Drittanbieter-Lösungen für den Netzwerklastenausgleich konfigurieren. Weitere Informationen finden Sie unter [Überblick über das Web Farm Framework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805126).
+> Sie müssen arr nicht mit WFF verwenden. Sie können WFF so konfigurieren, dass es mit Lasten Ausgleichs Lösungen von Drittanbietern funktioniert. Weitere Informationen finden Sie unter [Übersicht über das Web Farm Framework 2,0 für IIS 7](https://go.microsoft.com/?linkid=9805126).
 
-Lastenausgleich mit ARR ist ein komplexes Thema, das meisten der würde den Rahmen dieses Lernprogramms ist. Allerdings können Sie das nächste Verfahren zum Installieren des ARR-Moduls und erste Schritte mit Lastenausgleich.
+Der Lastenausgleich mithilfe von arr ist ein komplexes Thema, das größtenteils den Rahmen dieses Tutorials sprengen würde. Sie können jedoch das nächste Verfahren verwenden, um das arr-Modul zu installieren und mit dem Lastenausgleich zu beginnen.
 
-**Zum Einrichten des Lastenausgleichs auf WFF Controller-server**
+**So richten Sie den Lastenausgleich auf dem WFF-Controller Server ein**
 
-1. Starten Sie den Webplattform-Installer, auf den WFF-Controller-Server.
-2. Am oberen Rand der **Web Platform Installer 3.0** Fenster, klicken Sie auf **Produkte**.
-3. Klicken Sie auf der linken Seite des Fensters, klicken Sie im Navigationsbereich auf **Server**.
-4. In der **Application Request Routing 2.5** auf **hinzufügen**.
+1. Starten Sie auf dem WFF-Controller Server den Webplattform-Installer.
+2. Klicken Sie oben im Fenster **Webplattform-Installer 3,0** auf **Produkte**.
+3. Klicken Sie auf der linken Seite des Fensters im Navigationsbereich auf **Server**.
+4. Klicken Sie in der Zeile **Anwendungs Anforderungs Routing 2,5** auf **Hinzufügen**.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image15.png)
-5. Klicken Sie auf **installieren**, und befolgen Sie dann die Anweisungen in der **Webplattforminstallation** Fenster.
-6. Starten Sie IIS-Manager, wenn die Installation abgeschlossen ist, und klicken Sie in der **Verbindungen** Bereich, klicken Sie auf Ihrem Server-farmknoten. Beachten Sie, die mehrere neue Symbole hinzugefügt wurden die **Serverfarm** Bereich.
+5. Klicken Sie auf **Installieren**, und befolgen Sie dann die Anweisungen im Fenster **Webplattform-Installation** .
+6. Starten Sie nach Abschluss der Installation den IIS-Manager, und klicken Sie im Bereich **Verbindungen** auf Ihren Serverfarm Knoten. Beachten Sie, dass dem Bereich **Server Farm** mehrere neue Symbole hinzugefügt wurden.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image16.png)
-7. In der **Serverfarm** Bereich doppelklicken Sie auf **Lastenausgleich**.
-8. In der **Load Balance** Bereich, wählen Sie eine Auslastung ausgleichen Algorithmus (z. B. **mindestens die aktuelle Anforderung**).
+7. Doppelklicken Sie im Bereich **Server Farm** auf **Lastenausgleich**.
+8. Wählen Sie im Bereich **Lastenausgleich** einen Lasten Ausgleichs Algorithmus (z. b. die niedrigste **aktuelle Anforderung**) aus.
 
     > [!NOTE]
-    > Weitere Informationen zu den Lastenausgleich, Algorithmen und andere Konfigurationseinstellungen, finden Sie unter [Application Request Routing Module](https://go.microsoft.com/?linkid=9805130).
+    > Weitere Informationen zu Lasten Ausgleichs Algorithmen und anderen Konfigurationseinstellungen finden Sie unter [Application Request Routing Module](https://go.microsoft.com/?linkid=9805130).
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image17.png)
-9. In der **Aktionen** Bereich, klicken Sie auf **übernehmen**.
+9. Klicken Sie im Bereich **Aktionen** auf **über**nehmen.
 
-Sie haben jetzt die grundlegenden Lastenausgleich für die Server in Ihrer Serverfarm konfiguriert. Wenn Sie alle Ihre Farm Webdatenverkehr an den Controller-Server weiterleiten, werden die Anforderungen zwischen den Servern in der Farm gemäß der Verfügbarkeit und den Lastenausgleichsalgorithmus gewählten verteilt.
+Sie haben jetzt einen grundlegenden Lastenausgleich für die Server in der Serverfarm konfiguriert. Wenn Sie den gesamten Webfarm-Datenverkehr an den Controller Server weiterleiten, werden die Anforderungen gemäß Verfügbarkeit und Lasten Ausgleichs Algorithmus, die Sie ausgewählt haben, auf die Server in der Farm verteilt.
 
-Weitere Informationen zum Konfigurieren des Lastenausgleichs mit ARR finden Sie unter [Application Request Routing Module](https://go.microsoft.com/?linkid=9805130).
+Weitere Informationen zum Konfigurieren des Lasten Ausgleichs mit arr finden Sie unter [Application Request Routing Module](https://go.microsoft.com/?linkid=9805130).
 
-## <a name="monitor-the-server-farm"></a>Überwachen Sie die Serverfarm
+## <a name="monitor-the-server-farm"></a>Überwachen der Server Farm
 
-Sie können die Integrität Ihrer Serverfarm zu einem beliebigen Zeitpunkt über IIS-Manager auf dem Controllerserver überwachen. In der **Verbindungen** Bereich, erweitern Sie Ihrer Serverfarm, und klicken Sie dann auf **Server**. Der mittlere Bereich zeigt eine Zusammenfassung der einzelnen Server in der Farm zusammen mit einem Ablaufverfolgungsprotokoll für die letzten Aktivitäten.
+Sie können die Integrität Ihrer Serverfarm jederzeit über den IIS-Manager auf dem Controller Server überwachen. Erweitern Sie im Bereich **Verbindungen** die Serverfarm, und klicken Sie dann auf **Server**. Im mittleren Bereich wird eine Zusammenfassung der einzelnen Server in der Farm zusammen mit einem Ablauf Verfolgungs Protokoll der aktuellen Aktivitäten angezeigt.
 
 ![](creating-a-server-farm-with-the-web-farm-framework/_static/image18.png)
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-Die WFF-Server-Farm sollte jetzt betriebsbereit sein. Sie können den primären Server zur Bereitstellungsansatz Unterstützung gewünscht konfigurieren&#x2014;finden Sie im Abschnitt "Weiterführende Literatur" Ausführliche&#x2014;und Ihre Konfiguration auf jedem sekundären Server in der Farm repliziert werden.
+Ihre WFF-Serverfarm sollte nun in Betrieb sein. Sie können den primären Server so konfigurieren, dass ein beliebiges Bereitstellungs&#x2014;Verfahren unterstützt wird. weitere&#x2014;Informationen finden Sie im Abschnitt Weitere Informationen, und die Konfiguration wird auf jedem sekundären Server in der Serverfarm repliziert.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere Informationen zu allen Aspekten der Konfiguration und Verwendung der WFF finden Sie unter den [Microsoft Web Farm Framework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805129) Website.
+Weitere Informationen zu allen Aspekten der Konfiguration und Verwendung von WFF finden Sie auf der Website [Microsoft Web Farm Framework 2,0 for IIS 7](https://go.microsoft.com/?linkid=9805129) .
 
 > [!div class="step-by-step"]
 > [Zurück](configuring-a-database-server-for-web-deploy-publishing.md)

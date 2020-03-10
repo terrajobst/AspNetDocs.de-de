@@ -9,11 +9,11 @@ ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 56ceabc79947967846d342354fd033510be5f05a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625547"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458253"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen von SQL Server Compact Datenbanken-2 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Tutorial, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung für Azure App Service Web-Apps ausführen. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie zwei SQL Server Compact-Datenbanken und die Datenbank-Engine für die Bereitstellung eingerichtet werden.
 
@@ -73,11 +73,11 @@ Erstellen Sie das Projekt, und klicken Sie dann in **Projektmappen-Explorer** au
 
 Erweitern Sie den Ordner **bin** , um die Ordner **amd64** und **x86** anzuzeigen, und wählen Sie dann diese Ordner aus, klicken Sie mit der rechten Maustaste, und wählen Sie **in Projekt einschließen aus**.
 
-![amd64_and_x86_in_Solution_Explorer. png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
+![amd64_and_x86_in_Solution_Explorer.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
 
 Die Ordner Symbole werden geändert, um anzuzeigen, dass der Ordner im Projekt enthalten ist.
 
-![Solution_Explorer_amd64_included. png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
+![Solution_Explorer_amd64_included.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
 
 ## <a name="configuring-code-first-migrations-for-application-database-deployment"></a>Konfigurieren von Code First-Migrationen für die Bereitstellung der Anwendungsdatenbank
 
@@ -108,7 +108,7 @@ Aktivieren Sie als nächstes Code First-Migrationen.
 
 Im ersten Schritt müssen Sie sicherstellen, dass das Projekt conjesouniversity als Startprojekt festgelegt ist. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt conjesouniversity, und wählen Sie **als Startprojekt festlegen**aus. Code First-Migrationen sucht im Startprojekt nach der Daten bankverbindungs Zeichenfolge.
 
-Klicken Sie **im Menü** Extras auf **nuget-Paket-Manager** und dann auf Paket-Manager- **Konsole**.
+Klicken Sie im Menü **Extras** auf **NuGet-Paket-Manager** und dann auf **Paket-Manager-Konsole**.
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 
@@ -159,7 +159,7 @@ Code First-Migrationen erstellt eine andere Klassendatei im *Migrations* Ordner,
 
 Geben Sie in der **Paket-Manager-Konsole**den Befehl "Update-Database" ein, um die Datenbank zu erstellen, und führen Sie die **Seed** -Methode aus.
 
-![Update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 (Wenn Sie eine Fehlermeldung erhalten, die anzeigt, dass eine Tabelle bereits vorhanden ist und nicht erstellt werden kann, liegt dies wahrscheinlich daran, dass Sie die Anwendung ausgeführt haben, nachdem Sie die Datenbank gelöscht haben und `update-database`. Löschen Sie in diesem Fall die Datei " *School. sdf* " erneut, und wiederholen Sie den `update-database` Befehl.)
 
@@ -206,7 +206,7 @@ Navigieren Sie zurück zur Registerkarte **Sicherheit** , klicken Sie auf **Benu
 
 Schließen Sie den Browser. Klicken Sie in **Projektmappen-Explorer**auf die Schaltfläche Aktualisieren, um die neue Datei *ASPNET. sdf* anzuzeigen.
 
-![New_aspnet. sdf_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image25.png)
+![New_aspnet.sdf_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image25.png)
 
 Klicken Sie mit der rechten Maustaste auf **ASPNET. sdf** , und wählen Sie **in Projekt einschließen**.
 

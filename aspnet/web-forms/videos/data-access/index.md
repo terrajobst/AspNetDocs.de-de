@@ -2,22 +2,22 @@
 uid: web-forms/videos/data-access/index
 title: Datenzugriff | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Vorgehensweise: Erstellen des (Data Access Layer, DAL).'
+description: So erstellen Sie eine Datenzugriffs Schicht (Data Access Layer, DAL)
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: a923735c-2d34-456c-8327-40aa62a4c1d6
 msc.legacyurl: /web-forms/videos/data-access
 msc.type: chapter
 ms.openlocfilehash: 66c8851d53cef59ea560818a054729115ca62b3b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106754"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464295"
 ---
 # <a name="data-access"></a>Datenzugriff
 
-> Vorgehensweise: Erstellen des (Data Access Layer, DAL).
+> So erstellen Sie eine Datenzugriffs Schicht (Data Access Layer, DAL)
 
 - [ADO.NET Data Services](adonet-data-services/index.md)
 
@@ -31,10 +31,10 @@ ms.locfileid: "65106754"
     - [LINQ to SQL: Abfragen der Datenbank](how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
     - [LINQ to SQL: Aktualisieren der Datenbank](how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
     - [LINQ to SQL: LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-    - [LINQ to SQL: Benutzerdefinierte LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+    - [LINQ to SQL: Anpassen von LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
     - [LINQ to SQL: Verwenden von gespeicherten Prozeduren](how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-    - [LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-    - [LINQ to SQL: Ausführen einer beliebigem SQL](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+    - [LINQ to SQL: Aktualisieren von gespeicherten Prozeduren](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+    - [LINQ to SQL: Ausführen einer beliebigem SQL-Abfrage](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
 - [Videos zu LINQ vom VB-Team](linq-videos-from-the-vb-team/index.md)
 
     - [Erste Schritte mit LINQ](linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)

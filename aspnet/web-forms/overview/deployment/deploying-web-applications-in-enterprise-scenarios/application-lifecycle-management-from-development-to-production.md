@@ -1,216 +1,216 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
-title: 'Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion | Microsoft-Dokumentation'
+title: 'Application Lifecycle Management: von der Entwicklung bis zur Produktion | Microsoft-Dokumentation'
 author: jrjlee
-description: In diesem Thema wird veranschaulicht, wie ein fiktives Unternehmen die Bereitstellung von einer ASP.NET-Webanwendung über die Test-, Staging-und produktionsumgebungen als Par verwaltet...
+description: In diesem Thema wird veranschaulicht, wie ein fiktives Unternehmen die Bereitstellung einer ASP.NET-Webanwendung über Test-, Staging-und Produktionsumgebungen als par verwaltet...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
 ms.openlocfilehash: 230cf4393db0ee19cfc42ed54359d61e7926a49d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109286"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520425"
 ---
-# <a name="application-lifecycle-management-from-development-to-production"></a>Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion
+# <a name="application-lifecycle-management-from-development-to-production"></a>Application Lifecycle Management: von der Entwicklung bis zur Produktion
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird veranschaulicht, wie ein fiktives Unternehmen die Bereitstellung von einer ASP.NET-Webanwendung über die Test-, Staging-und produktionsumgebungen als Teil eines fortlaufenden Entwicklungsprozesses verwaltet. In der gesamten Thema werden Links zu zusätzlicher Informationen und exemplarische Vorgehensweisen zum Ausführen bestimmter Aufgaben angegeben.
+> In diesem Thema wird veranschaulicht, wie ein fiktives Unternehmen die Bereitstellung einer ASP.NET-Webanwendung mithilfe von Test-, Staging-und Produktionsumgebungen als Teil eines kontinuierlichen Entwicklungsprozesses verwaltet. Im gesamten Thema werden Links zu weiteren Informationen und exemplarischen Vorgehensweisen zur Durchführung bestimmter Aufgaben bereitgestellt.
 > 
-> Das Thema dient, geben Sie eine allgemeine Übersicht über die für eine [Reihe von Tutorials](deploying-web-applications-in-enterprise-scenarios.md) für webbereitstellung im Unternehmen. Keine Sorge, wenn Sie mit einigen der hier beschriebenen Konzepte nicht vertraut&#x2014;die Lernprogramme, die Folgen bieten ausführliche Informationen zu Aufgaben und Verfahren.
+> Das Thema bietet eine allgemeine Übersicht über eine [Reihe von Tutorials](deploying-web-applications-in-enterprise-scenarios.md) zur Webbereitstellung im Unternehmen. Machen Sie sich keine Sorgen, wenn Sie mit einigen der hier&#x2014;beschriebenen Konzepte nicht vertraut sind. in den folgenden Tutorials finden Sie ausführliche Informationen zu all diesen Aufgaben und Techniken.
 > 
 > > [!NOTE]
-> > Der Einfachheit halber wird erläutert nicht in diesem Thema Aktualisieren der Datenbanken im Rahmen des Bereitstellungsprozesses. Allerdings inkrementelle Updates an Datenbankfunktionen vornehmen, ist eine Voraussetzung für viele Szenarien der Enterprise, und finden Sie Anleitungen dazu, wie weiter unten in dieser tutorialreihe dazu. Weitere Informationen finden Sie unter [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md).
+> > Der Einfachheit halber wird in diesem Thema nicht erläutert, wie Datenbanken im Rahmen des Bereitstellungs Prozesses aktualisiert werden. Das Erstellen von inkrementellen Updates an Datenbankfunktionen ist jedoch eine Anforderung vieler Szenarien für die Unternehmens Bereitstellung, und Sie finden eine Anleitung dazu, wie Sie dies später in dieser tutorialreihe erledigen können. Weitere Informationen finden Sie unter Bereitstellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md).
 
 ## <a name="overview"></a>Übersicht
 
-Der Bereitstellungsvorgang hier basiert darauf, dass das Fabrikam, Inc.-Bereitstellungsszenario, die in beschriebenen [webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](enterprise-web-deployment-scenario-overview.md). Lesen Sie die Übersicht über das Szenario, bevor Sie in diesem Thema untersuchen. Im Wesentlichen das Szenario untersucht, wie eine Organisation die Bereitstellung einer recht komplexen Webanwendung, verwaltet die [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md), über die verschiedenen Phasen einer typischen unternehmensumgebung.
+Der hier dargestellte Bereitstellungs Prozess basiert auf dem Bereitstellungs Szenario Fabrikam, Inc., das unter [Unternehmensweb Bereitstellung: Szenarioübersicht](enterprise-web-deployment-scenario-overview.md)beschrieben wird. Lesen Sie die Szenarioübersicht, bevor Sie dieses Thema lesen. Im Wesentlichen wird das Szenario untersucht, wie eine Organisation die Bereitstellung einer relativ komplexen Webanwendung, der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md), über verschiedene Phasen in einer typischen Unternehmensumgebung verwaltet.
 
-Contact Manager-Lösung führt auf einer hohen Ebene diese Phasen als Teil der Entwicklung und Bereitstellung:
+Im Rahmen des Entwicklungs-und Bereitstellungs Prozesses durchläuft die Contact Manager-Lösung auf hoher Ebene die folgenden Phasen:
 
-1. Ein Entwickler überprüft Code die in Team Foundation Server (TFS) 2010.
-2. TFS erstellt den Code und führt alle Komponententests mit dem Teamprojekt verknüpft ist.
-3. Die Lösung wird von TFS in der testumgebung bereitgestellt.
-4. Die Developer-Team überprüft und überprüft die Lösung in der testumgebung.
-5. Der staging umgebungsadministrator führt eine "Was-wäre-wenn" Bereitstellung in der Stagingumgebung bereit, um herauszufinden, ob es sich bei die Bereitstellung alle Probleme verursachen.
-6. Der staging umgebungsadministrator führt eine live-Bereitstellung in der Stagingumgebung bereit.
-7. Die Lösung ausgeführt wird, Benutzerakzeptanztests, die in der Stagingumgebung.
-8. Die Web-Bereitstellungspakete werden in der produktionsumgebung manuell importiert.
+1. Ein Entwickler überprüft Code in Team Foundation Server (TFS) 2010.
+2. TFS erstellt den Code und führt alle Komponententests aus, die dem Teamprojekt zugeordnet sind.
+3. TFS stellt die Lösung für die Testumgebung bereit.
+4. Das Entwicklerteam überprüft und überprüft die Projekt Mappe in der Testumgebung.
+5. Der Administrator der Stagingumgebung führt in der Stagingumgebung eine "Was-wäre-wenn"-Bereitstellung aus, um festzustellen, ob die Bereitstellung Probleme verursacht
+6. Der Administrator der Stagingumgebung führt eine Live Bereitstellung in der Stagingumgebung durch.
+7. Die Lösung durchläuft Benutzer Akzeptanz Tests in der Stagingumgebung.
+8. Die Webbereitstellungs Pakete werden manuell in die Produktionsumgebung importiert.
 
-Diese Phasen bilden einen Teil eines fortlaufenden Entwicklungszyklus.
+Diese Stufen bilden einen Teil eines kontinuierlichen Entwicklungsprozesses.
 
 ![](application-lifecycle-management-from-development-to-production/_static/image1.png)
 
-In der Praxis ist der Prozess etwas komplizierter, als dies, wie Sie sehen werden, wenn wir jede Phase noch ausführlicher betrachten. Fabrikam, Inc. verwendet einen anderen Ansatz zur Bereitstellung für jede zielumgebung an.
+In der Praxis ist der Prozess etwas komplizierter als dies, wie Sie sehen werden, wenn wir uns jede Phase ausführlicher ansehen. Fabrikam, Inc. verwendet einen anderen Ansatz für die Bereitstellung für jede Zielumgebung.
 
 ![](application-lifecycle-management-from-development-to-production/_static/image2.png)
 
-Im weiteren Verlauf dieses Themas werden diese wichtigsten Phasen dieses Bereitstellungslebenszyklus:
+Im weiteren Verlauf dieses Themas werden diese wichtigen Phasen dieses Bereitstellungs Lebenszyklus untersucht:
 
-- **Erforderliche Komponenten**: Wie müssen Sie Ihrer Serverinfrastruktur zu konfigurieren, bevor Sie Ihrer Bereitstellungslogik platziert.
-- **Anfängliche Entwicklung und Bereitstellung**: Was Sie tun müssen, bevor Sie die Projektmappe zum ersten Mal bereitstellen.
-- **Bereitstellung zum Testen**: Informationen zum Verpacken und Bereitstellen von Inhalten für eine Test-Umgebung automatisch, wenn ein Entwickler im neuen Code eincheckt.
-- **Bereitstellung in der Stagingumgebung**: Bestimmte bereitstellen, die zu einer Stagingumgebung und "Was-wäre-wenn" Ausführen Bereitstellungen, um sicherzustellen, dass es sich bei eine Bereitstellung Probleme dadurch keine erstellt.
-- **Bereitstellung in der Produktion**: Wie bei der Netzwerkinfrastruktur Remotebereitstellung wird verhindert, dass Webpakete in einer produktionsumgebung importieren.
+- **Voraussetzungen**: Sie müssen Ihre Serverinfrastruktur konfigurieren, bevor Sie die Bereitstellungs Logik platzieren.
+- **Anfängliche Entwicklung und Bereitstellung**: was Sie tun müssen, bevor Sie die Lösung zum ersten Mal bereitstellen.
+- **Bereitstellung zum Testen**: das Verpacken und Bereitstellen von Inhalt in einer Testumgebung automatisch, wenn ein Entwickler neuen Code eincheckt.
+- **Bereitstellung in**der Stagingumgebung: Bereitstellen spezifischer Builds in einer Stagingumgebung und Ausführen von "Was-wäre-wenn"-bereit Stellungen, um sicherzustellen, dass eine Bereitstellung keine Probleme verursacht.
+- **Bereitstellung in der Produktion**: Importieren von Webpaketen in eine Produktionsumgebung, wenn die Netzwerkinfrastruktur eine Remote Bereitstellung verhindert.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Die erste Aufgabe in jedem Szenario wird sichergestellt, dass es sich bei Ihrer Serverinfrastruktur erfüllt die Anforderungen Ihrer Bereitstellungstools und Techniken. In diesem Fall hat Fabrikam, Inc. seine Serverinfrastruktur wie folgt konfiguriert:
+Die erste Aufgabe in jedem Bereitstellungs Szenario besteht darin, sicherzustellen, dass Ihre Serverinfrastruktur den Anforderungen Ihrer Bereitstellungs Tools und-Verfahren entspricht. In diesem Fall hat Fabrikam, Inc. seine Serverinfrastruktur wie folgt konfiguriert:
 
-- TFS ist für eine teamprojektauflistung enthalten, die Buildcontroller und build-Agents konfiguriert. Finden Sie unter [Konfigurieren von Team Foundation Server für die automatisierte Bereitstellung](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md) für Weitere Informationen.
-- Die testumgebung ist so konfiguriert, dass um remote-Bereitstellungen mithilfe der Webbereitstellungs-Agent-Dienst ("remote-Agent"), zu akzeptieren, wie in beschrieben [Szenario: Konfigurieren einer Testumgebung für die Webbereitstellung](../configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md) und [konfigurieren Sie einen Webserver für Web Deploy-Veröffentlichung (Remote-Agent)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md).
-- Die Stagingumgebung wird konfiguriert Remotebereitstellungen mit dem Bereitstellen von Web-Handler-Endpunkt, wie in beschrieben [Szenario: Konfigurieren einer Stagingumgebung für die Webbereitstellung](../configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md) und [konfigurieren Sie einen Webserver für Web Deploy-Veröffentlichung (Web Deploy-Handler)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md).
-- Die produktionsumgebung ist so konfiguriert, dass Administrator manuell der Web-Bereitstellungspakete in Internet Information Services (IIS), importieren können, wie in beschrieben [Szenario: Konfigurieren einer Produktionsumgebung für die Webbereitstellung](../configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md) und [konfigurieren Sie einen Webserver für Web Deploy-Veröffentlichung (Offlinebereitstellung)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md).
+- TFS ist so konfiguriert, dass eine Teamprojekt Auflistung, BuildController und Build-Agents einbezogen werden. Weitere Informationen finden Sie unter [Konfigurieren von Team Foundation Server für die automatisierte Webbereitstellung](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md) .
+- Die Testumgebung ist so konfiguriert, dass Remote Bereitstellungen mithilfe des Web Deployment Agent-Diensts (dem "Remote-Agent") akzeptiert werden, wie in [Szenario: Konfigurieren einer Testumgebung für die Webbereitstellung](../configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md) und [Konfigurieren eines Webservers für die Web deploy Veröffentlichung (Remote-Agent)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)beschrieben.
+- Die Stagingumgebung ist so konfiguriert, dass Remote Bereitstellungen mithilfe des Web deploy handlerendpunkts akzeptiert werden, wie in [Szenario: Konfigurieren einer Stagingumgebung für die Webbereitstellung](../configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md) und [Konfigurieren eines Webservers für die Web deploy Veröffentlichung (Web deploy Handler)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)beschrieben.
+- Die Produktionsumgebung ist so konfiguriert, dass ein Administrator Webbereitstellungs Pakete manuell in Internetinformationsdienste (IIS) importieren kann, wie in [Szenario: Konfigurieren einer Produktionsumgebung für die Webbereitstellung](../configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md) und [Konfigurieren eines Webservers für die Web deploy Veröffentlichung (Offline Bereitstellung)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)beschrieben.
 
 ## <a name="initial-development-and-deployment"></a>Anfängliche Entwicklung und Bereitstellung
 
-Damit das Entwicklungsteam der Fabrikam, Inc. Contact Manager-Lösung zum ersten Mal bereitstellen kann, muss sie diese Aufgaben ausführen:
+Bevor das Entwicklungsteam von Fabrikam, Inc. das Entwicklungsteam zum ersten Mal die Contact Manager-Lösung bereitstellen kann, muss es diese Aufgaben ausführen:
 
-- Erstellen Sie ein neues Teamprojekt in TFS ein.
-- Erstellen Sie die Microsoft Build Engine (MSBuild)-Projektdateien, die die Bereitstellungslogik enthalten.
-- Erstellen Sie die TFS-Build-Definitionen, die die Bereitstellungsprozesse auslösen.
+- Erstellen Sie ein neues Teamprojekt in TFS.
+- Erstellen Sie die Microsoft-Build-Engine (MSBuild)-Projektdateien, die die Bereitstellungs Logik enthalten.
+- Erstellen Sie die TFS-Builddefinitionen, die die Bereitstellungs Prozesse auslöst.
 
-### <a name="create-a-new-team-project"></a>Erstellen Sie ein neues Teamprojekt
+### <a name="create-a-new-team-project"></a>Neues Team Projekt erstellen
 
-- Die TFS-Administrator, Rob Walters, erstellt ein neues Teamprojekt für die Anwendung aus, wie in beschrieben [Erstellen eines Teamprojekts in TFS](../configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs.md). Als Nächstes erstellt der Entwicklungsleiter, Matt Hink, eine Skelette-Lösung. Überprüft er seine Dateien in das neue Teamprojekt in TFS an, wie in beschrieben [Inhalt hinzufügen, in die Quellcodeverwaltung](../configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control.md).
+- Der TFS-Administrator Rob Walters erstellt ein neues Teamprojekt für die Anwendung, wie unter [Erstellen eines Teamprojekts in TFS](../configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs.md)beschrieben. Als Nächstes erstellt der Lead Entwickler Matt hink eine Skeleton-Lösung. Er prüft seine Dateien in das neue Teamprojekt in TFS, wie unter [Hinzufügen von Inhalt zur Quell](../configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control.md)Code Verwaltung beschrieben.
 
-### <a name="create-the-deployment-logic"></a>Erstellen Sie die Bereitstellungslogik
+### <a name="create-the-deployment-logic"></a>Erstellen der Bereitstellungs Logik
 
-Matt Hink erstellt verschiedene benutzerdefinierte MSBuild-Projektdateien, geteilten Projekt Datei beschriebene Ansatz [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Matt erstellt:
+Matt hink erstellt verschiedene benutzerdefinierte MSBuild-Projektdateien und verwendet dabei den in Grundlegendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz zum Aufteilen von Projektdateien. Matt erstellt Folgendes:
 
-- Eine Projektdatei namens *Publish.proj* , die den Bereitstellungsprozess ausgeführt wird. Diese Datei enthält MSBuild-Ziele, die die Projekte in der Projektmappe zu erstellen, Webpaketen erstellen und Bereitstellen der Pakete in einer zielumgebung für die Server an.
-- Umgebungsspezifische Projektdateien, die mit dem Namen *Env-Dev.proj* und *Env-Stage.proj*. Diese enthalten Einstellungen, die bzw. für die testumgebung und die Stagingumgebung spezifisch sind, wie Verbindungszeichenfolgen, Endpunkte und die Details des Remotediensts, die das Webpaket empfangen sollen. Anleitungen zum Auswählen der richtigen Einstellungen für bestimmte zielumgebungen finden Sie unter [Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
+- Eine Projektdatei mit dem Namen " *Publish. proj* ", die den Bereitstellungs Prozess ausführt. Diese Datei enthält MSBuild-Ziele, die die Projekte in der Projekt Mappe erstellen, Webpakete erstellen und die Pakete in einer Zielserver Umgebung bereitstellen.
+- Umgebungs spezifische Projektdateien mit dem Namen " *env-dev. proj* " und " *env-Stage. proj*". Diese enthalten Einstellungen, die spezifisch für die Testumgebung und die Stagingumgebung sind, wie z. b. Verbindungs Zeichenfolgen, Dienst Endpunkte und Details des Remote Diensts, der das Webpaket empfängt. Anleitungen zum Auswählen der richtigen Einstellungen für bestimmte Ziel Umgebungen finden Sie unter [Konfigurieren von Bereitstellungs Eigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
-Führen Sie die Bereitstellung, die ein Benutzer führt die *Publish.proj* Datei mithilfe von MSBuild oder Team Build, und gibt den Speicherort der relevanten umgebungsspezifische Projektdatei (*Env-Dev.proj* oder *Env-Stage.proj*) als Befehlszeilenargument. Die *Publish.proj* -Datei importiert anschließend die umgebungsspezifische Projektdatei, um einen vollständigen Satz von Anweisungen für jede zielumgebung Veröffentlichung zu erstellen.
+Zum Ausführen der Bereitstellung führt ein Benutzer die Datei *Publish. proj* mithilfe von MSBuild oder Team Build aus und gibt den Speicherort der relevanten Umgebungs spezifischen Projektdatei (*env-dev. proj* oder *env-Stage. proj*) als Befehlszeilenargument an. Die Datei *Publish. proj* importiert dann die Umgebungs spezifische Projektdatei, um einen kompletten Satz von Veröffentlichungs Anweisungen für jede Zielumgebung zu erstellen.
 
 > [!NOTE]
-> Die Arbeitsweise dieser benutzerdefinierten Projektdateien ist unabhängig von den Mechanismus an, die, den Sie verwenden, um den MSBuild aufrufen. Beispielsweise können Sie die MSBuild-Befehlszeile direkt, wie in beschrieben [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Sie können die Projektdateien aus einer Befehlsdatei ausführen, wie in beschrieben [erstellen und Ausführen einer Befehlsdatei Bereitstellung](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md). Alternativ Sie können Ausführen der Projektdateien aus einer Builddefinition in TFS unter [Erstellen einer Builddefinition, dass unterstützt die Bereitstellung](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).  
-> In jedem Fall ist das Endergebnis dasselbe&#x2014;MSBuild führt die zusammengeführte Datei und Ihre Lösung in der zielumgebung bereitgestellt. Dies bietet Ihnen ein hohes Maß an Flexibilität in, wie Sie Ihre Veröffentlichungsprozess auslösen.
+> Die Funktionsweise dieser benutzerdefinierten Projektdateien ist unabhängig von dem Mechanismus, den Sie zum Aufrufen von MSBuild verwenden. Beispielsweise können Sie die MSBuild-Befehlszeile direkt verwenden, wie Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschrieben. Sie können die Projektdateien aus einer Befehlsdatei ausführen, wie unter [Erstellen und Ausführen einer Befehlsdatei für die Bereitstellung](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md)beschrieben. Alternativ können Sie die Projektdateien aus einer Builddefinition in TFS ausführen, wie unter [Erstellen einer Builddefinition beschrieben, die die Bereitstellung unterstützt](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).  
+> In jedem Fall ist das Endergebnis dasselbe&#x2014;: MSBuild führt die zusammengeführte Projektdatei aus und stellt die Lösung in der Zielumgebung bereit. Dadurch erhalten Sie viel Flexibilität bei der Auslösung Ihres Veröffentlichungsprozesses.
 
-Nachdem er die benutzerdefinierten Projektdateien erstellt, Matt fügt sie einen Projektmappenordner hinzu, und überprüft diese in die quellcodeverwaltung.
+Nachdem er die benutzerdefinierten Projektdateien erstellt hat, fügt Matt diese einem Projektmappenordner hinzu und überprüft Sie in die Quell Code Verwaltung.
 
 ### <a name="create-build-definitions"></a>Builddefinitionen erstellen
 
-Als letzte auftragsvorbereitungsaufgaben zusammenarbeiten, Matt und Rob Campbell um drei Build-Definitionen für das neue Teamprojekt zu erstellen:
+Als abschließende Vorbereitungs Aufgabe arbeiten Matt und Rob zusammen, um drei Builddefinitionen für das neue Teamprojekt zu erstellen:
 
-- **DeployToTest**. Dies erstellt die Projektmappe Contact Manager, und jedes Mal, wenn ein Eincheckvorgang erfolgt in der testumgebung bereitstellt.
-- **DeployToStaging**. Dies stellt Ressourcen aus einem angegebenen vorherigen Build in der Stagingumgebung bereit, wenn ein Entwickler den Build-Warteschlangen.
-- **DeployToStaging-WhatIf**. Dies führt eine "Was-wäre-wenn" Bereitstellung in der Stagingumgebung bereit, wenn ein Entwickler den Build-Warteschlangen.
+- **Deploydetest**. Dadurch wird die Contact Manager-Lösung erstellt und bei jedem Einchecken in der Testumgebung bereitgestellt.
+- **Deploydestaging**. Dadurch werden Ressourcen aus einem angegebenen vorherigen Build in der Stagingumgebung bereitgestellt, wenn ein Entwickler den Build in die Warteschlange eingereiht.
+- **Deploydestaging-WhatIf**. Dadurch wird eine "Was-wäre-wenn"-Bereitstellung in der Stagingumgebung durchführt, wenn ein Entwickler den Build in
 
-Die folgenden Abschnitte enthalten weitere Details zu jeder dieser build-Definitionen.
+In den folgenden Abschnitten werden die einzelnen Builddefinitionen ausführlicher erläutert.
 
-## <a name="deployment-to-test"></a>Bereitstellung für die Testumgebung
+## <a name="deployment-to-test"></a>Zu testende Bereitstellung
 
-Das Entwicklungsteam bei Fabrikam, Inc. verwaltet die Test-Umgebungen, um eine Vielzahl von Softwaretests Aktivitäten, wie die Überprüfung und Validierung, Nutzbarkeitstests, Tests der Anwendungskompatibilität, und ad-hoc- oder explorativen Tests durchzuführen.
+Das Entwicklungsteam von Fabrikam, Inc. verwaltet Testumgebungen, um eine Vielzahl von Softwaretest Aktivitäten auszuführen, wie z. b. Überprüfung und Validierung, benutzernutzungstests, Kompatibilitätstests und Ad-hoc-oder explorative Tests.
 
-Das Entwicklungsteam hat eine Builddefinition in TFS mit dem Namen **DeployToTest**. Diese Builddefinition verwendet einen Auslöser für continuous Integration, was, dass der Buildprozess ausgeführt wird bedeutet, jedes Mal, wenn ein Mitglied über das Entwicklungsteam der Fabrikam, Inc. einen Eincheckvorgang ausführt. Wenn ein Build ausgelöst wird, wird die Build-Definition:
+Das Entwicklungsteam hat eine Builddefinition in TFS namens **deploydetest**erstellt. Diese Builddefinition verwendet einen Continuous Integration-Triggerwert. Dies bedeutet, dass der Buildprozess jedes Mal ausgeführt wird, wenn ein Mitglied des Fabrikam, Inc.-Entwicklungsteams einen Eincheck Vorgang ausführt. Wenn ein Build ausgelöst wird, führt die Builddefinition Folgendes aus:
 
-- Erstellen Sie die ContactManager.sln-Projektmappe. Dies wird wiederum jedes Projekt in der Projektmappe erstellt.
-- Führen Sie Komponententests in der Ordnerstruktur für Projektmappen (wenn das Projekt erfolgreich erstellt).
-- Führen Sie die benutzerdefinierte Projektdateien, die während des Bereitstellungsvorgangs (wenn die Lösung erfolgreich erstellt und alle Komponententests übergibt) zu steuern.
+- Erstellen Sie die Projekt Mappe "ContactManager. sln". Dies wiederum erstellt jedes Projekt in der Projekt Mappe.
+- Führen Sie alle Komponententests in der Projektmappenordnerstruktur aus (wenn die Projekt Mappe erfolgreich erstellt wurde).
+- Führen Sie die benutzerdefinierten Projektdateien aus, die den Bereitstellungs Prozess steuern (wenn die Projekt Mappe erfolgreich erstellt wird und alle Komponententests übergibt).
 
-Das Endergebnis ist, dass die Lösung erfolgreich erstellt und übergibt Komponententests, die Webpakete und andere Bereitstellungsressourcen in der testumgebung bereitgestellt werden.
+Das Endergebnis ist, dass die Webpakete und alle anderen Bereitstellungs Ressourcen in der Testumgebung bereitgestellt werden, wenn die Projekt Mappe erfolgreich erstellt wird und Komponententests bestanden werden.
 
 ![](application-lifecycle-management-from-development-to-production/_static/image3.png)
 
-### <a name="how-does-the-deployment-process-work"></a>Wie funktioniert der Bereitstellungsprozess?
+### <a name="how-does-the-deployment-process-work"></a>Wie funktioniert der Bereitstellungs Prozess?
 
-Die **DeployToTest** Definition stellt diese Argumente an MSBuild zu erstellen:
+Die Builddefinition **deploydetest** liefert diese Argumente für MSBuild:
 
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample1.cmd)]
 
-Die **DeployOnBuild = True** und **DeployTarget = Paket** Eigenschaften werden verwendet, wenn die Projekte in der Projektmappe Team Build erstellt werden. Wenn das Projekt ein Webprojekt für die Anwendung ist, weisen Sie diese Eigenschaften MSBuild zum Erstellen eines Webbereitstellungspakets für das Projekt. Die **TargetEnvPropsFile** -Eigenschaft teilt die *Publish.proj* -Datei, in die zu importierende Projektdatei umgebungsspezifische gefunden.
+Die Eigenschaften **deployonbuild = true** und **deploytarget = Package** werden verwendet, wenn Team Build die Projekte in der Projekt Mappe erstellt. Wenn das Projekt ein Webanwendungs Projekt ist, weisen diese Eigenschaften MSBuild an, ein Webbereitstellungs Paket für das Projekt zu erstellen. Mit der Eigenschaft " **targetenvpropsfile** " wird der Datei " *Publish. proj* " mitgeteilt, wo die zu importierende Umgebungs spezifische Projektdatei zu finden ist.
 
 > [!NOTE]
-> Eine ausführliche exemplarische Vorgehensweise zum Erstellen einer Builddefinition wie folgt, finden Sie unter [Erstellen einer Builddefinition, dass unterstützt die Bereitstellung](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).
+> Eine ausführliche Exemplarische Vorgehensweise zum Erstellen einer Builddefinition wie dieser finden Sie [unter Erstellen einer Builddefinition, die die Bereitstellung unterstützt](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).
 
-Die *Publish.proj* -Datei enthält die Ziele, die jedes Projekt in der Projektmappe zu erstellen. Es enthält jedoch auch bedingten Logik, überspringt diese Ziele zu erstellen, wenn Sie die Datei in Team Build ausgeführt werden. Dadurch können Sie die zusätzliche Funktionalität nutzen, die Team Build, sich z.B. die Möglichkeit zum Ausführen von Komponententests bietet. Wenn die Projektmappe erstellen oder die Einheit fehlschlagen Tests, die *Publish.proj* Datei wird nicht ausgeführt, und die Anwendung wird nicht bereitgestellt werden.
+Die Datei *Publish. proj* enthält Ziele, mit denen jedes Projekt in der Projekt Mappe erstellt wird. Sie enthält jedoch auch bedingte Logik, die diese Buildziele überspringt, wenn Sie die Datei in Team Build ausführen. Auf diese Weise können Sie die zusätzlichen Buildfunktionen von Team Build nutzen, wie z. b. die Möglichkeit zum Ausführen von Komponententests. Wenn der Projektmappenbuild oder die Komponententests fehlschlagen, wird die Datei *Publish. proj* nicht ausgeführt, und die Anwendung wird nicht bereitgestellt.
 
-Die Bedingungslogik erfolgt durch die Auswertung der **BuildingInTeamBuild** Eigenschaft. Dies ist eine MSBuild-Eigenschaft, die automatisch, um festgelegt wird **"true"** Verwendung Team Build zum Erstellen von Projekten.
+Die bedingte Logik wird durch Auswerten der **buildinginteambuild** -Eigenschaft erreicht. Dies ist eine MSBuild-Eigenschaft, die automatisch auf **true** festgelegt wird, wenn Sie Team Build zum Erstellen Ihrer Projekte verwenden.
 
-## <a name="deployment-to-staging"></a>Bereitstellung in der Stagingumgebung
+## <a name="deployment-to-staging"></a>Bereitstellung für Staging
 
-Wenn ein Build mit den Anforderungen des Teams Developer in der testumgebung erfüllt, kann das Team denselben Build in einer Stagingumgebung bereitstellen möchten. Stagingumgebungen werden in der Regel entsprechend die Eigenschaften der Produktion oder "live"-Umgebung als eng wie möglich, z. B. in Bezug auf die Server-Spezifikationen, Betriebssysteme und Software und Netzwerkkonfiguration konfiguriert. Stagingumgebungen werden häufig für Auslastungstests, Tests der Benutzerakzeptanz und größeren internen Prüfungen verwendet werden. Builds werden direkt aus dem Build-Server in der Stagingumgebung bereitgestellt.
+Wenn ein Build alle Anforderungen des Entwicklerteams in der Testumgebung erfüllt, möchte das Team möglicherweise denselben Build in einer Stagingumgebung bereitstellen. Stagingumgebungen werden in der Regel so konfiguriert, dass Sie den Merkmalen der Produktions-oder "Live"-Umgebung so genau wie möglich entsprechen, z. b. in Bezug auf Server Spezifikationen, Betriebssysteme, Software und Netzwerkkonfiguration. Stagingumgebungen werden häufig für Auslastungs Tests, Benutzer Akzeptanz Tests und umfassendere interne Überprüfungen verwendet. Builds werden direkt vom Buildserver in der Stagingumgebung bereitgestellt.
 
 ![](application-lifecycle-management-from-development-to-production/_static/image4.png)
 
-Die Builddefinitionen, die zum Bereitstellen der Lösung in der Stagingumgebung **DeployToStaging-WhatIf** und **DeployToStaging**, weisen diese Merkmale auf:
+Die Builddefinitionen für die Bereitstellung der Lösung in der Stagingumgebung **deploydestaging-WhatIf** und **deploydestaging**haben diese Merkmale gemeinsam:
 
-- Es erstellt nicht wirklich etwas. Wenn die Lösung durch Rob in der Stagingumgebung bereitgestellt wird, möchte er einen bestimmten, vorhandenen Build bereitstellen, der bereits überprüft und in der testumgebung überprüft wurde. Builddefinitionen müssen lediglich die benutzerdefinierten Projektdateien ausgeführt, die den Bereitstellungsprozess steuern.
-- Wenn Rob einen Build ausgelöst wird, verwendet er die Parameter, um anzugeben, welcher Build die Ressourcen enthält, die er auf dem Buildserver bereitstellen möchte.
-- Der Build-Definitionen werden nicht automatisch ausgelöst. Rob Warteschlangen manuell einen Build aus, wenn er die Lösung in der Stagingumgebung bereitstellen möchte.
+- Sie erstellen nichts. Wenn Rob die Lösung in der Stagingumgebung bereitstellt, möchte er einen bestimmten, vorhandenen Build bereitstellen, der bereits in der Testumgebung überprüft und validiert wurde. Die Builddefinitionen müssen lediglich die benutzerdefinierten Projektdateien ausführen, die den Bereitstellungs Prozess steuern.
+- Wenn Rob einen Build auslöst, verwendet er die Buildparameter, um anzugeben, welcher Build die Ressourcen enthält, die er vom Buildserver bereitstellen möchte.
+- Die Builddefinitionen werden nicht automatisch ausgelöst. Rob fügt einen Build manuell in die Warteschlange ein, wenn er die Lösung in der Stagingumgebung bereitstellen möchte.
 
-Dies ist der grundsätzliche Erstellungsprozess für eine Bereitstellung in der Stagingumgebung bereit:
+Dies ist der allgemeine Prozess für eine Bereitstellung in der Stagingumgebung:
 
-1. Der Stagingumgebung umgebungsadministrator, Rob Walters, Warteschlangen, einen Build mithilfe der **DeployToStaging-WhatIf** Definition zu erstellen. Rob verwendet die Build-Definition-Parameter, an welchem Build, möchte er bereitstellen.
-2. Die **DeployToStaging-WhatIf** Definition führt die benutzerdefinierte Projektdateien im "Was-wäre-wenn"-Modus zu erstellen. Dies generiert Protokolldateien, als ob Rob wurde eine live-Bereitstellung wird ausgeführt, aber es in der zielumgebung keine Änderungen vornehmen.
-3. Rob werden die Protokolldateien, um die Auswirkungen der Bereitstellung in der Stagingumgebung zu ermitteln. Insbesondere möchte Rob überprüfen, was hinzugefügt werden, was aktualisiert wird und welche gelöscht werden.
-4. Wenn er ist zufrieden sind, dass die Bereitstellung unerwünschten Änderungen an vorhandenen Ressourcen oder Daten vornehmen, wird nicht, er fügt einen Build verwenden die **DeployToStaging** Builddefinition.
-5. Die **DeployToStaging** Definition führt die benutzerdefinierte Projektdateien zu erstellen. Diese veröffentlichen Sie die Bereitstellungsressourcen auf dem primären Webserver in der Stagingumgebung.
-6. Der Controller des Web Farm Framework (WFF) wird die Webserver in der Stagingumgebung synchronisiert. Dadurch wird die Anwendung auf allen Webservern in der Serverfarm verfügbar.
+1. Der stagingumgebungs Administrator Rob Walters fügt einen Build mithilfe der Builddefinition **deploydestaging-WhatIf** in die Warteschlange ein. Rob verwendet die builddefinitionsparameter, um anzugeben, welcher Build bereitgestellt werden soll.
+2. Die Builddefinition **deploydestaging-WhatIf** führt die benutzerdefinierten Projektdateien im "Was-wäre-wenn"-Modus aus. Dadurch werden Protokolldateien generiert, als hätte Rob eine Live Bereitstellung durchführen, aber keine Änderungen an der Zielumgebung.
+3. Rob prüft die Protokolldateien, um die Auswirkungen der Bereitstellung in der Stagingumgebung zu ermitteln. Vor allem möchte Rob überprüfen, was hinzugefügt wird, was aktualisiert wird und was gelöscht wird.
+4. Wenn Rob zufrieden ist, dass die Bereitstellung keine unerwünschten Änderungen an vorhandenen Ressourcen oder Daten vornimmt, fügt er einen Build mithilfe der Builddefinition **deploydestaging** in die Warteschlange ein.
+5. Die Builddefinition **deploydestaging** führt die benutzerdefinierten Projektdateien aus. Diese veröffentlichen die Bereitstellungs Ressourcen auf dem primären Webserver in der Stagingumgebung.
+6. Der WFF-Controller (Web Farm Framework) synchronisiert die Webserver in der Stagingumgebung. Dadurch ist die Anwendung auf allen Webservern in der Serverfarm verfügbar.
 
-### <a name="how-does-the-deployment-process-work"></a>Wie funktioniert der Bereitstellungsprozess?
+### <a name="how-does-the-deployment-process-work"></a>Wie funktioniert der Bereitstellungs Prozess?
 
-Die **DeployToStaging** Definition stellt diese Argumente an MSBuild zu erstellen:
+Die Builddefinition **deploydestaging** stellt diese Argumente für MSBuild bereit:
 
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample2.cmd)]
 
-Die **TargetEnvPropsFile** -Eigenschaft teilt die *Publish.proj* -Datei, in die zu importierende Projektdatei umgebungsspezifische gefunden. Die **OutputRoot** Eigenschaft überschreibt die integrierten Wert und gibt den Speicherort der Ordner "Build" mit den Ressourcen bereitgestellt werden soll. Wenn Rob den Build-Warteschlangen, verwendet er die **Parameter** Tab, um einen aktualisierten Wert für die **OutputRoot** Eigenschaft.
+Mit der Eigenschaft " **targetenvpropsfile** " wird der Datei " *Publish. proj* " mitgeteilt, wo die zu importierende Umgebungs spezifische Projektdatei zu finden ist. Die **outputroot** -Eigenschaft überschreibt den integrierten Wert und gibt den Speicherort des buildordners an, der die Ressourcen enthält, die Sie bereitstellen möchten. Wenn Rob den Build in die Warteschlange eingereiht, verwendet er die Registerkarte **Parameter** , um einen aktualisierten Wert für die **outputroot** -Eigenschaft anzugeben.
 
 ![](application-lifecycle-management-from-development-to-production/_static/image5.png)
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen einer Builddefinition wie folgt finden Sie unter [Bereitstellen von einem bestimmten Build](../configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build.md).
+> Weitere Informationen zum Erstellen einer Builddefinition wie dieser finden Sie unter Bereitstellen [eines bestimmten Builds](../configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build.md).
 
-Die **DeployToStaging-WhatIf** Builddefinition enthält die gleiche Bereitstellungslogik wie die **DeployToStaging** Definition zu erstellen. Es enthält jedoch das zusätzliche Argument **"WhatIf" = "true"**:
+Die Builddefinition **deploydestaging-WhatIf** enthält dieselbe Bereitstellungs Logik wie die **deploydestaging** -Builddefinition. Sie enthält jedoch das zusätzliche Argument **WhatIf = true**:
 
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample3.cmd)]
 
-In der *Publish.proj* -Datei, die **"WhatIf"** Eigenschaft gibt an, dass alle Bereitstellungsressourcen "what if"-Modus veröffentlicht werden soll. Das heißt, werden die Protokolldateien generiert, als ob die Bereitstellung jetzt mehr, aber "nothing" in der zielumgebung tatsächlich geändert wird. Dadurch können Sie ermitteln können, die Auswirkungen der vorgeschlagenen Bereitstellung&#x2014;in bestimmten, was hinzugefügt wird, was aktualisiert wird und welche gelöscht werden&#x2014;, bevor Sie tatsächlich Änderungen vornehmen.
+Die **WhatIf** -Eigenschaft in der Datei *Publish. proj* gibt an, dass alle Bereitstellungs Ressourcen im "Was-wäre-wenn"-Modus veröffentlicht werden sollen. Das heißt, dass Protokolldateien generiert werden, als ob die Bereitstellung fortgeführt worden wäre, aber in der Zielumgebung hat nichts geändert. Auf diese Weise können Sie die Auswirkung einer vorgeschlagenen bereit&#x2014;Stellung bewerten, was hinzugefügt wird, welche Updates aktualisiert werden und was gelöscht&#x2014;wird, bevor Sie tatsächlich Änderungen vornehmen.
 
 > [!NOTE]
-> Weitere Informationen zum Konfigurieren von "what if"-Bereitstellungen finden Sie unter [Durchführen einer Bereitstellung "Was-wäre-wenn"](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md).
+> Weitere Informationen zum Konfigurieren von "Was-wäre-wenn"-bereit Stellungen finden Sie unter [Ausführen einer "What if"-Bereitstellung](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md).
 
-Nachdem Sie Ihre Anwendung mit dem primären Webserver in der Stagingumgebung bereitgestellt haben, werden die WFF die Anwendung automatisch auf allen Servern in der Serverfarm synchronisiert.
+Nachdem Sie die Anwendung auf dem primären Webserver in der Stagingumgebung bereitgestellt haben, wird die Anwendung automatisch von der WFF auf allen Servern in der Serverfarm synchronisiert.
 
 > [!NOTE]
-> Weitere Informationen zum Konfigurieren der WFF zum Synchronisieren von Webservern finden Sie unter [erstellen Sie eine Serverfarm mit Web Farm Framework](../configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework.md).
+> Weitere Informationen zum Konfigurieren des WFF zum Synchronisieren von Webservern finden Sie unter [Erstellen einer Server Farm mit dem Webfarm-Framework](../configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework.md).
 
 ## <a name="deployment-to-production"></a>Bereitstellung in der Produktion
 
-Wenn ein Build in der Stagingumgebung genehmigt wurde, kann das Team der Fabrikam, Inc. die Anwendung in der produktionsumgebung veröffentlichen. Der produktionsumgebung bereit ist, in dem die Anwendung wird "live", und erreicht die Zielgruppe von Endbenutzern.
+Wenn ein Build in der Stagingumgebung genehmigt wurde, kann das Team von Fabrikam, Inc. die Anwendung in der Produktionsumgebung veröffentlichen. In der Produktionsumgebung geht die Anwendung "Live" und erreicht Ihre Zielgruppe von Endbenutzern.
 
-Die produktionsumgebung ist in einem Umkreisnetzwerk Internetzugriff. Dies ist isoliert, aus dem internen Netzwerk, das den Buildserver enthält. Der Produktion umgebungsadministrator Lisa Andrews, muss manuell der Web-Pakete aus dem Build-Server kopieren und in IIS auf dem primären Produktions-Web-Server importieren.
+Die Produktionsumgebung befindet sich in einem Umkreis Netzwerk mit Internet Zugriff. Dies ist vom internen Netzwerk isoliert, das den Buildserver enthält. Der Administrator der Produktionsumgebung, Lisa Andrews, muss die Webbereitstellungs Pakete manuell vom Buildserver kopieren und auf dem primären produktionsweb Server in IIS importieren.
 
 ![](application-lifecycle-management-from-development-to-production/_static/image6.png)
 
-Dies ist der grundsätzliche Erstellungsprozess für eine Bereitstellung in der produktionsumgebung bereit:
+Dies ist der allgemeine Prozess für eine Bereitstellung in der Produktionsumgebung:
 
-1. Das Entwicklerteam weist Claudia, dass ein Build für die Bereitstellung für die Produktion bereit ist. Das Team empfiehlt Claudia des Speicherorts für die Web-Bereitstellungspakete in der Drop-Ordner auf dem Buildserver.
-2. Claudia die Webpakete auf dem Buildserver erfasst und kopiert diese auf dem primären Webserver in der produktionsumgebung.
-3. Claudia wird importieren und veröffentlichen die Webpakete auf dem primären Webserver IIS-Manager verwendet.
-4. Der Controller WFF synchronisiert die Webserver in der produktionsumgebung. Dadurch wird die Anwendung auf allen Webservern in der Serverfarm verfügbar.
+1. Das Entwicklerteam rät Lisa, dass ein Build für die Bereitstellung in der Produktion bereit ist. Das Team rät Lisa vom Speicherort der Webbereitstellungs Pakete innerhalb des Ablage Ordners auf dem Buildserver ab.
+2. Lisa sammelt die Webpakete vom Buildserver und kopiert Sie auf den primären Webserver in der Produktionsumgebung.
+3. Lisa verwendet IIS-Manager, um die Webpakete auf dem primären Webserver zu importieren und zu veröffentlichen.
+4. Der WFF-Controller synchronisiert die Webserver in der Produktionsumgebung. Dadurch ist die Anwendung auf allen Webservern in der Serverfarm verfügbar.
 
-### <a name="how-does-the-deployment-process-work"></a>Wie funktioniert der Bereitstellungsprozess?
+### <a name="how-does-the-deployment-process-work"></a>Wie funktioniert der Bereitstellungs Prozess?
 
-IIS-Manager enthält ein Paket Assistenten zum Importieren, die es einfach macht, Web-Pakete auf einer IIS-Website veröffentlichen. Eine exemplarische Vorgehensweise zum Ausführen dieses Verfahrens finden Sie unter [Manuelles Installieren von Webpaketen](../web-deployment-in-the-enterprise/manually-installing-web-packages.md).
+IIS-Manager enthält einen Assistenten zum Importieren von Anwendungspaketen, mit dem Sie Webpakete auf einer IIS-Website leicht veröffentlichen können. Eine exemplarische Vorgehensweise zum Ausführen dieses Verfahrens finden Sie unter [Manuelles Installieren von Webpaketen](../web-deployment-in-the-enterprise/manually-installing-web-packages.md).
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema bereitgestellten eine Abbildung der bereitstellungs-Lebenszyklus für eine typische Enterprise-Skalierung-Webanwendung.
+Dieses Thema bietet eine Abbildung des Bereitstellungs Lebenszyklus für eine typische Webanwendung im Unternehmensbereich.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die Anleitungen zu verschiedenen Aspekten der Bereitstellung von Webanwendungen bereitstellen. Es gibt viele weitere Aufgaben und Überlegungen in den einzelnen Phasen des Bereitstellungsprozesses, und es ist nicht möglich, die sie in eine einzelne Exemplarische Vorgehensweise zu behandeln, in der Praxis. Weitere Informationen finden Sie in diesen Tutorials:
+Dieses Thema ist Teil einer Reihe von Tutorials, die Anleitungen zu verschiedenen Aspekten der Bereitstellung von Webanwendungen bereitstellen. In der Praxis gibt es in jeder Phase des Bereitstellungs Prozesses viele zusätzliche Aufgaben und Überlegungen, und es ist nicht möglich, Sie in einer einzigen exemplarischen Vorgehensweise zu behandeln. Weitere Informationen finden Sie in den folgenden Tutorials:
 
-- [Webbereitstellung im Unternehmen](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md). Dieses Tutorial bietet eine umfassende Einführung in Web Deployment-Techniken, die mithilfe von MSBuild und der IIS-Webbereitstellungstool (Web Deploy).
-- [Konfigurieren von Serverumgebungen für die Webbereitstellung](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). Dieses Tutorial enthält Anweisungen zum Konfigurieren von Windows Server-Umgebungen, um verschiedene Szenarien zu unterstützen.
-- [Konfiguration von Team Foundation Server für die Webbereitstellung automatisierter](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). In diesem Tutorial enthält Anleitungen dazu, wie Sie Bereitstellungslogik in TFS-Buildprozesse integrieren.
-- [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial enthält Anleitungen zum Teil der komplexen Herausforderungen bei der Bereitstellung entsprechen denen Unternehmen konfrontiert.
+- [Webbereitstellung im Unternehmen](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md). Dieses Tutorial bietet eine umfassende Einführung in Webbereitstellungs Verfahren mithilfe von MSBuild und dem IIS-Webbereitstellungs Tool (Web deploy).
+- [Konfigurieren von Server Umgebungen für die Webbereitstellung](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). Dieses Tutorial enthält Anleitungen zum Konfigurieren von Windows Server-Umgebungen zur Unterstützung verschiedener Bereitstellungs Szenarien.
+- [Konfigurieren von Team Foundation Server für die automatisierte Webbereitstellung](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Dieses Tutorial enthält Anleitungen zum Integrieren von Bereitstellungs Logik in TFS-Buildprozesse.
+- [Erweiterte Unternehmensweb Bereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Dieses Tutorial enthält Anleitungen zum erfüllen einiger komplexer Bereitstellungs Herausforderungen, denen Organisationen ausgesetzt sind.
 
 > [!div class="step-by-step"]
-> [Vorherige](enterprise-web-deployment-scenario-overview.md)
+> [Previous](enterprise-web-deployment-scenario-overview.md)

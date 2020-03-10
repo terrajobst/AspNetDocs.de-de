@@ -9,11 +9,11 @@ ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3cb8dec47040bc65f1a024325c91590729ffbdb7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586669"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519237"
 ---
 # <a name="control-id-naming-in-content-pages-vb"></a>Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)
 
@@ -205,7 +205,7 @@ Beachten Sie, dass der richtige `id`-Attribut Wert, `ctl00_MainContent_Age`, inn
 > [!NOTE]
 > Dieses JavaScript-Beispiel zeigt lediglich, wie eine JavaScript-Funktion hinzugefügt wird, die korrekt auf das von einem Server Steuerelement gerenderte HTML-Element verweist Um diese Funktion verwenden zu können, müssen Sie zusätzliches JavaScript erstellen, um die Funktion aufzurufen, wenn das Dokument geladen wird oder wenn eine bestimmte Benutzeraktion auftritt. Weitere Informationen zu diesen und verwandten Themen finden Sie unter [Arbeiten mit Client seitigem Skript](https://msdn.microsoft.com/library/aa479302.aspx).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Bestimmte ASP.NET-Server Steuerelemente fungieren als Benennungs Container. Dies wirkt sich auf die gerenderten `id` Attributwerte ihrer Nachfolger Steuerelemente sowie auf den Bereich von Steuerelementen aus, die von der `FindControl`-Methode verwendet werden. Im Hinblick auf Masterseiten werden von der Master Seite selbst und ihren contentplachalter-Steuerelementen Container benannt. Folglich müssen wir etwas mehr Arbeit zum programmgesteuerten Verweis auf Steuerelemente auf der Inhaltsseite mit `FindControl`platzieren. In diesem Tutorial haben wir zwei Techniken untersucht: ein Drilldown in das contentplachalter-Steuerelement und das Aufrufen seiner `FindControl` Methode. und ein Rollback der eigenen `FindControl` Implementierung, die rekursiv alle Benennungs Container durchsucht.
 
@@ -213,7 +213,7 @@ Zusätzlich zu den serverseitigen Problemen, die die Benennung von Containern in
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -224,7 +224,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Mater Pages: Tipps, Tricks und Traps](http://www.odetocode.com/articles/450.aspx)
 - [Arbeiten mit Client seitigem Skript](https://msdn.microsoft.com/library/aa479302.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/index
-title: ASP.NET 3.5 – Web Forms-Masterseiten | Microsoft-Dokumentation
+title: ASP.NET 3,5-Web Forms Master Seiten | Microsoft-Dokumentation
 author: rick-anderson
-description: So erstellen und Verwenden von ASP.NET-Masterseiten und Inhaltsseiten zum Erstellen eines konsistenten Layouts in Web Forms-Anwendungen.
+description: Erstellen und Verwenden von ASP.NET-Masterseiten und Inhaltsseiten zum Erstellen eines konsistenten Layouts in Web Forms Anwendungen.
 ms.author: riande
 ms.date: 11/04/2011
 ms.assetid: bc30f0ec-cf8f-4a33-9eee-513be872ac9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages
 msc.type: chapter
 ms.openlocfilehash: 3847269a495d54b0986bab245023daff4a43386a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134149"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78473481"
 ---
 # <a name="aspnet-35---web-forms-master-pages"></a>ASP.NET 3.5 – Web Forms-Masterseiten
 
-> So erstellen und Verwenden von ASP.NET-Masterseiten und Inhaltsseiten zum Erstellen eines konsistenten Layouts in Web Forms-Anwendungen.
+> Erstellen und Verwenden von ASP.NET-Masterseiten und Inhaltsseiten zum Erstellen eines konsistenten Layouts in Web Forms Anwendungen.
 
 - [Erstellen eines websiteweiten Layouts mit Masterseiten (C#)](creating-a-site-wide-layout-using-master-pages-cs.md)
 - [Mehrere ContentPlaceHolder-Steuerelemente und Standardinhalt (C#)](multiple-contentplaceholders-and-default-content-cs.md)

@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/building-35-applications/page-lifecycle-events
-title: Seitenlebenszyklus-Ereignisse | Microsoft-Dokumentation
+title: Seiten Lebenszyklus-Ereignisse | Microsoft-Dokumentation
 author: JoeStagner
-description: ASP.NET bietet einen Ereignismechanismus für sehr umfangreiche mit Hooks in alle wichtigen chronologischen Instanzen im Lebenszyklus ASP.NET-Seite. In diesem Video wird die Enumeration...
+description: ASP.net bietet einen sehr umfangreichen Ereignis Mechanismus, bei dem Hooks in allen wichtigen chronologischen Instanzen im Lebenszyklus der ASP.NET-Seite enthalten sind. Dieses Video wird Aufzählung...
 ms.author: riande
 ms.date: 04/09/2009
 ms.assetid: 11237821-220e-4357-9fa6-38245084e093
 msc.legacyurl: /web-forms/videos/building-35-applications/page-lifecycle-events
 msc.type: video
 ms.openlocfilehash: 28fc01819aeb1a0bc74ff80fadb44a9f69de3a88
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390245"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519945"
 ---
 # <a name="page-lifecycle-events"></a>Seitenlebenszyklus-Ereignisse
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-ASP.NET bietet einen Ereignismechanismus für sehr umfangreiche mit Hooks in alle wichtigen chronologischen Instanzen im Lebenszyklus ASP.NET-Seite. In diesem Video werden aufgezählt werden viele der allgemeinen Lebenszyklusereignisse, Reihenfolge ausgelöst und die Arten von Elementen, denen Sie jedes Ereignis für verwenden können.
+ASP.net bietet einen sehr umfangreichen Ereignis Mechanismus, bei dem Hooks in allen wichtigen chronologischen Instanzen im Lebenszyklus der ASP.NET-Seite enthalten sind. In diesem Video werden viele gängige Lebenszyklus Ereignisse, deren auslöserfolge und die Arten von Dingen aufgelistet, für die Sie ggf. die einzelnen Ereignisse verwenden.
 
-[&#9654;Sehen Sie sich Video (12 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/page-lifecycle-events)
+[&#9654;Video ansehen (12 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/page-lifecycle-events)

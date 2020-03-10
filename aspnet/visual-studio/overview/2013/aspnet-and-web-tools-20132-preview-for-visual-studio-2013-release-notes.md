@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
-title: ASP.NET und Web Tools 2013.2 für Visual Studio 2013 Release Notes | Microsoft-Dokumentation
+title: ASP.net and Web Tools 2013,2 für Visual Studio 2013 Anmerkungen zu dieser Version | Microsoft-Dokumentation
 author: microsoft
 description: ''
 ms.author: riande
@@ -9,263 +9,263 @@ ms.assetid: 7ef5f73c-ca60-43c1-bdb2-702800347e7e
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: 22d4d4afd6963f23d6cfef1745a859c20b69d599
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422992"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78505449"
 ---
 # <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools 2013.2 für Visual Studio 2013 – Anmerkungen zu dieser Version
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 ## <a name="installation-notes"></a>Installationshinweise
 
-ASP.NET and Web Tools für Visual Studio 2013.2 werden in der main-Installationsprogramm gebündelt und heruntergeladen werden kann, als Teil des [Visual Studio 2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521).
+ASP.net and Web Tools für Visual Studio 2013,2 sind im Hauptinstallations Programm gebündelt und können im Rahmen [Visual Studio 2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521)heruntergeladen werden.
 
 ## <a name="documentation"></a>Dokumentation
 
-Lernprogramme und Weitere Informationen zu ASP.NET und Webtools für Visual Studio 2013.2 stehen über die [ASP.NET-Website](https://www.asp.net/).
+Lernprogramme und weitere Informationen zu ASP.net and Web Tools für Visual Studio 2013,2 stehen auf der [ASP.NET-Website](https://www.asp.net/)zur Verfügung.
 
 ## <a name="software-requirements"></a>Softwareanforderungen
 
-ASP.NET and Web Tools für Visual Studio 2013.2 erfordert Visual Studio 2013.
+ASP.net and Web Tools für Visual Studio 2013,2 erfordert Visual Studio 2013.
 
-## <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-20132"></a>Neue Features in ASP.NET and Webtools für Visual Studio 2013.2
+## <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-20132"></a>Neue Features in ASP.net and Web Tools für Visual Studio 2013,2
 
-Die folgenden Abschnitte beschreiben die Funktionen, die in der Version eingeführt wurden.
+In den folgenden Abschnitten werden die Features beschrieben, die in der-Version eingeführt wurden.
 
-- [Vorlagen für ein ASP.NET-Projekt](#oneaspnet)
-- [Beim Starten von Webanwendungen unter IIS Express SSL-Unterstützung](#ssl)
-- [Visual Studio Web-Editor-Erweiterungen](#vswebeditor)
+- [One ASP.net-Projektvorlagen](#oneaspnet)
+- [SSL-Unterstützung beim Starten von Webanwendungen auf IIS Express](#ssl)
+- [Erweiterungen von Visual Studio-Web-Editor](#vswebeditor)
 - [Browserverknüpfung](#browserlink)
 - [Unterstützung für Azure App Service-Web-Apps in Visual Studio](#waws)
-- [Erstellen Sie remote-Azure-Ressourcen, wenn Sie ein neues Webprojekt erstellen](#AzureResources)
-- [Webveröffentlichung mit Erweiterungen](#webpublish)
-- [ASP.NET-Gerüstbau](#scaffolding)
+- [Erstellen von Azure-Remote Ressourcen beim Erstellen eines neuen Webprojekts](#AzureResources)
+- [Erweiterungen für die Webveröffentlichung](#webpublish)
+- [ASP.net Gerüstbau](#scaffolding)
 - [NuGet 2.8.1](#nuget)
-- [ASP.NET-Web Forms](#webforms)
+- [ASP.net Web Forms](#webforms)
 - [ASP.NET MVC 5.1.2](#mvc)
-- [ASP.NET Web-API 2.1.2](#webapi)
-- [ASP.NET Web Pages 3.1.2](#webpages)
-- [Entity Framework 6.1](#ef)
-- [ASP.NET Identity 2.0.0](#identity)
-- [Microsoft OWIN-Komponenten](#owin)
-- [ASP.NET SignalR 2.0.2](#signalr)
+- [ASP.net-Web-API 2.1.2](#webapi)
+- [ASP.net Web Pages 3.1.2](#webpages)
+- [Entity Framework 6,1](#ef)
+- [ASP.net Identity 2.0.0](#identity)
+- [Microsoft-owin-Komponenten](#owin)
+- [ASP.net signalr 2.0.2](#signalr)
 
 <a id="oneaspnet"></a>
-### <a name="one-aspnet-project-templates"></a>Vorlagen für ein ASP.NET-Projekt
+### <a name="one-aspnet-project-templates"></a>One ASP.net-Projektvorlagen
 
-- Updates für ASP.NET Projektvorlagen zur Unterstützung von kontobestätigung und Kennwortzurücksetzung.
-- Aktualisieren von Vorlagen für ASP.NET Web-API zur Unterstützung der Authentifizierung, die auf lokale Organisationskonten.
-- Die ASP.NET SPA-Vorlage enthält nun die Authentifizierung, die Ansichten "MVC" und "Server Side basiert. Die Vorlage weist einen WebAPI-Controller, die nur durch authentifizierte Benutzer zugegriffen werden kann.
+- Aktualisierungen an ASP.net-Projektvorlagen zur Unterstützung der Konto Bestätigung und der Kenn Wort Zurücksetzung.
+- Aktualisieren Sie ASP.net-Web-API Vorlage, um die Authentifizierung über lokale Organisations Konten zu unterstützen.
+- Die ASP.net Spa-Vorlage enthält jetzt eine Authentifizierung, die auf MVC-und serverseitigen Ansichten basiert. Die Vorlage verfügt über einen WebAPI-Controller, auf den nur authentifizierte Benutzer zugreifen können.
 
 <a id="ssl"></a>
-### <a name="support-ssl-when-launching-web-applications-on-iis-express"></a>Beim Starten von Webanwendungen unter IIS Express SSL-Unterstützung
+### <a name="support-ssl-when-launching-web-applications-on-iis-express"></a>SSL-Unterstützung beim Starten von Webanwendungen auf IIS Express
 
-Um die sicherheitswarnung, die beim Durchsuchen und Debuggen von HTTPS auf "localhost" zu vermeiden, haben wir ein Dialogfeld, um zuzulassen, dass Internet Explorer und Chrome, vertrauen die selbstsigniertes IIS express SSL-Zertifikat hinzugefügt.
+Um die Sicherheitswarnung beim Durchsuchen und Debuggen von HTTPS auf "localhost" auszuschließen, haben wir ein Dialogfeld hinzugefügt, mit dem Internet Explorer und Chrome dem selbst signierten IIS Express-SSL-Zertifikat vertrauen können
 
-Beispielsweise kann eine Web-Projekt-Eigenschaft festgelegt werden, Verwendung von SSL. Klicken Sie auf F4, um das Dialogfeld "Eigenschaften" zu öffnen. Änderung **SSL aktiviert** auf "true". Kopieren Sie die SSL-URL ein.
+Beispielsweise kann eine Webprojekt Eigenschaft für die Verwendung von SSL festgelegt werden. Klicken Sie auf F4, um das Eigenschaften Dialogfeld zu aktivieren. Ändern Sie **SSL** in "true". Kopieren Sie die SSL-URL.
 
-![SSL aktiviert-Eigenschaft](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image1.png)
+![SSL aktiviert (Eigenschaft)](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image1.png)
 
-Richten Sie die Web-Projekt Seite Web Registerkarte für Eigenschaften für die HTTPS basierend auf URL (die SSL-URL werden `https://localhost:44300/` , sofern Sie zuvor SSL-Websites erstellt haben.)
+Legen Sie die webregister Karte Webprojekt-Eigenschaften Seite auf die HTTPS-basierte URL fest (die SSL-URL wird `https://localhost:44300/`, es sei denn, Sie haben zuvor SSL-Websites erstellt).
 
-![Legen Sie die Projekt-URL (HTTPS)](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image2.png)
+![Festlegen der Projekt-URL (HTTPS)](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image2.png)
 
-Drücken Sie STRG+F5, um die Anwendung auszuführen. Führen Sie die Anweisungen, um das selbstsignierte Zertifikat zu vertrauen, das IIS Express generiert hat.
+Drücken Sie STRG+F5, um die Anwendung auszuführen. Befolgen Sie die Anweisungen, um dem von IIS Express generierten selbst signierten Zertifikat zu vertrauen.
 
 ![SSL-Warnung](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image3.png)
 
-Lesen der **Sicherheitswarnung** Dialogfeld, und klicken Sie dann auf **Ja** ggf. zum Installieren des Zertifikats, das "localhost" darstellt.
+Lesen Sie das Dialogfeld **Sicherheitswarnung** , und klicken Sie dann auf **Ja** , wenn Sie das Zertifikat installieren möchten, das localhost darstellt.
 
-![Sicherheitswarnung](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image4.png)
+![Sicherheitshinweis](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image4.png)
 
-Die Website in Internet Explorer oder Chrome angezeigt wird ohne die zertifikatwarnung im Browser.
+Die Website wird in IE oder Chrome ohne die Zertifikat Warnung im Browser angezeigt.
 
-![HTTPS-Seite ohne Warnung](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image5.png)
+![HTTPS-Seite ohne Warnungen](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image5.png)
 
-Firefox verwendet einen eigenen Zertifikatspeicher, damit sie eine Warnung angezeigt wird.
+Firefox verwendet einen eigenen Zertifikat Speicher, sodass eine Warnung angezeigt wird.
 
 <a id="vswebeditor"></a>
-### <a name="visual-studio-web-editor-enhancements"></a>Visual Studio Web-Editor-Erweiterungen
+### <a name="visual-studio-web-editor-enhancements"></a>Erweiterungen von Visual Studio-Web-Editor
 
-- **Neues JSON-Projektelement und Editor**: Wir haben eine JSON-Projektelement und -Editor in Visual Studio hinzugefügt. Aktuelle JSON-Editor-Funktionen zählen unter anderem die farbliche Kennzeichnung, syntaxüberprüfung, Vervollständigung von Klammern, Gliederung, Tools optionseinstellung.
+- **Neues JSON-Projekt Element und-Editor**: Wir haben Visual Studio ein JSON-Projekt Element und einen Editor hinzugefügt. Zu den aktuellen JSON-Editor-Features gehören Farbgebung, Syntax Validierung, Klammer Vervollständigung, Gliederung, Options Einstellung für Extras und mehr.
 
     ![JSON-Editor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image6.png)
 
-    Unterstützt nun die IntelliSense [JSON-Schema](http://json-schema.org/) v3 und v4. Es ist ein Schema-Kombinationsfeld vorhandenen Schemas auswählen, bearbeiten Sie den Pfad für die lokale Schema, oder einfach ziehen und Ablegen einer JSON-Projektdatei, um den relativen Pfad zu erhalten.
+    IntelliSense unterstützt jetzt [JSON-Schema](http://json-schema.org/) V3 und v4. Es gibt ein Schema-Kombinations Feld, in dem vorhandene Schemas ausgewählt, der Pfad des lokalen Schemas bearbeitet oder einfach eine Projekt-JSON-Datei auf die Datei gezogen werden kann, um den relativen Pfad zu erhalten.
 
-    ![JSON-Intellisense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image7.png)    ![JSON-Schema-editor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image8.png)
-- **Neuen Sass (SCSS) Editor**: Wir hinzugefügt, in VS2013 RTM, und wir verfügen jetzt über ein Projektelement Sass und Editor. Sass-Editor-Features sind vergleichbar mit dem LESS-Editor und umfassen farbige Markierung, Variablen und Mixins IntelliSense, kommentieren/auskommentierung aufheben, QuickInfo, Formatierung, syntaxüberprüfung, Gliederung, Goto-Definition, Farbauswahl, tools usw. Festlegen der Option.
+    ![JSON-IntelliSense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image7.png)    ![JSON-Schema-Editor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image8.png)
+- **New Sass (scss)-Editor**: Wir haben weniger in VS2013 RTM hinzugefügt, und wir verfügen nun über ein Sass-Projekt Element und einen Editor. Die Sass-Editor-Features sind mit dem less-Editor vergleichbar und enthalten farbliche Farbgebung, Variable und Mixins IntelliSense, Kommentar/uncomment, Quick Info, Formatierung, Syntax Validierung, Gliederung, gehe zu Definition, Farbauswahl, Extras Options Einstellung usw.
 
-    ![Neues Element hinzufügen: SCSS-Stylesheet](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image9.png)    ![Formatvorlagen-editor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image10.png)
-- **Neue URL-Auswahl in HTML, Razor, CSS, LESS und Sass-Dokumenten:** Im Lieferumfang von Visual Studio 2013 ist keine URL-Auswahl außerhalb von Web Forms-Seiten. Die neue URL-Auswahl für HTML, Razor, CSS, LESS und Sass Editoren wird ein Dialogfeld – kostenlos, fluent Typisierung-Auswahl, die versteht '..' und Filterdatei werden entsprechend Img-Tags und Links aufgeführt.
+    ![Neues Element hinzufügen: scss-Stylesheet](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image9.png)    ![Stylesheet-Editor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image10.png)
+- **Neue URL-Auswahl in HTML-, Razor-, CSS-, Less-und sass-Dokumenten:** VS 2013 ohne URL-Auswahl außerhalb Web Forms Seiten ausgeliefert. Die neue URL-Auswahl für HTML-, Razor-, CSS-, Less-und sass-Editoren ist eine Dialog freie, überflüssige Typisierungs Auswahl, die ".." versteht. und filtert Dateilisten entsprechend für IMG-Tags und Verknüpfungen.
 
-    ![URL-Auswahl für ImageTag](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image11.png)    ![URL-Auswahl für Ansichten](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image12.png)    ![URL für CSS-Auswahl](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image13.png)
-- **Updates für LESS-Editor durch Hinzufügen weiterer features**
-- **Upgrade von Knockout Intellisense**: Wir haben eine nicht standardmäßige KnockOut-Syntax für das Visual Studio IntelliSense, hinzugefügt "Ko-Vs-Editor" ViewModel ":" Syntax. Sie können verwendet werden, zum Binden an mehrere Modelle von anzeigen auf einer Seite, die mithilfe von Kommentaren in der Form:
+    ![URL-Auswahl für imagetag](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image11.png)    ![URL-Auswahl für Sichten](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image12.png)    ![URL-Auswahl für CSS](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image13.png)
+- **Aktualisierungen von less Editor durch Hinzufügen von weiteren Features**
+- **Knockout IntelliSense-Upgrade**: Wir haben eine nicht standardmäßige Knockout-Syntax für vs IntelliSense, "Ko-vs-Editor ViewModel:"-Syntax, hinzugefügt. Sie kann verwendet werden, um mithilfe von Kommentaren in der Form an mehrere Ansichts Modelle auf einer Seite zu binden:
 
-    ![Knockout-Intellisense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image14.png)
+    ![Knockout IntelliSense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image14.png)
 
-    Wir haben auch Unterstützung für geschachtelte ViewModel-IntelliSense, hinzugefügt, damit Sie tief geschachtelte Objekte auf das "ViewModel" anzeigen können.
+    Wir haben auch Unterstützung für das geschachtelte ViewModel-IntelliSense hinzugefügt, sodass Sie in tief geschachtelte Objekte im ViewModel weiter suchen können.
 
     `<div data-bind="text: foo.bar.baz.etc" />`
 
-    Die angezeigten IntelliSense ist die vollständige IntelliSense-Funktionalität des JavaScript-Objekts.
+    Die angezeigte IntelliSense-Version ist die vollständige IntelliSense-Version des JavaScript-Objekts.
 
-    ![IntelliSense zeigt vollständige JavaScript-Objekt](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image15.png)
-- **Neue URL-Auswahl in HTML, Razor, CSS, LESS und Sass-Dokumente**: Im Lieferumfang von Visual Studio 2013 ist keine URL-Auswahl außerhalb von Web Forms-Seiten. Die neue URL-Auswahl für HTML, Razor, CSS, LESS und Sass Editoren wird ein Dialogfeld – kostenlos, fluent Typisierung-Auswahl, die versteht '..' und Filterdatei werden entsprechend Img-Tags und Links aufgeführt.
+    ![IntelliSense mit vollständigem JavaScript-Objekt](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image15.png)
+- **Neue URL-Auswahl in HTML-, Razor-, CSS-, Less-und sass-Dokumenten**: vs 2013 ohne URL-Auswahl außerhalb der Web Forms Seiten. Die neue URL-Auswahl für HTML-, Razor-, CSS-, Less-und sass-Editoren ist eine Dialog freie, überflüssige Typisierungs Auswahl, die ".." versteht. und filtert Dateilisten entsprechend für IMG-Tags und Verknüpfungen.
 
-    ![URL-Auswahl für ImageTag](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image16.png)    ![URL-Auswahl für Ansichten](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image17.png)    ![URL für CSS-Auswahl](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image18.png)
+    ![URL-Auswahl für imagetag](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image16.png)    ![URL-Auswahl für Sichten](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image17.png)    ![URL-Auswahl für CSS](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image18.png)
 
 <a id="browserlink"></a>
 ### <a name="browser-link"></a>Browserverknüpfung
 
-- Browserverknüpfung HTTPS-Verbindungen unterstützt und werden aufgelistet, die im Dashboard mit anderen Verbindungen, solange das Zertifikat vom Browser als vertrauenswürdig eingestuft wird.
-- Statische HTML-Quelle-Zuordnung
-- SPA-Unterstützung für das Zuordnen von Daten
-- Zuordnen von Daten automatisch aktualisieren
+- Browser Link unterstützt jetzt HTTPS-Verbindungen und listet diese im Dashboard mit anderen Verbindungen auf, solange das Zertifikat vom Browser als vertrauenswürdig eingestuft wird.
+- Statische HTML-Quell Zuordnung
+- Spa-Unterstützung zum Mapping von Daten
+- Zuordnung von Daten automatisch aktualisieren
 
 <a id="waws"></a>
 ### <a name="support-for-azure-app-service-web-apps-in-visual-studio"></a>Unterstützung für Azure App Service-Web-Apps in Visual Studio
 
-- **Melden Sie sich Unterstützung für Azure.**
-- **Remotedebugging-Funktionen und Remote-Ansicht für Web-apps**: Wir unterstützen jetzt [Remotedebugging-Funktionen für Web-apps in Azure App Service](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio) und remote-Ansicht des Web-app-Inhaltsdateien im Server-Explorer.
+- **Unterstützung der Azure-Anmeldung.**
+- **Remote Debuggen und Remote Ansicht für Web-Apps**: Wir unterstützen jetzt das [Remote Debuggen für Web-Apps in Azure App Service](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio) und Remote Ansicht von Web-App-Inhalts Dateien im Server-Explorer.
 
 <a id="AzureResources"></a>
-### <a name="create-remote-azure-resources-when-creating-a-new-web-project"></a>Erstellen Sie remote-Azure-Ressourcen, wenn Sie ein neues Webprojekt erstellen
+### <a name="create-remote-azure-resources-when-creating-a-new-web-project"></a>Erstellen von Azure-Remote Ressourcen beim Erstellen eines neuen Webprojekts
 
-Wir haben eine Azure hinzugefügt ["Remoteressourcen erstellen"](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) auf das Dialogfeld "Neues Web-Anwendung" das Kontrollkästchen. Indem Sie ihn auswählen, werden Sie die Erfahrung mit der Erstellung einer neuen Webanwendung, die zum Einrichten der Azure-publishing-Website für Tests und erstellen in wenigen einfachen Schritten Veröffentlichungsprofil zu integrieren.
+Das Kontrollkästchen ["Remote Ressourcen erstellen"](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) im Dialogfeld "neue Webanwendung" wurde hinzugefügt. Durch Auswahl dieser Option können Sie die Benutzerumgebung für das Erstellen einer neuen Webanwendung, das Einrichten der Azure-Veröffentlichungs Website zum Testen und das Erstellen eines Veröffentlichungs Profils in wenigen einfachen Schritten integrieren.
 
 ![Neues Projekt mit Azure-Ressourcen](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image19.png)![Veröffentlichen in Azure](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image20.png)
 
 <a id="webpublish"></a>
-### <a name="web-publish-enhancements"></a>Webveröffentlichung mit Erweiterungen
+### <a name="web-publish-enhancements"></a>Erweiterungen für die Webveröffentlichung
 
-- Verbesserung der benutzerfreundlichkeit für die Veröffentlichung.
+- Verbessern Sie die Benutzer Leistung für die Veröffentlichung.
 
 <a id="scaffolding"></a>
-### <a name="aspnet-scaffolding"></a>ASP.NET-Gerüstbau
+### <a name="aspnet-scaffolding"></a>ASP.net Gerüstbau
 
-- **Unterstützung von Enumerationen:** Wenn Ihr Modell Enumerationen verwendet wird, wird der MVC-Gerüstbauer Dropdownliste für die Enumeration generiert. Dabei wird die Enum-Hilfsprogramme in MVC verwendet.
-- **Unterstützung für das Bootstrapping**: Aktualisiert die EditorFor-Vorlagen in MVC-Gerüstbau aus, damit diese die Bootstrap-Klassen verwenden.
-- **Paket Unterstützung**: MVC und Web-API-Scaffolder wird 5.1-Pakete für MVC und Web-API hinzufügen.
+- Aufzählungs **Unterstützung:** Wenn Ihr Modell enums verwendet, generiert das MVC-Gerüst die Dropdown Liste für die Enum. Dabei werden die Aufzählungs Hilfen in MVC verwendet.
+- **Bootstrap-Unterstützung**: aktualisierte EditorFor-Vorlagen in MVC-Gerüstbau, sodass Sie die Bootstrap-Klassen verwenden.
+- **Paket Unterstützung**: MVC-und Web-API-Gerüsts fügen 5,1-Pakete für MVC und die Web-API hinzu.
 
-Die folgenden Screenshots veranschaulichen die Gerüstbau-Modelle.
+Die folgenden Screenshots veranschaulichen Gerüstbau Modelle.
 
-- Model-Code:
+- Modellcode:
 
-     ![Model-code](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image21.png)
-- Kompilieren Sie das Model-Code, mit der rechten Maustaste und wählen Sie **hinzufügen**, **neues Gerüstelement**.
+     ![Modellcode](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image21.png)
+- Kompilieren Sie den Modellcode, klicken Sie mit der rechten Maustaste, und wählen Sie **Hinzufügen**, **Neues Gerüst Element**aus.
 
-     ![Neues Gerüstelement hinzufügen](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image22.png)
-- Wählen Sie **MVC5-Controller mit Ansichten unter Verwendung von Entity Framework**:
+     ![Neues Gerüst Element hinzufügen](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image22.png)
+- Wählen Sie **MVC5 Controller mit Ansichten unter Verwendung Entity Framework**aus:
 
-     ![Hinzufügen von neuen MVC5-Controller mit Ansichten](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image23.png)
-- **Controller hinzufügen** mithilfe des Modells:
+     ![Neuen MVC5-Controller mit Ansichten hinzufügen](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image23.png)
+- Controller mit dem Modell **Hinzufügen** :
 
     ![](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image24.png)
-- Überprüfen Sie den generierten Code, z. B. Views/WeekdayModels/Edit.cshtml enthält `@Html.EnumDropDownListFor`: ![Sicht, die EnumDropDownListFor enthält.](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image25.png)
-- Führen Sie die Seite finden Sie unter der Enumeration "ComboBox" generiert, beachten, dass wenn ein Wert als null sein kann, eine leere Zeichenfolge für das Kombinationsfeld ausgewählt werden kann. Z. B. die **erstellen** Seite zeigt Folgendes:
+- Überprüfen Sie den generierten Code, z. b. views/weekdaymodels/Edit. cshtml enthält `@Html.EnumDropDownListFor`: ![Sicht mit enumdropdownlistfor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image25.png)
+- Führen Sie die Seite aus, um das generierte enumbobox Enumeration anzuzeigen. Beachten Sie, dass eine leere Zeichenfolge für das Kombinations Feld ausgewählt werden kann, wenn ein Wert NULL sein kann. Die Seite **Erstellen** zeigt z. b. Folgendes:
 
-    ![Kombinationsfeld in dem die leere Zeichenfolge](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image26.png)
+    ![Kombinations Feld mit leerer Zeichenfolge](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image26.png)
 
 <a id="nuget"></a>
 ### <a name="nuget-281"></a>NuGet 2.8.1
 
-NuGet 2.8.1, die im April 2014 RTM-Version veröffentlicht wird. Hier sind die wichtigsten Punkte aus den Anmerkungen zur Version, aber überprüfen Sie die [vollständigen Anmerkungen](http://docs.nuget.org/docs/release-notes/nuget-2.8) für Weitere Informationen zu diesen Änderungen.
+Nuget 2.8.1 RTM wird im April 2014 veröffentlicht. Im folgenden finden Sie die wichtigsten Punkte der Anmerkungen zu dieser Version. Weitere Informationen zu diesen Änderungen finden Sie in den Anmerkungen zu dieser [Version](http://docs.nuget.org/docs/release-notes/nuget-2.8) .
 
-- **Ziel Windows Phone 8.1-Anwendungen**: NuGet 2.8.1 unterstützt nun das Ziel Windows Phone 8.1-Anwendungen mithilfe der 'WindowsPhoneApp', 'WPA', 'WindowsPhoneApp81' und "WPA81" Target frameworkMoniker.
+- **Ziel Windows Phone 8,1-Anwendungen**: nuget 2.8.1 unterstützt jetzt das Ausrichten von Windows Phone 8,1-Anwendungen mithilfe der zielframeworkmoniker "windowsphoneapp", "WPA", "WindowsPhoneApp81" und "WPA81".
 
-- **Auflösung für Abhängigkeiten Patch**: Beim Auflösen von paketabhängigkeiten hat NuGet in der Vergangenheit implementiert, eine Strategie für die niedrigste Haupt- und Nebenversionsnummern Paketversion, die Abhängigkeiten für das Paket erfüllt, auswählen. Im Gegensatz zu den Haupt- und Nebenversionsnummern-Version jedoch wurde die Patchversion immer auf die höchste Version behoben. Obwohl das Verhalten arglose war, erstellt es einen Mangel an Determinismus zum Installieren von Paketen mit Abhängigkeiten.
-- **Optionen "dependencyversion" Switch**: Wenn NuGet 2.8 ändert die *Standard* Verhalten zum Auflösen von Abhängigkeiten, werden außerdem eine genauere Steuerung der Abhängigkeit Lösungsprozess über den Switch - Optionen "dependencyversion" in der Konsole des Paket-Manager hinzugefügt. Der Schalter aktiviert Auflösen von Abhängigkeiten, um die niedrigste mögliche Version (Standardverhalten), die höchste mögliche Version oder die höchste Nebenversion oder Patch-Version. Diese Option funktioniert nur für Install-Package, in der Powershell-Befehl.
-- **Optionen "dependencyversion"-Attribut**: Zusätzlich zu den aufgeführten, NuGet gewährt auch die Möglichkeit, legen Sie ein neues Attribut in der Datei "NuGet.config" - Optionen "dependencyversion"-Switch definieren was der Standardwert ist, wenn der Switch - Optionen "dependencyversion" bei einem Aufruf von nicht angegeben ist Install-Package. Dieser Wert wird auch durch das Dialogfeld "NuGet-Paket-Manager" für beliebige Vorgänge der Install-Package berücksichtigt werden. Um diesen Wert festzulegen, fügen Sie das Attribut unter zu Ihrer Datei "NuGet.config" hinzu:
+- **Patchauflösung für Abhängigkeiten**: beim Auflösen von Paketabhängigkeiten hat nuget in der Vergangenheit eine Strategie zum Auswählen der niedrigsten Haupt-und neben Paketversion implementiert, die die Abhängigkeiten des Pakets erfüllt. Anders als bei der Haupt-und neben Version wurde die Patchversion jedoch immer auf die höchste Version aufgelöst. Obwohl das Verhalten wohl gemeint war, wurde für die Installation von Paketen mit Abhängigkeiten ein fehlender Determinismus geschaffen.
+- **Dependencyversion-Switch**: Obwohl nuget 2,8 das *Standard* Verhalten für das Auflösen von Abhängigkeiten ändert, wird die Abhängigkeitsauflösung durch den Schalter-dependencyversion in der Paket-Manager-Konsole genauer gesteuert. Der-Switch ermöglicht das Auflösen von Abhängigkeiten zur niedrigsten möglichen Version (Standardverhalten), der höchstmöglichen Version oder der höchsten neben Version bzw. der höchsten Version des Patches. Dieser Switch funktioniert nur für install-Package im PowerShell-Befehl.
+- **Dependencyversion-Attribut**: Zusätzlich zum oben beschriebenen-dependencyversion-Schalter hat nuget auch die Möglichkeit, ein neues Attribut in der Datei "nuget. config" festzulegen, wobei der Standardwert festgelegt ist, wenn der Schalter "-dependencyversion" nicht in einem Aufruf von "Install-Package" angegeben ist. Dieser Wert wird auch vom Dialog Feld nuget-Paket-Manager für alle Installationspaket Vorgänge beachtet. Fügen Sie der Datei "nuget. config" das unten angegebene-Attribut hinzu, um diesen Wert festzulegen:
 
     `<config> <add key="dependencyversion" value="Highest" /> </config>`
-- **Vorschau der NuGet-Vorgängen mit - WhatIf**: Einige NuGet-Pakete können die Tiefe von Abhängigkeitsdiagrammen haben, und daher es hilfreich sein, während einer Installation, deinstallieren oder aktualisieren, lesen zunächst, was passiert, kann. NuGet 2.8 fügt die Standardversion von PowerShell-Schalter was geschieht, wenn auf die Befehle "Install-Package-Paket deinstallieren und Update-Package" So aktivieren Sie die Visualisierung des gesamten Abschluss von Paketen, die auf die der Befehl angewendet wird.
-- **Ein Downgrade Paket**: Es ist nicht ungewöhnlich, mit eine Vorabversion von einem Paket zu installieren, um neue Funktionen zu untersuchen und dann entscheiden, ob ein Rollback auf die letzte stabile Version. Vor NuGet 2.8 war dies ein mehrstufiger Prozess deinstalliert werden, die Vorabversion Paket und seine Abhängigkeiten, und anschließend die frühere Version installieren. Mit NuGet 2.8 führt allerdings-Paket für das Update jetzt die gesamte paketabschluss (z.B. der Paket Abhängigkeit-Struktur) auf die vorherige Version Rollback.
-- **Entwicklungsabhängigkeiten**: Viele verschiedene Arten von Funktionen können als NuGet-Pakete – einschließlich Tools, die verwendet werden, für die Optimierung des Entwicklungsprozesses übermittelt werden. Diese Komponenten können sie dazu entwickeln ein neues Paket sein sollte, dass eine Abhängigkeit für das neue Paket, wenn sie später veröffentlicht nicht berücksichtigt. NuGet 2.8 kann es sich um ein Paket aus, um sich in der NuSpec-Datei als ein DevelopmentDependency zu identifizieren. Bei der Installation werden diese Metadaten auch die Datei "Packages.config" des Projekts hinzugefügt werden in dem das Paket installiert wurde. Wenn die Datei "Packages.config" später während nuget.exe-Pack für NuGet-Abhängigkeiten analysiert wird, schließt er diese Abhängigkeiten als entwicklungsabhängigkeiten gekennzeichnet.
-- **Einzelne Datei "Packages.config"-Dateien für verschiedene Plattformen**: Wenn Sie Anwendungen für mehrere Zielplattformen zu entwickeln, ist es üblich, verschiedene Projektdateien für jede von der jeweiligen Buildumgebungen verfügen. Es ist auch üblich, die verschiedene NuGet-Paketen in verschiedenen Projektdateien verwenden, wie Pakete verschiedene Ebenen der Unterstützung für verschiedene Plattformen haben. NuGet 2.8 bietet verbesserte Unterstützung für dieses Szenario durch verschiedene "Packages.config"-Dateien für die verschiedenen plattformspezifischen-Projektdateien erstellen.
-- **Fallback auf den lokalen Cache**: Obwohl die NuGet-Pakete, z. B. in der Regel aus einem Remotekatalog genutzt werden die [NuGet-Katalog](http://www.nuget.org) mithilfe einer Netzwerkverbindungs viele Szenarios, in dem der Client ist nicht verbunden, werden. Ohne eine Netzwerkverbindung konnte der NuGet-Client nicht für die erfolgreiche Installation von Paketen – selbst wenn diese Pakete bereits auf dem Clientcomputer im lokalen NuGet-Cache enthalten waren. NuGet 2.8 hinzugefügt der Paket-Manager-Konsole automatisch nach fallback Cacheservern.
+- **Vorschau von nuget-Vorgängen mit-WhatIf**: einige nuget-Pakete können über Deep-Abhängigkeits Diagramme verfügen. Daher kann es bei einem Installations-, Deinstallations-oder Aktualisierungs Vorgang hilfreich sein, um zunächst festzustellen, was passiert. Nuget 2,8 fügt den standardmäßigen PowerShell-Befehl zum Installieren von Paketen, Deinstallieren von Paketen und Update Paketen hinzu, um die Visualisierung des gesamten Abschlusses von Paketen zu ermöglichen, auf die der Befehl angewendet wird.
+- **Downgrade-Paket**: Es ist nicht ungewöhnlich, eine Vorabversion eines Pakets zu installieren, um neue Funktionen zu untersuchen und dann ein Rollback auf die letzte stabile Version auszuführen. Vor nuget 2,8 war dies ein mehrstufiger Prozess der Deinstallieren des vorab Pakets und seiner Abhängigkeiten und der anschließenden Installation der früheren Version. Mit nuget 2,8 führt das Update-Package nun jedoch ein Rollback für den gesamten Paket Abschluss (z. b. die Abhängigkeitsstruktur des Pakets) zur vorherigen Version aus.
+- **Entwicklungs Abhängigkeiten**: viele verschiedene Arten von Funktionen können als nuget-Pakete übermittelt werden, einschließlich Tools, die zur Optimierung des Entwicklungsprozesses verwendet werden. Diese Komponenten, während Sie für die Entwicklung eines neuen Pakets wichtig sein können, sollten beim späteren veröffentlichen nicht als Abhängigkeit des neuen Pakets angesehen werden. Nuget 2,8 ermöglicht einem Paket, sich selbst in der nuspec-Datei als developmentdependenz zu identifizieren. Bei der Installation werden diese Metadaten auch der Datei "Packages. config" des Projekts hinzugefügt, in dem das Paket installiert wurde. Wenn diese Datei "Packages. config" später für nuget-Abhängigkeiten während des Pakets "nuget. exe" analysiert wird, werden diese Abhängigkeiten ausgeschlossen, die als Entwicklungs Abhängigkeiten gekennzeichnet sind.
+- **Einzelne Packages. config-Dateien für verschiedene Plattformen**: Wenn Sie Anwendungen für mehrere Zielplattformen entwickeln, werden für jede der jeweiligen Buildumgebungen häufig verschiedene Projektdateien erstellt. Es ist auch üblich, dass unterschiedliche nuget-Pakete in verschiedenen Projektdateien verwendet werden, da Pakete unterschiedliche Ebenen der Unterstützung für verschiedene Plattformen aufweisen. Nuget 2,8 bietet eine verbesserte Unterstützung für dieses Szenario, indem unterschiedliche Pakete. config-Dateien für verschiedene plattformspezifische Projektdateien erstellt werden.
+- **Fallback zum lokalen Cache**: Obwohl nuget-Pakete in der Regel aus einem Remote Katalog wie dem [nuget](http://www.nuget.org) -Katalog über eine Netzwerkverbindung genutzt werden, gibt es viele Szenarien, in denen der Client nicht verbunden ist. Ohne eine Netzwerkverbindung konnte der nuget-Client Pakete nicht erfolgreich installieren, auch wenn sich diese Pakete bereits auf dem Client Computer im lokalen nuget-Cache befanden. Nuget 2,8 fügt der Paket-Manager-Konsole einen automatischen Fall Back für den Cache hinzu.
 
-    Die Cache-fallback-Funktion erfordert keine bestimmten Befehlsargumente. Darüber hinaus Cache fallback funktioniert derzeit nur in der Konsole des Paket-Manager: das Verhalten funktioniert derzeit nicht im Dialogfeld "Paket-Manager".
-- **Fehlerkorrekturen**: Eine der wichtigen Fehlerbehebungen vorgenommen wurde leistungsverbesserungen in der Update-Package-Befehl zu installieren.
+    Das Cache Fall Back Feature erfordert keine bestimmten Befehlsargumente. Außerdem funktioniert der Cache Fall Back zurzeit nur in der Paket-Manager-Konsole. das Verhalten funktioniert derzeit nicht im Dialogfeld Paket-Manager.
+- **Fehlerbehebungen**: eine der wichtigsten Fehlerbehebungen war die Leistungsverbesserung im Befehl Update-Package-REINSTALL.
 
-    Zusätzlich zu diesen Features und die oben genannten Leistung Fehlerbehebung enthält diese Version von NuGet auch viele andere Fehlerkorrekturen. Gab es 181 insgesamt in den Release behobenen Problemen. Eine vollständige Liste der Arbeit Elemente eine feste in NuGet 2.8, bitte Ansicht der [NuGet Issue Tracker](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all) für diese Version.
+    Zusätzlich zu diesen Features und der erwähnten Leistungs Korrektur enthält diese Version von nuget auch viele andere Fehlerbehebungen. In der Version wurden 181 Gesamtprobleme behoben. Eine vollständige Liste der Arbeitselemente, die in nuget 2,8 korrigiert wurden, finden Sie in der [nuget-Problem](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all) Verfolgung für diese Version.
 
 <a id="webforms"></a>
-### <a name="aspnet-web-forms"></a>ASP.NET-Web Forms
+### <a name="aspnet-web-forms"></a>ASP.NET Web Forms
 
-- Die Web Forms-Vorlagen zeigen jetzt Vorgehensweise Kontobestätigung und Kennwortzurücksetzung für ASP.NET Identity.
-- Das Entity Data Source-Steuerelement und der dynamischen-Datenanbieter für Entity Framework 6. Weitere Informationen finden Sie im folgende MSDN-Blog: [Dynamische Datenanbieter und EntityDataSource-Steuerelement für Entity Framework 6](https://blogs.msdn.com/b/webdev/archive/2014/01/30/announcing-preview-of-dynamic-data-provider-and-entitydatasource-control-for-entity-framework-6.aspx).
+- Die Web Forms Vorlagen veranschaulichen nun, wie Sie die Konto Bestätigung und das Zurücksetzen des Kennworts für ASP.net Identity ausführen.
+- Das Entitäts Datenquellen-Steuerelement und der dynamische Daten Anbieter für Entity Framework 6. Weitere Informationen finden Sie im folgenden MSDN-Blog: [dynamische Daten Provider und EntityDataSource-Steuerelement für Entity Framework 6](https://blogs.msdn.com/b/webdev/archive/2014/01/30/announcing-preview-of-dynamic-data-provider-and-entitydatasource-control-for-entity-framework-6.aspx).
 
 <a id="mvc"></a>
 ### <a name="aspnet-mvc-512"></a>ASP.NET MVC 5.1.2
 
-- [Attribut-Routing-Verbesserungen](../../../mvc/overview/releases/mvc51-release-notes.md#AttributeRouting)
+- [Verbesserungen am Attribut](../../../mvc/overview/releases/mvc51-release-notes.md#AttributeRouting)
 - [Bootstrap-Unterstützung für Editor-Vorlagen](../../../mvc/overview/releases/mvc51-release-notes.md#Bootstrap)
-- [Unterstützung von Enumerationen in Ansichten](../../../mvc/overview/releases/mvc51-release-notes.md#Enum)
-- [Unaufdringliche Unterstützung für MinLength / MaxLength-Attribute](../../../mvc/overview/releases/mvc51-release-notes.md#Unobtrusive)
-- [Die "this"-Kontext unterstützen in unaufdringlichen Ajax](../../../mvc/overview/releases/mvc51-release-notes.md#thisContext)
+- [Aufzählungs Unterstützung in Sichten](../../../mvc/overview/releases/mvc51-release-notes.md#Enum)
+- [Unaufdringliche Unterstützung für MinLength/MaxLength-Attribute](../../../mvc/overview/releases/mvc51-release-notes.md#Unobtrusive)
+- [Unterstützen des "This"-Kontexts in unaufdringlichem AJAX](../../../mvc/overview/releases/mvc51-release-notes.md#thisContext)
 - Verschiedene [Fehlerbehebungen](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=v5.1%20Preview%7cv5.1%20RTM&assignedTo=All&component=MVC&sortField=AssignedTo&sortDirection=Ascending&page=0&reasonClosed=Fixed)
 
 <a id="webapi"></a>
-### <a name="aspnet-web-api-212"></a>ASP.NET Web-API 2.1.2
+### <a name="aspnet-web-api-212"></a>ASP.net-Web-API 2.1.2
 
 - [Globale Fehlerbehandlung](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#global-error)
-- [Attribut-routing-Verbesserungen](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#attribute-routing)
-- [Verbesserungen der Hilfe auf der Eigenschaftenseite](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#help-page)
-- [IgnoreRoute-Unterstützung](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#ignoreroute)
-- [BSON medientypformatierer](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#bson)
+- [Erweiterungen für Attribut Routing](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#attribute-routing)
+- [Verbesserung der Hilfeseite](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#help-page)
+- [Ignoreroute-Unterstützung](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#ignoreroute)
+- [Bson Media-Type-Formatierer](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#bson)
 - [Bessere Unterstützung für Async-Filter](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#async-filters)
-- [Für den Client Library Formatierung Analysieren der Abfrage](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#query-parsing)
+- [Abfrage Verarbeitung für die Client Formatierungs Bibliothek](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#query-parsing)
 - Verschiedene [Fehlerbehebungen](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=v5.1%20Preview%7cv5.1%20RTM&assignedTo=All&component=Web%20API%7cWeb%20API%20OData&sortField=AssignedTo&sortDirection=Ascending&page=0&reasonClosed=Fixed)
 
 <a id="webpages"></a>
-### <a name="aspnet-web-pages-312"></a>ASP.NET Web Pages 3.1.2
+### <a name="aspnet-web-pages-312"></a>ASP.net Web Pages 3.1.2
 
 - Verschiedene [Fehlerbehebungen](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=v5.1%20Preview%7cv5.1%20RTM&assignedTo=All&component=Web%20Pages/Razor&sortField=AssignedTo&sortDirection=Ascending&page=0&reasonClosed=Fixed)
 
 <a id="ef"></a>
-### <a name="entity-framework-61"></a>Entity Framework 6.1
+### <a name="entity-framework-61"></a>Entity Framework 6,1
 
-Entitätsframework wurde auf Version 6.1 für Laufzeit und der Tools aktualisiert. Entity Framework (EF) 6.1 ist eine Aktualisierung auf Entity Framework 6 und umfasst eine Reihe von Fehlerbehebungen und neue Features. Ausführliche Informationen zu EF6.1, einschließlich Links zur Dokumentation für die neuen Funktionen finden Sie unter [Entity Framework-Versionsverlaufs](https://msdn.microsoft.com/data/jj574253). Die neuen Funktionen in dieser Version umfassen:
+Entity Framework wurde sowohl für die Laufzeit als auch für das Tool auf Version 6,1 aktualisiert. Entity Framework (EF) 6,1 ist ein kleineres Update für Entity Framework 6 und umfasst eine Reihe von Fehlerbehebungen und neuen Features. Ausführliche Informationen zu EF 6.1, einschließlich Links zur Dokumentation für die neuen Features, finden Sie unter [Entity Framework Versionsgeschichte](https://msdn.microsoft.com/data/jj574253). Die neuen Funktionen in dieser Version umfassen Folgendes:
 
-- **Konsolidierung Tools** bietet eine einheitliche Möglichkeit zum Erstellen eines neuen EF-Modells. Diese Funktion erweitert den ADO.NET Entity Data Model-Assistenten zum Erstellen von Code First-Modelle auch reverse Engineering aus einer vorhandenen Datenbank zu unterstützen. Diese Features waren zuvor in der Beta-Qualität in EF Power Tools verfügbar.
-- **Behandlung von Fehler bei Commit** bietet die neuen [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) die mit der der neu eingeführten Möglichkeit Transaktionsvorgänge abfangen. Die **CommitFailureHandler** ermöglicht eine automatische Wiederherstellung bei Verbindungsfehlern, während ein Commit der Transaktion durchgeführt.
-- **IndexAttribute** Indizes angegeben werden, indem Sie ein Attribut auf eine Eigenschaft (oder Eigenschaften) in Ihrem Code First-Modell platzieren können. Code wird zunächst klicken Sie dann einen entsprechenden Index in der Datenbank erstellt.
-- **Die öffentliche API-Zuordnung** ermöglicht den Zugriff auf die Informationen, die EF hat, auf wie die Eigenschaften und Typen für Spalten und Tabellen in der Datenbank zugeordnet werden. In früheren Versionen war diese API interne.
-- **Möglichkeit zum Konfigurieren von Interceptors über die Datei App/Web.config**(interceptoren, um ohne Erneutes Kompilieren der Anwendung hinzugefügt werden können).
-- **DatabaseLogger** ist ein neuer Interceptor, die es einfach macht, die alle Datenbankvorgänge in einer Datei zu protokollieren. In Kombination mit der vorherigen Funktion können Sie ganz einfach zur Protokollierung von Datenbankvorgängen für eine bereitgestellte Anwendung, ohne neu kompilieren zu wechseln.
-- **Änderungserkennung für Migrationen Modell** wurde verbessert, damit erstellte Migrationen sind eine präzisere; Leistung des Änderungsprozesses Erkennung wurde ebenfalls deutlich verbessert.
-- **Leistungsverbesserungen** einschließlich reduzierten Datenbankvorgänge während der Initialisierung generieren (Modellerstellung) Optimierungen für Vergleiche von null auf Gleichheit in LINQ-Abfragen schneller anzeigen, in anderen Szenarien und effizienter die Materialisierung der nachverfolgten Entitäten mit mehreren Zuordnungen.
+- Die Tool **Konsolidierung** bietet eine konsistente Möglichkeit zum Erstellen eines neuen EF-Modells. Dieses Feature erweitert den ADO.NET Entity Data Model-Assistenten, um das Erstellen von Code First Modellen, einschließlich Reverse Engineering aus einer vorhandenen Datenbank, zu unterstützen. Diese Features waren zuvor in den EF Power Tools in der Beta Qualität verfügbar.
+- Die **Behandlung von transaktionscommitfehlern** bietet den neuen [System. Data. Entity. Infrastructure. commitfailurehandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) , der die neu eingeführte Möglichkeit zum Abfangen von Transaktions Vorgängen nutzt. **Commitfailurehandler** ermöglicht die automatische Wiederherstellung nach Verbindungsfehlern beim Ausführen eines Commits für eine Transaktion.
+- **Indexattribute** ermöglicht das Angeben von Indizes durch Platzieren eines Attributs für eine Eigenschaft (oder Eigenschaften) im Code First Modell. Code First erstellt dann einen entsprechenden Index in der Datenbank.
+- **Die öffentliche Mapping-API** bietet Zugriff auf die Informationen, die EF für die Zuordnung von Eigenschaften und Typen zu Spalten und Tabellen in der Datenbank bietet. In früheren Versionen war diese API intern.
+- **Die Möglichkeit, Interceptors über die APP/Web. config-Datei zu konfigurieren**(sodass Interceptors hinzugefügt werden können, ohne die Anwendung erneut zu kompilieren).
+- **Databaselogger** ist ein neuer Interceptor, der es einfach macht, alle Daten Bank Vorgänge in einer Datei zu protokollieren. In Kombination mit der vorherigen Funktion können Sie auf diese Weise problemlos auf die Protokollierung von Daten Bank Vorgängen für eine bereitgestellte Anwendung umstellen, ohne dass eine erneute Kompilierung erforderlich ist.
+- Die **migrationsmodell-Änderungs Erkennung** wurde verbessert, sodass das Gerüst für Migrationen genauer ist. die Leistung des Änderungs Erkennungsprozesses wurde ebenfalls erheblich verbessert.
+- **Leistungsverbesserungen** einschließlich reduzierter Daten Bank Vorgänge während der Initialisierung, Optimierungen für den NULL-Gleichheits Vergleich in LINQ-Abfragen, schnellere Ansichts Generierung (Modell Erstellung) in weiteren Szenarien und effizientere Materialisierung von nach verfolgten Entitäten mit mehreren Zuordnungen.
 
 <a id="identity"></a>
-### <a name="aspnet-identity-200"></a>ASP.NET Identity 2.0.0
+### <a name="aspnet-identity-200"></a>ASP.net Identity 2.0.0
 
-- **Zweistufige Authentifizierung**: ASP.NET Identity unterstützt jetzt zweistufige Authentifizierung. Zwei-Faktor-Authentifizierung bietet eine zusätzliche Sicherheitsebene zu Benutzerkonten in dem Fall, in dem Ihr Kennwort kompromittiert wird. Es gibt auch Schutz für brute-Force-Angriffen der zweistufigen Codes.
-- **Sperrung von Konten:** Bietet eine Möglichkeit, den Benutzer zu sperren, wenn der Benutzer das Kennwort oder einer zweistufigen Codes falsch eingibt. Die Anzahl der ungültigen und den Zeitraum kann für die Benutzer gesperrt werden, konfiguriert werden. Entwickler kann optional Sperrung von Konten für bestimmte Benutzerkonten deaktivieren sie Sie benötigen sollte.
-- **Konto bestätigen:** Das ASP.NET Identity-System unterstützt jetzt die Kontobestätigung. Dies ist ein gängiges Szenario in den meisten Websites noch heute, wenn Sie ein neues Konto auf der Website registrieren, Sie erforderlich sind, Ihre e-Mail-Adresse zu bestätigen, bevor Sie alle Elemente in der Website ausführen können. E-Mail-Bestätigung ist hilfreich, da es dadurch verhindert, dass gefälschte Konten erstellt werden. Dies ist äußerst nützlich, wenn Sie e-Mail-Adresse als eine Methode für die Kommunikation mit der Benutzer Ihrer Website wie z. B. Forum-Websites, Banking, e-Commerce- oder soziale Websites verwenden.
-- **Zurücksetzen des Kennworts:** Kennwort zurücksetzen ist ein Feature, kann Benutzer ihre Kennwörter zurücksetzen, wenn sie ihr Kennwort vergessen haben.
-- **Der Sicherheitsstempel (Abmeldung überall):** Unterstützt eine Möglichkeit zum erneuten Generieren der Sicherheitstoken des Benutzers in Fällen, wenn der Benutzer ihre Kennwörter oder jede andere Sicherheit ändert-bezogenen Informationen wie z. B. das Entfernen einer Anmeldung zugeordneten (z. B. Facebook, Google, Microsoft Account und So weiter). Dies ist erforderlich, um sicherzustellen, dass alle Token generiert, mit dem alten Kennwort ungültig sind. Im Beispielprojekt Wenn Sie das Kennwort des Benutzers ändern klicken Sie dann ein neues Token für den Benutzer generiert und werden alle vorherigen Token für ungültig erklärt. Diese Funktion bietet eine zusätzliche Sicherheitsebene für Ihre Anwendung seit, wenn Sie Ihr Kennwort ändern, Sie werden abgemeldet von überall her (alle anderen Browser), in dem Sie sich diese Anwendung angemeldet haben.
-- **Ändern Sie den Typ des Primärschlüssels für Benutzer und Rollen erweiterbar sein**: In ASP.NET Identity 1.0 wurde der Typ des primären Schlüssels für Tabelle-Benutzer und Rollen für Zeichenfolgen. Dies bedeutet, wenn die ASP.NET Identity-System in SQL Server mithilfe von Entity Framework persistent gespeichert wurde, haben wir Nvarchar verwendet. Es gab viele Diskussionen rund um diese Standardimplementierung auf Stack Overflow und basierend auf dem eingehenden Feedback. Wir haben eine erweiterungsmöglichkeit bereitgestellt, in dem Sie angeben können, was den Primärschlüssel der Tabelle Benutzer und Rollen werden soll. Dieser erweiterungsmöglichkeit ist besonders nützlich, wenn Sie Ihre Anwendung migrieren und die Anwendung war das Speichern von Benutzer-IDs GUIDs oder Ints sind.
-- **"IQueryable" für Benutzer und Rollen unterstützen**: Unterstützung für die "IQueryable" UsersStore und RolesStore, können Sie einfach die Liste von Benutzern und Rollen abrufen.
-- **Unterstützt die Delete-Vorgang, durch die UserManager**
-- **Indizierung für Benutzernamen**: In ASP.NET Identity Entity Framework-Implementierung haben wir einen eindeutigen Index auf den Benutzernamen mithilfe der neuen IndexAttribute in EF 6.1.0 hinzugefügt. Dadurch wird sichergestellt, dass Benutzernamen immer eindeutig sind, und es keine Racebedingung gab, in dem Sie mit dem doppelten Benutzernamen letztlich.
-- **Verbesserte Kennwort-Validierungssteuerelement:** Das Kennwort-Validierungssteuerelement, das in ASP.NET Identity 1.0 geliefert wurde, war ein ziemlich einfache Kennwort-Validierungssteuerelement, das nur die minimale Länge überprüft wurde. Es gibt ein neues Kennwort-Validierungssteuerelement, das Ihnen mehr Kontrolle über die Komplexität des Kennworts bietet. Bitte beachten Sie, dass selbst wenn Sie alle Einstellungen in dieses Kennwort aktivieren, zweistufige Authentifizierung für die Benutzerkonten aktivieren empfohlen.
-- **IdentityFactory Middleware / CreatePerOwinContext**:
+- **Zweistufige Authentifizierung**: ASP.net Identity unterstützt jetzt die zweistufige Authentifizierung. Die zweistufige Authentifizierung bietet eine zusätzliche Sicherheitsebene für ihre Benutzerkonten, wenn Ihr Kennwort kompromittiert wird. Es gibt auch Schutz für Brute-Force-Angriffe auf die beiden Faktor Codes.
+- **Kontosperrung:** Bietet eine Möglichkeit, den Benutzer zu sperren, wenn der Benutzer sein Kennwort oder zweistufige Codes nicht korrekt eingegeben hat. Die Anzahl der ungültigen Versuche und die Zeitspanne für die Benutzer können nicht konfiguriert werden. Ein Entwickler kann optional die Kontosperrung für bestimmte Benutzerkonten deaktivieren, wenn dies erforderlich ist.
+- **Konto Bestätigung:** Das ASP.net Identity System unterstützt jetzt die Konto Bestätigung. Dies ist ein gängiges Szenario auf den meisten Websites, bei dem Sie, wenn Sie sich für ein neues Konto auf der Website registrieren, Ihre e-Mail-Adresse bestätigen müssen, bevor Sie etwas auf der Website ausführen können. Eine e-Mail-Bestätigung ist nützlich, da Sie verhindert, dass falsche Konten erstellt werden. Dies ist äußerst nützlich, wenn Sie e-Mail als Methode für die Kommunikation mit den Benutzern Ihrer Website verwenden, z. b. Forums Websites, Banking, eCommerce oder Websites für soziale Netzwerke.
+- Kenn Wort Zurücksetzung **:** Die Kenn Wort Zurücksetzung ist eine Funktion, bei der der Benutzer sein Kennwort zurücksetzen kann, wenn er sein Kennwort vergessen hat
+- **Sicherheits Stempel (bei überall Abmelden):** Unterstützt eine Möglichkeit zum erneuten Generieren des Sicherheits Tokens für den Benutzer in Fällen, in denen der Benutzer sein Kennwort ändert, oder andere sicherheitsrelevante Informationen, z. b. das Entfernen eines zugeordneten Anmelde namens (z. b. Facebook, Google, Microsoft-Konto usw.). Dies ist erforderlich, um sicherzustellen, dass alle mit dem alten Kennwort generierten Token für ungültig erklärt werden. Wenn Sie im Beispiel Projekt das Kennwort des Benutzers ändern, wird ein neues Token für den Benutzer generiert, und alle vorherigen Token werden für ungültig erklärt. Diese Funktion bietet eine zusätzliche Sicherheitsebene für Ihre Anwendung, denn wenn Sie Ihr Kennwort ändern, werden Sie von überall (allen anderen Browsern) abgemeldet, auf dem Sie sich bei dieser Anwendung angemeldet haben.
+- **Legen Sie den Typ des Primärschlüssels für Benutzer und Rollen erweiterbar**: in ASP.net Identity 1,0 war der Typ des Primärschlüssels für Tabellen Benutzer und-Rollen Zeichen folgen. Dies bedeutet Folgendes: Wenn das ASP.net Identity System mithilfe Entity Framework in SQL Server beibehalten wurde, verwendeten wir nvarchar. Es gab viele Diskussionen um diese Standard Implementierung auf Stack Overflow und auf der Grundlage des eingehenden Feedbacks. Wir haben einen Erweiterbarkeits Hook bereitgestellt, in dem Sie angeben können, was der Primärschlüssel für die Tabelle "Benutzer und Rollen" sein soll. Dieser Erweiterbarkeits Hook ist besonders nützlich, wenn Sie Ihre Anwendung migrieren und die Anwendung userids als GUIDs oder int speichert.
+- **Unterstützung von iquerable für Benutzer und Rollen**: zusätzliche Unterstützung für iquervable für usersstore und rolesstore. Sie können problemlos die Liste der Benutzer und Rollen abrufen.
+- **Unterstützen des Löschvorgangs über den usermanager**
+- **Indizierung für username**: in ASP.net Identity Entity Framework-Implementierung haben wir einen eindeutigen Index für den Benutzernamen hinzugefügt, indem wir das neue Indexattribute in EF 6.1.0 verwenden. Dadurch wird sichergestellt, dass Benutzernamen immer eindeutig sind und keine Racebedingung aufgetreten ist, in der Sie möglicherweise doppelte Benutzernamen haben.
+- **Verbessertes Kennwort-Validierungs** Steuerelement: Das Kennwort-Validierungs Steuerelement, das in ASP.net Identity 1,0 ausgeliefert wurde, war ein recht einfaches Kennwort-Validierungs Steuerelement, das nur die Mindestlänge überprüft hat. Es gibt ein neues Kennwort-Validierungs Steuerelement, mit dem Sie die Komplexität des Kennworts besser steuern können. Beachten Sie, dass Sie, selbst wenn Sie alle Einstellungen in diesem Kennwort aktivieren, die zweistufige Authentifizierung für die Benutzerkonten aktivieren sollten.
+- **Identityfactory Middleware/kreateperowincontext**:
 
-    - **Benutzer-Manager**: Sie können die Factoryimplementierung verwenden, um eine Instanz UserManager aus dem OWIN-Kontext abzurufen. Dieses Muster ist ähnlich wie wir zum Abrufen von AuthenticationManager von OWIN-Kontext für die Anmeldung und Abmeldung verwenden. Dies ist eine empfohlene Methode zum Abrufen einer Instanz UserManager pro Anforderung für die Anwendung.
-    - **DbContextFactory**: ASP.NET Identity verwendet Entity Framework für das Identitätssystem in SQL Server beibehalten. Zu diesem Zweck, dass das Identitätssystem verfügt über einen Verweis auf die ApplicationDbContext aus. Die DbContextFactory Middleware gibt eine Instanz der ApplicationDbContext pro Anforderung, mit denen Sie in Ihrer Anwendung zurück.
-- **ASP.NET Identity-Beispiele-NuGet-Paket**: Beispiele für NuGet-Paket kann erleichtern es installieren und Ausführen von Beispielen für ASP.NET Identity und führen die bewährten Methoden. Dies ist ein Beispiel für ASP.NET MVC-Anwendung. Ändern Sie den Code, um Ihre Anwendung zu entsprechen, bevor Sie diese in der Produktion bereitstellen. Das Beispiel sollte in eine leere ASP.NET-Anwendung zur installiert werden. Weitere Informationen zum Paket finden Sie im folgenden Blogbeitrag: [Ankündigung der RTM-Version von ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx)
+    - **Benutzer-Manager**: Sie können die Factory-Implementierung verwenden, um eine Instanz von usermanager aus dem owin-Kontext abzurufen. Dieses Muster ähnelt dem, was wir zum Authentifizieren von AuthenticationManager aus dem owin-Kontext für die Anmeldung und SignOut verwenden. Dies ist eine empfohlene Methode, um eine Instanz von usermanager pro Anforderung für die Anwendung zu erhalten.
+    - **Dbcontextfactory**: ASP.net Identity verwendet Entity Framework zur Beibehaltung des Identitäts Systems in SQL Server. Zu diesem Zweck verfügt das Identitäts System über einen Verweis auf den applicationdbcontext. Die dbcontextfactory-Middleware gibt eine Instanz von applicationdbcontext pro Anforderung zurück, die Sie in Ihrer Anwendung verwenden können.
+- **ASP.net Identity Beispiele nuget-Paket**: mit dem nuget-Paket "Beispiele" können Sie die Beispiele für die ASP.net Identity einfacher installieren und ausführen und die bewährten Methoden befolgen. Dies ist ein Beispiel für eine ASP.NET-MVC-Anwendung. Ändern Sie den Code so, dass er ihrer Anwendung entspricht, bevor Sie diesen in der Produktionsumgebung bereitstellen. Das Beispiel sollte in einer leeren ASP.NET-Anwendung installiert werden. Weitere Informationen zum Paket finden Sie im folgenden Blogbeitrag: [Ankündigung RTM von ASP.net Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx)
 
 <a id="owin"></a>
-### <a name="microsoft-owin-components"></a>Microsoft OWIN-Komponenten
+### <a name="microsoft-owin-components"></a>Microsoft-owin-Komponenten
 
-Es gab viele Fehler, die in dieser Version behoben wurden. Informieren Sie sich die [der 2.1.0 Anmerkungen zu dieser Version Version](https://katanaproject.codeplex.com/releases/view/113281) Ausführlichere Informationen.
+Es gab viele Fehler, die in dieser Version behoben wurden. Ausführlichere Informationen finden Sie in den [Anmerkungen zu dieser Version von 2.1.0](https://katanaproject.codeplex.com/releases/view/113281) .
 
 <a id="signalr"></a>
 ### <a name="aspnet-signalr-202"></a>ASP.NET SignalR 2.0.2
 
-Es gab viele Fehler, die in dieser Version behoben wurden. Informieren Sie sich die [der 2.0.2 Anmerkungen zu dieser Version Version](https://github.com/SignalR/SignalR/releases/tag/2.0.2) Ausführlichere Informationen.
+Es gab viele Fehler, die in dieser Version behoben wurden. Ausführlichere Informationen finden Sie in den Versions [Hinweisen für die Version 2.0.2](https://github.com/SignalR/SignalR/releases/tag/2.0.2) .

@@ -9,11 +9,11 @@ ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
 ms.openlocfilehash: ecde48f6bd88ee5f569bfeb8b70c26a50bc869c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576869"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511431"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>Webentwicklung mit ASP.NET 4 und Visual Studio 2010 – Übersicht
 
@@ -21,7 +21,7 @@ ms.locfileid: "74576869"
 > 
 > [Dieses Whitepaper herunterladen](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_and_Visual_Studio_2010_Web_Development_Overview.pdf)
 
-**Inhalt**
+**Contents**
 
 **[Kerndienste](#0.2__Toc253429238 "_Toc253429238")**  
 [Refactoring der Datei "Web. config"](#0.2__Toc253429239 "_Toc253429239")  
@@ -122,7 +122,7 @@ Außerdem können Sie verschiedene Ausgabe Cache Anbieter pro Kontrolle und pro 
 
 [!code-aspx[Main](overview/samples/sample3.aspx)]
 
-Die Angabe eines anderen Ausgabe Cache Anbieters für eine HTTP-Anforderung erfordert etwas mehr Arbeit. Anstatt den Anbieter deklarativ anzugeben, überschreiben Sie die neue *getouputcacheprovidername* -Methode in der `Global.asax`-Datei, um Programm gesteuert anzugeben, welcher Anbieter für eine bestimmte Anforderung verwendet werden soll. Das folgende Beispiel zeigt, wie Sie dies durchführen:
+Die Angabe eines anderen Ausgabe Cache Anbieters für eine HTTP-Anforderung erfordert etwas mehr Arbeit. Anstatt den Anbieter deklarativ anzugeben, überschreiben Sie die neue *getouputcacheprovidername* -Methode in der `Global.asax`-Datei, um Programm gesteuert anzugeben, welcher Anbieter für eine bestimmte Anforderung verwendet werden soll. Das folgende Beispiel zeigt die dazu erforderliche Vorgehensweise.
 
 [!code-csharp[Main](overview/samples/sample4.cs)]
 
@@ -315,7 +315,7 @@ Mit dem Microsoft AJAX Content Delivery Network (CDN) können Sie Ihren Webanwen
 
 [!code-html[Main](overview/samples/sample19.html)]
 
-Sie können die Leistung der AJAX-Anwendungen bedeutend verbessern, indem Sie das Microsoft AJAX-CDN nutzen. Der Inhalt des Microsoft AJAX CDN wird auf Servern auf der ganzen Welt zwischengespeichert. Außerdem ermöglicht das Microsoft AJAX-CDN Browsern die erneute Verwendung von zwischengespeicherten JavaScript-Dateien für Websites, die sich in verschiedenen Domänen befinden.
+Wenn Sie das Microsoft AJAX CDN nutzen, können Sie die Leistung Ihrer AJAX-Anwendungen erheblich verbessern. Der Inhalt des Microsoft AJAX CDN wird auf Servern auf der ganzen Welt zwischengespeichert. Außerdem ermöglicht das Microsoft AJAX CDN Browser die Wiederverwendung von zwischengespeicherten JavaScript-Dateien für Websites, die sich in verschiedenen Domänen befinden.
 
 Der Microsoft AJAX-Content Delivery Network unterstützt SSL (HTTPS) für den Fall, dass Sie eine Webseite mithilfe der Secure Sockets Layer bedienen müssen.
 
@@ -353,7 +353,7 @@ Wenn Sie z. b. die ajaxframeworkmode-Eigenschaft auf den Wert "explizit" festleg
 
 <a id="0.2__The_DataView_Control"></a><a id="0.2__The_DataContext_and"></a><a id="0.2__Refactoring_the_Microsoft"></a><a id="0.2__Toc224729032"></a><a id="0.2__Toc253429256"></a><a id="0.2__Toc243304630"></a>
 
-## <a name="web-forms"></a>Web Forms
+## <a name="web-forms"></a>Web Forms
 
 Web Forms ist seit der Veröffentlichung von ASP.NET 1,0 ein Kern Feature in ASP.net. In diesem Bereich sind viele Verbesserungen für ASP.NET 4 enthalten, einschließlich der folgenden:
 
@@ -496,7 +496,7 @@ Gehen Sie folgendermaßen vor, um die Definition der ASP.net-Browserfunktionen v
 
 #### <a name="caching-the-httpbrowsercapabilities-object"></a>Zwischenspeichern des httpbrowserfunktionalitäten-Objekts
 
-Das vorangehende Beispiel weist ein Problem auf, d. h., der Code wird jedes Mal ausgeführt, wenn der benutzerdefinierte Anbieter aufgerufen wird, um das *httpbrowserfunktionalitäten* -Objekt zu erhalten. Dies kann bei jeder Anforderung mehrmals vorkommen. Im Beispiel wird der Code für den Anbieter nicht viel unterstützt. Wenn der Code in Ihrem benutzerdefinierten Anbieter jedoch bedeutende Aufgaben ausführt, um das *httpbrowserfunktionalitäten* -Objekt zu erhalten, kann dies die Leistung beeinträchtigen. Um dies zu verhindern, können Sie das *httpbrowserfunktionalitäten* -Objekt Zwischenspeichern. Führen Sie folgende Schritte aus:
+Das vorangehende Beispiel weist ein Problem auf, d. h., der Code wird jedes Mal ausgeführt, wenn der benutzerdefinierte Anbieter aufgerufen wird, um das *httpbrowserfunktionalitäten* -Objekt zu erhalten. Dies kann bei jeder Anforderung mehrmals vorkommen. Im Beispiel wird der Code für den Anbieter nicht viel unterstützt. Wenn der Code in Ihrem benutzerdefinierten Anbieter jedoch bedeutende Aufgaben ausführt, um das *httpbrowserfunktionalitäten* -Objekt zu erhalten, kann dies die Leistung beeinträchtigen. Um dies zu verhindern, können Sie das *httpbrowserfunktionalitäten* -Objekt Zwischenspeichern. Folgen Sie diesen Schritten:
 
 1. Erstellen Sie eine Klasse, die von *HttpCapabilitiesProvider*abgeleitet wird, wie im folgenden Beispiel gezeigt: 
 
@@ -730,7 +730,7 @@ Das-Steuerelement umfasst die folgenden Features:
 - Einfache Bindung und Bearbeitung von Diagramm Daten.
 - Unterstützung für gängige Datenformate, z. b. Datumsangaben, Uhrzeiten und Währungen.
 - Unterstützung für Interaktivität und ereignisgesteuerte Anpassung, einschließlich Client Click-Ereignissen mithilfe von AJAX.
-- Zustandsverwaltung.
+- Zustandsverwaltung
 - Binäres Streaming
 
 Die folgenden Abbildungen zeigen Beispiele für Finanz Diagramme, die vom ASP.net-Diagramm Steuerelement erzeugt werden.
@@ -927,8 +927,8 @@ Wenn eine Webanwendung oder Website auf die .NET Framework 4 abzielt, wird das *
 
 Der Wert für *controlrenderingcompatibility* ist eine Zeichenfolge, die in zukünftigen Versionen potenzielle neue Versions Definitionen zulässt. In der aktuellen Version werden die folgenden Werte für diese Eigenschaft unterstützt:
 
-- "3,5". Diese Einstellung gibt Legacy Rendering und Markup an. Markup, das von Steuerelementen gerendert wird, ist 100% abwärts kompatibel, und die Einstellung der *xhtmlConformance* -Eigenschaft wird berücksichtigt.
-- "4,0". Wenn die Eigenschaft diese Einstellung aufweist, führen ASP.NET-Webserver Steuerelemente folgende Schritte aus:
+- "3.5". Diese Einstellung gibt Legacy Rendering und Markup an. Markup, das von Steuerelementen gerendert wird, ist 100% abwärts kompatibel, und die Einstellung der *xhtmlConformance* -Eigenschaft wird berücksichtigt.
+- "4.0". Wenn die Eigenschaft diese Einstellung aufweist, führen ASP.NET-Webserver Steuerelemente folgende Schritte aus:
 - Die *xhtmlConformance* -Eigenschaft wird immer als "Strict" behandelt. Folglich wird XHTML 1,0 Strict Markup von Steuerelementen geresbt.
 - Das Deaktivieren von nicht-Eingabe Steuerelementen rendert keine ungültigen Stile mehr.
 - *div* -Elemente in ausgeblendeten Feldern sind nun so formatiert, dass Sie keine Benutzer erstellten CSS-Regeln stören.
@@ -977,10 +977,10 @@ Anschließend können Sie eine CSS-Klasse definieren *, die nur* für die ausgeb
 Standardmäßig werden die folgenden ASP.NET-Webserver Steuerelemente, die Vorlagen unterstützen, automatisch in eine äußere Tabelle eingebunden, die zum Anwenden von Inline Stilen verwendet wird:
 
 - *FormView*
-- *Anmel*
+- *Anmeldung*
 - *PasswordRecovery*
 - *ChangePassword*
-- *TZI*
+- *Assistent*
 - *CreateUserWizard*
 
 Diesen Steuerelementen wurde eine neue Eigenschaft mit dem Namen *RenderOuterTable* hinzugefügt, mit der die äußere Tabelle aus dem Markup entfernt werden kann. Betrachten Sie z. b. das folgende Beispiel eines *FormView* -Steuer Elements:
@@ -1364,13 +1364,13 @@ Die folgenden Websites bieten zusätzliche Informationen zu ASP.NET 4 und Visual
 
 Dies ist ein vorläufiges Dokument, das vor der kommerziellen Veröffentlichung der beschriebenen Software ggf. erheblich geändert wird.
 
-Die in diesem Dokument enthaltenen Informationen zu den erörterten Problemen entsprechend dem Standpunkt der Microsoft Corporation zum Zeitpunkt der Veröffentlichung. Da Microsoft auf wechselnde Marktbedingungen reagieren muss, sollten diese Informationen nicht als verbindlich interpretiert werden, und Microsoft kann nicht für die Genauigkeit von Informationen garantieren, die nach dem Veröffentlichungsdatum vorlegt werden.
+Die in diesem Dokument enthaltenen Informationen stellen die Sicht der Microsoft Corporation der hier diskutierten Themen zum Zeitpunkt der Veröffentlichung dar. Da Microsoft auf wechselnde Marktbedingungen reagieren muss, sollten sie nicht als Verpflichtung seitens Microsoft interpretiert werden, und Microsoft kann die Genauigkeit der dargelegten Informationen nach dem Zeitpunkt der Veröffentlichung nicht garantieren.
 
-Dieses Whitepaper dient ausschließlich Informationszwecken. MICROSOFT GIBT IN BEZUG AUF DIE INFORMATIONEN IN DIESEM DOKUMENT KEINERLEI GEWÄHRLEISTUNG, WEDER AUSDRÜCKLICH NOCH KONKLUDENT.
+Dieses Whitepaper dient ausschließlich Informationszwecken. MICROSOFT ÜBERNIMMT KEINE AUSDRÜCKLICHE, STILLSCHWEIGENDE ODER AUS GESETZ ERWACHSENDE GARANTIE IN BEZUG AUF DIE INFORMATIONEN IN DIESEM DOKUMENT.
 
-Der Benutzer ist für die Einhaltung der geltenden Urheberrechtsgesetze verantwortlich. Ohne Einschränkung der gemäß Urheberrecht geltenden Rechte darf kein Teil dieses Dokuments ohne die ausdrückliche schriftliche Genehmigung der Microsoft Corporation reproduziert, in einem Datenabfragesystem gespeichert oder verwendet oder in irgendeiner Form übertragen werden (elektronisch, mechanisch, durch Fotokopieren, Aufzeichnen usw.).
+Die Benutzer/innen sind verpflichtet, sich an alle anwendbaren Urheberrechtsgesetze zu halten. Unabhängig von der Anwendbarkeit der entsprechenden Urheberrechtsgesetze darf kein Teil dieses Dokuments ohne ausdrückliche schriftliche Erlaubnis der Microsoft Corporation für irgendwelche Zwecke vervielfältigt oder in einem Datenempfangssystem gespeichert oder darin eingelesen werden, unabhängig davon, auf welche Art und Weise oder mit welchen Mitteln (elektronisch, mechanisch, durch Fotokopieren, Aufzeichnen usw.) dies geschieht.
 
-Microsoft besitzt möglicherweise Rechte an Patenten bzw. angemeldeten Patenten, an Marken, Urheberrechten oder sonstigem geistigen Eigentum, die sich auf den fachlichen Inhalt dieses Dokuments beziehen. Sofern nicht ausdrücklich in einem schriftlichen Lizenzvertrag von Microsoft vereinbart, haben Sie durch die Bereitstellung dieses Dokuments keinerlei Anspruch auf diese Patente, Marken, Urheberrechte oder auf sonstiges geistiges Eigentum.
+Microsoft Corporation kann Inhaber von Patenten oder Patentanträgen, Marken, Urheberrechten oder anderem geistigen Eigentum sein, die den Inhalt dieses Dokuments betreffen. Die Bereitstellung dieses Dokuments gewährt keinerlei Lizenzrechte an diesen Patenten, Marken, Urheberrechten oder anderem geistigen Eigentum, es sei denn, dies wurde ausdrücklich durch einen schriftlichen Lizenzvertrag mit der Microsoft Corporation vereinbart.
 
 Sofern nicht anders angegeben, sind die hier dargestellten Beispiel Unternehmen, Organisationen, Produkte, Domänen Namen, e-Mail-Adressen, Logos, Personen, Orte und Ereignisse fiktiv und keine Zuordnung zu echten Unternehmen, Organisationen, Produkten, Domänen Namen, e-Mail-Adressen. Adresse, Logo, Person, Ort oder Ereignis ist beabsichtigt oder sollte abgeleitet werden.
 
@@ -1378,4 +1378,4 @@ Sofern nicht anders angegeben, sind die hier dargestellten Beispiel Unternehmen,
 
 Microsoft und Windows sind eingetragene Marken oder Marken der Microsoft Corporation in den USA und/oder anderen Ländern.
 
-Die Namen von in diesem Dokument erwähnten tatsächlichen Unternehmen und Produkten sind möglicherweise Marken ihrer jeweiligen Besitzer.
+Die in diesem Dokument erwähnten Namen von Unternehmen und Produkten können Marken der jeweiligen Eigentümer sein.

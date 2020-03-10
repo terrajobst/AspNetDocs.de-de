@@ -1,45 +1,45 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
-title: 'Teil 2: Data Access Layer | Microsoft-Dokumentation'
+title: 'Teil 2: Datenzugriffs Ebene | Microsoft-Dokumentation'
 author: JoeStagner
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 2 umfasst das Hinzufügen der Datenzugriffsschicht.
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der Beispielanwendung Tailspin SpyWorks ausgeführt werden. In Teil 2 wird das Hinzufügen der Datenzugriffs Ebene behandelt.
 ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 5a9d5429-d70b-411c-8474-f42cf7ef8a2b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: 342d2c54dfba5d052570e890f85dcf9739f9884f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130612"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462651"
 ---
-# <a name="part-2-data-access-layer"></a>Teil 2: Datenzugriffsebene
+# <a name="part-2-data-access-layer"></a>Teil 2: Datenzugriffs Ebene
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
+> Tailspin SpyWorks veranschaulicht, wie einfach es ist, leistungsstarke, skalierbare Anwendungen für die .NET-Plattform zu erstellen. Es zeigt, wie die großartigen neuen Features in ASP.NET 4 verwendet werden, um einen Online Shop zu erstellen, einschließlich Einkaufs-, Checkout-und Verwaltungsfunktionen.
 > 
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 2 umfasst das Hinzufügen der Datenzugriffsschicht.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der Beispielanwendung Tailspin SpyWorks ausgeführt werden. In Teil 2 wird das Hinzufügen der Datenzugriffs Ebene behandelt.
 
-## <a id="_Toc260221668"></a>  Hinzufügen der Datenzugriffsschicht
+## <a id="_Toc260221668"></a>Hinzufügen der Datenzugriffs Ebene
 
-Die e-Commerce-Anwendung hängt von zwei Datenbanken.
+Unsere eCommerce-Anwendung hängt von zwei Datenbanken ab.
 
-Für Informationen zu den Kunden verwenden wir die ASP.NET-Mitgliedschaft-Standarddatenbank. Für unseren shopping Cart "und" Produkt-Katalog werden wir eine SQL Express-Datenbank wie folgt implementieren.
+Für Kundeninformationen verwenden wir die ASP.NET-Standard Mitgliedschafts Datenbank. Für den Warenkorb und den Produktkatalog implementieren wir wie folgt eine SQL Express-Datenbank.
 
 ![](tailspin-spyworks-part-2/_static/image1.jpg)
 
-Erstellen der Datenbank (Commerce.mdf) in der Anwendung App\_Datenordner wir fortfahren können, um unsere Data Access Layer, die mithilfe von .NET Entity Framework zu erstellen.
+Wenn Sie die Datenbank (Commerce. mdf) im App-\_Datenordner der Anwendung erstellt haben, können wir mit dem Erstellen unserer Datenzugriffs Ebene mit dem .NET-Entity Framework fortfahren.
 
-Wir erstellen einen Ordner namens "Data\_Zugriff", und klicken Sie mit der rechten Maustaste auf diesen Ordner und wählen Sie "Neues Element hinzufügen".
+Erstellen Sie einen Ordner mit dem Namen "Data\_Access", und klicken Sie mit der rechten Maustaste auf diesen Ordner, und wählen Sie "Neues Element hinzufügen" aus.
 
-Geben Sie unter "Installierte Vorlagen" Item "und" und wählen Sie dann "ADO.NET Entity Data Model" EDM\_Commerce.edmx als den Namen, und klicken Sie auf die Schaltfläche "Hinzufügen".
+Geben Sie im Element "installierte Vorlagen" den Eintrag "ADO.NET Entity Data Model" ein, und klicken Sie dann auf "EDM\_Commerce. edmx", und klicken Sie auf die Schaltfläche "hinzufügen".
 
 ![](tailspin-spyworks-part-2/_static/image2.jpg)
 
-Wählen Sie "Aus Datenbank generieren".
+Wählen Sie "aus Datenbank generieren" aus.
 
 ![](tailspin-spyworks-part-2/_static/image1.png)
 
@@ -49,9 +49,9 @@ Wählen Sie "Aus Datenbank generieren".
 
 ![](tailspin-spyworks-part-2/_static/image3.jpg)
 
-Speichern und erstellen.
+Speichern und erstellen Sie.
 
-Jetzt können wir unsere erste Feature – eines Product Category-Menüs hinzufügen.
+Nun können wir unsere erste Funktion hinzufügen – ein Menü für die Produktkategorie.
 
 > [!div class="step-by-step"]
 > [Zurück](tailspin-spyworks-part-1.md)

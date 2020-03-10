@@ -9,11 +9,11 @@ ms.assetid: f215d6b9-8a84-4bd8-8881-e9527d814950
 msc.legacyurl: /web-forms/videos
 msc.type: book
 ms.openlocfilehash: 0082330e75a905469c66b04277d70416555c30c3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397213"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514401"
 ---
 # <a name="videos"></a>Videos
 
@@ -73,7 +73,7 @@ ms.locfileid: "59397213"
     - [Erkennen von Browserfunktionen in ASP.NET Web Pages](how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
     - [Rendern eines ASP.NET-Serversteuerelements durch Zuordnung zum verwendeten Adapter](how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
     - [Übergeben von Informationen von einer Seite an eine andere Seite mithilfe einer Abfragezeichenfolge](how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-    - [Verwenden Sie das Aspnet\_merge.exe Hilfsprogramm zum Zusammenführen von Assemblys](how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+    - [Verwenden des Hilfsprogramms ASPNET\_Merge. exe zum Zusammenführen von Assemblys](how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
     - [Implementieren eines seitenübergreifenden PostBack in ASP.NET](how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet.md)
     - [Programmgesteuertes Hinzufügen von Steuerelementen zu einer ASP.NET-Webseite](how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
     - [Speichern und Bearbeiten von clientseitigen Informationen durch ein verborgenes Feld](how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)
@@ -146,7 +146,7 @@ ms.locfileid: "59397213"
     - [MasterPages](building-35-applications/masterpages.md)
     - [Einführung zu SOAP-basierten Webdiensten mit Visual Web Developer 2008](building-35-applications/an-introduction-to-soap-based-web-services-with-visual-web-developer-2008.md)
     - [Diensten im AJAX-Stil mit Microsoft Visual Web Developer 2008](building-35-applications/ajax-style-services-with-microsoft-visual-web-developer-2008.md)
-    - [Validierung](building-35-applications/validation.md)
+    - [Überprüfung](building-35-applications/validation.md)
     - [login-Steuerelemente](building-35-applications/login-controls.md)
 - [Authentifizierung](authentication/index.md)
 
@@ -221,16 +221,16 @@ ms.locfileid: "59397213"
     - [[Einführung zu ASP.NET 2.0:] Grundlagen zu ASP.NET 2.0](migrating/intro-to-aspnet-20-aspnet-20-fundamentals.md)
     - [[Einführung zu ASP.NET 2.0:] Benutzeroberflächenelemente](migrating/intro-to-aspnet-20-user-interface-elements.md)
     - [[Migration von] Classic ASP nach ASP.NET](migrating/migrating-from-classic-asp-to-aspnet.md)
-    - [Einführung in ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0](migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+    - [Einführung zu ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0](migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
     - [Einführung in ASP.NET für JSP-Entwickler: Erstellen von Anwendungen](migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
-    - [Einführung in ASP.NET für ColdFusion-Entwickler: Hinzufügen von ASP.NET in ein Repertoire](migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-    - [Einführung in ASP.NET für ColdFusion-Entwickler: Erstellen einer ASP.NET-Anwendung](migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+    - [Einführung zu ASP.NET für ColdFusion-Entwickler: Erweitern des Repertoires um ASP.NET](migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+    - [Einführung zu ASP.NET für ColdFusion-Entwickler: Erstellen einer ASP.NET-Anwendung](migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
     - [Interoperabilität zwischen PHP und der Windows-Plattform](migrating/interop-between-php-and-the-windows-platform.md)
 - [Erstellen von Anwendungen der Version 2.0](building-20-applications/index.md)
 
     - [[Lektion 1:] Erste Schritte mit Visual Web Developer Express](building-20-applications/lesson-1-getting-started-with-visual-web-developer-express.md)
     - [[Lektion 2:] Erstellen einer Web Forms-Benutzeroberfläche](building-20-applications/lesson-2-creating-a-web-forms-user-interface.md)
-    - [[Lektion 3:] Weiterführende Informationen zu Ereignissen und Postback](building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
+    - [[Lektion 3:] Weitere Informationen zu Ereignissen und Postback](building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
     - [[Lektion 4:] Grundlegendes zum Webanwendungszustand](building-20-applications/lesson-4-understanding-web-application-state.md)
     - [[Lektion 5:] Debuggen und Überwachung von Websites](building-20-applications/lesson-5-debugging-and-tracing-your-website.md)
     - [[Lektion 6:] Arbeiten mit Stylesheets und Masterseiten](building-20-applications/lesson-6-working-with-stylesheets-and-master-pages.md)
@@ -358,10 +358,10 @@ ms.locfileid: "59397213"
         - [LINQ to SQL: Abfragen der Datenbank](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
         - [LINQ to SQL: Aktualisieren der Datenbank](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
         - [LINQ to SQL: LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-        - [LINQ to SQL: Benutzerdefinierte LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+        - [LINQ to SQL: Anpassen von LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
         - [LINQ to SQL: Verwenden von gespeicherten Prozeduren](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-        - [LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-        - [LINQ to SQL: Ausführen einer beliebigem SQL](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+        - [LINQ to SQL: Aktualisieren von gespeicherten Prozeduren](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+        - [LINQ to SQL: Ausführen einer beliebigem SQL-Abfrage](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
     - [Videos zu LINQ vom VB-Team](data-access/linq-videos-from-the-vb-team/index.md)
 
         - [Erste Schritte mit LINQ](data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
@@ -410,7 +410,7 @@ ms.locfileid: "59397213"
         - [ASP.NET AJAX-Unterstützung in Visual Studio 2008](aspnet-35/aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
         - [Erweitern der AJAX-Funktionalität für eine vorhandene ASP.NET-Seite](aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
         - [Erstellen und Verwenden eines AJAX-fähigen Webdiensts bei einer Website](aspnet-35/aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-        - [ASP.NET-AJAX: Eine Demonstration von ASP.NET AJAX](aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+        - [ASP.NET-AJAX: Demo zu ASP.NET AJAX](aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
         - [ADO.NET Data Services mit ASP.NET AJAX-Unterstützung](aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
         - [Einführung zum ASP.NET AJAX-Steuerelement „History“](aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history.md)
         - [Verbessern der AJAX-Leistung mithilfe von Skriptkombination](aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -441,17 +441,17 @@ ms.locfileid: "59397213"
         - [ScriptLoader](net-4/ajax/aspnet-4-quick-hit-the-scriptloader.md)
         - [jQuery-Syntax für Microsoft AJAX](net-4/ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
         - [AJAX-Datenvorlagen](net-4/ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-    - [Chart](net-4/chart/index.md)
+    - [Diagramm](net-4/chart/index.md)
 
         - [Chart Control](net-4/chart/aspnet-4-quick-hit-chart-control.md)
         - [Einführung zum neuen Chart-Steuerelement in Visual Studio 2010](net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
-    - [Kernspeicher](net-4/core/index.md)
+    - [Core](net-4/core/index.md)
 
         - [Automatischer Start](net-4/core/aspnet-4-quick-hit-auto-start.md)
         - [Bereinigen von „Web.config“-Dateien](net-4/core/aspnet-4-quick-hit-clean-webconfig-files.md)
         - [Vorhersagbare Client-IDs](net-4/core/aspnet-4-quick-hit-predictable-client-ids.md)
         - [HtmlEncoder-Hilfsprogrammmethode](net-4/core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-    - [Data](net-4/data/index.md)
+    - [Daten](net-4/data/index.md)
 
         - [Persistente GridView-Zeilenauswahl](net-4/data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
     - [Markup-Steuerelement](net-4/markup-control/index.md)

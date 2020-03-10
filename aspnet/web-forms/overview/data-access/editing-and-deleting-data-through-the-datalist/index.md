@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/index
-title: Bearbeiten und Löschen von Daten über DataList | Microsoft-Dokumentation
+title: Bearbeiten und Löschen von Daten über den DataList | Microsoft-Dokumentation
 author: rick-anderson
-description: Diese Tutorials zeigen, wie das DataList-Steuerelement so optimieren, dass sie verwendet, die Daten ändern können.
+description: In diesen Tutorials wird veranschaulicht, wie das DataList-Steuerelement so angepasst wird, dass es die Verwendung von Daten ändern ermöglicht.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: a6f02826-428a-49b1-ab2c-8e080b72f51e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist
 msc.type: chapter
 ms.openlocfilehash: b19b983272988cc6802e56541a8dfed052eead04
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133523"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78494937"
 ---
 # <a name="editing-and-deleting-data-through-the-datalist"></a>Bearbeiten und Löschen von Daten über DataList
 
-> Diese Tutorials zeigen, wie das DataList-Steuerelement so optimieren, dass sie verwendet, die Daten ändern können.
+> In diesen Tutorials wird veranschaulicht, wie das DataList-Steuerelement so angepasst wird, dass es die Verwendung von Daten ändern ermöglicht.
 
 - [Bearbeiten und Löschen von Daten im DataList-Steuerelement – Übersicht (C#)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
 - [Durchführen von Batchupdates (C#)](performing-batch-updates-cs.md)

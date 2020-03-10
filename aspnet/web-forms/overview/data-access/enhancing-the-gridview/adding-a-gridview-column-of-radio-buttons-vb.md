@@ -9,11 +9,11 @@ ms.assetid: 2e31b60b-8723-4f14-b7ee-37859454dc3b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
 ms.openlocfilehash: ee67a4556c65d2c9570bf15b42fc3c8e5f555bda
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593191"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78477687"
 ---
 # <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>Hinzufügen einer GridView-Spalte mit Optionsfeldern (VB)
 
@@ -88,7 +88,7 @@ Wählen Sie auf der Registerkarte aktualisieren die Option (None) aus, und klick
 
 **Abbildung 7**: Konfigurieren von ObjectDataSource für die Verwendung der `SuppliersBLL`-Klasse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](adding-a-gridview-column-of-radio-buttons-vb/_static/image10.png))
 
-Da die `GetSuppliersByCountry(country)`-Methode einen Parameter annimmt, werden Sie vom Assistenten zum Konfigurieren von Datenquellen zur Quelle dieses Parameters aufgefordert. Wenn Sie einen hart codierten Wert (in diesem Beispiel USA) angeben möchten, lassen Sie die Dropdown Liste Parameter Quelle auf None fest, und geben Sie den Standardwert in das Textfeld ein. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Da die `GetSuppliersByCountry(country)`-Methode einen Parameter annimmt, werden Sie vom Assistenten zum Konfigurieren von Datenquellen zur Quelle dieses Parameters aufgefordert. Wenn Sie einen hart codierten Wert (in diesem Beispiel USA) angeben möchten, lassen Sie die Dropdown Liste Parameter Quelle auf None fest, und geben Sie den Standardwert in das Textfeld ein. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![die USA als Standardwert für den Country-Parameter verwenden.](adding-a-gridview-column-of-radio-buttons-vb/_static/image8.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image11.png)
 
@@ -268,7 +268,7 @@ In Abbildung 20 werden die Ergebnisse angezeigt, nachdem der Lieferant Bigfoot B
 
 **Abbildung 20**: die von Bigfoot Brauereien gelieferten Produkte sind auf der gleichen Seite aufgelistet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](adding-a-gridview-column-of-radio-buttons-vb/_static/image36.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wie in der [Master-/Details-Verwendung eines auswählbaren Master GridView-Tutorials mit einem Detail DetailView-](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) Tutorial erläutert, können Datensätze aus einem GridView mithilfe eines CommandField ausgewählt werden, dessen `ShowSelectButton`-Eigenschaft auf `True`festgelegt ist. Das CommandField zeigt seine Schaltflächen jedoch entweder als reguläre Schaltflächen, Links oder Bilder an. Eine alternative Benutzeroberfläche zur Zeilenauswahl besteht darin, ein Optionsfeld oder Kontrollkästchen in jeder GridView-Zeile bereitzustellen. In diesem Tutorial haben wir das Hinzufügen einer Spalte mit Options Feldern untersucht.
 
@@ -278,7 +278,7 @@ Nachdem Sie sich mit dem Hinzufügen einer Spalte mit Options Feldern vertraut g
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

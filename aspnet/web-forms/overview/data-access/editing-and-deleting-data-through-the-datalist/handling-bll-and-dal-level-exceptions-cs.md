@@ -9,11 +9,11 @@ ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 35ff60be6ed67ea8d1bf226ae70f590100597757
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634136"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78494967"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-c"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (C#)
 
@@ -107,7 +107,7 @@ Wenn der `Try ... Catch`-Block vorhanden ist, wird den Benutzern eine informativ
 
 **Abbildung 5**: eine Fehlermeldung wird angezeigt, wenn ein negativer Preis eingegeben wird ([Klicken Sie, um das Bild in voller Größe anzuzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 GridView und ObjectDataSource stellen Ereignishandler auf der Post-Ebene bereit, die Informationen zu allen Ausnahmen enthalten, die während des Aktualisierungs-und Lösch Workflows ausgelöst wurden, sowie Eigenschaften, die festgelegt werden können, um anzugeben, ob die Ausnahme aufgetreten ist. Umgangs. Diese Funktionen sind jedoch nicht verfügbar, wenn Sie mit dem DataList arbeiten und die BLL direkt verwenden. Stattdessen sind wir für die Implementierung der Ausnahmebehandlung verantwortlich.
 
@@ -117,7 +117,7 @@ An diesem Punkt unternimmt der DataList keinen Aufwand, um zu verhindern, dass A
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -125,7 +125,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Fehler Protokollierung von Modulen und Handlern (ELMAH)](http://workspaces.gotdotnet.com/elmah) (eine Open Source-Bibliothek zum Protokollieren von Fehlern)
 - [Enterprise Library für .NET Framework 2,0](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) (schließt den Anwendungs Block für die Ausnahme Verwaltung ein)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

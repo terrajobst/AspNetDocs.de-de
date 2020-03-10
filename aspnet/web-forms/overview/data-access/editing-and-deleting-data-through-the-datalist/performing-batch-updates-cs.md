@@ -9,11 +9,11 @@ ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
 ms.openlocfilehash: cde12a4d24555216adc49dd02818901278932eaa
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74631590"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78480045"
 ---
 # <a name="performing-batch-updates-c"></a>Durchführen von Batchupdates (C#)
 
@@ -131,13 +131,13 @@ Alternativ können wir verfolgen, ob es Unterschiede zwischen den übergebenen A
 > [!NOTE]
 > Jedes Mal, wenn die `UpdateSupplierAddress`-Methode aufgerufen wird, wird ein Aufruf an die Datenbank ausgeführt, um Informationen über den aktualisierten Datensatz abzurufen. Wenn dann Änderungen an den Daten vorgenommen werden, wird ein weiterer Daten Banksatz aufgerufen, um die Tabellenzeile zu aktualisieren. Dieser Workflow kann durch Erstellen einer `UpdateSupplierAddress`-Methoden Überladung optimiert werden, die eine `EmployeesDataTable` Instanz akzeptiert, die *alle* Änderungen von der `BatchUpdate.aspx` Seite aufweist. Anschließend könnte es einen Daten Bankvorgang zum Abrufen aller Datensätze aus der `Suppliers` Tabelle erstellen. Die beiden Resultsets können dann aufgezählt werden, und nur die Datensätze, in denen Änderungen aufgetreten sind, können aktualisiert werden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie erfahren, wie Sie einen vollständig bearbeitbaren DataList erstellen, der es einem Benutzer ermöglicht, die Adressinformationen für mehrere Lieferanten schnell zu ändern. Wir haben begonnen, indem wir die Bearbeitungs Schnittstelle für das TextBox-websteuer Element für die Werte "Supplier s Address", "City" und "Country" im DataList-`ItemTemplate` Als nächstes haben wir alle Schaltflächen Aktualisieren oberhalb und unterhalb des DataList-Steuerelemente hinzugefügt. Nachdem ein Benutzer seine Änderungen vorgenommen und auf eine der Schaltflächen "Alle aktualisieren" geklickt hat, werden die `DataListItem` s aufgelistet, und es wird ein aufzurufende `SuppliersBLL` Klassen-`UpdateSupplierAddress` Methode ausgelöst.
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

@@ -8,29 +8,29 @@ ms.date: 11/24/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 960960d26863cc3f725eee8a6c98844c5d3ce721
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: ab3ba71839123e848dffaa59871f9dac8c1a88d0
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519179"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504957"
 ---
 # <a name="call-a-web-api-from-a-net-client-c"></a>Web-API über einen .NET-Client (C#) aufgerufen
 
 von [Mike Wasson](https://github.com/MikeWasson) und [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Das [abgeschlossene Projekt herunterladen](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) 
+Das [abgeschlossene Projekt herunterladen](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) 
 
 In diesem Tutorial wird gezeigt, wie Sie eine Web-API mithilfe von [System .net. http. HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) aus einer .NET-Anwendung abrufen.
 
 In diesem Tutorial wird eine Client-App geschrieben, die die folgende Web-API nutzt:
 
-| -Aktion | HTTP-Methode | Relativer URI |
+| Aktion | HTTP-Methode | Relativer URI |
 | --- | --- | --- |
-| Produkt nach ID erhalten | GET | /api/products/*id* |
+| Produkt nach ID erhalten | GET | /API/Products/-*ID* |
 | Erstellen eines neuen Produkts | POST | /api/products |
-| Aktualisieren eines Produkts | PUT | /api/products/*id* |
-| Löschen eines Produkts | LÖSCHEN | /api/products/*id* |
+| Aktualisieren eines Produkts | PUT | /API/Products/-*ID* |
+| Löschen eines Produkts | Delete | /API/Products/-*ID* |
 
 Informationen dazu, wie Sie diese API mit ASP.net-Web-API implementieren, finden Sie unter [Erstellen einer Web-API, die CRUD-Vorgänge unterstützt](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 ).
@@ -165,7 +165,7 @@ Wie bei Get hat eine Löschanforderung keinen Anforderungs Text. Sie müssen das
 
 So testen Sie die Client-App:
 
-1. [Herunterladen](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) und Ausführen der Server-app. [Anweisungen zum Download.](/aspnet/core/#how-to-download-a-sample) Überprüfen Sie, ob die Server-APP funktioniert. Beispielsweise sollte `http://localhost:64195/api/products` eine Liste der Produkte zurückgeben.
+1. [Herunterladen](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) und Ausführen der Server-app. [Anweisungen zum Download.](/aspnet/core/#how-to-download-a-sample) Überprüfen Sie, ob die Server-APP funktioniert. Beispielsweise sollte `http://localhost:64195/api/products` eine Liste der Produkte zurückgeben.
 2. Legen Sie den Basis-URI für HTTP-Anforderungen fest. Ändern Sie die Portnummer in den Port, der in der Server-App verwendet wird.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

@@ -1,171 +1,171 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
-title: 'Einführung in ASP.NET Web Pages: Löschen von DatenbankenDaten | Microsoft-Dokumentation'
+title: Einführung in das ASP.net Web Pages Löschen von Datenbankdaten | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial erfahren Sie, wie Sie einen Eintrag für die einzelnen Datenbank zu löschen. Es wird davon ausgegangen, dass Sie der Reihe über das Aktualisieren von Datenbank-Daten in ASP.NET Web-PA abgeschlossen haben...
+description: In diesem Tutorial wird gezeigt, wie Sie einen einzelnen Datenbankeintrag löschen. Es wird davon ausgegangen, dass Sie die Reihe durch Aktualisieren von Datenbankdaten in ASP.net Web PA abgeschlossen haben...
 ms.author: riande
 ms.date: 01/02/2018
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
 ms.openlocfilehash: c8620fc1abc61d514bdc039c66f7a84e67e89abe
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133492"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510459"
 ---
-# <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Einführung in ASP.NET Web Pages: Löschen von DatenbankenDaten
+# <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Einführung in ASP.net Web Pages Löschen von Datenbankdaten
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Tutorial erfahren Sie, wie Sie einen Eintrag für die einzelnen Datenbank zu löschen. Es wird vorausgesetzt, Sie haben die Reihe über [Aktualisieren von Daten in ASP.NET Web Pages](updating-data.md).
+> In diesem Tutorial wird gezeigt, wie Sie einen einzelnen Datenbankeintrag löschen. Dabei wird davon ausgegangen, dass Sie die Reihe durch Aktualisieren von Daten [Bank Daten in ASP.net Web Pages](updating-data.md)abgeschlossen haben.
 > 
 > Sie lernen Folgendes:
 > 
-> - So wählen Sie einen einzelnen Datensatz in einer Auflistung der Datensätze.
-> - Vorgehensweise: Löschen ein einzelnes Datensatzes aus einer Datenbank.
-> - So überprüfen Sie, dass eine bestimmte Schaltfläche in einem Formular geklickt wurde.
+> - Auswählen eines einzelnen Datensatzes aus einer Auflistung von Datensätzen.
+> - Löschen eines einzelnen Datensatzes aus einer Datenbank.
+> - Überprüfen, ob in einem Formular auf eine bestimmte Schaltfläche geklickt wurde.
 >   
 > 
-> Features/Technologien erläutert:
+> Erörterte Features und Technologien:
 > 
-> - Die `WebGrid` Helper.
-> - Die SQL-Anweisung `Delete` Befehl.
-> - Die `Database.Execute` Methode für die Ausführung einer SQL `Delete` Befehl.
+> - Das `WebGrid`-Hilfsprogramm.
+> - Der SQL `Delete`-Befehl.
+> - Die `Database.Execute`-Methode, um einen SQL `Delete`-Befehl auszuführen.
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
-Im vorherigen Tutorial haben Sie gelernt, wie einen vorhandener Datenbankdatensatz zu aktualisieren. Dieses Lernprogramm ist ähnlich, außer dass statt den Datensatz aktualisieren Sie sie löschen müssen. Die Prozesse sind nahezu identisch, außer dass löschen einfacher ist, damit in diesem Tutorial kurz werden.
+Im vorherigen Tutorial haben Sie gelernt, wie ein vorhandener Daten Bank Datensatz aktualisiert wird. Dieses Lernprogramm ist ähnlich, mit der Ausnahme, dass Sie es löschen, anstatt den Datensatz zu aktualisieren. Die Prozesse sind sehr identisch, mit dem Unterschied, dass das Löschen einfacher ist, sodass dieses Tutorial kurz ist.
 
-In der *Filme* Seite, die Sie aktualisieren müssen die `WebGrid` Helper, sodass, dass die It anzeigt eine **löschen** neben jeder Film zur Ergänzung der **bearbeiten** Verknüpfung, die Sie zuvor hinzugefügt haben.
+Auf der Seite " *Filme* " Aktualisieren Sie das `WebGrid` Hilfsprogramm, sodass neben den einzelnen Filmen ein **Lösch** Link angezeigt wird, der dem zuvor hinzugefügten **Bearbeitungs** Link entspricht.
 
-![Seite "Movies" mit einem Link "löschen" für jeden Film](deleting-data/_static/image1.png)
+![Seite "Filme", die einen Lösch Link für jeden Film anzeigt](deleting-data/_static/image1.png)
 
-Wie bei der Bearbeitung beim Klicken auf die **löschen** Link gelangen Sie zu einer anderen Seite befindet, in dem die Filminformationen bereits in einem Formular:
+Beim Klicken auf den Link **Löschen** gelangen Sie wie bei der Bearbeitung zu einer anderen Seite, auf der sich die Filminformationen bereits in einem Formular befinden:
 
-![Löschen Sie Seite "Movie" mit einem Film angezeigt](deleting-data/_static/image2.png)
+![Movie Page mit angezeigter Film löschen](deleting-data/_static/image2.png)
 
-Sie können dann die Schaltfläche, um den Datensatz dauerhaft zu löschen klicken.
+Sie können dann auf die Schaltfläche klicken, um den Datensatz dauerhaft zu löschen.
 
-## <a name="adding-a-delete-link-to-the-movie-listing"></a>Die Movie-Auflistung hinzugefügt einen Link "löschen"
+## <a name="adding-a-delete-link-to-the-movie-listing"></a>Hinzufügen eines Lösch Links zur Filmliste
 
-Beginnen Sie durch das Hinzufügen einer **löschen** Verknüpfen mit der `WebGrid` Helper. Dieser Link ist ähnlich wie die **bearbeiten** Verknüpfung, die Sie in einem vorherigen Tutorial hinzugefügt.
+Sie beginnen mit dem Hinzufügen eines **Lösch** Links zum `WebGrid`-Hilfsprogramm. Dieser Link ähnelt dem Link **Bearbeiten** , den Sie in einem vorherigen Tutorial hinzugefügt haben.
 
-Öffnen der *Movies.cshtml* Datei.
+Öffnen Sie die Datei *Movies. cshtml* .
 
-Ändern der `WebGrid` Markup im Hauptteil der Seite durch Hinzufügen einer Spalte. Dies ist die geänderte Markup:
+Ändern Sie das `WebGrid` Markup im Text der Seite, indem Sie eine Spalte hinzufügen. Hier ist das geänderte Markup:
 
 [!code-html[Main](deleting-data/samples/sample1.html?highlight=9-10)]
 
-Die neue Spalte, ist diese:
+Die neue Spalte lautet wie folgt:
 
 [!code-html[Main](deleting-data/samples/sample2.html)]
 
-Die Möglichkeit, die das Raster konfiguriert ist, die **bearbeiten** Spalte ganz links im Raster ist und die **löschen** Spalte ganz rechts ist. (Es ist ein Komma nach dem die `Year` Spalte, für den Fall, dass Sie nicht feststellen.) Es ist nichts Besonderes, diese Linkspalten wo, und Sie könnten einfach platzieren Sie sie nebeneinander. In diesem Fall sind separate, um sie vermischt wird schwieriger zu machen.
+Die Art und Weise, in der das Raster konfiguriert ist, ist die Spalte **Bearbeiten** im Raster ganz links, und die Spalte **Löschen** ist ganz rechts. (Es gibt jetzt ein Komma hinter der Spalte "`Year`", falls Sie dies nicht bemerkt haben.) Es gibt nichts besonderes, wo diese Link Spalten zu finden sind, und Sie können Sie einfach nebeneinander platzieren. In diesem Fall sind Sie getrennt, damit Sie nicht mehr gemischt werden können.
 
-![Seite "Movies" mit Links "Bearbeiten" und "Details markiert, um anzugeben, dass sie sich nicht nebeneinander befinden](deleting-data/_static/image3.png)
+![Seite "Filme" mit den Links "Bearbeiten" und "Details" gekennzeichnet, um anzuzeigen, dass Sie nicht nebeneinander sind](deleting-data/_static/image3.png)
 
-Die neue Spalte zeigt eine Verknüpfung (`<a>` Element), dessen Text lautet "Löschen". Das Ziel des Links (die `href` Attribut) wird der Code, der letztendlich löst z. B. diese URL, mit der `id` Wert für jeden Film:
+Die neue Spalte zeigt einen Link (`<a>`-Element) an, dessen Text "Delete" lautet. Das Ziel des Links (dessen `href`-Attribut) ist Code, der letztendlich in etwa diese URL aufgelöst wird, wobei der `id` Wert für jeden Film anders ist:
 
 [!code-css[Main](deleting-data/samples/sample3.css)]
 
-Dieser Link wird aufgerufen, eine Seite namens *DeleteMovie* , und übergeben sie die ID des Films, die Sie ausgewählt haben.
+Mit diesem Link wird eine Seite mit dem Namen *deletemovie* aufgerufen und die ID des von Ihnen ausgewählten Films übergeben.
 
-In diesem Tutorial Gehe nicht ausführlich, wie dieser Link erstellt wird, da sie fast identisch mit ist der **bearbeiten** Link aus dem vorherigen Lernprogramm ([Aktualisieren von Daten in ASP.NET Web Pages](updating-data.md)).
+In diesem Tutorial wird nicht ausführlich erläutert, wie dieser Link erstellt wird, da er fast identisch mit dem **Bearbeitungs** Link aus dem vorherigen Tutorial ist ([Aktualisieren von Datenbankdaten in ASP.net Web Pages](updating-data.md)).
 
-## <a name="creating-the-delete-page"></a>Erstellen die Seite "löschen"
+## <a name="creating-the-delete-page"></a>Erstellen der Seite "Löschen"
 
-Nun können Sie die Seite erstellen, die das Ziel für die **löschen** -Link in das Raster.
+Nun können Sie die Seite erstellen, die als Ziel für den **Lösch** Link im Raster verwendet wird.
 
 > [!NOTE] 
 > 
-> **Wichtige** die Technik zunächst auswählen einen Datensatz zu löschen, und klicken Sie dann mit einer separaten Seite und einer Schaltfläche Überprüfen, ob den Vorgang ist äußerst wichtig, für die Sicherheit. Wie Sie in vorherigen Tutorials gelesen haben, sodass *alle* Art von Änderung an Ihrer Website sollte *immer* erfolgen mit einem Formular &mdash; , also mithilfe eines HTTP POST-Vorgangs. Wenn Sie es wurde ermöglicht, ändern Sie die Website nur über einen Link (die mithilfe einen GET-Vorgang), könnten Personen einfache Anforderungen an Ihre Website vornehmen und löschen Sie Ihre Daten. Selbst ein Suchmaschinen-Crawler, der Ihre Website Indizierung ist konnte Daten nur über Links versehentlich gelöscht werden.
+> **Wichtig** Das Verfahren zum ersten auswählen eines zu löschenden Datensatzes und zum anschließenden Verwenden einer separaten Seite und Schaltfläche, um den Prozess zu bestätigen, ist für die Sicherheit äußerst wichtig. Wie Sie bereits in den vorherigen Tutorials gelesen haben *, sollten Sie* eine *beliebige* Änderung an Ihrer Website durchführen, indem Sie eine Form &mdash;, die einen HTTP Post-Vorgang verwendet. Wenn Sie den Standort durch Klicken auf einen Link (d. h. mithilfe eines Get-Vorgangs) ändern können, können die Benutzer einfache Anforderungen an Ihre Website senden und die Daten löschen. Auch ein Suchengine-Crawler, der Ihre Website indiziert, könnte versehentlich Daten durch die folgenden Links löschen.
 > 
-> Wenn Ihre app auf Personen, die einen Datensatz zu ändern kann, müssen Sie den Datensatz für dem Benutzer vorhanden, für die Bearbeitung trotzdem. Aber Sie könnten versucht sein, überspringen Sie diesen Schritt für das Löschen eines Datensatzes. Überspringen Sie diesen Schritt, jedoch nicht. (Es ist auch hilfreich für Benutzer finden Sie unter dem Datensatz, und bestätigen Sie, dass sie den Datensatz löschen, den sie vorgesehen.)
+> Wenn Ihre APP Benutzern das Ändern eines Datensatzes ermöglicht, müssen Sie den Datensatz für die Bearbeitung auf jeden Fall an den Benutzer übernehmen. Möglicherweise ist es aber verlockend, diesen Schritt zum Löschen eines Datensatzes zu überspringen. Überspringen Sie diesen Schritt jedoch nicht. (Außerdem ist es für Benutzer hilfreich, den Datensatz anzuzeigen und zu bestätigen, dass der von Ihnen beabsichtigte Datensatz gelöscht wird.)
 > 
-> In einer nachfolgenden Tutorial Menge sehen Sie, wie Anmeldename-Funktionalität hinzufügen, damit ein Benutzer sich anmelden, bevor das Löschen eines Datensatzes müssten.
+> In einem nachfolgenden Tutorial finden Sie Informationen zum Hinzufügen von Anmelde Funktionen, damit sich ein Benutzer vor dem Löschen eines Datensatzes anmelden muss.
 
-Erstellen Sie eine Seite mit dem Namen *DeleteMovie.cshtml* , und Ersetzen Sie die neuerungen in der Datei mit folgendem Markup:
+Erstellen Sie eine Seite mit dem Namen *deletemovie. cshtml* , und ersetzen Sie die Elemente in der Datei durch das folgende Markup:
 
 [!code-cshtml[Main](deleting-data/samples/sample4.cshtml)]
 
-Dieses Markup ist, wie die *EditMovie* -Seiten, außer dass anstelle von Textfeldern (`<input type="text">`), das Markup enthält `<span>` Elemente. Es gibt hier nichts zu bearbeiten. Müssen Sie lediglich die Movie-Details anzuzeigen, damit die Benutzer können Sie sicher, dass sie den richtigen Film löschen.
+Dieses Markup ähnelt den *editmovie* -Seiten, mit dem Unterschied, dass das Markup `<span>` Elemente enthält, anstatt Textfelder (`<input type="text">`) zu verwenden. Es gibt nichts, was bearbeitet werden muss. Sie müssen lediglich die Filmdetails anzeigen, damit Benutzer sicherstellen können, dass Sie den richtigen Film löschen.
 
-Das Markup enthält bereits einen Link, der der Benutzer auf die Movie-Angebotsseite zurückzukehren.
+Das Markup enthält bereits einen Link, mit dem der Benutzer zur filmauflistungs Seite zurückkehren kann.
 
-Wie in der *EditMovie* Seite, die den ausgewählten Film-ID wird in einem ausgeblendeten Feld gespeichert. (Es wird auf der Seite im vornherein als Wert einer Abfragezeichenfolge übergeben.) Es gibt eine `Html.ValidationSummary` Aufruf, der Validierungsfehler angezeigt wird. In diesem Fall möglicherweise der Fehler, dass keine Film-ID an die Seite übergeben wurde oder die Film-ID ungültig ist. Diese Situation kann eintreten, wenn ein Benutzer auf dieser Seite ausgeführt wurde, ohne zuvor einen Film in den *Filme* Seite.
+Wie auf der Seite *editmovie* wird die ID des ausgewählten Films in einem ausgeblendeten Feld gespeichert. (Er wird an die Seite an erster Stelle als Abfrage Zeichenfolge-Wert an die Seite geleitet.) Es gibt einen `Html.ValidationSummary`-Befehl, mit dem Validierungs Fehler angezeigt werden. In diesem Fall könnte der Fehler darin bestehen, dass keine Film-ID an die Seite oder die Film-ID ungültig ist. Diese Situation kann eintreten, wenn jemand diese Seite ausgeführt hat, ohne zuvor einen Film auf der Seite " *Filme* " auszuwählen.
 
-Die Beschriftung der Schaltfläche ist **löschen Film**, und dessen Namensattribut nastaven NA hodnotu `buttonDelete`. Die `name` Attribut wird im Code verwendet werden, auf um die Schaltfläche zu identifizieren, die das Formular übermittelt.
+Die Schaltflächen Beschriftung lautet **Delete Movie**, und das Name-Attribut ist auf `buttonDelete`festgelegt. Das `name`-Attribut wird im Code verwendet, um die Schaltfläche zu identifizieren, die das Formular übermittelt hat.
 
-Sie müssen Code schreiben, um die (1) die Filmdetails lesen, wenn die Seite zum ersten Mal angezeigt wird, und löschen (2) tatsächlich den Film aus, klickt der Benutzer die Schaltfläche.
+Sie müssen Code in 1 schreiben) lesen Sie die Filmdetails, wenn die Seite zum ersten Mal angezeigt wird, und 2), und löschen Sie den Film, wenn der Benutzer auf die Schaltfläche klickt.
 
 ## <a name="adding-code-to-read-a-single-movie"></a>Hinzufügen von Code zum Lesen eines einzelnen Films
 
-Am oberen Rand der *DeleteMovie.cshtml* Seite, fügen Sie den folgenden Codeblock:
+Fügen Sie am oberen Rand der Seite *deletemovie. cshtml* den folgenden Codeblock hinzu:
 
 [!code-cshtml[Main](deleting-data/samples/sample5.cshtml)]
 
-Dieses Markup immer das gleiche wie der entsprechende Code in die *EditMovie* Seite. Es ruft die Film-ID aus der Abfragezeichenfolge ab und verwendet die ID, um einen Datensatz aus der Datenbank zu lesen. Der Code enthält den Test zur Überprüfung (`IsInt()` und `row != null`) sicherstellen, dass die Film-ID übergeben wird, auf der Seite gültig ist.
+Dieses Markup ist mit dem entsprechenden Code auf der Seite *editmovie* identisch. Er ruft die Film-ID aus der Abfrage Zeichenfolge ab und verwendet die ID zum Lesen eines Datensatzes aus der Datenbank. Der Code enthält den Validierungstest (`IsInt()` und `row != null`), um sicherzustellen, dass die an die Seite übergebenen Movie-ID gültig ist.
 
-Denken Sie daran, dass dieser Code sollte nur zum ersten Mal ausführen, die die Seite ausgeführt wird. Sie möchten die Movie-Datensatz aus der Datenbank erneut zu lesen, klickt der Benutzer die **löschen Film** Schaltfläche. Aus diesem Grund code zum Lesen des Films befindet sich innerhalb eines Tests, die besagt, `if(!IsPost)` &mdash; , also *ist die Anforderung keinen Post-Vorgang (Formularübermittlung)*.
+Beachten Sie, dass dieser Code nur bei der erstmaligen Ausführung der Seite ausgeführt werden sollte. Sie möchten den Film Daten Satz nicht erneut aus der Datenbank lesen, wenn der Benutzer auf die Schaltfläche " **Film löschen** " klickt. Daher befindet sich der Code zum Lesen des Films in einem Test, der `if(!IsPost)` &mdash; heißt, *Wenn die Anforderung kein Post-Vorgang ist (Formular Übermittlung)* .
 
-## <a name="adding-code-to-delete-the-selected-movie"></a>Hinzufügen von Code, um den ausgewählten Film zu löschen.
+## <a name="adding-code-to-delete-the-selected-movie"></a>Hinzufügen von Code zum Löschen des ausgewählten Films
 
-Um den Film löschen, wenn der Benutzer auf die Schaltfläche klickt, fügen Sie den folgenden Code innerhalb der schließenden Klammer der der `@` blockieren:
+Wenn Sie den Film löschen möchten, wenn der Benutzer auf die Schaltfläche klickt, fügen Sie den folgenden Code direkt innerhalb der schließenden geschweiften Klammer des `@`-Blocks ein:
 
 [!code-csharp[Main](deleting-data/samples/sample6.cs)]
 
-Dieser Code ist mit dem Code zum Aktualisieren eines vorhandenen Datensatzes ähnlich, aber einfacher. Der Code führt im Grunde eine SQL `Delete` Anweisung.
+Dieser Code ähnelt dem Code zum Aktualisieren eines vorhandenen Datensatzes, aber einfacher. Der Code führt im Grunde eine SQL `Delete`-Anweisung aus.
 
- Wie in der *EditMovie* Seite der Code befindet sich in einem `if(IsPost)` Block. Dieses Mal die `if()` Bedingung ist ein wenig komplizierter: 
+ Wie auf der *editmovie* -Seite befindet sich der Code in einem `if(IsPost)`-Block. Dieses Mal ist die `if()` Bedingung etwas komplizierter: 
 
 [!code-csharp[Main](deleting-data/samples/sample7.cs)]
 
-Es gibt hier zwei Bedingungen. Die erste ist, dass die Seite übermittelt wird, ist, wie Sie vor dem gesehen haben &mdash; `if(IsPost)`.
+Hier gibt es zwei Bedingungen. Der erste besteht darin, dass die Seite übermittelt wird, wie Sie vor &mdash; `if(IsPost)`gesehen haben.
 
-Die zweite Bedingung ist `!Request["buttonDelete"].IsEmpty()`, was bedeutet, dass die Anforderung ein Objekt namens hat `buttonDelete`. Zugegeben, ist es ein indirektes Verfahren dar, testen, auf welche Schaltfläche auf das Formular übermittelt. Wenn ein Formular mehrere Submit-Schaltflächen enthält, wird nur der Name der Schaltfläche, auf die geklickt wurde, in der Anforderung angezeigt. Aus diesem Grund, logisch, wenn der Name einer bestimmten Schaltfläche angezeigt, in der Anforderung wird &mdash; oder wie im Code angegeben werden, wenn diese Schaltfläche nicht leer ist &mdash; , das die Schaltfläche, die das Formular übermittelt wird.
+Die zweite Bedingung ist `!Request["buttonDelete"].IsEmpty()`. Dies bedeutet, dass die Anforderung über ein Objekt mit dem Namen `buttonDelete`verfügt. Zugegeben, es ist eine indirekte Methode, um zu testen, welche Schaltfläche das Formular übermittelt hat. Wenn ein Formular mehrere Sende Schaltflächen enthält, wird nur der Name der Schaltfläche, auf die geklickt wurde, in der Anforderung angezeigt. Wenn der Name einer bestimmten Schaltfläche in der Anforderung &mdash; oder wie im Code angegeben erscheint, ist diese Schaltfläche logisch, wenn diese Schaltfläche nicht leer ist &mdash; das ist die Schaltfläche, die das Formular übermittelt hat.
 
-Die `&&` Operator bedeutet, dass "und" (logisches AND). Aus diesem Grund für die gesamte `if` Bedingung...
+Der `&&`-Operator bedeutet "and" (logisches and). Daher ist die gesamte `if` Bedingung...
 
-*Diese Anforderung ist ein Beitrag (keine Anforderung zum ersten Mal)*  
+*Diese Anforderung ist ein Post (keine erstmalige Anforderung).*  
   
- UND  
+ AND  
   
-*Die* `buttonDelete` *die Schaltfläche, die das Formular übermittelt wurde.*
+*Die Schaltfläche `buttonDelete`* *war die Schaltfläche, die das Formular übermittelt hat.*
 
-Dieses Formular (genauer gesagt auf dieser Seite) enthält nur ein Optionsfeld, also die zusätzliche Tests für `buttonDelete` ist technisch nicht erforderlich. Dennoch können Sie einen Vorgang ausführen, der Daten dauerhaft entfernt. Sie möchten also so sicher wie möglich sein, dass Sie den Vorgang durchführen, nur, wenn der Benutzer ausdrücklich angefordert hat. Nehmen wir beispielsweise an, dass Sie diese Seite später erweitert, und weitere Schaltflächen hinzugefügt. Der Code, der den Film löscht wird auch dann ausgeführt, wenn nur die `buttonDelete` Schaltfläche geklickt wurde.
+Dieses Formular (auf dieser Seite) enthält nur eine Schaltfläche, sodass der zusätzliche Test für `buttonDelete` technisch nicht erforderlich ist. Dennoch sind Sie im Begriff, einen Vorgang durchzuführen, mit dem Daten dauerhaft entfernt werden. Daher sollten Sie so sicher wie möglich sein, dass Sie den Vorgang nur ausführen, wenn der Benutzer ihn explizit angefordert hat. Nehmen Sie beispielsweise an, dass Sie diese Seite später erweitert und ihr weitere Schaltflächen hinzugefügt haben. Selbst dann wird der Code, der den Film löscht, nur dann ausgeführt, wenn auf die Schaltfläche "`buttonDelete`" geklickt wurde.
 
-Wie in der *EditMovie* Seite, Sie rufen Sie die ID aus dem ausgeblendeten Feld und führen Sie den SQL-Befehl. Die Syntax für die `Delete` -Anweisung ist:
+Wie auf der Seite *editmovie* erhalten Sie die ID aus dem ausgeblendeten Feld und führen dann den SQL-Befehl aus. Die Syntax für die `Delete`-Anweisung lautet wie folgt:
 
 `DELETE FROM table WHERE ID = value`
 
-Es ist wichtig, enthalten die `WHERE` -Klausel und die-ID. Wenn Sie der WHERE-Klausel auslassen *alle Datensätze in der Tabelle gelöscht werden*. Wie Sie gesehen haben, übergeben Sie den ID-Wert an den SQL-Befehl mit einem Platzhalter.
+Es ist wichtig, dass Sie die `WHERE`-Klausel und die ID einschließen. Wenn Sie die WHERE-Klausel weglassen, *werden alle Datensätze in der Tabelle gelöscht*. Wie Sie gesehen haben, übergeben Sie den ID-Wert an den SQL-Befehl, indem Sie einen Platzhalter verwenden.
 
-## <a name="testing-the-movie-delete-process"></a>Testen des Prozesses der Film löschen
+## <a name="testing-the-movie-delete-process"></a>Testen des Film Löschvorgangs
 
-Jetzt können Sie testen. Führen Sie die *Filme* Seite, und klicken Sie auf **löschen** neben einen Film. Wenn die *DeleteMovie* klicken Sie mit der Seite angezeigt wird, auf **löschen Film**.
+Jetzt können Sie testen. Führen Sie die Seite *Filme* aus, und klicken Sie auf **Löschen** neben einem Film. Wenn die Seite *deletemovie* angezeigt wird, klicken Sie auf **Film löschen**.
 
-![Löschen Sie Seite "Movie" mit hervorgehobener Schaltfläche "Löschen Film"](deleting-data/_static/image4.png)
+![Löschen der Filmseite mit hervorgehobener Schaltfläche "Movie](deleting-data/_static/image4.png)
 
-Wenn Sie die Schaltfläche klicken, wird der Code löscht die Filme und gibt Sie zurück auf die Movie-Auflistung. Sie können es für den gelöschten Film suchen und vergewissern Sie sich, dass es gelöscht wird.
+Wenn Sie auf die Schaltfläche klicken, löscht der Code die Filme und kehrt zur Filmliste zurück. Dort können Sie nach dem gelöschten Film suchen und sich vergewissern, dass er gelöscht wurde.
 
-## <a name="coming-up-next"></a>Als Nächstes kommen
+## <a name="coming-up-next"></a>Nächste nächste
 
-Im nächste Tutorial erfahren Sie, wie Sie alle Seiten auf Ihrer Website zu geben, eine allgemeine Aussehen und Layout.
+Das nächste Tutorial zeigt, wie Sie allen Seiten auf Ihrer Website ein gängiges Aussehen und Layout zuordnen.
 
-## <a name="complete-listing-for-movie-page-updated-with-delete-links"></a>Vollständige Liste für Movie-Seite (Aktualisierung mit Links "löschen")
+## <a name="complete-listing-for-movie-page-updated-with-delete-links"></a>Vervollständigen der Auflistung für Movie Page (aktualisiert mit Links zum Löschen)
 
 [!code-cshtml[Main](deleting-data/samples/sample8.cshtml)]
 
-## <a name="complete-listing-for-deletemovie-page"></a>Vollständige Liste für DeleteMovie-Seite
+## <a name="complete-listing-for-deletemovie-page"></a>Vervollständigen der Liste für die deletemovie-Seite
 
 [!code-cshtml[Main](deleting-data/samples/sample9.cshtml)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](../introducing-razor-syntax-c.md)
-- [SQL-DELETE-Anweisung](http://www.w3schools.com/sql/sql_delete.asp) auf der Website W3Schools
+- [Einführung in die ASP.net-Webprogrammierung mithilfe der Razor-Syntax](../introducing-razor-syntax-c.md)
+- [SQL DELETE-Anweisung](http://www.w3schools.com/sql/sql_delete.asp) auf der W3Schools-Website
 
 > [!div class="step-by-step"]
 > [Zurück](updating-data.md)

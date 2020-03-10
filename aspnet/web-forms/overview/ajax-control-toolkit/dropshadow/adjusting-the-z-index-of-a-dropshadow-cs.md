@@ -9,11 +9,11 @@ ms.assetid: 14133833-e518-4347-87b9-6b6f71f14a77
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 12bc7f0430f1f30ff964cd9547ee1e9b0aa7423c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574305"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497481"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>Anpassen des Z-Index eines DropShadow-Steuerelements (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Dieser Schatten verursacht jedoch manchmal einen Konflikt mit anderen Steuerelementen, z. ASP.net. dem Menü Steuerelement. Wenn ein Menüeintrag angezeigt wird, wird er hinter dem Ablage Schatten angezeigt.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Dieser Schatten verursacht jedoch manchmal einen Konflikt mit anderen Steuerelementen, z. ASP.net. dem Menü Steuerelement. Wenn ein Menüeintrag angezeigt wird, wird er hinter dem Ablage Schatten angezeigt.
 
@@ -63,4 +63,4 @@ Vor: der Menüeintrag ist nicht sichtbar ([Klicken Sie, um das Bild in voller Gr
 Nach: der Menüeintrag wird angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [Weiter](manipulating-dropshadow-properties-from-client-code-cs.md)

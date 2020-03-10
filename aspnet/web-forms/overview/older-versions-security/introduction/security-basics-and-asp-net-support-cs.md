@@ -9,11 +9,11 @@ ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1ccaac101a83d0e28b07b220b8b7b61a9039227e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642441"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520071"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>Grundlagen der Sicherheit und Unterstützung für ASP.NET (C#)
 
@@ -34,13 +34,13 @@ Dies ist das erste Tutorial in einer Reihe von Tutorials, in denen Techniken zum
 - Erstellen, aktualisieren und Löschen von Benutzerkonten
 - Beschränken des Zugriffs auf eine Webseite, ein Verzeichnis oder eine bestimmte Funktionalität basierend auf dem angemeldeten Benutzer
 - Verwenden Sie ASP. .NET-Rollen Framework zum Zuordnen von Benutzerkonten zu Rollen
-- Verwalten von Benutzer Rollen
+- Verwalten von Benutzerrollen
 - Beschränken des Zugriffs auf eine Webseite, ein Verzeichnis oder eine bestimmte Funktionalität basierend auf der Rolle des angemeldeten Benutzers
 - Anpassen und Erweitern von ASP. Websteuer Elemente für die Sicherheit des Netzes
 
 Diese Lernprogramme sind so konzipiert, dass Sie präzise sind, und enthalten Schritt-für-Schritt-Anleitungen mit vielen Screenshots, um Sie durch den Prozess visuell zu führen. Jedes Tutorial ist in C# und Visual Basic Versionen verfügbar und enthält einen Download des gesamten verwendeten Codes. (Dieses erste Tutorial konzentriert sich auf die Sicherheitskonzepte von einem übergeordneten Standpunkt und enthält daher keinen zugeordneten Code.)
 
-In diesem Tutorial werden wichtige Sicherheitskonzepte und die in ASP.NET verfügbaren Funktionen erläutert, um die Implementierung von Formular Authentifizierung, Autorisierung, Benutzerkonten und Rollen zu unterstützen. Fangen wir an!
+In diesem Tutorial werden wichtige Sicherheitskonzepte und die in ASP.NET verfügbaren Funktionen erläutert, um die Implementierung von Formular Authentifizierung, Autorisierung, Benutzerkonten und Rollen zu unterstützen. Erste Schritte
 
 > [!NOTE]
 > Sicherheit ist ein wichtiger Aspekt jeder Anwendung, die physische, technologische und Richtlinien relevante Entscheidungen umfasst und ein hohes Maß an Planungs-und Domänen Kenntnissen erfordert. Diese tutorialreihe ist nicht als Leitfaden für die Entwicklung sicherer Webanwendungen gedacht. Stattdessen konzentriert sich der Schwerpunkt auf Formular Authentifizierung, Autorisierung, Benutzerkonten und Rollen. Obwohl einige Sicherheitskonzepte, die diese Probleme umgeben, in dieser Reihe erläutert werden, bleiben andere nicht untersucht.
@@ -67,7 +67,7 @@ Standardmäßig senden Browser HTTP-Anforderungen, bei denen keine Identifikatio
 
 Der Windows-Authentifizierungs Workflow verwendet eine der folgenden Authentifizierungsmethoden:
 
-- Standardauthentifizierung.
+- Standardauthentifizierung
 - Digestauthentifizierung
 - Integrierte Windows-Authentifizierung
 
@@ -150,7 +150,7 @@ Da das Anbieter Modell eine einzige vorwärts gerichtete API (die Mitgliedschaft
 
 Unterhalb der werden die verschiedenen Anmelde Steuerelemente mit den Mitgliedschafts-und Rollen Frameworks interagieren. Die meisten Anmelde Steuerelemente können implementiert werden, ohne dass eine einzige Codezeile geschrieben werden muss. Wir werden diese Steuerelemente in zukünftigen Tutorials ausführlicher untersuchen, einschließlich Techniken zum Erweitern und Anpassen ihrer Funktionalität.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Alle Webanwendungen, die Benutzerkonten unterstützen, erfordern ähnliche Features, wie z. b. die Möglichkeit, sich Benutzer anzumelden und deren Anmeldestatus über Seitenbesuche hinweg gespeichert wird. eine Webseite für neue Besucher zum Erstellen eines Kontos. und die Möglichkeit des Seiten Entwicklers anzugeben, welche Ressource, welche Daten und Funktionen für welche Benutzer oder Rollen verfügbar sind. Die Aufgaben der Authentifizierung und Autorisierung von Benutzern und der Verwaltung von Benutzerkonten und Rollen sind in ASP.NET-Anwendungen aufgrund der Formular Authentifizierung, URL-Autorisierung und der Mitgliedschafts-und Rollen Frameworks erstaunlich einfach zu bewerkstelligen.
 
@@ -158,7 +158,7 @@ Im Verlauf der nächsten Tutorials werden diese Aspekte untersucht, indem eine f
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -174,7 +174,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Professional ASP.NET 2,0 Sicherheit, Mitgliedschaft und Rollen Verwaltung](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
 - [Anbietertoolkit](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -183,4 +183,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial wurde diese tutorialreihe von vielen hilfreichen Reviewern geprüft. Zu den führenden Reviewern für dieses Tutorial zählen Alicja Maziarz, John suru und Teresa Murphy. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](an-overview-of-forms-authentication-cs.md)
+> [Weiter](an-overview-of-forms-authentication-cs.md)

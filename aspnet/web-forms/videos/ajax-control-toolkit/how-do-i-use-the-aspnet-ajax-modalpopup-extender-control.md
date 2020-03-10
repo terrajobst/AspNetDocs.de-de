@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control
-title: '[Gewusst wie:] Verwenden des ASP.NET AJAX ModalPopup-Extender-Steuerelements? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie das ASP.NET AJAX ModalPopup-Extender-Steuerelement? | Microsoft-Dokumentation'
 author: JoeStagner
-description: Erfahren Sie, wie Sie mit der ASP.NET AJAX ModalPopup-Extender-Steuerelement, das mit dem ASP.NET AJAX Control Toolkit enthalten ist. In diesem Video die ModalPopup-Steuerelement wird der Extender verwendet...
+description: Erfahren Sie, wie Sie das ASP.NET AJAX ModalPopup-Extender-Steuerelement verwenden, das mit dem ASP.NET AJAX Control Toolkit ausgestattet ist. In diesem Video wird der ModalPopup-Extender verwendet...
 ms.author: riande
 ms.date: 01/26/2007
 ms.assetid: 37c50e6c-e34d-4fd0-b272-01950ada7667
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control
 msc.type: video
 ms.openlocfilehash: 2c5c54e9ba4ff2190080611f8aab8f0a607f9a71
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396576"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510267"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[Gewusst wie:] Verwenden des ASP.NET AJAX ModalPopup-Extender-Steuerelements?
+# <a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[Gewusst wie:] Verwenden Sie das ASP.NET AJAX ModalPopup-Extender-Steuerelement?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Erfahren Sie, wie Sie mit der ASP.NET AJAX ModalPopup-Extender-Steuerelement, das mit dem ASP.NET AJAX Control Toolkit enthalten ist. In diesem Video der ModalPopup-Extender wird verwendet, um offene pop Steuern eines Standardbereichs von ASP.NET als modales Dialogfeld.
+Erfahren Sie, wie Sie das ASP.NET AJAX ModalPopup-Extender-Steuerelement verwenden, das mit dem ASP.NET AJAX Control Toolkit ausgestattet ist. In diesem Video wird der ModalPopup-Extender verwendet, um ein Standardmäßiges ASP.net-Panel-Steuerelement als modales Dialogfeld zu öffnen.
 
-[&#9654;Sehen Sie sich Video (10 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control)
+[&#9654;Video ansehen (10 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-the-aspnet-ajax-popup-control-extender.md)

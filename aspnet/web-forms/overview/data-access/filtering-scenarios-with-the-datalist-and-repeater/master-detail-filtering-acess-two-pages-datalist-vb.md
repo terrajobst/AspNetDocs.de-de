@@ -9,11 +9,11 @@ ms.assetid: f1a1be2c-6fd9-4a09-916e-aa1b98d5cf17
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 037e5f47efff88bfcbec57b11efa4fec04f9542d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74591496"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491475"
 ---
 # <a name="masterdetail-filtering-across-two-pages-vb"></a>Filtern von Master-/Detailberichten über zwei Seiten (VB)
 
@@ -144,7 +144,7 @@ Nachdem Sie die Datenbank entsprechend aktualisiert haben, kehren Sie zur Seite 
 
 **Abbildung 9**: eine Meldung wird angezeigt, wenn keine Produkte zur ausgewählten Kategorie gehören ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-filtering-acess-two-pages-datalist-vb/_static/image27.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Während Master/Detail-Berichte sowohl die Master-als auch die Detaildaten Sätze auf einer einzelnen Seite anzeigen können, werden Sie in vielen Websites auf zwei Webseiten voneinander getrennt. In diesem Tutorial haben wir uns mit der Implementierung eines solchen Master/Detail-Berichts mit einem Repeater auf der "Master"-Webseite und den zugehörigen Produkten befasst, die auf der Seite "Details" aufgelistet sind. Jedes Listenelement in der Master Webseite enthielt einen Link zur Detailseite, die an den `CategoryID` Wert der Zeile weitergegeben wurde.
 
@@ -152,7 +152,7 @@ Auf der Detailseite, in der die Produkte für den angegebenen Lieferanten abgeru
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

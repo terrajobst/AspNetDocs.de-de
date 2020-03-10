@@ -9,11 +9,11 @@ ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2f77040316dadc218b8183e52628dc0cfe3b35a1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587011"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78502299"
 ---
 # <a name="paging-and-sorting-report-data-c"></a>Auslagern und Sortieren von Berichtsdaten (C#)
 
@@ -152,7 +152,7 @@ Fügen Sie zunächst der Seite ein Label-websteuer Element hinzu, legen Sie die 
 
 [!code-csharp[Main](paging-and-sorting-report-data-cs/samples/sample5.cs)]
 
-Dieser Ereignishandler weist die `PagingInformation` Bezeichnung s `Text` Eigenschaft einer Nachricht zu, die den Benutzer darüber informiert, dass die Seite, auf der er gerade besucht wird, `Products.PageIndex + 1` aus der Anzahl der Gesamt Seiten `Products.PageIndex` `Products.PageCount`. Im Gegensatz zum `PageIndexChanged`-Ereignishandler habe ich die `Text`-Eigenschaft "This-Bezeichnung zuweisen" im `DataBound`-Ereignishandler gewählt, da das `DataBound`-Ereignis jedes Mal ausgelöst wird, wenn Daten an die GridView gebunden werden, während der `PageIndexChanged`-Ereignishandler nur ausgelöst wird, wenn der Seitenindex geändert wird. Wenn das GridView-Ereignis anfänglich Daten gebunden ist, wird das `PageIndexChanging`-Ereignis nicht ausgelöst (während das `DataBound`-Ereignis).
+Dieser Ereignishandler weist die `PagingInformation` Bezeichnung s `Text` Eigenschaft einer Nachricht zu, die den Benutzer darüber informiert, dass die Seite, auf der er gerade besucht wird, `Products.PageIndex + 1` aus der Anzahl der Gesamt Seiten `Products.PageIndex` `Products.PageCount`.`PageIndex` Im Gegensatz zum `PageIndexChanged`-Ereignishandler habe ich die `Text`-Eigenschaft "This-Bezeichnung zuweisen" im `DataBound`-Ereignishandler gewählt, da das `DataBound`-Ereignis jedes Mal ausgelöst wird, wenn Daten an die GridView gebunden werden, während der `PageIndexChanged`-Ereignishandler nur ausgelöst wird, wenn der Seitenindex geändert wird. Wenn das GridView-Ereignis anfänglich Daten gebunden ist, wird das `PageIndexChanging`-Ereignis nicht ausgelöst (während das `DataBound`-Ereignis).
 
 Mit dieser Addition wird dem Benutzer nun eine Meldung angezeigt, die angibt, welche Seite Sie besuchen und wie viele Daten auf dem Datenblatt vorhanden sind.
 
@@ -245,7 +245,7 @@ Wenn Sie auf diese Schaltfläche klicken, wird der Benutzer auf die erste Seite 
 
 **Abbildung 15**: durch Klicken auf die Schaltfläche werden die Produkte von der teuersten zum geringsten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](paging-and-sorting-report-data-cs/_static/image33.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie erfahren, wie Sie standardmäßige Paging-und Sortierungs Funktionen implementieren, die beide so einfach sind wie das Aktivieren eines Kontrollkästchens. Wenn ein Benutzerdaten sortiert oder durchläuft, wird ein ähnlicher Workflow entwickelt:
 
@@ -258,9 +258,9 @@ Die Implementierung von basiertem Paging und Sortieren ist ein Kinderspiel, aber
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Nächste](efficiently-paging-through-large-amounts-of-data-cs.md)
+> [Weiter](efficiently-paging-through-large-amounts-of-data-cs.md)

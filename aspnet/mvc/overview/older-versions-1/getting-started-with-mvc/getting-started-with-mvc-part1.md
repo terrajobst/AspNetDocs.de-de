@@ -2,83 +2,83 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 title: Einführung in ASP.NET MVC | Microsoft-Dokumentation
 author: shanselman
-description: Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Erstellen Sie eine einfache Webanwendung, die aus einer Datenbank liest und schreibt.
+description: Dies ist ein Einsteiger-Tutorial, in dem die Grundlagen von ASP.NET MVC vorgestellt werden. Erstellen Sie eine einfache Webanwendung, die Daten aus einer Datenbank liest und in diese schreibt.
 ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: bf4a1c19-0a94-4208-b268-a96ddcf26946
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
 ms.openlocfilehash: f8f0014776ba1313119e8c39c63a216b0fc864e7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123125"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78469797"
 ---
 # <a name="intro-to-aspnet-mvc"></a>Einführung in ASP.NET MVC
 
-durch [Scott Hanselman](https://github.com/shanselman)
+von [Scott Hanselman](https://github.com/shanselman)
 
 > > [!NOTE]
-> > Eine aktualisierte Version ist in diesem Tutorial verfügbaren [hier](../../getting-started/introduction/getting-started.md) mit [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013). Das neue Tutorial verwendet ASP.NET MVC 5, die viele Verbesserungen für dieses Tutorial bietet.
+> > Eine aktualisierte Version, wenn dieses [Tutorial mithilfe von](../../getting-started/introduction/getting-started.md) [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)verfügbar ist. Im neuen Tutorial wird ASP.NET MVC 5 verwendet, das in diesem Tutorial viele Verbesserungen bietet.
 >
 >
-> Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
+> Dies ist ein Einsteiger-Tutorial, in dem die Grundlagen von ASP.NET MVC vorgestellt werden. Sie erstellen eine einfache Webanwendung, die Daten aus einer Datenbank liest und in diese schreibt. Besuchen Sie das [ASP.NET MVC Learning Center](../../../index.md) , um weitere ASP.NET MVC-Tutorials und-Beispiele zu finden.
 
-Lassen Sie uns unsere erste ASP.NET MVC-Webanwendung mit [Visual Web Developer 2010 Express](https://www.microsoft.com/express/Web/). Wir erstellen eine kleine Anwendung "Movie List", die wir erstellen und Liste von Filmen.
+Machen wir unsere erste ASP.NET MVC-Webanwendung mit [Visual Web Developer 2010 Express](https://www.microsoft.com/express/Web/). Wir erstellen eine kleine Movie List-Anwendung, mit der Filme erstellt und aufgelistet werden können.
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
-Hier sind die beiden Screenshots der Anwendung, die Sie erstellen. Sie haben eine einfache Tabelle mit den Filmen mit verschiedenen Spalten.
+Im folgenden finden Sie zwei Screenshots der Anwendung, die Sie erstellen. Sie verfügen über eine einfache Tabelle mit Filmen mit verschiedenen Spalten.
 
-[![Filmliste – Windows InternetExplorer (12)](getting-started-with-mvc-part1/_static/image2.png)](getting-started-with-mvc-part1/_static/image1.png)
+[![Movie List-Windows Internet Explorer (12)](getting-started-with-mvc-part1/_static/image2.png)](getting-started-with-mvc-part1/_static/image1.png)
 
-Und Sie müssen ein Formular erstellen, damit Filme der Liste hinzugefügt werden können.
+Und Sie haben ein Formular erstellen, damit wir der Liste Filme hinzufügen können.
 
-[![Erstellen Sie einen Film - Windows InternetExplorer (2)](getting-started-with-mvc-part1/_static/image4.png)](getting-started-with-mvc-part1/_static/image3.png)
+[![Erstellen eines Films: Windows Internet Explorer (2)](getting-started-with-mvc-part1/_static/image4.png)](getting-started-with-mvc-part1/_static/image3.png)
 
-## <a name="skills-youll-learn"></a>Fähigkeiten, mit denen, die Sie lernen Folgendes
+## <a name="skills-youll-learn"></a>Erlernte Fertigkeiten
 
-In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Webanwendung mithilfe von Visual Studio. Sie lernen Folgendes:
+Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Visual Studio. Sie lernen Folgendes:
 
-- Vorgehensweise: Erstellen Sie ein neues ASP.NET MVC-Projekt
-- Gewusst wie: Erstellen einer neuen Datenbank mit SQL Server
-- Gewusst wie: Erstellen von ASP.NET MVC-Controller und Ansichten
-- Das Abrufen und Anzeigen von Daten
-- Bearbeiten von Daten, und aktivieren die datenüberprüfung
-- Wie Sie das Datenbankschema aktualisieren
+- Erstellen eines neuen ASP.NET MVC-Projekts
+- Erstellen einer neuen Datenbank mit SQL Server
+- Erstellen von ASP.NET-MVC-Controllern und-Ansichten
+- Abrufen und Anzeigen von Daten
+- Vorgehensweise beim Bearbeiten von Daten und Aktivieren der Datenvalidierung
+- Aktualisieren des Datenbankschemas
 
 ## <a name="get-started"></a>Erste Schritte
 
-Starten Sie durch Ausführen von Visual Web Developer 2010 Express (Ich werde sie von nun an "VWD" bezeichnet), und wählen Sie Neues Projekt aus der Startbildschirm ausgeblendet wird.
+Beginnen Sie mit der Ausführung von Visual Web Developer 2010 Express (ich nenne Sie jetzt "VWD"), und wählen Sie "Neues Projekt" auf dem Start Bildschirm aus.
 
-Visual Web Developer ist eine IDE oder Integrated Developer Environment. Wie Sie Microsoft Word zum Schreiben von Dokumenten verwenden, verwenden Sie eine IDE, um Anwendungen zu erstellen. Es wird eine Symbolleiste am oberen mit verschiedenen Optionen zur Verfügung, die Sie als auch im Menü kann außerdem verwendet haben, um die Datei auswählen | Neues Projekt.
+Visual Web Developer ist eine IDE oder integrierte Entwicklerumgebung. Ebenso wie Sie Microsoft Word zum Schreiben von Dokumenten verwenden, verwenden Sie eine IDE zum Erstellen von Anwendungen. Es gibt eine Symbolleiste am oberen Rand der verschiedenen Optionen, die Ihnen zur Verfügung stehen, sowie das Menü, das Sie auch zum Auswählen der Datei verwenden können. Neues Projekt.
 
 [![Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part1/_static/image6.png)](getting-started-with-mvc-part1/_static/image5.png)
 
 ## <a name="creating-your-first-application"></a>Erstellen Ihrer ersten Anwendung
 
-Sie können mit Visual Basic oder Visual C#-Anwendungen erstellen. Jetzt wählen Sie Visual C# -Code auf der linken Seite Wählen Sie dann "ASP.NET MVC 2-Webanwendung". Benennen Sie das Projekt "Movies", und klicken Sie auf OK.
+Anwendungen können mit Visual Basic oder Visual C#erstellt werden. Wählen Sie jetzt auf der C# linken Seite Visualisierung aus, und wählen Sie dann "ASP.NET MVC 2-Webanwendung" aus. Benennen Sie Ihr Projekt "Movies", und klicken Sie auf OK.
 
-[![Neues Projekt](getting-started-with-mvc-part1/_static/image8.png)](getting-started-with-mvc-part1/_static/image7.png)
+[Neues Projekt ![](getting-started-with-mvc-part1/_static/image8.png)](getting-started-with-mvc-part1/_static/image7.png)
 
-Auf die rechte Seite ist im Projektmappen-Explorer mit der alle Dateien und Ordner in Ihrer Anwendung. Fenster in der Mitte große ist, in dem Sie Ihren Code bearbeiten und verbringen die meiste Zeit. Visual Studio verwendet eine Standardvorlage für das ASP.NET MVC-Projekt, das Sie gerade erstellt haben, müssen Sie eine funktionierende Anwendung jetzt ohne Benutzereingriff. Dies ist eine einfache "Hello World! Projekt, und es ist ein guter Ausgangspunkt für die Anwendung zu starten.
+Auf der rechten Seite befindet sich die Projektmappen-Explorer, in der alle Dateien und Ordner in der Anwendung angezeigt werden. Im großen Fenster in der Mitte bearbeiten Sie den Code und verbringen die meiste Zeit. Visual Studio hat eine Standardvorlage für das ASP.NET MVC-Projekt verwendet, das Sie gerade erstellt haben, sodass Sie momentan über eine funktionierende Anwendung verfügen, ohne etwas zu tun! Dies ist eine einfache "Hallo Welt! Das Projekt ist ein guter Ausgangspunkt für die Anwendung.
 
 [![Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part1/_static/image10.png)](getting-started-with-mvc-part1/_static/image9.png)
 
 Wählen Sie die Schaltfläche "Wiedergabe" auf der Symbolleiste aus.
 
-![Debugging starten](getting-started-with-mvc-part1/_static/image11.png)
+![Debuggen](getting-started-with-mvc-part1/_static/image11.png)
 
-Es ist ein grüner Pfeil auf der rechten Seite, die das Programm zu kompilieren und starten Sie die Anwendung in einem Webbrowser.
+Es handelt sich um einen grünen Pfeil, der auf das Recht zeigt, mit dem das Programm kompiliert und die Anwendung in einem Webbrowser gestartet wird.
 
-*HINWEIS: Sie können stattdessen drücken Sie F5 auf Ihrer Tastatur, oder wählen Sie Debug -&gt;Starten des Debuggens aus dem Menü "Debuggen".*
+*Hinweis: Sie können die Taste F5 auf der Tastatur drücken oder Debuggen&gt;Debuggen starten im Menü Debuggen auswählen.*
 
-Dadurch wird Visual Web Developer zum Starten von eines Development Web-Servers und Ausführen von unserer Webanwendung (es gibt keine Konfiguration oder manuelle Schritte erforderlich, um dies zu ermöglichen). Sie klicken Sie dann einen Browser starten und konfigurieren, dass die Startseite der Anwendung navigieren. Unten können sehen Sie, dass die Adressleiste des Browsers "Localhost", und nicht etwa "example.com" lautet. Das ist, da "localhost" auf Ihrem lokalen Computer - immer verweist, in dem in diesem Fall die Anwendung ausgeführt wird, die wir soeben erstellt haben.
+Dies bewirkt, dass Visual Web Developer einen Webserver für die Entwicklung startet und die Webanwendung ausgeführt wird (es sind keine Konfigurationsschritte oder manuelle Schritte erforderlich, um dies zu aktivieren). Anschließend wird ein Browser gestartet und zum Durchsuchen der Startseite der Anwendung konfiguriert. Beachten Sie, dass die Adressleiste des Browsers "localhost" und nicht wie "example.com" lautet. Der Grund hierfür ist, dass "localhost" immer auf Ihren eigenen lokalen Computer verweist. in diesem Fall wird die Anwendung ausgeführt, die wir soeben erstellt haben.
 
-[![Auf der Startseite](getting-started-with-mvc-part1/_static/image13.png)](getting-started-with-mvc-part1/_static/image12.png)
+[![Startseite](getting-started-with-mvc-part1/_static/image13.png)](getting-started-with-mvc-part1/_static/image12.png)
 
-Standardmäßig gibt dieser Standardvorlage Sie zwei Seiten besuchen und eine einfache Anmeldeseite. Wir ändern, wie diese Anwendung funktioniert, und erfahren Sie etwas, Informationen zu ASP.NET MVC im Prozess. Schließen Sie Ihren Browser, und ermöglicht, Code zu ändern.
+Diese Standardvorlage enthält standardmäßig zwei zu besuchende Seiten und eine einfache Anmeldeseite. Ändern Sie die Funktionsweise dieser Anwendung, und erfahren Sie etwas über ASP.NET MVC im Prozess. Schließen Sie Ihren Browser, und lassen Sie Code ändern.
 
 > [!div class="step-by-step"]
-> [Nächste](getting-started-with-mvc-part2.md)
+> [Weiter](getting-started-with-mvc-part2.md)

@@ -9,11 +9,11 @@ ms.assetid: 548e75f6-4d6c-4cb4-8da8-417915eb8393
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cc65af6eb4fca8b3b805e11e26da468a958a4221
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74619956"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513249"
 ---
 # <a name="common-configuration-differences-between-development-and-production-vb"></a>Allgemeine Konfigurationsunterschiede zwischen Entwicklungs- und Produktionsumgebungen (VB)
 
@@ -107,13 +107,13 @@ Weitere Informationen zur Verwendung des Webbereitstellungs Projekts finden Sie 
 > [!NOTE]
 > Das Webbereitstellungs Projekt kann nicht mit Visual Web Developer verwendet werden, da das Webbereitstellungs Projekt als Visual Studio-Add-in implementiert ist und die Visual Studio Express Editionen (einschließlich Visual Web Developer) keine Add-Ins unterstützen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die externen Ressourcen und das Verhalten einer Webanwendung in der Entwicklung unterscheiden sich in der Regel von der Verwendung der gleichen Anwendung in der Produktionsumgebung. Beispielsweise unterscheiden sich Daten bankverbindungs Zeichenfolgen, Kompilierungsoptionen und das Verhalten bei Auftreten einer nicht behandelten Ausnahme häufig zwischen Umgebungen. Beim Bereitstellungs Prozess müssen diese Unterschiede berücksichtigt werden. Wie in diesem Tutorial erläutert, besteht der einfachste Ansatz darin, eine alternative Konfigurationsdatei manuell in die Produktionsumgebung zu kopieren. Wenn Sie das Add-in für das Webbereitstellungs Projekt oder einen formalisierten Build-oder Bereitstellungs Prozess verwenden, der solche Anpassungen unterstützen kann, sind elegante Lösungen möglich.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

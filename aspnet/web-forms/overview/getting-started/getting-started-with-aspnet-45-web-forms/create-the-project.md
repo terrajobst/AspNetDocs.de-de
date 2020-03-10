@@ -9,11 +9,11 @@ ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
 ms.openlocfilehash: 62918b17f42e54dfe4e45a08927b1039dcbb7012
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576067"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78461571"
 ---
 # <a name="create-the-project"></a>Erstellen des Projekts
 
@@ -25,7 +25,7 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial erstellen, überprüfen und führen Sie das Standard Projekt in Visual Studio aus. Dadurch können Sie sich mit den Features von ASP.NET vertraut machen. Außerdem wird die Visual Studio-Umgebung überprüft.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 - Erstellen eines neuen Web Forms Projekts
 - Die Dateistruktur des Web Forms Projekts.
@@ -35,12 +35,12 @@ In diesem Tutorial erstellen, überprüfen und führen Sie das Standard Projekt 
 
 ## <a name="creating-the-project"></a>Erstellen des Projekts
 
-1. Öffnen Sie Visual Studio.
+1. Öffnen Sie Visual Studio.
 2. Wählen Sie im Menü **Datei** in Visual Studio die Option **Neues Projekt** aus. 
 
     ![Erstellen des Menü Elements "Projekt-Neues Projekt"](create-the-project/_static/image1.png)
 3. Wählen Sie auf der linken Seite die **Vorlagen** -&gt;  **C# Visual** -&gt; **Webvorlagen** Gruppe aus.
-4. Wählen Sie die Vorlage **ASP.NET-Webanwendung** in der mittleren Spalte aus.  
+4. Wählen Sie die Vorlage **ASP.NET Web Application** in der mittleren Spalte aus.  
  In dieser tutorialreihe wird .NET Framework 4.5.2 verwendet.
 5. Benennen Sie Ihr Projekt mit *wingtiptoys* , und wählen Sie die Schaltfläche **OK** . 
 
@@ -49,7 +49,7 @@ In diesem Tutorial erstellen, überprüfen und führen Sie das Standard Projekt 
     > [!NOTE]
     > Der Name des Projekts in dieser tutorialreihe ist **wingtiptoys**. Es wird empfohlen, dass Sie diesen *exakten* Projektnamen verwenden, damit der Code, der in der tutorialreihe bereitgestellt wird, erwartungsgemäß funktioniert.
 
-6. Klicken Sie auf die Schaltfläche **Authentifizierung ändern** . Wählen Sie **einzelne Benutzerkonten** aus, und klicken Sie auf **OK** .
+6. Klicken Sie auf die Schaltfläche **Authentifizierung ändern**. Wählen Sie **einzelne Benutzerkonten** aus, und klicken Sie auf **OK** .
 
 7. Wählen Sie die **Web Forms** Vorlage aus, und klicken Sie auf **OK** .
 
@@ -65,7 +65,7 @@ Sie können zwischen der **Entwurfs** Ansicht und der **Quell** Ansicht wechseln
 > 
 > **Grundlegendes zu ASP.NET-Frameworks**
 > 
-> Mit ASP.NET Web Forms können Sie dynamische Websites mit einem vertrauten ereignisgesteuerten Modell und Unterstützung für Ziehen und Ablegen erstellen. Mit einer Designoberfläche und Hunderten von Steuerelementen und Komponenten können Sie schnell und einfach komplexe und umfangreiche GUI-gesteuerte Websites mit Datenzugriff erstellen. Der Wingtip-Spielzeug Speicher basiert auf ASP.net Web Forms, aber viele der Konzepte, die Sie in dieser tutorialreihe erlernen, gelten für alle ASP.net.
+> ASP.net Web Forms ermöglicht das Erstellen dynamischer Websites mit einem vertrauten, ereignisgesteuerten Drag & Drop-Modell. Mit einer Entwurfs Oberfläche und Hunderten von Steuerelementen und Komponenten können Sie schnell ausgereifte, leistungsfähige, UI-gesteuerte Websites mit Datenzugriff erstellen. Der Wingtip-Spielzeug Speicher basiert auf ASP.net Web Forms, aber viele der Konzepte, die Sie in dieser tutorialreihe erlernen, gelten für alle ASP.net.
 > 
 > ASP.net bietet vier primäre Entwicklungs-Frameworks:
 > 
@@ -91,12 +91,12 @@ In Visual Studio können Sie im **Projektmappen-Explorer** Fenster Dateien für 
 
 Visual Studio erstellt einige anfängliche Ordner und Dateien für das Projekt. Die ersten Dateien, mit denen Sie später in diesem Tutorial arbeiten werden, lauten wie folgt:
 
-| **Datei** | **Darin** |
+| **Datei** | **Zweck** |
 | --- | --- |
 | *Default. aspx* | In der Regel die erste Seite, die angezeigt wird, wenn die Anwendung in einem Browser ausgeführt wird. |
 | *Site. Master* | Eine Seite, auf der Sie ein konsistentes Layout erstellen und das Standardverhalten für Seiten in Ihrer Anwendung verwenden können. |
 | *Global. asax* | Eine optionale Datei, die Code zum reagieren auf Ereignisse auf Anwendungsebene und auf Sitzungs Ebene enthält, die von ASP.net oder HTTP-Modulen ausgelöst werden. |
-| *"Web. config"* | Die Konfigurationsdaten für eine Anwendung. |
+| *Web.config* | Die Konfigurationsdaten für eine Anwendung. |
 
 ### <a name="running-the-default-web-application"></a>Ausführen der Standardweb Anwendung
 
@@ -182,7 +182,7 @@ Die primären Fenster in Visual Studio umfassen die **Projektmappen-Explorer**, 
 
 Weitere Informationen zu Visual Studio finden [Sie unter visueller Leitfaden für Visual Web Developer](https://msdn.microsoft.com/library/ee410104.aspx).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie die Standard Web Forms Anwendung erstellt, überprüft und ausgeführt. Sie haben die verschiedenen Features der Web Forms-Standardanwendung überprüft und einige Grundlagen zur Verwendung der Visual Studio-Umgebung kennengelernt. In den folgenden Tutorials erstellen Sie die Datenzugriffs Ebene.
 

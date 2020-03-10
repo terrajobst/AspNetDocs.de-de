@@ -9,11 +9,11 @@ ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
 ms.openlocfilehash: 419fe51aaf65bddcc2c50380f099f842a8d9439c
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445690"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508053"
 ---
 # <a name="understanding-the-project-file"></a>Grundlegendes zur Projektdatei
 
@@ -23,7 +23,7 @@ von [Jason Lee](https://github.com/jrjlee)
 
 > Microsoft-Build-Engine (MSBuild)-Projektdateien bilden das Herzstück des Build-und Bereitstellungs Prozesses. Dieses Thema beginnt mit einer konzeptionellen Übersicht über MSBuild und die Projektdatei. Es beschreibt die wichtigsten Komponenten, die Sie bei der Arbeit mit Projektdateien finden werden, und zeigt anhand eines Beispiels, wie Sie Projektdateien verwenden können, um reale Anwendungen bereitzustellen.
 > 
-> Lernen Sie Folgendes:
+> Sie lernen Folgendes:
 > 
 > - Die Verwendung von MSBuild-Projektdateien durch MSBuild zum Erstellen von Projekten.
 > - Die Integration von MSBuild in Bereitstellungs Technologien, wie z. b. das Internetinformationsdienste (IIS)-Webbereitstellungs Tool (Web deploy).
@@ -213,13 +213,13 @@ Wenn Sie Ihre Projektdateien auf diese Weise aufteilen, empfiehlt es sich, zu fo
 > [!NOTE]
 > Anleitungen zum Anpassen der Umgebungs spezifischen Projektdateien für Ihre eigenen Serverumgebungen finden Sie unter [Konfigurieren von Bereitstellungs Eigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Zusammenfassung
 
 Dieses Thema bietet eine allgemeine Einführung in MSBuild-Projektdateien und erläutert, wie Sie eigene benutzerdefinierte Projektdateien erstellen können, um den Buildprozess zu steuern. Außerdem wurde das Konzept der Aufteilung von Projektdateien in universelle Buildanweisungen und Umgebungs spezifische Buildeigenschaften eingeführt, um das Erstellen und Bereitstellen von Projekten für mehrere Ziele zu vereinfachen.
 
 Das nächste Thema, [das Verständnis des Buildprozesses](understanding-the-build-process.md), bietet einen besseren Einblick in die Verwendung von Projektdateien zum Steuern von Build und Bereitstellung, indem Sie die Bereitstellung einer Lösung mit einem realistischen Maß an Komplexität durchlaufen.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Eine ausführlichere Einführung in Projektdateien und WPP finden Sie unter [in der Microsoft-Build-Engine: Verwenden von MSBuild und Team Foundation Build](http://amzn.com/0735645248) von Sayed Ibrahim Hashimi und William Bartholomew, ISBN: 978-0-7356-4524-0.
 

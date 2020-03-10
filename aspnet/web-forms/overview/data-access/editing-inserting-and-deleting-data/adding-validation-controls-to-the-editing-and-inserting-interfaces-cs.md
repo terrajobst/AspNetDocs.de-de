@@ -9,11 +9,11 @@ ms.assetid: 2086cb1a-ab78-49ae-9c0b-03891c69776a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 110ee08f1d0707664ef6268f34ceab9da30a3e61
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589699"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78494319"
 ---
 # <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>Hinzufügen von Validierungssteuerelementen zu Schnittstellen zum Bearbeiten und Einfügen (C#)
 
@@ -33,7 +33,7 @@ Um eine angepasste Bearbeitungs-oder einfügeschnittstelle bereitzustellen, müs
 
 In diesem Lernprogramm erfahren Sie, wie einfach es ist, dem `EditItemTemplate` des TemplateField-Steuer Elements Validierungs Steuerelemente hinzuzufügen und `InsertItemTemplate`, um eine Benutzeroberfläche mit einer größeren Größe zu erstellen. Insbesondere wird in diesem Tutorial das Beispiel veranschaulicht, das in der unter [suchung der mit dem Einfügen, aktualisieren und löschen verknüpften Ereignisse](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md) erstellt wurde, und erweitert die Bearbeitungs-und einfügeschnittstellen, um die entsprechende Validierung zu berücksichtigen.
 
-## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deletingexamining-the-events-associated-with-inserting-updating-and-deleting-csmd"></a>Schritt 1: Replizieren des Beispiels aus[der Untersuchung der Ereignisse im Zusammenhang mit dem Einfügen, aktualisieren und löschen](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deleting"></a>Schritt 1: Replizieren des Beispiels aus[der Untersuchung der Ereignisse im Zusammenhang mit dem Einfügen, aktualisieren und löschen](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
 
 Im Tutorial unter [Suchen der mit dem Einfügen, aktualisieren und löschen verknüpften Ereignisse](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md) haben wir eine Seite erstellt, auf der die Namen und Preise der Produkte in einer bearbeitbaren GridView aufgelistet sind. Darüber hinaus enthält die Seite eine DetailsView, deren `DefaultMode`-Eigenschaft auf `Insert`festgelegt wurde, wodurch sich das Rendering immer im Einfügemodus befindet. In dieser DetailsView könnte der Benutzer den Namen und den Preis für ein neues Produkt eingeben, auf Einfügen klicken und ihn dem System hinzufügen (siehe Abbildung 1).
 
@@ -225,7 +225,7 @@ An diesem Punkt werden die Bearbeitungs Steuerelemente nur dann ausgelöst, wenn
 
 Mit dieser Ergänzung ist unser Tutorial fertiggestellt!
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Obwohl boundfields sowohl eine Einfüge-als auch eine Bearbeitungs Schnittstelle bereitstellen kann, kann die Schnittstelle nicht angepasst werden. Im Allgemeinen möchten wir der Bearbeitungs-und einfügeschnittstelle Validierungs Steuerelemente hinzufügen, um sicherzustellen, dass der Benutzer die erforderlichen Eingaben in einem gültigen Format eingibt. Um dies zu erreichen, müssen wir die boundfields in templatefields konvertieren und die Validierungs Steuerelemente den entsprechenden Vorlagen hinzufügen. In diesem Tutorial haben wir das Beispiel aus der unter *suchung der Ereignisse im Zusammenhang mit dem Einfügen, aktualisieren und löschen* des Tutorials erweitert, indem Sie der einfügeschnittstelle der DetailsView und der Bearbeitungs Schnittstelle von GridView Validierungs Steuerelemente hinzufügen. Außerdem wurde erläutert, wie zusammenfassende Validierungs Informationen mithilfe des ValidationSummary-Steuer Elements angezeigt werden und wie die Validierungs Steuerelemente auf der Seite in verschiedene Validierungs Gruppen partitioniert werden.
 
@@ -233,7 +233,7 @@ Wie in diesem Tutorial gezeigt, ermöglichen templatefields, dass die Schnittste
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

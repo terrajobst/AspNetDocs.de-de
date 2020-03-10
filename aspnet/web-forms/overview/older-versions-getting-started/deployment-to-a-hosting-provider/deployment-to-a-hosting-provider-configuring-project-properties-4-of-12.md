@@ -9,11 +9,11 @@ ms.assetid: 8b013630-842c-4d44-a6fc-c6be43e7210f
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-configuring-project-properties-4-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 6e63e75dca3d776fb9a1bd7e420ef48891daac69
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569815"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507735"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-configuring-project-properties---4-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Konfigurieren von Projekteigenschaften-4 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Tutorial, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung für Azure App Service Web-Apps ausführen. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Einige Bereitstellungs Optionen werden in den Projekteigenschaften konfiguriert, die in der Projektdatei ( *csproj* -oder *vbproj* -Datei) gespeichert sind. In den meisten Fällen sind die Standardwerte dieser Einstellungen die gewünschten Werte, aber Sie können die in Visual Studio integrierte **Projekteigenschaften** -Benutzeroberfläche verwenden, um diese Einstellungen zu bearbeiten, wenn Sie Sie ändern müssen. In diesem Tutorial überprüfen Sie die Bereitstellungs Einstellungen in den **Projekteigenschaften**. Außerdem erstellen Sie eine Platzhalter Datei, die bewirkt, dass ein leerer Ordner bereitgestellt wird.
 

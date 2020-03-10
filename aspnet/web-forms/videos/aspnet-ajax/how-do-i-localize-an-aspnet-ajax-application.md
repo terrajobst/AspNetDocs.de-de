@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-localize-an-aspnet-ajax-application
-title: '[Gewusst wie:] Lokalisieren eine ASP.NET AJAX-Anwendung? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Lokalisieren einer ASP.NET AJAX-Anwendung | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem Video wir beginnen mit einer Übersicht über die Lokalisierung Funktionen der standardmäßigen ASP.NET-Framework und sehen Sie sich die Lokalisierungsfeatures von der...
+description: In diesem Video beginnen wir mit einer Übersicht über die Lokalisierungs Funktionen des standardmäßigen ASP.NET-Frameworks und betrachten dann die Lokalisierungs Features von...
 ms.author: riande
 ms.date: 08/10/2007
 ms.assetid: 62188875-159b-4d9e-98b7-7fda3fdd5b76
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-localize-an-aspnet-ajax-application
 msc.type: video
 ms.openlocfilehash: 211350e1c6c4060d22327709478afc5a47f887cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422784"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510159"
 ---
-# <a name="how-do-i-localize-an-aspnet-ajax-application"></a>[Gewusst wie:] Lokalisieren eine ASP.NET AJAX-Anwendung?
+# <a name="how-do-i-localize-an-aspnet-ajax-application"></a>[Gewusst wie:] Lokalisieren einer ASP.NET AJAX-Anwendung
 
-durch [Chris Pels](https://twitter.com/chrispels)
+von [Chris Pels](https://twitter.com/chrispels)
 
-In diesem Video stellen wir einen Überblick über die Lokalisierung-Funktionen von ASP.NET-Framework standard starten, und sehen Sie sich die Lokalisierungsfeatures von ASP.NET AJAX Extensions. Erfahren Sie, wie wir Text, Datum und die Informationen auf dem Client, der auf Grundlage der spracheinstellungen des Browsers lokalisieren können. Außerdem erfahren Sie, wie die AJAX-Anwendung vornehmen kann statische und eingebettete Ressourcen auf dem Server verwenden.
+In diesem Video beginnen wir mit einer Übersicht über die Lokalisierungs Funktionen des standardmäßigen ASP.NET-Frameworks und betrachten dann die Lokalisierungs Features der ASP.NET AJAX-Erweiterungen. Wir erfahren, wie Sie Text-, Datums-und Zahlen Informationen auf dem Client basierend auf den Spracheinstellungen des Browsers lokalisieren können. Wir erfahren auch, wie unsere AJAX-Anwendung statische und eingebettete Ressourcen auf dem Server verwenden kann.
 
-[&#9654;Sehen Sie sich Video (28 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-localize-an-aspnet-ajax-application)
+[&#9654;Video ansehen (28 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-localize-an-aspnet-ajax-application)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel.md)

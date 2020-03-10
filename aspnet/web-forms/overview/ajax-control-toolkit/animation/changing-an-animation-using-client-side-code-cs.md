@@ -9,11 +9,11 @@ ms.assetid: 2bfbc5cc-f942-44b7-a62d-a29520f1da9a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 84fc2d6646b89cfabb2193cdfca59462d6d7ef16
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606986"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484053"
 ---
 # <a name="changing-an-animation-using-client-side-code-c"></a>Ändern von Animationen mit clientseitigem Code (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Animation kann auch mit benutzerdefiniertem Client seitigem JavaScript-Code geändert werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Animation kann auch mit benutzerdefiniertem Client seitigem JavaScript-Code geändert werden.
 
@@ -51,7 +51,7 @@ Fügen Sie dann der Seite die `AnimationExtender` hinzu, und geben Sie dabei ein
 
 Beachten Sie, dass es innerhalb des `AnimationExtender` Steuer Elements keinen `<Animations>` Knoten gibt. Benutzerdefinierter JavaScript-Code wird verwendet, um die Animationen bereitzustellen, die mit dem Steuerelement verwendet werden sollen.
 
-Wie bei der Server-API von `AnimationExtender`gibt es keine einfache Möglichkeit, dem Extender eine Animation zuzuweisen. Der Extender stellt jedoch mehrere Methoden zum Lesen und Schreiben von Animationen zur Verfügung, die mit den verschiedenen Ereignissen registriert sind (`OnClick`, `OnLoad`usw.). Hier einige Beispiele:
+Wie bei der Server-API von `AnimationExtender`gibt es keine einfache Möglichkeit, dem Extender eine Animation zuzuweisen. Der Extender stellt jedoch mehrere Methoden zum Lesen und Schreiben von Animationen zur Verfügung, die mit den verschiedenen Ereignissen registriert sind (`OnClick`, `OnLoad`usw.). Im Folgenden finden Sie einige Beispiele:
 
 - `get_OnClick()`
 - `set_OnClick()`

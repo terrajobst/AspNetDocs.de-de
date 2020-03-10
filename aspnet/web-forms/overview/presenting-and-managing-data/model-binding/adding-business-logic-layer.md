@@ -1,98 +1,98 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
-title: Hinzufügen der Geschäftslogikebene auf ein Projekt, modellbindung und Web Forms verwendet. | Microsoft-Dokumentation
+title: Hinzufügen einer Geschäftslogik Ebene zu einem Projekt, das Modell Bindung und Web Forms verwendet | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung macht die dateninteraktion Weitere gerade-...
+description: In dieser tutorialreihe werden grundlegende Aspekte der Verwendung der Modell Bindung mit einem ASP.net Web Forms-Projekt veranschaulicht. Die Modell Bindung führt zu einer geraden Daten Interaktion-...
 ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 7ef664b3-1cc8-4cbf-bb18-9f0f3a3ada2b
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
 ms.openlocfilehash: a824d06d3781e11706f2a48d44ea3ad89bdb7c8b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109167"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515427"
 ---
-# <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Hinzufügen der Geschäftslogikebene auf ein Projekt, modellbindung und Web Forms verwendet
+# <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Hinzufügen einer Geschäftslogik Ebene zu einem Projekt, das Modell Bindung und Web Forms verwendet
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung, wird die dateninteraktion mehr geradlinigere als Umgang mit Data Source-Objekte (z. B. "ObjectDataSource" oder SqlDataSource-Steuerelement). Diese Serie beginnt mit einführendes Material und verschiebt in späteren Tutorials zu erweiterten Konzepten übergegangen.
+> In dieser tutorialreihe werden grundlegende Aspekte der Verwendung der Modell Bindung mit einem ASP.net Web Forms-Projekt veranschaulicht. Die Modell Bindung sorgt für eine genauere Daten Interaktion als bei der Verarbeitung von Datenquellen Objekten (z. b. ObjectDataSource oder SqlDataSource). Diese Serie beginnt mit Einführungs Material und wechselt in spätere Tutorials zu erweiterten Konzepten.
 > 
-> In diesem Tutorial wird gezeigt, wie Sie mit einer Geschäftslogikebene mit modellbindung. Sie legen das OnCallingDataMethods-Element, um anzugeben, dass ein anderes Objekt als die aktuelle Seite mit der die Datenmethoden aufgerufen.
+> In diesem Tutorial wird gezeigt, wie die Modell Bindung mit einer Geschäftslogik Schicht verwendet wird. Sie legen den oncallingdatamethods-Member fest, um anzugeben, dass ein anderes Objekt als die aktuelle Seite verwendet wird, um die Daten Methoden aufzurufen.
 > 
-> Dieses Tutorial baut auf das Projekt erstellt haben, der [früheren](retrieving-data.md) Teilen der Reihe.
+> Dieses Tutorial baut auf dem Projekt auf, das in den [vorherigen](retrieving-data.md) Teilen der Reihe erstellt wurde.
 > 
-> Sie können [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) das vollständige Projekt in c# oder VB. Der herunterladbare Code funktioniert mit Visual Studio 2012 oder Visual Studio 2013. Er verwendet die Visual Studio 2012-Vorlage, die unterscheidet sich etwas von der Visual Studio 2013-Vorlage, die in diesem Tutorial gezeigt wird.
+> Sie können das gesamte Projekt in C# oder VB [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) . Der herunterladbare Code funktioniert entweder mit Visual Studio 2012 oder Visual Studio 2013. Dabei wird die Vorlage Visual Studio 2012 verwendet, die sich geringfügig von der in diesem Tutorial gezeigten Visual Studio 2013 Vorlage unterscheidet.
 
-## <a name="what-youll-build"></a>Sie lernen Folgendes
+## <a name="what-youll-build"></a>Was Sie erstellen
 
-Modellbindung ermöglicht Ihnen, Ihre Interaktion Datencode in der CodeBehind-Datei für eine Webseite oder in einer separaten Business Logic-Klasse zu platzieren. Den vorherigen Tutorials haben gezeigt, wie der Code-Behind-Dateien für die Interaktion Datencode zu verwenden. Dieser Ansatz funktioniert bei kleinen Standorten, jedoch kann dies zu Wiederholung und schwierigere code, wenn eine große Site verwaltet. Sie können auch sehr schwierig sein, Code programmgesteuert zu testen, die in der CodeBehind-Dateien befindet, da keine Abstraktionsschicht vorhanden ist.
+Mithilfe der Modell Bindung können Sie Ihren Daten Interaktions Code entweder in der Code Behind-Datei für eine Webseite oder in einer separaten Geschäftslogik Klasse platzieren. In den vorherigen Tutorials wurde gezeigt, wie die Code-Behind-Dateien für den Daten Interaktions Code verwendet werden. Diese Vorgehensweise funktioniert bei kleinen Standorten, kann jedoch zu einer Code Wiederholung und einer größeren Schwierigkeit bei der Verwaltung einer großen Website führen. Es kann auch sehr schwierig sein, Code Programm gesteuert zu testen, der sich in Code Behind-Dateien befindet, da keine Abstraktions Ebene vorhanden ist.
 
-Um die Interaktion Datenzugriffscode zu zentralisieren, können Sie eine Geschäftslogikebene erstellen, die die gesamte Logik für die Interaktion mit Daten enthält. Anschließend rufen Sie die Geschäftslogikebene von Ihren Webseiten. Dieses Tutorial veranschaulicht, wie verschieben sämtlichen Code, die, den Sie in den vorherigen Tutorials in einer Geschäftslogikebene geschrieben haben, und klicken Sie dann diesen Code auf den Seiten verwenden.
+Um den Daten Interaktions Code zu zentralisieren, können Sie eine Geschäftslogik Ebene erstellen, die die gesamte Logik für die Interaktion mit Daten enthält. Anschließend wird die Geschäftslogik Schicht auf Ihren Webseiten aufgerufen. In diesem Tutorial wird gezeigt, wie Sie den gesamten Code, den Sie in den vorherigen Tutorials geschrieben haben, in eine Geschäftslogik Schicht verschieben und diesen Code dann auf den Seiten verwenden können.
 
-In diesem Tutorial müssen Sie folgende Aktionen ausführen:
+In diesem Tutorial gehen Sie wie folgt vor:
 
-1. Verschieben Sie den Code vom Code-Behind-Dateien auf einer Geschäftslogikebene
-2. Ändern Sie die datengebundene Steuerelemente zum Aufrufen von Methoden in der Geschäftslogikebene
+1. Verschieben Sie den Code aus Code-Behind-Dateien in eine Geschäftslogik Ebene.
+2. Ändern Sie die Daten gebundenen Steuerelemente, um die Methoden in der Geschäftslogik Schicht aufzurufen.
 
-## <a name="create-business-logic-layer"></a>Erstellen der Geschäftslogikebene
+## <a name="create-business-logic-layer"></a>Geschäftslogik Ebene erstellen
 
-Erstellen Sie nun die Klasse, die von der Webseiten aufgerufen wird. Die Methoden in dieser Klasse ähnelt die Methoden, die Sie in den vorherigen Tutorials verwendet und enthalten die Attribute des Wert-Anbieter.
+Nun erstellen Sie die-Klasse, die von den Webseiten aufgerufen wird. Die Methoden in dieser Klasse ähneln den Methoden, die Sie in den vorherigen Tutorials verwendet haben, und enthalten die Wert Anbieter Attribute.
 
-Fügen Sie zunächst einen neuen Ordner namens **BLL**.
+Fügen Sie zunächst einen neuen Ordner namens **BLL**hinzu.
 
 ![Ordner hinzufügen](adding-business-logic-layer/_static/image1.png)
 
-In den BLL-Ordner, erstellen Sie eine neue Klasse namens **SchoolBL.cs**. Alle Datenvorgänge, enthält, die im Code-Behind-Dateien ursprünglich gespeichert war. Die Methoden sind nahezu identisch mit den Methoden in der CodeBehind-Datei, aber einige Änderungen enthält.
+Erstellen Sie im Ordner BLL eine neue Klasse mit dem Namen **SchoolBL.cs**. Sie enthält alle Daten Vorgänge, deren Größe sich in Code Behind-Dateien ursprünglich geändert hat. Die Methoden sind fast identisch mit den Methoden in der Code-Behind-Datei, enthalten jedoch einige Änderungen.
 
-Die wichtigste Änderung zu beachten ist, dass Sie den Code aus innerhalb einer Instanz von nicht mehr ausgeführt werden **Seite** Klasse. Die Page-Klasse enthält die **TryUpdateModel** Methode und die **ModelState** Eigenschaft. Wenn dieser Code in einer Geschäftslogikebene verschoben wird, müssen Sie nicht mehr eine Instanz der Page-Klasse diese Member aufgerufen. Um dieses Problem zu umgehen, fügen Sie eine **ModelMethodContext** Parameter, um eine Methode, die TryUpdateModel oder ModelState zugreift. Sie können diesen ModelMethodContext-Parameter verwenden, rufen TryUpdateModel oder ModelState abzurufen. Sie müssen keine Änderungen vornehmen, auf der Webseite für diesen neuen Parameter zu berücksichtigen.
+Die wichtigste Änderung ist, dass Sie den Code nicht mehr in einer Instanz der **Page** -Klasse ausführen. Die Page-Klasse enthält die **tryupdatemodel** -Methode und die **modelstate** -Eigenschaft. Wenn dieser Code in eine Geschäftslogik Schicht verschoben wird, verfügen Sie nicht mehr über eine Instanz der Page-Klasse, um diese Member aufzurufen. Um dieses Problem zu umgehen, müssen Sie jeder Methode, die auf tryupdatemodel oder modelstate zugreift, einen **modelmethodcontext** -Parameter hinzufügen. Sie verwenden diesen modelmethodcontext-Parameter zum Aufrufen von tryupdatemodel oder zum Abrufen von modelstate. Sie müssen nichts auf der Webseite ändern, um diesen neuen Parameter zu berücksichtigen.
 
-Ersetzen Sie den Code in SchoolBL.cs durch den folgenden Code ein.
+Ersetzen Sie den Code in SchoolBL.cs durch den folgenden Code.
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample1.cs)]
 
-## <a name="revise-existing-pages-to-retrieve-data-from-business-logic-layer"></a>Überarbeiten Sie die vorhandene Seiten zum Abrufen von Daten aus der Geschäftslogikebene
+## <a name="revise-existing-pages-to-retrieve-data-from-business-logic-layer"></a>Überarbeiten vorhandener Seiten zum Abrufen von Daten aus der Geschäftslogik Schicht
 
-Zum Schluss konvertieren Sie die Seiten Students.aspx AddStudent.aspx und Courses.aspx aus der Verwendung von Abfragen in der CodeBehind-Datei mit der Geschäftslogikebene.
+Schließlich konvertieren Sie die Seiten "students. aspx", "addstudent. aspx" und "Courses. aspx" aus der Verwendung von Abfragen in der Code-Behind-Datei in die Geschäftslogik Schicht.
 
-Klicken Sie in den Code-Behind-Dateien für Schüler/Studenten, Kurse und AddStudent löschen Sie, oder kommentieren Sie die folgenden Abfragemethoden:
+Löschen Sie in den Code Behind-Dateien für Studenten, addstudent und Kurse die folgenden Abfrage Methoden, oder kommentieren Sie Sie aus:
 
-- studentsGrid\_GetData
-- studentsGrid\_UpdateItem
-- studentsGrid\_DeleteItem
-- addStudentForm\_InsertItem
-- coursesGrid\_GetData
+- studentsgrid\_GetData
+- studentsgrid\_UpdateItem
+- studentsgrid\_DeleteItem
+- addstudentform\_InsertItem
+- coursesgrid\_GetData
 
-Sie verfügen nun über keinen Code im Code-Behind-Datei, die Datenvorgänge betrifft.
+Sie sollten jetzt keinen Code in der Code Behind-Datei haben, die sich auf Daten Vorgänge bezieht.
 
-Die **OnCallingDataMethods** Ereignishandler können Sie zur Angabe eines Objekts für die Methoden verwenden. Students.aspx fügen Sie einen Wert für diesen Ereignishandler hinzu und ändern Sie den Namen der Datenmethoden in den Namen der Methoden in der Business Logic-Klasse.
+Der **oncallingdatamethods** -Ereignishandler ermöglicht es Ihnen, ein Objekt anzugeben, das für die Daten Methoden verwendet werden soll. Fügen Sie in students. aspx einen Wert für diesen Ereignishandler hinzu, und ändern Sie die Namen der Daten Methoden in die Namen der Methoden in der Geschäftslogik Klasse.
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample2.aspx?highlight=3-4,8)]
 
-Definieren Sie in der CodeBehind-Datei für Students.aspx den Ereignishandler für das CallingDataMethods-Ereignis. In diesem Ereignishandler geben Sie die Business Logic-Klasse für Datenvorgänge an.
+Definieren Sie in der Code Behind-Datei für students. aspx den Ereignishandler für das Ereignis callingdatamethods. In diesem Ereignishandler geben Sie die Geschäftslogik Klasse für Daten Vorgänge an.
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample3.cs)]
 
-Stellen Sie in AddStudent.aspx ähnliche Änderungen.
+Nehmen Sie in addstudent. aspx ähnliche Änderungen vor.
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample4.aspx?highlight=3-4)]
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample5.cs)]
 
-Stellen Sie in Courses.aspx ähnliche Änderungen.
+Nehmen Sie in "Courses. aspx" ähnliche Änderungen vor.
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample6.aspx?highlight=3-4)]
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample7.cs)]
 
-Führen Sie die Anwendung, und beachten Sie, dass alle Seiten funktionieren wie zuvor hatten. Die Validierungslogik auch funktioniert ordnungsgemäß.
+Führen Sie die Anwendung aus, und beachten Sie, dass alle Seiten wie zuvor funktionieren. Die Validierungs Logik funktioniert ebenfalls ordnungsgemäß.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Tutorial strukturiert neu Sie Ihrer Anwendung zur Verwendung einer Datenzugriffsebene und den Geschäftslogikebene. Sie angegeben haben, dass die Datensteuerelemente ein Objekt verwenden, die nicht die aktuelle Seite für Datenvorgänge ist.
+In diesem Tutorial haben Sie die Anwendung so strukturiert, dass Sie eine Datenzugriffs Schicht und eine Geschäftslogik Schicht verwendet. Sie haben angegeben, dass die Daten Steuerelemente ein Objekt verwenden, das nicht die aktuelle Seite für Daten Vorgänge ist.
 
 > [!div class="step-by-step"]
-> [Vorherige](using-query-string-values-to-retrieve-data.md)
+> [Previous](using-query-string-values-to-retrieve-data.md)

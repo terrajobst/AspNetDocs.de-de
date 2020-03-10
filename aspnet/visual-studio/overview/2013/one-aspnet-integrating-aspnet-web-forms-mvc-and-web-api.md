@@ -1,31 +1,31 @@
 ---
 uid: visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
-title: 'Praktische Übungseinheiten: One ASP.NET: Die Integration von ASP.NET Web Forms, MVC und Web-API | Microsoft-Dokumentation'
+title: 'Praktische Übungseinheit: One ASP.net: Integration ASP.net Web Forms, MVC und Web API | Microsoft-Dokumentation'
 author: rick-anderson
-description: ASP.NET ist ein Framework zum Erstellen von Websites, apps und Dienste, die spezielle Technologien wie z. B. MVC, Web-API und andere. Aufgrund der steigenden ASP.NET h...
+description: ASP.net ist ein Framework zum Aufbauen von Websites, Apps und Diensten mit spezialisierten Technologien wie MVC, Web-API und anderen. Mit der Erweiterung ASP.net h...
 ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 165d104b5d3ef3281af449cc8673ad96f531d628
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113071"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78505455"
 ---
-# <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Praktische Übungseinheiten: One ASP.NET: Integrieren von ASP.NET Web Forms, MVC und Web-API
+# <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Praktische Übungseinheit: One ASP.net: Integration ASP.net Web Forms, MVC und Web API
 
-durch [Web Camps Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
+[Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
-> ASP.NET ist ein Framework zum Erstellen von Websites, apps und Dienste, die spezielle Technologien wie z. B. MVC, Web-API und andere. Aufgrund der steigenden ASP.NET gesehen hat, seit ihrer Erstellung und die ausgedrückt müssen diese Technologien integriert, es gab aktuellen bemühungen in funktionierenden für **One ASP.NET**.
+> ASP.net ist ein Framework zum Aufbauen von Websites, Apps und Diensten mit spezialisierten Technologien wie MVC, Web-API und anderen. Mit der Erweiterung ASP.net hat sich seit der Erstellung und der ausdrücklichen Notwendigkeit, diese Technologien **integriert zu haben**, bewährt
 > 
-> Visual Studio 2013 bietet es sich um ein neues einheitliches Projektsystem können Sie eine Anwendung erstellen und verwenden die ASP.NET-Technologien in einem Projekt. Diese Funktion entfällt die Notwendigkeit, eine Technologie zu Beginn eines Projekts und mit der sie auswählen, und stattdessen empfiehlt die Verwendung von mehreren ASP.NET Frameworks in einem Projekt.
+> Visual Studio 2013 führt ein neues einheitliches Projekt System ein, mit dem Sie eine Anwendung erstellen und alle ASP.NET-Technologien in einem Projekt verwenden können. Durch dieses Feature entfällt die Notwendigkeit, eine Technologie zu Beginn eines Projekts auszuwählen und sich daran zu halten. stattdessen wird die Verwendung mehrerer ASP.NET-Frameworks in einem Projekt angeregt.
 > 
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
+> Der gesamte Beispielcode und die Code Ausschnitte sind im Web Camps-Trainingskit enthalten, das unter [https://aka.ms/webcamps-training-kit](https://aka.ms/webcamps-training-kit)verfügbar ist.
 
 <a id="Overview"></a>
 ## <a name="overview"></a>Übersicht
@@ -33,403 +33,403 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
 
-In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
+In dieser praktischen Übungseinheit erfahren Sie Folgendes:
 
-- Erstellen einer Website auf der Grundlage der **One ASP.NET** Projekttyp
-- Andere **ASP.NET** Frameworks wie **MVC** und **Web-API-** im selben Projekt
-- Identifizieren Sie die wichtigsten Komponenten von einer **ASP.NET** Anwendung
-- Profitieren Sie von der **ASP.NET-Gerüstbau** Framework zum automatischen Erstellen von Controllern und Ansichten zum Durchführen von CRUD-Vorgänge basierend auf Ihren Modellklassen
-- Bieten Sie die gleichen Informationen in Computer und lesbaren Formaten, die mit dem richtigen Tool für jeden Auftrag
+- Erstellen einer Website basierend auf dem **One ASP.net** -Projekttyp
+- Verwenden Sie unterschiedliche **ASP.net** -Frameworks wie **MVC** und die **Web-API** im gleichen Projekt.
+- Identifizieren der Hauptkomponenten einer **ASP.net** -Anwendung
+- Nutzen Sie das **ASP.net Gerüstbau** -Framework, um automatisch Controller und Sichten zum Ausführen von CRUD-Vorgängen basierend auf Ihren Modellklassen zu erstellen.
+- Machen Sie denselben Satz von Informationen in maschinellen und lesbaren Formaten verfügbar, indem Sie das richtige Tool für jeden Auftrag verwenden.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Voraussetzungen
 
-Folgendes ist erforderlich, um diese praktische Übungseinheit auszuführen:
+Zum Durchführen dieser praktischen Übungseinheit ist Folgendes erforderlich:
 
 - [Visual Studio Express 2013 für Web](https://www.microsoft.com/visualstudio/) oder höher
 - [Visual Studio 2013 Update 1](https://go.microsoft.com/fwlink/?LinkId=301714)
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Einrichten
 
-Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie zunächst die Umgebung einrichten.
+Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie zuerst Ihre Umgebung einrichten.
 
-1. Öffnen von Windows-Explorer und navigieren Sie zu des Labs die **Quelle** Ordner.
-2. Mit der rechten Maustaste auf **"Setup.cmd"** , und wählen Sie **als Administrator ausführen** zum Starten des Setup-Prozesses, die die Umgebung konfigurieren, und installieren die Visual Studio-Codeausschnitte für diese Übung.
-3. Wenn das Dialogfeld "Benutzerkontensteuerung" angezeigt wird, bestätigen Sie die Aktion aus, um den Vorgang fortzusetzen.
+1. Öffnen Sie Windows-Explorer, und navigieren Sie zum **Quell** Ordner des Labs.
+2. Klicken Sie mit der rechten Maustaste auf **Setup. cmd** , und wählen Sie **als Administrator ausführen** aus, um den Setup Vorgang zu starten, mit dem die Umgebung konfiguriert wird, und die Visual Studio-Code Ausschnitte für diese Übungseinheit
+3. Wenn das Dialogfeld Benutzerkontensteuerung angezeigt wird, bestätigen Sie die Aktion, um fortzufahren.
 
 > [!NOTE]
-> Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
+> Vergewissern Sie sich, dass Sie vor dem Ausführen des Setups alle Abhängigkeiten für dieses Lab geprüft haben.
 
 <a id="CodeSnippets"></a>
-### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
+### <a name="using-the-code-snippets"></a>Verwenden der Code Ausschnitte
 
-In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. Der Einfachheit halber die meisten dieser Code dient als Visual Studio-Codeausschnitten, die Sie in Visual Studio 2013, um zu vermeiden, müssen sie manuell hinzufügen aus zugreifen können.
+Im gesamten Lab-Dokument werden Sie angewiesen, Code Blöcke einzufügen. Der größte Teil dieses Codes wird zur einfacheren Verwendung als Visual Studio Code Ausschnitte bereitgestellt, auf die Sie in Visual Studio 2013 zugreifen können, um das manuelle Hinzufügen zu vermeiden.
 
 > [!NOTE]
-> Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
+> Jede Übung wird von einer Start Lösung begleitet, die sich im Ordner " **Begin** " der Übung befindet und Ihnen ermöglicht, die einzelnen Übungen unabhängig von den anderen zu befolgen. Beachten Sie, dass die während einer Übung hinzugefügten Code Ausschnitte in diesen Projektmappen fehlen und möglicherweise erst nach Abschluss der Übung funktionieren. Innerhalb des Quellcodes für eine Übung finden Sie auch einen **endordner** mit einer Visual Studio-Projekt Mappe mit dem Code, der aus der Ausführung der Schritte in der entsprechenden Übung resultiert. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, während Sie diese praktische Übungseinheit durcharbeiten.
 
 ---
 
 <a id="Exercises"></a>
-## <a name="exercises"></a>Übungen
+## <a name="exercises"></a>Exerzitien
 
-Dieser praktischen Übungseinheit enthält die folgenden Übungen:
+Diese praktische Übungseinheit umfasst die folgenden Übungen:
 
-1. [Erstellen eines neuen Web Forms-Projekts](#Exercise1)
+1. [Erstellen eines neuen Web Forms Projekts](#Exercise1)
 2. [Erstellen eines MVC-Controllers mithilfe von Gerüstbau](#Exercise2)
-3. [Erstellen einer Web-API-Controller mithilfe von Gerüstbau](#Exercise3)
+3. [Erstellen eines Web-API-Controllers mithilfe von Gerüstbau](#Exercise3)
 
-Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**
+Geschätzte Zeit bis zum Abschluss dieses Labs: **60 Minuten**
 
 > [!NOTE]
-> Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
+> Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungs Sammlungen auswählen. Jede vordefinierte Sammlung ist so konzipiert, dass Sie einem bestimmten Entwicklungsstil entspricht, und bestimmt Fensterlayouts, das Editor-Verhalten, IntelliSense-Code Ausschnitte und Dialogfeld Optionen. In den Prozeduren in dieser Übungseinheit werden die Aktionen beschrieben, die zum Ausführen einer bestimmten Aufgabe in Visual Studio bei Verwendung der **allgemeinen Entwicklungs Einstellungs** Auflistung erforderlich sind. Wenn Sie eine andere Einstellungs Sammlung für Ihre Entwicklungsumgebung auswählen, kann es Unterschiede in den Schritten geben, die Sie berücksichtigen sollten.
 
 <a id="Exercise1"></a>
-### <a name="exercise-1-creating-a-new-web-forms-project"></a>Übung 1: Erstellen eines neuen Web Forms-Projekts
+### <a name="exercise-1-creating-a-new-web-forms-project"></a>Übung 1: Erstellen eines neuen Web Forms Projekts
 
-In dieser Übung erstellen Sie eine neue Web Forms-Website in Visual Studio 2013 verwenden die **One ASP.NET** einheitliche Projekt, sodass Sie die einfache Integration von Web Forms, MVC und Web-API-Komponenten in der gleichen Anwendung. Sie klicken Sie dann die Teile zu identifizieren und untersuchen Sie die so erzeugte Lösung, und schließlich sehen Sie die Website in Aktion.
+In dieser Übung erstellen Sie eine neue Web Forms Website in Visual Studio 2013 mithilfe der **ASP.net** Unified Project-Funktion, die es Ihnen ermöglicht, Web Forms-, MVC-und Web-API-Komponenten problemlos in dieselbe Anwendung zu integrieren. Sie werden dann die generierte Lösung durchsuchen und deren Teile identifizieren, und schließlich wird die Website in Aktion angezeigt.
 
 <a id="Ex1Task1"></a>
-#### <a name="task-1--creating-a-new-site-using-the-one-aspnet-experience"></a>Aufgabe 1 – Erstellen eines neuen Standorts mit der eine Erfahrung mit ASP.NET
+#### <a name="task-1--creating-a-new-site-using-the-one-aspnet-experience"></a>Aufgabe 1 – Erstellen einer neuen Website mit einer ASP.net-Funktion
 
-In dieser Aufgabe Sie starten eine neue Website erstellen, in Visual Studio auf der Grundlage der **One ASP.NET** Projekttyp. **Eine ASP.NET** vereinigt alle ASP.NET-Technologien und bietet Ihnen die Möglichkeit zum kombinieren, und passen sie nach Bedarf. Klicken Sie dann, erkennen Sie die verschiedenen Komponenten der Web Forms, MVC und Web-API, die live nebeneinander in Ihrer Anwendung.
+In dieser Aufgabe beginnen Sie mit dem Erstellen einer neuen Website in Visual Studio basierend auf dem **One ASP.net** -Projekttyp. **Eine ASP.net** vereinigt alle ASP.NET-Technologien und bietet Ihnen die Möglichkeit, Sie nach Belieben zu mischen und abzugleichen. Anschließend erkennen Sie die verschiedenen Komponenten von Web Forms, MVC und der Web-API, die nebeneinander innerhalb Ihrer Anwendung nebeneinander stehen.
 
-1. Open **Visual Studio Express 2013 für Web** , und wählen Sie **Datei | Neues Projekt...**  um eine neue Projektmappe zu starten.
+1. Öffnen Sie **Visual Studio Express 2013 für Web** , und wählen Sie Datei aus.  **Neues Projekt...** , um eine neue Projekt Mappe zu starten.
 
     ![Erstellen eines neuen Projekts](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image1.png)
 
     *Erstellen eines neuen Projekts*
-2. In der **neues Projekt** wählen Sie im Dialogfeld **ASP.NET-Webanwendung** unter der **Visual c# | Web** Registerkarte, und stellen Sie sicher, dass **.NET Framework 4.5** ausgewählt ist. Nennen Sie das Projekt *MyHybridSite*, wählen Sie eine **Speicherort** , und klicken Sie auf **OK**.
+2. Wählen Sie im Dialogfeld **Neues Projekt** unter der Visualisierung **C# ASP.NET Webanwendung aus.** Registerkarte Web, und stellen Sie sicher, dass **.NET Framework 4,5** ausgewählt ist. Nennen Sie das Projekt *myhybridsite*, wählen Sie einen **Speicherort** aus, und klicken Sie auf **OK**.
 
-    ![Neues ASP.NET Web Application-Projekt](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)
+    ![Neues ASP.NET-Webanwendungs Projekt](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)
 
-    *Erstellen eines neuen Projekts für die ASP.NET-Webanwendung*
-3. In der **neues ASP.NET-Projekt** wählen Sie im Dialogfeld die **Web Forms** Vorlage, und wählen die **MVC** und **Web-API-** Optionen. Stellen Sie außerdem sicher, dass die **Authentifizierung** Option wird festgelegt, um **einzelne Benutzerkonten**. Klicken Sie auf **OK** um den Vorgang fortzusetzen.
+    *Erstellen eines neuen ASP.NET-Webanwendungs Projekts*
+3. Wählen Sie im Dialogfeld **Neues ASP.net-Projekt** die **Vorlage Web Forms** aus, und wählen Sie die Optionen **MVC** und **Web-API** aus. Stellen Sie außerdem sicher, dass die **Authentifizierungs** Option auf **einzelne Benutzerkonten**festgelegt ist. Klicken Sie zum Fortsetzen des Vorgangs auf **OK** .
 
-    ![Erstellen eines neuen Projekts mit der Web Forms-Vorlage, einschließlich Web-API und MVC-Komponenten](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image3.png)
+    ![Erstellen eines neuen Projekts mit der Web Forms Vorlage, einschließlich Web-API und MVC-Komponenten](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image3.png)
 
-    *Erstellen eines neuen Projekts mit der Web Forms-Vorlage, einschließlich Web-API und MVC-Komponenten*
-4. Sie können jetzt die Struktur die so erzeugte Lösung erkunden.
+    *Erstellen eines neuen Projekts mit der Web Forms Vorlage, einschließlich Web-API und MVC-Komponenten*
+4. Nun können Sie die Struktur der generierten Lösung untersuchen.
 
-    ![Untersuchen der Lösung generierten](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image4.png)
+    ![Untersuchen der generierten Lösung](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image4.png)
 
-    *Untersuchen der Lösung generierten*
+    *Untersuchen der generierten Lösung*
 
-    1. **Konto:** Dieser Ordner enthält die Web Form-Seiten, um zu registrieren, melden Sie sich bei und Verwalten von Benutzerkonten für der Anwendung. In diesem Ordner hinzugefügt, wenn die **einzelne Benutzerkonten** Authentifizierungsoption während der Konfiguration der Web Forms-Projektvorlage ausgewählt ist.
+    1. **Konto:** Dieser Ordner enthält die Web Form-Seiten für die Registrierung, die Anmeldung bei und die Verwaltung der Benutzerkonten der Anwendung. Dieser Ordner wird hinzugefügt, wenn die Authentifizierungs Option **einzelner Benutzerkonten** während der Konfiguration der Web Forms-Projektvorlage ausgewählt wird.
     2. **Modelle:** Dieser Ordner enthält die Klassen, die Ihre Anwendungsdaten darstellen.
-    3. **Controller** und **Ansichten**: Diese Ordner sind erforderlich, damit die **ASP.NET MVC** und **ASP.NET Web-API** Komponenten. Untersuchen Sie die MVC und Web-API-Technologien in den nächsten Übungen.
-    4. Die **"default.aspx"**, **Contact.aspx** und **About.aspx** Dateien sind vorab definierte Web Form-Seiten, die Sie als Ausgangspunkt verwenden können, erstellen Sie die Seiten, die spezifisch für Ihre die Anwendung. Die Programmierlogik dieser Dateien befinden sich in einer separaten Datei genannt die &quot;CodeBehind&quot; gemäß der ein &quot;. "aspx.vb"&quot; oder &quot;. aspx.cs&quot; Erweiterung (je die verwendete Sprache). Die Code-Behind-Logik auf dem Server ausgeführt wird und HTML-Ausgabe für Ihre Seite dynamisch erzeugt.
-    5. Die **Site.Master** und **Site.Mobile.Master** Seiten definieren das Aussehen und Verhalten und das Standardverhalten aller Seiten in der Anwendung.
-5. Doppelklicken Sie auf die **"default.aspx"** Datei, um den Inhalt der Seite zu untersuchen.
+    3. **Controller** und **Ansichten**: diese Ordner sind für die **ASP.NET MVC** -und **ASP.net-Web-API** -Komponenten erforderlich. In den nächsten Übungen erfahren Sie mehr über die MVC-und Web-API-Technologien.
+    4. Die Dateien " **default. aspx**", " **Contact. aspx** " und " **about. aspx** " sind vordefinierte Web Form-Seiten, die Sie als Ausgangspunkt verwenden können, um die für die Anwendung spezifischen Seiten zu erstellen. Die Programmierlogik dieser Dateien befindet sich in einer separaten Datei, die als &quot;Code-Behind-&quot; Datei bezeichnet wird, die über eine &quot;. aspx. vb&quot;-oder &quot;. aspx.cs&quot;-Erweiterung (abhängig von der verwendeten Sprache) verfügt. Die Code-Behind-Logik wird auf dem Server ausgeführt und erzeugt dynamisch die HTML-Ausgabe für die Seite.
+    5. Auf den Seiten " **Site. Master** " und " **Site. Mobile. Master** " werden das Aussehen und Verhalten und das Standardverhalten aller Seiten in der Anwendung definiert.
+5. Doppelklicken Sie auf die Datei " **default. aspx** ", um den Inhalt der Seite zu durchsuchen.
 
-    ![Untersuchen die Seite "default.aspx"](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image5.png)
+    ![Untersuchen der Seite "default. aspx"](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image5.png)
 
-    *Untersuchen die Seite "default.aspx"*
+    *Untersuchen der Seite "default. aspx"*
 
     > [!NOTE]
-    > Die **Seite** Direktive am Anfang der Datei definiert die Attribute der Web Forms-Seite. Z. B. die **MasterPageFile** -Attribut gibt den Pfad zum Master Seite – in diesem Fall die *Site.Master* Seiten- und **Inherits** -Attribut definiert die Code-Behind-Klasse für die Seite erbt. Diese Klasse befindet sich in der Datei, die bestimmt, indem die **CodeBehind** Attribut.
+    > Mit der **Page** -Direktive am Anfang der Datei werden die Attribute der Web Forms Seite definiert. Beispielsweise gibt das **MasterPageFile** -Attribut den Pfad zur Master Seite an, in diesem Fall die *Site. Master* -Seite und das erbt-Attribut, das die Code-Behind-Klasse für die zu **erbende** Seite definiert. Diese Klasse befindet sich in der Datei, die durch das **Code Behind** -Attribut bestimmt wird.
     > 
-    > Die **Asp: Content** Steuerelement enthält den eigentlichen Inhalt der Seite (Text, Markup und Steuerelemente) und wird ein **Asp: ContentPlaceHolder** Steuerelement auf der Masterseite. In diesem Fall wird der Inhalt der Seite gerendert werden, in der *MainContent* -Steuerelements in definiert die *Site.Master* Seite.
-6. Erweitern Sie die **App\_starten** Ordner, und beachten Sie, dass die **WebApiConfig.cs** Datei. Visual Studio enthalten die Datei in der generierten Projektmappe, da Sie beim Konfigurieren von Ihrem Projekts mit der Vorlage für eine ASP.NET Web-API enthalten.
-7. Öffnen der **WebApiConfig.cs** Datei. In der *WebApiConfig* Klasse finden Sie die Konfiguration zugeordnet Web-API, die HTTP zugeordnet wird leitet **Web-API-Controllern**.
+    > Das **ASP: Content** -Steuerelement enthält den eigentlichen Inhalt der Seite (Text, Markup und Steuerelemente) und wird einem **ASP: contentplachalter** -Steuerelement auf der Master Seite zugeordnet. In diesem Fall wird der Seiten Inhalt innerhalb des *mainContent* -Steuer Elements gerendert, das auf der Seite *Site. Master* definiert ist.
+6. Erweitern Sie den Ordner **App\_Start** , und beachten Sie die Datei **WebApiConfig.cs** . Visual Studio enthielt diese Datei in die generierte Projekt Mappe, da Sie beim Konfigurieren Ihres Projekts mit der One ASP.net-Vorlage eine Web-API eingeschlossen haben.
+7. Öffnen Sie die Datei **WebApiConfig.cs** . In der *webapiconfig* -Klasse finden Sie die Konfiguration, die der Web-API zugeordnet ist, die http-Routen zu **Web-API-Controllern**zuordnet.
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample1.cs)]
-8. Öffnen der **RouteConfig.cs** Datei. In der *RegisterRoutes* Methode finden Sie die Konfiguration zugeordnet MVC, das die HTTP-Route, ordnet **MVC-Controller**.
+8. Öffnen Sie die Datei **RouteConfig.cs** . In der *RegisterRoutes* -Methode finden Sie die Konfiguration, die MVC zugeordnet ist, mit der http-Routen zu **MVC-Controllern**zugeordnet werden.
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample2.cs)]
 
 <a id="Ex1Task2"></a>
-#### <a name="task-2--running-the-solution"></a>Aufgabe 2: Ausführen der Lösung
+#### <a name="task-2--running-the-solution"></a>Aufgabe 2 – Ausführen der Lösung
 
-In dieser Aufgabe Sie führen die so erzeugte Lösung, Erkunden Sie die app und einige der Features, wie URL-Umschreibung und die integrierte Authentifizierung.
+In dieser Aufgabe führen Sie die generierte Lösung aus, untersuchen die APP und einige ihrer Features, wie das Umschreiben von URLs und die integrierte Authentifizierung.
 
-1. Um die Projektmappe auszuführen, drücken Sie die **F5** oder klicken Sie auf die **starten** Schaltfläche befindet sich auf der Symbolleiste. Startseite der Anwendung sollte im Browser geöffnet.
+1. Drücken Sie **F5** , oder klicken Sie auf die Schaltfläche **Start** auf der Symbolleiste, um die Projekt Mappe auszuführen. Die Startseite der Anwendung sollte im Browser geöffnet werden.
 
     ![Ausführen der Lösung](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image6.png)
-2. Stellen Sie sicher, dass die Web Forms-Seiten aufgerufen werden. Fügen Sie zu diesem Zweck **/contact.aspx** an die URL in die Adressleiste ein und drücken Sie **EINGABETASTE**.
+2. Überprüfen Sie, ob die Web Forms Seiten aufgerufen werden. Fügen Sie zu diesem Zweck **/Contact.aspx** an die URL in der Adressleiste an, und drücken **Sie die Eingabe**Taste.
 
     ![Friendly URLs](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image7.png)
 
     *Friendly URLs*
 
     > [!NOTE]
-    > Wie Sie sehen können, ändert die URL in **/wenden Sie sich an**. Beginnend mit **ASP.NET 4**, URL-routing-Funktionen wurden hinzugefügt, um die Web Forms, sodass Sie schreiben können wie URLs *[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* anstelle von  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Weitere Informationen finden Sie unter [URL-Routing](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
-3. Sie werden nun der Ablauf der Authentifizierung in die Anwendung integriert untersuchen. Zu diesem Zweck klicken Sie auf **registrieren** in der oberen rechten Ecke der Seite.
+    > Wie Sie sehen können, wird die URL in **/Contact**geändert. Ab **ASP.NET 4**wurden die URL-Routing Funktionen Web Forms hinzugefügt, sodass Sie URLs wie *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* anstelle von *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)* schreiben können. Weitere Informationen finden Sie unter [URL-Routing](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
+3. Sie werden nun den in die Anwendung integrierten Authentifizierungs Fluss untersuchen. Klicken Sie hierzu in der oberen rechten Ecke der Seite auf **registrieren** .
 
     ![Registrieren eines neuen Benutzers](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)
 
     *Registrieren eines neuen Benutzers*
-4. In der **registrieren** geben eine **Benutzernamen** und **Kennwort**, und klicken Sie dann auf **registrieren**.
+4. Geben Sie auf der **Register** Seite einen **Benutzernamen** und ein **Kennwort**ein, und klicken Sie dann auf **registrieren**.
 
-    ![Seite "registrieren"](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image9.png)
+    ![Seite registrieren](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image9.png)
 
-    *Seite "registrieren"*
-5. Die Anwendung registriert das neue Konto ein, und der Benutzer wird authentifiziert.
+    *Seite registrieren*
+5. Die Anwendung registriert das neue Konto, und der Benutzer wird authentifiziert.
 
-    ![Benutzerauthentifizierung](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image10.png)
+    ![Benutzer authentifiziert](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image10.png)
 
-    *Benutzerauthentifizierung*
-6. Wechseln Sie zurück zu Visual Studio, und drücken Sie **UMSCHALT + F5** debugging beenden.
+    *Benutzer authentifiziert*
+6. Kehren Sie zu Visual Studio zurück, und drücken Sie **UMSCHALT + F5** , um das Debugging zu verhindern.
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-creating-an-mvc-controller-using-scaffolding"></a>Übung 2: Erstellen eines MVC-Controllers mithilfe von Gerüstbau
+### <a name="exercise-2-creating-an-mvc-controller-using-scaffolding"></a>Übung 2: Erstellen eines MVC-Controllers mithilfe eines Gerüsts
 
-In dieser Übung werden Sie nutzen von ASP.NET-Gerüstbau Framework bereitgestellt, die von Visual Studio zum Erstellen eines ASP.NET MVC 5-Controllers mit Aktionen und Razor-Ansichten für CRUD-Vorgänge ausführen, ohne eine einzige Codezeile schreiben zu müssen. Der Gerüstbau-Prozess wird Entity Framework Code First verwenden, um den Datenkontext und das Datenbankschema in der SQL-Datenbank zu generieren.
+In dieser Übung nutzen Sie das ASP.net Gerüstbau-Framework, das von Visual Studio bereitgestellt wird, um einen ASP.NET MVC 5-Controller mit Aktionen und Razor-Ansichten zum Durchführen von CRUD-Vorgängen zu erstellen, ohne eine einzige Codezeile zu schreiben. Der Gerüstbau Prozess verwendet Entity Framework Code First, um den Datenkontext und das Datenbankschema in der SQL-Datenbank zu generieren.
 
-**Über Entitätsframework Code First**
+**Informationen zu Entity Framework Code First**
 
-Entity Framework (EF) ist ein Objektrelationaler Mapper (ORM), der Ihnen die Erstellung von Anwendungen für den Datenzugriff durch das Programmieren mit einem konzeptionellen Anwendungsmodell anstelle des Programmierens direkt mit einem Speicherschema ermöglicht.
+Entity Framework (EF) ist ein Objekt relationaler Mapper (ORM), mit dem Sie Datenzugriffs Anwendungen erstellen können, indem Sie mit einem konzeptionellen Anwendungsmodell programmieren, anstatt direkt mithilfe eines relationalen Speicher Schemas zu programmieren.
 
-Der Entity Framework Code First Modellierung Workflow können Sie Ihre eigenen Domänenklassen verwenden, um das Modell darstellen, dem EF auf stützt sich bei der Ausführung von Abfragen, Nachverfolgen von Änderungen und Aktualisieren von Funktionen. Verwenden den Code First Entwicklungsworkflow, müssen nicht Sie Ihre Anwendung durch Erstellen einer Datenbank oder das Angeben eines Schemas zu beginnen. Stattdessen können Sie den standardmäßige .NET-Klassen, die definieren, der am besten geeigneten domänenmodellobjekte für Ihre Anwendung schreiben, und Entity Framework erstellt die Datenbank für Sie.
+Der Workflow für die Entity Framework Code First Modellierung ermöglicht Ihnen die Verwendung ihrer eigenen Domänen Klassen, um das Modell darzustellen, das EF beim Ausführen von Abfragen, Änderungs Nachverfolgung und Aktualisierungs Funktionen verwendet. Wenn Sie den Code First Entwicklungs Workflow verwenden, müssen Sie die Anwendung nicht starten, indem Sie eine Datenbank erstellen oder ein Schema angeben. Stattdessen können Sie .net-Standardklassen schreiben, die die am besten geeigneten Domänen Modell Objekte für Ihre Anwendung definieren, und Entity Framework die Datenbank für Sie erstellen.
 
 > [!NOTE]
-> Weitere Informationen finden Sie Informationen zu Entity Framework [hier](../../../entity-framework.md).
+> Weitere Informationen zu Entity Framework finden Sie [hier](../../../entity-framework.md).
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-new-model"></a>Aufgabe 1 – Erstellen eines neuen Modells
 
-Definieren Sie nun eine **Person** -Klasse, die das Modell, das durch den Gerüstbau-Prozess zum Erstellen von MVC-Controller und Ansichten verwendet werden. Beginnen Sie mit dem Erstellen einer **Person** Model-Klasse, und die CRUD-Vorgänge im Controller werden automatisch erstellt mithilfe von Gerüstbau-Funktionen.
+Nun definieren Sie eine **Person** -Klasse, bei der es sich um das Modell handelt, das vom Gerüstbau Prozess zum Erstellen des MVC-Controllers und der Ansichten verwendet wird. Zunächst erstellen Sie eine **Person** -Modell Klasse, und die CRUD-Vorgänge im Controller werden automatisch mithilfe von Gerüstbau Features erstellt.
 
-1. Open **Visual Studio Express 2013 für Web** und **MyHybridSite.sln** Lösung befindet sich in der **Quelle/Ex2-MvcScaffolding/Anfang** Ordner. Alternativ können Sie die Lösung weiter nutzen, den Sie in der vorherigen Übung haben.
-2. In **Projektmappen-Explorer**, mit der rechten Maustaste die **Modelle** Ordner die **MyHybridSite** Projekt, und wählen **hinzufügen | Klasse...** .
+1. Öffnen Sie **Visual Studio Express 2013 für das Web** und die Projekt Mappe " **myhybridsite. sln** ", die sich im Ordner " **Source/EX2-mvcgerüst/BEGIN** " befindet. Alternativ können Sie mit der Lösung fortfahren, die Sie in der vorherigen Übung abgerufen haben.
+2. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner **Models** des Projekts **myhybridsite** , und wählen Sie **hinzufügen aus. Klasse...**
 
-    ![Die Person-Klasse hinzufügen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image11.png)
+    ![Hinzufügen der Person-Modell Klasse](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image11.png)
 
-    *Die Person-Klasse hinzufügen*
-3. In der **neues Element hinzufügen** Dialogfeld benennen Sie die Datei *Person.cs* , und klicken Sie auf **hinzufügen**.
+    *Hinzufügen der Person-Modell Klasse*
+3. Benennen Sie im Dialogfeld **Neues Element hinzufügen** die Datei *Person.cs* , und klicken Sie auf **Hinzufügen**.
 
-    ![Erstellen die Person-Klasse](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image12.png)
+    ![Erstellen der Person-Modell Klasse](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image12.png)
 
-    *Erstellen die Person-Klasse*
-4. Ersetzen Sie den Inhalt der **Person.cs** -Datei mit den folgenden Code. Drücken Sie **STRG + S** um die Änderungen zu speichern.
+    *Erstellen der Person-Modell Klasse*
+4. Ersetzen Sie den Inhalt der **Person.cs** -Datei durch den folgenden Code. Drücken Sie **STRG + S** , um die Änderungen zu speichern.
 
-    (Codeausschnitt - *BringingTogetherOneAspNet - Ex2 - PersonClass*)
+    (Code Ausschnitt- *bringingtogetheroneaspnet-EX2-Personclass*)
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample3.cs)]
-5. In **Projektmappen-Explorer**, mit der rechten Maustaste die **MyHybridSite** Projekt, und wählen **erstellen**, oder drücken Sie **STRG + UMSCHALT + B** zum Erstellen des Projekts.
+5. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **myhybridsite** , und wählen Sie **Erstellen**aus, oder drücken Sie **STRG + UMSCHALT + B** , um das Projekt zu erstellen.
 
 <a id="Ex2Task2"></a>
-#### <a name="task-2--creating-an-mvc-controller"></a>Aufgabe 2: Erstellen eines MVC-Controllers
+#### <a name="task-2--creating-an-mvc-controller"></a>Aufgabe 2 – Erstellen eines MVC-Controllers
 
-Nachdem die **Person** Modell erstellt wurde, verwenden Sie ASP.NET-MVC-Gerüstbau mit Entity Framework zum Erstellen des CRUD-Controller-Aktionen und Ansichten für **Person**.
+Nachdem das **Person** -Modell erstellt wurde, verwenden Sie ASP.NET MVC-Gerüstbau mit Entity Framework, um die CRUD-Controller Aktionen und-Ansichten für **Person**zu erstellen.
 
-1. In **Projektmappen-Explorer**, mit der rechten Maustaste die **Controller** Ordner die **MyHybridSite** Projekt, und wählen **hinzufügen | Neues Gerüstelement...** .
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner **Controllers** des Projekts **myhybridsite** , und wählen Sie **Hinzufügen | Neues Gerüst Element...**
 
-    ![Erstellen eines neuen erstellten Controllers](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image13.png)
+    ![Erstellen eines neuen Gerüst Controllers](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image13.png)
 
-    *Erstellen eines neuen Gerüst-Controllers*
-2. In der **Gerüst hinzufügen** wählen Sie im Dialogfeld **MVC 5-Controller mit Ansichten unter Verwendung von Entity Framework** , und klicken Sie dann auf **hinzufügen.**
+    *Erstellen eines neuen Gerüst Controllers*
+2. Wählen Sie im Dialogfeld **Gerüst hinzufügen** die Option **MVC 5-Controller mit Ansichten unter Verwendung Entity Framework** aus, und klicken Sie dann auf **hinzufügen.**
 
-    ![MVC 5-Controller mit Ansichten und Entity Framework auswählen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image14.png)
+    ![Auswählen von MVC 5-Controller mit Ansichten und Entity Framework](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image14.png)
 
-    *MVC 5-Controller mit Ansichten und Entity Framework auswählen*
-3. Legen Sie *MvcPersonController* als die **Controllername**, wählen die **Async-Controlleraktionen verwenden** aus, und wählen Sie **Person (MyHybridSite.Models)**  als die **Modellklasse**.
+    *Auswählen von MVC 5-Controller mit Ansichten und Entity Framework*
+3. Legen Sie *mvcpersoncontroller* als **Controller Namen**fest, wählen Sie die Option **Async Controller Actions verwenden** aus, und wählen Sie **Person (myhybridsite. Models)** als **Modell Klasse**aus.
 
-    ![Einen MVC-Controller mit Gerüst hinzufügen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image15.png)
+    ![Hinzufügen eines MVC-Controllers mit Gerüstbau](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image15.png)
 
-    *Einen MVC-Controller mit Gerüst hinzufügen*
-4. Klicken Sie unter **Datenkontextklasse**, klicken Sie auf **neuer Datenkontext...** .
+    *Hinzufügen eines MVC-Controllers mit Gerüstbau*
+4. Klicken Sie unter **Datenkontext Klasse**auf **neuer Datenkontext...** .
 
-    ![Erstellen einen neuen Datenkontext](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image16.png)
+    ![Erstellen eines neuen Daten Kontexts](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image16.png)
 
-    *Erstellen einen neuen Datenkontext*
-5. In der **neuer Datenkontext** Dialogfeld den neuen Datenkontext *PersonContext* , und klicken Sie auf **hinzufügen**.
+    *Erstellen eines neuen Daten Kontexts*
+5. Benennen Sie im Dialogfeld **neuer Datenkontext** den neuen Datenkontext *personcontext* , und klicken Sie auf **Hinzufügen**.
 
-    ![Erstellen die neue PersonContext](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image17.png)
+    ![Erstellen des neuen personcontext](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image17.png)
 
-    *Erstellen den neuen PersonContext-Typ*
-6. Klicken Sie auf **hinzufügen** zum Erstellen des neuen Controllers für **Person** mit Gerüstbau. Visual Studio generiert die Controlleraktionen, die Person den Datenkontext und der Razor-Ansichten.
+    *Erstellen des neuen personcontext-Typs*
+6. Klicken Sie auf **Hinzufügen** , um den neuen Controller für **Person** mit Gerüst zu erstellen. Visual Studio generiert dann die Controller Aktionen, den Datenkontext der Person und die Razor-Ansichten.
 
-    ![Nach dem Erstellen von MVC-Controller mit Gerüstbau](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image18.png)
+    ![Nach dem Erstellen des MVC-Controllers mit Gerüstbau](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image18.png)
 
-    *Nach dem Erstellen von MVC-Controller mit Gerüstbau*
-7. Öffnen der **MvcPersonController.cs** Datei die **Controller** Ordner. Beachten Sie, dass die CRUD-Aktionsmethoden automatisch generiert wurden.
+    *Nach dem Erstellen des MVC-Controllers mit Gerüstbau*
+7. Öffnen Sie die Datei **MvcPersonController.cs** im Ordner **Controllers** . Beachten Sie, dass die CRUD-Aktionsmethoden automatisch generiert wurden.
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample4.cs)]
 
     > [!NOTE]
-    > Durch Auswahl der **Async-Controlleraktionen verwenden** Kontrollkästchen aus dem integrierten Gerüstbau "Optionen" in den vorherigen Schritten, Visual Studio generiert asynchrone Aktionsmethoden für alle Aktionen, die Zugriff auf den Kontext der Person-Daten betreffen. Es wird empfohlen, dass Sie asynchrone Aktionsmethoden für lang andauernde verwenden, nicht CPU-gebundene Anforderungen, um zu vermeiden, dass der Webserver aus arbeiten ausführen, während die Anforderung verarbeitet wird.
+    > Durch Aktivieren des Kontrollkästchens **Async-Controller Aktionen** aus den Gerüstbau Optionen in den vorherigen Schritten generiert Visual Studio asynchrone Aktionsmethoden für alle Aktionen, die Zugriff auf den Person-Datenkontext einschließen. Es wird empfohlen, asynchrone Aktionsmethoden für lang ausgeführte, nicht CPU-gebundene Anforderungen zu verwenden, um zu verhindern, dass der Webserver während der Verarbeitung der Anforderung funktioniert.
 
 <a id="Ex2Task3"></a>
-#### <a name="task-3--running-the-solution"></a>Aufgabe 3: Ausführen der Lösung
+#### <a name="task-3--running-the-solution"></a>Aufgabe 3 – Ausführen der Lösung
 
-In dieser Aufgabe führen Sie der Lösung erneut aus, um zu überprüfen, ob die Ansichten für **Person** wie erwartet funktionieren. Fügen Sie eine neue Person aus, um sicherzustellen, dass sie erfolgreich in der Datenbank gespeichert ist.
+In dieser Aufgabe führen Sie die Projekt Mappe erneut aus, um zu überprüfen, ob die Ansichten für die **Person** erwartungsgemäß funktionieren. Sie werden eine neue Person hinzufügen, um zu überprüfen, ob Sie erfolgreich in der Datenbank gespeichert wurde.
 
-1. Drücken Sie **F5** um die Projektmappe auszuführen.
-2. Navigieren Sie zu **/MvcPerson**. Die erstellte Ansicht, die die Liste der Personen enthält, sollte angezeigt werden.
-3. Klicken Sie auf **neu erstellen** eine neue Person hinzufügen.
+1. Drücken Sie **F5** , um die Projekt Mappe auszuführen.
+2. Navigieren Sie zu **/MvcPerson**. Die Gerüst Ansicht, die die Liste der Personen anzeigt, sollte angezeigt werden.
+3. Klicken Sie auf **neu erstellen** , um eine neue Person hinzuzufügen.
 
-    ![Navigieren in den erstellten MVC-Ansichten](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image19.png)
+    ![Navigieren zu den dashboarded-MVC-Ansichten](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image19.png)
 
-    *Navigieren in den erstellten MVC-Ansichten*
-4. In der **erstellen** anzuzeigen, geben Sie einen **Namen** und **Alter** für die Person, und klicken Sie auf **erstellen**.
+    *Navigieren zu den dashboarded-MVC-Ansichten*
+4. Geben Sie in der Ansicht **Erstellen** einen **Namen** und ein **Alter** für die Person an, und klicken Sie auf **Erstellen**.
 
-    ![Eine neue Person hinzufügen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image20.png)
+    ![Hinzufügen einer neuen Person](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image20.png)
 
-    *Eine neue Person hinzufügen*
-5. Die Liste wird die neue Person hinzugefügt. Klicken Sie in der Liste der Elemente, auf **Details** der Person-Detailansicht angezeigt. Klicken Sie auf die **Details** anzuzeigen, klicken Sie auf **zurück zur Liste** um zurück zur Listenansicht zu wechseln.
+    *Hinzufügen einer neuen Person*
+5. Die neue Person wird der Liste hinzugefügt. Klicken Sie in der Liste Element auf **Details** , um die Detailansicht der Person anzuzeigen. Klicken Sie dann in der **Detail** Ansicht auf **zurück zur Liste** , um zur Listenansicht zurückzukehren.
 
-    ![Person Details anzeigen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image21.png)
+    ![Detailansicht der Person](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image21.png)
 
-    *Person Details anzeigen*
-6. Klicken Sie auf die **löschen** Link zu die Person zu löschen. In der **löschen** anzuzeigen, klicken Sie auf **löschen** zum Bestätigen des Vorgangs.
+    *Detailansicht der Person*
+6. Klicken Sie auf den Link **Löschen** , um die Person zu löschen. Klicken Sie in der Ansicht **Löschen** auf **Löschen** , um den Vorgang zu bestätigen.
 
-    ![Löschen eine person](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image22.png)
+    ![Löschen einer Person](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image22.png)
 
-    *Löschen eine person*
-7. Wechseln Sie zurück zu Visual Studio, und drücken Sie **UMSCHALT + F5** debugging beenden.
+    *Löschen einer Person*
+7. Kehren Sie zu Visual Studio zurück, und drücken Sie **UMSCHALT + F5** , um das Debugging zu verhindern.
 
 <a id="Exercise3"></a>
-### <a name="exercise-3-creating-a-web-api-controller-using-scaffolding"></a>Übung 3: Erstellen einer Web-API-Controller mithilfe von Gerüstbau
+### <a name="exercise-3-creating-a-web-api-controller-using-scaffolding"></a>Übung 3: Erstellen eines Web-API-Controllers mithilfe von Gerüstbau
 
-Die Web-API-Framework ist Teil der ASP.NET-Stapel und um Implementieren von HTTP-Dienste in der Regel senden und Empfangen von JSON oder XML-formatierte Daten über eine RESTful-API zu vereinfachen, soll.
+Das Web-API-Framework ist Teil des ASP.net-Stapels und wurde entwickelt, um die Implementierung von http-Diensten zu vereinfachen und im allgemeinen JSON-oder XML-formatierte Daten über eine restliche API zu senden und zu empfangen
 
-In dieser Übung werden Sie ASP.NET-Gerüstbau erneut verwenden, um einen Web-API-Controller zu generieren. Verwenden Sie das gleiche **Person** und **PersonContext** Klassen aus der vorherigen Übung die gleiche Person-Daten im JSON-Format bereitstellen. Es wird angezeigt, wie Sie die gleichen Ressourcen auf unterschiedliche Weise in der gleichen ASP.NET-Anwendung verfügbar machen können.
+In dieser Übung verwenden Sie ASP.net Gerüstbau erneut, um einen Web-API-Controller zu generieren. Sie verwenden dieselben **Person** -und **personcontext** -Klassen aus der vorherigen Übung, um dieselben Personendaten im JSON-Format bereitzustellen. Sie werden sehen, wie Sie dieselben Ressourcen auf verschiedene Weise in derselben ASP.NET-Anwendung verfügbar machen können.
 
 <a id="Ex3Task1"></a>
-#### <a name="task-1--creating-a-web-api-controller"></a>Aufgabe 1 – Erstellen einer Web-API-Controller
+#### <a name="task-1--creating-a-web-api-controller"></a>Aufgabe 1 – Erstellen eines Web-API-Controllers
 
-In dieser Aufgabe erstellen Sie ein neues **Web API Controller** macht, die die Person-Daten in einem Computer-anwendbares Format wie JSON verfügbar.
+In dieser Aufgabe erstellen Sie einen neuen **Web-API-Controller** , der die Personendaten in einem Computer nutzbaren Format wie JSON verfügbar macht.
 
-1. Wenn nicht bereits geöffnet ist, öffnen Sie **Visual Studio Express 2013 für Web** , und öffnen Sie die **MyHybridSite.sln** Lösung befindet sich in der **Quelle/Ex3-Web-API/Anfang** Ordner. Alternativ können Sie die Lösung weiter nutzen, den Sie in der vorherigen Übung haben.
+1. Wenn Sie nicht bereits geöffnet ist, öffnen Sie **Visual Studio Express 2013 für das Web** , und öffnen Sie die Projekt Mappe " **myhybridsite. sln** ", die sich im Ordner **Quell/EX3-WebAPI/Anfang** befindet. Alternativ können Sie mit der Lösung fortfahren, die Sie in der vorherigen Übung abgerufen haben.
 
     > [!NOTE]
-    > Wenn Sie mit der Begin-Lösung aus Übung 3 starten, drücken Sie die **STRG + UMSCHALT + B** zum Erstellen der Projektmappe.
-2. In **Projektmappen-Explorer**, mit der rechten Maustaste die **Controller** Ordner die **MyHybridSite** Projekt, und wählen **hinzufügen | Neues Gerüstelement...** .
+    > Wenn Sie mit der BEGIN-Projekt Mappe aus Übung 3 beginnen, drücken Sie **STRG + UMSCHALT + B** , um die Projekt Mappe zu erstellen.
+2. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner **Controllers** des Projekts **myhybridsite** , und wählen Sie **Hinzufügen | Neues Gerüst Element...**
 
-    ![Erstellen eines neuen erstellten Controllers](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image23.png)
+    ![Erstellen eines neuen Gerüst Controllers](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image23.png)
 
-    *Erstellen eines neuen erstellten Controllers*
-3. In der **Gerüst hinzufügen** wählen Sie im Dialogfeld **Web-API-** im linken Bereich, klicken Sie dann **Web API 2-Controller mit Aktionen unter Verwendung von Entity Framework** im mittleren Bereich, und klicken Sie dann auf  **Fügen Sie hinzu.**
+    *Erstellen eines neuen Gerüst Controllers*
+3. Wählen Sie im Dialogfeld **Gerüst hinzufügen** im linken Bereich **Web-API** und dann **Web-API 2-Controller mit Aktionen Entity Framework** im mittleren Bereich aus, und klicken Sie dann auf **hinzufügen.**
 
-    ![Auswählen der Web-API 2-Controller mit Aktionen und Entity Framework](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image24.png "auswählen von Web-API 2-Controller mit Aktionen und Entity Framework")
+    ![Auswählen von Web-API 2-Controller mit Aktionen und Entity Framework](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image24.png "Auswählen von Web-API 2-Controller mit Aktionen und Entity Framework")
 
-    *Auswählen der Web-API 2-Controller mit Aktionen und Entity Framework*
-4. Legen Sie *ApiPersonController* als die **Controllername**, wählen die **Async-Controlleraktionen verwenden** aus, und wählen Sie **Person (MyHybridSite.Models)**  und **PersonContext (MyHybridSite.Models)** als die **Modell** und **Datenkontext** bzw. Klassen. Klicken Sie anschließend auf **Hinzufügen**.
+    *Auswählen von Web-API 2-Controller mit Aktionen und Entity Framework*
+4. Legen Sie *apipersoncontroller* als **Controller Namen**fest, wählen Sie die Option **Async Controller Actions verwenden** aus, und wählen Sie **Person (myhybridsite. Models)** und **personcontext (myhybridsite. Models)** als **Modell** -bzw. **Datenkontext** Klassen aus. Klicken Sie anschließend auf **Hinzufügen**.
 
-    ![Hinzufügen einer Web-API-Controller mit Gerüstbau](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image25.png "einen Web-API-Controller mit Gerüst hinzufügen")
+    ![Hinzufügen eines Web-API-Controllers mit Gerüstbau](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image25.png "Hinzufügen eines Web-API-Controllers mit Gerüstbau")
 
-    *Einen Web-API-Controller mit Gerüst hinzufügen*
-5. Visual Studio generiert die **ApiPersonController** Klasse mit die vier CRUD-Aktionen, die mit Ihren Daten arbeiten.
+    *Hinzufügen eines Web-API-Controllers mit Gerüstbau*
+5. Visual Studio generiert dann die **apipersoncontroller** -Klasse mit den vier CRUD-Aktionen, um mit Ihren Daten zu arbeiten.
 
-    ![Nach dem Erstellen des Web-API-Controllers mit Gerüstbau](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image26.png "nach dem Erstellen des Web-API-Controllers mit Gerüstbau")
+    ![Nach dem Erstellen des Web-API-Controllers mit Gerüst](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image26.png "Nach dem Erstellen des Web-API-Controllers mit Gerüst")
 
-    *Nach dem Erstellen des Web-API-Controllers mit Gerüstbau*
-6. Öffnen der **ApiPersonController.cs** Datei, und überprüfen Sie die *"GetPeople"* Aktionsmethode. Diese Methode fragt die Db-Feld der **PersonContext** Typ, um die Benutzer Daten abzurufen.
+    *Nach dem Erstellen des Web-API-Controllers mit Gerüst*
+6. Öffnen Sie die Datei **ApiPersonController.cs** , und überprüfen Sie die *GetPeople* -Aktionsmethode. Diese Methode fragt das Datenbankfeld des **personcontext** -Typs ab, um die Personendaten zu erhalten.
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample5.cs)]
-7. Sehen Sie im Kommentar über der Definition der Methode an. Es enthält den URI, der diese Aktion verfügbar macht, die Sie in der nächsten Aufgabe verwendet werden.
+7. Beachten Sie nun den Kommentar oberhalb der Methoden Definition. Sie stellt den URI bereit, der diese Aktion verfügbar macht, die Sie in der nächsten Aufgabe verwenden werden.
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample6.cs)]
 
     > [!NOTE]
-    > Standardmäßig Web-API ist so konfiguriert, dass die Abfragen zum Abfangen der *"/ API"* Pfad, um Konflikte mit MVC-Controller zu vermeiden. Wenn Sie diese Einstellung ändern müssen, finden Sie unter [Routing in ASP.NET Web-API](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md).
+    > Die Web-API ist standardmäßig so konfiguriert, dass die Abfragen im */API* -Pfad abgefangen werden, um Konflikte mit MVC-Controllern zu vermeiden. Wenn Sie diese Einstellung ändern müssen, finden Sie weitere Informationen unter [Routing in ASP.net-Web-API](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md).
 
 <a id="Ex3Task2"></a>
-#### <a name="task-2--running-the-solution"></a>Aufgabe 2: Ausführen der Lösung
+#### <a name="task-2--running-the-solution"></a>Aufgabe 2 – Ausführen der Lösung
 
-In dieser Aufgabe verwenden Sie den Internet Explorer **F12-Entwicklertools** , überprüfen die vollständige Antwort aus dem Web-API-Controller. Es wird angezeigt, wie Sie Netzwerkdatenverkehr rufen Sie einen besseren Einblick in Ihre Anwendungsdaten erfassen können.
+In dieser Aufgabe verwenden Sie die Internet Explorer **F12-Entwicklertools** , um die vollständige Antwort vom Web-API-Controller zu überprüfen. Sie werden erfahren, wie Sie Netzwerk Datenverkehr erfassen, um einen besseren Einblick in Ihre Anwendungsdaten zu erhalten.
 
 > [!NOTE]
-> Stellen Sie sicher, dass **Internet Explorer** ausgewählt ist, der **starten** Schaltfläche befindet sich auf der Symbolleiste von Visual Studio.
+> Stellen Sie sicher, dass **Internet Explorer** in der Schaltfläche **Start** auf der Symbolleiste von Visual Studio ausgewählt ist.
 > 
-> ![Internet Explorer-option](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image27.png)
+> ![Internet Explorer (Option)](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image27.png)
 > 
-> Die **F12-Entwicklertools** haben Sie eine Breite Palette von Funktionen, die in dieser praktischen Übung nicht behandelt wird. Wenn Sie mehr darüber erfahren möchten, lesen Sie [mit den F12-Entwicklertools](https://msdn.microsoft.com/library/ie/bg182326(v=vs.85)).
+> Die **F12-Entwicklertools** verfügen über eine Vielzahl von Funktionen, die in dieser praktischen Übungseinheit nicht behandelt werden. Weitere Informationen hierzu finden Sie unter [Verwenden der F12-Entwicklertools](https://msdn.microsoft.com/library/ie/bg182326(v=vs.85)).
 
-1. Drücken Sie **F5** um die Projektmappe auszuführen.
+1. Drücken Sie **F5** , um die Projekt Mappe auszuführen.
 
     > [!NOTE]
-    > Um diese Aufgabe genau befolgen zu können, muss Ihre Anwendung über Daten verfügen. Wenn Ihre Datenbank leer ist, können Sie zurück zur Aufgabe 3 in Übung 2, und führen Sie die Schritte zum Erstellen einer neuen Person, die mithilfe der MVC-Ansichten.
-2. Drücken Sie im Browser **F12** zum Öffnen der **Entwicklertools** Bereich. Drücken Sie **STRG** + **4** oder klicken Sie auf die **Netzwerk** Symbol, und klicken Sie dann auf der grüne Pfeil-Schaltfläche, beginnt die Erfassung von Netzwerkdatenverkehr.
+    > Damit diese Aufgabe ordnungsgemäß ausgeführt werden kann, muss Ihre Anwendung über Daten verfügen. Wenn die Datenbank leer ist, können Sie zu Aufgabe 3 in Übung 2 zurückkehren und die Schritte zum Erstellen einer neuen Person mithilfe der MVC-Ansichten ausführen.
+2. Drücken Sie im Browser die Taste **F12** , um den **Entwicklertools** Bereich zu öffnen. Drücken Sie **STRG** + **4** , oder klicken Sie auf das **Netzwerk** Symbol, und klicken Sie dann auf die grüne Pfeiltaste, um den Netzwerk Datenverkehr zu erfassen.
 
-    ![Initiieren die netzwerkerfassung für Web-API-](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image28.png "netzwerkerfassung initiieren, Web-API")
+    ![Initiieren der Web-API-Netzwerk Erfassung](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image28.png "Initiieren der Web-API-Netzwerk Erfassung")
 
-    *Initiieren die netzwerkerfassung für Web-API*
-3. Fügen Sie **-api/ApiPerson** an die URL in die Adressleiste des Browsers. Sie werden nun überprüfen Sie die Details der Antwort von der **ApiPersonController**.
+    *Initiieren der Web-API-Netzwerk Erfassung*
+3. Fügen Sie **API/apiperson** an die URL in der Adressleiste des Browsers an. Nun überprüfen Sie die Details der Antwort von **apipersoncontroller**.
 
-    ![Abrufen von Personendaten über Web-API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image29.png "Abrufen von Personendaten über Web-API")
+    ![Abrufen von Personendaten über die Web-API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image29.png "Abrufen von Personendaten über die Web-API")
 
-    *Abrufen von Personendaten über Web-API*
+    *Abrufen von Personendaten über die Web-API*
 
     > [!NOTE]
-    > Sobald der Download abgeschlossen ist, werden Sie aufgefordert, eine Aktion mit der heruntergeladenen Datei herzustellen. Lassen Sie das Dialogfeld geöffnet, um den Inhalt der Antwort über das Entwickler-Fenster überwachen können.
-4. Sie werden jetzt der Text der Antwort überprüfen. Zu diesem Zweck klicken Sie auf die **Details** Registerkarte, und klicken Sie dann auf **Antworttext**. Sehen Sie sich, dass die heruntergeladenen Daten eine Liste von Objekten mit den Eigenschaften **Id**, **Namen** und **Alter** , entsprechen die **Person** -Klasse.
+    > Nachdem der Download abgeschlossen ist, werden Sie aufgefordert, eine Aktion mit der heruntergeladenen Datei durchführen. Lassen Sie das Dialogfeld geöffnet, um den Antwort Inhalt über das Tool Fenster "Entwickler" anzeigen zu können.
+4. Nun überprüfen Sie den Text der Antwort. Klicken Sie hierzu auf die Registerkarte **Details** , und klicken Sie dann auf **Antworttext**. Sie können überprüfen, ob die heruntergeladenen Daten eine Liste von Objekten mit der Eigenschaften- **ID**, dem **Namen** und dem **Alter** der **Person** -Klasse sind.
 
-    ![Anzeigen von Web-API-Antworttext](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image30.png "Anzeigen von Web-API-Antwort-Text")
+    ![Anzeigen des Web-API-Antwort Texts](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image30.png "Anzeigen des Web-API-Antwort Texts")
 
-    *Anzeigen von Web-API-Antworttext*
+    *Anzeigen des Web-API-Antwort Texts*
 
 <a id="Ex3Task3"></a>
-#### <a name="task-3--adding-web-api-help-pages"></a>Aufgabe 3: Hinzufügen von Web-API-Hilfeseiten
+#### <a name="task-3--adding-web-api-help-pages"></a>Aufgabe 3 – Hinzufügen von Web-API-Hilfeseiten
 
-Wenn Sie eine Web-API erstellen, ist es hilfreich sein, eine Seite erstellen, damit andere Entwickler zum Aufrufen Ihrer API veranschaulicht werden. Sie erstellen und die Dokumentationsseiten manuell aktualisieren, jedoch ist es besser, die automatisch, um zu vermeiden, dass Sie Wartungsarbeiten generieren. In dieser Aufgabe verwenden Sie ein Nuget-Paket zum automatischen Generieren von Web-API-Hilfeseiten mit der Lösung.
+Wenn Sie eine Web-API erstellen, ist es hilfreich, eine Hilfeseite zu erstellen, damit andere Entwickler wissen, wie Sie Ihre API aufzurufen. Sie könnten die Dokumentationsseiten manuell erstellen und aktualisieren, aber es ist besser, Sie automatisch zu generieren, um eine Wartung zu vermeiden. In dieser Aufgabe verwenden Sie ein nuget-Paket zum automatischen Generieren von Web-API-Hilfeseiten für die Lösung.
 
-1. Von der **Tools** in Visual Studio, wählen Sie im Menü **NuGet Package Manager**, und klicken Sie dann auf **-Paket-Manager-Konsole**.
-2. In der **-Paket-Manager-Konsole** Fenster den folgenden Befehl ausführen:
+1. Wählen Sie **im Menü Extras** in Visual Studio den **nuget-Paket-Manager**aus, und klicken Sie dann auf Paket-Manager- **Konsole**.
+2. Führen Sie im Fenster der **Paket-Manager-Konsole** den folgenden Befehl aus:
 
     [!code-powershell[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample7.ps1)]
 
     > [!NOTE]
-    > Die **Microsoft.AspNet.WebApi.HelpPage** Paket installiert die erforderlichen Assemblys und fügt Sie MVC-Ansichten für die Hilfeseiten unter der **Bereiche/HelpPage** Ordner.
+    > Das Paket **Microsoft. Aspnet. WebAPI. helppage** installiert die erforderlichen Assemblys und fügt MVC-Ansichten für die Hilfeseiten im Ordner **Bereiche/helppage** hinzu.
 
-    ![HelpPage Bereich](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image31.png "HelpPage-Bereich")
+    ![Bereich "helppage"](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image31.png "Bereich "helppage"")
 
-    *HelpPage-Bereich*
-3. Standardmäßig werden in der Hilfe Seiten sind Platzhalter-Zeichenfolgen für die Dokumentation. Sie können XML-Dokumentationskommentare verwenden, um die Dokumentation zu erstellen. Um dieses Feature zu aktivieren, öffnen die **HelpPageConfig.cs** Datei befindet sich in der **Bereiche/HelpPage/App\_starten** Ordner und kommentieren Sie die folgende Zeile:
+    *Bereich "helppage"*
+3. Standardmäßig verfügen die Hilfeseiten über Platzhalter Zeichenfolgen für die Dokumentation. Sie können XML-Dokumentations Kommentare verwenden, um die Dokumentation zu erstellen. Um dieses Feature zu aktivieren, öffnen Sie die Datei **HelpPageConfig.cs** , die sich im Ordner **Bereiche/helppage/App\_Start** befindet, und heben Sie die Auskommentierung der folgenden Zeile auf:
 
     [!code-javascript[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample8.js)]
-4. In **Projektmappen-Explorer**, mit der rechten Maustaste in des Projekts **MyHybridSite**Option **Eigenschaften** , und klicken Sie auf die **erstellen** Registerkarte.
+4. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **myhybridsite**, wählen Sie **Eigenschaften** , und klicken Sie auf die Registerkarte **Erstellen** .
 
-    ![Registerkarte "erstellen"](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image32.png "Abschnitt erstellen")
+    ![Registerkarte Erstellen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image32.png "Abschnitt "Build"")
 
-    *Registerkarte "erstellen"*
-5. Klicken Sie unter **Ausgabe**Option **XML-Dokumentationsdatei**. Geben Sie in das Bearbeitungsfeld **App\_Data/XmlDocument.xml**.
+    *Registerkarte Erstellen*
+5. Wählen Sie unter **Ausgabe**die Option **XML-Dokumentations Datei**aus. Geben Sie im Bearbeitungsfeld **App\_Data/XmlDocument. XML**ein.
 
-    ![Ausgabe in der Registerkarte "Build" im Abschnitt](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image33.png "Ausgabe Abschnitt auf der Registerkarte Build ")
+    ![Ausgabe Abschnitt der Registerkarte "Build"](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image33.png "Ausgabe Abschnitt der Registerkarte "Build"")
 
-    *Ausgabeabschnitt in der Registerkarte "Build"*
-6. Drücken Sie **STRG** + **S** um die Änderungen zu speichern.
-7. Öffnen der **ApiPersonController.cs** -Datei aus dem **Controller** Ordner.
-8. Geben Sie eine neue Zeile zwischen den *"GetPeople"* Methodensignatur und */ / GET-api/ApiPerson* kommentieren, und geben Sie dann drei Schrägstriche.
+    *Ausgabe Abschnitt der Registerkarte "Build"*
+6. Drücken Sie **STRG** + **S** , um die Änderungen zu speichern.
+7. Öffnen Sie die Datei **ApiPersonController.cs** aus dem Ordner **Controllers** .
+8. Geben Sie eine neue Zeile zwischen der *GetPeople* -Methoden Signatur und dem Kommentar *//Get API/apiperson* ein, und geben Sie dann drei Schrägstriche ein.
 
     > [!NOTE]
-    > Visual Studio fügt automatisch die XML-Elemente, die die Dokumentation der Methode zu definieren.
-9. Fügen Sie eine Zusammenfassung Text und der Rückgabewert für die *"GetPeople"* Methode. Es sollte wie folgt aussehen.
+    > Visual Studio fügt automatisch die XML-Elemente ein, die die Methoden Dokumentation definieren.
+9. Fügen Sie einen Übersichts Text und den Rückgabewert für die *GetPeople* -Methode hinzu. Es sollte wie folgt aussehen.
 
     [!code-csharp[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample9.cs)]
-10. Drücken Sie **F5** um die Projektmappe auszuführen.
-11. Fügen Sie **/help** an die URL in der Adressleiste, um die Hilfeseite zu suchen.
+10. Drücken Sie **F5** , um die Projekt Mappe auszuführen.
+11. Fügen Sie **/Help** an die URL in der Adressleiste an, um zur Hilfeseite zu navigieren.
 
-    ![ASP.NET Web-API-Hilfeseite](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image34.png "ASP.NET Web-API-Hilfeseite")
+    ![ASP.net-Web-API Hilfeseite](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image34.png "ASP.net-Web-API Hilfeseite")
 
-    *ASP.NET Web-API-Hilfeseite*
+    *ASP.net-Web-API Hilfeseite*
 
     > [!NOTE]
-    > Der Hauptinhalt der Seite ist eine Tabelle mit APIs, die vom Netzwerkcontroller gruppiert. Die Tabelleneinträge dynamisch generiert werden, mithilfe der **IApiExplorer** Schnittstelle. Wenn Sie hinzufügen oder aktualisieren einen API-Controller, wird in der Tabelle automatisch das nächste Mal aktualisiert werden, die, das Sie die Anwendung zu erstellen.
+    > Der Hauptinhalt der Seite ist eine Tabelle mit APIs, gruppiert nach Controller. Die Tabelleneinträge werden mithilfe der **iapiexplorer** -Schnittstelle dynamisch generiert. Wenn Sie einen API-Controller hinzufügen oder aktualisieren, wird die Tabelle automatisch aktualisiert, wenn Sie das nächste Mal die Anwendung erstellen.
     > 
-    > Die **API** Spalte enthält den HTTP-Methode und des relativen URI. Die **Beschreibung** Spalte enthält Informationen, die in der Dokumentation der Methode extrahiert wurde.
-12. Beachten Sie, dass die Beschreibung, die Sie über die Definition der Methode hinzugefügt, die in der Spalte "Beschreibung" angezeigt wird.
+    > In der Spalte **API** werden die HTTP-Methode und der relative URI aufgelistet. Die Spalte **Beschreibung** enthält Informationen, die aus der Dokumentation der Methode extrahiert wurden.
+12. Beachten Sie, dass die Beschreibung, die Sie oberhalb der Methoden Definition hinzugefügt haben, in der Spalte Beschreibung angezeigt wird.
 
-    ![Beschreibung der API-](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image35.png "Beschreibung der API-Methode")
+    ![API-Methoden Beschreibung](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image35.png "API-Methoden Beschreibung")
 
-    *Beschreibung der API-Methode*
-13. Klicken Sie auf die API-Methoden, auf eine Seite mit ausführlicheren Informationen, einschließlich von beispielantworttexte zu navigieren.
+    *API-Methoden Beschreibung*
+13. Klicken Sie auf eine API-Methode, um zu einer Seite mit detaillierteren Informationen zu navigieren, einschließlich Beispiel Antworttext.
 
-    ![Seite mit Detailinformationen](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image36.png "Detailinformationen zur Seite")
+    ![Detail Informationen (Seite)](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image36.png "Detail Informationen (Seite)")
 
-    *Seite "Informationen"*
+    *Seite mit detaillierten Informationen*
 
 ---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
 
-Nach Abschluss dieser praktischen Übungseinheit Sie haben gelernt, wie Sie:
+Durch die Durchführung dieses praktischen Labs haben Sie Folgendes gelernt:
 
-- Erstellen einer neuen Webanwendung, die mit der eine Erfahrung mit ASP.NET in Visual Studio 2013
-- Integrieren Sie mehrere ASP.NET-Technologien in einem einzelnen Projekt
-- Generieren Sie aus Ihren Modellklassen, die mithilfe von Gerüstbau für ASP.NET MVC-Controllern und Ansichten
-- Generieren von Web-API-Controller, die Features wie z. B. für die asynchrone Programmierung und den Datenzugriff über Entity Framework verwenden
-- Web-API-Hilfeseiten für Ihre Controller automatisch zu generieren
+- Erstellen Sie eine neue Webanwendung mit der ASP.net-Funktion in Visual Studio 2013
+- Integrieren mehrerer ASP.NET-Technologien in ein einzelnes Projekt
+- Generieren von MVC-Controllern und-Sichten aus ihren Modellklassen mithilfe von ASP.net
+- Generieren von Web-API-Controllern, die Funktionen wie die asynchrone Programmierung und den Datenzugriff über Entity Framework verwenden
+- Automatisches Generieren von Web-API-Hilfeseiten für Ihre Controller

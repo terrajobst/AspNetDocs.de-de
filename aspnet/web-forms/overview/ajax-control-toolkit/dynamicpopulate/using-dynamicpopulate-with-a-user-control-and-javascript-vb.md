@@ -9,11 +9,11 @@ ms.assetid: 778b9009-76f2-4665-940e-afc0e35bc917
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
 msc.type: authoredcontent
 ms.openlocfilehash: ee5923ad6d8b101f689a0564aef8b1e0e00a7639
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599137"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497301"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>Verwenden von DynamicPopulate mit einem Benutzersteuerelement und JavaScript (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das DynamicPopulate-Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert in ein Ziel Steuerelement auf der Seite, ohne eine Seiten Aktualisierung durchführen zu müssen. Es ist auch möglich, die Auffüllung mithilfe von benutzerdefiniertem Client seitigem JavaScript-Code zu initiieren. Es muss jedoch besonders sorgfältig vorgegangen werden, wenn sich der Extender in einem Benutzer Steuerelement befindet.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das `DynamicPopulate`-Steuerelement im ASP.NET AJAX Control Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert ohne Seiten Aktualisierung in ein Ziel Steuerelement auf der Seite aus. Es ist auch möglich, die Auffüllung mithilfe von benutzerdefiniertem Client seitigem JavaScript-Code zu initiieren. Es muss jedoch besonders sorgfältig vorgegangen werden, wenn sich der Extender in einem Benutzer Steuerelement befindet.
 
@@ -70,4 +70,4 @@ Und das ist schon alles! Die Seite verhält sich erwartungsgemäß: ein Benutzer
 Die Options Felder befinden sich in einem Benutzer Steuerelement ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [Previous](dynamically-populating-a-control-using-javascript-code-vb.md)

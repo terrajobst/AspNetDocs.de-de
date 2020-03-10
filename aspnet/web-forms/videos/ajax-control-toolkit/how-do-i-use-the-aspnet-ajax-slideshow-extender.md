@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
-title: '[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-Bildschirmpräsentation? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie den ASP.NET AJAX-Extender-Extender? | Microsoft-Dokumentation'
 author: JoeStagner
-description: Dieses Video zeigt, wie der Extender "SlideShow" aus dem ASP.NET AJAX Control Toolkit die standardmäßige ASP.NET Image-Steuerelement in einer voll funktionsfähigen sl umgewandelt wird...
+description: In diesem Video wird veranschaulicht, wie der Bildschirm-Extender aus dem ASP.NET AJAX-Steuerelement-Toolkit das ASP.net-Standardbild-Steuerelement in ein voll funktionsfähiges SL...
 ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
 ms.openlocfilehash: 960cd6f82909919d07e976a90691c4a7d7fb3686
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406430"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510225"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-Bildschirmpräsentation?
+# <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[Gewusst wie:] Verwenden Sie den ASP.NET AJAX-Extender-Extender?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Dieses Video zeigt, wie der Extender "SlideShow" aus dem ASP.NET AJAX Control Toolkit die standardmäßige ASP.NET Image-Steuerelement zu einer voll funktionsfähigen Bildschirmpräsentation aktiviert, in. Wir sehen auch, wie ein ASP.NET-Webdienst zurückkehren kann nicht nur Text und XML-Daten jedoch vollständig AJAX-Objekten, die von der ASP.NET AJAX-Webanwendung genutzt werden. Joe Kommentare auch zu den Vorteilen von Images in der Datenbank, anstatt im Dateisystem speichern.
+In diesem Video wird veranschaulicht, wie der Bildschirm-Extender aus dem ASP.NET AJAX-Steuerelement-Toolkit das standardmäßige ASP.net-Bild-Steuerelement in eine voll funktionsfähige Folie zeigt. Außerdem wird erläutert, wie ein ASP.NET-Webdienst nicht nur Text-und XML-Daten, sondern auch vollständige AJAX-Objekte zurückgeben kann, die von der ASP.NET AJAX-Webanwendung verwendet Joe kommentiert außerdem die Vorteile der Speicherung von Bildern im Dateisystem und nicht in der Datenbank.
 
-[&#9654;Sehen Sie sich Video (19 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
+[&#9654;Video ansehen (19 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-the-aspnet-ajax-tabs-control.md)

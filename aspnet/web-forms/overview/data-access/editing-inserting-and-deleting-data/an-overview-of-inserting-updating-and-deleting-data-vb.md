@@ -9,11 +9,11 @@ ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 79491118ba1cbbc8c1b67ca9646a817d941f17ba
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74630921"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78493839"
 ---
 # <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>Übersicht über das Einfügen, aktualisieren und Löschen von Daten (VB)
 
@@ -122,7 +122,7 @@ Ein Nebeneffekt der Verwendung des Assistenten für die Konfiguration von Object
 - Wenn ein Datensatz bearbeitet wird, können Benutzer den Wert des Primärschlüssels ändern. In diesem Fall müssen sowohl der neue Primärschlüssel Wert als auch der ursprüngliche Primärschlüssel Wert bereitgestellt werden, damit der Datensatz mit dem ursprünglichen Primärschlüssel Wert gefunden werden kann und der Wert entsprechend aktualisiert wird.
 - Bei Verwendung der optimistischen Parallelität. Optimistische Parallelität ist eine Technik, mit der sichergestellt wird, dass zwei gleichzeitige Benutzer die Änderungen nicht überschreiben, und ist das Thema für ein zukünftiges Tutorial.
 
-Die `OldValuesParameterFormatString`-Eigenschaft gibt den Namen der Eingabeparameter in den Update-und Delete-Methoden des zugrunde liegenden Objekts für die ursprünglichen Werte an. Wir besprechen diese Eigenschaft und deren Zweck ausführlicher, wenn wir die optimistische Parallelität untersuchen. Ich gebe Sie jetzt ein, da unsere BLL-Methoden nicht die ursprünglichen Werte erwarten. Daher ist es wichtig, dass diese Eigenschaft entfernt wird. Wenn die `OldValuesParameterFormatString`-Eigenschaft auf einen anderen Wert als den Standardwert (`{0}`) festgelegt wird, wird ein Fehler ausgelöst, wenn ein datenweb Steuerelement versucht, die `Update()` oder `Delete()` Methoden von ObjectDataSource aufzurufen, da die ObjectDataSource versucht, sowohl den `UpdateParameters` als auch den ursprünglichen Wert Parameter zu übergeben.
+Die `OldValuesParameterFormatString`-Eigenschaft gibt den Namen der Eingabeparameter in den Update-und Delete-Methoden des zugrunde liegenden Objekts für die ursprünglichen Werte an. Wir besprechen diese Eigenschaft und deren Zweck ausführlicher, wenn wir die optimistische Parallelität untersuchen. Ich gebe Sie jetzt ein, da unsere BLL-Methoden nicht die ursprünglichen Werte erwarten. Daher ist es wichtig, dass diese Eigenschaft entfernt wird. Wenn die `OldValuesParameterFormatString`-Eigenschaft auf einen anderen Wert als den Standardwert (`{0}`) festgelegt wird, wird ein Fehler ausgelöst, wenn ein datenweb Steuerelement versucht, die `Update()` oder `Delete()` Methoden von ObjectDataSource aufzurufen, da die ObjectDataSource versucht, sowohl den `UpdateParameters` als auch den ursprünglichen Wert Parameter zu übergeben.`DeleteParameters`
 
 Wenn dies an diesem Punkt nicht besonders klar ist, machen Sie sich keine Sorgen. Wir werden diese Eigenschaft und das zugehörige Hilfsprogramm in einem zukünftigen Tutorial untersuchen. Stellen Sie vorerst einfach sicher, dass Sie diese Eigenschaften Deklaration vollständig aus der deklarativen Syntax entfernen, oder legen Sie den Wert auf den Standardwert ({0}) fest.
 
@@ -365,13 +365,13 @@ Durch das Aufteilen der schreibgeschützten, Bearbeitungs-und einfügeschnittste
 > [!NOTE]
 > Wie die DetailsView zeigt die `CurrentMode`-Eigenschaft von FormView die angezeigte Schnittstelle an, und ihre `DefaultMode`-Eigenschaft gibt den Modus an, zu dem die FormView zurückkehrt, nachdem eine Bearbeitung oder eine Einfügung abgeschlossen wurde.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir die Grundlagen zum Einfügen, bearbeiten und Löschen von Daten mithilfe von GridView, DetailsView und FormView untersucht. Alle drei Steuerelemente bieten eine Reihe integrierter Funktionen für die Datenänderung, die verwendet werden können, ohne dass eine einzige Codezeile in der ASP.NET-Seite durch die datenweb Steuerelemente und die ObjectDataSource geschrieben werden kann. Die einfachen Punkt-und Klick Techniken erzeugen jedoch eine recht Frail-und naive Daten Änderungs Benutzeroberfläche. Um die Validierung zu ermöglichen, programmgesteuerte Werte einzufügen, Ausnahmen ordnungsgemäß zu behandeln, die Benutzeroberfläche anzupassen usw., müssen wir uns auf eine Reihe von Techniken stützen, die in den nächsten Tutorials erläutert werden.
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

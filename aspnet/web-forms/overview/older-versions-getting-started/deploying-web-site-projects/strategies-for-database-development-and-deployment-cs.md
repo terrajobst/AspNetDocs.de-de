@@ -9,11 +9,11 @@ ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 4d9dbaf41926b43af171619ee34f58da84b5dab1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582197"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509385"
 ---
 # <a name="strategies-for-database-development-and-deployment-c"></a>Strategien zur Datenbankentwicklung und -bereitstellung (C#)
 
@@ -134,7 +134,7 @@ Beim Bereitstellen einer Website ist es am besten, die Webanwendung "Offline" zu
 
 Wenn eine Anwendung während der Bereitstellung offline geschaltet wird, ist es so einfach wie das Hochladen einer `app_offline.htm` Datei in das Stammverzeichnis der Produktionsumgebung vor dem Start des Bereitstellungs Prozesses und dem anschließenden löschen (oder umbenennen in etwas anderes) nach Abschluss der Bereitstellung. Weitere Informationen zu diesem Verfahren finden Sie im Artikel über das offline schalten einer [*ASP.NET-Anwendung*](http://www.15seconds.com/issue/061207.htm)in John Peterson.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die größte Herausforderung beim Bereitstellen einer datengesteuerten Anwendung liegt auf der Bereitstellung der Datenbank. Da es zwei Versionen der-Datenbank gibt: eine in der Entwicklungsumgebung und eine in der Produktionsumgebung. diese beiden Datenbankschemas können nicht mehr synchronisiert werden, da neue Features in der Entwicklung hinzugefügt werden. Wenn die Produktionsdatenbank mit echten Daten von echten Benutzern aufgefüllt wird, können Sie die Produktionsdatenbank nicht mit der geänderten Entwicklungs Datenbank überschreiben, wie Sie es beim Bereitstellen der Dateien, aus denen die Anwendung besteht (die ASP.NET Seiten, Bilddateien usw.). Stattdessen muss bei der Bereitstellung einer Datenbank der genaue Satz von Änderungen implementiert werden, die seit der letzten Bereitstellung an der Entwicklungs Datenbank in der Produktionsdatenbank vorgenommen wurden.
 

@@ -1,125 +1,125 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
-title: Ausführen eines Was-wäre, wenn Bereitstellung | Microsoft-Dokumentation
+title: Ausführen einer What if Bereitstellung | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Thema wird beschrieben, wie "Was geschieht, wenn" ausführen (oder simulierte)-Bereitstellungen mithilfe der Internetinformationsdienste (Internet Information Services, IIS)-Webbereitstellungstool (Web Deploy) und V...
+description: In diesem Thema wird beschrieben, wie Sie mit dem Internetinformationsdienste (IIS)-Webbereitstellungs Tool (Web deploy) und V...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: c711b453-01ac-4e65-a48c-93d99bf22e58
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 73a0e038cc0d4ebae0ffc8ed3fd2de4c9dad673c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127078"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510333"
 ---
 # <a name="performing-a-what-if-deployment"></a>Durchführen einer simulierten Bereitstellung
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird beschrieben, wie "Was-wäre-wenn" ausführen (oder simulierte) mit dem Internet Information Services (IIS)-Webbereitstellungstool (Web Deploy) und VSDBCMD Bereitstellungen. Dadurch können Sie die Auswirkungen Ihrer Bereitstellungslogik in einer bestimmten zielumgebung zu bestimmen, bevor Sie tatsächlich Ihre Anwendung bereitstellen.
+> In diesem Thema wird beschrieben, wie Sie mit dem Internetinformationsdienste (IIS)-Webbereitstellungs Tool (Web deploy) und VSDBCmd "Was-wäre-wenn-bereit Stellungen" (oder simulierte) bereit Stellungen ausführen. Auf diese Weise können Sie die Auswirkungen der Bereitstellungs Logik auf eine bestimmte Zielumgebung ermitteln, bevor Sie Ihre Anwendung tatsächlich bereitstellen.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-Die Methode für die Bereitstellung das Kernstück des in diesen Tutorials basiert auf den geteilten Projekt Dateiansatz beschrieben, die [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), in dem der Build & Deployment-Prozess von gesteuert wird zwei Projektdateien&#x2014;eine die Buildanweisungen, die für jede zielumgebung, und enthält umgebungsspezifische Einstellungen für Build & Deployment gelten enthält. Zur Erstellungszeit wird die umgebungsspezifischen-Projektdatei in die Unabhängigkeit von der Umgebung Projektdatei, um einen vollständigen Satz von einrichtungsanweisungen bilden zusammengeführt.
+Die Bereitstellungs Methode im Kern dieser Tutorials basiert auf dem Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz zum Aufteilen von Projektdateien, bei dem der Build-und Bereitstellungs Prozess von zwei Projekt&#x2014;Dateien gesteuert wird, die Buildanweisungen enthalten, die für jede Zielumgebung gelten, und eine mit Umgebungs spezifischen Build-und Bereitstellungs Einstellungen. Zum Zeitpunkt der Erstellung wird die Umgebungs spezifische Projektdatei in der Umgebungs unabhängigen Projektdatei zusammengeführt, um einen kompletten Satz von Buildanweisungen zu bilden.
 
-## <a name="performing-a-what-if-deployment-for-web-packages"></a>Ausführen einer "Was-wäre-wenn" Bereitstellung für Webpakete
+## <a name="performing-a-what-if-deployment-for-web-packages"></a>Ausführen einer "What if"-Bereitstellung für Webpakete
 
-Web Deploy enthält Funktionen, die Sie Bereitstellungen in "what if" durchführen kann (oder Testversion) Modus. Wenn Sie Elemente in "what if"-Modus bereitstellen, generiert das Web Deploy eine Protokolldatei, mussten Sie die Bereitstellung ausgeführt, wobei jedoch eigentlich nichts ändert, auf dem Zielserver. Überprüfen die Protokolldatei kann Ihnen helfen, welche Auswirkungen zu verstehen, die Bereitstellung auf dem Zielserver, insbesondere muss:
+Web deploy enthält Funktionen, mit denen Sie bereit Stellungen im "Was-wäre-wenn"-Modus (oder im Test Modus) ausführen können. Wenn Sie Artefakte im "Was-wäre-wenn"-Modus bereitstellen, generiert Web deploy eine Protokolldatei, als ob Sie die Bereitstellung durchgeführt hätten, aber auf dem Zielserver ändert sich nichts. Wenn Sie die Protokolldatei überprüfen, können Sie besser verstehen, welche Auswirkung Ihre Bereitstellung auf dem Zielserver hat. Dies gilt insbesondere für:
 
-- Was wird hinzugefügt.
-- Was wird aktualisiert.
-- Welche gelöscht werden.
+- Das, was hinzugefügt wird.
+- Was wird aktualisiert...
+- Was wird gelöscht?
 
-Da eine "Was-wäre-wenn" Bereitstellung tatsächlich Änderungen nicht auf dem Zielserver, was immer nicht möglich ist, ist die Vorhersage, ob eine Bereitstellung erfolgreich ist, wird.
+Da eine "Was-wäre-wenn"-Bereitstellung nichts auf dem Zielserver ändert, kann nicht immer vorhergesagt werden, ob eine Bereitstellung erfolgreich ist.
 
-Siehe [Bereitstellen von Webpaketen](../web-deployment-in-the-enterprise/deploying-web-packages.md), Bereitstellen von Webpaketen, die auf zwei Arten mit Web Deploy können&#x2014;mithilfe des Befehlszeilenprogramms MSDeploy.exe direkt oder durch Ausführen der *. "Deploy.cmd"* Datei der Buildprozess generiert.
+Wie unter Bereitstellen von [Webpaketen](../web-deployment-in-the-enterprise/deploying-web-packages.md)beschrieben, können Sie Webpakete mithilfe von Web deploy auf&#x2014;zwei Arten bereitstellen, indem Sie das Befehlszeilen-Hilfsprogramm "msbereitstellungs. exe" direkt verwenden oder indem Sie die vom Buildprozess generierte Datei " *.* Bereitstellungs Datei" ausführen.
 
-Wenn Sie MSDeploy.exe direkt verwenden, können Sie eine Bereitstellung "Was-wäre-wenn" ausführen, durch das Hinzufügen der **– Whatif** Flag, um den Befehl. Z. B. um auszuwerten, was passieren würde, wenn Sie das Paket ContactManager.Mvc.zip in einer Stagingumgebung bereitgestellt, sieht der MSDeploy-Befehl folgendermaßen aus:
+Wenn Sie msdeployment. exe direkt verwenden, können Sie eine "Was-wäre-wenn"-Bereitstellung ausführen, indem Sie dem Befehl das Flag **– WhatIf** hinzufügen. Wenn Sie beispielsweise auswerten möchten, was geschieht, wenn Sie das Paket "ContactManager. MVC. zip" in einer Stagingumgebung bereitgestellt haben, sollte der msbereitstellungs-Befehl wie folgt aussehen:
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample1.cmd)]
 
-Wenn Sie mit den Ergebnissen der Bereitstellungskonfiguration "Was-wäre-wenn" zufrieden sind, können Sie entfernen die **– Whatif** Flag, um eine live-Bereitstellung auszuführen.
+Wenn Sie mit den Ergebnissen der "Was-wäre-wenn"-Bereitstellung zufrieden sind, können Sie das Flag " **– WhatIf** " entfernen, um eine Live Bereitstellung auszuführen.
 
 > [!NOTE]
-> Weitere Informationen zu den Befehlszeilenoptionen für MSDeploy.exe finden Sie unter [Web Deploy-Vorgang Settings](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
+> Weitere Informationen zu Befehlszeilenoptionen für "msbereitstellungs. exe" finden Sie unter [Web deploy Vorgangs Einstellungen](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
-Bei Verwendung der *. "Deploy.cmd"* -Datei können Sie eine Bereitstellung "Was-wäre-wenn" ausführen, indem die einschließlich der **/t /** flag (Testversion) moduskennzeichnung anstelle von der **/y** -Flag ("yes" oder Update-Modus) in der Befehl. Beispielsweise, um auszuwerten, was passieren würde, wenn Sie durch Ausführen des Pakets ContactManager.Mvc.zip bereitgestellt der *. "Deploy.cmd"* -Datei des Befehls sollte diesem ähneln:
+Wenn Sie die Datei " *. Deployment. cmd* " verwenden, können Sie eine "Was-wäre-wenn"-Bereitstellung durchführen, indem Sie das Flag " **/t** Flag (Testmodus)" anstelle des **/y** -Flags ("yes" oder "Update") in den Befehl einschließen. Wenn Sie beispielsweise auswerten möchten, was geschieht, wenn Sie das Paket "ContactManager. MVC. zip" durch Ausführen der Datei ". Bereitstellungs *. cmd* " bereitgestellt haben, sollte der Befehl wie folgt aussehen:
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample2.cmd)]
 
-Wenn Sie mit den Ergebnissen der Bereitstellungskonfiguration "Testmodus" zufrieden sind, können Sie ersetzen die **/t /** flag mit einer **/y** Flag zum Ausführen einer aktiven Bereitstellung:
+Wenn Sie mit den Ergebnissen der "Test Modus"-Bereitstellung zufrieden sind, können Sie das **/t** -Flag durch ein **/y** -Flag ersetzen, um eine Live Bereitstellung auszuführen:
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample3.cmd)]
 
 > [!NOTE]
-> Weitere Informationen zu Befehlszeilenoptionen für *. "Deploy.cmd"* finden Sie unter [Vorgehensweise: Installieren eines Bereitstellungspakets mit der Datei "Deploy.cmd"](https://msdn.microsoft.com/library/ff356104.aspx). Wenn das Ausführen der *. "Deploy.cmd"* Datei ohne Angabe von Flags, die Eingabeaufforderung zeigt eine Liste der verfügbaren Flags.
+> Weitere Informationen zu Befehlszeilenoptionen für. Bereitstellen von *cmd* -Dateien finden Sie unter Gewusst [wie: Installieren eines Bereitstellungs Pakets mit der Datei "Deployment. cmd](https://msdn.microsoft.com/library/ff356104.aspx)". Wenn Sie die *. cmd* -Datei ohne Angabe von Flags ausführen, wird in der Eingabeaufforderung eine Liste der verfügbaren Flags angezeigt.
 
-## <a name="performing-a-what-if-deployment-for-databases"></a>Ausführen einer "Was-wäre-wenn" Bereitstellung für Datenbanken
+## <a name="performing-a-what-if-deployment-for-databases"></a>Ausführen einer "What if"-Bereitstellung für Datenbanken
 
-In diesem Abschnitt wird davon ausgegangen, dass Sie das Dienstprogramm VSDBCMD nutzen, inkrementelle, Schema-basierte Datenbank-Bereitstellung durchzuführen. Dieser Ansatz wird ausführlicher beschrieben [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Es wird empfohlen, dass Sie sich vertraut mit diesem Thema machen, bevor Sie die hier beschriebenen Konzepte gelten.
+In diesem Abschnitt wird davon ausgegangen, dass Sie mit dem Hilfsprogramm VSDBCmd eine inkrementelle, Schema basierte Daten Bank Bereitstellung ausführen. Diese Vorgehensweise wird in Bereitstellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md)ausführlicher beschrieben. Wir empfehlen Ihnen, sich mit diesem Thema vertraut zu machen, bevor Sie die hier beschriebenen Konzepte anwenden.
 
-Bei Verwendung von VSDBCMD in **bereitstellen** -Modus können Sie die **dd /** (oder **/DeployToDatabase**) flag, das steuert, ob VSDBCMD tatsächlich stellt die Datenbank bereit oder nur generiert ein Skript für die Bereitstellung. Wenn Sie eine DBSCHEMA-Datei bereitstellen, ist dies das Verhalten auf:
+Wenn Sie VSDBCmd im **Bereitstellungs Modus** verwenden, können Sie das Flag **/DD** (oder **/DeployToDatabase**) verwenden, um zu steuern, ob die Datenbank tatsächlich von VSDBCMD bereitgestellt wird oder nur ein Bereitstellungs Skript generiert wird. Wenn Sie eine dbschema-Datei bereitstellen, ist dies das folgende Verhalten:
 
-- Bei Angabe von **/dd+** oder **dd /**, VSDBCMD wird ein Bereitstellungsskript generieren und Bereitstellen der Datenbank.
-- Bei Angabe von **/dd-** oder ohne den Schalter, VSDBCMD wird nur ein Bereitstellungsskript generiert.
+- Wenn Sie **/DD +** oder **/DD**angeben, generiert VSDBCmd ein Bereitstellungs Skript und stellt die Datenbank bereit.
+- Wenn Sie **/DD-** angeben oder den Schalter weglassen, wird von VSDBCMD nur ein Bereitstellungs Skript generiert.
 
 > [!NOTE]
-> Wenn Sie eine Datei DeployManifest anstelle einer DBSCHEMA-Datei, das Verhalten der bereitstellen, die **dd /** Schalter ist wesentlich komplizierter. Im Wesentlichen VSDBCMD ignoriert den Wert des der **dd /** wechseln, wenn die DEPLOYMANIFEST-Datei enthält eine **DeployToDatabase** Element mit einem Wert von **"true"**. [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md) wird dieses Verhalten vollständig beschrieben.
+> Wenn Sie eine DeployManifest-Datei anstelle einer dbschema-Datei bereitstellen, ist das Verhalten des **/DD** -Schalters wesentlich komplizierter. Im Wesentlichen ignoriert VSDBCmd den Wert des **/DD** -Schalters, wenn die DeployManifest-Datei ein **deploydedatabase** -Element mit dem Wert " **true**" enthält. Beim Bereitstellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md) wird dieses Verhalten vollständig beschrieben.
 
-Beispielsweise, um das Generieren eines Bereitstellungsskripts für die **ContactManager** Datenbank ohne Sie tatsächlich Bereitstellen der Datenbank, die den VSDBCMD-Befehl sollte diesem ähneln:
+Um z. b. ein Bereitstellungs Skript für die **ContactManager** -Datenbank zu generieren, ohne die Datenbank tatsächlich bereitzustellen, sollte der VSDBCmd-Befehl wie folgt aussehen:
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample4.cmd)]
 
-VSDBCMD ist ein Bereitstellungstool differenziellen Datenbank- und das Bereitstellungsskript wird als solche dynamisch generiert, um alle der SQL-Befehle erforderlich, die die aktuelle Datenbank zu aktualisieren, falls, die dem angegebenen Schema vorhanden enthalten. Überprüfen das Bereitstellungsskript ist eine gute Möglichkeit, um zu bestimmen, was die Bereitstellung auswirken wird in der aktuellen Datenbank und die darin enthaltenen Daten. Sie sollten z. B. um zu bestimmen:
+VSDBCMD ist ein differenziertes Tool für die Daten Bank Bereitstellung. Daher wird das Bereitstellungs Skript dynamisch generiert, um alle SQL-Befehle zu enthalten, die erforderlich sind, um die aktuelle Datenbank, sofern vorhanden, in das angegebene Schema zu aktualisieren. Das Überprüfen des Bereitstellungs Skripts ist eine nützliche Möglichkeit, um zu bestimmen, welche Auswirkung die Bereitstellung auf die aktuelle Datenbank und die darin enthaltenen Daten hat. Beispielsweise können Sie Folgendes bestimmen:
 
-- Gibt an, ob alle vorhandenen Tabellen entfernt werden, und gibt an, ob dies zu Datenverlust führt.
-- Gibt an, ob die Reihenfolge der Vorgänge ein Risiko des Datenverlusts, z. B. enthält, wenn Sie teilen oder Zusammenführen von Tabellen.
+- Ob vorhandene Tabellen entfernt werden und ob dies zu Datenverlusten führt.
+- Ob die Reihenfolge der Vorgänge das Risiko eines Daten Verlusts birgt, z. b. Wenn Sie Tabellen aufteilen oder zusammenführen.
 
-Wenn Sie mit dem Bereitstellungsskript zufrieden sind, können Sie die VSDBCMD mit Wiederholen einer **/dd+** Flag, um die Änderungen zu übernehmen. Alternativ können Sie das Bereitstellungsskript aus, um Ihre Anforderungen erfüllen, und führen sie dann manuell auf dem Datenbankserver bearbeiten.
+Wenn Sie mit dem Bereitstellungs Skript zufrieden sind, können Sie VSDBCmd mit einem **/DD +** -Flag wiederholen, um die Änderungen vorzunehmen. Alternativ können Sie das Bereitstellungs Skript bearbeiten, um Ihre Anforderungen zu erfüllen, und es dann manuell auf dem Datenbankserver ausführen.
 
-## <a name="integrating-what-if-functionality-into-custom-project-files"></a>Die Integration von "What If"-Funktionalität in benutzerdefinierten Projektdateien
+## <a name="integrating-what-if-functionality-into-custom-project-files"></a>Integrieren von "What if"-Funktionen in benutzerdefinierte Projektdateien
 
-In komplexeren Bereitstellungsszenarien, sollten Sie zu eine benutzerdefinierte Microsoft Build Engine (MSBuild)-Projektdatei zu verwenden, um Ihre Build- und bereitstellungs-Logik zu kapseln, wie in beschrieben [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Z. B. in der [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) beispiellösung, die *Publish.proj* Datei:
+In komplexeren Bereitstellungs Szenarien empfiehlt es sich, eine benutzerdefinierte Microsoft-Build-Engine (MSBuild)-Projektdatei zu verwenden, um Ihre Build-und Bereitstellungs Logik zu kapseln, wie in Grundlegendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschrieben. Beispielsweise wird in der Beispiellösung " [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) " die Datei " *Publish. proj* " angezeigt:
 
-- Erstellt die Lösung.
-- Wird die Web Deploy-Packen und Bereitstellen der Anwendung ContactManager.Mvc verwendet.
-- Wird die Web Deploy-Packen und Bereitstellen der Anwendung ContactManager.Service verwendet.
-- Stellt die **ContactManager** Datenbank.
+- Erstellt die Projekt Mappe.
+- Verwendet Web deploy, um die Anwendung ContactManager. MVC zu verpacken und bereitzustellen.
+- Verwendet Web deploy, um die Anwendung ContactManager. Service zu verpacken und bereitzustellen.
+- Stellt die **ContactManager** -Datenbank bereit.
 
-Wenn Sie die Bereitstellung von mehreren Webpakete bzw. Datenbanken in einen Prozess Schritt für Schritt auf diese Weise integrieren, sollten Sie auch die Möglichkeit, die gesamte Bereitstellung in einem "what if"-Modus ausführen.
+Wenn Sie die Bereitstellung mehrerer Webpakete und/oder Datenbanken auf diese Weise in einen schrittweisen Prozess integrieren, können Sie auch die Option für die gesamte Bereitstellung im "Was-wäre-wenn"-Modus ausführen.
 
-Die *Publish.proj* Datei veranschaulicht, wie Sie dies tun können. Zunächst müssen Sie eine Eigenschaft zum Speichern des Werts "Was-wäre-wenn" zu erstellen:
+Die Datei " *Publish. proj* " veranschaulicht, wie Sie dies tun können. Zunächst müssen Sie eine Eigenschaft erstellen, um den "Was-wäre-wenn"-Wert zu speichern:
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample5.xml)]
 
-In diesem Fall haben Sie eine Eigenschaft mit dem Namen erstellt **"WhatIf"** hat den Standardwert des **"false"**. Benutzer können diesen Wert durch Festlegen der Eigenschaft zu überschreiben **"true"** in einen Befehlszeilenparameter, wie Sie gleich sehen werden.
+In diesem Fall haben Sie eine Eigenschaft mit dem Namen **WhatIf** mit dem Standardwert **false**erstellt. Benutzer können diesen Wert überschreiben, indem Sie in einem Befehlszeilenparameter die-Eigenschaft auf " **true** " festlegen, wie Sie in Kürze sehen werden.
 
-Der nächste Schritt besteht, eine beliebige Web Deploy zu parametrisieren und VSDBCMD Befehle, sodass die Flags enthalten die **"WhatIf"** -Eigenschaftswert. Z. B. das nächste Ziel (stammt aus der *Publish.proj* Datei, und vereinfacht) ausgeführt wird die *. "Deploy.cmd"* Datei ein Webpaket bereitgestellt. Standardmäßig enthält der Befehl eine **/y** Switch ("yes" oder Update-Modus). Wenn **"WhatIf"** nastaven NA hodnotu **"true"**, dies wird durch ersetzt eine **/t /** Switch (Test- oder "Was-wäre-wenn"-Modus).
+Die nächste Phase besteht darin, alle Web deploy-und VSDBCmd-Befehle zu parametrisieren, damit die Flags den **WhatIf** -Eigenschafts Wert widerspiegeln. Beispielsweise wird durch das nächste Ziel (aus der Datei " *Publish. proj* " entnommen und vereinfacht) die Datei ". Bereitstellungs *. cmd* " ausgeführt, um ein Webpaket bereitzustellen. Standardmäßig enthält der Befehl einen **/Y** -Schalter ("yes" oder Update Mode). Wenn **WhatIf** auf **true**festgelegt ist, wird dies durch einen **/T** -Schalter (Testversion oder "Was-wäre-wenn-Modus") ersetzt.
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample6.xml)]
 
-Auf ähnliche Weise verwendet das nächste Ziel das VSDBCMD-Dienstprogramm zum Bereitstellen einer Datenbank. Standardmäßig eine **dd /** Switch ist nicht enthalten. Dies bedeutet, dass VSDBCMD ein Bereitstellungsskript generiert, aber die Datenbank nicht bereitgestellt werden&#x2014;in anderen Worten: ein "Was-wäre-wenn"-Szenario. Wenn die **"WhatIf"** Eigenschaft ist nicht festgelegt, um **"true"**, **dd /** Schalter hinzugefügt wird und VSDBCMD wird die Datenbank bereitstellen.
+Entsprechend verwendet das nächste Ziel das Hilfsprogramm "VSDBCmd", um eine Datenbank bereitzustellen. Standardmäßig ist kein **/DD** -Schalter enthalten. Dies bedeutet, dass VSDBCmd ein Bereitstellungs Skript generiert, aber die Datenbank&#x2014;nicht mit anderen Worten, einem "Was-wäre-wenn"-Szenario, bereitstellt. Wenn die **WhatIf** -Eigenschaft nicht auf **true**festgelegt ist, wird ein **/DD** -Switch hinzugefügt, und die Datenbank wird von VSDBCMD bereitgestellt.
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample7.xml)]
 
-Sie können den gleichen Ansatz verwenden, parametrisieren Sie alle relevanten Befehle in Ihrer Projektdatei hinzu. Wenn Sie eine "Was-wäre-wenn"-Bereitstellung ausführen möchten, können Sie dann geben Sie einfach eine **"WhatIf"** Eigenschaftswert von der Befehlszeile aus:
+Sie können denselben Ansatz verwenden, um alle relevanten Befehle in der Projektdatei zu parametrisieren. Wenn Sie eine "Was-wäre-wenn"-Bereitstellung ausführen möchten, können Sie einfach einen **WhatIf** -Eigenschafts Wert über die Befehlszeile angeben:
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample8.cmd)]
 
-Auf diese Weise können Sie eine "Was-wäre-wenn" Bereitstellung für alle Projektkomponenten in einem einzigen Schritt ausführen.
+Auf diese Weise können Sie eine "Was-wäre-wenn"-Bereitstellung für alle Projektkomponenten in einem einzigen Schritt ausführen.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema beschrieben, wie "Was-wäre-wenn"-Bereitstellungen mithilfe von Web Deploy, VSDBCMD und MSBuild ausführen. Eine "Was-wäre-wenn"-Bereitstellung können Sie die Auswirkungen der vorgeschlagenen Bereitstellung ausgewertet, bevor Sie Änderungen in der zielumgebung tatsächlich vornehmen.
+In diesem Thema wird beschrieben, wie "Was-wäre-wenn"-bereit Stellungen mit Web deploy, VSDBCmd und MSBuild ausgeführt werden. Mit einer "Was-wäre-wenn"-Bereitstellung können Sie die Auswirkungen einer vorgeschlagenen Bereitstellung auswerten, bevor Sie tatsächlich Änderungen an der Zielumgebung vornehmen.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere Informationen zu Web Deploy-Befehlszeilensyntax, finden Sie unter [Web Deploy-Vorgang Settings](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Informationen zu den Befehlszeilenoptionen, die bei der Verwendung der *. "Deploy.cmd"* finden Sie unter [Vorgehensweise: Installieren eines Bereitstellungspakets mit der Datei "Deploy.cmd"](https://msdn.microsoft.com/library/ff356104.aspx). Anweisungen VSDBCMD Befehlszeilensyntax, finden Sie unter [Befehlszeilenreferenz für VSDBCMD. EXE-Datei ("Bereitstellung" und "Schema importieren")](https://msdn.microsoft.com/library/dd193283.aspx).
+Weitere Informationen zu Web deploy Befehlszeilen Syntax finden Sie unter [Web deploy Vorgangs Einstellungen](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Anleitungen zu Befehlszeilenoptionen bei Verwendung der Datei " *. Deployment. cmd* " finden Sie unter Gewusst [wie: Installieren eines Bereitstellungs Pakets mit der Datei "Deployment. cmd](https://msdn.microsoft.com/library/ff356104.aspx)". Anleitungen zur Befehlszeilen Syntax von VSDBCMD finden Sie unter [Befehlszeilen Referenz für VSDBCMD. EXE (Bereitstellung und Schema Import)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 > [!div class="step-by-step"]
 > [Zurück](advanced-enterprise-web-deployment.md)

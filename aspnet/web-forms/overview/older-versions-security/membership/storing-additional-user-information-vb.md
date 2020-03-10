@@ -9,11 +9,11 @@ ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cb352de6f7c2d117b41532112a87956c8dde62f8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74639175"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78488343"
 ---
 # <a name="storing-additional-user-information-vb"></a>Speichern von zusätzlichen Benutzerinformationen (VB)
 
@@ -29,7 +29,7 @@ ASP. Das Mitgliedschafts Framework von NET bietet eine flexible Oberfläche zum 
 
 Oft müssen Anwendungen zusätzliche Benutzerinformationen speichern, die nicht im Mitgliedschafts Framework enthalten sind. Beispielsweise muss ein Onlinehändler möglicherweise jedem Benutzer die Versand-und abrechnungsadressen, Zahlungsinformationen, Übermittlungs Einstellungen und die Telefonnummer des Kontakts speichern. Außerdem ist jede Bestellung im System einem bestimmten Benutzerkonto zugeordnet.
 
-Die `MembershipUser`-Klasse enthält keine Eigenschaften wie `PhoneNumber` oder `DeliveryPreferences` oder `PastOrders`. Wie werden die Benutzerinformationen, die von der Anwendung benötigt werden, nachverfolgt und in das Mitgliedschafts Framework integriert? In diesem Tutorial beantworten wir diese Frage, indem wir eine sehr rudimentäre Gäste Buch Anwendung aufbauen. Dabei werden verschiedene Optionen zum Modellieren von Benutzerinformationen in einer Datenbank erläutert. Anschließend wird erläutert, wie Sie diese Daten den Benutzerkonten zuordnen, die vom Mitgliedschafts Framework erstellt wurden. Fangen wir an!
+Die `MembershipUser`-Klasse enthält keine Eigenschaften wie `PhoneNumber` oder `DeliveryPreferences` oder `PastOrders`. Wie werden die Benutzerinformationen, die von der Anwendung benötigt werden, nachverfolgt und in das Mitgliedschafts Framework integriert? In diesem Tutorial beantworten wir diese Frage, indem wir eine sehr rudimentäre Gäste Buch Anwendung aufbauen. Dabei werden verschiedene Optionen zum Modellieren von Benutzerinformationen in einer Datenbank erläutert. Anschließend wird erläutert, wie Sie diese Daten den Benutzerkonten zuordnen, die vom Mitgliedschafts Framework erstellt wurden. Erste Schritte
 
 ## <a name="step-1-creating-the-guestbook-applications-data-model"></a>Schritt 1: Erstellen des Datenmodells für die Gäste Buch Anwendung
 
@@ -142,7 +142,7 @@ Leider gibt es keine integrierte Parameter Quelle, um den `UserId` Wert des aktu
 
 **Abbildung 10**: Hinzufügen eines Filter Parameters in der Spalte "`UserId`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](storing-additional-user-information-vb/_static/image30.png))
 
-Nachdem Sie auf OK geklickt haben, wird der Bildschirm zurückgegeben, der in Abbildung 9 angezeigt wird. Die SQL-Abfrage unten auf dem Bildschirm sollte jedoch eine `WHERE`-Klausel enthalten. Klicken Sie auf Weiter, um zum Bildschirm "Test Abfrage" zu gelangen. Hier können Sie die Abfrage ausführen und die Ergebnisse anzeigen. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Nachdem Sie auf OK geklickt haben, wird der Bildschirm zurückgegeben, der in Abbildung 9 angezeigt wird. Die SQL-Abfrage unten auf dem Bildschirm sollte jedoch eine `WHERE`-Klausel enthalten. Klicken Sie auf Weiter, um zum Bildschirm "Test Abfrage" zu gelangen. Hier können Sie die Abfrage ausführen und die Ergebnisse anzeigen. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 Nach dem Abschließen des Assistenten zum Konfigurieren von Datenquellen erstellt Visual Studio das SqlDataSource-Steuerelement basierend auf den im Assistenten angegebenen Einstellungen. Darüber hinaus fügt Sie der DetailsView für jede Spalte, die von der `SelectCommand`von SqlDataSource zurückgegeben wird, "boundfields" manuell hinzu. Es ist nicht erforderlich, das Feld "`UserId`" in der DetailsView anzuzeigen, da der Benutzer diesen Wert nicht kennen muss. Sie können dieses Feld direkt aus dem deklarativen Markup des DetailsView-Steuer Elements entfernen oder durch Klicken auf den Link "Felder bearbeiten" aus dem Smarttag.
 
@@ -438,7 +438,7 @@ Wenn dieser Ereignishandler vorhanden ist, besuchen Sie die Seite `EnhancedCreat
 > [!NOTE]
 > Unsere Website verfügt zurzeit über zwei Seiten, von denen ein Besucher ein neues Konto erstellen kann: `CreatingUserAccounts.aspx` und `EnhancedCreateUserWizard.aspx`. Die Seite "Sitemap und Anmeldung" der Website verweist auf die Seite "`CreatingUserAccounts.aspx`", aber die `CreatingUserAccounts.aspx` Seite fordert den Benutzer nicht zur Eingabe von Orts-, Homepage-und Signatur Informationen auf und fügt `UserProfiles`keine entsprechende Zeile hinzu. Aktualisieren Sie daher die `CreatingUserAccounts.aspx` Seite so, dass Sie diese Funktion bietet, oder aktualisieren Sie die Seite "Sitemap" und "Login" so, dass Sie anstelle `CreatingUserAccounts.aspx`auf `EnhancedCreateUserWizard.aspx` verweist. Wenn Sie die zweite Option auswählen, achten Sie darauf, dass Sie die `Web.config` Datei des `Membership` Ordners aktualisieren, damit anonyme Benutzer auf die `EnhancedCreateUserWizard.aspx` Seite zugreifen können.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir Techniken zum Modellieren von Daten im Zusammenhang mit Benutzerkonten innerhalb des Mitgliedschafts-Frameworks behandelt. Insbesondere haben wir uns mit der Modellierung von Entitäten beschäftigt, die eine 1: n-Beziehung mit Benutzerkonten und Daten gemeinsam nutzen, die eine 1:1-Beziehung gemeinsam haben. Außerdem haben wir gesehen, wie diese verwandten Informationen angezeigt, eingefügt und aktualisiert werden können. Beispiele hierfür sind das SqlDataSource-Steuerelement und andere Benutzer, die ADO.NET-Code verwenden.
 
@@ -446,7 +446,7 @@ In diesem Tutorial wird die Betrachtung von Benutzerkonten abgeschlossen. Beginn
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -465,7 +465,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Das ASP: ListView-Steuerelement](https://weblogs.asp.net/scottgu/archive/2007/08/10/the-asp-listview-control-part-1-building-a-product-listing-page-with-clean-css-ui.aspx)
 - [Schnellstart für Benutzerprofile](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/profile/default.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -474,4 +474,4 @@ Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRo
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)ablegen.
 
 > [!div class="step-by-step"]
-> [Vorheriges](user-based-authorization-vb.md)
+> [Previous](user-based-authorization-vb.md)

@@ -1,387 +1,387 @@
 ---
 uid: web-pages/overview/data/5-working-with-data
-title: Einführung in die Arbeit mit einer Datenbank in der ASP.NET Web Pages (Razor) Sites | Microsoft-Dokumentation
+title: Einführung in das Arbeiten mit einer Datenbank auf ASP.net Web Pages (Razor) Websites | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Kapitel wird beschrieben, wie Sie Zugriff auf Daten aus einer Datenbank, und mithilfe von ASP.NET Web Pages anzeigen wird.
+description: In diesem Kapitel wird beschrieben, wie Sie auf Daten aus einer Datenbank zugreifen und Sie mit ASP.net Web Pages anzeigen.
 ms.author: riande
 ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
 ms.openlocfilehash: 45e988d037465e59ad352bb9444af2c69fd3cd70
-ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67411272"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474039"
 ---
-# <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Einführung in die Arbeit mit einer Datenbank in der ASP.NET Web Pages (Razor) Sites
+# <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Einführung in das Arbeiten mit einer Datenbank auf ASP.net Web Pages (Razor) Websites
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Artikel wird beschrieben, wie auf Microsoft WebMatrix-Tools verwenden, um eine Datenbank in einer ASP.NET Web Pages (Razor)-Website erstellen und wie Sie die Seiten zu erstellen, mit denen Sie die anzeigen, hinzufügen, bearbeiten und Löschen von Daten.
+> In diesem Artikel wird beschrieben, wie Sie mit Microsoft webmatrix-Tools eine Datenbank auf einer ASP.net Web Pages-Website (Razor) erstellen und wie Sie Seiten erstellen, mit denen Sie Daten anzeigen, hinzufügen, bearbeiten und löschen können.
 > 
-> **Sie lernen Folgendes:** 
+> **Lernen Sie Folgendes:** 
 > 
-> - Vorgehensweise: erstellen eine Datenbank.
-> - Informationen zum Herstellen einer datenbankverbindung.
-> - Informationen zum Anzeigen von Daten auf einer Webseite.
-> - Informationen zum Einfügen, aktualisieren und Löschen von Datenbankdatensätzen.
+> - Erstellen einer Datenbank.
+> - Vorgehensweise beim Herstellen einer Verbindung mit einer Datenbank
+> - Anzeigen von Daten auf einer Webseite.
+> - Vorgehensweise beim Einfügen, aktualisieren und Löschen von Datenbankdaten Sätzen.
 > 
-> Dies sind die Funktionen, die in diesem Artikel:
+> Dies sind die im Artikel eingeführten Features:
 > 
-> - Arbeiten mit einer Microsoft SQL Server Compact Edition-Datenbank.
+> - Arbeiten mit einer Microsoft SQL Server Compact Edition-Datenbank
 > - Arbeiten mit SQL-Abfragen.
-> - Der `Database`-Klasse.
+> - Die `Database`-Klasse.
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - ASP.NET Web Pages (Razor) 2
+> - ASP.net Web Pages (Razor) 2
 > - WebMatrix 2
 >   
 > 
-> In diesem Tutorial funktioniert auch mit WebMatrix 3. Sie können ASP.NET Web Pages-3 und Visual Studio 2013 (oder Visual Studio Express 2013 für Web) verwenden. die Benutzeroberfläche wird jedoch abweichen.
+> Dieses Tutorial funktioniert auch mit webmatrix 3. Sie können ASP.net Web Pages 3 und Visual Studio 2013 (oder Visual Studio Express 2013 für Web) verwenden. die Benutzeroberfläche unterscheidet sich jedoch.
 
 ## <a name="introduction-to-databases"></a>Einführung in Datenbanken
 
-Angenommen Sie, ein typisches Adressbuch. Für jeden Eintrag im Adressbuch (d. h. für jede Person) Sie haben verschiedene Angaben wie z. B. Vorname, Nachname, Adresse, e-Mail-Adresse und Telefonnummer.
+Stellen Sie sich ein typisches Adressbuch vor. Für jeden Eintrag im Adressbuch (d. h. für jede Person) haben Sie mehrere Informationen wie Vorname, Nachname, Adresse, e-Mail-Adresse und Telefonnummer.
 
-Eine typische Herangehensweise an die Daten wie folgt Grafik ist als eine Tabelle mit Zeilen und Spalten. In der Datenbanksprache wird jede Zeile häufig als Datensatz bezeichnet. Jede Spalte (auch als Felder bezeichnet) enthält einen Wert für jede Art von Daten: Vorname, letzte Name und So weiter.
+Eine typische Möglichkeit zum Bilddaten wie dieser ist die Tabelle mit Zeilen und Spalten. In Daten Bank begriffen wird jede Zeile häufig als Datensatz bezeichnet. Jede Spalte (manchmal auch als "Felder" bezeichnet) enthält einen Wert für jeden Datentyp: Vorname, Nachname usw.
 
-| **ID** | **FirstName** | **LastName** | **Address** | **E-Mail** | **Phone** |
+| **ID** | **FirstName** | **Nachname** | **Adresse** | **E-Mail** | **Telefon** |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Jim | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
-| 2 | Oliver | Adams | 1234 Main St. Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
+| 1 | Klaus | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
+| 2 | Terry | Adams | 1234 Main St. Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
 
-Für die meisten-Datenbanktabellen enthalten sind muss die Tabelle eine Spalte haben, die einen eindeutigen Bezeichner, z. B. eine Kundennummer, Kontonummer usw. enthält. Dies bezeichnet man als der tabellenspezifischen *Primärschlüssel*, und verwenden Sie zum Identifizieren jeder Zeile in der Tabelle. Im Beispiel ist die ID-Spalte der Primärschlüssel für das Adressbuch.
+Bei den meisten Datenbanktabellen muss die Tabelle über eine Spalte verfügen, die einen eindeutigen Bezeichner enthält, wie z. b. eine Kundennummer, eine Kontonummer usw. Dies wird als *Primärschlüssel*der Tabelle bezeichnet, und Sie verwenden ihn, um jede Zeile in der Tabelle zu identifizieren. In diesem Beispiel ist die ID-Spalte der Primärschlüssel für das Adressbuch.
 
-Mit diesem Überblick über Datenbanken können Sie erfahren, wie Sie eine einfache Datenbank erstellen und Vorgänge wie hinzufügen, ändern und Löschen von Daten.
+Mit diesem grundlegenden Verständnis der Datenbanken können Sie lernen, wie eine einfache Datenbank erstellt und Vorgänge wie das Hinzufügen, ändern und Löschen von Daten durchgeführt werden.
 
 > [!TIP] 
 > 
 > **Relationale Datenbanken**
 > 
-> Sie können Daten auf viele weisen, schließt auch Textdateien und Tabellen speichern. Für die meisten Unternehmen verwendet werden Daten dagegen in einer relationalen Datenbank gespeichert.
+> Sie können Daten auf vielfältige Weise speichern, einschließlich Textdateien und Kalkulations Tabellen. In den meisten geschäftlichen Verwendungs Fällen werden die Daten jedoch in einer relationalen Datenbank gespeichert.
 > 
-> In diesem Artikel geht nicht sehr tief in Datenbanken. Allerdings finden Sie es möglicherweise hilfreich, ein wenig über diese zu verstehen. In einer relationalen Datenbank ist die Informationen logisch in separaten Tabellen unterteilt. Beispielsweise kann eine Datenbank für eine Schule separate Tabellen für Schüler/Studenten und Klasse-Angebote enthalten. Die Software (z. B. SQL Server) unterstützt leistungsstarke Datenbankbefehle, mit denen Sie dynamisch richten Sie Beziehungen zwischen den Tabellen. Beispielsweise können Sie die relationale Datenbank, um eine logische Beziehung zwischen Klassen und Schüler/Studenten herzustellen, um einen Zeitplan zu erstellen. Speichern von Daten in separaten Tabellen reduziert die Komplexität der Tabellenstruktur und verringert den Bedarf an redundante Daten in Tabellen speichern.
+> Dieser Artikel geht nicht sehr tief in Datenbanken über. Allerdings ist es möglicherweise hilfreich, etwas über diese Informationen zu verstehen. In einer relationalen Datenbank werden die Informationen logisch in separate Tabellen aufgeteilt. Beispielsweise kann eine Datenbank für eine Schule separate Tabellen für Schüler und Studenten sowie für Klassen Angebote enthalten. Die Datenbanksoftware (z. b. SQL Server) unterstützt leistungsstarke Befehle, mit denen Sie dynamisch Beziehungen zwischen den Tabellen herstellen können. Beispielsweise können Sie die relationale Datenbank verwenden, um eine logische Beziehung zwischen Studenten und Klassen herzustellen, um einen Zeitplan zu erstellen. Das Speichern von Daten in separaten Tabellen reduziert die Komplexität der Tabellenstruktur und verringert die Notwendigkeit, redundante Daten in Tabellen zu speichern.
 
 ## <a name="creating-a-database"></a>Erstellen einer Datenbank
 
-Dieses Verfahren zeigt, wie Sie eine Datenbank mit Namen SmallBakery mit dem SQL Server Compact-Datenbank-Entwurfstools, die in WebMatrix enthalten ist. Obwohl Sie eine Datenbank mithilfe von Code erstellen können, ist es üblicher, die Datenbank und die Datenbanktabellen, die mit einem Designtool wie WebMatrix erstellen.
+In diesem Verfahren wird gezeigt, wie Sie eine Datenbank mit dem Namen "smallbakery" erstellen, indem Sie das in webmatrix enthaltene SQL Server Compact Daten bankentwurfs Tool verwenden. Obwohl Sie eine Datenbank mit Code erstellen können, ist es typischer, die Datenbank-und Datenbanktabellen mit einem Entwurfs Tool wie webmatrix zu erstellen.
 
-1. Starten Sie WebMatrix, und klicken Sie auf der Seite "Schnellstart" auf **Websitevorlage aus**.
-2. Wählen Sie **leere Website**, und klicken Sie in der **Standortname** Feld Geben Sie "SmallBakery", und klicken Sie dann auf **OK**. Die Website wird erstellt und in WebMatrix angezeigt.
-3. Klicken Sie im linken Bereich auf die **Datenbanken** Arbeitsbereich.
-4. Klicken Sie im Menüband auf **neue Datenbank**. Eine leere Datenbank wird mit dem gleichen Namen wie Ihre Website erstellt.
-5. Erweitern Sie im linken Bereich die **SmallBakery.sdf** Knoten, und klicken Sie dann auf **Tabellen**.
-6. Klicken Sie im Menüband auf **neue Tabelle**. WebMatrix wird den Tabellen-Designer geöffnet.
+1. Starten Sie webmatrix, und klicken Sie auf der Seite Schnellstart auf **Site from Template**.
+2. Wählen Sie **leere Website**aus, geben Sie im Feld **Site Name den Namen** "smallbakery" ein, und klicken Sie dann auf **OK**. Die Website wird erstellt und in webmatrix angezeigt.
+3. Klicken Sie im linken Bereich auf den Arbeitsbereich **Datenbanken** .
+4. Klicken Sie im Menüband auf **neue Datenbank**. Es wird eine leere Datenbank mit dem gleichen Namen wie die Website erstellt.
+5. Erweitern Sie im linken Bereich den Knoten **smallbakery. sdf** , und klicken Sie dann auf **Tabellen**.
+6. Klicken Sie im Menüband auf **neue Tabelle**. Webmatrix öffnet den Tabellen-Designer.
 
-    ![[Image]](5-working-with-data/_static/image1.jpg)
-7. Klicken Sie in der **Namen** Spalte, und geben Sie &quot;Id&quot;.
-8. In der **Datentyp** Spalte **Int**.
-9. Festlegen der **ist der Primärschlüssel?** und **identifizieren ist?** Optionen aus, **Ja**.
+    ![Klang](5-working-with-data/_static/image1.jpg)
+7. Klicken Sie in die Spalte **Name** , und geben Sie &quot;ID-&quot;ein.
+8. Wählen Sie in der Spalte **Datentyp** die Option **int**aus.
+9. Legen Sie den **is Primary Key fest?** und **ist identifium?** -Optionen auf **Yes**festzulegen.
 
-    Wie der Name schon sagt, **Primärschlüssel wird** teilt mit, dass es sich bei dieser Primärschlüssel der Tabelle werden der Datenbank. **Ist Identität** weist die Datenbank aus, um automatisch eine ID-Nummer für jeden neuen Datensatz zu erstellen und die nächste laufende Nummer (beginnend mit 1) zuweisen.
-10. Klicken Sie auf die nächste Zeile. Der Editor wird gestartet, eine neuen Spaltendefinition.
-11. Geben Sie für die Name-Wert, &quot;Namen&quot;.
-12. Für **Datentyp**, wählen Sie &quot;Nvarchar&quot; und die Länge auf 50 festgelegt. Die *Var* Teil `nvarchar` weist der Datenbank an, dass es sich bei die Daten für diese Spalte eine Zeichenfolge handelt, dessen Größe von Datensatz zu Datensatz variieren. (Die *n* Präfix stellt *national*, gibt an, dass das Feld Zeichendaten enthalten kann, die Buchstaben darstellt oder ein Schreibsystem &#8212; , also, dass das Feld Unicode-Daten enthält.)
-13. Legen Sie die **NULL-Werte zulassen** option **keine**. Dadurch wird erzwungen, die die *Namen* Spalte ist nicht leer.
-14. Erstellen Sie mit der gleiche Vorgang, eine Spalte namens *Beschreibung*. Legen Sie **Datentyp** "Nvarchar" und 50 für die Länge und **NULL-Werte zulassen** auf "false".
-15. Erstellen Sie eine Spalte mit dem Namen *Preis*. Legen Sie **Datentyp "Money"** und **NULL-Werte zulassen** auf "false".
-16. Benennen Sie im Feld oben auf die Tabelle &quot;Produkt&quot;.
+    Wie der Name bereits vermuten lässt, teilt der **Primärschlüssel** der Datenbank mit, dass es sich hierbei um den Primärschlüssel der Tabelle handelt. **Ist Identity** weist die Datenbank an, automatisch eine ID-Nummer für jeden neuen Datensatz zu erstellen und ihr die nächste sequenzielle Zahl zuzuweisen (beginnend bei 1).
+10. Klicken Sie in die nächste Zeile. Der Editor startet eine neue Spaltendefinition.
+11. Geben Sie unter Name den Namen &quot;&quot;ein.
+12. Wählen Sie unter **Datentyp**die Option &quot;nvarchar&quot; aus, und legen Sie die Länge auf 50 fest. Der *var* -Teil `nvarchar` teilt der Datenbank mit, dass es sich bei den Daten für diese Spalte um eine Zeichenfolge handelt, deren Größe von Datensatz zu Datensatz variieren kann. (Das *n* -Präfix repräsentiert *National*und gibt an, dass das Feldzeichen Daten enthalten kann, die ein &#8212; beliebiges Alphabet oder ein Schreibsystem darstellen, das heißt, dass das Feld Unicode-Daten enthält.)
+13. Legen Sie die Option NULL-Wert **zulassen** auf **Nein**fest. Dadurch wird erzwungen, dass die Spalte *Name* nicht leer ist.
+14. Erstellen Sie mit diesem Prozess eine Spalte namens *Description*. Legen Sie den **Datentyp** für die Länge auf "nvarchar" und 50 fest, und legen Sie NULL-Wert **zulassen** auf false fest.
+15. Erstellen Sie eine Spalte mit dem Namen *Price*. Legen **Sie den Datentyp auf "Money"** fest, und legen Sie **Nullen zulassen** auf false fest.
+16. Benennen Sie die Tabelle im oberen Feld &quot;Product&quot;.
 
-    Wenn Sie fertig sind, wird die Definition wie folgt aussehen:
+    Wenn Sie fertig sind, sieht die Definition wie folgt aus:
 
-    ![[Image]](5-working-with-data/_static/image2.png)
-17. Drücken Sie STRG + S zum Speichern der Tabelle ein.
+    ![Klang](5-working-with-data/_static/image2.png)
+17. Drücken Sie STRG + S, um die Tabelle zu speichern.
 
-## <a name="adding-data-to-the-database"></a>Hinzufügen von Daten in der Datenbank
+## <a name="adding-data-to-the-database"></a>Hinzufügen von Daten zur Datenbank
 
-Jetzt können Sie einige Beispieldaten zu Ihrer Datenbank hinzufügen, die Sie später in diesem Artikel verwenden werden.
+Nun können Sie der Datenbank, mit der Sie später in diesem Artikel arbeiten, einige Beispiel Daten hinzufügen.
 
-1. Erweitern Sie im linken Bereich die **SmallBakery.sdf** Knoten, und klicken Sie dann auf **Tabellen**.
-2. Mit der rechten Maustaste in der Product-Tabelle, und klicken Sie dann auf **Daten**.
-3. Geben Sie im Bearbeitungsbereich die folgenden Einträge aus:
+1. Erweitern Sie im linken Bereich den Knoten **smallbakery. sdf** , und klicken Sie dann auf **Tabellen**.
+2. Klicken Sie mit der rechten Maustaste auf die Tabelle Product und anschließend auf **Daten**.
+3. Geben Sie im Bearbeitungsbereich die folgenden Einträge ein:
 
-    | **Name** | **Beschreibung** | **Preis** |
+    | **Name** | **Beschreibung** | **Sonderpreis** |
     | --- | --- | --- |
-    | Ein | Dank der minutengenauen sauber jeden Tag. | 2.99 |
-    | Strawberry Shortcake | Aus unseren Garten mit organische Erdbeeren ausgeführt wurden. | 9.99 |
-    | Apple-Kreisdiagramm | Der zweite nur zum Ihrer Mutter Kreis. | 12.99 |
-    | Pecan Kreis | Wenn Sie Pecans zufrieden sind, ist dies für Sie. | 10.99 |
-    | Zitronen-Kreisdiagramm | Mit der besten Zitronen in der ganzen Welt ausgeführt wurden. | 11.99 |
-    | Cupcakes | Ihre Kinder und "Kid" Sie werden diese lieben. | 7.99 |
+    | Lai | Jeden Tag frisch gebacken. | 2,99 |
+    | Erdbeer Shortcake | Durch die Verwendung von Bio-Erdbeeren aus unserem Garten. | 9.99 |
+    | Apple-Kreis | Zweitens nur für Ihren MOM-Kreis. | 12.99 |
+    | Pecan-Kreis | Wenn Sie pecane wünschen, ist dies für Sie. | 10.99 |
+    | Zitronen Kreis | Mit den besten lemons auf der Welt. | 11.99 |
+    | Cupcakes | Ihre Kinder und das Kind in werden Sie gerne begeistern. | 7.99 |
 
-    Beachten Sie, dass Sie keine Eingabe vornehmen, für die *Id* Spalte. Bei der Erstellung der *Id* Spalte festlegen seiner **ist Identity** Eigenschaft auf "true", wodurch sie automatisch gefüllt werden soll.
+    Denken Sie daran, dass Sie für die *ID* -Spalte nichts eingeben müssen. Wenn Sie die *ID* -Spalte erstellt haben, legen Sie die Eigenschaft **ist Identity** auf true fest. Dies bewirkt, dass Sie automatisch ausgefüllt wird.
 
-    Wenn Sie die Dateneingabe abgeschlossen sind, wird der Tabellen-Designer wie folgt aussehen:
+    Wenn Sie mit der Eingabe der Daten fertig sind, sieht der Tabellen-Designer wie folgt aus:
 
-    ![[Image]](5-working-with-data/_static/image3.jpg)
-4. Schließen Sie die Registerkarte, die Daten in der Datenbank enthält.
+    ![Klang](5-working-with-data/_static/image3.jpg)
+4. Schließen Sie die Registerkarte, die die Datenbankdaten enthält.
 
 ## <a name="displaying-data-from-a-database"></a>Anzeigen von Daten aus einer Datenbank
 
-Nachdem Sie eine Datenbank mit Daten darin haben, können Sie die Daten in einer ASP.NET-Webseite anzeigen. Um die Zeilen der Tabelle anzuzeigenden auszuwählen, verwenden Sie eine SQL-Anweisung, um einen Befehl handelt, den Sie in der Datenbank zu übergeben.
+Wenn Sie über eine Datenbank mit Daten verfügen, können Sie die Daten auf einer ASP.NET-Webseite anzeigen. Zum Auswählen der anzuzeigenden Tabellenzeilen verwenden Sie eine SQL-Anweisung, bei der es sich um einen Befehl handelt, den Sie an die Datenbank übergeben.
 
-1. Klicken Sie im linken Bereich auf die **Dateien** Arbeitsbereich.
-2. Erstellen Sie im Stammverzeichnis der Website, eine neue CSHTML-Seite namens *ListProducts.cshtml*.
+1. Klicken Sie im linken Bereich auf den Arbeitsbereich **Dateien** .
+2. Erstellen Sie im Stammverzeichnis der Website eine neue cshtml-Seite mit dem Namen *listproducts. cshtml*.
 3. Ersetzen Sie das vorhandene Markup durch Folgendes:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample1.cshtml)]
 
-    Öffnen Sie in der ersten Codeblock, der *SmallBakery.sdf* -Datei (Datenbank), die Sie zuvor erstellt haben. Die `Database.Open` Methode setzt voraus, dass die *.sdf* Datei befindet sich in Ihrer Website *App\_Daten* Ordner. (Beachten Sie, die Sie nicht angeben müssen die *.sdf* Erweiterung &#8212; in der Tat, wenn Sie dies tun, die `Open` Methode funktioniert nicht.)
+    Im ersten Codeblock öffnen Sie die Datei " *smallbakery. sdf* " (Datenbank), die Sie zuvor erstellt haben. Bei der `Database.Open`-Methode wird davon ausgegangen, dass sich die *sdf* -Datei in der *App\_Daten* Ordner Ihrer Website befindet. (Beachten Sie, dass Sie die Erweiterung &#8212; " *. sdf* " nicht angeben müssen, wenn Sie dies tun, funktioniert die `Open` Methode nicht.)
 
     > [!NOTE]
-    > Die *App\_Daten* Ordner ist ein spezieller Ordner in ASP.NET, das zum Speichern von Datendateien verwendet wird. Weitere Informationen finden Sie unter [Verbindung mit einer Datenbank](#SB_ConnectingToADatabase) weiter unten in diesem Artikel.
+    > Der *App-\_Daten* Ordner ist ein spezieller Ordner in ASP.net, der zum Speichern von Datendateien verwendet wird. Weitere Informationen finden Sie weiter unten in diesem Artikel unter [Herstellen einer Verbindung mit einer Datenbank](#SB_ConnectingToADatabase) .
 
-    Stellen Sie dann eine Anforderung zum Abfragen der Datenbank, indem Sie den folgenden SQL `Select` Anweisung:
+    Anschließend führen Sie eine Anforderung zum Abfragen der Datenbank mithilfe der folgenden SQL `Select`-Anweisung aus:
 
     [!code-sql[Main](5-working-with-data/samples/sample2.sql)]
 
-    In der Anweisung `Product` identifiziert die Tabelle auf Abfrage. Die `*` Zeichen gibt an, dass die Abfrage alle Spalten aus der Tabelle zurückgeben soll. (Sie können auch Spalten einzeln auflisten durch Kommas getrennt, wenn Sie nur einige der Spalten finden Sie unter.) Die `Order By` -Klausel gibt an, wie die Daten sortiert werden soll &#8212; in diesem Fall durch die *Namen* Spalte. Dies bedeutet, dass die Daten alphabetisch basierend auf dem Wert sortiert werden die *Namen* Spalte für jede Zeile.
+    In der-Anweisung identifiziert `Product` die abzufragende Tabelle. Das `*` Zeichen gibt an, dass die Abfrage alle Spalten aus der Tabelle zurückgeben soll. (Sie können Spalten auch einzeln auflisten, die durch Kommas getrennt sind, wenn Sie nur einige der Spalten anzeigen möchten.) Die `Order By`-Klausel gibt an, wie die Daten &#8212; in diesem Fall in der Spalte *Name* sortiert werden sollen. Dies bedeutet, dass die Daten alphabetisch sortiert werden, basierend auf dem Wert der *Name* -Spalte für jede Zeile.
 
-    In den Text der Seite erstellt das Markup für eine HTML-Tabelle, die zum Anzeigen der Daten verwendet werden. In der `<tbody>` -Element, Sie verwenden eine `foreach` Schleife um einzeln auf jede Datenzeile abzurufen, die von der Abfrage zurückgegeben wird. Für jede Datenzeile, die Sie Erstellen einer Tabellenzeile HTML (`<tr>` Element). Anschließend erstellen Sie die HTML-Tabellenzellen (`<td>` Elemente) für jede Spalte. Jedes Mal, die Sie der Schleife wird durchlaufen die nächste verfügbare Zeile aus der Datenbank ist der `row` Variable (dies richten Sie der `foreach` Anweisung). Um eine einzelne Spalte aus der Zeile zu erhalten, können Sie `row.Name` oder `row.Description` oder alle der Name der Spalte ist Sie.
-4. Führen Sie die Seite in einem Browser. (Stellen Sie sicher, dass die Seite ist ausgewählt, der **Dateien** Arbeitsbereich vor der Ausführung.) Die Seite zeigt eine Liste wie folgt:
+    Im Text der Seite erstellt das Markup eine HTML-Tabelle, die zum Anzeigen der Daten verwendet wird. Innerhalb des `<tbody>`-Elements verwenden Sie eine `foreach`-Schleife, um jede Daten Zeile, die von der Abfrage zurückgegeben wird, einzeln zu erhalten. Für jede Daten Zeile erstellen Sie eine HTML-Tabellenzeile (`<tr>`-Element). Anschließend erstellen Sie HTML-Tabellenzellen (`<td>` Elemente) für jede Spalte. Jedes Mal, wenn Sie die Schleife durchlaufen, befindet sich die nächste verfügbare Zeile aus der Datenbank in der `row`-Variablen (Sie richten Sie in der `foreach`-Anweisung ein). Um eine einzelne Spalte aus der Zeile zu erhalten, können Sie `row.Name` oder `row.Description` oder den Namen der gewünschten Spalte verwenden.
+4. Führen Sie die Seite in einem Browser aus. (Stellen Sie sicher, dass die Seite im Arbeitsbereich " **Dateien** " ausgewählt ist, bevor Sie Sie ausführen.) Auf der Seite wird eine Liste wie die folgende angezeigt:
 
-    ![[Image]](5-working-with-data/_static/image4.jpg)
+    ![Klang](5-working-with-data/_static/image4.jpg)
 
 > [!TIP] 
 > 
-> **Strukturierte Abfragesprache (SQL)**
+> **Structured Query Language (SQL) (Strukturierte Abfragesprache (SQL))**
 > 
-> SQL ist eine Sprache, die in den meisten relationalen Datenbanken für die Verwaltung von Daten in einer Datenbank verwendet wird. Es enthält Befehle, mit denen Sie Daten abrufen und aktualisieren und, mit denen Sie erstellen, ändern und Verwalten von Datenbanktabellen. SQL unterscheidet sich von einer Programmiersprache (z. B. die Version, die Sie in WebMatrix verwenden), da mit SQL die Idee ist, dass Sie der Datenbank mitteilen, was Sie möchten, und es Aufgabe der Datenbank ist, um zu ermitteln, wie Sie die Daten abzurufen, oder führen Sie die Aufgabe. Hier sind Beispiele für einige SQL-Befehle und was sie tun:
+> SQL ist eine Sprache, die in den meisten relationalen Datenbanken zum Verwalten von Daten in einer Datenbank verwendet wird. Sie enthält Befehle, mit denen Sie Daten abrufen und aktualisieren und Datenbanktabellen erstellen, ändern und verwalten können. SQL unterscheidet sich von einer Programmiersprache (wie die, die Sie in webmatrix verwenden), denn bei SQL besteht die Idee darin, dass Sie der Datenbank mitteilen, was Sie möchten, und es ist die Aufgabe der Datenbank, herauszufinden, wie Sie die Daten erhalten oder die Aufgabe ausführen. Im folgenden finden Sie Beispiele für einige SQL-Befehle und deren Funktionsweise:
 > 
 > `SELECT Id, Name, Price FROM Product WHERE Price > 10.00 ORDER BY Name`
 > 
-> Abruft, dies die *Id*, *Namen*, und *Preis* Spalten aus der Datensätze in der *Produkt* Tabelle, wenn der Wert des *Preis* mehr als 10 ist, und gibt die Ergebnisse zurück, in alphabetischer Reihenfolge anhand der Werte von der *Namen* Spalte. Dieser Befehl gibt ein Resultset zurück, die die Datensätze, die die Kriterien oder eine leere Menge zu erfüllen enthält, wenn keine Datensätze entsprechen.
+> Dadurch werden die Spalten " *ID*", " *Name*" und " *Preis* " aus den Datensätzen in der Tabelle " *Product* " abgerufen, wenn der Wert von " *Price* " größer als 10 ist, und die Ergebnisse in alphabetischer Reihenfolge basierend auf den Werten der *namens* Spalte zurückgegeben Dieser Befehl gibt ein Resultset zurück, das die Datensätze enthält, die die Kriterien erfüllen, oder eine leere Menge, wenn keine Datensätze übereinstimmen.
 > 
 > `INSERT INTO Product (Name, Description, Price) VALUES ("Croissant", "A flaky delight", 1.99)`
 > 
-> Dies fügt einen neuen Datensatz in die *Produkt* Tabelle Festlegen der *Namen* Spalte &quot;Croissant&quot;, *Beschreibung* Spalte &quot; Ein unzuverlässiger begeistern&quot;, und der Preis, 1,99.
+> Dadurch wird ein neuer Datensatz in die Tabelle " *Product* " eingefügt, und die Spalte " *Name* " wird auf &quot;Croissant&quot;, die *Beschreibungs* Spalte, &quot;um eine schlanke Freude&quot;und den Preis auf 1,99 festzulegen.
 > 
 > `DELETE FROM Product WHERE ExpirationDate < "01/01/2008"`
 > 
-> Dieser Befehl löscht Datensätze in der *Produkt* Tabelle, deren Ablauf Datumsspalte älter als der 1. Januar 2008 ist. (Dies setzt voraus, dass die *Produkt* Tabelle besitzt eine solche Spalte natürlich.) Das Datum wird hier im Format MM/TT/JJJJ eingegeben, aber es muss angegeben werden, in dem Format, das für Ihr Gebietsschema verwendet wird.
+> Mit diesem Befehl werden Datensätze in der Tabelle " *Product* " gelöscht, deren Ablaufdatum-Spalte vor dem 1. Januar 2008 liegt. (Hierbei wird davon ausgegangen, dass die Tabelle " *Product* " natürlich eine solche Spalte enthält.) Das Datum wird hier im Format mm/dd/yyyy eingegeben, sollte jedoch in dem Format eingegeben werden, das für Ihr Gebiets Schema verwendet wird.
 > 
-> Die `Insert Into` und `Delete` Befehle keine Resultsets zurückgeben. Stattdessen geben sie eine Zahl, die Aufschluss darüber gibt, wie viele Datensätze betroffen sind, durch den Befehl zurück.
+> Die Befehle `Insert Into` und `Delete` geben keine Resultsets zurück. Stattdessen geben Sie eine Zahl zurück, die Aufschluss darüber gibt, wie viele Datensätze vom Befehl betroffen sind.
 > 
-> Für einige dieser Vorgänge (wie einfügen und Löschen von Datensätzen) wird der Prozess, der den Vorgang angefordert wird, die entsprechenden Berechtigungen verfügen, in der Datenbank aufweist. Dies ist deshalb für Produktionsdatenbanken, häufig müssen Benutzername und Kennwort angeben, wenn Sie eine Verbindung mit der Datenbank herstellen.
+> Für einige dieser Vorgänge (z. b. das Einfügen und Löschen von Datensätzen) muss der Prozess, der den Vorgang anfordert, über die entsprechenden Berechtigungen in der Datenbank verfügen. Aus diesem Grund müssen Sie bei Produktionsdatenbanken häufig einen Benutzernamen und ein Kennwort angeben, wenn Sie eine Verbindung mit der Datenbank herstellen.
 > 
-> Es gibt Dutzende von SQL-Befehle, aber sie alle folgen einem Muster wie folgt. Sie können SQL-Befehlen erstellen Sie die Datenbanktabellen, die Anzahl der Datensätze in einer Tabelle, Preise berechnen und viele weitere Vorgänge ausführen.
+> Es gibt Dutzende von SQL-Befehlen, aber alle folgen einem Muster wie diesem. Sie können SQL-Befehle zum Erstellen von Datenbanktabellen, zum zählen der Anzahl von Datensätzen in einer Tabelle, zum Berechnen der Preise und zum Ausführen von vielen weiteren Vorgängen verwenden.
 
-## <a name="inserting-data-in-a-database"></a>Einfügen von Daten in einer Datenbank
+## <a name="inserting-data-in-a-database"></a>Einfügen von Daten in eine Datenbank
 
-In diesem Abschnitt wird gezeigt, wie Sie eine Seite erstellen, die Benutzer auf ein neues Produkt hinzufügen können die *Produkt* Datenbanktabelle. Nachdem Sie ein neuen Produktdatensatz eingefügt wird, auf die Seite zeigt die aktualisierte Tabelle mithilfe der *ListProducts.cshtml* Seite, die Sie im vorherigen Abschnitt erstellt haben.
+In diesem Abschnitt wird gezeigt, wie Sie eine Seite erstellen, mit der Benutzer der *Product* Database-Tabelle ein neues Produkt hinzufügen können. Nachdem ein neuer Produktdaten Satz eingefügt wurde, zeigt die Seite die aktualisierte Tabelle mithilfe der Seite *listproducts. cshtml* an, die Sie im vorherigen Abschnitt erstellt haben.
 
-Die Seite enthält die Überprüfung, um sicherzustellen, dass die Daten, die der Benutzer gibt für die Datenbank gültig ist. Code auf der Seite wird beispielsweise sichergestellt, dass es sich bei ein Wert für alle erforderlichen Spalten eingegeben wurde.
+Die Seite enthält eine Überprüfung, um sicherzustellen, dass die vom Benutzer eingegebenen Daten für die Datenbank gültig sind. Beispielsweise stellt der Code auf der Seite sicher, dass ein Wert für alle erforderlichen Spalten eingegeben wurde.
 
-1. Erstellen Sie eine neue CSHTML-Datei mit dem Namen der Website *InsertProducts.cshtml*.
+1. Erstellen Sie auf der Website eine neue cshtml-Datei mit dem Namen *insertproducts. cshtml*.
 2. Ersetzen Sie das vorhandene Markup durch Folgendes:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample3.cshtml)]
 
-    Der Hauptteil der Seite enthält eine HTML-Formular mit drei Textfelder, mit denen Benutzer geben Sie einen Namen, Beschreibung und Preis. Wenn der Benutzer klicken auf die **einfügen** Schaltfläche am oberen Rand der Seite Code öffnet eine Verbindung mit der *SmallBakery.sdf* Datenbank. Sie rufen dann die Werte, die der Benutzer mit übermittelt hat die `Request` Objekt aus, und weisen Sie diese Werte zu lokalen Variablen.
+    Der Text der Seite enthält ein HTML-Formular mit drei Textfeldern, in denen Benutzer einen Namen, eine Beschreibung und einen Preis eingeben können. Wenn Benutzer auf die Schaltfläche **Einfügen** klicken, öffnet der Code oben auf der Seite eine Verbindung mit der Datenbank *smallbakery. sdf* . Anschließend erhalten Sie die vom Benutzer übermittelten Werte mithilfe des `Request` Objekts und weisen diese Werte lokalen Variablen zu.
 
-    Um zu überprüfen, dass der Benutzer einen Wert für jede erforderliche Spalte eingegeben haben, registrieren Sie jede `<input>` -Element, das Sie überprüfen möchten:
+    Um zu überprüfen, ob der Benutzer einen Wert für jede erforderliche Spalte eingegeben hat, registrieren Sie jedes `<input>` Element, das Sie überprüfen möchten:
 
     [!code-csharp[Main](5-working-with-data/samples/sample4.cs)]
 
-    Die `Validation` Helper überprüft, ob es ein Wert in jedes der Felder, die Sie registriert haben. Sie können testen, ob alle Felder anhand validiert `Validation.IsValid()`, die Sie in der Regel tun, bevor Sie die Informationen verarbeiten, Sie vom Benutzer erhalten:
+    Das `Validation`-Hilfsprogramm prüft, ob ein Wert in jedem der Felder vorhanden ist, die Sie registriert haben. Sie können testen, ob alle Felder die Validierung bestanden haben, indem Sie `Validation.IsValid()`überprüfen, was Sie in der Regel tun, bevor Sie die Informationen verarbeiten, die Sie vom Benutzer erhalten haben:
 
     [!code-csharp[Main](5-working-with-data/samples/sample5.cs)]
 
-    (Die `&&` bedeutet, dass Operator und – bei diesem Test wird *ist dies eine formularübertragung und alle Felder haben die Überprüfung bestanden*.)
+    (Der `&&`-Operator bedeutet, und – dieser Test ist, *Wenn es sich um eine Formular Übermittlung handelt und alle Felder die Validierung bestanden haben*.)
 
-    Wenn alle Spalten überprüft (keine war leer), Sie fahren Sie fort, und erstellen Sie eine SQL-Anweisung zum Einfügen der Daten, und führen sie dann, wie im folgenden gezeigt:
+    Wenn alle Spalten überprüft wurden (keine waren leer), erstellen Sie eine SQL-Anweisung, um die Daten einzufügen, und führen Sie Sie dann wie folgt aus:
 
     [!code-csharp[Main](5-working-with-data/samples/sample6.cs)]
 
-    Für die einzufügenden Werte, enthalten Sie Platzhalter für Parameter (`@0`, `@1`, `@2`).
+    Um die einzufügenden Werte einzuschließen, fügen Sie Parameter Platzhalter (`@0`, `@1``@2`) ein.
 
     > [!NOTE]
-    > Als Sicherheitsmaßnahme immer übergeben Sie Werte an eine SQL-Anweisung mit Parametern, wie Sie im vorherigen Beispiel sehen. Dies bietet Ihnen die Möglichkeit, die Daten des Benutzers zu überprüfen, und es schützt vor versuchen, schädliche Befehle mit der Datenbank (auch als SQL Injection-Angriffe bezeichnet) zu senden.
+    > Übergeben Sie als Sicherheitsmaßnahme immer Werte mithilfe von Parametern an eine SQL-Anweisung, wie im vorherigen Beispiel zu sehen. Dadurch haben Sie die Möglichkeit, die Daten des Benutzers zu überprüfen, und Sie schützen vor versuchen, bösartige Befehle an Ihre Datenbank zu senden (manchmal auch als Einschleusung von SQL-Befehlen bezeichnet).
 
-    Um die Abfrage auszuführen, verwenden Sie diese Anweisung, übergibt Sie an die Variablen, die die Werte als Ersatz für die Platzhalter enthalten:
+    Verwenden Sie diese Anweisung, um die Abfrage auszuführen, und übergeben Sie dabei die Variablen, die die Werte enthalten, die für die Platzhalter ersetzt werden sollen:
 
     [!code-csharp[Main](5-working-with-data/samples/sample7.cs)]
 
-    Nach der `Insert Into` -Anweisung ausgeführt wurde, die Sie zur Seite, die die Produkte, die über diese Befehlszeile führt den Benutzer senden:
+    Nachdem die `Insert Into`-Anweisung ausgeführt wurde, senden Sie den Benutzer an die Seite, auf der die Produkte aufgeführt werden, die diese Zeile verwenden:
 
     [!code-javascript[Main](5-working-with-data/samples/sample8.js)]
 
-    Wenn die Überprüfung nicht erfolgreich war, überspringen Sie die Einfügung. Stattdessen müssen Sie eine Hilfsprogramm, auf der Seite, die die akkumulierten Fehlermeldungen (falls vorhanden) angezeigt werden kann:
+    Wenn die Überprüfung nicht erfolgreich war, überspringen Sie die Einfügung. Stattdessen verfügen Sie über ein Hilfsprogramm auf der Seite, auf der die akkumulierten Fehlermeldungen (falls vorhanden) angezeigt werden können:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample9.cshtml)]
 
-    Beachten Sie, dass die Style-Block in das Markup mit dem Namen eine CSS-Klassendefinition enthält `.validation-summary-errors`. Dies ist der Name der CSS-Klasse, mit dem Standardwert für die `<div>` -Element, das sämtliche Validierungsfehler enthält. In diesem Fall die CSS-Klasse gibt, dass zusammenfassende Validierungsfehler in Rot angezeigt werden und in Fettdruck, aber Sie definieren können, die `.validation-summary-errors` Klasse, um anzuzeigen, alle Formatierungen, die Ihnen gefällt.
+    Beachten Sie, dass der Stilblock im Markup eine CSS-Klassendefinition mit dem Namen `.validation-summary-errors`enthält. Dies ist der Name der CSS-Klasse, die standardmäßig für das `<div>` Element verwendet wird, das Validierungs Fehler enthält. In diesem Fall gibt die CSS-Klasse an, dass Validierungs Zusammenfassungs Fehler rot und fett angezeigt werden. Sie können jedoch die `.validation-summary-errors` Klasse definieren, um beliebige Formatierungen anzuzeigen.
 
-### <a name="testing-the-insert-page"></a>Testen der Seite "Einfügen"
+### <a name="testing-the-insert-page"></a>Testen der Einfügeseite
 
-1. Die Seite in einem Browser anzeigen. Die Seite zeigt ein Formular, das dem ähnelt, die in der folgenden Abbildung angezeigt wird.
+1. Anzeigen der Seite in einem Browser. Auf der Seite wird ein Formular angezeigt, das dem in der folgenden Abbildung dargestellten Formular ähnelt.
 
-    ![[Image]](5-working-with-data/_static/image5.jpg)
-2. Geben Sie Werte für alle Spalten, aber stellen Sie sicher, dass Sie belassen die *Preis* Spalte leer.
-3. Klicken Sie auf **einfügen**. Die Seite zeigt eine Fehlermeldung an, wie in der folgenden Abbildung dargestellt. (Es wird kein neuer Datensatz erstellt.)
+    ![Klang](5-working-with-data/_static/image5.jpg)
+2. Geben Sie Werte für alle Spalten ein, stellen Sie jedoch sicher, dass Sie die *Preis* Spalte leer lassen.
+3. Klicken Sie auf **Einfügen**. Die Seite zeigt eine Fehlermeldung an, wie in der folgenden Abbildung dargestellt. (Es wird kein neuer Datensatz erstellt.)
 
-    ![[Image]](5-working-with-data/_static/image6.jpg)
-4. Füllen Sie das Formular vollständig, und klicken Sie dann auf **einfügen**. Dieses Mal die *ListProducts.cshtml* Seite wird angezeigt, und zeigt Sie den neuen Datensatz.
+    ![Klang](5-working-with-data/_static/image6.jpg)
+4. Füllen Sie das Formular vollständig aus, und klicken Sie dann auf **Einfügen**. Dieses Mal wird die Seite *listproducts. cshtml* angezeigt und zeigt den neuen Datensatz.
 
 ## <a name="updating-data-in-a-database"></a>Aktualisieren von Daten in einer Datenbank
 
-Nachdem die Daten in eine Tabelle eingegeben wurde, müssen Sie es aktualisieren. Dieses Verfahren zeigt, wie Sie zwei Seiten zu erstellen, die denen ähneln, die Sie zum Einfügen von Daten zuvor erstellt haben. Die erste Seite zeigt Produkte und ermöglicht Benutzern, die eine ändern auswählen. Die zweite Seite können die Benutzer tatsächlich die Bearbeitungen vornehmen und speichern Sie sie.
+Nachdem Daten in eine Tabelle eingegeben wurden, müssen Sie Sie möglicherweise aktualisieren. In diesem Verfahren wird gezeigt, wie Sie zwei Seiten erstellen, die denen ähneln, die Sie zuvor für das Einfügen von Daten erstellt haben. Die erste Seite zeigt Produkte an und ermöglicht es Benutzern, eine zu ändernde auszuwählen. Auf der zweiten Seite können die Benutzer die Änderungen vornehmen und speichern.
 
 > [!NOTE] 
 > 
-> **Wichtige** In eine Produktionswebsite, Sie in der Regel einschränken, wer darf hat, um die Daten zu ändern. Weitere Informationen über das Einrichten der Mitgliedschaft und zu Möglichkeiten, um Benutzern das Ausführen von Aufgaben auf der Website zu autorisieren, finden Sie unter [Hinzufügen von Sicherheit und die Mitgliedschaft in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202904).
+> **Wichtig** In einer Produktions Website beschränken Sie in der Regel, wer Änderungen an den Daten vornehmen darf. Informationen zum Einrichten der Mitgliedschaft und zu Methoden zum Autorisieren von Benutzern für die Ausführung von Aufgaben auf dem Standort finden Sie unter [Hinzufügen von Sicherheit und Mitgliedschaft zu einem ASP.net Web Pages-Standort](https://go.microsoft.com/fwlink/?LinkId=202904).
 
-1. Erstellen Sie eine neue CSHTML-Datei mit dem Namen der Website *EditProducts.cshtml*.
+1. Erstellen Sie auf der Website eine neue cshtml-Datei mit dem Namen *editproducts. cshtml*.
 2. Ersetzen Sie das vorhandene Markup in der Datei durch Folgendes:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample10.cshtml)]
 
-    Der einzige Unterschied zwischen dieser Seite und die *ListProducts.cshtml* Seite zuvor besteht, dass die HTML-Tabelle auf dieser Seite eine zusätzliche Spalte enthält, die zeigt eine **bearbeiten** Link. Wenn Sie diesen Link klicken, gelangen Sie zum dem *UpdateProducts.cshtml* -Seite (die Sie als Nächstes erstellen) in dem Sie den ausgewählten Datensatz bearbeiten können.
+    Der einzige Unterschied zwischen dieser Seite und der *listproducts. cshtml* -Seite von früher besteht darin, dass die HTML-Tabelle auf dieser Seite eine zusätzliche Spalte enthält, in der ein **Bearbeitungs** Link angezeigt wird. Wenn Sie auf diesen Link klicken, gelangen Sie zur Seite *updateproducts. cshtml* (die Sie als Nächstes erstellen), auf der Sie den ausgewählten Datensatz bearbeiten können.
 
-    Sehen Sie sich den Code, erstellt die **bearbeiten** Link:
+    Sehen Sie sich den Code an, der den **Bearbeitungs** Link erstellt:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample11.cshtml)]
 
-    Dadurch wird eine HTML erstellt `<a>` Element, dessen `href` Attribut dynamisch festgelegt ist. Die `href` Attribut gibt an, die Seite angezeigt wird, wenn der Benutzer auf den Link klickt. Sie übergibt außerdem die `Id` Wert der aktuellen Zeile, um den Link. Wenn die Seite ausgeführt wird, könnte den Quellcode der Seite Links wie diesen enthalten:
+    Dadurch wird ein HTML-`<a>` Element erstellt, dessen `href`-Attribut dynamisch festgelegt wird. Das `href`-Attribut gibt die Seite an, die angezeigt wird, wenn der Benutzer auf den Link klickt. Außerdem übergibt Sie den `Id` Wert der aktuellen Zeile an den Link. Wenn die Seite ausgeführt wird, enthält die Seitenquelle möglicherweise Links wie diese:
 
     [!code-html[Main](5-working-with-data/samples/sample12.html)]
 
-    Beachten Sie, dass die `href` -Attributsatz auf `UpdateProducts/n`, wobei *n* ist eine Produkt-Zahl. Wenn ein Benutzer einen dieser Links klickt, wird die resultierende URL etwa wie folgt aussehen:
+    Beachten Sie, dass das `href`-Attribut auf `UpdateProducts/n`festgelegt ist, wobei *n* eine Produktnummer ist. Wenn ein Benutzer auf einen dieser Links klickt, sieht die resultierende URL etwa wie folgt aus:
 
     `http://localhost:18816/UpdateProducts/6`
 
-    Das heißt, werden die Produktnummer, die bearbeitet werden, in der URL übergeben.
-3. Die Seite in einem Browser anzeigen. Die Seite zeigt die Daten in einem Format wie folgt:
+    Das heißt, die Produktnummer, die bearbeitet werden soll, wird in der URL übermittelt.
+3. Anzeigen der Seite in einem Browser. Auf der Seite werden die Daten in einem Format wie dem folgenden angezeigt:
 
-    ![[Image]](5-working-with-data/_static/image7.jpg)
+    ![Klang](5-working-with-data/_static/image7.jpg)
 
-    Als Nächstes erstellen Sie die Seite, die Benutzer tatsächlich die Daten aktualisieren können. Die Update-Seite umfasst eine Überprüfung der zum Überprüfen der Daten, die der Benutzer eingibt. Code auf der Seite wird beispielsweise sichergestellt, dass es sich bei ein Wert für alle erforderlichen Spalten eingegeben wurde.
-4. Erstellen Sie eine neue CSHTML-Datei mit dem Namen der Website *UpdateProducts.cshtml*.
-5. Ersetzen Sie das vorhandene Markup in der Datei durch Folgendes.
+    Als Nächstes erstellen Sie die Seite, mit der Benutzer die Daten tatsächlich aktualisieren können. Die Seite Update enthält eine Überprüfung, um die vom Benutzer eingegebenen Daten zu validieren. Beispielsweise stellt der Code auf der Seite sicher, dass ein Wert für alle erforderlichen Spalten eingegeben wurde.
+4. Erstellen Sie auf der Website eine neue cshtml-Datei mit dem Namen *updateproducts. cshtml*.
+5. Ersetzen Sie das vorhandene Markup in der Datei durch Folgendes:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample13.cshtml)]
 
-    Der Hauptteil der Seite enthält ein HTML-Formular, in denen ein Produkt angezeigt wird und in dem Sie Benutzer bearbeiten können. Rufen Sie das Produkt aus, um anzuzeigen, verwenden Sie diese SQL-Anweisung:
+    Der Text der Seite enthält ein HTML-Formular, in dem ein Produkt angezeigt wird und in dem Benutzer es bearbeiten können. Um das Produkt anzuzeigen, verwenden Sie diese SQL-Anweisung:
 
     [!code-sql[Main](5-working-with-data/samples/sample14.sql)]
 
-    Dies wird wählen Sie das Produkt, mit der ID entspricht den Wert, der übergeben wird, die `@0` Parameter. (Da *Id* ist die primary key- und aus diesem Grund muss eindeutig sein, kann nur eine Produktdatensatz jemals auf diese Weise ausgewählt werden.) Zum Abrufen der ID-Wert für die Übergabe dieser `Select` -Anweisung können Sie den Wert, der auf der Seite als Teil der URL übergeben wird, mit der folgenden Syntax lesen:
+    Dadurch wird das Produkt ausgewählt, dessen ID mit dem Wert übereinstimmt, der im `@0`-Parameter übergeben wird. (Da die *ID* der Primärschlüssel ist und daher eindeutig sein muss, kann immer nur ein Produktdaten Satz ausgewählt werden.) Um den ID-Wert zu erhalten, der an diese `Select`-Anweisung übergeben werden soll, können Sie den Wert, der an die Seite übergeben wird, als Teil der URL mithilfe der folgenden Syntax lesen:
 
     [!code-csharp[Main](5-working-with-data/samples/sample15.cs)]
 
-    Um den Datensatz tatsächlich zu abzurufen, verwenden Sie die `QuerySingle` -Methode, die nur ein Datensatz zurückgeben:
+    Um den Produktdaten Satz tatsächlich abzurufen, verwenden Sie die `QuerySingle`-Methode, die nur einen Datensatz zurückgibt:
 
     [!code-csharp[Main](5-working-with-data/samples/sample16.cs)]
 
-    Die einzelne Zeile zurückgegeben wird, in der `row` Variable. Sie können Abrufen von Daten aus jeder Spalte, und weisen sie Sie lokale Variablen wie folgt:
+    Die einzelne Zeile wird an die `row` Variable zurückgegeben. Sie können Daten aus jeder Spalte heraus erhalten und Sie wie folgt lokalen Variablen zuweisen:
 
     [!code-csharp[Main](5-working-with-data/samples/sample17.cs)]
 
-    Im Markup für das Formular werden diese Werte automatisch in einzelne Textfelder angezeigt, mit eingebettetem Code wie folgt:
+    Im Markup für das Formular werden diese Werte automatisch in einzelnen Textfeldern angezeigt, indem eingebetteter Code wie der folgende verwendet wird:
 
     [!code-html[Main](5-working-with-data/samples/sample18.html)]
 
-    Dieser Teil des Codes zeigt den Datensatz aktualisiert werden. Nachdem der Datensatz angezeigt wurde, kann der Benutzer die einzelne Spalten bearbeiten.
+    Dieser Teil des Codes zeigt den zu aktualisierenden Produktdaten Satz an. Nachdem der Datensatz angezeigt wurde, kann der Benutzer einzelne Spalten bearbeiten.
 
-    Wenn der Benutzer das Formular übermittelt, indem Sie auf die **Update** Schaltfläche den Code in die `if(IsPost)` -Block ausgeführt. Hiermit wird der Benutzer Werte aus der `Request` -Objekt, werden die Werte in Variablen gespeichert und validiert, dass jede Spalte gefüllt wurde. Wenn die Validierung erfolgreich war, erstellt der Code die folgende SQL-Update-Anweisung aus:
+    Wenn der Benutzer das Formular durch Klicken auf die Schaltfläche **Aktualisieren** sendet, wird der Code im `if(IsPost)`-Block ausgeführt. Dadurch werden die Werte des Benutzers aus dem `Request` Objekt abgerufen, die Werte werden in Variablen gespeichert, und es wird überprüft, ob die einzelnen Spalten ausgefüllt wurden. Wenn die Überprüfung bestanden wird, erstellt der Code die folgende SQL-Update-Anweisung:
 
     [!code-sql[Main](5-working-with-data/samples/sample19.sql)]
 
-    In einer SQL `Update` -Anweisung, die jede Spalte zu aktualisieren und den Wert auf festgelegt ist, dass Angabe. In diesem Code werden die Werte angegeben, über die Parameterplatzhalter `@0`, `@1`, `@2`und so weiter. (Wie bereits erwähnt aus Sicherheitsgründen sollten Sie immer Werte für eine SQL-Anweisung übergeben mithilfe von Parametern.)
+    In einer SQL `Update`-Anweisung geben Sie jede zu Aktualisier gende Spalte und den Wert an, auf den Sie festgelegt werden soll. In diesem Code werden die Werte mithilfe der Parameter Platzhalter `@0`, `@1`, `@2`usw. angegeben. (Wie bereits erwähnt, sollten Sie aus Sicherheitsgründen immer Werte mithilfe von Parametern an eine SQL-Anweisung übergeben.)
 
-    Beim Aufrufen der `db.Execute` -Methode übergeben Sie die Variablen, die die Werte in der Reihenfolge enthalten, die die Parameter in der SQL-Anweisung entspricht:
+    Wenn Sie die `db.Execute`-Methode aufzurufen, übergeben Sie die Variablen, die die Werte enthalten, in der Reihenfolge, die den Parametern in der SQL-Anweisung entspricht:
 
     [!code-csharp[Main](5-working-with-data/samples/sample20.cs)]
 
-    Nach der `Update` Anweisung ausgeführt wurde, rufen Sie die folgende Methode, um den Benutzer zurück an die Seite "Bearbeiten" umleiten:
+    Nachdem die `Update`-Anweisung ausgeführt wurde, wird die folgende Methode aufgerufen, um den Benutzer zurück zur Bearbeitungsseite zu leiten:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample21.cshtml)]
 
-    Der Effekt ist, dass der Benutzer eine aktualisierte Liste der Daten in der Datenbank sieht und ein anderes Produkt bearbeiten kann.
+    Dies hat den Effekt, dass dem Benutzer eine aktualisierte Auflistung der Daten in der Datenbank angezeigt wird und ein anderes Produkt bearbeitet werden kann.
 6. Speichern Sie die Seite.
-7. Führen Sie die *EditProducts.cshtml* Seite (nicht der Update-Seite), und klicken Sie dann auf **bearbeiten** ein Produkts zum Bearbeiten auswählen. Die *UpdateProducts.cshtml* angezeigt wird, den ausgewählte Datensatz angezeigt.
+7. Führen Sie die Seite *editproducts. cshtml* (nicht die Seite aktualisieren) aus, und klicken Sie dann auf **Bearbeiten** , um das zu bearbeitende Produkt auszuwählen. Die Seite *updateproducts. cshtml* wird angezeigt und zeigt den Datensatz an, den Sie ausgewählt haben.
 
-    ![[Image]](5-working-with-data/_static/image8.jpg)
-8. Eine Änderung vornehmen, und klicken Sie auf **Update**. Die Liste der Produkte ist mit den aktualisierten Daten erneut angezeigt.
+    ![Klang](5-working-with-data/_static/image8.jpg)
+8. Nehmen Sie eine Änderung vor, und klicken Sie auf **Aktualisieren**. Die Produktliste wird erneut mit den aktualisierten Daten angezeigt.
 
 ## <a name="deleting-data-in-a-database"></a>Löschen von Daten in einer Datenbank
 
-In diesem Abschnitt wird gezeigt, wie Benutzer ein Produkt aus löschen lassen die *Produkt* Datenbanktabelle. Das Beispiel besteht aus zwei Seiten. Wählen Sie in der ersten Seite Benutzer einen Datensatz zu löschen. Der zu löschenden Datensatz wird in einer zweiten Seite angezeigt, mit dem sie bestätigen, dass sie den Datensatz löschen möchten.
+In diesem Abschnitt wird gezeigt, wie Sie Benutzern das Löschen eines Produkts aus der Tabelle " *Product* Database" gestatten. Das Beispiel besteht aus zwei Seiten. Auf der ersten Seite wählen Benutzer einen Datensatz aus, der gelöscht werden soll. Der zu löschende Datensatz wird dann auf einer zweiten Seite angezeigt, auf der Sie bestätigen können, dass Sie den Datensatz löschen möchten.
 
 > [!NOTE] 
 > 
-> **Wichtige** In eine Produktionswebsite, Sie in der Regel einschränken, wer darf hat, um die Daten zu ändern. Weitere Informationen über das Einrichten der Mitgliedschaft und zu Möglichkeiten, Benutzer zur Ausführung von Aufgaben auf der Website zu autorisieren, finden Sie unter [Hinzufügen von Sicherheit und die Mitgliedschaft in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202904).
+> **Wichtig** In einer Produktions Website beschränken Sie in der Regel, wer Änderungen an den Daten vornehmen darf. Weitere Informationen zum Einrichten der Mitgliedschaft und zu den Möglichkeiten, den Benutzer zum Ausführen von Aufgaben auf dem Standort zu autorisieren, finden Sie unter [Hinzufügen von Sicherheit und Mitgliedschaft zu einem ASP.net Web Pages-Standort](https://go.microsoft.com/fwlink/?LinkId=202904).
 
-1. Erstellen Sie eine neue CSHTML-Datei mit dem Namen der Website *ListProductsForDelete.cshtml*.
+1. Erstellen Sie auf der Website eine neue cshtml-Datei mit dem Namen *listproductfordelete. cshtml*.
 2. Ersetzen Sie das vorhandene Markup durch Folgendes:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample22.cshtml)]
 
-    Diese Seite ähnelt der *EditProducts.cshtml* Seite aus. Aber anstatt einer **bearbeiten** Link für jedes Produkt, es zeigt eine **löschen** Link. Die **löschen** Link wird erstellt, mit dem folgenden eingebetteten Code in das Markup:
+    Diese Seite ähnelt der Seite *editproducts. cshtml* von oben. Anstatt jedoch für jedes Produkt einen **Bearbeitungs** Link anzuzeigen, wird ein Link zum **Löschen** angezeigt. Der Link **Löschen** wird mithilfe des folgenden eingebetteten Codes im Markup erstellt:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample23.cshtml)]
 
-    Erstellt eine URL, die wie folgt aussieht, wenn Benutzer auf den Link klicken:
+    Dadurch wird eine URL erstellt, die wie folgt aussieht, wenn Benutzer auf den Link klicken:
 
     `http://<server>/DeleteProduct/4`
 
-    Die URL aufruft, eine Seite namens *DeleteProduct.cshtml* (die Sie als Nächstes erstellen) und übergibt sie die ID des Produkts zu löschenden (in diesem Fall 4).
-3. Speichern Sie die Datei, aber lassen Sie es offen.
-4. Erstellen Sie eine andere CHTML-Datei, die mit dem Namen *DeleteProduct.cshtml*. Ersetzen Sie den vorhandenen Inhalt durch Folgendes:
+    Die URL Ruft eine Seite mit dem Namen *deleteProduct. cshtml* auf (die Sie als Nächstes erstellen) und übergibt sie an die ID des zu löschenden Produkts (hier 4).
+3. Speichern Sie die Datei, lassen Sie Sie jedoch geöffnet.
+4. Erstellen Sie eine weitere cHTML-Datei mit dem Namen *deleteProduct. cshtml*. Ersetzen Sie den vorhandenen Inhalt durch Folgendes:
 
     [!code-cshtml[Main](5-working-with-data/samples/sample24.cshtml)]
 
-    Auf dieser Seite wird aufgerufen, indem *ListProductsForDelete.cshtml* und ermöglicht Benutzern, die bestätigen, dass sie ein Produkt löschen möchten. Um das Produkt zu löschenden aufzulisten, erhalten Sie die ID des Produkts aus der URL löschen mit dem folgenden Code:
+    Diese Seite wird von *listproductfordelete. cshtml* aufgerufen und ermöglicht Benutzern die Bestätigung, dass Sie ein Produkt löschen möchten. Um das zu löschende Produkt aufzulisten, erhalten Sie die ID des Produkts, das aus der URL gelöscht werden soll, indem Sie den folgenden Code verwenden:
 
     [!code-csharp[Main](5-working-with-data/samples/sample25.cs)]
 
-    Die Seite muss der Benutzer auf eine Schaltfläche, um den Datensatz zu löschen. Dies ist eine wichtige Maßnahme: bei der Sie sicherheitsrelevante Vorgänge in Ihre Website aktualisieren oder Löschen von Daten ausführen, diese Vorgänge sollte immer erfolgen, verwenden einen POST-Vorgang, einen GET-Vorgang. Wenn Ihre Website festgelegt ist, damit Sie ein Löschvorgang mithilfe einer GET-Operation ausgeführt werden kann, kann jeder Benutzer eine URL wie übergeben `http://<server>/DeleteProduct/4` und beliebige Änderungen aus der Datenbank zu löschen. Hinzufügen von der Bestätigung, und Programmieren die Seite, damit der Löschvorgang ausgeführt werden kann, nur mithilfe eines BEITRAGS, fügen Sie ein Maß an Sicherheit zu Ihrer Website.
+    Die Seite fordert den Benutzer auf, auf eine Schaltfläche zu klicken, um den Datensatz tatsächlich zu löschen. Dies ist eine wichtige Sicherheitsmaßnahme: Wenn Sie auf Ihrer Website vertrauliche Vorgänge ausführen, wie z. b. das Aktualisieren oder Löschen von Daten, sollten diese Vorgänge immer mit einem Post-Vorgang erfolgen, nicht mit einem Get-Vorgang. Wenn Ihre Website so eingerichtet ist, dass ein Löschvorgang mit einem Get-Vorgang ausgeführt werden kann, kann jeder Benutzer eine URL wie `http://<server>/DeleteProduct/4` übergeben und alle gewünschten Elemente aus der Datenbank löschen. Indem Sie die Bestätigung hinzufügen und die Seite so codieren, dass der Löschvorgang nur mithilfe eines Beitrags durchgeführt werden kann, fügen Sie Ihrer Website ein Maß an Sicherheit hinzu.
 
-    Mit dem folgenden Code, der zuerst bestätigt, dass dies eine Post-Vorgang ist und die ID nicht leer ist, ist der eigentliche Löschvorgang erfolgt:
+    Der tatsächliche Löschvorgang wird mithilfe des folgenden Codes durchgeführt, der zuerst bestätigt, dass es sich um einen Post-Vorgang handelt und die ID nicht leer ist:
 
     [!code-csharp[Main](5-working-with-data/samples/sample26.cs)]
 
-    Der Code ausgeführt wird, eine SQL­Anweisung, die löscht den angegebenen Datensatz und leitet Sie dann den Benutzer zurück auf die Angebotsseite.
-5. Führen Sie *ListProductsForDelete.cshtml* in einem Browser.
+    Der Code führt eine SQL-Anweisung aus, mit der der angegebene Datensatz gelöscht wird, und leitet den Benutzer dann zurück zur Auflistungs Seite.
+5. Führen Sie *listproductfordelete. cshtml* in einem Browser aus.
 
-    ![[Image]](5-working-with-data/_static/image9.jpg)
-6. Klicken Sie auf die **löschen** Link für eines der Produkte. Die *DeleteProduct.cshtml* Seite wird angezeigt, um sicherzustellen, dass Sie diesen Datensatz löschen möchten.
-7. Klicken Sie auf die **löschen** Schaltfläche. Der Produktdatensatz gelöscht, und die Seite mit einer aktualisierten Produktliste aktualisiert wird.
+    ![Klang](5-working-with-data/_static/image9.jpg)
+6. Klicken Sie auf den Link **Löschen** für eines der Produkte. Die Seite *deleteProduct. cshtml* wird angezeigt, um zu bestätigen, dass Sie diesen Datensatz löschen möchten.
+7. Klicken Sie auf die Schaltfläche **Löschen** . Der Produktdaten Satz wurde gelöscht, und die Seite wird mit einer aktualisierten Produktliste aktualisiert.
 
 > [!TIP]
 > 
 > <a id="SB_ConnectingToADatabase"></a>
 > ### <a name="connecting-to-a-database"></a>Herstellen einer Verbindung mit einer Datenbank
 > 
-> Sie können in einer Datenbank auf zwei Arten verbinden. Die erste ist die Verwendung der `Database.Open` Methode und den Namen der Datenbankdatei angeben (weniger die *.sdf* Erweiterung):
+> Sie können auf zwei Arten eine Verbindung mit einer Datenbank herstellen. Der erste besteht darin, die `Database.Open`-Methode zu verwenden und den Namen der Datenbankdatei anzugeben (abzüglich der Erweiterung *. sdf* ):
 > 
 > `var db = Database.Open("SmallBakery");`
 > 
-> Die `Open` Methode setzt voraus, dass die. *Sdf* Datei befindet sich in der Website *App\_Daten* Ordner. Dieser Ordner dient speziell für die Aufnahme von Daten. Beispielsweise kann die erforderlichen Berechtigungen zum Zulassen der Website zu lesen und Schreiben von Daten, und als Sicherheitsmaßnahme WebMatrix lässt keinen Zugriff auf Dateien aus diesem Ordner.
+> Die `Open`-Methode geht davon aus, dass die. die *sdf* -Datei befindet sich im *App-\_Daten* Ordner der Website. Dieser Ordner wurde speziell für die Speicherung von Daten entwickelt. Sie verfügt z. b. über die entsprechenden Berechtigungen, damit die Website Daten lesen und schreiben kann. als Sicherheitsmaßnahme gestattet webmatrix keinen Zugriff auf Dateien aus diesem Ordner.
 > 
-> Die zweite Möglichkeit ist die Verwendung eine Verbindungszeichenfolge. Eine Verbindungszeichenfolge enthält Informationen zum Herstellen einer Verbindung mit einer Datenbank. Dies kann einen Dateipfad einschließen, oder er kann den Namen einer SQL Server-Datenbank auf einem lokalen oder remote-Server, zusammen mit einem Benutzernamen und Kennwort für die Verbindung zu diesem Server enthalten. (Wenn Sie Daten in einer zentral verwalteten Version von SQL Server speichern, verwenden z. B. am Standort eines Hostinganbieters, Sie immer eine Verbindungszeichenfolge auf die Datenbank-Verbindungsinformationen angeben.)
+> Die zweite Möglichkeit besteht darin, eine Verbindungs Zeichenfolge zu verwenden. Eine Verbindungs Zeichenfolge enthält Informationen zum Herstellen einer Verbindung mit einer Datenbank. Dies kann einen Dateipfad enthalten, oder er kann den Namen einer SQL Server Datenbank auf einem lokalen Server oder Remote Server enthalten, zusammen mit einem Benutzernamen und einem Kennwort, um eine Verbindung mit dem Server herzustellen. (Wenn Sie Daten in einer zentral verwalteten Version von SQL Server aufbewahren, z. b. auf der Website eines hostinganbieters, verwenden Sie immer eine Verbindungs Zeichenfolge, um die Daten bankverbindungs Informationen anzugeben.)
 > 
-> In WebMatrix werden Verbindungszeichenfolgen in der Regel in einer XML-Datei mit dem Namen gespeichert *"Web.config"* . Wie der Name schon sagt, können Sie eine *"Web.config"* Datei im Stammverzeichnis Ihrer Website in der Website-Konfigurationsinformationen, einschließlich Verbindungszeichenfolgen, die Ihre Site muss möglicherweise zu speichern. Ein Beispiel für eine Verbindungszeichenfolge in einer *"Web.config"* Datei könnte folgendermaßen aussehen:
+> In webmatrix werden Verbindungs Zeichenfolgen in der Regel in einer XML-Datei mit dem Namen *Web. config*gespeichert. Wie der Name schon sagt, können Sie eine *Web. config* -Datei im Stammverzeichnis Ihrer Website verwenden, um die Konfigurationsinformationen für die Website zu speichern, einschließlich aller Verbindungs Zeichenfolgen, die für Ihre Website erforderlich sind. Ein Beispiel für eine Verbindungs Zeichenfolge in einer *Web. config* -Datei könnte wie folgt aussehen:
 > 
 > [!code-xml[Main](5-working-with-data/samples/sample27.xml)]
 > 
-> Im Beispiel die Verbindungszeichenfolge verweist, in einer Datenbank in einer Instanz von SQL Server, die auf einem Server an einer beliebigen Stelle ausgeführt wird (im Gegensatz zu einer lokalen *.sdf* Datei). Müssen Sie die entsprechenden Namen für ersetzen `myServer` und `myDatabase`, und geben Sie Werte von SQL Server-Anmeldung für `username` und `password`. (Die Werte für Benutzername und Kennwort sind nicht unbedingt gleich als Ihre Windows-Anmeldeinformationen oder die Werte, die Ihr Hostinganbieter Sie zum Anmelden an ihren Servern erhalten haben. Überprüfen Sie mit dem Administrator die genauen Werte, die Sie benötigen.)
+> In dem Beispiel verweist die Verbindungs Zeichenfolge auf eine Datenbank in einer Instanz von SQL Server die auf einem Server irgendwo ausgeführt wird (im Gegensatz zu einer lokalen *sdf* -Datei). Sie müssen die entsprechenden Namen für `myServer` und `myDatabase`ersetzen und SQL Server Anmelde Werte für `username` und `password`angeben. (Die Werte für Benutzername und Kennwort sind nicht notwendigerweise identisch mit Ihren Windows-Anmelde Informationen oder den Werten, die Ihr Hostinganbieter Ihnen zur Anmeldung bei ihren Servern erteilt hat. Wenden Sie sich an den Administrator, um genau die benötigten Werte zu ermitteln.)
 > 
-> Die `Database.Open` Methode ist flexibel, da sie entweder den Namen einer Datenbank übergeben können *.sdf* Datei oder den Namen einer Verbindungszeichenfolge, die in gespeichert ist die *"Web.config"* Datei. Im folgenden Beispiel wird das Herstellen einer Verbindung mit der Datenbank mithilfe der Verbindungszeichenfolge, die im vorherigen Beispiel gezeigt:
+> Die `Database.Open`-Methode ist flexibel, da Sie entweder den Namen einer Datenbank *. sdf* -Datei oder den Namen einer Verbindungs Zeichenfolge übergeben können, die in der Datei *Web. config* gespeichert ist. Im folgenden Beispiel wird gezeigt, wie mit der Verbindungs Zeichenfolge, die im vorherigen Beispiel veranschaulicht wurde, eine Verbindung mit der Datenbank hergestellt wird
 > 
 > [!code-cshtml[Main](5-working-with-data/samples/sample28.cshtml)]
 > 
-> Wie bereits erwähnt, die `Database.Open` Methode können Sie entweder ein Datenbankname oder eine Verbindungszeichenfolge übergeben und es werden ermitteln, was Sie verwenden. Dies ist sehr nützlich, bei der Bereitstellung (veröffentlichen) Ihrer Website. Können Sie eine *.sdf* Datei die *App\_Daten* Ordners beim Entwickeln und Testen Ihrer Website. Wenn Sie Ihre Website auf einem Produktionsserver verschieben, können Sie eine Verbindungszeichenfolge im Verwenden der *"Web.config"* -Datei mit dem gleichen Namen wie Ihre *.sdf* Datei, aber verweist auf des Hostinganbieters &#8212;ohne den Code ändern müssen.
+> Wie bereits erwähnt, können Sie mit der `Database.Open`-Methode entweder einen Datenbanknamen oder eine Verbindungs Zeichenfolge übergeben und ermitteln, welche verwendet werden soll. Dies ist sehr nützlich, wenn Sie Ihre Website bereitstellen (veröffentlichen). Wenn Sie Ihre Website entwickeln und testen, können Sie eine *sdf* -Datei im *\_Daten* Ordner der App verwenden. Wenn Sie Ihre Website dann auf einen Produktionsserver verschieben, können Sie eine Verbindungs Zeichenfolge in der Datei " *Web. config* " verwenden, die den gleichen Namen wie die *sdf* -Datei hat, aber auf die &#8212; Datenbank des hostinganbieters verweist, ohne den Code ändern zu müssen.
 > 
-> Abschließend sollten Sie direkt mit einer Verbindungszeichenfolge zu arbeiten, können rufen Sie die `Database.OpenConnectionString` Methode und übergeben sie die tatsächliche Verbindungszeichenfolge anstatt nur der Name eines solchen Objekts in der *"Web.config"* Datei. Dies ist möglicherweise hilfreich in Situationen, in dem aus irgendeinem Grund Sie keinen Zugriff auf die Verbindungszeichenfolge (oder Werte, z. B. die *.sdf* Dateiname), bis die Seite ausgeführt wird. Allerdings in den meisten Fällen können Sie `Database.Open` wie in diesem Artikel beschrieben.
+> Wenn Sie zum Schluss direkt mit einer Verbindungs Zeichenfolge arbeiten möchten, können Sie die `Database.OpenConnectionString`-Methode und die tatsächliche Verbindungs Zeichenfolge anstelle des Namens eines in der Datei " *Web. config* " übergeben. Dies kann in Situationen nützlich sein, in denen Sie aus irgendeinem Grund keinen Zugriff auf die Verbindungs Zeichenfolge haben (oder Werte darin, wie z *. b. den. sdf* -Dateinamen), bis die Seite ausgeführt wird. In den meisten Szenarien können Sie jedoch `Database.Open` verwenden, wie in diesem Artikel beschrieben.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/2008/en/us/compact.aspx)
-- [Herstellen einer Verbindung mit einer SQL Server- oder MySQL-Datenbank in WebMatrix](https://go.microsoft.com/fwlink/?LinkId=208661)
+- [Herstellen einer Verbindung mit einer SQL Server-oder MySQL-Datenbank in webmatrix](https://go.microsoft.com/fwlink/?LinkId=208661)
 - [Überprüfen der Benutzereingabe in ASP.NET Web Pages-Websites](https://go.microsoft.com/fwlink/?LinkId=253002)

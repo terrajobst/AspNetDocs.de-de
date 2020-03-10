@@ -9,11 +9,11 @@ ms.assetid: 2b251c82-77cf-4e36-baa9-b648eddaa394
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c3cacaddb7e9b493ba39718f41dcaab360d36fd9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74580707"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78478425"
 ---
 # <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>Benutzerabhängiges Beschränken von Datenänderungsfunktionen (C#)
 
@@ -194,7 +194,7 @@ In diesem Tutorial verarbeitet die ASP.NET-Seite alle Logik in Bezug auf die Inf
 
 Diese Überprüfungen der BLL-Schicht sind hier nicht enthalten, da die Rechte des Benutzers in unserem Tutorial durch eine Dropdown List auf der Seite bestimmt werden, auf die die BLL-Klassen nicht zugreifen können. Bei Verwendung des Mitgliedschafts Systems oder eines der Standard Authentifizierungs Schemas, die von ASP.NET bereitgestellt werden (z. b. Windows-Authentifizierung), kann der Zugriff auf die Informationen und Rollen Informationen des aktuell angemeldeten Benutzers über die BLL erfolgen, wodurch ein solcher Zugriff möglich ist. auf der Präsentations-und der BLL-Ebene können Rechte überprüft werden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die meisten Websites, die Benutzerkonten bereitstellen, müssen die Daten Änderungs Schnittstelle basierend auf dem angemeldeten Benutzer anpassen. Administratoren können möglicherweise jeden Datensatz löschen und bearbeiten, während Benutzer ohne Administrator Beschränkung darauf beschränkt sind, nur die von Ihnen erstellten Datensätze zu aktualisieren oder zu löschen. Je nach Szenario kann es sein, dass die Klassen Data Web Controls, ObjectDataSource und Business Logic Layer erweitert werden können, um bestimmte Funktionen auf der Grundlage des angemeldeten Benutzers hinzuzufügen oder zu verweigern. In diesem Tutorial wurde erläutert, wie Sie die sichtbaren und bearbeitbaren Daten begrenzen können, je nachdem, ob der Benutzer einem bestimmten Lieferanten zugeordnet wurde oder ob er für unser Unternehmen tätig war.
 
@@ -202,7 +202,7 @@ In diesem Tutorial wird die Untersuchung des Einfügens, Aktualisierens und Lös
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

@@ -1,23 +1,23 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/index
-title: Benutzeroberflächen, Layouts und Designs | Microsoft-Dokumentation
+title: Benutzeroberfläche, Layouts und Designs | Microsoft-Dokumentation
 author: rick-anderson
-description: Informationen zum Anpassen der UI-Website in einer ASP.NET Web Pages-Anwendung.
+description: So passen Sie die Website-Benutzeroberfläche in einer ASP.net Web Pages Anwendung an
 ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: d7ec6e8a-3e05-4c0d-9207-d17a49f9a64d
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes
 msc.type: chapter
 ms.openlocfilehash: 8ae3e20f24f2d1bef39ff44ff15bdab212583310
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133948"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518667"
 ---
 # <a name="ui-layouts-and-themes"></a>Benutzeroberflächen, Layouts und Designs
 
-> Informationen zum Anpassen der UI-Website in einer ASP.NET Web Pages-Anwendung.
+> So passen Sie die Website-Benutzeroberfläche in einer ASP.net Web Pages Anwendung an
 
 - [Arbeiten mit Formularen](4-working-with-forms.md)
 - [Überprüfen der Benutzereingabe in ASP.NET Web Pages-Websites](validating-user-input-in-aspnet-web-pages-sites.md)

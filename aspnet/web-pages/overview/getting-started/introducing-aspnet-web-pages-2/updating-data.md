@@ -1,122 +1,122 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
-title: 'Einführung in ASP.NET Web Pages: Aktualisieren von DatenbankenDaten | Microsoft-Dokumentation'
+title: Einführung in ASP.net Web Pages Aktualisieren von Datenbankdaten | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial erfahren Sie, wie (ändern) einer vorhandenen Datenbank-Eintrag aktualisiert, bei der Verwendung von ASP.NET Web Pages (Razor). Es wird vorausgesetzt, Sie haben die Reihe te...
+description: In diesem Tutorial wird gezeigt, wie Sie einen vorhandenen Datenbankeintrag aktualisieren (ändern), wenn Sie ASP.net Web Pages (Razor) verwenden. Dabei wird davon ausgegangen, dass Sie die Reihe...
 ms.author: riande
 ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
 ms.openlocfilehash: 8f8bcfb7d9d2416a2699776cadbdaae8e12415ba
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131793"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78463491"
 ---
-# <a name="introducing-aspnet-web-pages---updating-database-data"></a>Einführung in ASP.NET Web Pages: Aktualisieren von DatenbankenDaten
+# <a name="introducing-aspnet-web-pages---updating-database-data"></a>Einführung in ASP.net Web Pages Aktualisieren von Datenbankdaten
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Tutorial erfahren Sie, wie (ändern) einer vorhandenen Datenbank-Eintrag aktualisiert, bei der Verwendung von ASP.NET Web Pages (Razor). Es wird vorausgesetzt, Sie haben die Reihe über [eingeben von Daten von mithilfe von Formularen mithilfe von ASP.NET Web Pages](entering-data.md).
+> In diesem Tutorial wird gezeigt, wie Sie einen vorhandenen Datenbankeintrag aktualisieren (ändern), wenn Sie ASP.net Web Pages (Razor) verwenden. Dabei wird davon ausgegangen, dass Sie die Reihe durch die [Eingabe von Daten mithilfe von Formularen mit ASP.net Web Pages](entering-data.md)abgeschlossen haben.
 > 
 > Sie lernen Folgendes:
 > 
-> - Gewusst wie: Wählen Sie einen einzelnen Datensatz in die `WebGrid` Helper.
-> - So lesen Sie einen einzelnen Datensatz aus einer Datenbank.
-> - Wie Sie ein Formular mit Werten aus den Datenbank-Datensatz vorab zu laden.
-> - Wie Sie einen vorhandenen Datensatz in einer Datenbank zu aktualisieren.
-> - Informationen zum Speichern von Informationen auf der Seite, ohne es anzuzeigen.
-> - So verwenden Sie ein ausgeblendetes Feld zum Speichern von Informationen.
+> - Auswählen eines einzelnen Datensatzes in der `WebGrid`-Hilfsprogramm.
+> - Lesen eines einzelnen Datensatzes aus einer Datenbank.
+> - Vorab Laden eines Formulars mit Werten aus dem Datenbankdaten Satz.
+> - Aktualisieren eines vorhandenen Datensatzes in einer Datenbank.
+> - Informationen zum Speichern von Informationen auf der Seite, ohne diese anzuzeigen.
+> - Verwenden eines ausgeblendeten Felds zum Speichern von Informationen.
 >   
 > 
-> Features/Technologien erläutert:
+> Erörterte Features und Technologien:
 > 
-> - Die `WebGrid` Helper.
-> - Die SQL-Anweisung `Update` Befehl.
+> - Das `WebGrid`-Hilfsprogramm.
+> - Der SQL `Update`-Befehl.
 > - Die `Database.Execute` -Methode.
 > - Ausgeblendete Felder (`<input type="hidden">`).
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
-Im vorherigen Tutorial haben Sie gelernt, wie eine Datenbank einen Datensatz hinzufügen. Hier erfahren Sie, wie einen Datensatz für die Bearbeitung angezeigt wird. In der *Filme* Seite aktualisieren Sie die `WebGrid` Helper, sodass, dass die It anzeigt eine **bearbeiten** neben jeder Film:
+Im vorherigen Tutorial haben Sie gelernt, wie Sie einer Datenbank einen Datensatz hinzufügen. Hier erfahren Sie, wie Sie einen Datensatz für die Bearbeitung anzeigen. Auf der Seite *Filme* aktualisieren Sie das `WebGrid` Hilfsprogramm, sodass neben den einzelnen Filmen ein Link **Bearbeiten** angezeigt wird:
 
-![WebGrid anzuzeigen, einschließlich einen Link "Bearbeiten" für jeden Film](updating-data/_static/image1.png)
+![WebGrid-Anzeige einschließlich eines "Bearbeiten"-Links für die einzelnen Filme](updating-data/_static/image1.png)
 
-Beim Klicken auf die **bearbeiten** Link gelangen Sie zu einer anderen Seite befindet, in dem die Filminformationen bereits in einem Formular:
+Wenn Sie auf den Link " **Bearbeiten** " klicken, gelangen Sie zu einer anderen Seite, auf der sich die Filminformationen bereits in einem Formular befinden:
 
-![Bearbeiten von Film-Seite, die mit der Film bearbeitet werden](updating-data/_static/image2.png)
+![Movie Page bearbeiten, die den zu bearbeitenden Film anzeigt](updating-data/_static/image2.png)
 
-Sie können einen der Werte ändern. Wenn Sie die Änderungen übermitteln, wird der Code auf der Seite aktualisiert die Datenbank, und gelangen Sie zurück auf die Movie-Auflistung.
+Sie können alle Werte ändern. Wenn Sie die Änderungen übermitteln, aktualisiert der Code auf der Seite die Datenbank und führt Sie zurück zur filmauflistung.
 
-Dieser Teil des Prozesses funktioniert fast genau so wie die *AddMovie.cshtml* Seite, die Sie im vorherigen Tutorial erstellt haben, damit viele der in diesem Tutorial vertraut werden.
+Dieser Teil des Prozesses funktioniert fast genauso wie die Seite " *addmovie. cshtml* ", die Sie im vorherigen Tutorial erstellt haben. der Großteil dieses Lernprogramms wird Ihnen sehr vertraut sein.
 
-Es gibt mehrere Möglichkeiten, die Sie eine Möglichkeit zum Bearbeiten eines einzelnen Films implementieren könnten. Der Ansatz gezeigt wurde gewählt, da es sich um einfach zu implementieren und leicht verständlich ist.
+Es gibt mehrere Möglichkeiten, wie Sie eine Möglichkeit zum Bearbeiten eines einzelnen Films implementieren können. Der angezeigte Ansatz wurde gewählt, da er einfach zu implementieren und leicht verständlich ist.
 
-## <a name="adding-an-edit-link-to-the-movie-listing"></a>Die Movie-Auflistung hinzugefügt einen Link "Bearbeiten"
+## <a name="adding-an-edit-link-to-the-movie-listing"></a>Hinzufügen eines Bearbeitungs Links zur Movie-Auflistung
 
-Um zu beginnen, führen Sie die Aktualisierung der *Filme* Seite, damit enthält jeder Film wird ebenfalls eine **bearbeiten** Link.
+Um zu beginnen, aktualisieren Sie die Seite " *Filme* ", sodass jede Filmliste auch einen **Bearbeitungs** Link enthält.
 
-Öffnen der *Movies.cshtml* Datei.
+Öffnen Sie die Datei *Movies. cshtml* .
 
-Ändern Sie in den Hauptteil der Seite, die `WebGrid` Markup durch Hinzufügen einer Spalte. Dies ist die geänderte Markup:
+Ändern Sie im Text der Seite das `WebGrid` Markup, indem Sie eine Spalte hinzufügen. Hier ist das geänderte Markup:
 
 [!code-html[Main](updating-data/samples/sample1.html?highlight=6)]
 
-Die neue Spalte, ist diese:
+Die neue Spalte lautet wie folgt:
 
 [!code-html[Main](updating-data/samples/sample2.html)]
 
-Diese Spalte ist einen Link angezeigt (`<a>` Element), dessen Text lautet "Bearbeiten". Was wir wollen Sie eine Verknüpfung zu erstellen, die wie folgt aussieht, wenn die Seite ausgeführt wird, werden mit der `id` Wert für jeden Film:
+Der Punkt dieser Spalte besteht darin, einen Link (`<a>`-Element) anzuzeigen, dessen Text "Edit" lautet. Nachfolgend wird ein Link erstellt, der wie folgt aussieht, wenn die Seite ausgeführt wird, wobei der `id` Wert für die einzelnen Filme anders ist:
 
 [!code-css[Main](updating-data/samples/sample3.css)]
 
-Dieser Link wird aufgerufen, eine Seite namens *EditMovie*, und es wird die Abfragezeichenfolge übergeben `?id=7` zu dieser Seite.
+Mit diesem Link wird eine Seite mit dem Namen " *editmovie*" aufgerufen, die die Abfrage Zeichenfolge `?id=7` an diese Seite übergibt.
 
-Die Syntax für die neue Spalte sieht ein wenig komplexer; Dies ist nur, weil es zusammengefügt mehrere Elemente sind. Jedes einzelnes Element ist einfach. Wenn Sie sich auf konzentrieren lediglich die `<a>` Element dieses Markup angezeigt:
+Die Syntax für die neue Spalte kann etwas kompliziert aussehen, aber das ist nur, weil Sie mehrere Elemente vereint. Jedes einzelne Element ist unkompliziert. Wenn Sie sich nur auf das `<a>` Element konzentrieren, sehen Sie dieses Markup:
 
 [!code-html[Main](updating-data/samples/sample4.html)]
 
-Einige Hintergrundinformationen zur Funktionsweise des Rasters: das Raster zeigt Zeilen an, eine für jeden Datensatz der Datenbank, und Spalten für jedes Feld in der Datenbankdatensatz zeigt. Während jede Zeile erstellt wird, die `item` Objekt enthält die Datenbank-Datensatz (Item) für diese Zeile. Diese Anordnung bietet Ihnen eine Möglichkeit, im Code, um die Daten für diese Zeile abzurufen. Sie sehen hier ist: der Ausdruck `item.ID` ist die ID-Wert, der das aktuelle Datenbankelement abrufen. Sie erhalten möglicherweise eines der Datenbankwerte (Title, "Genre" oder Jahr) die gleiche Weise mit `item.Title`, `item.Genre`, oder `item.Year`.
+Hintergrundinformationen zur Funktionsweise des Rasters: im Raster werden Zeilen angezeigt, eine für jeden Daten Bank Datensatz und Spalten für jedes Feld im Datenbankdaten Satz. Während die einzelnen Raster Zeilen erstellt werden, enthält das `item` Objekt den Datenbankdaten Satz (Item) für diese Zeile. Diese Anordnung ermöglicht es Ihnen, die Daten für diese Zeile im Code zu erhalten. Dies sehen Sie hier: der Ausdruck `item.ID` den ID-Wert des aktuellen Daten Bank Elements erhält. Mit `item.Title`, `item.Genre`oder `item.Year`können Sie alle Daten Bankwerte (Titel, Genre oder Jahr) auf dieselbe Weise erhalten.
 
-Der Ausdruck `"~/EditMovie?id=@item.ID` kombiniert den fest programmierte Teil der Ziel-URL (`~/EditMovie?id=`) dynamisch abgeleiteten ID (Sie haben gesehen, die `~` Operator im vorherigen Tutorial; es ist ein ASP.NET-Operator, der das Stammverzeichnis der aktuellen Website darstellt.)
+Der Ausdruck `"~/EditMovie?id=@item.ID` kombiniert den hart codierten Teil der Ziel-URL (`~/EditMovie?id=`) mit dieser dynamisch abgeleiteten ID. (Im vorherigen Tutorial haben Sie den `~`-Operator gesehen; es handelt sich um einen ASP.net-Operator, der den aktuellen Website Stamm darstellt.)
 
-Das Ergebnis ist, dass dieser Teil des Markups in der Spalte etwa wie das folgende Markup einfach zur Laufzeit generiert:
+Das Ergebnis ist, dass dieser Teil des Markups in der-Spalte zur Laufzeit einfach etwas wie das folgende Markup erzeugt:
 
 [!code-xml[Main](updating-data/samples/sample5.xml)]
 
-Natürlich ist der tatsächliche Wert der `id` wird für jede Zeile unterschiedlich sein.
+Natürlich ist der tatsächliche Wert `id` für jede Zeile unterschiedlich.
 
-## <a name="creating-a-custom-display-for-a-grid-column"></a>Erstellen eine benutzerdefinierte Anzeige für eine Rasterspalte
+## <a name="creating-a-custom-display-for-a-grid-column"></a>Erstellen einer benutzerdefinierten Anzeige für eine Raster Spalte
 
-Doch nun zurück zu der Spalte. Die drei Spalten mussten Sie ursprünglich der angezeigten Raster nur Datenwerte (Title, "Genre" und Jahr). Diese Anzeige durch Übergeben des Namens der Datenbankspalte angegebene &mdash; z. B. `grid.Column("Title")`.
+Nun zurück zur Raster Spalte. Die drei Spalten, die Sie ursprünglich im Raster besaßen, haben nur Datenwerte (Titel, Genre und Jahr) angezeigt. Sie haben diese Anzeige angegeben, indem Sie den Namen der Daten Bank Spalte übergeben &mdash; z. b. `grid.Column("Title")`.
 
-Diese neue **bearbeiten** Link Spalte unterscheidet. Übergeben Sie einen Spaltennamen an, anstatt eine `format` Parameter. Mit diesem Parameter können Sie das Markup zu definieren, die die `WebGrid` Helper wird gerendert, zusammen mit den `item` Werts, der die Spaltendaten fett oder grün angezeigt oder in den Inhalt, den Sie formatieren möchten. Wenn den Titel gewünscht in fett angezeigt werden, konnte Sie z. B. eine Spalte, wie im folgenden Beispiel erstellen:
+Diese neue Spalte zum **Bearbeiten** des Links ist unterschiedlich. Anstatt einen Spaltennamen anzugeben, übergeben Sie einen `format` Parameter. Mithilfe dieses Parameters können Sie Markup definieren, das vom `WebGrid`-Hilfsprogramm zusammen mit dem `item` Wert dargestellt wird, um die Spaltendaten Fett oder grün oder in einem beliebigen Format anzuzeigen. Wenn Sie z. b. möchten, dass der Titel fett angezeigt wird, können Sie eine Spalte wie im folgenden Beispiel erstellen:
 
 [!code-html[Main](updating-data/samples/sample6.html)]
 
-(Die verschiedenen `@` Zeichen, die in angezeigt werden, die `format` Eigenschaft markieren den Übergang zwischen Markup und ein Code-Wert.)
+(Die verschiedenen `@` Zeichen, die Sie in der `format`-Eigenschaft sehen, markieren den Übergang zwischen Markup und einem Codewert.)
 
-Sobald Sie kennen die `format` -Eigenschaft, es ist einfacher zu verstehen wie das neue **bearbeiten** Spalte Link zusammengestellt werden:
+Wenn Sie die `format`-Eigenschaft kennen, ist es leichter zu verstehen, wie die neue Spalte zum **Bearbeiten** von Links zusammengestellt wird:
 
 [!code-html[Main](updating-data/samples/sample7.html)]
 
-Die Spalte besteht aus *nur* der das Markup, das den Link gerendert wird, sowie einige Informationen (ID), extrahiert aus der Datenbank-Datensatz für die Zeile.
+Die Spalte besteht *nur* aus dem Markup, das den Link rendert, sowie aus einigen Informationen (der ID), die aus dem Datenbankdaten Satz für die Zeile extrahiert werden.
 
 > [!TIP]
 > 
-> **Benannte Parameter und Positionsparameter für eine Methode**
+> **Benannte Parameter und Positions Parameter für eine Methode**
 > 
-> Oft Wenn Sie eine Methode aufgerufen wird und die entsprechenden Parameter übergeben haben, haben Sie einfach die Parameterwerte, die durch Kommas getrennt aufgeführt. Im Folgenden sind einige Beispiele angegeben:
+> Viele Male, wenn Sie eine Methode aufgerufen und Parameter an diese übergeben haben, haben Sie einfach die durch Kommas getrennten Parameterwerte aufgelistet. Hier sind einige Beispiele angegeben:
 > 
 > `db.Execute(insertCommand, title, genre, year)`
 > 
 > `Validation.RequireField("title", "You must enter a title")`
 > 
-> Wir können das Problem nicht erwähnt, wenn Sie diesen Code zuerst gesehen haben, aber in jedem Fall Sie Parameter an die Methoden in einer bestimmten Reihenfolge übergeben &mdash; , nämlich die Reihenfolge, in der die Parameter in dieser Methode definiert sind. Für `db.Execute` und `Validation.RequireFields`, wenn Sie sich die Reihenfolge der Werte Sie übergeben kombiniert, erhalten Sie eine Fehlermeldung angezeigt, wenn die Seite ausgeführt wird, oder zumindest eine gewisse seltsame Ergebnisse. Natürlich müssen Sie die Reihenfolge, übergeben die Parameter in kennen. (In WebMatrix IntelliSense Ermitteln der Namen, Typ und Reihenfolge der Parameter Informationen helfen Ihnen.)
+> Wir haben das Problem beim ersten Mal in diesem Code nicht erwähnt, aber in jedem Fall übergeben Sie Parameter an die Methoden in einer bestimmten Reihenfolge &mdash; nämlich die Reihenfolge, in der die Parameter in dieser Methode definiert werden. Wenn Sie für `db.Execute` und `Validation.RequireFields`die Reihenfolge der übergebenen Werte gemischt haben, erhalten Sie eine Fehlermeldung, wenn die Seite ausgeführt wird, oder zumindest einige seltsame Ergebnisse. Natürlich müssen Sie die Reihenfolge kennen, in der die Parameter übergeben werden. (In webmatrix kann IntelliSense Ihnen helfen, den Namen, den Typ und die Reihenfolge der Parameter zu ermitteln.)
 > 
-> Als Alternative zum Übergeben von Werten in der Reihenfolge, können Sie *benannte Parameter*. (Übergeben von Parametern in der Reihenfolge genannt mit *Positionsparameter*.) Für benannte Parameter schließen Sie explizit den Namen des Parameters, wenn den Wert zu übergeben. Sie haben benannte Parameter bereits eine Anzahl von Malen in diesen Tutorials verwendet. Zum Beispiel:
+> Anstatt Werte in der Reihenfolge zu übergeben, können Sie *benannte Parameter*verwenden. (Das Übergeben von Parametern in der Reihenfolge wird als Verwenden von *Positions Parametern*bezeichnet.) Bei benannten Parametern fügen Sie den Namen des Parameters explizit ein, wenn Sie seinen Wert übergeben. In diesen Tutorials haben Sie benannte Parameter bereits mehrmals verwendet. Beispiel:
 > 
 > [!code-csharp[Main](updating-data/samples/sample8.cs)]
 > 
@@ -124,185 +124,185 @@ Die Spalte besteht aus *nur* der das Markup, das den Link gerendert wird, sowie 
 > 
 > [!code-css[Main](updating-data/samples/sample9.css)]
 > 
-> Benannte Parameter sind für eine Reihe von Situationen nützlich, besonders, wenn eine Methode für viele Parameter. Eines ist, wenn nur ein oder zwei Parameter übergeben werden sollen, aber die Werte, die Sie übergeben möchten, nicht für die erste Position in der Parameterliste sind. Eine andere Situation ist, wenn Sie möchten Ihren Code besser lesbar machen, indem Sie die Parameter zu übergeben, in der Reihenfolge, die für Sie am sinnvollsten ist.
+> Benannte Parameter sind in einigen Situationen praktisch, insbesondere dann, wenn eine Methode viele Parameter annimmt. Eine ist, wenn Sie nur einen oder zwei Parameter übergeben möchten, aber die Werte, die Sie übergeben möchten, nicht zu den ersten Positionen in der Parameterliste gehören. Eine andere Situation ist, wenn Sie den Code besser lesbar machen möchten, indem Sie die Parameter in der Reihenfolge übergeben, die für Sie am sinnvollsten ist.
 > 
-> Wenn benannte Parameter verwenden möchten, müssen Sie natürlich die Namen der Parameter zu kennen. WebMatrix IntelliSense können *anzeigen* Sie die Namen, aber es kann nicht aktuell Geben sie für Sie.
+> Um benannte Parameter zu verwenden, müssen Sie die Namen der Parameter kennen. Webmatrix IntelliSense kann die Namen *anzeigen* , aber Sie kann Sie zurzeit nicht für Sie ausfüllen.
 
-## <a name="creating-the-edit-page"></a>Erstellen die Seite "Bearbeiten"
+## <a name="creating-the-edit-page"></a>Erstellen der Seite "Bearbeiten"
 
-Nun können Sie erstellen die *EditMovie* Seite. Wenn der Benutzer klicken auf die **bearbeiten** Link sie zum Schluss werden auf dieser Seite.
+Nun können Sie die *editmovie* -Seite erstellen. Wenn Benutzer auf den Link " **Bearbeiten** " klicken, werden Sie auf dieser Seite angezeigt.
 
-Erstellen Sie eine Seite mit dem Namen *EditMovie.cshtml* , und Ersetzen Sie die neuerungen in der Datei mit folgendem Markup:
+Erstellen Sie eine Seite mit dem Namen " *editmovie. cshtml* ", und ersetzen Sie die Elemente in der Datei durch das folgende Markup:
 
 [!code-cshtml[Main](updating-data/samples/sample10.cshtml)]
 
-Dieses Markup und Code entspricht, was Sie haben der *AddMovie* Seite. Es gibt ein kleinen Unterschied in den Text für die Schaltfläche "Senden" aus. Wie bei der *AddMovie* Seite, gibt es eine `Html.ValidationSummary` Aufruf, der Validierungsfehler angezeigt wird, sofern vorhanden. Diesmal haben wir die Aufrufe von auslassen `Validation.Message`, da Fehler in der Zusammenfassung der Validierung angezeigt werden. Wie im vorherigen Tutorial erwähnt, können Sie die Zusammenfassung der Validierung und die einzelne Fehlermeldungen in verschiedenen Kombinationen verwenden.
+Dieses Markup und dieser Code ähneln denen, die Sie auf der Seite " *addmovie* " haben. Es gibt einen kleinen Unterschied im Text für die Schaltfläche "Senden". Wie bei der *addmovie* -Seite gibt es einen `Html.ValidationSummary`-Befehl, der Validierungs Fehler anzeigt, sofern vorhanden. Diesmal lassen wir Aufrufe an `Validation.Message`aus, da Fehler in der Validierungs Zusammenfassung angezeigt werden. Wie bereits im vorherigen Tutorial erwähnt, können Sie die Validierungs Zusammenfassung und die einzelnen Fehlermeldungen in verschiedenen Kombinationen verwenden.
 
-Beachten Sie erneut, dass der `method` Attribut der `<form>` Element nastaven NA hodnotu `post`. Wie bei der *AddMovie.cshtml* Seite dieser Seite werden Änderungen an der Datenbank. Daher sollten diese Form Ausführen einer `POST` Vorgang. (Weitere Informationen zu den Unterschieden zwischen `GET` und `POST` Vorgänge, finden Sie unter den [GET, POST und HTTP-Verb Sicherheit](form-basics.md#GET,_POST,_and_HTTP_Verb_Safety) Randleiste in diesem Tutorial auf HTML-Formularen.)
+Beachten Sie, dass das `method`-Attribut des `<form>`-Elements auf `post`festgelegt ist. Wie bei der *addmovie. cshtml* -Seite nimmt diese Seite Änderungen an der-Datenbank vor. Daher sollte in diesem Formular ein `POST` Vorgang durchgeführt werden. (Weitere Informationen zum Unterschied zwischen `GET` und `POST` Vorgängen finden Sie in der Rand Leiste " [Get", "Post" und "http Verb Safety](form-basics.md#GET,_POST,_and_HTTP_Verb_Safety) " im Tutorial zu HTML-Formularen.)
 
-In einem früheren Tutorial haben Sie gesehen die `value` Attribute der Textfelder werden mit Razor-Code festgelegt wird, um sie vorab zu laden. Dieses Mal jedoch, Sie verwenden Variablen wie `title` und `genre` für diese Aufgabe anstelle von `Request.Form["title"]`:
+Wie Sie in einem früheren Tutorial gesehen haben, werden die `value` Attribute der Textfelder mit Razor-Code festgelegt, um Sie vorab zu laden. Dieses Mal verwenden Sie jedoch Variablen wie `title` und `genre` für diese Aufgabe anstelle `Request.Form["title"]`:
 
 `<input type="text" name="title" value="@title" />`
 
-Wie wird vor, dieses Markup Werte des Text mit den Werten der Film vorab zu laden. Sehen Sie in einen Moment, warum es nützlich ist, die Variablen dieses Mal verwenden, anstatt, die `Request` Objekt.
+Wie zuvor lädt dieses Markup die Textfeld-Werte mit den Film Werten vorab. Sie werden in Kürze sehen, warum es praktisch ist, Variablen zu verwenden, anstatt das `Request` Objekt zu verwenden.
 
-Es gibt auch eine `<input type="hidden">` Element auf dieser Seite. Dieses Element werden die Film-ID gespeichert, ohne dass sie auf der Seite angezeigt. Die ID wird anfangs auf der Seite mit übergeben Wert einer Abfragezeichenfolge (`?id=7` oder in der URL ähnlich). Indem Sie den ID-Wert in ein verborgenes Feld einfügen, Sie können sicherstellen, dass es verfügbar ist. wenn das Formular übermittelt wird, auch wenn Sie nicht mehr auf die ursprüngliche URL zugreifen, die mit die Seite aufgerufen wurde.
+Auf dieser Seite ist auch ein `<input type="hidden">`-Element vorhanden. Dieses Element speichert die Film-ID, ohne Sie auf der Seite sichtbar zu machen. Die ID wird zunächst mithilfe eines Abfrage Zeichenfolgen-Werts (`?id=7` oder ähnlich in der URL) an die Seite übermittelt. Wenn Sie den ID-Wert in ein ausgeblendetes Feld einfügen, können Sie sicherstellen, dass es verfügbar ist, wenn das Formular übermittelt wird, auch wenn Sie nicht mehr auf die ursprüngliche URL zugreifen können, mit der die Seite aufgerufen wurde.
 
-Im Gegensatz zu den *AddMovie* Seite, den Code für die *EditMovie* Seite verfügt über zwei verschiedene Funktionen. Die erste Funktion ist, die, wenn die Seite zum ersten Mal angezeigt wird (und *nur* dann), der Code Ruft die Film-ID aus der Abfragezeichenfolge ab. Der Code nutzt dann die ID den entsprechenden Film aus der Datenbank lesen und anzeigen (vorab zu laden) es in die Textfelder ein.
+Im Gegensatz zur *addmovie* -Seite verfügt der Code für die *editmovie* -Seite über zwei unterschiedliche Funktionen. Die erste Funktion ist, dass der Code die Film-ID aus der Abfrage Zeichenfolge abruft, wenn die Seite zum ersten Mal angezeigt wird (und *nur* dann). Der Code verwendet die ID dann, um den entsprechenden Film aus der Datenbank zu lesen und ihn in den Textfeldern anzuzeigen (vorab zu laden).
 
-Die zweite Funktion ist, die klickt der Benutzer die **Änderungen Absenden** Schaltfläche, der Code verfügt lesen die Werte der Textfelder, und überprüfen. Der Code hat auch den Datenbank-Artikel mit den neuen Werten aktualisiert. Diese Technik ist vergleichbar mit dem Hinzufügen eines Eintrags, wie in *AddMovie*.
+Die zweite Funktion besteht darin, dass der Code, wenn der Benutzer auf die Schaltfläche " **Änderungen übermitteln** " klickt, die Werte der Textfelder lesen und diese überprüfen muss. Der Code muss auch das Daten Bank Element mit den neuen Werten aktualisieren. Dieses Verfahren ähnelt dem Hinzufügen eines Datensatzes, wie Sie in *addmovie*gesehen haben.
 
 ## <a name="adding-code-to-read-a-single-movie"></a>Hinzufügen von Code zum Lesen eines einzelnen Films
 
-Um die erste Funktion auszuführen, fügen Sie folgenden Code am Anfang der Seite:
+Fügen Sie den folgenden Code am Anfang der Seite ein, um die erste Funktion auszuführen:
 
 [!code-cshtml[Main](updating-data/samples/sample11.cshtml)]
 
-Der größte Teil dieses Codes wird in einem Block, der beginnt `if(!IsPost)`. Die `!` Operator "not", damit der Ausdruck bedeutet, dass bedeutet *ist diese Anforderung keiner Post-Übermittlung*, d.h. ein indirektes Verfahren zu sagen *Wenn die Anforderung beim ersten ist, die auf dieser Seite ausgeführt wurde*. Wie bereits erwähnt, sollte dieser Code ausgeführt *nur* ersten Mal die Seite ausgeführt wird. Wenn Sie nicht, dass den Code in einschließen `if(!IsPost)`, sie würden jedes Mal, wenn die Seite, gibt an, ob das erste Mal aufgerufen wird oder als Reaktion auf eine Schaltfläche auf.
+Der größte Teil dieses Codes befindet sich in einem Block, der `if(!IsPost)`startet. Der `!`-Operator bedeutet "Not". der Ausdruck bedeutet, dass *es sich bei dieser Anforderung nicht um eine Post-Übermittlung handelt*. Dies ist eine indirekte Methode, um zu sagen, *ob diese Anforderung zum ersten Mal ausgeführt*wurde. Wie bereits erwähnt, sollte dieser Code *nur* bei der erstmaligen Ausführung der Seite ausgeführt werden. Wenn Sie den Code nicht in `if(!IsPost)`eingeschlossen haben, wird er jedes Mal ausgeführt, wenn die Seite aufgerufen wird, egal ob beim ersten Mal oder als Reaktion auf einen Klick auf eine Schaltfläche.
 
-Beachten Sie, die der Code enthält ein `else` diesmal blockieren. Wie bereits erwähnt, wenn wir eingeführt `if` Blöcke, manchmal alternativen Code ausgeführt wird, wenn die Bedingung, die Sie testen nicht "true" ist werden soll. Dies ist hier der Fall. Wenn die Bedingung erfüllt (d.h., wenn die ID, die an die Seite in Ordnung ist), können Sie eine Zeile aus der Datenbank gelesen. Jedoch, wenn die Bedingung nicht erfolgreich abgeschlossen, die `else` Block ausgeführt wird und im Code wird eine Fehlermeldung angezeigt.
+Beachten Sie, dass der Code einen `else` Block This Time enthält. Wie bereits erwähnt, wenn wir `if` Blöcke eingeführt haben, möchten Sie manchmal alternativen Code ausführen, wenn die zu testende Bedingung nicht wahr ist. Das ist hier der Fall. Wenn die Bedingung erfüllt ist (d. h., wenn die an die Seite übergebenen ID in Ordnung ist), lesen Sie eine Zeile aus der Datenbank. Wenn die Bedingung jedoch nicht erfüllt ist, wird der `else`-Block ausgeführt, und der Code legt eine Fehlermeldung fest.
 
-## <a name="validating-a-value-passed-to-the-page"></a>Überprüfen einen Wert an die Seite übergeben
+## <a name="validating-a-value-passed-to-the-page"></a>Validieren eines an die Seite übergebenen Werts
 
-Der Code verwendet `Request.QueryString["id"]` zum Abrufen der ID, die die Seite übergeben werden. Der Code wird sichergestellt, der tatsächlich übergeben eines Werts für die ID. Wenn kein Wert übergeben wurde, legt der Code einen Validierungsfehler.
+Der Code verwendet `Request.QueryString["id"]`, um die ID zu erhalten, die an die Seite übermittelt wird. Der Code stellt sicher, dass für die ID tatsächlich ein Wert übermittelt wurde. Wenn kein Wert bestanden wurde, legt der Code einen Validierungs Fehler fest.
 
-Dieser Code zeigt eine andere Möglichkeit, Informationen zu überprüfen. Im vorherigen Tutorial, mit denen Sie gearbeitet der `Validation` Helper. Sie registriert die zu überprüfenden Felder ASP.NET automatisch und die Überprüfung wurde mit Fehlern angezeigt `Html.ValidationMessage` und `Html.ValidationSummary`. In diesem Fall sind jedoch Sie nicht wirklich Benutzereingaben werden überprüft. Stattdessen können Sie einen Wert überprüfen, der von einer anderen Stelle auf der Seite übergeben wurde. Die `Validation` Hilfsprogramm nicht, die für Sie.
+Dieser Code zeigt eine andere Möglichkeit zum Überprüfen von Informationen. Im vorherigen Tutorial haben Sie mit dem `Validation`-Hilfsprogramm gearbeitet. Sie haben die zu validierenden Felder registriert, und ASP.net hat die Überprüfung automatisch durchgeführt und die Fehler angezeigt, indem Sie `Html.ValidationMessage` und `Html.ValidationSummary` In diesem Fall überprüfen Sie jedoch nicht wirklich die Benutzereingaben. Stattdessen validieren Sie einen Wert, der von an anderer Stelle an die Seite übermittelt wurde. Das `Validation`-Hilfsprogramm führt dies nicht für Sie aus.
 
-Aus diesem Grund Sie den Wert selbst überprüfen, testen Sie es mit `if(!Request.QueryString["ID"].IsEmpty()`). Wenn ein Problem vorliegt, können Sie den Fehler anzeigen, mit `Html.ValidationSummary`, wie Sie mit der `Validation` Helper. Zu diesem Zweck rufen Sie `Validation.AddFormError` , und übergeben sie eine anzuzeigende Meldung. `Validation.AddFormError` ist eine integrierte Methode, mit dem Sie benutzerdefinierte Meldungen zu definieren, die sich das Überprüfungssystem zu verknüpfen, die Sie bereits kennen. (Später in diesem Lernprogramm befassen wir uns dazu, wie Sie diesen Validierungsprozess etwas stabiler machen mit.)
+Daher überprüfen Sie den Wert selbst, indem Sie ihn mit `if(!Request.QueryString["ID"].IsEmpty()`) testen. Wenn ein Problem vorliegt, können Sie den Fehler wie beim `Validation`-Hilfsprogramm mithilfe von `Html.ValidationSummary`anzeigen. Dazu wird `Validation.AddFormError` aufgerufen und eine Meldung an die Anzeige übergeben. `Validation.AddFormError` ist eine integrierte Methode, mit der Sie benutzerdefinierte Meldungen definieren können, die mit dem bereits vertrauten Validierungssystem verknüpft sind. (Später in diesem Tutorial wird erläutert, wie Sie diesen Validierungsprozess etwas stabiler machen.)
 
-Stellen Sie sicher, dass eine für den Film-ID vorhanden ist, liest der Code für die Datenbank ab und sucht für nur eine einzeldatenbank-Element. (Das allgemeine Muster für Datenbankvorgänge haben wahrscheinlich bemerkt: Öffnen Sie die Datenbank, eine SQL­Anweisung definieren, und führen Sie die Anweisung.) Dieses Mal SQL `Select` -Anweisung schließt `WHERE ID = @0`. Da die ID eindeutig ist, kann nur ein Datensatz zurückgegeben werden.
+Nachdem Sie sichergestellt haben, dass eine ID für den Film vorhanden ist, liest der Code die Datenbank und sucht nur nach einem einzelnen Daten Bank Element. (Wahrscheinlich haben Sie das allgemeine Muster für Daten Bank Vorgänge bemerkt: Öffnen Sie die Datenbank, definieren Sie eine SQL-Anweisung, und führen Sie die Anweisung aus.) Dieses Mal enthält die SQL `Select`-Anweisung `WHERE ID = @0`. Da die ID eindeutig ist, kann nur ein Datensatz zurückgegeben werden.
 
-Die Abfrage erfolgt über `db.QuerySingle` (nicht `db.Query`, da Sie für die Movie-Auflistung verwendet), und der Code legt das Ergebnis in der `row` Variable. Der Name `row` ist ein beliebiger; Sie können die Variablen name ist beliebig. Die Variablen initialisiert, die am Anfang werden dann mit den Filmdetails gefüllt, damit diese Werte in den Textfeldern angezeigt werden können.
+Die Abfrage wird mit `db.QuerySingle` ausgeführt (nicht `db.Query`, wie Sie für die filmauflistung verwendet haben), und der Code fügt das Ergebnis in die `row` Variable ein. Der Name `row` ist willkürlich. Sie können die Variablen beliebig benennen. Die Variablen, die oben initialisiert werden, werden dann mit den Filmdetails gefüllt, sodass diese Werte in den Textfeldern angezeigt werden können.
 
-## <a name="testing-the-edit-page-so-far"></a>Testen die Seite "Bearbeiten" (bisher)
+## <a name="testing-the-edit-page-so-far"></a>Testen der Bearbeitungsseite (bisher)
 
-Wenn Sie die Seite testen möchten, führen Sie die *Filme* Seite jetzt, und klicken Sie auf eine **bearbeiten** neben jedem Film. Sehen Sie die *EditMovie* Seite mit den Details für den ausgewählten Film ausgefüllt:
+Wenn Sie Ihre Seite testen möchten, führen Sie jetzt die Seite *Filme* aus, und klicken Sie auf einen Link **Bearbeiten** neben jedem Film. Die Seite *editmovie* wird mit den Details für den ausgewählten Film angezeigt:
 
-![Bearbeiten von Film-Seite, die mit der Film bearbeitet werden](updating-data/_static/image3.png)
+![Movie Page bearbeiten, die den zu bearbeitenden Film anzeigt](updating-data/_static/image3.png)
 
-Beachten Sie, dass die URL der Seite etwa enthält `?id=10` (oder eine andere Nummer). Bisher haben Sie getestet, die **bearbeiten** verknüpft die *Film* Seite arbeiten, die Seite wird die ID aus der Abfragezeichenfolge gelesen, und, dass die Datenbank eine zum Abrufen eines einzelnen Films Datensatzes Abfrage funktioniert.
+Beachten Sie, dass die URL der Seite etwas wie `?id=10` (oder eine andere Zahl) enthält. Bisher haben Sie das **Bearbeiten** von Links auf der Seite " *Movie* " getestet, dass die Seite die ID aus der Abfrage Zeichenfolge liest und dass die Datenbankabfrage zum erhalten eines einzelnen Film Datensatzes funktioniert.
 
-Sie können die Filminformationen ändern, aber die nichts geschieht, wenn Sie auf **Änderungen Absenden**.
+Sie können die Filminformationen ändern, aber nichts passiert, wenn Sie auf **Änderungen übermitteln**klicken.
 
-## <a name="adding-code-to-update-the-movie-with-the-users-changes"></a>Hinzufügen von Code zum Aktualisieren des Films mit die Änderungen des Benutzers
+## <a name="adding-code-to-update-the-movie-with-the-users-changes"></a>Hinzufügen von Code zum Aktualisieren des Films mit den Änderungen des Benutzers
 
-In der *EditMovie.cshtml* Datei, um die zweite Funktion (Änderungen speichern) zu implementieren, fügen Sie folgenden Code innerhalb der schließenden Klammer der der `@` Block. (Wenn Sie nicht sicher, genau, wo sich der Code platziert sind, sehen Sie sich die [vollständige codeauflistung für die Seite bearbeiten Film](#Complete_Page_Listing_for_EditMovie) , das am Ende dieses Tutorials angezeigt wird.)
+Fügen Sie in der Datei *editmovie. cshtml* zum Implementieren der zweiten Funktion (Speichern von Änderungen) den folgenden Code direkt innerhalb der schließenden geschweiften Klammer des `@` Blocks hinzu. (Wenn Sie nicht genau wissen, wo der Code abgelegt werden soll, sehen Sie sich die [komplette Codeliste für die Seite "Movie bearbeiten](#Complete_Page_Listing_for_EditMovie) " an, die am Ende dieses Lernprogramms angezeigt wird.)
 
 [!code-csharp[Main](updating-data/samples/sample12.cs)]
 
-In diesem Fall dieses Markup und Code ähnelt dem Code in *AddMovie*. Der Code befindet sich in einem `if(IsPost)` blockiert werden, da dieser Code ausgeführt wird, nur, wenn der Benutzer klickt der **Änderungen Absenden** Schaltfläche &mdash; , also wenn (und nur wenn) das Formular gesendet wurde. In diesem Fall verwenden Sie keinen Test wie `if(IsPost && Validation.IsValid())`– d. h., Sie sind nicht kombinieren von beide Tests unter Verwendung and. Auf dieser Seite Sie zuerst ermitteln, ob es eine formularübertragung (`if(IsPost)`), und nur die Felder für die Überprüfung registrieren. Und dann die Ergebnisse, die Sie testen (`if(Validation.IsValid()`). Der Flow ist etwas anders als in der *AddMovie.cshtml* Seite, jedoch der Effekt ist identisch.
+Dieses Markup und dieser Code ähneln dem Code in *addmovie*. Der Code befindet sich in einem `if(IsPost)`-Block, da dieser Code nur ausgeführt wird, wenn der Benutzer auf die Schaltfläche " **Änderungen übermitteln** " klickt &mdash; d. h., wann (und nur wenn) das Formular gepostet wurde. In diesem Fall verwenden Sie keinen Test wie `if(IsPost && Validation.IsValid())`– d. h. Sie kombinieren nicht beide Tests mithilfe von und. Auf dieser Seite legen Sie zuerst fest, ob eine Formular Übermittlung (`if(IsPost)`) vorhanden ist, und registrieren dann nur die Felder für die Validierung. Anschließend können Sie die Validierungs Ergebnisse (`if(Validation.IsValid()`) testen. Der Flow unterscheidet sich geringfügig von der Seite " *addmovie. cshtml* ", aber der Effekt ist identisch.
 
-Erhalten Sie die Werte der Textfelder mit `Request.Form["title"]` und ähnlichen Code für die anderen `<input>` Elemente. Beachten Sie, dass dieses Mal mit dem Code die Film-ID aus dem ausgeblendeten Feld abgerufen (`<input type="hidden">`). Wenn die Seite erstmalig ausgeführt haben, hier der Code die ID aus der Abfragezeichenfolge an. Sie erhalten den Wert aus dem ausgeblendeten Feld, um sicherzustellen, dass Sie die ID des Films, die ursprünglich angezeigt wurde, optimal nutzen, für den Fall, dass die Abfragezeichenfolge irgendwie seither geändert wurde.
+Sie erhalten die Werte der Textfelder, indem Sie `Request.Form["title"]` und ähnlichen Code für die anderen `<input>` Elemente verwenden. Beachten Sie, dass der Code die Film-ID aus dem ausgeblendeten Feld (`<input type="hidden">`) abruft. Wenn die Seite zum ersten Mal ausgeführt wurde, erhielt der Code die ID aus der Abfrage Zeichenfolge. Sie erhalten den Wert aus dem ausgeblendeten Feld, um sicherzustellen, dass Sie die ID des Films erhalten, der ursprünglich angezeigt wurde, für den Fall, dass die Abfrage Zeichenfolge seitdem geändert wurde.
 
-Der wirklich wichtige Unterschied zwischen der *AddMovie* und dieser Code ist, dass in diesem Code die Verwendung von SQL `Update` -Anweisung anstelle der `Insert Into` Anweisung. Das folgende Beispiel zeigt die Syntax des SQL- `Update` Anweisung:
+Der wirklich wichtige Unterschied zwischen dem *addmovie* -Code und diesem Code besteht darin, dass Sie in diesem Code die SQL `Update`-Anweisung anstelle der `Insert Into`-Anweisung verwenden. Das folgende Beispiel zeigt die Syntax der SQL `Update`-Anweisung:
 
 `UPDATE table SET col1="value", col2="value", col3="value" ... WHERE ID = value`
 
-Sie können alle Spalten in einer beliebigen Reihenfolge angeben und Sie müssen nicht unbedingt jede Spalte beim Aktualisieren einer `Update` Vorgang. (Die ID selbst kann nicht aktualisiert werden, da, die den Datensatz in Kraft, als einen neuen Datensatz speichern würde und, nicht für zulässig ist einen `Update` Vorgang.)
+Sie können beliebige Spalten in beliebiger Reihenfolge angeben, und Sie müssen nicht unbedingt jede Spalte während eines `Update` Vorgangs aktualisieren. (Sie können die ID selbst nicht aktualisieren, da dadurch der Datensatz als neuer Datensatz gespeichert wird, was für einen `Update` Vorgang nicht zulässig ist.)
 
 > [!NOTE] 
 > 
-> **Wichtige** der `Where` -Klausel mit der ID ist sehr wichtig, denn das ist wie die Datenbank bekannt ist, welche Datenbank Datensätze aktualisiert werden soll. Wenn Sie aufgehört haben vorher die `Where` -Klausel, die Datenbank wird aktualisiert *jeder* Datensatz in der Datenbank. In den meisten Fällen wäre, die einem Notfall.
+> **Wichtig** Die `Where`-Klausel mit der ID ist sehr wichtig, da die Datenbank weiß, welcher Daten Bank Datensatz Sie aktualisieren möchten. Wenn Sie die `Where`-Klausel ausgelassen haben, aktualisiert die Datenbank *jeden* Datensatz in der Datenbank. In den meisten Fällen wäre dies ein Notfall.
 
-Im Code werden die Werte aktualisieren für die SQL-Anweisung übergeben, mit Platzhaltern. Wiederholen, was wir erwähnt habe: aus Sicherheitsgründen *nur* Platzhalter verwenden, um Werte an eine SQL-Anweisung übergeben.
+Im Code werden die zu aktualisierenden Werte mithilfe von Platzhaltern an die SQL-Anweisung übermittelt. Um zu wiederholen, was wir vorhergesagt haben: aus Sicherheitsgründen verwenden Sie *nur* Platzhalter, um Werte an eine SQL-Anweisung zu übergeben.
 
-Nachdem der Code verwendet `db.Execute` zum Ausführen der `Update` -Anweisung, die es wieder auf die Angebotsseite, hier Sie die Änderungen sehen leitet.
+Nachdem der Code `db.Execute` verwendet hat, um die `Update` Anweisung auszuführen, wird er zurück zur Listenseite umgeleitet, auf der Sie die Änderungen sehen können.
 
 > [!TIP] 
 > 
-> **Andere SQL-Anweisungen, verschiedene Methoden**
+> **Verschiedene SQL-Anweisungen, verschiedene Methoden**
 > 
-> Möglicherweise haben Sie bemerkt, dass Sie andere Methoden verwenden, um verschiedene SQL-Anweisungen auszuführen. Zum Ausführen einer `Select` Abfragen gibt, die ein potenzielles mehrere Datensätze, die Sie verwenden die `Query` Methode. Zum Ausführen einer `Select` Abfrage, die Sie kennen nur ein Datenbankelement zurück, die Sie verwenden die `QuerySingle` Methode. Führen Sie Befehle, die Änderungen vornehmen, jedoch nicht, die Datenbankelemente zurückgeben, die Sie verwenden die `Execute` Methode.
+> Möglicherweise haben Sie bemerkt, dass Sie leicht unterschiedliche Methoden verwenden, um verschiedene SQL-Anweisungen auszuführen. Um eine `Select` Abfrage auszuführen, die potenziell mehrere Datensätze zurückgibt, verwenden Sie die `Query`-Methode. Um eine `Select` Abfrage auszuführen, von der Sie wissen, dass nur ein Daten Bank Element zurückgegeben wird, verwenden Sie die `QuerySingle`-Methode. Zum Ausführen von Befehlen, die Änderungen vornehmen, aber keine Datenbankelemente zurückgeben, verwenden Sie die `Execute`-Methode.
 > 
-> Sie müssen verschiedene Methoden haben, da jeweils unterschiedliche Ergebnisse zurückgibt, wie Sie bereits gesehen, den Unterschied zwischen haben `Query` und `QuerySingle`. (Die `Execute` Methode eigentlich gibt einen Wert auch &mdash; , nämlich die Anzahl von Datenbankzeilen, die mit dem Befehl betroffen waren &mdash; , aber Sie haben wurde ignoriert, die bisher.)
+> Sie müssen über verschiedene Methoden verfügen, da jeder von Ihnen andere Ergebnisse zurückgibt, wie Sie bereits im Unterschied zwischen `Query` und `QuerySingle`gesehen haben. (Die `Execute`-Methode gibt auch einen-Wert zurück, der die Anzahl der vom &mdash; Befehl betroffenen Daten Bank Zeilen &mdash;, aber Sie haben das bisher ignoriert.)
 > 
-> Natürlich die `Query` Methode kann nur eine Datenbankzeile zurück. ASP.NET behandelt, jedoch immer die Ergebnisse der `Query` Methode als eine Auflistung. Auch wenn die Methode nur eine Zeile zurückgibt, müssen Sie in dieser Zeile aus der Auflistung zu extrahieren. Aus diesem Grund in Situationen, in dem Sie *wissen* erhalten Sie einige nur eine Zeile ist dies ein angenehmer zu wenig `QuerySingle`.
+> Natürlich kann die `Query`-Methode nur eine Datenbankzeile zurückgeben. ASP.NET behandelt die Ergebnisse der `Query` Methode jedoch immer als eine Auflistung. Auch wenn die Methode nur eine Zeile zurückgibt, müssen Sie diese einzelne Zeile aus der Auflistung extrahieren. Daher ist es in Situationen, in denen Sie *wissen, dass* Sie nur eine Zeile zurückerhalten, etwas bequemer, `QuerySingle`zu verwenden.
 > 
-> Es gibt einigen andere Methoden, die bestimmte Typen von Datenbankvorgänge ausführen. Sie finden eine Liste der datenbankmethoden in der [ASP.NET Web Pages-API-Kurzübersicht](../../api-reference/asp-net-web-pages-api-reference.md#Data).
+> Es gibt einige andere Methoden, mit denen bestimmte Typen von Daten Bank Vorgängen durchgeführt werden. Eine Liste der datenbankmethoden finden Sie in der [ASP.net Web Pages-API-kurz](../../api-reference/asp-net-web-pages-api-reference.md#Data)Übersicht.
 
-## <a name="making-validation-for-the-id-more-robust"></a>Überprüfung für die ID mehr machen robuster
+## <a name="making-validation-for-the-id-more-robust"></a>Die Überprüfung der ID ist robuster.
 
-Beim ersten, die die Seite ausgeführt wird, erhalten Sie die Film-ID aus der Abfragezeichenfolge, damit Sie zugreifen können, Film aus der Datenbank abzurufen. Sie haben sichergestellt, dass es sich bei gab es ein Wert zu suchen, die Verwendung dieser Code tatsächlich:
+Wenn die Seite das erste Mal ausgeführt wird, erhalten Sie die Film-ID aus der Abfrage Zeichenfolge, sodass Sie diesen Film aus der Datenbank holen können. Sie haben sichergestellt, dass es tatsächlich einen Wert gibt, den Sie mit diesem Code erstellt haben:
 
 [!code-csharp[Main](updating-data/samples/sample13.cs)]
 
-Sie diesen Code verwendet, um sicherzustellen, dass wenn ein Benutzer auf die *EditMovies* Seite, ohne zuvor einen Film in den *Filme* Seite die Seite würde eine benutzerfreundliche Fehlermeldung angezeigt. (Andernfalls würde Benutzer eine Fehlermeldung, die wahrscheinlich nur diese verwechselt wird angezeigt.)
+Sie haben diesen Code verwendet, um sicherzustellen, dass die Seite eine benutzerfreundliche Fehlermeldung anzeigt, wenn ein Benutzer auf die *editmovies* -Seite gelangt, ohne zuvor einen Film auf der Seite " *Filme* " auszuwählen. (Andernfalls wird Benutzern eine Fehlermeldung angezeigt, die Sie wahrscheinlich nur verwirren würde.)
 
-Diese Überprüfung ist jedoch nicht sehr zuverlässig. Die Seite kann auch mit diesen Fehlern aufgerufen werden:
+Diese Validierung ist jedoch nicht sehr robust. Die Seite kann auch mit folgenden Fehlern aufgerufen werden:
 
-- Die ID ist keine Zahl. Beispielsweise könnte die Seite aufgerufen werden, mit einer URL wie `http://localhost:nnnnn/EditMovie?id=abc`.
-- Die ID ist eine Zahl, aber sie verweist, auf einen Film, die nicht vorhanden (z. B. `http://localhost:nnnnn/EditMovie?id=100934`).
+- Die ID ist keine Zahl. Beispielsweise könnte die Seite mit einer URL wie `http://localhost:nnnnn/EditMovie?id=abc`aufgerufen werden.
+- Die ID ist eine Zahl, verweist jedoch auf einen Film, der nicht vorhanden ist (z. b. `http://localhost:nnnnn/EditMovie?id=100934`).
 
-Wenn Sie wissen möchten, die Fehler angezeigt, die aus diesen URLs, führen Sie die *Filme* Seite. Wählen Sie einen Film zu bearbeiten, und ändern Sie die URL der *EditMovie* Seite zu einer URL, die ein alphabetisches enthält, ID oder die ID eines Films nicht vorhanden.
+Wenn Sie die Fehler, die sich aus diesen URLs ergeben, anzeigen möchten, führen Sie die Seite *Filme* aus. Wählen Sie einen zu bearbeitenden Film aus, und ändern Sie dann die URL der *editmovie* -Seite in eine URL, die eine alphabetische ID oder die ID eines nicht vorhandenen Films enthält.
 
-Daher sollten Sie vorgehen? Die erste Lösung besteht darin sicherzustellen, dass, dass nicht nur eine ID auf der Seite übergeben wird, aber die ID, eine ganze Zahl ist. Ändern Sie den Code für die `!IsPost` Test aus, um wie im folgenden Beispiel aussehen:
+Was sollten Sie also tun? Der erste Fix besteht darin, sicherzustellen, dass nicht nur eine ID an die Seite, sondern eine ganze Zahl ist. Ändern Sie den Code für den `!IsPost` Test so, dass er wie in diesem Beispiel aussieht:
 
 [!code-csharp[Main](updating-data/samples/sample14.cs)]
 
-Sie hinzugefügt haben, eine zweite Bedingung, die `IsEmpty` Test ausgeführt wird, verknüpft mit `&&` (logisches AND):
+Sie haben dem `IsEmpty` Test eine zweite Bedingung hinzugefügt, die mit `&&` (logisches and) verknüpft ist:
 
 [!code-csharp[Main](updating-data/samples/sample15.cs)]
 
-Erinnern Sie sich über die [Einführung in die Programmierung von ASP.NET Web Pages](../introducing-razor-syntax-c.md) Tutorial, in dem Methoden wie `AsBool` ein `AsInt` konvertieren eine Zeichenfolge in einen anderen Datentyp. Die `IsInt` Methode (und andere wie `IsBool` und `IsDateTime`) sind ähnlich. Sie testen allerdings nur, ob Sie *können* konvertieren die Zeichenfolge ohne die Konvertierung ausführen. Hier können Sie im Wesentlichen besagt *Wenn Abfragezeichenfolgen-Werts in eine ganze Zahl konvertiert werden kann...* .
+Möglicherweise erinnern Sie sich von der [Einführung in ASP.net Web Pages Programming](../introducing-razor-syntax-c.md) Tutorial, dass Methoden wie `AsBool` ein `AsInt` eine Zeichenfolge in einen anderen Datentyp konvertieren. Die `IsInt`-Methode (und andere, wie `IsBool` und `IsDateTime`) sind ähnlich. Allerdings wird nur getestet, ob Sie die Zeichenfolge konvertieren *können* , ohne die Konvertierung tatsächlich auszuführen. Hier sagen Sie im Grunde *, ob der Wert der Abfrage Zeichenfolge in eine ganze Zahl konvertiert werden kann...*
 
-Das andere mögliche Problem aufgetreten ist nach einem Film suchen, die nicht vorhanden. Der Code zum Abrufen eines Films sieht wie im folgenden Code:
+Das andere potenzielle Problem ist die Suche nach einem Film, der nicht vorhanden ist. Der Code zum erhalten eines Films sieht wie der folgende Code aus:
 
 [!code-csharp[Main](updating-data/samples/sample16.cs)]
 
-Übergeben einer `movieId` Wert der `QuerySingle` -Methode, die keinen tatsächlichen Film entsprechen nicht, wird nichts zurückgegeben und die Anweisungen folgen (z. B. `title=row.Title`) zu Fehlern führen.
+Wenn Sie einen `movieId` Wert an die `QuerySingle`-Methode übergeben, die keinem tatsächlichen Film entspricht, wird nichts zurückgegeben, und die folgenden Anweisungen (z. b. `title=row.Title`) führen zu Fehlern.
 
-Es ist leicht zu beheben. Wenn die `db.QuerySingle` Methode keine Ergebnisse zurückgibt, die `row` Variable wird null sein. Damit Sie überprüfen können, ob die `row` Variable null ist, bevor Sie versuchen, die von ihr Werte zu erhalten. Der folgende Code Fügt eine `if` -Block um die Anweisungen, die die Werte von Abrufen der `row` Objekt:
+Auch hier gibt es eine einfache Lösung. Wenn die `db.QuerySingle`-Methode keine Ergebnisse zurückgibt, ist die `row` Variable NULL. Sie können also überprüfen, ob die `row` Variable NULL ist, bevor Sie versuchen, Werte daraus zu erhalten. Der folgende Code fügt einen `if`-Block um die-Anweisungen hinzu, die die Werte aus dem `row`-Objekt erhalten:
 
 [!code-csharp[Main](updating-data/samples/sample17.cs)]
 
-Zwei zusätzliche Validierung ausführen wird die Seite mehr hundertprozentig. Der vollständige Code für die `!IsPost` Branch sieht nun wie im folgenden Beispiel:
+Mit diesen beiden zusätzlichen Validierungstests wird die Seite stärker Aufzählungs Zeichen. Der gesamte Code für den `!IsPost` Branch sieht nun wie im folgenden Beispiel aus:
 
 [!code-csharp[Main](updating-data/samples/sample18.cs)]
 
-Wir werden noch einmal Beachten Sie, dass diese Aufgabe eine gute Verwendung für ist ein `else` Block. Wenn die Tests übergeben, die `else` Standardresultset Fehlermeldungen.
+Beachten Sie, dass diese Aufgabe eine gute Verwendung für einen `else`-Block ist. Wenn die Tests nicht bestanden werden, werden vom `else` Blöcke Fehlermeldungen festgelegt.
 
-## <a name="adding-a-link-to-return-to-the-movies-page"></a>Hinzufügen eines Links auf der Seite "Movies" zurückgegeben.
+## <a name="adding-a-link-to-return-to-the-movies-page"></a>Hinzufügen eines Links zum zurückkehren zur Seite "Filme"
 
-Ein Detail endgültig und hilfreich ist, fügen einen Link zurück an die *Filme* Seite. In der normale Fluss von Ereignissen, Benutzer beginnt mit der *Filme* Seite, und klicken Sie auf eine **bearbeiten** Link. Somit kommen sie zu der *EditMovie* Seite, in dem Bearbeiten des Films und klicken Sie auf die Schaltfläche. Nachdem der Code die Änderung verarbeitet hat, leitet Sie an der *Filme* Seite.
+Ein letztes und hilfreiches Detail ist das Hinzufügen eines Links zurück zur Seite " *Filme* ". Im normalen Ablauf von Ereignissen beginnen Benutzer auf der Seite " *Filme* " und klicken auf den Link " **Bearbeiten** ". Damit gelangen Sie auf die Seite *editmovie* , wo Sie den Film bearbeiten und auf die Schaltfläche klicken können. Nachdem der Code die Änderung verarbeitet hat, wird er zurück an die Seite " *Movies* " umgeleitet.
 
 Dabei gilt jedoch Folgendes:
 
-- Benutzer können keine Änderungen vornehmen.
-- Der Benutzer kann zu dieser Seite erhalten haben, ohne Klicken auf eine **bearbeiten** -link in der *Filme* Seite.
+- Der Benutzer kann sich entscheiden, nichts zu ändern.
+- Der Benutzer ist möglicherweise auf diese Seite gelangt, ohne zuvor auf der Seite " *Filme* " auf den Link " **Bearbeiten** " zu klicken.
 
-In beiden Fällen möchten Sie sie auf die Auflistung der wichtigsten zurückzugebenden erleichtern. Es ist eine einfache Lösung &mdash; fügen Sie das folgende Markup direkt nach dem schließenden `</form>` Tags im Markup:
+In jedem Fall möchten Sie es Ihnen erleichtern, zur Haupt Auflistung zurückzukehren. Es ist eine einfache Lösung, &mdash; das folgende Markup direkt hinter dem schließenden `</form>`-Tag im Markup hinzuzufügen:
 
 [!code-html[Main](updating-data/samples/sample19.html)]
 
-Dieses Markup verwendet die gleiche Syntax wie für eine `<a>` -Element, das Sie an anderer Stelle gesehen haben. Die URL enthält `~` bedeutet "Root der Website".
+Dieses Markup verwendet die gleiche Syntax für ein `<a>` Element, das Sie an anderer Stelle gesehen haben. Die URL enthält `~` "Stamm der Website".
 
-## <a name="testing-the-movie-update-process"></a>Testen des Prozesses der Movie-Update
+## <a name="testing-the-movie-update-process"></a>Testen des Film Aktualisierungsprozesses
 
-Jetzt können Sie testen. Führen Sie die *Filme* Seite, und klicken Sie auf **bearbeiten** neben einen Film. Wenn die *EditMovie* Seite angezeigt wird, nehmen Sie Änderungen an den Film und auf **Änderungen Absenden**. Wenn die Movie-Liste angezeigt wird, stellen Sie sicher, dass Ihre Änderungen angezeigt werden.
+Jetzt können Sie testen. Führen Sie die Seite *Filme* aus, und klicken Sie auf **Bearbeiten** neben einem Film. Wenn die Seite *editmovie* angezeigt wird, nehmen Sie Änderungen am Film vor, und klicken Sie auf **Änderungen übermitteln**. Wenn die Film Auflistung angezeigt wird, stellen Sie sicher, dass Ihre Änderungen angezeigt werden.
 
-Um sicherzustellen, dass die Validierung funktioniert, klicken Sie auf **bearbeiten** für einen anderen Film. Wenn man an die *EditMovie* Deaktivieren der **"Genre"** Feld (oder **Jahr** Feld oder beides), und versuchen, Ihre Änderungen zu übernehmen. Einen Fehler angezeigt, wenn Sie erwarten:
+Um sicherzustellen, dass die Überprüfung funktioniert, klicken Sie auf **Bearbeiten** für einen anderen Film. Wenn Sie auf die Seite *editmovie* gelangen, löschen Sie das Feld **Genre** (oder das Feld **Jahr** oder beides), und versuchen Sie, die Änderungen zu übermitteln. Wie Sie erwarten, wird ein Fehler angezeigt:
 
-![Bearbeiten Sie (Seite) Film Validierungsfehler anzeigt](updating-data/_static/image4.png)
+![Movie Page bearbeiten zeigt Validierungs Fehler an](updating-data/_static/image4.png)
 
-Klicken Sie auf die **zurück zum Movie-Angebot** Link, um Ihre Änderungen verwerfen und zurück zu den *Filme* Seite.
+Klicken Sie auf den Link **zum Listen Link zurückkehren** , um die Änderungen zu verwerfen und zur Seite *Filme* zurückzukehren.
 
-## <a name="coming-up-next"></a>Als Nächstes kommen
+## <a name="coming-up-next"></a>Nächste nächste
 
-Im nächsten Tutorial sehen Sie, wie Sie einen Film-Datensatz zu löschen.
+Im nächsten Tutorial erfahren Sie, wie Sie einen Film Daten Satz löschen.
 
-## <a name="complete-listing-for-movie-page-updated-with-edit-links"></a>Vollständige Liste für Movie-Seite (mit Bearbeitungslinks aktualisiert)
+## <a name="complete-listing-for-movie-page-updated-with-edit-links"></a>Vervollständigen der Auflistung für Movie Page (aktualisiert mit Links bearbeiten)
 
 [!code-cshtml[Main](updating-data/samples/sample20.cshtml)]
 
 <a id="Complete_Page_Listing_for_EditMovie"></a>
-## <a name="complete-page-listing-for-edit-movie-page"></a>Führen Sie die Seite Listeneintrag Movie-Seite "Bearbeiten"
+## <a name="complete-page-listing-for-edit-movie-page"></a>Complete Page Listing for Movie Page Page
 
 [!code-cshtml[Main](updating-data/samples/sample21.cshtml)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](../../getting-started/introducing-razor-syntax-c.md)
-- [SQL-UPDATE-Anweisung](http://www.w3schools.com/sql/sql_update.asp) auf der Website W3Schools
+- [Einführung in die ASP.net-Webprogrammierung mithilfe der Razor-Syntax](../../getting-started/introducing-razor-syntax-c.md)
+- [SQL Update-Anweisung](http://www.w3schools.com/sql/sql_update.asp) auf der W3Schools-Website
 
 > [!div class="step-by-step"]
 > [Zurück](entering-data.md)

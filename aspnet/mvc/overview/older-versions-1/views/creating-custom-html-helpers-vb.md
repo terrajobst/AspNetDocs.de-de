@@ -9,11 +9,11 @@ ms.assetid: f96f4800-19ef-44c0-b457-55e777eb5de8
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
 ms.openlocfilehash: aaeadde258a2855343a5bfb1e5ee76000e04f6bd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593886"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485817"
 ---
 # <a name="creating-custom-html-helpers-vb"></a>Erstellen von benutzerdefinierten HTML-Hilfsprogrammen (VB)
 
@@ -33,17 +33,17 @@ Ein HTML-Hilfsprogramm ist nur eine Methode, die eine Zeichenfolge zurückgibt. 
 
 Das ASP.NET-MVC-Framework umfasst die folgenden Standard-HTML-Hilfsprogramme (Dies ist keine komplette Liste):
 
-- HTML. Action Link ()
-- HTML. BeginForm ()
-- HTML. CheckBox ()
-- HTML. Dropdown List ()
-- HTML. Endform ()
-- HTML. Hidden ()
+- Html.ActionLink()
+- Html.BeginForm()
+- Html.CheckBox()
+- Html.DropDownList()
+- Html.EndForm()
+- Html.Hidden()
 - HTML. ListBox ()
 - HTML. Password ()
-- HTML. RadioButton ()
-- HTML. Textarea ()
-- HTML. TextBox ()
+- Html.RadioButton()
+- Html.TextArea()
+- Html.TextBox()
 
 Nehmen Sie beispielsweise das Formular in der Liste 1. Dieses Formular wird mithilfe von zwei der Standard-HTML-Hilfsprogramme gerendert (siehe Abbildung 1). Dieses Formular verwendet die `Html.BeginForm()`-und `Html.TextBox()`-Hilfsmethoden.
 
@@ -110,7 +110,7 @@ Die geänderte Index Sicht in der Liste 4 verwendet die HTML. Label ()-Erweiteru
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample6.aspx)]
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie zwei Methoden zum Erstellen von benutzerdefinierten HTML-Hilfsprogrammen kennengelernt. Zuerst haben Sie gelernt, wie Sie ein benutzerdefiniertes `Label()` HTML-Hilfsprogramm erstellen, indem Sie eine freigegebene Methode erstellen, die eine Zeichenfolge Als nächstes haben Sie erfahren, wie Sie eine benutzerdefinierte `Label()` HTML-Hilfsmethode erstellen, indem Sie eine Erweiterungsmethode für die `HtmlHelper`-Klasse erstellen.
 

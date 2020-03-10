@@ -1,184 +1,184 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/10-working-with-video
-title: Anzeigen von Video in einer ASP.NET Web Pages (Razor) Standort | Microsoft-Dokumentation
+title: Anzeigen von Videos auf einer ASP.net Web Pages (Razor-) Site | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Kapitel wird erläutert, wie Video in einer ASP.NET Web Pages mit Razor-Syntax-Seite angezeigt wird.
+description: In diesem Kapitel wird erläutert, wie Videos in einem ASP.net Web Pages mit Razor-Syntax Seite angezeigt werden.
 ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: 332fb3da-e2a5-460d-bb90-dd911e1e2c95
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
 ms.openlocfilehash: 516d46f38ce8910209f4207c474b0404bf012950
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130948"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510381"
 ---
-# <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Video in einer ASP.NET Web Pages (Razor)-Website
+# <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Videos auf einer ASP.net Web Pages-Website (Razor)
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Artikel wird erläutert, Gewusst wie: Verwenden Sie einen Video (Medien)-Player auf einer Website für ASP.NET Web Pages (Razor), damit Benutzer Videos ansehen, die auf der Website gespeichert sind. ASP.NET Web Pages mit Razor-Syntax können Sie die Wiedergabe Flash (*. SWF*), Media Player (*.wmv*), und Silverlight (*XAP*) Videos.
+> In diesem Artikel wird erläutert, wie Sie einen Video Player (Media) auf einer ASP.net Web Pages-Website (Razor) verwenden, um Benutzern das Anzeigen von Videos zu gestatten, die auf der Website gespeichert sind. ASP.net Web Pages mit Razor-Syntax können Sie Flash-( *. SWF*), Media Player-( *. wmv*) und Silverlight-Videos ( *. xap*) abspielen.
 > 
 > Sie lernen Folgendes:
 > 
-> - So wählen Sie einen video Player.
-> - Informationen zum Hinzufügen von Videos zu einer Webseite.
-> - Wie die video-Player-Attribute festzulegen.
+> - Auswählen eines Video Players.
+> - Gewusst wie: Hinzufügen von Videos zu einer Webseite
+> - Festlegen von Video Player Attributen.
 > 
-> Hierbei handelt es sich um den ASP.NET Razor-Seiten in diesem Artikel vorgestellten Funktionen dar:
+> Dies sind die ASP.net Razor Pages-Funktionen, die im Artikel eingeführt wurden:
 > 
-> - Die `Video` Helper.
+> - Das `Video`-Hilfsprogramm.
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - ASP.NET Web Pages (Razor) 2
+> - ASP.net Web Pages (Razor) 2
 > - WebMatrix 2
 >   
 > 
-> In diesem Tutorial funktioniert auch mit WebMatrix 3.
+> Dieses Tutorial funktioniert auch mit webmatrix 3.
 
 ## <a name="introduction"></a>Einführung
 
-Sie möchten ein Video auf Ihrer Website anzuzeigen. Eine Möglichkeit dafür ist auf einer Website zu verknüpfen, die bereits die Videos, z.B. YouTube. Wenn Sie ein Video von diesen Sites direkt in Ihre eigenen Seiten einbetten möchten, können Sie HTML-Markup in der Regel von der Website zu erhalten, und kopieren Sie diese in Ihre Seite. Z. B. das folgende Beispiel zeigt das Einbetten von YouTube video:
+Möglicherweise möchten Sie ein Video auf Ihrer Website anzeigen. Eine Möglichkeit besteht darin, einen Link zu einer Website zu verwenden, die bereits über das Video verfügt, wie z. b. YouTube. Wenn Sie ein Video von diesen Websites direkt auf Ihren eigenen Seiten einbetten möchten, können Sie in der Regel ein HTML-Markup von der Website erhalten und es dann auf die Seite kopieren. Das folgende Beispiel zeigt beispielsweise, wie Sie ein YouTube-Video einbetten:
 
 [!code-html[Main](10-working-with-video/samples/sample1.html?highlight=10-14)]
 
-Sollten Sie ein Video abspielen, die auf Ihrer eigenen Website (nicht auf einer öffentlichen sharing-Video-Website) ist, können nicht Sie direkt mit eingebetteten Markup wie dieses verknüpfen. Sie können jedoch Videos von Ihrem Standort wiedergeben, mit der `Video` Hilfsprogramm, das einen MediaPlayer direkt in einer Seite gerendert wird.
+Wenn Sie ein Video abspielen möchten, das sich auf Ihrer eigenen Website befindet (nicht auf einer öffentlichen Video Freigabe Website), können Sie nicht direkt mit einem eingebetteten Markup wie diesem verknüpfen. Sie können jedoch Videos von Ihrer Website abspielen, indem Sie das `Video`-Hilfsprogramm verwenden, das einen Media Player direkt auf einer Seite rendert.
 
 <a id="Choosing_a_Video_Player"></a>
-## <a name="choosing-a-video-player"></a>Wählen einen Videoplayer
+## <a name="choosing-a-video-player"></a>Auswählen eines Video Players
 
-Es gibt eine Vielzahl von Formaten für Videodateien, und jedes Format in der Regel ist erforderlich, einen anderen Player und ein anderes Verfahren zum Konfigurieren des Spielers. In ASP.NET Razor-Seiten, können Sie ein Video in einer Webseite mit Wiedergeben der `Video` Helper. Die `Video` Hilfsprogramm vereinfacht das Einbetten von Videos auf einer Webseite, da es automatisch generiert die `object` und `embed` HTML-Elemente, die normalerweise zum Hinzufügen von Videos auf der Seite verwendet werden.
+Es gibt viele Formate für Videodateien, und jedes Format erfordert in der Regel einen anderen Player und eine andere Möglichkeit zum Konfigurieren des Players. In ASP.net Razor Pages können Sie ein Video mit dem `Video`-Hilfsprogramm auf einer Webseite abspielen. Das `Video`-Hilfsprogramm vereinfacht das Einbetten von Videos in eine Webseite, da es automatisch die `object` und `embed` HTML-Elemente generiert, die normalerweise zum Hinzufügen von Videos zur Seite verwendet werden.
 
-Die `Video` Hilfsprogramm unterstützt die folgenden MediaPlayer:
+Das `Video`-Hilfsprogramm unterstützt die folgenden Medien Player:
 
 - Adobe Flash
-- Windows MediaPlayer
+- Windows Media Player
 - Microsoft Silverlight
 
-### <a name="the-flash-player"></a>Macromedia Flash Player
+### <a name="the-flash-player"></a>Der Flash Player
 
-Die `Flash` Player, der die `Video` Hilfsprogramm können Sie die Wiedergabe Flash-Videos (*. SWF* Dateien) auf einer Webseite. Zumindest müssen Sie einen Pfad zu der Videodatei angeben. Wenn Sie lediglich den Pfad angeben, verwendet der Player Standardwerte, die von der aktuellen Version von Flash festgelegt werden. Typische Standardeinstellungen sind folgende:
+Der `Flash` Player des `Video`-Hilfsprogramms ermöglicht das Abspielen von Flash-Videos ( *. SWF* -Dateien) auf einer Webseite. Sie müssen mindestens einen Pfad zur Videodatei angeben. Wenn Sie nur den Pfad angeben, verwendet der Player Standardwerte, die von der aktuellen Version von Flash festgelegt werden. Typische Standardeinstellungen:
 
-- Das Video angezeigt wird, verwenden die Standardbreite und-Höhe und ohne eine Hintergrundfarbe.
-- Das Video automatisch wiedergegeben, wenn die Seite geladen.
-- Das Video Schleifen kontinuierlich verwendet werden, bis er explizit beendet wird.
-- Das Video wird skaliert, um alle Videos, anstatt die Zuschneiden von Video entsprechend eine bestimmte Größe anzuzeigen.
-- Das Video in einem Fenster wiedergegeben wird.
+- Das Video wird unter Verwendung der Standardbreite und-Höhe und ohne Hintergrundfarbe angezeigt.
+- Das Video wird automatisch abgespielt, wenn die Seite geladen wird.
+- Das Video wird fortlaufend so lange Schleifen, bis es explizit beendet wird.
+- Das Video wird so skaliert, dass es das gesamte Video anzeigt, anstatt das Video an eine bestimmte Größe anzupassen.
+- Das Video wird in einem Fenster abgespielt.
 
-### <a name="the-mediaplayer-player"></a>Der MediaPlayer-Player
+### <a name="the-mediaplayer-player"></a>Der Media Player-Player
 
-Die `MediaPlayer` Player, der die `Video` -Hilfsobjekt ermöglicht Ihnen das Windows Media Videos wiedergeben (*WMV* Dateien), Windows Media Audio (*.wma* Dateien), und MP3 (*MP3* -Dateien) auf einer Webseite. Sie müssen den Pfad der Mediendatei spielen einschließen; Alle anderen Parameter sind optional. Wenn Sie nur einen Pfad angeben, verwendet der Spieler Standardeinstellungen, die von der aktuellen Version von Media Player, festlegen, wie z. B.:
+Mit dem `MediaPlayer` Player des `Video`-Hilfsprogramms können Sie Windows Media-Videos (*WMV* -Dateien), Windows Media-Audiodateien (*WMA* -Dateien) und MP3-Dateien (*MP3* -Dateien) auf einer Webseite abspielen. Sie müssen den Pfad der zu Wiedergabe enden Mediendatei einschließen. alle anderen Parameter sind optional. Wenn Sie nur einen Pfad angeben, verwendet der Spieler die Standardeinstellungen, die von der aktuellen Media Player-Version festgelegt werden, z. b.:
 
-- Das Video angezeigt wird, verwenden die standardmäßigen Breite und Höhe.
-- Das Video automatisch wiedergegeben, wenn die Seite geladen.
-- Das Video einmal wiedergegeben (diese Schleife nicht).
-- Der Player zeigt den vollständigen Satz von Steuerelementen in der Benutzeroberfläche.
-- Das Video in einem Fenster wiedergegeben wird.
+- Das Video wird unter Verwendung der Standardbreite und-Höhe angezeigt.
+- Das Video wird automatisch abgespielt, wenn die Seite geladen wird.
+- Das Video wird einmal abgespielt (keine Schleife).
+- Der Player zeigt den vollständigen Satz von Steuerelementen in der Benutzeroberfläche an.
+- Das Video wird in einem Fenster abgespielt.
 
-### <a name="the-silverlight-player"></a>Silverlight-Players
+### <a name="the-silverlight-player"></a>Der Silverlight-Player
 
-Die `Silverlight` Player, der die `Video` -Hilfsobjekt ermöglicht Ihnen das Windows Media Video wiedergeben (*WMV* Dateien), Windows Media Audio (*.wma* Dateien), und MP3 (*MP3* -Dateien). Sie müssen festlegen, dass die Path-Parameter, um auf ein Paket der Silverlight-Anwendung zu verweisen (*XAP* Datei). Sie müssen auch die Parameter für Breite und Höhe festlegen. Alle anderen Parameter sind optional. Bei Verwendung von Silverlight-Players für Video, wenn Sie festlegen, dass nur die erforderlichen Parameter zeigt der Silverlight-Player das Video, ohne eine Hintergrundfarbe.
+Mit dem `Silverlight` Player des `Video`-Hilfsprogramms können Sie Windows Media Video (*WMV* -Dateien), Windows Media Audio ( *. WMA* -Dateien) und MP3-*Dateien (MP3-Dateien)* abspielen. Sie müssen den path-Parameter so festlegen, dass er auf ein Silverlight-basiertes Anwendungspaket ( *. xap* -Datei) verweist. Außerdem müssen Sie die Parameter "width" und "Height" festlegen. Alle anderen Parameter sind optional. Wenn Sie den Silverlight Player für Video verwenden und nur die erforderlichen Parameter festlegen, zeigt der Silverlight-Player das Video ohne Hintergrundfarbe an.
 
 > [!NOTE]
-> Für den Fall, dass Sie nicht bereits Silverlight kennen: die *XAP* Datei ist eine komprimierte Datei, die layoutanweisungen in enthält eine *XAML* -Datei, verwalteten Code in Assemblys und optionale Ressourcen. Sie erstellen eine *XAP* -Datei in Visual Studio als ein Silverlight-Anwendungsprojekt.
+> Für den Fall, dass Sie Silverlight nicht bereits kennen: die *XAP* -Datei ist eine komprimierte Datei, die Layoutanweisungen in einer *XAML* -Datei, verwalteten Code in Assemblys und optionale Ressourcen enthält. Sie können eine *XAP* -Datei in Visual Studio als Silverlight-Anwendungsprojekt erstellen.
 
-Die `Silverlight` Videoplayer, der verwendet wird, sowohl die Einstellungen, die Sie für den Spieler bereitzustellen und die Einstellungen, die finden Sie in der *XAP* Datei.
+Der `Silverlight` Video Player verwendet die Einstellungen, die Sie für den Player bereitstellen, und die Einstellungen, die in der *XAP* -Datei bereitgestellt werden.
 
 > [!TIP] 
 > 
 > <a id="SB_MimeTypes"></a>
 > ### <a name="mime-types"></a>MIME-Typen
 > 
-> Wenn eine Datei in ein Browser heruntergeladen wird, bewirkt, dass der Browser Sie sicher, dass die mit dem Dateityp den MIME-Typ übereinstimmt, der für das Dokument angegeben wird, die gerendert wird. Der MIME-Typ ist der Typ oder Media Inhaltstyp einer Datei. Die `Video` Hilfsprogramm verwendet die folgenden MIME-Typen:
+> Wenn ein Browser eine Datei herunterlädt, stellt der Browser sicher, dass der Dateityp mit dem MIME-Typ übereinstimmt, der für das gerenderte Dokument angegeben wird. Der MIME-Typ ist der Inhaltstyp oder Medientyp einer Datei. Das `Video`-Hilfsprogramm verwendet die folgenden MIME-Typen:
 > 
 > - `application/x-shockwave-flash`
 > - `application/x-mplayer2`
 > - `application/x-silverlight-2`
 
 <a id="Playing_Flash"></a>
-## <a name="playing-flash-swf-videos"></a>Wiedergabe von Videos mit Flash (. SWF)
+## <a name="playing-flash-swf-videos"></a>Abspielen von Flash-Videos (. swf)
 
-Dieses Verfahren zeigt, wie ein Flash-Video mit dem Namen abgespielt *sample.swf*. Das Verfahren setzt voraus, dass Sie einen Ordner namens haben *Media* auf Ihrer Website, und dass die *. SWF* Datei ist in diesem Ordner.
+In diesem Verfahren wird gezeigt, wie Sie ein Flash Video mit dem Namen *Sample. SWF*abspielen. Bei diesem Verfahren wird davon ausgegangen, dass Sie einen Ordner mit dem Namen " *Media* " auf Ihrer Site haben und sich die *. SWF* -Datei in diesem Ordner befindet.
 
-1. Die ASP.NET Web Helpers Library zu Ihrer Website hinzufügen, wie in beschrieben [Hilfsprogramme installieren, in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=252372), falls Sie bereits hinzugefügt haben.
-2. Klicken Sie auf der Website fügen Sie eine Seite, und nennen Sie sie *FlashVideo.cshtml*.
-3. Fügen Sie auf der Seite das folgende Markup hinzu: 
+1. Fügen Sie die ASP.net-webhilfsbibliothek Ihrer Website hinzu, wie unter [Installieren von Hilfsprogrammen an einer ASP.net Web Pages Site](https://go.microsoft.com/fwlink/?LinkId=252372)beschrieben, wenn Sie Sie noch nicht hinzugefügt haben.
+2. Fügen Sie auf der Website eine Seite hinzu, und nennen Sie Sie " *Flash Video. cshtml*".
+3. Fügen Sie der Seite das folgende Markup hinzu: 
 
     [!code-cshtml[Main](10-working-with-video/samples/sample2.cshtml)]
-4. Führen Sie die Seite in einem Browser. (Stellen Sie sicher, dass die Seite ist ausgewählt, der **Dateien** Arbeitsbereich vor der Ausführung.) Die Seite wird angezeigt, und das Video automatisch wiedergegeben. 
+4. Führen Sie die Seite in einem Browser aus. (Stellen Sie sicher, dass die Seite im Arbeitsbereich " **Dateien** " ausgewählt ist, bevor Sie Sie ausführen.) Die Seite wird angezeigt, und das Video wird automatisch abgespielt. 
 
-    ![[Image]](10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
+    ![Klang](10-working-with-video/_static/image1.jpg "ch08_video -1. jpg")
 
-Sie können festlegen, die `quality` -Parameter für ein Video mit einer Flash `low`, `autolow`, `autohigh`, `medium`, `high`, und `best`:
+Sie können den `quality`-Parameter für ein Flash Video auf `low`, `autolow`, `autohigh`, `medium`, `high`und `best`festlegen:
 
 [!code-cshtml[Main](10-working-with-video/samples/sample3.cshtml)]
 
-Sie können ändern, die Flash-Video zur Wiedergabe auf eine bestimmte Größe mithilfe der `scale` -Parameter, der Sie die folgenden festlegen können:
+Mit dem `scale`-Parameter können Sie das Flash Video so ändern, dass es mit einer bestimmten Größe wiedergegeben wird, und Sie können Folgendes festlegen:
 
-- `showall`. Dadurch werden das gesamte Video unter Beibehaltung der ursprünglichen Seitenverhältnisses sichtbar. Allerdings können Sie Rahmen auf jeder Seite erhalten.
-- `noorder`. Hiermit skalieren Sie das Video, während das Originalseitenverhältnis beibehalten, aber es zugeschnitten werden kann.
-- `exactfit`. Dadurch werden das gesamte Video sichtbar ohne gleichzeitig die ursprünglichen Seitenverhältnisse beizubehalten, aber Verzerrung auftreten.
+- [https://login.microsoftonline.com/consumers/](`showall`). Dadurch wird das gesamte Video sichtbar, während das ursprüngliche Seitenverhältnis beibehalten wird. Es kann jedoch sein, dass auf jeder Seite Grenzen angezeigt werden.
+- [https://login.microsoftonline.com/consumers/](`noorder`). Dadurch wird das Video skaliert, während das ursprüngliche Seitenverhältnis beibehalten wird, es wird jedoch möglicherweise abgeschnitten.
+- [https://login.microsoftonline.com/consumers/](`exactfit`). Dadurch wird das gesamte Video sichtbar, ohne dass das ursprüngliche Seitenverhältnis beibehalten wird, aber es kann zu einer Verzerrung kommen.
 
-Wenn Sie nicht angeben einer `scale` Parameter das gesamte Video werden angezeigt und das ursprüngliche Seitenverhältnis wird beibehalten werden, ohne zu sämtlichen Zuschneidevorgängen aussieht. Das folgende Beispiel zeigt, wie Sie mit der `scale` Parameter:
+Wenn Sie keinen `scale` Parameter angeben, wird das gesamte Video angezeigt, und das ursprüngliche Seitenverhältnis wird ohne Zuschneiden beibehalten. Im folgenden Beispiel wird gezeigt, wie der `scale`-Parameter verwendet wird:
 
 [!code-cshtml[Main](10-working-with-video/samples/sample4.cshtml)]
 
-Macromedia Flash Player unterstützt einen Einstellung mit dem Namen Videomodus `windowMode`. Sie können dies festlegen, um `window`, `opaque`, und `transparent`. In der Standardeinstellung die `windowMode` nastaven NA hodnotu `window`, wird angezeigt, die das Video in einem separaten Fenster auf der Webseite. Die `opaque` Einstellung blendet alles, was hinter das Video auf der Webseite. Die `transparent` Einstellung ermöglicht es den Hintergrund der Webseite anzeigen, die durch das Video, vorausgesetzt, alle Teil des Videos ist transparent.
+Der Flash Player unterstützt eine videomoduseinstellung mit dem Namen `windowMode`. Sie können dies auf `window`, `opaque`und `transparent`festlegen. Standardmäßig ist die `windowMode` auf `window`festgelegt, wodurch das Video in einem separaten Fenster auf der Webseite angezeigt wird. Die `opaque` Einstellung blendet alles hinter dem Video auf der Webseite aus. Mit der Einstellung "`transparent`" kann der Hintergrund der Webseite durch das Video angezeigt werden, wenn ein beliebiger Teil des Videos transparent ist.
 
 <a id="Playing_MediaPlayer"></a>
-## <a name="playing-mediaplayer-wmv-videos"></a>Media Player wiedergeben (*.wmv*) Videos
+## <a name="playing-mediaplayer-wmv-videos"></a>Abspielen von Media Player-Videos ( *. wmv*)
 
-Das folgende Verfahren zeigt, wie zur Wiedergabe eines Fensters Media-Videos, die mit dem Namen *"Sample.wmv"* , die sich in der *Media* Ordner.
+Im folgenden Verfahren wird gezeigt, wie Sie ein Windows Media-Video namens *Sample. wmv* abspielen, das sich im Ordner " *Media* " befindet.
 
-1. Die ASP.NET Web Helpers Library zu Ihrer Website hinzufügen, wie in beschrieben [Hilfsprogramme installieren, in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=252372), sofern Sie noch nicht geschehen.
-2. Erstellen Sie eine neue Seite mit dem Namen *MediaPlayerVideo.cshtml*.
-3. Fügen Sie auf der Seite das folgende Markup hinzu: 
+1. Fügen Sie die ASP.net-webhilfsbibliothek Ihrer Website hinzu, wie unter [Installieren von Hilfsprogrammen an einer ASP.net Web Pages Site](https://go.microsoft.com/fwlink/?LinkId=252372)beschrieben, falls Sie dies noch nicht getan haben.
+2. Erstellen Sie eine neue Seite mit dem Namen *mediaplayervideo. cshtml*.
+3. Fügen Sie der Seite das folgende Markup hinzu: 
 
     [!code-cshtml[Main](10-working-with-video/samples/sample5.cshtml)]
-4. Führen Sie die Seite in einem Browser. Das Video wird geladen und automatisch wiedergegeben. 
+4. Führen Sie die Seite in einem Browser aus. Das Video wird automatisch geladen und abgespielt. 
 
-    ![[Image]](10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
+    ![Klang](10-working-with-video/_static/image2.jpg "ch08_video -2. jpg")
 
-Sie können festlegen, `playCount` in eine ganze Zahl, der angibt, wie viele Male automatisch wiedergeben des Videos:
+Sie können `playCount` auf eine ganze Zahl festlegen, die angibt, wie oft das Video automatisch abgespielt werden soll:
 
 [!code-cshtml[Main](10-working-with-video/samples/sample6.cshtml)]
 
-Die `uiMode` Parameter können Sie angeben, welche Steuerelemente in der Benutzeroberfläche angezeigt. Sie können festlegen, `uiMode` zu `invisible`, `none`, `mini`, oder `full`. Wenn Sie nicht angeben einer `uiMode` Parameter das Video werden mit dem Statusfenster angezeigt, zu suchen, zu steuern, Schaltflächen und Volume-Steuerelemente, zusätzlich zu den video-Fenster. Diese Steuerelemente werden auch angezeigt werden, wenn Sie den Player verwenden, um die Wiedergabe einer Audiodatei. Hier ist ein Beispiel zur Verwendung der `uiMode` Parameter:
+Mit dem `uiMode`-Parameter können Sie angeben, welche Steuerelemente in der Benutzeroberfläche angezeigt werden. Sie können `uiMode` auf `invisible`, `none`, `mini`oder `full`festlegen. Wenn Sie keinen `uiMode` Parameter angeben, wird das Video zusätzlich zum Videofenster mit dem Statusfenster, der Suchleiste, den Steuerungs Schaltflächen und den volumesteuerelementen angezeigt. Diese Steuerelemente werden auch angezeigt, wenn Sie mit dem Player eine Audiodatei abspielen. Im folgenden finden Sie ein Beispiel für die Verwendung des `uiMode`-Parameters:
 
 [!code-cshtml[Main](10-working-with-video/samples/sample7.cshtml)]
 
-Standardmäßig ist Audio auf, wenn das Video wiedergegeben wird. Sie können das Audio Stummschalten, durch Festlegen der `mute` Parameter auf "true":
+Standardmäßig ist die Audiodatei aktiviert, wenn das Video wiedergegeben wird. Sie können das audiostumm schalten, indem Sie den `mute`-Parameter auf "true" festlegen:
 
 [!code-cshtml[Main](10-working-with-video/samples/sample8.cshtml)]
 
-Sie können Steuern der Audiopegel der MediaPlayer-Video durch Festlegen der `volume` auf einen Wert zwischen 0 und 100. Der Standardwert ist 50. Im Folgenden ein Beispiel:
+Sie können die Audioebene des Media Player-Videos steuern, indem Sie den `volume`-Parameter auf einen Wert zwischen 0 und 100 festlegen. Der Standardwert lautet "50". Im Folgenden ein Beispiel:
 
 [!code-cshtml[Main](10-working-with-video/samples/sample9.cshtml)]
 
 <a id="Playing_Silverlight"></a>
-## <a name="playing-silverlight-videos"></a>Wiedergabe von Silverlight-Videos
+## <a name="playing-silverlight-videos"></a>Abspielen von Silverlight-Videos
 
-Dieses Verfahren zeigt, wie zur Wiedergabe von Video in Silverlight enthaltenen *XAP* Seite in einem Ordner mit dem Namen *Media*.
+In diesem Verfahren wird gezeigt, wie Sie Videos abspielen, die auf der Seite "Silverlight *. xap* " in einem Ordner mit dem Namen " *Media*" enthalten sind.
 
-1. Die ASP.NET Web Helpers Library zu Ihrer Website hinzufügen, wie in beschrieben [Hilfsprogramme installieren, in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=252372), sofern Sie noch nicht geschehen.
-2. Erstellen Sie eine neue Seite mit dem Namen *SilverlightVideo.cshtml*.
-3. Fügen Sie auf der Seite das folgende Markup hinzu: 
+1. Fügen Sie die ASP.net-webhilfsbibliothek Ihrer Website hinzu, wie unter [Installieren von Hilfsprogrammen an einer ASP.net Web Pages Site](https://go.microsoft.com/fwlink/?LinkId=252372)beschrieben, falls Sie dies noch nicht getan haben.
+2. Erstellen Sie eine neue Seite mit dem Namen " *silverlightvideo. cshtml*".
+3. Fügen Sie der Seite das folgende Markup hinzu: 
 
     [!code-cshtml[Main](10-working-with-video/samples/sample10.cshtml)]
-4. Führen Sie die Seite in einem Browser. 
+4. Führen Sie die Seite in einem Browser aus. 
 
-    ![[Image]](10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
+    ![Klang](10-working-with-video/_static/image3.jpg "ch08_video -3. jpg")
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Übersicht über das Silverlight](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
+[Übersicht über Silverlight](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 
-[Flash-Objekt und EINBETTEN Tagattribute](http://kb2.adobe.com/cps/127/tn_12701.html)
+[Flash-Objekt und Einbettungs Tagattribute](http://kb2.adobe.com/cps/127/tn_12701.html)
 
-[Windows Media Player 11 SDK PARAM-Tags](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)
+[Windows Media Player 11 SDK-Parameter Tags](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)

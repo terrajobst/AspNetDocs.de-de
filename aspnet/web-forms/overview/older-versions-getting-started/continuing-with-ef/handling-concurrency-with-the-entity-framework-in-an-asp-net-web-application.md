@@ -1,304 +1,304 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
-title: Verarbeiten von Parallelität bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung | Microsoft-Dokumentation
+title: Behandeln von Parallelität mit dem Entity Framework 4,0 in einer ASP.NET 4-Webanwendung | Microsoft-Dokumentation
 author: tdykstra
-description: Dieser tutorialreihe erstellt in der Contoso University-Webanwendung, die von den ersten Schritten mit der Entity Framework 4.0-Tutorial-Reihe erstellt wird. ICH...
+description: Diese tutorialreihe basiert auf der Webanwendung der Website von "Web", die in der tutorialreihe für die ersten Schritte mit Entity Framework 4,0 erstellt wurde. I...
 ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: a5aa22a6-fb7f-4f41-9c7f-addda151940b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
 ms.openlocfilehash: 3df5f7d9c8fb22e1ea34fe16560bdb9a1309bb56
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131880"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513501"
 ---
-# <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Verarbeiten von Parallelität bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung
+# <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Behandeln von Parallelität mit dem Entity Framework 4,0 in einer ASP.NET 4-Webanwendung
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-> Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
+> Diese tutorialreihe basiert auf der Webanwendung der Website von "Web", die in der tutorialreihe für die ersten Schritte [mit Entity Framework 4,0](https://asp.net/entity-framework/tutorials#Getting%20Started) erstellt wurde. Wenn Sie die vorherigen Tutorials nicht durchgearbeitet haben, können Sie die Anwendung, die Sie erstellt haben, als Ausgangspunkt für dieses Tutorial [herunterladen](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) . Sie können auch [die Anwendung herunterladen](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , die von der kompletten tutorialreihe erstellt wird. Wenn Sie Fragen zu den Tutorials haben, können Sie Sie im ASP.net- [Entity Framework Forum](https://forums.asp.net/1227.aspx)Posten.
 
-Im vorherigen Tutorial haben Sie gelernt, wie Sortieren und Filtern Daten mit der `ObjectDataSource` -Steuerelement und das Entity Framework. Dieses Tutorial Zeigt Optionen für die Behandlung von Parallelität in einer ASP.NET-Webanwendung, die das Entity Framework verwendet. Erstellen Sie eine neue Webseite, die speziell für das Aktualisieren von Büroaufgaben "Instructor". Sie müssen behandeln, Parallelitätsprobleme in dieser Seite und in den Abteilungen-Seite, die Sie zuvor erstellt haben.
+Im vorherigen Tutorial haben Sie gelernt, wie Sie Daten mithilfe des `ObjectDataSource`-Steuer Elements und des Entity Framework sortieren und filtern. Dieses Tutorial zeigt Optionen für die Handhabung von Parallelität in einer ASP.NET-Webanwendung, die die Entity Framework verwendet. Sie erstellen eine neue Webseite, die für das Aktualisieren von Dozenten-Office-Zuweisungen reserviert ist. Sie behandeln Parallelitäts Probleme auf dieser Seite und auf der Seite "Abteilungen", die Sie zuvor erstellt haben.
 
 [![Image06](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-[![Image01 abgerufen wird](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
+[![Image01](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
-## <a name="concurrency-conflicts"></a>Parallelitätskonflikte
+## <a name="concurrency-conflicts"></a>Nebenläufigkeitskonflikte
 
-Ein Parallelitätskonflikt tritt auf, wenn ein Benutzer, einen Datensatz bearbeitet, und ein anderer Benutzer den gleichen Datensatz bearbeitet, bevor die Änderung des ersten Benutzers in die Datenbank geschrieben wird. Wenn Sie die Entity Framework nicht auf solche Konflikte zu erkennen, überschreibt Person die Datenbank das letzte Änderungen des anderen Benutzers. In vielen Anwendungen ist dieses Risiko akzeptabel ist, und Sie müssen die Anwendung so behandeln Sie Parallelitätskonflikte möglich konfigurieren. (Wenn es gibt nur wenige Benutzer bzw. wenige Updates oder ist nicht schlimm, wenn einige Änderungen überschrieben werden, die Kosten für die Programmierung für die Parallelität möglicherweise nicht Wert.) Wenn Sie nicht über Parallelitätskonflikte machen müssen, können Sie dieses Tutorial überspringen; die verbleibenden beiden Tutorials der Reihe abhängig nicht sein, die Sie in diesem Artikel erstellen.
+Ein Parallelitäts Konflikt tritt auf, wenn ein Benutzer einen Datensatz bearbeitet und ein anderer Benutzer denselben Datensatz bearbeitet, bevor die Änderung des ersten Benutzers in die Datenbank geschrieben wird. Wenn Sie die Entity Framework nicht so einrichten, dass solche Konflikte erkannt werden, überschreibt der Benutzer, der die Datenbank zuletzt aktualisiert hat, die Änderungen des anderen Benutzers. In vielen Anwendungen ist dieses Risiko akzeptabel, und Sie müssen die Anwendung nicht so konfigurieren, dass mögliche Parallelitäts Konflikte behandelt werden. (Wenn es nur wenige Benutzer oder wenige Updates gibt, oder wenn nicht wirklich wichtig ist, wenn einige Änderungen überschrieben werden, können die Kosten für die Programmierung für Parallelität den Vorteil überwiegen.) Wenn Sie sich keine Gedanken über Parallelitäts Konflikte machen müssen, können Sie dieses Tutorial überspringen. die verbleibenden beiden Tutorials in der Reihe sind nicht von etwas abhängig, das Sie in diesem erstellen.
 
 ### <a name="pessimistic-concurrency-locking"></a>Pessimistische Parallelität (Sperren)
 
-Wenn Ihre Anwendung versehentliche Datenverluste in Parallelitätsszenarios verhindern muss, ist die Verwendung von Datenbanksperren eine Möglichkeit. Dies wird als bezeichnet *pessimistische Parallelität*. Bevor Sie zum Beispiel eine Zeile aus einer Datenbank lesen, fordern Sie eine Sperre für den schreibgeschützten Zugriff oder den Aktualisierungszugriff an. Wenn Sie eine Zeile für den Aktualisierungszugriff sperren, kann kein anderer Benutzer diese Zeile für den schreibgeschützten Zugriff oder den Aktualisierungszugriff sperren, da er eine Kopie der Daten erhalten würde, die gerade geändert werden. Wenn Sie eine Zeile für den schreibgeschützten Zugriff sperren, können andere diese Zeile ebenfalls für den schreibgeschützten Zugriff sperren, aber nicht für den Aktualisierungszugriff.
+Wenn Ihre Anwendung versehentliche Datenverluste in Parallelitätsszenarios verhindern muss, ist die Verwendung von Datenbanksperren eine Möglichkeit. Dies wird als *pessimistische*Parallelität bezeichnet. Bevor Sie zum Beispiel eine Zeile aus einer Datenbank lesen, fordern Sie eine Sperre für den schreibgeschützten Zugriff oder den Aktualisierungszugriff an. Wenn Sie eine Zeile für den Aktualisierungszugriff sperren, kann kein anderer Benutzer diese Zeile für den schreibgeschützten Zugriff oder den Aktualisierungszugriff sperren, da er eine Kopie der Daten erhalten würde, die gerade geändert werden. Wenn Sie eine Zeile für den schreibgeschützten Zugriff sperren, können andere diese Zeile ebenfalls für den schreibgeschützten Zugriff sperren, aber nicht für den Aktualisierungszugriff.
 
-Verwalten von Sperren hat Nachteile. Es kann komplex sein, sie zu programmieren. Es erfordert erhebliche datenbankverwaltungsressourcen und kann es zu Leistungsproblemen führen, als die Anzahl der Benutzer einer Anwendung steigt (d. h. es nicht gut skalierbar). Aus diesen Gründen unterstützen nicht alle Datenbankverwaltungssysteme die pessimistische Parallelität. Bietet keine integrierte Unterstützung für das Entity Framework und in diesem Tutorial nicht angezeigt, wie er implementiert.
+Das Verwalten von Sperren hat einige Nachteile. Es kann komplex sein, sie zu programmieren. Hierfür sind beträchtliche Ressourcen für die Datenbankverwaltung erforderlich, und es kann zu Leistungsproblemen führen, wenn die Anzahl der Benutzer einer Anwendung zunimmt (das heißt, es ist nicht gut skalierbar). Aus diesen Gründen unterstützen nicht alle Datenbankverwaltungssysteme die pessimistische Parallelität. Die Entity Framework bietet keine integrierte Unterstützung für diese, und dieses Tutorial zeigt Ihnen nicht, wie Sie Sie implementieren können.
 
 ### <a name="optimistic-concurrency"></a>Optimistische Nebenläufigkeit
 
-Die Alternative zur pessimistischen Parallelität ist *optimistische Parallelität*. Die Verwendung der optimistischen Parallelität bedeutet, Nebenläufigkeitskonflikte zu erlauben und entsprechend zu reagieren, wenn diese auftreten. Beispielsweise führt er die *Department.aspx* Seite Klicks die **bearbeiten** für die Abteilung Verlauf zu verknüpfen, und verringert die **Budget** Betrag vom 1,000,000.00 $ $ 125,000.00. (John eine konkurrierende Abteilung verwaltet und freizugeben, Geld für seine eigene Abteilung möchte).
+Die Alternative zur pessimistischen Parallelität ist die *optimistische*Parallelität. Die Verwendung der optimistischen Parallelität bedeutet, Nebenläufigkeitskonflikte zu erlauben und entsprechend zu reagieren, wenn diese auftreten. John führt z. b. die Seite *Department. aspx* aus, klickt auf den Link **Bearbeiten** für die Verlaufs Abteilung und reduziert den **Budget** Betrag von $1.000.000,00 auf $125.000,00. (John verwaltet eine konkurrierende Abteilung und möchte Geld für seine eigene Abteilung freigeben.)
 
 [![Image07](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
-Bevor John klickt **Update**, Jane führt die gleiche Seite, klickt auf die **bearbeiten** Link für die Verlaufs-Abteilung, und klicken Sie dann Änderungen der **Startdatum** auf 1/1/1/10/2011 Feld 1999. (Jane die Verlaufs-Abteilung verwaltet und möchte ihm Weitere Betriebszugehörigkeit zu geben.)
+Bevor John auf **Update**klickt, führt Jane dieselbe Seite aus, klickt auf den Link **Bearbeiten** für die Verlaufs Abteilung und ändert dann das Feld **Start Datum** von 1/10/2011 in 1/1/1999. (Jane verwaltet die Verlaufs Abteilung und möchte ihr eine höhere Rangfolge einräumen.)
 
 [![Image08](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image8.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image7.png)
 
-John klickt **Update** zunächst Jane klickt **Update**. Janes Browser jetzt Listen der **Budget** Betrag als $1,000,000.00, aber dies ist falsch, da die Menge von John in $125,000.00 geändert wurde.
+John klickt zuerst auf **Aktualisieren** und dann auf **Aktualisieren**. Der Browser von Jane listet jetzt den **Budget** Betrag als $1.000.000,00 auf, aber dies ist falsch, da der Betrag von John in $125.000,00 geändert wurde.
 
-Einige der Aktionen, die Sie, in diesem Szenario ergreifen können die folgenden:
+In diesem Szenario können Sie beispielsweise folgende Aktionen ausführen:
 
-- Sie können nachverfolgen, welche Eigenschaft ein Benutzer geändert hat und nur die entsprechenden Spalten in der Datenbank aktualisieren. Im Beispielszenario würden keine Daten verloren gehen, da verschiedene Eigenschaften von zwei Benutzern aktualisiert wurden. Das nächste Mal ein Benutzer die Verlaufs-Fachbereich durchsucht, wird Ihnen 1/1/1999 und $125,000.00. 
+- Sie können nachverfolgen, welche Eigenschaft ein Benutzer geändert hat und nur die entsprechenden Spalten in der Datenbank aktualisieren. Im Beispielszenario würden keine Daten verloren gehen, da verschiedene Eigenschaften von zwei Benutzern aktualisiert wurden. Wenn das nächste Mal die Verlaufs Abteilung durchsucht, werden 1/1/1999 und $125.000,00 angezeigt. 
 
-    Dies ist das Standardverhalten in Entity Framework, und sie können die Anzahl der Konflikte, die zu Datenverlust führen können erheblich reduzieren. Dieses Verhalten jedoch vermeiden nicht Datenverlust, wenn konkurrierende Änderungen an der gleichen Eigenschaft einer Entität vorgenommen werden. Dieses Verhalten nicht darüber hinaus immer möglich; Wenn Sie einen Entitätstyp gespeicherte Prozeduren zuordnen, werden alle Eigenschaften einer Entität aktualisiert, wenn Änderungen an der Entität in der Datenbank vorgenommen werden.
-- Sie können die Janes Änderungen Benutzer2s die Änderungen zu überschreiben. Nach dem Jane klickt **Update**, **Budget** Menge wird auf $1,000,000.00 zurückgesetzt. Das ist entweder ein *Client gewinnt*- oder ein *Letzter Schreiber gewinnt*-Szenario. (Der Client die Werte haben Vorrang vor im Datenspeicher neuerungen.)
-- Sie können verhindern, dass Janes Änderung in der Datenbank aktualisiert wird. In der Regel würden Sie eine Fehlermeldung angezeigt, zeigen sie den aktuellen Zustand der Daten und können ihr Zugriff auf ihre Änderungen erneut ein, wenn er immer noch machen möchte. Sie konnte den Prozess weiter automatisieren, indem Sie ihre Eingabe speichern und ihrer es wieder aktiviert, ohne dass er erneut eingeben. Dieses Szenario wird *Store Wins* (Speicher gewinnt) genannt. (Die Werte des Datenspeichers haben Vorrang gegenüber den Werten, die vom Client gesendet werden).
+    Dies ist das Standardverhalten im Entity Framework, das die Anzahl der Konflikte erheblich reduzieren kann, die zu Datenverlusten führen können. Dieses Verhalten vermeidet jedoch keinen Datenverlust, wenn an derselben Eigenschaft einer Entität konkurrierende Änderungen vorgenommen werden. Außerdem ist dieses Verhalten nicht immer möglich. Wenn Sie gespeicherte Prozeduren einem Entitätstyp zuordnen, werden alle Eigenschaften einer Entität aktualisiert, wenn Änderungen an der Entität in der Datenbank vorgenommen werden.
+- Sie können die Änderung von John überschreiben. Nachdem Andrea auf " **Aktualisieren**" geklickt hat, wird der **Budget** Betrag auf $1.000.000,00 zurückgeleitet. Das ist entweder ein *Client gewinnt*- oder ein *Letzter Schreiber gewinnt*-Szenario. (Die Client Werte haben Vorrang vor dem, was im Datenspeicher liegt.)
+- Sie können verhindern, dass die Änderungen von Jane in der Datenbank aktualisiert werden. Normalerweise würden Sie eine Fehlermeldung anzeigen, den aktuellen Zustand der Daten anzeigen und zulassen, dass die Änderungen erneut eingegeben werden, wenn Sie Sie noch erstellen möchten. Sie können den Prozess weiter automatisieren, indem Sie die Eingabe speichern und Ihnen die Möglichkeit geben, Sie erneut anzuwenden, ohne Sie erneut eingeben zu müssen. Dieses Szenario wird *Store Wins* (Speicher gewinnt) genannt. (Die Werte des Datenspeichers haben Vorrang vor den Werten, die vom Client gesendet werden.)
 
-### <a name="detecting-concurrency-conflicts"></a>Erkennen von Nebenläufigkeitskonflikten
+### <a name="detecting-concurrency-conflicts"></a>Erkennen von Parallelitäts Konflikten
 
-In Entity Framework können Sie Konflikte beheben, indem Behandlung `OptimisticConcurrencyException` Ausnahmen, die vom Entity Framework ausgelöst. Entity Framework muss dazu in der Lage sein, Konflikte zu erkennen, damit es weiß, wann diese Ausnahmen ausgelöst werden sollen. Aus diesem Grund müssen Sie die Datenbank und das Datenmodell entsprechend konfigurieren. Einige der Optionen für das Aktivieren der Konflikterkennung schließen Folgendes ein:
+Im Entity Framework können Sie Konflikte lösen, indem Sie `OptimisticConcurrencyException` Ausnahmen behandeln, die vom Entity Framework ausgelöst werden. Entity Framework muss dazu in der Lage sein, Konflikte zu erkennen, damit es weiß, wann diese Ausnahmen ausgelöst werden sollen. Aus diesem Grund müssen Sie die Datenbank und das Datenmodell entsprechend konfigurieren. Einige der Optionen für das Aktivieren der Konflikterkennung schließen Folgendes ein:
 
-- Enthalten Sie in der Datenbank eine Tabellenspalte, die verwendet werden kann, um zu bestimmen, wenn eine Zeile geändert wurde. Anschließend können Sie konfigurieren die Entity Framework enthält diese Spalte in der `Where` -Klausel von SQL `Update` oder `Delete` Befehle.
+- Fügen Sie in der-Datenbank eine Tabellenspalte ein, die verwendet werden kann, um zu bestimmen, wann eine Zeile geändert wurde. Anschließend können Sie die Entity Framework so konfigurieren, dass Sie diese Spalte in die `Where`-Klausel von SQL `Update` oder `Delete`-Befehlen einschließt.
 
-    Dies ist der Zweck der `Timestamp` -Spalte in der `OfficeAssignment` Tabelle.
+    Dies ist der Zweck der `Timestamp` Spalte in der `OfficeAssignment` Tabelle.
 
     [![Image09](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image10.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image9.png)
 
-    Der Datentyp der `Timestamp` Spalte ist die Abkürzung `Timestamp`. Allerdings nicht für die Spalte tatsächlich einen Datum oder Uhrzeit-Wert enthalten. Stattdessen ist der Wert eine sequenzielle Zahl, die jeweils erhöht, die die Zeile aktualisiert wird. In einer `Update` oder `Delete` Befehl aus, die `Where` -Klausel enthält, die ursprüngliche `Timestamp` Wert. Wenn die zu aktualisierende Zeile durch den Wert in einen anderen Benutzer geändert wurde `Timestamp` unterscheidet sich von den ursprünglichen Wert daher `Where` die Klausel gibt keine zu aktualisierenden Zeile zurück. Wenn Entity Framework feststellt, wurden keine Zeilen von der aktuellen aktualisiert, `Update` oder `Delete` Befehl (d. h., wenn die Anzahl der betroffenen Zeilen 0 (null) ist), die als Parallelitätskonflikt interpretiert.
-- Konfigurieren von Entity Framework für die ursprünglichen Werte jeder Spalte in der Tabelle sind die `Where` -Klausel der `Update` und `Delete` Befehle.
+    Der Datentyp der Spalte `Timestamp` wird auch als `Timestamp`bezeichnet. Die Spalte enthält jedoch keinen Datums-oder Uhrzeitwert. Stattdessen ist der Wert eine sequenzielle Zahl, die jedes Mal erhöht wird, wenn die Zeile aktualisiert wird. In einem `Update`-oder `Delete`-Befehl enthält die `Where`-Klausel den ursprünglichen `Timestamp` Wert. Wenn die zu Aktualisier Ende Zeile von einem anderen Benutzer geändert wurde, unterscheidet sich der Wert in `Timestamp` vom ursprünglichen Wert, sodass die `Where`-Klausel keine zu Aktualisier Ende Zeile zurückgibt. Wenn das Entity Framework feststellt, dass keine Zeilen mit dem aktuellen `Update` oder `Delete` Befehl aktualisiert wurden (d. h., wenn die Anzahl der betroffenen Zeilen 0 (null) ist), wird dies als Parallelitäts Konflikt interpretiert.
+- Konfigurieren Sie die Entity Framework, um die ursprünglichen Werte jeder Spalte in der Tabelle in der `Where`-Klausel der Befehle `Update` und `Delete` einzuschließen.
 
-    Wie in der ersten Option, wenn etwas in der Zeile geändert hat, da die Zeile zuerst gelesen wurde die `Where` Klausel keine Zeile zum Aktualisieren, das Entity Framework als Parallelitätskonflikt interpretiert zurück. Diese Methode ist so effektiv wie die Verwendung einer `Timestamp` Feld, jedoch kann ineffizient sein. Für Datenbanktabellen, die viele Spalten aufweisen, es kann dazu führen, sehr große `Where` -Klauseln, und in einer Webanwendung kann erfordern, dass Sie mit große zustandsdatenmengen verwalten. Verwalten großer Mengen von Status kann die Anwendungsleistung beeinträchtigen, da sie Serverressourcen (z. B. der Sitzungszustand erfordert) oder auf der Webseite selbst (z. B. "Ansichtszustand") enthalten sein muss.
+    Wie bei der ersten Option gibt die `Where`-Klausel keine zu Aktualisier Ende Zeile zurück, wenn in der Zeile nach dem ersten Lesen der Zeile Änderungen vorgenommen wurden, die der Entity Framework als Parallelitäts Konflikt interpretiert. Diese Methode ist so effektiv wie die Verwendung eines `Timestamp` Felds, kann jedoch ineffizient sein. Bei Datenbanktabellen, die viele Spalten enthalten, kann dies zu sehr großen `Where` Klauseln führen, und in einer Webanwendung kann es erforderlich sein, dass Sie große Mengen an Zuständen aufbewahren. Die Verwaltung großer Zustands Mengen kann die Leistung der Anwendung beeinträchtigen, da Sie entweder Server Ressourcen (z. b. den Sitzungszustand) erfordert oder in der Webseite selbst enthalten sein muss (z. b. Ansichts Zustand).
 
-In diesem Tutorial fügen Sie Konflikte bezüglich vollständiger Parallelität für eine Entität, das eine Nachverfolgungseigenschaft keine Fehlerbehandlung (der `Department` Entität) und für eine Entität, die eine Nachverfolgungseigenschaft verfügt (der `OfficeAssignment` Entität).
+In diesem Tutorial fügen Sie eine Fehlerbehandlung für Konflikte mit optimistischen Parallelität für eine Entität hinzu, die keine nach Verfolgungs Eigenschaft (die `Department` Entität) und eine Entität mit einer nach Verfolgungs Eigenschaft (der `OfficeAssignment` Entität) besitzt.
 
-## <a name="handling-optimistic-concurrency-without-a-tracking-property"></a>Behandeln von Parallelität ohne einer Nachverfolgungseigenschaft
+## <a name="handling-optimistic-concurrency-without-a-tracking-property"></a>Verarbeiten von optimistischer Parallelität ohne Überwachungs Eigenschaft
 
-Zum Implementieren einer optimistischen nebenläufigkeit für die `Department` -Entität, die eine nachverfolgung keine (`Timestamp`)-Eigenschaft, werden Sie die folgenden Aufgaben ausführen:
+Zum Implementieren der vollständigen Parallelität für die `Department`-Entität, die über keine Überwachungs Eigenschaft (`Timestamp`) verfügt, führen Sie die folgenden Aufgaben aus:
 
-- Ändern Sie das Datenmodell zum Aktivieren der nachverfolgung für Parallelität `Department` Entitäten.
-- In der `SchoolRepository` Klasse, Ausnahmen der Handle-Parallelität in der `SaveChanges` Methode.
-- In der *Departments.aspx* Seite Handle Parallelitätsausnahmen durch Anzeigen einer Meldung, die dem Benutzer gewarnt, dass die versuchten Änderungen nicht erfolgreich ausgeführt wurden. Der Benutzer kann dann finden Sie unter den aktuellen Werten und wiederholen Sie die Änderungen, wenn sie noch immer benötigt werden.
+- Ändern Sie das Datenmodell, um die Parallelitäts Verfolgung für `Department` Entitäten zu aktivieren.
+- Behandeln Sie in der `SchoolRepository`-Klasse Parallelitäts Ausnahmen in der `SaveChanges`-Methode.
+- Behandeln Sie Parallelitäts Ausnahmen auf der Seite " *Departments. aspx* ", indem Sie eine Meldung an die Benutzerwarnung anzeigen, dass die versuchten Änderungen nicht erfolgreich waren. Der Benutzer kann dann die aktuellen Werte sehen und die Änderungen wiederholen, wenn Sie noch benötigt werden.
 
-### <a name="enabling-concurrency-tracking-in-the-data-model"></a>Aktivieren die Parallelität nachverfolgen, die im Datenmodell
+### <a name="enabling-concurrency-tracking-in-the-data-model"></a>Aktivieren der Parallelitäts Verfolgung im Datenmodell
 
-Öffnen Sie in Visual Studio die Contoso University-Webanwendung, die Sie im vorherigen Tutorial dieser Reihe verwendet wurden.
+Öffnen Sie in Visual Studio die Webanwendung "Web-App für die Internet-app", mit der Sie im vorherigen Tutorial dieser Reihe gearbeitet haben.
 
-Open *SchoolModel.edmx*, im Modell-Designer mit der Maustaste der `Name` -Eigenschaft in der `Department` Entität, und klicken Sie dann auf **Eigenschaften**. In der **Eigenschaften** Ändern der `ConcurrencyMode` Eigenschaft `Fixed`.
+Öffnen Sie *School Model. edmx*, und klicken Sie im Datenmodell-Designer mit der rechten Maustaste auf die `Name`-Eigenschaft in der `Department` Entität, und klicken Sie dann auf **Eigenschaften**. Ändern Sie im **Eigenschaften** Fenster die `ConcurrencyMode`-Eigenschaft in `Fixed`.
 
 [![Image16](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image12.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image11.png)
 
-Gehen Sie ebenso bei anderen nicht-Primärschlüssel skalaren Eigenschaften (`Budget`, `StartDate`, und `Administrator`.) (Dies für Navigationseigenschaften ist nicht möglich.) Gibt an, dass jedes Mal, wenn Entity Framework generiert eine `Update` oder `Delete` SQL-Befehl zum Aktualisieren der `Department` Entität in der Datenbank, diese Spalten (mit ursprünglichen Werten) enthalten sein müssen der `Where` Klausel. Wenn keine Zeile gefunden wird die `Update` oder `Delete` Befehl ausgeführt wird, Entity Framework löst eine Ausnahme für die vollständige Parallelität.
+Führen Sie die gleichen Schritte für die anderen skalaren Eigenschaften aus, die keine Primärschlüssel sind (`Budget`, `StartDate`und `Administrator`.) (Dies ist für Navigations Eigenschaften nicht möglich.) Dies gibt an, dass die Spalten (mit ursprünglichen Werten) in der `Where`-Klausel enthalten sein müssen, wenn die Entity Framework eine `Update` oder `Delete` SQL-Befehl generiert, um die `Department` Entität in der Datenbank zu aktualisieren. Wenn bei der Ausführung des `Update`-oder `Delete` Befehls keine Zeile gefunden wird, löst der Entity Framework eine Ausnahme der vollständigen Parallelität aus.
 
-Speichern Sie und schließen Sie das Datenmodell.
+Speichern und schließen Sie das Datenmodell.
 
-### <a name="handling-concurrency-exceptions-in-the-dal"></a>Behandeln von Parallelitätsausnahmen in der Datenzugriffsschicht
+### <a name="handling-concurrency-exceptions-in-the-dal"></a>Behandeln von Parallelitäts Ausnahmen in der Dal
 
-Open *SchoolRepository.cs* und fügen Sie die folgenden `using` -Anweisung für die `System.Data` Namespace:
+Öffnen Sie *SchoolRepository.cs* , und fügen Sie die folgende `using`-Anweisung für den `System.Data`-Namespace hinzu:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample1.cs)]
 
-Fügen Sie die folgenden neuen `SaveChanges` -Methode, die Ausnahmen bzgl. vollständiger Parallelität behandelt:
+Fügen Sie die folgende neue `SaveChanges`-Methode hinzu, die Ausnahmen bei der vollständigen Parallelität behandelt:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample2.cs)]
 
-Wenn ein Fehler tritt auf, wenn diese Methode aufgerufen wird, werden die Eigenschaftswerte der Entität im Speicher durch den aktuellen Werten in der Datenbank ersetzt. Die Concurrency-Ausnahme erneut ausgelöst, damit die Webseite verarbeitet werden können.
+Wenn beim Aufrufen dieser Methode ein Parallelitäts Fehler auftritt, werden die Eigenschaftswerte der Entität im Arbeitsspeicher durch die aktuell in der Datenbank vorhandenen Werte ersetzt. Die Parallelitäts Ausnahme wird erneut ausgelöst, sodass Sie von der Webseite behandelt werden kann.
 
-In der `DeleteDepartment` und `UpdateDepartment` Methoden ersetzen die vorhandenen Aufruf von `context.SaveChanges()` mit einem Aufruf von `SaveChanges()` um die neue Methode aufzurufen.
+Ersetzen Sie in den Methoden `DeleteDepartment` und `UpdateDepartment` den vorhandenen Aufruf von `context.SaveChanges()` durch einen Aufruf von `SaveChanges()`, um die neue Methode aufzurufen.
 
-### <a name="handling-concurrency-exceptions-in-the-presentation-layer"></a>Behandeln von Parallelitätsausnahmen in der Darstellungsschicht
+### <a name="handling-concurrency-exceptions-in-the-presentation-layer"></a>Behandeln von Parallelitäts Ausnahmen in der Darstellungs Schicht
 
-Open *Departments.aspx* und Hinzufügen einer `OnDeleted="DepartmentsObjectDataSource_Deleted"` -Attribut auf die `DepartmentsObjectDataSource` Steuerelement. Das öffnende Tag für das Steuerelement wird jetzt im folgende Beispiel ähneln.
+Öffnen Sie " *Departments. aspx* ", und fügen Sie dem `DepartmentsObjectDataSource` Steuerelement ein `OnDeleted="DepartmentsObjectDataSource_Deleted"` Attribut hinzu. Das öffnende Tag für das-Steuerelement ähnelt nun dem folgenden Beispiel.
 
 [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample3.aspx)]
 
-In der `DepartmentsGridView` geben alle Tabellenspalten in der `DataKeyNames` Attribut, wie im folgenden Beispiel gezeigt. Beachten Sie, dass dies sehr große Ansicht Felder "Bundesstaat", erstellt die ist ein guter Grund ist, warum ein Feld für die nachverfolgung verwenden im Allgemeinen die bevorzugte Methode zum Nachverfolgen von Parallelitätskonflikten.
+Geben Sie im `DepartmentsGridView`-Steuerelement alle Tabellen Spalten im `DataKeyNames`-Attribut an, wie im folgenden Beispiel gezeigt. Beachten Sie, dass dadurch sehr große Ansichts Zustands Felder erstellt werden. Dies ist ein Grund, warum die Verwendung eines nach Verfolgungs Felds im Allgemeinen die bevorzugte Methode zum Nachverfolgen von Parallelitäts Konflikten ist.
 
 [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample4.aspx)]
 
-Open *Departments.aspx.cs* und fügen Sie die folgenden `using` -Anweisung für die `System.Data` Namespace:
+Öffnen Sie *Departments.aspx.cs* , und fügen Sie die folgende `using`-Anweisung für den `System.Data`-Namespace hinzu:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample5.cs)]
 
-Fügen Sie die folgende neue Methode, die Sie aus den Datenquellen-Steuerelement die aufrufen werden `Updated` und `Deleted` -Ereignishandler für die Behandlung von Parallelitätsausnahmen:
+Fügen Sie die folgende neue Methode hinzu, die Sie aus dem `Updated` des Datenquellen-Steuer Elements und `Deleted` Ereignis Handlern für die Behandlung von Parallelitäts Ausnahmen aufzurufen:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample6.cs)]
 
-Dieser Code überprüft, ob der Typ der Ausnahme, und wenn es sich um eine Parallelitätsausnahme ist, erstellt des Codes dynamisch eine `CustomValidator` -Steuerelement, das wiederum eine Meldung im angezeigt, die `ValidationSummary` Steuerelement.
+Dieser Code überprüft den Ausnahmetyp. wenn es sich um eine Parallelitäts Ausnahme handelt, erstellt der Code dynamisch ein `CustomValidator` Steuerelement, das wiederum eine Meldung im `ValidationSummary` Steuerelement anzeigt.
 
-Rufen Sie die neue Methode über die `Updated` -Ereignishandler, die Sie zuvor hinzugefügt haben. Darüber hinaus erstellen Sie ein neues `Deleted` -Ereignishandler, der die gleiche Methode aufruft (jedoch keine anderen Vorgänge ausgeführt):
+Nennen Sie die neue Methode aus dem `Updated` Ereignishandler, den Sie zuvor hinzugefügt haben. Erstellen Sie außerdem einen neuen `Deleted` Ereignishandler, der dieselbe Methode aufruft (aber nichts anderes tut):
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample7.cs)]
 
-### <a name="testing-optimistic-concurrency-in-the-departments-page"></a>Testen optimistischen Parallelität in der Seite "Abteilungen".
+### <a name="testing-optimistic-concurrency-in-the-departments-page"></a>Testen optimistischer Parallelität auf der Seite "Abteilungen"
 
-Führen Sie die *Departments.aspx* Seite.
+Führen Sie die Seite " *Departments. aspx* " aus.
 
 [![Image17](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image14.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image13.png)
 
-Klicken Sie auf **bearbeiten** in einer Zeile, und ändern Sie den Wert in der **Budget** Spalte. (Beachten Sie, dass Sie nur bearbeiten, können Datensätze, die Sie für dieses Tutorial erstellt haben da die vorhandenen `School` Datenbank-Datensätzen enthalten ungültigen Daten. Der Datensatz für die Wirtschaftlichkeit Abteilung ist zum Experimentieren mit einer sicheren.)
+Klicken Sie in einer Zeile auf **Bearbeiten** , und ändern Sie den Wert in der Spalte **Budget** . (Denken Sie daran, dass Sie nur die Datensätze bearbeiten können, die Sie für dieses Tutorial erstellt haben, da die vorhandenen `School` Datenbankdaten Sätze ungültige Daten enthalten. Der Datensatz für die Wirtschaftsabteilung ist ein sicherer, mit dem Sie experimentieren können.)
 
 [![Image18](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image16.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image15.png)
 
-Öffnen Sie ein neues Browserfenster, und führen Sie die Seite erneut aus (Kopieren Sie die URL aus der ersten Browserfenster Adressfeld zum zweiten Browserfenster).
+Öffnen Sie ein neues Browserfenster, und führen Sie die Seite erneut aus (Kopieren Sie die URL aus dem Adressfeld des ersten Browserfensters in das zweite Browserfenster).
 
 [![Image17](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image18.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image17.png)
 
-Klicken Sie auf **bearbeiten** in der gleichen Sie die zuvor bearbeiteten Zeile, und ändern Sie die **Budget** Wert in einen anderen.
+Klicken Sie in derselben Zeile, die Sie zuvor bearbeitet haben, auf **Bearbeiten** , und ändern Sie den Wert für **Budget** in etwas anderes
 
 [![Image19](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image20.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image19.png)
 
-Klicken Sie in der zweiten Browserfenster auf **Update**. Die **Budget** Betrag erfolgreich auf diesen neuen Wert geändert wird.
+Klicken Sie im zweiten Browserfenster auf **Aktualisieren**. Der **Budget** Betrag wurde erfolgreich auf diesen neuen Wert geändert.
 
 [![Image20](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image22.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image21.png)
 
-Klicken Sie in der ersten Browserfenster auf **Update**. Das Update schlägt fehl. Die **Budget** Betrag wird erneut mit dem Wert, Sie in der zweiten Browserfenster legen, angezeigt, und Sie sehen eine Fehlermeldung angezeigt.
+Klicken Sie im ersten Browserfenster auf **Aktualisieren**. Die Aktualisierung schlägt fehl. Der **Budget** Betrag wird mit dem Wert, den Sie im zweiten Browserfenster festgelegt haben, erneut angezeigt, und es wird eine Fehlermeldung angezeigt.
 
 [![Image21](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image24.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image23.png)
 
-## <a name="handling-optimistic-concurrency-using-a-tracking-property"></a>Behandeln von Parallelität mit einer Nachverfolgungseigenschaft
+## <a name="handling-optimistic-concurrency-using-a-tracking-property"></a>Verarbeiten von optimistischer Parallelität mithilfe einer nach Verfolgungs Eigenschaft
 
-Um vollständige Parallelität für eine Entität zu behandeln, die eine Nachverfolgungseigenschaft verfügt, müssen Sie die folgenden Aufgaben ausführen:
+Zum Verarbeiten der vollständigen Parallelität für eine Entität, die über eine Überwachungs Eigenschaft verfügt, führen Sie die folgenden Aufgaben aus:
 
-- Hinzufügen von gespeicherten Prozeduren in das Datenmodell zum Verwalten von `OfficeAssignment` Entitäten. (Eigenschaften der nachrichtenüberwachung und gespeicherte Prozeduren müssen zusammen verwendet werden; sie sind nur gruppiert hier zur Veranschaulichung.)
-- Hinzufügen von CRUD-Methoden zu der DAL und die BLL für `OfficeAssignment` Entitäten, einschließlich Code zum Behandeln von Ausnahmen bzgl. vollständiger Parallelität in der DAL.
-- Erstellen Sie eine Office-Zuweisungen-Webseite.
-- Vollständigen Parallelität in die neue Webseite zu testen.
+- Fügen Sie dem Datenmodell gespeicherte Prozeduren hinzu, um `OfficeAssignment` Entitäten zu verwalten. (Überwachungs Eigenschaften und gespeicherte Prozeduren müssen nicht zusammen verwendet werden. Sie werden hier nur zur Veranschaulichung zusammengefasst.)
+- Fügen Sie die CRUD-Methoden der dal und der BLL für `OfficeAssignment` Entitäten hinzu, einschließlich Code zum Behandeln von Ausnahmen in der vollständigen Parallelität in der DAL.
+- Erstellen einer Webseite für Office-Zuweisungen.
+- Testen Sie die optimistische Parallelität auf der neuen Webseite.
 
-### <a name="adding-officeassignment-stored-procedures-to-the-data-model"></a>Hinzufügen von "OfficeAssignment" gespeicherte Prozeduren, in das Datenmodell
+### <a name="adding-officeassignment-stored-procedures-to-the-data-model"></a>Hinzufügen von officezuweisung-gespeicherten Prozeduren zum Datenmodell
 
-Öffnen der *SchoolModel.edmx* im Modell-Designer-Datei mit der rechten Maustaste in der Entwurfsoberfläche, und klicken Sie auf **Modell aus der Datenbank aktualisieren**. In der **hinzufügen** Registerkarte die **Datenbankobjekte auswählen** Dialogfeld erweitern Sie **gespeicherte Prozeduren** , und wählen Sie die drei `OfficeAssignment` gespeicherte Prozeduren (finden Sie unter der Befolgen Sie Screenshot), und klicken Sie dann auf **Fertig stellen**. (Diese gespeicherten Prozeduren wurden bereits in der Datenbank, wenn Sie die heruntergeladenen oder erstellten es mit einem Skript.)
+Öffnen Sie die Datei " *SchoolModel. edmx* " im Modell-Designer, klicken Sie mit der rechten Maustaste auf die Entwurfs Oberfläche, und klicken Sie auf **Modell aus Datenbank aktualisieren**. Erweitern Sie im Dialogfeld **Wählen Sie Ihre Datenbankobjekte** auf der Registerkarte **Hinzufügen** die Option **gespeicherte Prozeduren** , und wählen Sie die drei gespeicherten Prozeduren `OfficeAssignment` aus (siehe den folgenden Screenshot **).** (Diese gespeicherten Prozeduren waren bereits in der Datenbank vorhanden, als Sie Sie mithilfe eines Skripts heruntergeladen oder erstellt haben.)
 
 [![Image02](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image26.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image25.png)
 
-Mit der rechten Maustaste die `OfficeAssignment` Entität, und wählen **Zuordnung der gespeicherten Prozedur**.
+Klicken Sie mit der rechten Maustaste auf die `OfficeAssignment` Entität, und wählen Sie **Zuordnung der gespeicherten**
 
 [![Image03](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image28.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image27.png)
 
-Legen Sie die **einfügen**, **Update**, und **löschen** Funktionen für die Verwendung der entsprechenden gespeicherten Prozeduren. Für die `OrigTimestamp` Parameter der `Update` funktionieren, legen Sie die **Eigenschaft** zu `Timestamp` , und wählen Sie die **Originalwert verwenden** Option.
+Legen Sie die Funktionen **Insert**, **Update**und **Delete** so fest, dass Sie die entsprechenden gespeicherten Prozeduren verwenden. Legen Sie für den `OrigTimestamp`-Parameter der `Update`-Funktion die- **Eigenschaft** auf `Timestamp` fest, und wählen Sie die Option **ursprünglichen Wert verwenden** aus.
 
 [![Image04](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image30.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image29.png)
 
-Wenn Entity Framework ruft die `UpdateOfficeAssignment` gespeicherte Prozedur übergeben sie den ursprünglichen Wert von der `Timestamp` -Spalte in der `OrigTimestamp` Parameter. Die gespeicherte Prozedur verwendet diesen Parameter in der `Where` Klausel:
+Wenn das Entity Framework die gespeicherte Prozedur `UpdateOfficeAssignment` aufruft, übergibt es den ursprünglichen Wert der Spalte `Timestamp` im `OrigTimestamp`-Parameter. Die gespeicherte Prozedur verwendet diesen Parameter in der `Where`-Klausel:
 
 [!code-sql[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample8.sql)]
 
-Die gespeicherte Prozedur wird auch den neuen Wert des wählt die `Timestamp` Spalte nach dem Update, damit Entity Framework halten, können die `OfficeAssignment` Entität, die im Arbeitsspeicher mit der entsprechenden Datenbankzeile synchronisiert ist.
+Die gespeicherte Prozedur wählt auch den neuen Wert der `Timestamp` Spalte nach dem Update aus, damit die Entity Framework die `OfficeAssignment` Entität, die sich im Arbeitsspeicher befindet, mit der entsprechenden Datenbankzeile synchron halten können.
 
-(Beachten Sie, dass die gespeicherte Prozedur für das Löschen einer bürozuweisung kein `OrigTimestamp` Parameter. Aus diesem Grund kann nicht das Entitätsframework stellen Sie sicher, dass eine Entität nicht geändert wird, bevor Sie ihn löschen.)
+(Beachten Sie, dass die gespeicherte Prozedur zum Löschen einer Office-Zuweisung nicht über einen `OrigTimestamp`-Parameter verfügt. Aus diesem Grund kann der Entity Framework nicht überprüfen, ob eine Entität vor dem Löschen unverändert ist.)
 
-Speichern Sie und schließen Sie das Datenmodell.
+Speichern und schließen Sie das Datenmodell.
 
-### <a name="adding-officeassignment-methods-to-the-dal"></a>Hinzufügen von "OfficeAssignment"-Methoden an die DAL senden
+### <a name="adding-officeassignment-methods-to-the-dal"></a>Hinzufügen von officezuweisungs Methoden zur Dal
 
-Open *ISchoolRepository.cs* und fügen Sie die folgenden CRUD-Methoden für die `OfficeAssignment` -Entitätenmenge aufgezeigt:
+Öffnen Sie *ISchoolRepository.cs* , und fügen Sie die folgenden CRUD-Methoden für die `OfficeAssignment` Entitätenmenge hinzu:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample9.cs)]
 
-Fügen Sie die folgenden neuen Methoden zum *SchoolRepository.cs*. In der `UpdateOfficeAssignment` Methode Sie aufrufen, die lokale `SaveChanges` Methode anstelle von `context.SaveChanges`.
+Fügen Sie *SchoolRepository.cs*die folgenden neuen Methoden hinzu. In der `UpdateOfficeAssignment`-Methode wird die lokale `SaveChanges`-Methode anstelle von `context.SaveChanges`aufgerufen.
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample10.cs)]
 
-Öffnen Sie im Testprojekt *MockSchoolRepository.cs* und fügen Sie die folgenden `OfficeAssignment` Sammlung und CRUD-Methoden an diesen. (Das pseudorepository, muss die Repositoryschnittstelle implementieren oder die Lösung nicht kompiliert.)
+Öffnen Sie *MockSchoolRepository.cs* im Testprojekt, und fügen Sie ihm die folgenden `OfficeAssignment` Collection-und CRUD-Methoden hinzu. (Das mockrepository muss die Repository-Schnittstelle implementieren, oder die Lösung wird nicht kompiliert.)
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample11.cs)]
 
-### <a name="adding-officeassignment-methods-to-the-bll"></a>Hinzufügen von "OfficeAssignment"-Methoden an die BLL
+### <a name="adding-officeassignment-methods-to-the-bll"></a>Hinzufügen von officezuweisungs Methoden zur BLL
 
-Öffnen Sie in dem Hauptprojekt, *SchoolBL.cs* und fügen Sie die folgenden CRUD-Methoden für die `OfficeAssignment` Entität festgelegt:
+Öffnen Sie im Hauptprojekt *SchoolBL.cs* , und fügen Sie die folgenden CRUD-Methoden für die `OfficeAssignment` Entitätenmenge hinzu:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample12.cs)]
 
-## <a name="creating-an-officeassignments-web-page"></a>Erstellen eine Webseite OfficeAssignments
+## <a name="creating-an-officeassignments-web-page"></a>Erstellen einer officezuweisungen-Webseite
 
-Erstellen Sie eine neue Webseite, verwendet der *Site.Master* Masterseite, und nennen Sie sie *OfficeAssignments.aspx*. Fügen Sie das folgende Markup, das `Content` Steuerelement mit dem Namen `Content2`:
+Erstellen Sie eine neue Webseite, die die Master Seite *Site. Master* verwendet, und nennen Sie Sie *officezuweisungen. aspx*. Fügen Sie das folgende Markup dem `Content`-Steuerelement mit dem Namen `Content2`hinzu:
 
 [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample13.aspx)]
 
-Beachten Sie, dass in der `DataKeyNames` Attribut gibt an, das Markup der `Timestamp` Eigenschaft als auch dem Datensatzschlüssel (`InstructorID`). Angeben von Eigenschaften in der `DataKeyNames` Attribut bewirkt, dass das Steuerelement, das in den Steuerelementzustand speichern (dem Ansichtszustand ähnelt), damit die ursprünglichen Werte, die während der postback Verarbeitung verfügbar sind.
+Beachten Sie, dass im `DataKeyNames`-Attribut das Markup die `Timestamp`-Eigenschaft und den Daten Satz Schlüssel (`InstructorID`) angibt. Das Angeben von Eigenschaften im `DataKeyNames`-Attribut bewirkt, dass das Steuerelement diese im Steuerelement Zustand (ähnlich dem Ansichts Zustand) speichert, sodass die ursprünglichen Werte während der Post Back Verarbeitung verfügbar sind.
 
-Wenn Sie speichern nicht die `Timestamp` Wert, der Entity Framework keine für die `Where` -Klausel der SQL `Update` Befehl. Daher würde nichts zum Aktualisieren gefunden werden. Daher würde Entity Framework löst eine vollständige Parallelitätsausnahme jedes Mal ein `OfficeAssignment` Entität aktualisiert wird.
+Wenn Sie den `Timestamp` Wert nicht gespeichert haben, hat der Entity Framework ihn nicht für die `Where`-Klausel des SQL-`Update` Befehls. Folglich würde nichts zu aktualisieren gefunden werden. Folglich würde der Entity Framework jedes Mal, wenn eine `OfficeAssignment` Entität aktualisiert wird, eine vollständige Parallelitäts Ausnahme auslösen.
 
-Open *OfficeAssignments.aspx.cs* und fügen Sie die folgenden `using` -Anweisung für die Datenzugriffsebene:
+Öffnen Sie *OfficeAssignments.aspx.cs* , und fügen Sie die folgende `using`-Anweisung für die Datenzugriffs Ebene hinzu:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample14.cs)]
 
-Fügen Sie die folgenden `Page_Init` -Methode, die Dynamic Data-Funktionalität ermöglicht. Steigern Sie die folgenden Handler für die `ObjectDataSource` des Steuerelements `Updated` Ereignis, um die Prüfung von Parallelitätsfehlern:
+Fügen Sie die folgende `Page_Init`-Methode hinzu, die dynamische Daten Funktionalität ermöglicht. Fügen Sie außerdem den folgenden Handler für das `Updated` Ereignis des `ObjectDataSource`-Steuer Elements hinzu, um nach Parallelitäts Fehlern zu suchen:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample15.cs)]
 
-### <a name="testing-optimistic-concurrency-in-the-officeassignments-page"></a>Vollständigen Parallelität Testen auf der Seite OfficeAssignments
+### <a name="testing-optimistic-concurrency-in-the-officeassignments-page"></a>Testen der optimistischen Parallelität auf der Seite "officezuweisungen"
 
-Führen Sie die *OfficeAssignments.aspx* Seite.
+Führen Sie die Seite *officezuweisungen. aspx* aus.
 
 [![Image10](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image32.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image31.png)
 
-Klicken Sie auf **bearbeiten** in einer Zeile, und ändern Sie den Wert in der **Speicherort** Spalte.
+Klicken Sie in einer Zeile auf **Bearbeiten** , und ändern Sie den Wert in der Spalte **Speicherort** .
 
 [![Image11](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image34.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image33.png)
 
-Öffnen Sie ein neues Browserfenster, und führen Sie die Seite erneut aus (Kopieren Sie die URL aus dem ersten Browserfenster zu dem zweiten Browserfenster).
+Öffnen Sie ein neues Browserfenster, und führen Sie die Seite erneut aus (Kopieren Sie die URL aus dem ersten Browserfenster in das zweite Browserfenster).
 
 [![Image10](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image36.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image35.png)
 
-Klicken Sie auf **bearbeiten** in der gleichen Sie die zuvor bearbeiteten Zeile, und ändern Sie die **Speicherort** Wert in einen anderen.
+Klicken Sie in derselben Zeile, die Sie zuvor bearbeitet haben, auf **Bearbeiten** , und ändern Sie den **Speicherort** Wert in einen anderen
 
 [![Image12](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image38.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image37.png)
 
-Klicken Sie in der zweiten Browserfenster auf **Update**.
+Klicken Sie im zweiten Browserfenster auf **Aktualisieren**.
 
 [![Image13](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image40.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image39.png)
 
-Wechseln Sie zu dem ersten Browserfenster, und klicken Sie auf **Update**.
+Wechseln Sie zum ersten Browserfenster, und klicken Sie auf **Aktualisieren**.
 
 [![Image15](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image42.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image41.png)
 
-Sie sehen eine Fehlermeldung und der **Speicherort** Wert wurde aktualisiert, um dem Wert anzuzeigen, die Sie sie in der zweiten Browserfenster geändert.
+Es wird eine Fehlermeldung angezeigt, und der **Location** -Wert wurde aktualisiert, um den Wert anzuzeigen, den Sie im zweiten Browserfenster geändert haben.
 
 ## <a name="handling-concurrency-with-the-entitydatasource-control"></a>Behandeln von Parallelität mit dem EntityDataSource-Steuerelement
 
-Die `EntityDataSource` -Steuerelement enthält integrierten Logik, die die Concurrency-Einstellungen im Datenmodell erkennt und behandelt Update- und delete-Vorgänge entsprechend. Aber wie bei allen Ausnahmen, müssen Sie behandeln `OptimisticConcurrencyException` Ausnahmen selbst um eine benutzerfreundliche Fehlermeldung bereitzustellen.
+Das `EntityDataSource` Steuerelement enthält integrierte Logik, die die Parallelitäts Einstellungen im Datenmodell erkennt und Aktualisierungs-und Löschvorgänge entsprechend behandelt. Wie bei allen Ausnahmen müssen Sie jedoch `OptimisticConcurrencyException` Ausnahmen selbst behandeln, um eine benutzerfreundliche Fehlermeldung bereitzustellen.
 
-Als Nächstes konfigurieren Sie die *Courses.aspx* Seite (verwendet ein `EntityDataSource` Steuerelement) ermöglichen Update und delete-Operationen und eine Fehlermeldung angezeigt wird, wenn ein Parallelitätskonflikt auftritt. Die `Course` Entität verfügt nicht über eine Parallelität-Nachverfolgungsspalte, daher Sie die gleiche Methode, die Sie verwenden mit der `Department` Entität: die Werte aller nicht schlüsselbezogene Eigenschaften nachverfolgen.
+Als Nächstes konfigurieren Sie die Seite " *Courses. aspx* " (die ein `EntityDataSource`-Steuerelement verwendet), um Aktualisierungs-und Löschvorgänge zuzulassen und eine Fehlermeldung anzuzeigen, wenn ein Parallelitäts Konflikt auftritt. Die `Course`-Entität verfügt nicht über eine Spalte für die Parallelitäts Nachverfolgung, daher verwenden Sie dieselbe Methode wie für die `Department`-Entität: Nachverfolgen der Werte aller nicht Schlüsseleigenschaften.
 
-Öffnen der *SchoolModel.edmx* Datei. Für die nicht schlüsselbezogene Eigenschaften der `Course` Entität (`Title`, `Credits`, und `DepartmentID`), legen die **Parallelitätsmodus** Eigenschaft `Fixed`. Speichern Sie und schließen Sie das Datenmodell.
+Öffnen Sie die Datei " *SchoolModel. edmx* ". Legen Sie für die nicht Schlüsseleigenschaften der `Course` Entität (`Title`, `Credits`und `DepartmentID`) die Eigenschaft Parallelitäts **Modus** auf `Fixed`fest. Speichern und schließen Sie dann das Datenmodell.
 
-Öffnen der *Courses.aspx* Seite, und stellen Sie die folgenden Änderungen:
+Öffnen Sie die Seite " *Courses. aspx* ", und nehmen Sie die folgenden Änderungen vor:
 
-- In der `CoursesEntityDataSource` Steuerelements `EnableUpdate="true"` und `EnableDelete="true"` Attribute. Das öffnende Tag für das Steuerelement sieht nun wie im folgende Beispiel:
+- Fügen Sie im `CoursesEntityDataSource`-Steuerelement die Attribute `EnableUpdate="true"` und `EnableDelete="true"` hinzu. Das öffnende Tag für dieses Steuerelement ähnelt nun dem folgenden Beispiel:
 
     [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample16.aspx)]
-- In der `CoursesGridView` steuern, ändern Sie die `DataKeyNames` -Attributwert auf `"CourseID,Title,Credits,DepartmentID"`. Fügen Sie dann eine `CommandField` Element, das `Columns` -Element, das zeigt, **bearbeiten** und **löschen** Schaltflächen (`<asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />`). Die `GridView` Steuerelement wird jetzt im folgende Beispiel ähnelt:
+- Ändern Sie im `CoursesGridView` Steuerelement den Wert des `DataKeyNames` Attributs in `"CourseID,Title,Credits,DepartmentID"`. Fügen Sie dem `Columns` Element, das die Schaltflächen **Bearbeiten** und **Löschen** anzeigt (`<asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />`), ein `CommandField` Element hinzu. Das `GridView`-Steuerelement ähnelt nun dem folgenden Beispiel:
 
     [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample17.aspx)]
 
-Führen Sie die Seite, und erstellen Sie eine Situation Konflikt aus, wie zuvor in der Seite "Abteilungen". Führen Sie die Seite in zwei Browserfenstern, klicken Sie auf **bearbeiten** in der gleichen Zeile in jedem Fenster aus, und stellen Sie jeweils eine andere Änderung. Klicken Sie auf **Update** in einem Fenster, und klicken Sie dann auf **Update** in dem anderen Fenster. Beim Klicken auf **Update** bei der zweiten Fehlerseite wird angezeigt, die, die durch eine nicht behandelte Parallelitätsausnahme entsteht.
+Führen Sie die Seite aus, und erstellen Sie wie zuvor auf der Seite "Abteilungen" eine Konfliktsituation. Führen Sie die Seite in zwei Browserfenstern aus, klicken Sie in jedem Fenster in derselben Zeile auf **Bearbeiten** , und nehmen Sie jeweils eine andere Änderung vor. Klicken Sie in einem Fenster auf **Aktualisieren** , und klicken Sie dann im anderen Fenster auf **Aktualisieren** . Wenn Sie zum zweiten Mal auf **Aktualisieren** klicken, wird die Fehlerseite angezeigt, die sich aus einer nicht behandelten Parallelitäts Ausnahme ergibt.
 
 [![Image22](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image44.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image43.png)
 
-Sie behandeln dieses Fehlers im sehr ähnlich wie es für die Behandlung der `ObjectDataSource` Steuerelement. Öffnen der *Courses.aspx* Seite, und klicken Sie in der `CoursesEntityDataSource` -Steuerelement, geben Sie Handler für die `Deleted` und `Updated` Ereignisse. Das öffnende Tag des Steuerelements sieht nun wie im folgende Beispiel:
+Dieser Fehler wird so behandelt, wie Sie ihn für das `ObjectDataSource` Steuerelement behandelt haben. Öffnen Sie die Seite " *Courses. aspx* ", und geben Sie im `CoursesEntityDataSource`-Steuerelement Handler für die `Deleted`-und `Updated`-Ereignisse an. Das öffnende Tag des-Steuer Elements ähnelt nun dem folgenden Beispiel:
 
 [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample18.aspx)]
 
-Bevor Sie die `CoursesGridView` Steuerelement, fügen Sie die folgenden `ValidationSummary` Steuerelement:
+Fügen Sie vor dem `CoursesGridView`-Steuerelement das folgende `ValidationSummary` Steuerelement hinzu:
 
 [!code-aspx[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample19.aspx)]
 
-In *Courses.aspx.cs*, Hinzufügen einer `using` -Anweisung für die `System.Data` Namespace, fügen Sie eine Methode, die überprüft, wird für Parallelitätsausnahmen, die und Hinzufügen von Ereignishandlern für die `EntityDataSource` des Steuerelements `Updated` und `Deleted`Handler. Der Code wird wie folgt aussehen:
+Fügen Sie in *Courses.aspx.cs*eine `using`-Anweisung für den `System.Data`-Namespace hinzu, fügen Sie eine Methode hinzu, die auf neben läufigkeits Ausnahmen prüft, und fügen Sie Handler für die `Updated`-und `Deleted` Handler des `EntityDataSource`-Steuer Elements hinzu. Der Code sieht wie folgt aus:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample20.cs)]
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/samples/sample21.cs)]
 
-Der einzige Unterschied zwischen diesem Code und was hat Ihnen für die `ObjectDataSource` Steuerelements besteht darin, dass in diesem Fall die Concurrency-Ausnahme in der `Exception` Eigenschaft des Ereignisobjekts Argumente nicht in der Ausnahme `InnerException` Eigenschaft.
+Der einzige Unterschied zwischen diesem Code und dem `ObjectDataSource` Steuerelement besteht darin, dass in diesem Fall die Parallelitäts Ausnahme in der `Exception`-Eigenschaft des Ereignis arguments-Objekts statt in der `InnerException`-Eigenschaft dieser Ausnahme liegt.
 
-Führen Sie die Seite, und erstellen Sie einen Parallelitätskonflikt erneut aus. Dieses Mal wird eine Fehlermeldung angezeigt:
+Führen Sie die Seite aus, und erstellen Sie einen Parallelitäts Konflikt erneut. Dieses Mal wird eine Fehlermeldung angezeigt:
 
 [![Image23](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image46.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image45.png)
 
-Damit ist die Einführung in die Behandlung von Nebenläufigkeitskonflikten abgeschlossen. Im nächste Tutorial bietet Anleitungen dazu, wie zur Verbesserung der Leistung in einer Webanwendung, die das Entity Framework verwendet.
+Damit ist die Einführung in die Behandlung von Nebenläufigkeitskonflikten abgeschlossen. Im nächsten Tutorial finden Sie Anleitungen zur Verbesserung der Leistung in einer Webanwendung, die die Entity Framework verwendet.
 
 > [!div class="step-by-step"]
 > [Zurück](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)

@@ -10,11 +10,11 @@ ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 633229cc4311d151121bf6a91b9fa8aeecca1197
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456152"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471633"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity
 
@@ -89,13 +89,13 @@ Damit ASP.net Identity Klassen mit den Daten vorhandener Benutzer standardmäßi
 | Username | string | Name | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
 | Securitystamp | string |  |  |  | Benutzer\_-ID |
-| Email | string |  |  |  |  |
+| E-Mail | string |  |  |  |  |
 | Emailbestätigt | bool |  |  |  |  |
 | PhoneNumber | string |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
-| LockoutEndDate | Datetime |  |  |  |  |
-| AccessFailedCount | INT |  |  |  |  |
+| LockoutEndDate | DateTime |  |  |  |  |
+| AccessFailedCount | int |  |  |  |  |
 
 Wir müssen für jedes dieser Modelle Tabellen mit Spalten aufweisen, die den Eigenschaften entsprechen. Die Zuordnung zwischen Klassen und Tabellen wird in der `OnModelCreating`-Methode der `IdentityDBContext`definiert. Dies wird als fließende API-Methode der Konfiguration bezeichnet. Weitere Informationen finden Sie [hier](https://msdn.microsoft.com/data/jj591617.aspx). Die Konfiguration für die Klassen ist wie unten beschrieben.
 

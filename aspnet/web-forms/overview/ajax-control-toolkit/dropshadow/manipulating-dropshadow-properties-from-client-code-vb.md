@@ -9,11 +9,11 @@ ms.assetid: 11be4211-2fb9-4e15-b6d4-2aa623d81f3e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a39adb9c06819f6f828add7d762effad430b8570
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574030"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497409"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>Bearbeiten von DropShadow-Eigenschaften über den Clientcode (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Die Eigenschaften dieses Extenders können auch mithilfe von JavaScript-Code des Clients geändert werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Die Eigenschaften dieses Extenders können auch mithilfe von JavaScript-Code des Clients geändert werden.
 
@@ -58,4 +58,4 @@ Die JavaScript-Funktion `changeOpacity()` muss dann zuerst das `DropShadowExtend
 Die Deckkraft wird auf der Clientseite geändert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorheriges](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [Previous](adjusting-the-z-index-of-a-dropshadow-vb.md)

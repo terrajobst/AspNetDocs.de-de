@@ -1,139 +1,139 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
-title: Anpassen von Datenbankbereitstellungen für mehrere Umgebungen | Microsoft-Dokumentation
+title: Anpassen von Daten Bank Bereitstellungen für mehrere Umgebungen | Microsoft-Dokumentation
 author: jrjlee
-description: 'In diesem Thema wird beschrieben, wie Sie die Eigenschaften einer Datenbank zu bestimmten zielumgebungen im Rahmen des Bereitstellungsprozesses anpassen können. Hinweis: Das Thema wird davon ausgegangen, te...'
+description: 'In diesem Thema wird beschrieben, wie die Eigenschaften einer Datenbank im Rahmen des Bereitstellungs Prozesses an bestimmte Ziel Umgebungen angepasst werden. Hinweis: in diesem Thema wird davon ausgegangen, dass...'
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
 ms.openlocfilehash: 8ae8cb1a322afb95c5d2e8d5e73c7825c7b2fe5a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108305"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489033"
 ---
 # <a name="customizing-database-deployments-for-multiple-environments"></a>Anpassen von Datenbankbereitstellungen für mehrere Umgebungen
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird beschrieben, wie Sie die Eigenschaften einer Datenbank zu bestimmten zielumgebungen im Rahmen des Bereitstellungsprozesses anpassen können.
+> In diesem Thema wird beschrieben, wie die Eigenschaften einer Datenbank im Rahmen des Bereitstellungs Prozesses an bestimmte Ziel Umgebungen angepasst werden.
 > 
 > > [!NOTE]
-> > Das Thema wird davon ausgegangen, dass Sie ein Visual Studio 2010-Datenbankprojekt mithilfe von MSBuild.exe und VSDBCMD.exe bereitstellen möchten. Weitere Informationen dazu, warum Sie diesen Ansatz entscheiden können, finden Sie unter [Webbereitstellung im Unternehmen](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md) und [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md).
+> > In diesem Thema wird davon ausgegangen, dass Sie ein Visual Studio 2010-Datenbankprojekt mithilfe von MSBuild. exe und VSDBCMD. exe bereitstellen. Weitere Informationen dazu, warum Sie diesen Ansatz auswählen können, finden Sie unter [Webbereitstellung im Unternehmen und bereit](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md) stellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md).
 > 
 > 
-> Wenn Sie ein Datenbankprojekt an mehrere Ziele bereitstellen, werden Sie häufig Eigenschaften zur datenbankbereitstellung für jede zielumgebung anpassen möchten. Beispielsweise würde in testumgebungen Sie in der Regel die Datenbank bei jeder Bereitstellung, neu erstellen in Staging-oder produktionsumgebung Sie damit inkrementelle Updates für Ihre Daten zu erhalten sehr viel wahrscheinlicher wäre.
+> Wenn Sie ein Datenbankprojekt für mehrere Ziele bereitstellen, möchten Sie häufig die Eigenschaften der Daten Bank Bereitstellung für jede Zielumgebung anpassen. Beispielsweise würden Sie in Testumgebungen in der Regel die Datenbank bei jeder Bereitstellung neu erstellen, während Sie in der Stagingumgebung oder in der Produktionsumgebung viel wahrscheinlicher sind, inkrementelle Updates zu erstellen, um Ihre Daten beizubehalten.
 > 
-> In einem Visual Studio 2010-Datenbankprojekt sind die bereitstellungseinstellungen in einer Bereitstellungskonfigurationsdatei (.sqldeployment) enthalten. In diesem Thema erfahren Sie, wie zum Erstellen von umgebungsspezifische bereitstellungs-Konfigurationsdateien, und geben Sie den Namespace, die, den Sie als Parameter VSDBCMD verwenden möchten.
+> In einem Visual Studio 2010-Datenbankprojekt sind Bereitstellungs Einstellungen in einer Bereitstellungs Konfigurationsdatei (. sqldeployment) enthalten. In diesem Thema erfahren Sie, wie Sie Umgebungs spezifische Konfigurationsdateien für die Bereitstellung erstellen und angeben, welche Dateien Sie als VSDBCmd-Parameter verwenden möchten.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-Die Methode für die Bereitstellung das Kernstück des in diesen Tutorials basiert auf den geteilten Projekt Dateiansatz beschrieben, die [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), in dem der Buildprozess durch gesteuert wird zwei Projektdateien&#x2014;enthält Erstellen Sie die Anweisungen, die für jede zielumgebung, und enthält umgebungsspezifische Build & Deployment-Einstellungen gelten. Zur Erstellungszeit wird die umgebungsspezifischen-Projektdatei in die Unabhängigkeit von der Umgebung Projektdatei, um einen vollständigen Satz von einrichtungsanweisungen bilden zusammengeführt.
+Die Bereitstellungs Methode im Kern dieser Tutorials basiert auf dem Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz, in dem der Buildprozess von zwei Projektdateien&#x2014;gesteuert wird, die Buildanweisungen enthalten, die für jede Zielumgebung gelten, und eine mit Umgebungs spezifischen Build-und Bereitstellungs Einstellungen. Zum Zeitpunkt der Erstellung wird die Umgebungs spezifische Projektdatei in der Umgebungs unabhängigen Projektdatei zusammengeführt, um einen kompletten Satz von Buildanweisungen zu bilden.
 
-## <a name="task-overview"></a>Übersicht über den Task
+## <a name="task-overview"></a>Aufgaben Übersicht
 
-In diesem Thema wird vorausgesetzt, dass:
+In diesem Thema wird Folgendes vorausgesetzt:
 
-- Verwenden Sie den Split-Projekt-Datei-Ansatz für die Bereitstellung der Lösung, wie in beschrieben [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md).
-- Rufen Sie VSDBCMD aus der Projektdatei, um das Datenbankprojekt bereitstellen wie in beschrieben [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
+- Sie verwenden den Ansatz zum Aufteilen von Projektdateien für die Lösungs Bereitstellung, wie in Grundlegendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschrieben.
+- Sie können VSDBCmd aus der Projektdatei abrufen, um das Datenbankprojekt bereitzustellen, wie Untergrund Legendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md)beschrieben.
 
-Um ein Bereitstellungssystem zu erstellen, die unterstützt wird, variieren die Eigenschaften für die datenbankbereitstellung zwischen zielumgebungen, müssen Sie Folgendes ausführen:
+Zum Erstellen eines Bereitstellungs Systems, das unterschiedliche Daten Bank Bereitstellungs Eigenschaften Zwischenziel Umgebungen unterstützt, müssen Sie folgende Schritte ausführen:
 
-- Erstellen einer Bereitstellungskonfigurationsdatei (.sqldeployment) für jede zielumgebung an.
-- Erstellen Sie einen VSDBCMD-Befehl, der angibt, die Bereitstellungskonfigurationsdatei als eines Befehlszeilenschalters.
-- Parametrisieren Sie die VSDBCMD-Befehl in einer Projektdatei Microsoft Build Engine (MSBuild), sodass die VSDBCMD-Optionen für die zielumgebung geeignet sind.
+- Erstellen Sie eine Bereitstellungs Konfigurationsdatei (. sqldeployment) für jede Zielumgebung.
+- Erstellen Sie einen VSDBCmd-Befehl, der die Bereitstellungs Konfigurationsdatei als Befehls Zeilenschalter angibt.
+- Parametrisieren Sie den VSDBCmd-Befehl in einer Microsoft-Build-Engine-Projektdatei (MSBuild), damit die VSDBCmd-Optionen für die Zielumgebung geeignet sind.
 
-In diesem Thema werden Sie zum Durchführen dieser Verfahren erläutert.
+In diesem Thema wird gezeigt, wie Sie die einzelnen Prozeduren ausführen.
 
-## <a name="creating-environment-specific-deployment-configuration-files"></a>Erstellen die umgebungsspezifische Konfiguration Bereitstellungsdateien
+## <a name="creating-environment-specific-deployment-configuration-files"></a>Erstellen von Umgebungs spezifischen Bereitstellungs Konfigurationsdateien
 
-Standardmäßig enthält ein Datenbankprojekt mit dem Namen eine einzelnen Bereitstellung-Konfigurationsdatei *Database.sqldeployment*. Wenn Sie diese Datei in Visual Studio 2010 öffnen, sehen Sie die verschiedenen Bereitstellungsoptionen, die Ihnen zur Verfügung stehen:
+Standardmäßig enthält ein Datenbankprojekt eine einzige Bereitstellungs Konfigurationsdatei mit dem Namen *Database. sqldeployment*. Wenn Sie diese Datei in Visual Studio 2010 öffnen, werden Ihnen die verschiedenen Bereitstellungs Optionen angezeigt, die Ihnen zur Verfügung stehen:
 
-- **Vergleich von Bereitstellungssortierreihenfolge**. Dadurch können Sie entscheiden, ob die Sortierung der Datenbank des Projekts verwenden (die *Quelle* Sortierung) oder die Sortierung der Datenbank des Zielservers (die *Ziel* Sortierung). In den meisten Fällen sollten Sie die quellsortierung zu verwenden, wenn Sie für eine Entwicklung bereitstellen oder testumgebung. Wenn Sie in einer Staging- oder produktionsumgebung bereitstellen, sollten Sie in der Regel die zielsortierung zur Vermeidung von jegliche Interoperabilitätsprobleme unverändert lassen.
-- **Datenbankeigenschaften bereitstellen**. Dadurch können Sie auswählen, ob die Eigenschaften, anzuwendende gemäß der *Database.sqlsettings* Datei. Wenn Sie eine Datenbank zum ersten Mal bereitstellen, sollten Sie die Datenbankeigenschaften bereitstellen. Wenn Sie eine vorhandene Datenbank aktualisieren, die Eigenschaften sollte bereits eingerichtet sein, und Sie sollte nicht erneut bereitstellen müssen.
-- **Datenbank immer neu erstellen**. So können Sie auswählen, ob die Zieldatenbank erneut zu erstellen, jedes Mal, wenn Sie bereitstellen, oder stellen inkrementelle Änderungen an die Zieldatenbank zu bringen. mit Ihr Schema auf dem neuesten Stand. Wenn Sie die Datenbank neu erstellt, verlieren Sie alle Daten in der vorhandenen Datenbank. Daher ist es möglich, Sie in der Regel legen Sie hier **"false"** für Bereitstellungen in Staging-oder produktionsumgebungen.
-- **Inkrementelle Bereitstellung blockieren, wenn Datenverlust auftreten könnte**. Dadurch können Sie auswählen, ob die Bereitstellung beendet werden soll, wenn eine Änderung am Datenbankschema Datenverlust verursacht werden. Sie in der Regel legen Sie diese auf **"true"** für eine Bereitstellung in einer produktionsumgebung bereit, um die Möglichkeit, eingreifen und schützen wichtigen Daten ermöglichen. Wenn Sie festgelegt haben **Datenbank immer neu erstellen** zu **"false"** , diese Einstellung hat keine Auswirkungen.
-- **Führen Sie die Bereitstellung in den Einzelbenutzermodus**. Dies ist nicht in der Regel ein Problem in Entwicklungs- oder testumgebungen. Allerdings sollten Sie in der Regel dadurch auf festlegen **"true"** für Bereitstellungen in Staging-oder produktionsumgebungen. Dadurch wird verhindert, dass Benutzer Änderungen an der Datenbank, während die Bereitstellung ausgeführt wird.
-- **Sichern Sie die Datenbank vor der Bereitstellung**. Sie in der Regel legen Sie diese auf **"true"** bei der Bereitstellung in einer produktionsumgebung als vorsichtmaßnahme gegen Datenverlust. Sie möchten auch festgelegt ist, dass **"true"** bei der Bereitstellung in einer Stagingumgebung, wenn die staging-Datenbank eine große Datenmenge enthält.
-- **Generieren von DROP-Anweisungen für Objekte, die sich in der Zieldatenbank, aber nicht im Datenbankprojekt**. In den meisten Fällen ist dies ein wesentlicher und notwendiger Teil inkrementelle Änderungen an einer Datenbank. Wenn Sie festgelegt haben **Datenbank immer neu erstellen** zu **"false"** , diese Einstellung hat keine Auswirkungen.
-- **Verwenden Sie ALTER ASSEMBLY-Anweisungen zum Aktualisieren von CLR-Typen nicht**. Diese Einstellung bestimmt, wie SQL Server common Language Runtime (CLR)-Typen auf neuere Assemblyversionen aktualisieren. Dies sollte festgelegt werden, um **"false"** in den meisten Szenarien.
+- **Sortierung des Bereitstellungs Vergleichs**. Auf diese Weise können Sie auswählen, ob Sie die Daten Bank Sortierung Ihres Projekts (die *Quell* Sortierung) oder die Daten Bank Sortierung des Zielservers (die *Ziel* Sortierung) verwenden möchten. In den meisten Fällen sollten Sie die Quell Sortierung verwenden, wenn Sie die Bereitstellung in einer Entwicklungs-oder Testumgebung durchführen. Wenn Sie in einer Staging-oder Produktionsumgebung bereitstellen, sollten Sie die Ziel Sortierung in der Regel unverändert lassen, um Interoperabilitätsprobleme zu vermeiden.
+- **Daten Bank Eigenschaften**bereitstellen. Auf diese Weise können Sie auswählen, ob die Daten Bank Eigenschaften wie in der Datei " *Database. sqlsettings* " definiert angewendet werden sollen. Wenn Sie eine Datenbank zum ersten Mal bereitstellen, sollten Sie die Daten Bank Eigenschaften bereitstellen. Wenn Sie eine vorhandene Datenbank aktualisieren, sollten die Eigenschaften bereits vorhanden sein, und Sie müssen Sie nicht erneut bereitstellen.
+- **Erstellen Sie die Datenbank immer neu**. Auf diese Weise können Sie auswählen, ob die Zieldatenbank jedes Mal neu erstellt werden soll, wenn Sie eine Bereitstellung vornehmen oder inkrementelle Änderungen vornehmen, um die Zieldatenbank mit dem Schema auf dem neuesten Stand Wenn Sie die Datenbank neu erstellen, gehen alle Daten in der vorhandenen Datenbank verloren. Daher sollten Sie dies in der Regel auf **false** festlegen, wenn Sie bereit Stellungen für Staging-oder Produktionsumgebungen ausführen.
+- **Inkrementelle Bereitstellung blockieren, wenn Datenverlust auftreten kann**. Auf diese Weise können Sie auswählen, ob die Bereitstellung beendet werden soll, wenn eine Änderung am Datenbankschema den Datenverlust verursacht. In der Regel legen Sie diese Einstellung für eine Bereitstellung in einer Produktionsumgebung auf " **true** " fest, um Ihnen die Möglichkeit zu geben, wichtige Daten zu schützen und zu schützen. Wenn Sie **Datenbank immer neu erstellen** auf **false**festgelegt haben, hat diese Einstellung keine Auswirkungen.
+- **Führen Sie die Bereitstellung im Einzelbenutzermodus aus**. Dies ist in der Regel kein Problem in Entwicklungs-oder Testumgebungen. Sie sollten dies jedoch in der Regel für bereit Stellungen in Staging-oder Produktionsumgebungen auf " **true** " festlegen. Dadurch wird verhindert, dass Benutzer Änderungen an der Datenbank vornehmen, während die Bereitstellung ausgeführt wird.
+- **Sichern der Datenbank vor der Bereitstellung**. In der Regel legen Sie diese Einstellung auf " **true** " fest, wenn Sie in einer Produktionsumgebung bereitstellen, als Vorsichtsmaßnahme gegen Datenverluste. Wenn Sie in einer Stagingumgebung bereitstellen, können Sie Sie auch auf " **true** " festlegen, wenn die Stagingdatenbank viele Daten enthält.
+- **Generieren Sie DROP-Anweisungen für Objekte, die sich in der Zieldatenbank befinden, aber nicht im Datenbankprojekt sind**. In den meisten Fällen ist dies ein integraler Bestandteil von inkrementellen Änderungen an einer Datenbank. Wenn Sie **Datenbank immer neu erstellen** auf **false**festgelegt haben, hat diese Einstellung keine Auswirkungen.
+- **Verwenden Sie Alter Assembly-Anweisungen nicht zum Aktualisieren von CLR-Typen**. Diese Einstellung bestimmt, wie SQL Server Common Language Runtime (CLR)-Typen auf neuere Assemblyversionen aktualisieren soll. Dies sollte in den meisten Szenarien auf **false** festgelegt werden.
 
-Diese Tabelle zeigt typische Einstellungen für unterschiedliche zielumgebungen an. Allerdings können die Einstellungen abhängig von den genauen Anforderungen abweichen.
+Diese Tabelle zeigt typische Bereitstellungs Einstellungen für unterschiedliche Ziel Umgebungen. Ihre Einstellungen können jedoch je nach den genauen Anforderungen abweichen.
 
 |  | Entwickler/Test | Staging/Integration | Produktion |
 | --- | --- | --- | --- |
-| **Vergleich von Bereitstellungssortierreihenfolge** | Source | Target | Target |
-| **Datenbankeigenschaften bereitstellen** | True | Nur beim ersten Mal | Nur beim ersten Mal |
+| **Sortierung des Bereitstellungs Vergleichs** | `Source` | Ziel | Ziel |
+| **Daten Bank Eigenschaften bereitstellen** | True | Nur das erste Mal | Nur das erste Mal |
 | **Datenbank immer neu erstellen** | True | False | False |
-| **Blockieren Sie inkrementelle Bereitstellung, wenn Datenverlust auftreten könnte** | False | Vielleicht | True |
-| **Bereitstellungsskript im Einzelbenutzermodus ausführen** | False | True | True |
-| **Sichern Sie die Datenbank vor der Bereitstellung** | False | Vielleicht | True |
-| **Generieren Sie DROP-Anweisungen für Objekte, die sich in der Zieldatenbank, aber nicht im Datenbankprojekt,** | False | True | True |
-| **Verwenden Sie ALTER ASSEMBLY-Anweisungen nicht zum Aktualisieren von CLR-Typen** | False | False | False |
+| **Inkrementelle Bereitstellung blockieren, wenn Datenverluste auftreten** | False | Vielleicht | True |
+| **Ausführen des Bereitstellungs Skripts im Einzelbenutzermodus** | False | True | True |
+| **Sichern der Datenbank vor der Bereitstellung** | False | Vielleicht | True |
+| **DROP-Anweisungen für Objekte generieren, die sich in der Zieldatenbank, aber nicht im Datenbankprojekt befinden** | False | True | True |
+| **Verwenden Sie Alter Assembly-Anweisungen nicht zum Aktualisieren von CLR-Typen.** | False | False | False |
 
 > [!NOTE]
-> Weitere Informationen zu den Eigenschaften für die datenbankbereitstellung und Überlegungen zur quellumgebung, finden Sie unter [An Overview of Database Project Settings](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx), [Vorgehensweise: Konfigurieren von Eigenschaften für die Bereitstellungsdetails](https://msdn.microsoft.com/library/dd172125.aspx), [erstellen und Bereitstellen von Datenbank in einer isolierten Entwicklungsumgebung](https://msdn.microsoft.com/library/dd193409.aspx), und [erstellen und Bereitstellen von Datenbanken in einer Staging- oder Produktionsumgebung](https://msdn.microsoft.com/library/dd193413.aspx).
+> Weitere Informationen zu Daten Bank Bereitstellungs Eigenschaften und Überlegungen zur Umgebung finden Sie unter [Übersicht über Datenbankprojekt Einstellungen](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx), Gewusst [wie: Konfigurieren von Eigenschaften für Bereitstellungs Details](https://msdn.microsoft.com/library/dd172125.aspx), [Erstellen und Bereitstellen einer Datenbank in einer isolierten Entwicklungsumgebung](https://msdn.microsoft.com/library/dd193409.aspx)und erstellen und Bereitstellen von [Datenbanken in einer Staging-oder Produktionsumgebung](https://msdn.microsoft.com/library/dd193413.aspx).
 
-Um die Bereitstellung eines Datenbankprojekts an mehrere Ziele zu unterstützen, sollten Sie eine Bereitstellungskonfigurationsdatei für jede zielumgebung erstellen.
+Um die Bereitstellung eines Datenbankprojekts in mehreren Zielen zu unterstützen, sollten Sie eine Bereitstellungs Konfigurationsdatei für jede Zielumgebung erstellen.
 
-**So erstellen Sie eine Datei umgebungsspezifischer Konfiguration**
+**So erstellen Sie eine Umgebungs spezifische Konfigurationsdatei**
 
-1. In Visual Studio 2010 in der **Projektmappen-Explorer** rechten Maustaste auf das Datenbankprojekt, und klicken Sie dann auf **Eigenschaften**.
-2. Auf der Eigenschaftenseite der Datenbank-Projekt auf die **bereitstellen** Registerkarte die **Bereitstellungskonfigurationsdatei** auf **neu**.
+1. Klicken Sie in Visual Studio 2010 im Fenster **Projektmappen-Explorer** mit der rechten Maustaste auf das Datenbankprojekt, und klicken Sie dann auf **Eigenschaften**.
+2. Klicken Sie auf der Seite Datenbankprojekteigenschaften auf **der Registerkarte** bereitstellen in der Zeile **Bereitstellungs Konfigurationsdatei** auf **neu**.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
-3. In der **neue Bereitstellungskonfigurationsdatei** Dialogfeld gewähren Sie der Datei einen aussagekräftigen Namen (z. B. **TestEnvironment.sqldeployment**), und klicken Sie dann auf **speichern**.
-4. Auf der *[Dateiname]* **SQLDEPLOYMENT** Seite, die Eigenschaften der Bereitstellung entsprechend die Anforderungen Ihrer zielumgebung festlegen und speichern Sie die Datei.
+3. Geben Sie im Dialogfeld **Neue Bereitstellungs Konfigurationsdatei** einen aussagekräftigen Namen (z. b **. Testenvironment. sqldeployment**) ein, und klicken Sie dann auf **Speichern**.
+4. Legen Sie auf der Seite *[fileName] * * *. sqldeployment** die Bereitstellungs Eigenschaften entsprechend den Anforderungen Ihrer Zielumgebung fest, und speichern Sie die Datei.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
-5. Beachten Sie, dass die neue Datei im Ordner "Eigenschaften" im Datenbankprojekt hinzugefügt wird.
+5. Beachten Sie, dass die neue Datei dem Ordner "Properties" in Ihrem Datenbankprojekt hinzugefügt wird.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image3.png)
 
-## <a name="specifying-the-deployment-configuration-file-in-vsdbcmd"></a>Angeben der Konfigurationsdatei der Bereitstellung in VSDBCMD
+## <a name="specifying-the-deployment-configuration-file-in-vsdbcmd"></a>Angeben der Bereitstellungs Konfigurationsdatei in VSDBCmd
 
-Wenn Sie Konfigurationen für Projektmappenbuilds (z. B. Debug und Release) in Visual Studio 2010 verwenden, können Sie jede Konfiguration eine Bereitstellungskonfigurationsdatei zuordnen. Wenn Sie eine bestimmte Konfiguration erstellen, generiert des Buildprozesses eine konfigurationsspezifischen Bereitstellungsmanifestdatei, die auf die konfigurationsspezifischen Bereitstellungskonfigurationsdatei verweist. Allerdings ist eines der wichtigsten Ziele des Ansatzes zur Bereitstellung, die in diesen Tutorials beschrieben, Personen, die Möglichkeit, den Bereitstellungsprozess zu steuern, ohne Verwendung von Visual Studio 2010 und Projektmappenkonfigurationen gewähren. Bei diesem Ansatz ist die Konfiguration der Projektmappe unabhängig von der zielumgebung für die Bereitstellung an. Um die Bereitstellung der Datenbank in eine bestimmte zielumgebung anzupassen, können Sie die Befehlszeilenoptionen VSDBCMD an der Konfigurationsdatei der Bereitstellung.
+Wenn Sie Projektmappenkonfigurationen (z. b. Debug und Release) in Visual Studio 2010 verwenden, können Sie eine Bereitstellungs Konfigurationsdatei jeder Konfiguration zuordnen. Beim Erstellen einer bestimmten Konfiguration wird vom Buildprozess eine Konfigurations spezifische Bereitstellungs Manifest-Datei generiert, die auf die Konfigurations spezifische Bereitstellungs Konfigurationsdatei verweist. Eines der Hauptziele des Ansatzes bei der Bereitstellung, die in diesen Tutorials beschrieben wird, besteht darin, Benutzern die Möglichkeit zu bieten, den Bereitstellungs Prozess ohne Verwendung von Visual Studio 2010 und Projektmappenkonfigurationen zu steuern. Bei diesem Ansatz ist die Projektmappenkonfiguration unabhängig von der Ziel Bereitstellungs Umgebung identisch. Zum Anpassen der Daten Bank Bereitstellung an eine bestimmte Zielumgebung können Sie die VSDBCmd-Befehlszeilenoptionen verwenden, um die Bereitstellungs Konfigurationsdatei anzugeben.
 
-Verwenden Sie zum Angeben einer Konfigurationsdatei für die Bereitstellung in Ihrer VSDBCMD der **p:/DeploymentConfigurationFile** Schalter, und geben Sie den vollständigen Pfad der Datei. Dadurch werden die Bereitstellungskonfigurationsdatei überschrieben, die das Bereitstellungsmanifest identifiziert. Beispielsweise können mit diesem Befehl VSDBCMD zum Bereitstellen der **ContactManager** Datenbank in einer testumgebung:
+Zum Angeben einer Bereitstellungs Konfigurationsdatei in der VSDBCmd verwenden Sie den Schalter **p:/deploymentconfigurationfile** , und geben Sie den vollständigen Pfad zu Ihrer Datei an. Dadurch wird die Bereitstellungs Konfigurationsdatei außer Kraft gesetzt, die das Bereitstellungs Manifest identifiziert. Beispielsweise können Sie diesen VSDBCmd-Befehl verwenden, um die **ContactManager** -Datenbank in einer Testumgebung bereitzustellen:
 
 [!code-console[Main](customizing-database-deployments-for-multiple-environments/samples/sample1.cmd)]
 
 > [!NOTE]
-> Beachten Sie, dass der Buildprozess Ihre SQLDEPLOYMENT-Datei umbenennen kann, wenn sie die Datei in das Ausgabeverzeichnis kopiert.
+> Beachten Sie, dass der Buildprozess die sqldeployment-Datei umbenennen kann, wenn die Datei in das Ausgabeverzeichnis kopiert wird.
 
-Wenn Sie SQL-Befehlsvariablen in Ihrer SQL-Skripts vor oder nach der Bereitstellung verwenden, können Sie einen ähnlichen Ansatz, der Bereitstellung eine umgebungsspezifischen SQLCMDVARS-Datei zugeordnet. In diesem Fall verwenden Sie die **p:/SqlCommandVariablesFile** wechseln, um die SQLCMDVARS-Datei zu identifizieren.
+Wenn Sie SQL-Befehls Variablen in den SQL-Skripts vor oder nach der Bereitstellung verwenden, können Sie einen ähnlichen Ansatz verwenden, um eine Umgebungs spezifische sqlcmdvars-Datei zu Ihrer Bereitstellung zuzuordnen. In diesem Fall verwenden Sie den Schalter **p:/sqlcommandvariablesfile** , um Ihre. sqlcmdvars-Datei zu identifizieren.
 
-## <a name="running-the-vsdbcmd-command-from-an-msbuild-project-file"></a>MSBuild-Projektdatei Ausführen den VSDBCMD-Befehl
+## <a name="running-the-vsdbcmd-command-from-an-msbuild-project-file"></a>Ausführen des VSDBCmd-Befehls aus einer MSBuild-Projektdatei
 
-Sie können einen VSDBCMD-Befehl aus einer MSBuild-Projektdatei aufrufen, indem Sie mit einem **Exec** Tasks in einem MSBuild-Ziel. In seiner einfachsten Form würde es folgendermaßen aussehen:
+Sie können einen VSDBCmd-Befehl aus einer MSBuild-Projektdatei aufrufen, indem Sie eine **exec** -Aufgabe innerhalb eines MSBuild-Ziels verwenden. In seiner einfachsten Form sieht dies wie folgt aus:
 
 [!code-xml[Main](customizing-database-deployments-for-multiple-environments/samples/sample2.xml)]
 
-- In der Praxis um Ihre Projektdateien vereinfachen lesen und wiederverwenden möchten, sollten Sie zum Erstellen von Eigenschaften zum Speichern der verschiedenen Befehlszeilenparameter. Dies erleichtert es für Benutzer, um Eigenschaftswerte in einer Projektdatei, umgebungsspezifische zu bereitzustellen oder um Standardwerte aus der MSBuild-Befehlszeile außer Kraft setzen. Bei Verwendung in beschriebenen Ansatz der geteilten Projekt Datei [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), Sie sollten Ihre einrichtungsanweisungen und die Eigenschaften, die zwischen den beiden Dateien entsprechend unterteilen:
-- Umgebungsspezifische Einstellungen wie der Name der Bereitstellung der Konfigurationsdatei, die Datenbank-Verbindungszeichenfolge und den Namen der Zieldatenbank, sollte in der Projektdatei auf umgebungsspezifische eingefügt werden.
-- Das MSBuild-Ziel, das der VSDBCMD-Befehl, zusammen mit der universal Eigenschaften wie den Speicherort der ausführbaren Datei VSDBCMD führt sollte in der universelle Projektdatei eingefügt werden.
+- Wenn Sie die Projektdateien in der Praxis leicht lesen und wieder verwenden möchten, sollten Sie Eigenschaften erstellen, um die verschiedenen Befehlszeilenparameter zu speichern. Dies erleichtert Benutzern das Bereitstellen von Eigenschafts Werten in einer Umgebungs spezifischen Projektdatei oder das Überschreiben von Standardwerten über die MSBuild-Befehlszeile. Wenn Sie den in Grundlegendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz zum Aufteilen von Projektdateien verwenden, sollten Sie die Buildanweisungen und-Eigenschaften zwischen den beiden Dateien entsprechend aufteilen:
+- Umgebungs spezifische Einstellungen, wie z. b. der Dateiname der Bereitstellungs Konfiguration, die Daten bankverbindungs Zeichenfolge und der Name der Zieldatenbank, sollten in der Umgebungs spezifischen Projektdatei gespeichert werden.
+- Das MSBuild-Ziel, das den VSDBCmd-Befehl ausführt, und alle universellen Eigenschaften wie der Speicherort der ausführbaren VSDBCmd-Datei sollten in die universelle Projektdatei gelangen.
 
-Sie sollten auch sicherstellen, dass Sie das Datenbankprojekt erstellen, bevor Sie VSDBCMD aufrufen, sodass die DEPLOYMANIFEST-Datei erstellt wurde und einsatzbereit ist. Sehen Sie ein vollständiges Beispiel dieses Ansatzes im Thema [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md), führt Sie durch die Projektdateien in der [Contact Manager-beispiellösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md).
+Sie sollten auch sicherstellen, dass Sie das Datenbankprojekt erstellen, bevor Sie VSDBCmd aufrufen, damit die DeployManifest-Datei erstellt wurde und einsatzbereit ist. Ein vollständiges Beispiel für diesen Ansatz finden Sie im Thema "Grundlegendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md)", der Sie durch die Projektdateien in der [Beispiellösung "Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)" führt.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema wird beschrieben, wie Sie die Datenbankeigenschaften, die unterschiedliche zielumgebungen beim Bereitstellen von Datenbankprojekten, die mithilfe von MSBuild und VSDBCMD anpassen können. Dieser Ansatz ist nützlich, wenn Sie Projekte als Teil des größeren, unternehmensweite Lösungen bereitstellen müssen. Diese Lösungen werden häufig an mehrere Ziele, z. B. Sandbox Entwicklungs- oder testumgebungen "," Staging "oder" Integration von Plattformen, "und" Produktion "oder" live-Umgebungen bereitgestellt. Jede dieser zielumgebungen erfordert in der Regel einen eindeutigen Satz von Eigenschaften für die datenbankbereitstellung.
+In diesem Thema wird beschrieben, wie Sie Daten Bank Eigenschaften auf verschiedene Ziel Umgebungen anpassen können, wenn Sie Datenbankprojekte mithilfe von MSBuild und VSDBCmd bereitstellen. Diese Vorgehensweise ist nützlich, wenn Sie Datenbankprojekte als Teil größerer Lösungen für Unternehmen bereitstellen müssen. Diese Lösungen werden häufig für mehrere Ziele bereitgestellt, wie z. b. Sandbox-oder Testumgebungen, Staging-oder Integrationsplattformen und Produktions-oder Live Umgebungen. Jede dieser Ziel Umgebungen erfordert in der Regel einen eindeutigen Satz von Eigenschaften für die Daten Bank Bereitstellung.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere Informationen zum Bereitstellen von Datenbankprojekten VSDBCMD.exe verwenden, finden Sie unter [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Weitere Informationen zu benutzerdefinierte MSBuild-Projektdateien verwenden, um den Bereitstellungsprozess zu steuern, finden Sie unter [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
+Weitere Informationen zum Bereitstellen von Datenbankprojekten mit VSDBCMD. exe finden Sie unter Bereitstellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Weitere Informationen zur Verwendung von benutzerdefinierten MSBuild-Projektdateien zum Steuern des Bereitstellungs Prozesses finden Sie Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und Grundlegendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
 
-Diese Artikel auf MSDN enthalten allgemeineren Leitfaden für die Bereitstellung der Datenbank:
+In den folgenden Artikeln auf MSDN finden Sie allgemeinere Hinweise zur Daten Bank Bereitstellung:
 
-- [Eine Übersicht über Datenbankprojekteinstellungen](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
-- [Vorgehensweise: Konfigurieren von Eigenschaften für die Bereitstellungsdetails](https://msdn.microsoft.com/library/dd172125.aspx)
+- [Übersicht über Datenbankprojekt Einstellungen](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
+- [Vorgehensweise: Konfigurieren von Eigenschaften für Bereitstellungs Details](https://msdn.microsoft.com/library/dd172125.aspx)
 - [Erstellen und Bereitstellen von Datenbanken in einer isolierten Entwicklungsumgebung](https://msdn.microsoft.com/library/dd193409.aspx)
-- [Erstellen und Bereitstellen von Datenbanken in einer Staging- oder Produktionsumgebung](https://msdn.microsoft.com/library/dd193413.aspx)
+- [Erstellen und Bereitstellen von Datenbanken in einer Staging-oder Produktionsumgebung](https://msdn.microsoft.com/library/dd193413.aspx)
 
 > [!div class="step-by-step"]
 > [Zurück](performing-a-what-if-deployment.md)

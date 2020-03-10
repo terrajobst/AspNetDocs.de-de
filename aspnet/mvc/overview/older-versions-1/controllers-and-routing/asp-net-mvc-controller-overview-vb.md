@@ -1,102 +1,102 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
-title: ASP.NET MVC-Controller – Übersicht (VB) | Microsoft-Dokumentation
+title: Übersicht über ASP.NET MVC-Controller (VB) | Microsoft-Dokumentation
 author: StephenWalther
-description: In diesem Tutorial führt Sie Stephen Walther in ASP.NET MVC-Controller. Erfahren Sie, wie erstellen neue Domänencontroller und Zurückgeben von verschiedenen Arten von Aktion Res...
+description: In diesem Tutorial führt Stephen Walther Sie in ASP.NET MVC-Controller ein. Sie erfahren, wie Sie neue Controller erstellen und verschiedene Arten von Aktionen zurückgeben...
 ms.author: riande
 ms.date: 02/16/2008
 ms.assetid: 94c3e5d9-a904-445e-a34e-d92fd1ca108a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f19e7dd7fc025de2e0c387db898d36623e790e6a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123688"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78486921"
 ---
 # <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC-Controller – Übersicht (VB)
 
-durch [Stephen Walther](https://github.com/StephenWalther)
+von [Stephen Walther](https://github.com/StephenWalther)
 
-> In diesem Tutorial führt Sie Stephen Walther in ASP.NET MVC-Controller. Erfahren Sie, wie erstellen neue Domänencontroller und Zurückgeben von verschiedenen Arten von Aktionsergebnissen.
+> In diesem Tutorial führt Stephen Walther Sie in ASP.NET MVC-Controller ein. Sie erfahren, wie Sie neue Controller erstellen und unterschiedliche Aktions Ergebnistypen zurückgeben.
 
-Dieses Tutorial wird beschrieben, das Thema der ASP.NET MVC-Controllern, Controlleraktionen und Aktionsergebnisse. Nachdem Sie dieses Tutorial abgeschlossen haben, wissen Sie, wie der Controller verwendet werden, um zu steuern, die ein Besucher mit einer ASP.NET MVC-Website interagiert.
+In diesem Tutorial wird das Thema ASP.NET MVC-Controller, Controller Aktionen und Aktions Ergebnisse erläutert. Nach Abschluss dieses Tutorials erfahren Sie, wie Controller verwendet werden, um zu steuern, wie ein Besucher mit einer ASP.NET MVC-Website interagiert.
 
-## <a name="understanding-controllers"></a>Grundlegendes zu Controllern
+## <a name="understanding-controllers"></a>Grundlagen der Controller
 
-MVC-Controller sind verantwortlich für die Reaktion auf Anforderungen für eine ASP.NET MVC-Website. Jede Browseranforderung wird ein bestimmter Domänencontroller zugeordnet. Beispiel: Angenommen Sie, dass Sie die folgende URL in die Adressleiste des Browsers eingeben:
+MVC-Controller sind dafür verantwortlich, auf Anforderungen zu reagieren, die für eine ASP.NET MVC-Website gestellt werden. Jede Browser Anforderung wird einem bestimmten Controller zugeordnet. Stellen Sie sich beispielsweise vor, dass Sie die folgende URL in die Adressleiste Ihres Browsers eingeben:
 
 `http://localhost/Product/Index/3`
 
-In diesem Fall wird ein Controller, mit der Bezeichnung ProductController aufgerufen. ProductController ist verantwortlich für das Generieren der Antwort auf die Browseranforderung. Z. B. der Controller möglicherweise eine bestimmte Ansicht zurück an den Browser zurück, oder der Controller kann leiten Sie den Benutzer an einen anderen Controller.
+In diesem Fall wird ein Controller mit dem Namen ProductController aufgerufen. Der ProductController ist dafür verantwortlich, die Antwort auf die Browser Anforderung zu erstellen. Beispielsweise kann der Controller eine bestimmte Ansicht zurück an den Browser zurückgeben oder der Controller kann den Benutzer an einen anderen Controller umleiten.
 
-Codebeispiel 1 enthält einen einfachen Controller, mit der Bezeichnung ProductController.
+Die Auflistung 1 enthält einen einfachen Controller mit dem Namen ProductController.
 
-**Listing1 - Controllers\ProductController.vb**
+**Listing1-controllers\productcontroller.vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample1.vb)]
 
-Wie in Codebeispiel 1 sehen ist, ist ein Controller nur eine Klasse (Visual Basic .NET oder C#-Klasse). Ein Controller ist eine Klasse, die von der Basisklasse von System.Web.Mvc.Controller abgeleitet wird. Da ein Controller von dieser Basisklasse erbt, erbt ein Controller mehrere nützliche Methoden für kostenlose (wir werden diese Methoden weiter unten erörtert).
+Wie Sie in der Liste 1 sehen können, ist ein Controller nur eine Klasse (ein Visual Basic .net C# oder eine Klasse). Ein Controller ist eine Klasse, die von der System. Web. MVC. Controller-Basisklasse abgeleitet wird. Da ein Controller von dieser Basisklasse erbt, erbt ein Controller mehrere nützliche Methoden kostenlos (diese Methoden werden in Kürze besprochen).
 
-## <a name="understanding-controller-actions"></a>Grundlegendes zu Controlleraktionen
+## <a name="understanding-controller-actions"></a>Grundlegendes zu Controller Aktionen
 
-Ein Controller verfügbar macht, Controlleraktionen. Eine Aktion ist eine Methode für einen Controller, der aufgerufen wird, wenn Sie eine bestimmte URL in die Adressleiste Ihres Browsers eingeben. Beispiel: Angenommen Sie, dass Sie eine Anforderung für die folgende URL ausführen:
+Controller Aktionen werden von einem Controller bereitstellt. Eine Aktion ist eine Methode auf einem Controller, die aufgerufen wird, wenn Sie eine bestimmte URL in der Adressleiste Ihres Browsers eingeben. Stellen Sie sich beispielsweise vor, dass Sie eine Anforderung für die folgende URL senden:
 
 `http://localhost/Product/Index/3`
 
-In diesem Fall wird die Index()-Methode für die ProductController-Klasse aufgerufen. Die Index()-Methode ist ein Beispiel für eine Controlleraktion.
+In diesem Fall wird die Index ()-Methode für die ProductController-Klasse aufgerufen. Die Index ()-Methode ist ein Beispiel für eine Controller Aktion.
 
-Eine Controlleraktion muss eine öffentliche Methode von einem Controller-Klasse. Visual Basic.NET Methoden in der Standardeinstellung sind die öffentlichen Methoden. Beachten Sie, dass jede öffentliche Methode, die Sie zu einer Controllerklasse hinzufügen als eine Controlleraktion automatisch bereitgestellt wird (Achten Sie Informationen dazu, da eine Controlleraktion von jedem Benutzer im Universum aufgerufen werden kann, indem Sie einfach die richtige URL in die Adressleiste des Browsers eingeben).
+Eine Controller Aktion muss eine öffentliche Methode einer Controller Klasse sein. Visual Basic.NET-Methoden sind standardmäßig öffentliche Methoden. Beachten Sie, dass jede öffentliche Methode, die Sie einer Controller Klasse hinzufügen, automatisch als Controller Aktion verfügbar gemacht wird (Sie müssen darauf achten, da eine Controller Aktion von beliebigen Personen im Universum aufgerufen werden kann, indem Sie einfach die richtige URL in eine Adressleiste des Browsers eingeben).
 
-Es gibt einige zusätzlichen Anforderungen, die durch eine Controlleraktion erfüllt werden müssen. Eine Methode als eine Controlleraktion kann nicht überladen werden. Darüber hinaus darf keine Controlleraktion auf eine statische Methode sein. Davon abgesehen können Sie beliebige andere Methode als eine Controlleraktion.
+Es gibt einige zusätzliche Anforderungen, die durch eine Controller Aktion erfüllt werden müssen. Eine Methode, die als Controller Aktion verwendet wird, kann nicht überladen werden. Außerdem kann eine Controller Aktion keine statische Methode sein. Abgesehen davon können Sie fast jede Methode als Controller Aktion verwenden.
 
-## <a name="understanding-action-results"></a>Grundlegendes zu Aktionsergebnisse
+## <a name="understanding-action-results"></a>Grundlegendes zu Aktions Ergebnissen
 
-Eine Controlleraktion gibt so genannte ein *Aktionsergebnis*. Ein Aktionsergebnis ist, was eine Controlleraktion als Reaktion auf eine Browseranforderung zurückgibt.
+Eine Controller Aktion gibt etwas zurück, das als *Aktions Ergebnis*bezeichnet wird. Ein Aktions Ergebnis ist, was eine Controller Aktion als Reaktion auf eine Browser Anforderung zurückgibt.
 
-ASP.NET MVC-Framework unterstützt verschiedene Typen von Aktionsergebnissen, einschließlich:
+Das ASP.NET-MVC-Framework unterstützt verschiedene Arten von Aktions Ergebnissen, einschließlich:
 
-1. ViewResult - stellt HTML und Markup.
-2. EmptyResult - stellt kein Ergebnis dar.
-3. RedirectResult - stellt eine Umleitung an eine neue URL dar.
-4. JsonResult - stellt eine JavaScript Object Notation-Ergebnis, das in einer AJAX-Anwendung verwendet werden kann.
-5. JavaScriptResult - stellt eine JavaScript-Skript dar.
-6. ContentResult - stellt einen Textergebnis dar.
-7. FileContentResult - stellt eine herunterladbare Datei (mit den binären Inhalt) dar.
-8. FilePathResult - stellt eine herunterladbare Datei (mit einem Pfad).
-9. FileStreamResult - stellt eine herunterladbare Datei (mit einem Dateistream) dar.
+1. ViewResult-stellt HTML und Markup dar.
+2. EmptyResult-stellt kein Ergebnis dar.
+3. Redirectresult: stellt eine Umleitung zu einer neuen URL dar.
+4. Jsonresult: stellt ein JavaScript Object Notation Ergebnis dar, das in einer AJAX-Anwendung verwendet werden kann.
+5. Javascriptresult: stellt ein JavaScript-Skript dar.
+6. ContentResult-stellt ein Text Ergebnis dar.
+7. Filecontentresult: stellt eine herunterladbare Datei dar (mit dem binären Inhalt).
+8. Fileblothresult: stellt eine herunterladbare Datei (mit einem Pfad) dar.
+9. Filestreamresult: stellt eine herunterladbare Datei (mit einem Dateistream) dar.
 
-Alle diese Aktionsergebnisse erben von der ActionResult-Basisklasse.
+Alle diese Aktions Ergebnisse erben von der Basisklasse "action result".
 
-In den meisten Fällen gibt eine Controlleraktion ein ViewResult zurück. Beispielsweise gibt die Index-Controlleraktion Programmausdruck 2 ein ViewResult zurück.
+In den meisten Fällen gibt eine Controller Aktion ein ViewResult zurück. Die Index Controller Aktion in der Liste 2 gibt beispielsweise ein ViewResult zurück.
 
-**Codebeispiel 2 - Controllers\BookController.vb**
+**Codebeispiel 2: controllers\bookcontroller.vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample2.vb)]
 
-Wenn eine Aktion ein ViewResult zurückgibt, wird HTML im Browser zurückgegeben. Programmausdruck 2 die Index()-Methode gibt eine Ansicht namens Index, an den Browser zurück.
+Wenn eine Aktion ein ViewResult zurückgibt, wird HTML an den Browser zurückgegeben. Die Index ()-Methode in der Liste 2 gibt eine Sicht mit dem Namen Index für den Browser zurück.
 
-Beachten Sie, dass die Aktion Index() Programmausdruck 2 eine ViewResult() nicht zurückgegeben wird. Stattdessen wird die View()-Methode der Basisklasse Controller aufgerufen. Sie geben ein Aktionsergebnis normalerweise nicht direkt zurück. Stattdessen rufen Sie eine der folgenden Methoden der Basisklasse Controller:
+Beachten Sie, dass die Index ()-Aktion in der Liste 2 kein ViewResult () zurückgibt. Stattdessen wird die View ()-Methode der Controller-Basisklasse aufgerufen. Normalerweise wird ein Aktions Ergebnis nicht direkt zurückgegeben. Stattdessen wird eine der folgenden Methoden der Controller-Basisklasse aufgerufen:
 
-1. Anzeigen – gibt ein ViewResult-Aktion-Ergebnis zurück.
-2. Umleiten: Gibt ein RedirectResult-Aktion-Ergebnis zurück.
-3. RedirectToAction - gibt ein Aktionsergebnis RedirectToRouteResult zurück.
-4. RedirectToRoute - gibt ein Aktionsergebnis RedirectToRouteResult zurück.
-5. JSON - gibt ein JsonResult-Aktion-Ergebnis zurück.
-6. JavaScriptResult - gibt ein JavaScriptResult zurück.
-7. Content - gibt ein ContentResult-Aktion-Ergebnis zurück.
-8. Datei - gibt ein FileContentResult, FilePathResult oder FileStreamResult abhängig von den Parametern an die Methode übergeben.
+1. View: gibt ein Ergebnis der ViewResult-Aktion zurück.
+2. Redirect-gibt ein redirectresult-Aktions Ergebnis zurück.
+3. Redirectdeaction: gibt ein redirecttorouteresult-Aktions Ergebnis zurück.
+4. RedirectToRoute-gibt ein redirecttorouteresult-Aktions Ergebnis zurück.
+5. JSON: gibt ein jsonresult-Aktions Ergebnis zurück.
+6. Javascriptresult: gibt einen javascriptresult zurück.
+7. Content: gibt ein Ergebnis der ContentResult-Aktion zurück.
+8. File: gibt ein filecontentresult, filepthresult oder filestreamresult zurück, abhängig von den Parametern, die an die Methode weitergegeben werden.
 
-Wenn eine Ansicht an den Browser zurückgegeben werden sollen, rufen Sie daher die View()-Methode. Wenn Sie den Benutzer eine Controlleraktion auf einen anderen umleiten möchten, rufen Sie die RedirectToAction()-Methode. Z. B. die Aktion Details() in Programmausdruck 3 zeigt eine Ansicht oder leitet den Benutzer an die Aktion Index(), je nachdem, ob der Id-Parameter einen Wert hat.
+Wenn Sie also eine Ansicht an den Browser zurückgeben möchten, wird die View ()-Methode aufgerufen. Wenn Sie den Benutzer von einer Controller Aktion zu einer anderen umleiten möchten, können Sie die redirectdeaction ()-Methode aufzurufen. Beispielsweise wird in der Aktion Details () in der Liste 3 entweder eine Ansicht angezeigt, oder der Benutzer wird zur Index ()-Aktion umgeleitet, je nachdem, ob der ID-Parameter einen Wert aufweist.
 
-**Codebeispiel 3 - CustomerController.vb**
+**Codebeispiel 3: customercontroller. vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample3.vb)]
 
-Das Aktionsergebnis ContentResult ist etwas Besonderes. Sie können das Aktionsergebnis ContentResult verwenden, ein Aktionsergebnis als nur-Text zurückgeben. Die Index()-Methode in Listing 4 gibt z. B. eine Meldung zurück, als nur-Text und nicht als HTML.
+Das Ergebnis der ContentResult-Aktion ist ein besonderes Ergebnis. Sie können das Ergebnis der ContentResult-Aktion verwenden, um ein Aktions Ergebnis als nur-Text zurückzugeben. Beispielsweise gibt die Index ()-Methode in der Auflistung 4 eine Meldung als nur-Text und nicht als HTML zurück.
 
-**Programmausdruck 4 - Controllers\StatusController.vb**
+**Codebeispiel 4-controllers\status Controller.vb**
 
 > StatusController
 > 
@@ -105,19 +105,19 @@ Das Aktionsergebnis ContentResult ist etwas Besonderes. Sie können das Aktionse
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample4.vb)]
 
-Wenn die Aktion StatusController.Index() aufgerufen wird, wird eine Sicht nicht zurückgegeben. Stattdessen der unformatierte Text "Hello World!" wird an den Browser zurückgegeben werden.
+Wenn die Status Controller. Index ()-Aktion aufgerufen wird, wird eine Sicht nicht zurückgegeben. Stattdessen wird der Rohtext "Hallo Welt!" wird an den Browser zurückgegeben.
 
-Wenn eine Controlleraktion ein Ergebnis, das kein Aktionsergebnis – z. B. ein Datum oder eine ganze Zahl – zurückgibt wird dann das Ergebnis in eine ContentResult automatisch eingebunden. Z. B. wenn die Aktion Index() der WorkController in Listing 5 aufgerufen wird, wird das Datum als eine ContentResult automatisch zurückgegeben.
+Wenn eine Controller Aktion ein Ergebnis zurückgibt, das kein Aktions Ergebnis ist (z. b. ein Datum oder eine ganze Zahl), wird das Ergebnis automatisch in ein ContentResult umschließt. Wenn z. b. die Index ()-Aktion des Arbeits Controllers in der Auflistung 5 aufgerufen wird, wird das Datum automatisch als ContentResult zurückgegeben.
 
-**Programmausdruck 5 - WorkController.vb**
+**Codebeispiel 5: workcontroller. vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample5.vb)]
 
-Die Aktion Index() in Listing 5 gibt einen DateTime-Objekt zurück. ASP.NET MVC-Framework das DateTime-Objekt in eine Zeichenfolge konvertiert und dient als Wrapper für "DateTime"-Werts in einen ContentResult automatisch. Der Browser empfängt das Datum und die Uhrzeit, als nur-Text.
+Die Index ()-Aktion in Auflistung 5 gibt ein DateTime-Objekt zurück. Das ASP.NET-MVC-Framework konvertiert das DateTime-Objekt in eine Zeichenfolge und umschließt den DateTime-Wert in einem ContentResult automatisch. Der Browser empfängt das Datum und die Uhrzeit als Klartext.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Der Zweck dieses Lernprogramms wurde, führen Sie die Konzepte von ASP.NET MVC-Controllern, Controlleraktionen und Ergebnisse von Controlleraktionen ein. Im ersten Abschnitt haben Sie gelernt, wie neue Domänencontroller zu einer ASP.NET MVC-Projekt hinzufügen. Anschließend haben Sie erfahren, wie öffentliche Methoden in einem Controller für das Universum als Controlleraktionen verfügbar gemacht. Zum Schluss erläutert die verschiedenen Typen von Aktionsergebnissen, die eine Controlleraktion zurückgegeben werden können. Insbesondere erläutert wie ein ViewResult RedirectToActionResult und ContentResult von eine Controlleraktion zurückgegeben.
+In diesem Tutorial wurden die Konzepte der ASP.NET MVC-Controller, Controller Aktionen und Controller Aktions Ergebnisse vorgestellt. Im ersten Abschnitt haben Sie erfahren, wie Sie einem ASP.NET MVC-Projekt neue Controller hinzufügen. Als nächstes haben Sie gelernt, wie öffentliche Methoden eines Controllers als Controller Aktionen für das Universum verfügbar gemacht werden. Schließlich haben wir die unterschiedlichen Arten von Aktions Ergebnissen erläutert, die von einer Controller Aktion zurückgegeben werden können. Insbesondere haben wir erläutert, wie ViewResult, redirectdeaktionresult und ContentResult aus einer Controller Aktion zurückgegeben werden.
 
 > [!div class="step-by-step"]
 > [Zurück](creating-a-custom-route-constraint-cs.md)

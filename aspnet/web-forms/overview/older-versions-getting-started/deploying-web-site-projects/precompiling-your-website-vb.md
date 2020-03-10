@@ -9,11 +9,11 @@ ms.assetid: c285dc6f-a1c6-46e6-ac03-3830947f57e3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 1a46870b73f95300ef5bc1f72dda74d7d62ab11f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588333"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509439"
 ---
 # <a name="precompiling-your-website-vb"></a>Vorkompilieren Ihrer Website (VB)
 
@@ -164,7 +164,7 @@ Bei Standorten mit Konfigurations unterschieden zwischen den Entwicklungs-und Pr
 
 Ein Aktualisierungs Programm zum Kopieren von Dateien aus der Entwicklungsumgebung in die Produktionsumgebung finden Sie unter Bereitstellen [*Ihrer Website mithilfe eines FTP-Clients*](deploying-your-site-using-an-ftp-client-vb.md) und bereitstellen [*Ihrer Website mithilfe von Visual Studio*](determining-what-files-need-to-be-deployed-vb.md) -Tutorials.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 ASP.NET unterstützt zwei Arten der Kompilierung: automatisch und explizit. Wie in den vorherigen Tutorials erläutert, verwenden Webanwendungs Projekte (WAPs) die explizite Kompilierung, während für Website Projekte (wsps) standardmäßig die automatische Kompilierung verwendet wird. Es ist jedoch möglich, mit dem ASP.net-Kompilierungs Tool eine wsp-Datei vor der Bereitstellung explizit zu kompilieren.
 
@@ -172,7 +172,7 @@ Dieses Tutorial konzentriert sich auf die Vorkompilierung des Kompilierungs Tool
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

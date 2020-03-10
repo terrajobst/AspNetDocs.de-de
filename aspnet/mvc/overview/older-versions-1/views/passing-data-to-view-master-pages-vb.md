@@ -9,11 +9,11 @@ ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 9f768f47557adedc43cebfa2c092014bba5842de
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593730"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485673"
 ---
 # <a name="passing-data-to-view-master-pages-vb"></a>Übergeben von Daten an Ansichtsmasterseiten (VB)
 
@@ -27,7 +27,7 @@ von [Microsoft](https://github.com/microsoft)
 
 In diesem Tutorial wird erläutert, wie Sie Daten von einem Controller an eine Ansichts Master Seite übergeben können. Wir untersuchen zwei Strategien zum Übergeben von Daten an eine Ansichts Master Seite. Zuerst wird eine einfache Lösung erläutert, die zu einer Anwendung führt, die schwer zu verwalten ist. Als nächstes untersuchen wir eine viel bessere Lösung, die etwas mehr anfängliche Arbeit erfordert, aber zu einer viel besser verwaltbaren Anwendung führt.
 
-### <a name="the-problem"></a>Das Problem
+### <a name="the-problem"></a>Problemstellung
 
 Stellen Sie sich vor, dass Sie eine Movie Database-Anwendung entwickeln und die Liste der Film Kategorien auf jeder Seite in der Anwendung anzeigen möchten (siehe Abbildung 1). Stellen Sie sich außerdem vor, dass die Liste der Film Kategorien in einer Datenbanktabelle gespeichert wird. In diesem Fall wäre es sinnvoll, die Kategorien aus der Datenbank abzurufen und die Liste der Film Kategorien innerhalb einer Ansichts Master Seite zu erstellen.
 
@@ -103,11 +103,11 @@ Der Filme Controller macht genau wie der Home Controller, der im vorherigen Absc
 
 Beachten Sie, dass diese Lösung zum Hinzufügen von Ansichts Daten für eine Ansichts Master Seite nicht gegen das Dry-Prinzip (Don't repeat yourself) verstößt. Der Code zum Hinzufügen der Liste der Film Kategorien zum Anzeigen von Daten ist nur an einem Speicherort enthalten: dem Konstruktor für den Anwendungs Controller.
 
-### <a name="summary"></a>Summary
+### <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir zwei Ansätze erläutert, um Ansichts Daten von einem Controller an eine Ansichts Master Seite zu übergeben. Zuerst haben wir eine einfache, aber schwer zu verwaltende Methode untersucht. Im ersten Abschnitt wurde erläutert, wie Sie Ansichts Daten für eine Ansichts Master Seite in jeder Controller Aktion in Ihrer Anwendung hinzufügen können. Wir haben festgestellt, dass dies ein fehlerhafter Ansatz ist, weil er gegen das trockene (Don't repeat yourself) Prinzip verstößt.
 
 Als nächstes haben wir eine viel bessere Strategie zum Hinzufügen von Daten untersucht, die für eine Ansichts Master Seite erforderlich sind, um Daten anzuzeigen Anstatt die Ansichts Daten in den einzelnen Controller Aktionen hinzuzufügen, haben wir die Ansichts Daten nur einmal innerhalb eines Anwendungs Controllers hinzugefügt. Auf diese Weise können Sie doppelten Code vermeiden, wenn Sie Daten an eine Ansichts Master Seite in einer ASP.NET MVC-Anwendung übergeben.
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-page-layouts-with-view-master-pages-vb.md)
+> [Previous](creating-page-layouts-with-view-master-pages-vb.md)

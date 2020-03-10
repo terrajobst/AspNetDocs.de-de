@@ -9,11 +9,11 @@ ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
 ms.openlocfilehash: 7abc3d7acc60d7d868958f2a313bc408f96c95a4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457569"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507165"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-45"></a>Verwenden asynchroner Methoden in ASP.NET 4.5
 
@@ -45,11 +45,11 @@ Weitere Informationen [zum Verwenden der](https://msdn.microsoft.com/library/hh1
 
 Auf dem Webserver verwaltet das .NET Framework einen Thread Pool, der zum Service ASP.NET-Anforderungen verwendet wird. Wenn eine Anforderung eingeht, wird ein Thread aus dem Pool verteilt, um diese Anforderung zu verarbeiten. Wenn die Anforderung synchron verarbeitet wird, ist der Thread, der die Anforderung verarbeitet, ausgelastet, während die Anforderung verarbeitet wird, und dieser Thread kann keine andere Anforderung verarbeiten.   
   
-Dies stellt möglicherweise kein Problem dar, da der Thread Pool groß genug gemacht werden kann, um viele ausgelastete Threads aufnehmen zu können. Die Anzahl der Threads im Thread Pool ist jedoch begrenzt (der Standardwert für .NET 4,5 ist 5.000). In großen Anwendungen mit hoher Parallelität von Anforderungen mit langer Ausführungszeit sind möglicherweise alle verfügbaren Threads ausgelastet. Diese Bedingung wird als Threadmangel (Starvation) bezeichnet. Wenn diese Bedingung erreicht wird, werden Anforderungen vom Webserver in die Warteschlange eingereiht. Wenn die Anforderungs Warteschlange voll ist, lehnt der Webserver Anforderungen mit einem HTTP 503-Status (Server ist zu stark ausgelastet) ab. Der CLR-Thread Pool weist Einschränkungen bei neuen Thread Spritzen auf. Wenn die Parallelität burstig ist (d. h., Ihre Website kann plötzlich eine große Anzahl von Anforderungen erhalten), und alle verfügbaren Anforderungs Threads sind aufgrund von Back-End-aufrufen mit hoher Latenzzeit ausgelastet. die eingeschränkte Thread einschleusungs Rate kann dazu führen, dass Ihre Anwendung sehr schlecht reagiert. Außerdem hat jeder neue dem Thread Pool hinzugefügte Thread mehr Aufwand (z. b. 1 MB Stapel Arbeitsspeicher). Eine Webanwendung, die synchrone Methoden verwendet, um Aufrufe mit hoher Latenz zu verarbeiten, bei denen der Thread Pool auf den maximalen .NET 4,5-Standardwert von 5 000 Threads ansteigt, beansprucht ungefähr 5 GB mehr Arbeitsspeicher als eine Anwendung, die die gleichen Anforderungen verwendet. asynchrone Methoden und nur 50-Threads. Wenn Sie asynchrone Aufgaben durcharbeiten, verwenden Sie nicht immer einen Thread. Wenn Sie z. b. einen asynchronen webService Request erstellen, verwendet ASP.NET keine Threads zwischen dem asynchronen **Methoden** Aufrufvorgang und dem **warten**. Die Verwendung des Thread Pools für den Einsatz von Anforderungen mit hoher Latenzzeit kann zu einem hohen Speicherbedarf und unzureichender Auslastung der Server Hardware führen.
+Dies stellt möglicherweise kein Problem dar, da der Thread Pool groß genug gemacht werden kann, um viele ausgelastete Threads aufnehmen zu können. Die Anzahl der Threads im Thread Pool ist jedoch begrenzt (der Standardwert für .NET 4,5 ist 5.000). In großen Anwendungen mit hoher Parallelität von Anforderungen mit langer Ausführungszeit sind möglicherweise alle verfügbaren Threads ausgelastet. Diese Bedingung wird als Thread Hunger bezeichnet. Wenn diese Bedingung erreicht wird, werden Anforderungen vom Webserver in die Warteschlange eingereiht. Wenn die Anforderungs Warteschlange voll ist, lehnt der Webserver Anforderungen mit einem HTTP 503-Status (Server ist zu stark ausgelastet) ab. Der CLR-Thread Pool weist Einschränkungen bei neuen Thread Spritzen auf. Wenn die Parallelität burstig ist (d. h., Ihre Website kann plötzlich eine große Anzahl von Anforderungen erhalten), und alle verfügbaren Anforderungs Threads sind aufgrund von Back-End-aufrufen mit hoher Latenzzeit ausgelastet. die eingeschränkte Thread einschleusungs Rate kann dazu führen, dass Ihre Anwendung sehr schlecht reagiert. Außerdem hat jeder neue dem Thread Pool hinzugefügte Thread mehr Aufwand (z. b. 1 MB Stapel Arbeitsspeicher). Eine Webanwendung, die synchrone Methoden verwendet, um Aufrufe mit hoher Latenz zu verarbeiten, bei denen der Thread Pool auf den maximalen .NET 4,5-Standardwert von 5 000 Threads ansteigt, beansprucht ungefähr 5 GB mehr Arbeitsspeicher als eine Anwendung, die die gleichen Anforderungen verwendet. asynchrone Methoden und nur 50-Threads. Wenn Sie asynchrone Aufgaben durcharbeiten, verwenden Sie nicht immer einen Thread. Wenn Sie z. b. einen asynchronen webService Request erstellen, verwendet ASP.NET keine Threads zwischen dem asynchronen **Methoden** Aufrufvorgang und dem **warten**. Die Verwendung des Thread Pools für den Einsatz von Anforderungen mit hoher Latenzzeit kann zu einem hohen Speicherbedarf und unzureichender Auslastung der Server Hardware führen.
 
 ## <a name="processing-asynchronous-requests"></a>Verarbeiten von asynchronen Anforderungen
 
-In Webanwendungen, die eine große Anzahl gleichzeitiger Anforderungen beim Start anzeigen oder eine bursty-Auslastung haben (bei der die Parallelität plötzlich zunimmt), erhöht sich die Reaktionsfähigkeit Ihrer Anwendung, indem Webdienst Aufrufe asynchron durchführt werden. Die Verarbeitung einer asynchronen Anforderung dauert genau so lange wie die einer synchronen Anforderung. Wenn z. b. eine Anforderung einen Webdienst aufzurufen, der zwei Sekunden benötigt, dauert die Anforderung zwei Sekunden, unabhängig davon, ob Sie synchron oder asynchron ausgeführt wird. Während eines asynchronen Aufrufes wird jedoch verhindert, dass ein Thread auf andere Anforderungen antwortet, während er darauf wartet, dass die erste Anforderung beendet wird. Daher verhindern asynchrone Anforderungen das Anforderungswarteschlangen-und Thread Pool Wachstum, wenn es viele gleichzeitige Anforderungen gibt, die Vorgänge mit langer Laufzeit aufrufen.
+In Webanwendungen, die eine große Anzahl gleichzeitiger Anforderungen beim Start anzeigen oder eine bursty-Auslastung haben (bei der die Parallelität plötzlich zunimmt), erhöht sich die Reaktionsfähigkeit Ihrer Anwendung, indem Webdienst Aufrufe asynchron durchführt werden. Die Verarbeitung einer asynchronen Anforderung dauert denselben Zeitraum wie eine synchrone Anforderung. Wenn z. b. eine Anforderung einen Webdienst aufzurufen, der zwei Sekunden benötigt, dauert die Anforderung zwei Sekunden, unabhängig davon, ob Sie synchron oder asynchron ausgeführt wird. Während eines asynchronen Aufrufes wird jedoch verhindert, dass ein Thread auf andere Anforderungen antwortet, während er darauf wartet, dass die erste Anforderung beendet wird. Daher verhindern asynchrone Anforderungen das Anforderungswarteschlangen-und Thread Pool Wachstum, wenn es viele gleichzeitige Anforderungen gibt, die Vorgänge mit langer Laufzeit aufrufen.
 
 ## <a id="ChoosingSyncVasync"></a>Auswählen von synchronen oder asynchronen Methoden
 
@@ -57,16 +57,16 @@ In diesem Abschnitt werden die Richtlinien für den Einsatz von synchronen oder 
 
 Verwenden Sie in der Regel synchrone Methoden für die folgenden Bedingungen:
 
-- Die Vorgänge sind einfach oder haben eine kurze Ausführungszeit.
+- Die Vorgänge sind einfach oder kurz ausgeführt.
 - Einfachheit ist wichtiger als die Effizienz.
-- Die Vorgänge beanspruchen hauptsächlich die CPU und bringen keine umfangreiche Datenträger- oder Netzwerkauslastung mit sich. Die Verwendung von asynchronen Methoden für CPU-gebundene Vorgänge bietet keine Vorteile und führt zu einem höheren Verwaltungsaufwand.
+- Bei den Vorgängen handelt es sich hauptsächlich um CPU-Vorgänge anstelle von Vorgängen, die einen umfangreichen Datenträger Die Verwendung von asynchronen Methoden für CPU-gebundene Vorgänge bietet keine Vorteile und führt zu einem höheren Verwaltungsaufwand.
 
 Im Allgemeinen verwenden Sie asynchrone Methoden für die folgenden Bedingungen:
 
 - Sie rufen Dienste auf, die durch asynchrone Methoden genutzt werden können, und Sie verwenden .NET 4,5 oder höher.
-- Die Vorgänge sind netzwerkgebunden oder E/A-gebunden und nicht CPU-gebunden.
-- Parallelverarbeitung ist wichtiger als die Einfachheit des Codes.
-- Sie möchten einen Mechanismus bereitstellen, der Benutzern das Abbrechen einer Anforderung mit langer Laufzeit ermöglicht.
+- Die Vorgänge sind Netzwerk gebunden oder e/a-gebunden anstatt CPU-gebunden.
+- Parallelität ist wichtiger als die Einfachheit des Codes.
+- Sie möchten einen Mechanismus bereitstellen, mit dem Benutzer eine Anforderung mit langer Ausführungszeit abbrechen können.
 - Wenn der Vorteil der Umstellung von Threads die Kosten des Kontext Schalters übersteigt. Im Allgemeinen sollten Sie eine Methode asynchron erstellen, wenn die synchrone Methode den ASP.net-Anforderungs Thread blockiert, während keine Arbeit ausgeführt wird. Durch die asynchrone Ausführung des Aufrufes wird der ASP.net Request-Thread nicht blockiert, während er darauf wartet, dass der webService Request beendet wird.
 - Das Testen zeigt, dass die blockierenden Vorgänge einen Engpass bei der Standort Leistung darstellen und dass IIS mehr Anforderungen mithilfe von asynchronen Methoden für diese blockierenden Aufrufe bedienen kann.
 
@@ -204,7 +204,7 @@ Um die Vorteile einer asynchronen Webanwendung zu nutzen, müssen Sie möglicher
 - Wenn Ihre Anwendung Webdienste oder System.NET verwendet, um über HTTP mit einem Back-End zu kommunizieren, müssen Sie möglicherweise das [connectionManagement/maxConnection-](https://msdn.microsoft.com/library/fb6y0fyc(VS.110).aspx) Element erhöhen. Bei ASP.NET-Anwendungen wird dies durch die Funktion "autoConfig" auf das 12-fache der Anzahl der CPUs beschränkt. Dies bedeutet, dass Sie bei einer Quad-proc-Methode höchstens 12 \* 4 = 48 gleichzeitige Verbindungen mit einem IP-Endpunkt haben können. Da diese an [AutoConfig](https://msdn.microsoft.com/library/7w2sway1(VS.110).aspx)gebunden ist, ist die einfachste Möglichkeit, `maxconnection` in einer ASP.NET-Anwendung zu erhöhen, [System .net. ServicePointManager. DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(VS.110).aspx) in der from `Application_Start`-Methode in der Datei *Global. asax* Programm gesteuert festzulegen. Ein Beispiel finden Sie im Beispiel für das herunterladen.
 - In .NET 4,5 sollte der Standardwert 5000 für [maxconcurrentrequestspercpu](https://blogs.msdn.com/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx) in Ordnung sein.
 
-## <a name="contributors"></a>Mitwirkende
+## <a name="contributors"></a>Contributors
 
 - [Levi Broderick](http://stackoverflow.com/users/59641/levi)
 - [Tom Dykstra](http://www.bing.com/search?q=site%3Aasp.net+%22Tom+Dykstra%22+-forums.asp.net&amp;qs=n&amp;form=QBRE&amp;pq=site%3Aasp.net+%22tom+dykstra%22+-forums.asp.net&amp;sc=8-42&amp;sp=-1&amp;sk=)

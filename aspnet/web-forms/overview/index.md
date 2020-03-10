@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/index
-title: ASP.NET Web Forms-Leitfaden | Microsoft-Dokumentation
+title: ASP.net Web Forms Anleitung | Microsoft-Dokumentation
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,13 +9,13 @@ ms.assetid: b3fb4480-0f41-495b-add6-163ca92dc8a3
 msc.legacyurl: /web-forms/overview
 msc.type: book
 ms.openlocfilehash: 4b38d6b54f53508f7b568207fe7f1a624a7af5f3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402270"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519381"
 ---
-# <a name="aspnet-web-forms-guidance"></a>ASP.NET Web Forms-Leitfaden
+# <a name="aspnet-web-forms-guidance"></a>Leitfaden zu ASP.net-Web Forms
 
 - [Erste Schritte](getting-started/index.md)
 
@@ -60,7 +60,7 @@ ms.locfileid: "59402270"
 
     - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](deployment/visual-studio-web-deployment/index.md)
 
-        - [Introduction (Einführung)](deployment/visual-studio-web-deployment/introduction.md)
+        - [Einführung](deployment/visual-studio-web-deployment/introduction.md)
         - [Vorbereiten für die Datenbankbereitstellung](deployment/visual-studio-web-deployment/preparing-databases.md)
         - [Umwandlungen für die Datei „Web.config“](deployment/visual-studio-web-deployment/web-config-transformations.md)
         - [Projekteigenschaften](deployment/visual-studio-web-deployment/project-properties.md)
@@ -75,8 +75,8 @@ ms.locfileid: "59402270"
     - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](deployment/deploying-web-applications-in-enterprise-scenarios/index.md)
 
         - [Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010](deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-        - [Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-        - [Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion](deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+        - [Webbasierte Unternehmensbereitstellung: Szenarioübersicht](deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+        - [Application Lifecycle Management: Von der Entwicklung bis zur Produktion](deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
     - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](deployment/web-deployment-in-the-enterprise/index.md)
 
         - [Webbereitstellung im Unternehmen](deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)
@@ -130,13 +130,13 @@ ms.locfileid: "59402270"
 
     - [ASP.NET 4 – Tailspin Spyworks](older-versions-getting-started/tailspin-spyworks/index.md)
 
-        - [Teil 1: Datei -> Neues Projekt](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
-        - [Teil 2: Datenzugriffsebene](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
+        - [Teil 1: Datei > Neues Projekt](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+        - [Teil 2: Datenzugriffsschicht](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
         - [Teil 3: Layout- und Kategoriemenü](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
         - [Teil 4: Auflistung von Produkten](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
         - [Teil 5: Geschäftslogik](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
         - [Teil 6: ASP.NET-Mitgliedschaft](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
-        - [Teil 7: Hinzufügen von Funktionen](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
+        - [Teil 7: Hinzufügen von Features](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
         - [Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
     - [ASP.NET 4 – Erste Schritte mit Entity Framework 4 und Web Forms](older-versions-getting-started/getting-started-with-ef/index.md)
 
@@ -150,9 +150,9 @@ ms.locfileid: "59402270"
         - [Erste Schritte mit Entity Framework 4.0 Database First – Teil 8](older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
     - [ASP.NET 4 – Entity Framework 4 und Web Forms (Fortsetzung)](older-versions-getting-started/continuing-with-ef/index.md)
 
-        - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-        - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und Komponententests](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-        - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+        - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+        - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und von Komponententests](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+        - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
         - [Verarbeiten von Parallelität bei Entity Framework 4.0 in ASP.NET 4](older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [Maximieren der Leistung bei Entity Framework 4.0 in ASP.NET 4](older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [Neue Funktionen in Entity Framework 4.0](older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -374,7 +374,7 @@ ms.locfileid: "59402270"
         - [Drag & Drop über ReorderList (C#)](ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs.md)
         - [Verwenden von Postbacks mit dem ReorderList-Steuerelement (VB)](ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb.md)
         - [Drag & Drop über ReorderList (VB)](ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb.md)
-    - [Schieberegler](ajax-control-toolkit/slider/index.md)
+    - [Slider](ajax-control-toolkit/slider/index.md)
 
         - [Schieberegler-Steuerelement mit automatischem Postback (C#)](ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs.md)
         - [Datenbindung des Schieberegler-Steuerelements](ajax-control-toolkit/slider/databinding-the-slider-control-cs.md)
@@ -388,7 +388,7 @@ ms.locfileid: "59402270"
         - [Verwenden von TextBoxWatermark mit Validierungssteuerelementen (VB)](ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb.md)
 - [Ältere Versionen – Datenzugriff](data-access/index.md)
 
-    - [Introduction (Einführung)](data-access/introduction/index.md)
+    - [Einführung](data-access/introduction/index.md)
 
         - [Erstellen einer Datenzugriffsschicht (C#)](data-access/introduction/creating-a-data-access-layer-cs.md)
         - [Erstellen einer Geschäftslogikebene (C#)](data-access/introduction/creating-a-business-logic-layer-cs.md)

@@ -9,11 +9,11 @@ ms.assetid: 11de31e8-a78a-4f96-bd75-66e994175902
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ec17a16d7bb487d1c5cacf2d5971bbeffc1ba031
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74628055"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481725"
 ---
 # <a name="using-templatefields-in-the-gridview-control-c"></a>Verwenden von TemplateFields im GridView-Steuerelement (C#)
 
@@ -213,7 +213,7 @@ Abbildung 16 zeigt das abgeschlossene Tutorial, das in einem Browser angezeigt w
 
 **Abbildung 16**: die Anzahl der Tage, die der Mitarbeiter für den Auftrag festgelegt wurde ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das TemplateField im GridView-Steuerelement ermöglicht ein höheres Maß an Flexibilität bei der Anzeige von Daten, als für die anderen Feld Steuerelemente verfügbar ist. Templatefields sind ideal für Situationen, in denen Folgendes gilt:
 
@@ -227,7 +227,7 @@ In den nächsten beiden Tutorials wird das Untersuchen von Vorlagen fortgesetzt,
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

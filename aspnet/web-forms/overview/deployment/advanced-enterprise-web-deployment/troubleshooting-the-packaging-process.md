@@ -1,104 +1,104 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
-title: Problembehandlung des Verpackungsprozesses | Microsoft-Dokumentation
+title: Problembehandlung beim Verpackungsprozess | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Thema wird beschrieben, wie Sie ausführliche Informationen über den Prozess der paketerstellung sammeln können, mit der EnablePackageProcessLoggingAndAssert-Eigenschaft in der M...
+description: In diesem Thema wird beschrieben, wie Sie ausführliche Informationen zum Verpackungsprozess sammeln können, indem Sie die enablepackageprocessloggingandassert-Eigenschaft im M...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 794bd819-00fc-47e2-876d-fc5d15e0de1c
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
 ms.openlocfilehash: 8ad649dfff085a8774cc13c11d8a3e3d48277d66
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128705"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509751"
 ---
 # <a name="troubleshooting-the-packaging-process"></a>Behandeln von Problemen mit dem Paketerstellungsprozess
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird beschrieben, wie Sie ausführliche Informationen über den Prozess der paketerstellung mit erfassen können die **EnablePackageProcessLoggingAndAssert** -Eigenschaft in der Microsoft Build Engine (MSBuild).
+> In diesem Thema wird beschrieben, wie Sie ausführliche Informationen zum Verpackungsprozess sammeln können, indem Sie die **enablepackageprocessloggingandassert** -Eigenschaft in der Microsoft-Build-Engine (MSBuild) verwenden.
 > 
-> Beim Festlegen der **EnablePackageProcessLoggingAndAssert** Eigenschaft **"true"**, MSBuild wird:
+> Wenn Sie die **enablepackageprocessloggingandassert** -Eigenschaft auf **true**festlegen, führt MSBuild Folgendes aus:
 > 
-> - Weitere Informationen über den Prozess der paketerstellung und die erstellungsprotokolle hinzugefügt.
-> - Melden Sie Fehler unter bestimmten Bedingungen kann z. B., wenn doppelte Dateien in der Liste der paketerstellung gefunden werden.
-> - Erstellen Sie ein Protokollverzeichnis in der *ProjectName*\_Paket-Ordner, und verwenden, um Informationen zu den Dateien, Packen Sie sind, aufzuzeichnen.
+> - Fügen Sie den buildprotokollen Weitere Informationen zum Verpackungsprozess hinzu.
+> - Protokollieren Sie Fehler unter bestimmten Bedingungen, z. b. Wenn in der Paketierungs Liste doppelte Dateien gefunden werden.
+> - Erstellen Sie ein Protokoll Verzeichnis im Ordner *ProjectName*\_Paket, und verwenden Sie es, um Informationen zu den Dateien aufzuzeichnen, die Sie Verpacken.
 > 
-> Wenn des Verpackungsprozesses tritt ein Fehler auf, oder die Web-Bereitstellungspakete enthalten nicht die Dateien, die Sie erwarten, können diese Informationen Sie beheben Sie den Prozess und die Pinpoint, in dem sind falsche Stand der Dinge.
+> Wenn der Paketierungs Prozess fehlschlägt oder Ihre Webbereitstellungs Pakete nicht die erwarteten Dateien enthalten, können Sie diese Informationen verwenden, um eine Problembehandlung für den Prozess auszuführen und die Ursache für den Fehler zu ermitteln.
 > 
 > > [!NOTE]
-> > Die **EnablePackageProcessLoggingAndAssert** Eigenschaft funktioniert nur, wenn Sie dem Projekt mit erstellen die **Debuggen** Konfiguration. Die Eigenschaft wird in anderen Konfigurationen ignoriert.
+> > Die **enablepackageprocessloggingandassert** -Eigenschaft funktioniert nur, wenn Sie das Projekt mithilfe der **Debugkonfiguration** erstellen. Die-Eigenschaft wird in anderen Konfigurationen ignoriert.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-Die Methode für die Bereitstellung das Kernstück des in diesen Tutorials basiert auf den geteilten Projekt Dateiansatz beschrieben, die [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), in dem der Buildprozess durch gesteuert wird zwei Projektdateien&#x2014;enthält Erstellen Sie die Anweisungen, die für jede zielumgebung, und enthält umgebungsspezifische Build & Deployment-Einstellungen gelten. Zur Erstellungszeit wird die umgebungsspezifischen-Projektdatei in die Unabhängigkeit von der Umgebung Projektdatei, um einen vollständigen Satz von einrichtungsanweisungen bilden zusammengeführt.
+Die Bereitstellungs Methode im Kern dieser Tutorials basiert auf dem Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz, in dem der Buildprozess von zwei Projektdateien&#x2014;gesteuert wird, die Buildanweisungen enthalten, die für jede Zielumgebung gelten, und eine mit Umgebungs spezifischen Build-und Bereitstellungs Einstellungen. Zum Zeitpunkt der Erstellung wird die Umgebungs spezifische Projektdatei in der Umgebungs unabhängigen Projektdatei zusammengeführt, um einen kompletten Satz von Buildanweisungen zu bilden.
 
-## <a name="understanding-the-enablepackageprocessloggingandassert-property"></a>Grundlegendes zur EnablePackageProcessLoggingAndAssert-Eigenschaft
+## <a name="understanding-the-enablepackageprocessloggingandassert-property"></a>Grundlegendes zur enablepackageprocessloggingandassert-Eigenschaft
 
-[Erstellen und Verpacken von Webanwendungsprojekten](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md) beschrieben, wie das Web Publishing Pipeline (WPP) einen Satz von MSBuild-Ziele bereitstellt, die erweitern die Funktionalität von MSBuild und ermöglicht die Integration in das Web (Internet Information Services, IIS) Webbereitstellungstool (Web Deploy). Wenn Sie ein Webanwendungsprojekt Verpacken, sind Sie WPP Ziele aufrufen.
+[Erstellen und Verpacken von Webanwendungs Projekten](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md) beschreiben, wie die Web Publishing Pipeline (WPP) einen Satz von MSBuild-Zielen bereitstellt, die die Funktionalität von MSBuild erweitern und die Integration mit dem Internetinformationsdienste (IIS)-Webbereitstellungs Tool (Web deploy) ermöglichen. Wenn Sie ein Webanwendungs Projekt Verpacken, rufen Sie WPP-Ziele auf.
 
-Viele dieser Ziele WPP einschließen bedingten Logik, die zusätzliche Informationen protokolliert. wenn die **EnablePackageProcessLoggingAndAssert** -Eigenschaftensatz auf **"true"**. Wenn Sie überprüfen, z. B. die **Paket** Ziel, können Sie sehen, dass es eine zusätzliche Protokollverzeichnis erstellt und eine Liste der Dateien in eine Textdatei schreibt, wenn **EnablePackageProcessLoggingAndAssert** entspricht **"true"**.
+Viele dieser WPP-Ziele enthalten bedingte Logik, die zusätzliche Informationen protokolliert, wenn die **enablepackageprocessloggingandassert** -Eigenschaft auf **true**festgelegt ist. Wenn Sie das **Paket** Ziel beispielsweise überprüfen, können Sie sehen, dass es ein zusätzliches Protokoll Verzeichnis erstellt und eine Liste von Dateien in eine Textdatei schreibt, wenn **enablepackageprocessloggingandassert** gleich **true**ist.
 
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample1.xml)]
 
 > [!NOTE]
-> Die WPP Ziele werden definiert, der *Microsoft.Web.Publishing.targets* -Datei im Ordner "% PROGRAMFILES (x 86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web". Sie können diese Datei öffnen und überprüfen die Ziele in Visual Studio 2010 oder eines XML-Editors. Achten Sie darauf, dass Sie nicht um den Inhalt der Datei zu ändern.
+> Die WPP-Ziele werden in der Datei " *Microsoft. Web. Publishing. targets* " im Ordner "% Program Files (x86)% \ msbuild\microsoft\visualstudio\v10.0\web" definiert. Sie können diese Datei öffnen und die Ziele in Visual Studio 2010 oder in einem beliebigen XML-Editor überprüfen. Achten Sie darauf, den Inhalt der Datei nicht zu ändern.
 
-## <a name="enabling-the-additional-logging"></a>Die zusätzliche Protokollierung aktivieren
+## <a name="enabling-the-additional-logging"></a>Aktivieren der zusätzlichen Protokollierung
 
-Sie können angeben, einen Wert für die **EnablePackageProcessLoggingAndAssert** Eigenschaft verschiedene Möglichkeiten, je nachdem, wie Sie Ihr Projekt erstellen.
+Sie können einen Wert für die **enablepackageprocessloggingandassert** -Eigenschaft auf verschiedene Weise angeben, je nachdem, wie Sie das Projekt erstellen.
 
-Wenn Sie Ihr Projekt über die Befehlszeile erstellen, können Sie angeben, einen Wert für die **EnablePackageProcessLoggingAndAssert** Eigenschaft als Befehlszeilenargument:
+Wenn Sie das Projekt über die Befehlszeile erstellen, können Sie einen Wert für die **enablepackageprocessloggingandassert** -Eigenschaft als Befehlszeilenargument angeben:
 
 [!code-console[Main](troubleshooting-the-packaging-process/samples/sample2.cmd)]
 
-Wenn Sie eine Datei für benutzerdefinierte Projektvorlagen zum Erstellen von Projekten verwenden, können Sie einschließen der **EnablePackageProcessLoggingAndAssert** Wert in der **Eigenschaften** Attribut der **MSBuild**Aufgabe:
+Wenn Sie zum Erstellen Ihrer Projekte eine benutzerdefinierte Projektdatei verwenden, können Sie den **enablepackageprocessloggingandassert** -Wert in das **Properties** -Attribut der **MSBuild** -Aufgabe einschließen:
 
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample3.xml)]
 
-Wenn Sie eine Builddefinition für Team Foundation Server (TFS) zum Erstellen von Projekten verwenden, können Sie angeben, einen Wert für die **EnablePackageProcessLoggingAndAssert** -Eigenschaft in der **MSBuild-Argumente** Zeile:![](troubleshooting-the-packaging-process/_static/image1.png)
+Wenn Sie eine Team Foundation Server (TFS)-Builddefinition verwenden, um Ihre Projekte zu erstellen, können Sie einen Wert für die **enablepackageprocessloggingandassert** -Eigenschaft in der Zeile **MSBuild-Argumente** angeben:![](troubleshooting-the-packaging-process/_static/image1.png)
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen und Konfigurieren von Build-Definitionen finden Sie unter [Erstellen einer Build-Definition, unterstützt Bereitstellung](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).
+> Weitere Informationen zum Erstellen und Konfigurieren von Builddefinitionen finden Sie [unter Erstellen einer Builddefinition, die die Bereitstellung unterstützt](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).
 
-Auch wenn das Paket in jedem Build angezeigt werden sollen, können Sie ändern die Projektdatei für das Webanwendungsprojekt, legen Sie die **EnablePackageProcessLoggingAndAssert** Eigenschaft **"true"**. Sie sollten die Eigenschaft hinzufügen, mit dem ersten **PropertyGroup** Element innerhalb der CSPROJ- oder VBPROJ-Datei.
+Wenn Sie das Paket in jedem Build einschließen möchten, können Sie die Projektdatei für das Webanwendungs Projekt ändern, um die **enablepackageprocessloggingandassert** -Eigenschaft auf **true**festzulegen. Sie sollten die-Eigenschaft dem ersten **PropertyGroup** -Element in der CSPROJ-oder VBPROJ-Datei hinzufügen.
 
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample4.xml)]
 
-## <a name="reviewing-the-log-files"></a>Protokolldateien
+## <a name="reviewing-the-log-files"></a>Überprüfen der Protokolldateien
 
-Wenn Sie zu erstellen und Packen ein Webanwendungsprojekts mit **EnablePackageProcessLoggingAndAssert** festgelegt **"true"**, MSBuild erstellt einen zusätzlichen Ordner, die benannte Protokolldatei, in der *ProjectName* \_Paketordner. Ordner "Log" enthält die verschiedenen Dateien:
+Wenn Sie ein Webanwendungs Projekt erstellen und packen, bei dem **enablepackageprocessloggingandassert** auf **true**festgelegt ist, erstellt MSBuild einen zusätzlichen Ordner mit dem Namen log im Ordner *ProjectName*\_Paket. Der Protokoll Ordner enthält verschiedene Dateien:
 
 ![](troubleshooting-the-packaging-process/_static/image2.png)
 
-Die Liste der Dateien, die Sie sehen, variieren je die Dinge in Ihrem Projekt und Build-Prozess. Diese Dateien werden jedoch in der Regel verwendet, um die Liste der Dateien, die die WPP erfasst für das Verpacken, die in verschiedenen Phasen des Prozesses aufzuzeichnen:
+Die Liste der Dateien, die Sie sehen, variiert je nach den Dingen in Ihrem Projekt und Ihrem Buildprozess. Diese Dateien werden jedoch in der Regel verwendet, um die Liste der Dateien aufzuzeichnen, die von WPP für die Paket Erstellung in verschiedenen Phasen des Prozesses gesammelt werden:
 
-- Die *PreExcludePipelineCollectFilesPhaseFileList.txt* Datei enthält die Dateien, die MSBuild erfasst, für das Verpacken, bevor alle Dateien, die angegeben werden, für den Ausschluss entfernt werden.
-- Die *AfterExcludeFilesFilesList.txt* -Datei enthält die Liste der geänderten Dateien aus, nachdem alle Dateien, die angegeben werden, für den Ausschluss entfernt wurden.
+- In der Datei " *preexcludepipelinecollectfilesphasefilelist. txt* " werden die Dateien aufgelistet, die von MSBuild für die Paket Erstellung gesammelt werden, bevor Dateien entfernt werden, die für den Ausschluss angegeben wurden.
+- Die Datei " *afterexcludefilesfileslist. txt* " enthält die geänderte Datei Liste, nachdem alle Dateien entfernt wurden, die für den Ausschluss angegeben wurden.
 
     > [!NOTE]
-    > Weitere Informationen zum Ausschließen von Dateien und Ordner von der des Verpackungsprozesses, finden Sie unter [Ausschließen von Dateien und Ordner von der Bereitstellung](excluding-files-and-folders-from-deployment.md).
-- Die *AfterTransformWebConfig.txt* Datei aufgeführt, die für die paketerstellung nach jedem gesammelten Dateien *"Web.config"* Transformationen ausgeführt wurden. In dieser Liste alle konfigurationsspezifischen *"Web.config"* transformieren Sie die Dateien, wie z. B. *"Web.Debug.config"* und *Datei "Web.Release.config"*, aus der Liste der Dateien ausgeschlossen sind Verpacken. Ein einzelnes transformiert *"Web.config"* ist an ihrer Stelle enthalten.
-- Die *PostAutoParameterizationWebConfigConnectionStrings.txt* -Datei enthält die Liste der Dateien nach dem die Verbindungszeichenfolgen in der *"Web.config"* Datei haben parametrisiert wurde. Dies ist der Prozess, mit dem Sie die Verbindungszeichenfolgen mit den richtigen Einstellungen für Ihre zielumgebung ersetzen, wenn Sie das Paket bereitstellen.
-- Die *Prepackage.txt* Datei enthält die abgeschlossene vor dem Erstellen-Liste von Dateien, die im Paket enthalten sein.
+    > Weitere Informationen zum Ausschließen von Dateien und Ordnern aus dem Verpackungsprozess finden Sie unter [Ausschließen von Dateien und Ordnern aus der Bereitstellung](excluding-files-and-folders-from-deployment.md).
+- In der Datei " *aftertransformwebconfig. txt* " werden die Dateien aufgelistet, die für die Paket Erstellung gesammelt werden, nachdem *Web. config* -Transformationen ausgeführt wurden. In dieser Liste werden alle Konfigurations spezifischen *Web. config* -Transformations Dateien wie " *Web. Debug. config* " und " *Web. Release. config*" aus der Liste der Dateien für die Paket Erstellung ausgeschlossen. An ihrer Stelle ist eine einzelne transformierte *Web. config* -Datei enthalten.
+- Die Datei " *postautoparameterizationwebconfigconnectionstrings. txt* " enthält die Liste der Dateien, nachdem die Verbindungs Zeichenfolgen in der Datei " *Web. config* " parametrisiert wurden. Dies ist der Prozess, mit dem Sie die Verbindungs Zeichenfolgen durch die richtigen Einstellungen für Ihre Zielumgebung ersetzen können, wenn Sie das Paket bereitstellen.
+- Die Datei *prepackage. txt* enthält die fertige präbuildliste der Dateien, die in das Paket eingeschlossen werden sollen.
 
 > [!NOTE]
-> Die Namen der zusätzlichen Protokolldateien entsprechen in der Regel WPP Ziele. Sie können diese Ziele überprüfen, anhand der *Microsoft.Web.Publishing.targets* -Datei im Ordner "% PROGRAMFILES (x 86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web".
+> Die Namen der zusätzlichen Protokolldateien entsprechen in der Regel WPP-Zielen. Sie können diese Ziele überprüfen, indem Sie die Datei " *Microsoft. Web. Publishing. targets* " im Ordner "% Program Files (x86)% \ msbuild\microsoft\visualstudio\v10.0\web" überprüfen.
 
-Wenn der Inhalt Ihrer Webpakets nicht Ihren Erwartungen entsprechen, möglich überprüfen diese Dateien eine gute Möglichkeit, zu identifizieren, an welchem Punkt im Prozess was falsch ist ein Fehler aufgetreten.
+Wenn die Inhalte Ihres Webpakets nicht Ihren Erwartungen entsprechen, können Sie diese Dateien überprüfen, um zu ermitteln, an welcher Stelle im Prozess ein Fehler aufgetreten ist.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema beschriebenen Informationen zur Verwendung der **EnablePackageProcessLoggingAndAssert** -Eigenschaft in MSBuild des Verpackungsprozesses zu behandeln. Es erläutert die verschiedenen Möglichkeiten, in dem Sie den Wert der Eigenschaft für den Buildprozess angeben können, und es wurde beschrieben, die zusätzliche Informationen, die aufgezeichnet wird, wenn Sie die Eigenschaft, um festlegen **"true"**.
+In diesem Thema wird beschrieben, wie Sie die **enablepackageprocessloggingandassert** -Eigenschaft in MSBuild verwenden können, um Probleme mit dem Verpackungsprozess zu beheben. Es wurden die verschiedenen Methoden erläutert, mit denen Sie den Eigenschafts Wert für den Buildprozess bereitstellen können. Außerdem wurden die zusätzlichen Informationen beschrieben, die aufgezeichnet werden, wenn Sie die-Eigenschaft auf **true**festlegen.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere Informationen zu benutzerdefinierte MSBuild-Projektdateien verwenden, um den Bereitstellungsprozess zu steuern, finden Sie unter [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Weitere Informationen zu WPP und wie des Verpackungsprozesses verwaltet, finden Sie unter [erstellen und Verpacken von Webanwendungsprojekten](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md). Anleitungen dazu, wie Sie bestimmte Dateien und Ordner von Web-Bereitstellungspakete ausschließen, finden Sie unter [Ausschließen von Dateien und Ordner von der Bereitstellung](excluding-files-and-folders-from-deployment.md).
+Weitere Informationen zur Verwendung von benutzerdefinierten MSBuild-Projektdateien zum Steuern des Bereitstellungs Prozesses finden Sie Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und Grundlegendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Weitere Informationen zu WPP und zur Verwaltung des Verpackungsprozesses finden Sie unter [Building and Packaging Web Application Projects (entwickeln und Verpacken von Webanwendungs Projekten](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)). Anleitungen zum Ausschließen bestimmter Dateien und Ordner aus Webbereitstellungs Paketen finden Sie unter [Ausschließen von Dateien und Ordnern aus der Bereitstellung](excluding-files-and-folders-from-deployment.md).
 
 > [!div class="step-by-step"]
-> [Vorherige](running-windows-powershell-scripts-from-msbuild-project-files.md)
+> [Previous](running-windows-powershell-scripts-from-msbuild-project-files.md)

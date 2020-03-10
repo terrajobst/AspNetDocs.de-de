@@ -9,11 +9,11 @@ ms.assetid: e6ee90bf-32a5-4987-a384-15cc7dd30c8a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 13ac0da5ca53756aa7c660cdc47c96f0c865b006
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611307"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508839"
 ---
 # <a name="using-textboxwatermark-in-a-formview-c"></a>Verwenden von TextBoxWatermark in einem FormView-Steuerelement (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Mit dem textboxwatermark-Steuerelement im AJAX Control Toolkit wird ein Textfeld erweitert, sodass ein Text im Feld angezeigt wird. Wenn ein Benutzer auf das Feld klickt, wird es geleert. Wenn der Benutzer das Kontrollkästchen verlässt, ohne Text einzugeben, wird der vorab gefüllte Text erneut angezeigt. Dies ist auch in einem FormView-Steuerelement möglich.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Mit dem `TextBoxWatermark`-Steuerelement im AJAX Control Toolkit wird ein Textfeld erweitert, sodass ein Text im Feld angezeigt wird. Wenn ein Benutzer auf das Feld klickt, wird es geleert. Wenn der Benutzer das Kontrollkästchen verlässt, ohne Text einzugeben, wird der vorab gefüllte Text erneut angezeigt. Dies ist auch in einem `FormView` Steuerelement möglich.
 
@@ -52,4 +52,4 @@ Wenn sich der Benutzer nun in den Einfügemodus des `FormView` Steuer Elements �
 Das Wasserzeichen im Feld stammt aus dem Extender ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-textboxwatermark-in-a-formview-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](using-textboxwatermark-with-validation-controls-cs.md)
+> [Weiter](using-textboxwatermark-with-validation-controls-cs.md)

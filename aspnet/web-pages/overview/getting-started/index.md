@@ -1,23 +1,23 @@
 ---
 uid: web-pages/overview/getting-started/index
-title: Erste Schritte mit ASP.NET Web Pages | Microsoft-Dokumentation
+title: Ersten Einstieg in ASP.net Web Pages | Microsoft-Dokumentation
 author: rick-anderson
-description: Erfahren Sie mehr über ASP.NET Web Pages ASP.NET Web Pages und die neue Razor-Syntax bieten eine schnelle, bedienungsfreundliche und einfache Möglichkeit zum Kombinieren von Servercode mit HTML-t...
+description: Erfahren Sie mehr über die ASP.net Web Pages ASP.net Web Pages und die neuen Razor-Syntax bieten eine schnelle, geeignete und einfachere Möglichkeit zum Kombinieren von Servercode mit HTML t...
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 99253c4e-a125-4c21-85e7-a6dd74d93892
 msc.legacyurl: /web-pages/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 50a249d0e64cff2a8c4f16f38f530b6d52f755de
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133176"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520647"
 ---
-# <a name="getting-started-with-aspnet-web-pages"></a>Erste Schritte mit ASP.NET Web Pages
+# <a name="getting-started-with-aspnet-web-pages"></a>Ersten Schritte mit ASP.net Web Pages
 
-> Welche Web Pages- und WebMatrix-sind, sowie das alles zu installieren, erste Schritte und Bereitstellen von Websites.
+> Was Web Pages und webmatrix sind, und wie Sie alles installieren, loslegen und bereitstellen.
 
 - [Programmieren von ASP.NET-Webseiten in Visual Studio](program-asp-net-web-pages-in-visual-studio.md)
 - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](introducing-razor-syntax-c.md)

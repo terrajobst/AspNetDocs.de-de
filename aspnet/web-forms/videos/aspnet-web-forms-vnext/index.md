@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/index
-title: ASP.NET 4.5 | Microsoft-Dokumentation
+title: ASP.NET 4,5 | Microsoft-Dokumentation
 author: rick-anderson
-description: Informationen zu neuen Web Forms-Funktionen in ASP.NET 4.5 eingeführt.
+description: Informationen zu neuen Web Forms Features, die in ASP.NET 4,5 eingeführt wurden.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 98c78dad-22bf-45cd-807e-c2f3f59011b9
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext
 msc.type: chapter
 ms.openlocfilehash: e791cba586f71ffae251b007b14588e4c1e818f1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116149"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518835"
 ---
 # <a name="aspnet-45"></a>ASP.NET 4.5
 
-> Informationen zu neuen Web Forms-Funktionen in ASP.NET 4.5 eingeführt.
+> Informationen zu neuen Web Forms Features, die in ASP.NET 4,5 eingeführt wurden.
 
 - [Stark typisierte Datensteuerelemente](aspnet-vnext-videos-strongly-typed-data-controls.md)
 - [Modellbindung, Teil 1: Auswählen von Daten](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)

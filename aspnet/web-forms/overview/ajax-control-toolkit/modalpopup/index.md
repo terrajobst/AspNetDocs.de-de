@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/index
-title: ModalPopup-Steuerelements | Microsoft-Dokumentation
+title: ModalPopup | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Tutorial wird gezeigt, wie Sie mit dem ModalPopup-Steuerelement, das Sie die Darstellung eines modalen Dialogfelds erstellen können.
+description: In diesem Tutorial wird gezeigt, wie Sie das ModalPopup-Steuerelement verwenden, mit dem Sie das Äquivalent eines modalen Dialog Felds erstellen können.
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: db4eca5d-b625-4e67-8e5b-a844639d4354
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup
 msc.type: chapter
 ms.openlocfilehash: 708d5646fed3a44ce9c0e82f115e24cc8b5c5978
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132643"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496995"
 ---
 # <a name="modalpopup"></a>ModalPopup
 
-> In diesem Tutorial wird gezeigt, wie Sie mit dem ModalPopup-Steuerelement, das Sie die Darstellung eines modalen Dialogfelds erstellen können.
+> In diesem Tutorial wird gezeigt, wie Sie das ModalPopup-Steuerelement verwenden, mit dem Sie das Äquivalent eines modalen Dialog Felds erstellen können.
 
 - [Starten eines modalen Popupfensters über den Servercode (C#)](launching-a-modal-popup-window-from-server-code-cs.md)
 - [Verwenden von ModalPopup mit einem Wiederholungssteuerelement (C#)](using-modalpopup-with-a-repeater-control-cs.md)

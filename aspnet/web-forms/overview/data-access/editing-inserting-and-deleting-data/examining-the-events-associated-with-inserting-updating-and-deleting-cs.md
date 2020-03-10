@@ -9,11 +9,11 @@ ms.assetid: dab291a0-a8b5-46fa-9dd8-3d35b249201f
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a8c1388b73524a8bb918b67aa265db894c07636f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74572371"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78493425"
 ---
 # <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a>Überprüfen von Ereignissen im Zusammenhang mit Vorgängen zum Einfügen, Aktualisieren und Löschen (C#)
 
@@ -264,13 +264,13 @@ Dieses Mal, wenn Sie ein neues Produkt hinzufügen (z. b. acme Soda), werden die
 
 **Abbildung 20**: für neue Produkte werden nun ihre `CategoryID` und `SupplierID` Werte auf 1 festgelegt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](examining-the-events-associated-with-inserting-updating-and-deleting-cs/_static/image58.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Bearbeiten, einfügen und löschen durchlaufen sowohl das datenweb Steuerelement als auch die ObjectDataSource eine Reihe von Ereignissen vor und nach der Ebene. In diesem Tutorial haben wir die Ereignisse vor der Ebene untersucht und gesehen, wie diese verwendet werden, um die Eingabeparameter anzupassen oder den Daten Änderungs Vorgang vollständig sowohl aus dem datenweb-Steuerelement als auch aus den Ereignissen von ObjectDataSource abzubrechen. Im nächsten Tutorial wird das Erstellen und Verwenden von Ereignis Handlern für die Ereignisse nach der Ebene untersucht.
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

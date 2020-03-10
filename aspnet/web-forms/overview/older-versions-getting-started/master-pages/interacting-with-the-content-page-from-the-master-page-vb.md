@@ -9,11 +9,11 @@ ms.assetid: a6e2e1a0-c925-43e9-b711-1f178fdd72d7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5367ad1b7f2fa11c635ad95754c9bcc1edcb6c1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615566"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464535"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>Interaktion mit der Inhaltsseite über die Masterseite (VB)
 
@@ -201,7 +201,7 @@ Die Abbildungen 8 und 9 veranschaulichen dieses Verhalten. Abbildung 8 zeigt die
 
 **Abbildung 09**: die Preisübersicht werden in den GridViews angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Idealerweise sind eine Master Seite und ihre Inhaltsseiten vollständig voneinander getrennt und erfordern keine Interaktions Ebene. Wenn Sie jedoch eine Master Seite oder Inhaltsseite haben, auf der Daten angezeigt werden, die auf der Master Seite oder der Inhaltsseite geändert werden können, müssen Sie möglicherweise auf der Master Seite die Inhaltsseite warnen (oder umgekehrt), wenn die Daten geändert werden, sodass die Anzeige aktualisiert werden kann. Im vorherigen Tutorial wurde erläutert, wie eine Inhaltsseite Programm gesteuert mit der Master Seite interagieren kann. in diesem Tutorial haben wir erläutert, wie eine Master Seite die Interaktion initiiert.
 
@@ -209,7 +209,7 @@ Während die programmgesteuerte Interaktion zwischen einem Inhalt und einer Mast
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -218,7 +218,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Übergeben von Informationen zwischen Inhalt und Master Seiten](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [Arbeiten mit Daten in ASP.net-Tutorials](../../data-access/index.md)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

@@ -9,18 +9,18 @@ ms.assetid: febf2824-4e3d-4dc6-84c5-f99777ec6144
 msc.legacyurl: /web-pages/videos
 msc.type: book
 ms.openlocfilehash: 4c22b024240740d971740e9f043231ccbcdc47fb
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127691"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512781"
 ---
 # <a name="videos"></a>Videos
 
 > [!NOTE] 
-> WebMatrix wird nicht mehr als eine integrierte Entwicklungsumgebung für ASP.NET Web Pages empfohlen. Verwendung [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio-Code](https://code.visualstudio.com/).
+> Webmatrix wird nicht mehr als integrierte Entwicklungsumgebung für ASP.net Web Pages empfohlen. Verwenden Sie [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio Code](https://code.visualstudio.com/).
 
-- [Introduction (Einführung)](introduction/index.md)
+- [Einführung](introduction/index.md)
 
     - [5-minütige Einführung zu ASP.NET Web Pages](introduction/5-minute-introduction-to-aspnet-web-pages.md)
     - [Installieren und Verwenden des Microsoft WebMatrix-Tools](introduction/install-and-use-the-microsoft-webmatrix-tool.md)
@@ -32,7 +32,7 @@ ms.locfileid: "65127691"
     - [Erstellen einer Seite zum Bearbeiten von Daten in WebMatrix](introduction/create-an-edit-data-page-in-webmatrix.md)
     - [Erstellen einer Seite zum Löschen von Daten in WebMatrix](introduction/create-a-delete-data-page-in-webmatrix.md)
     - [Veröffentlichen einer Website im Internet mithilfe von WebMatrix](introduction/publish-a-website-to-the-internet-using-webmatrix.md)
-- [ASP.NET Razor-Seiten](aspnet-razor-pages/index.md)
+- [ASP.net Razor Pages](aspnet-razor-pages/index.md)
 
     - [Erste Schritte mit WebMatrix und ASP.NET Web Pages](aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
     - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)

@@ -2,122 +2,122 @@
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 title: Einrichten der Contact Manager-Lösung | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Thema wird beschrieben, wie zum Herunterladen und konfigurieren Sie die Projektmappe Contact Manager lokal auf einer Entwicklerarbeitsstation ausgeführt wird.
+description: In diesem Thema wird beschrieben, wie Sie die Contact Manager-Lösung herunterladen und konfigurieren, um lokal auf einer Entwickler Arbeitsstation auszuführen.
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 200b973c-776b-4a9b-9e82-39fda6120a52
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
 ms.openlocfilehash: d9774ee01cb0515d7e733b24baa661f2648bd7c4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131043"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511161"
 ---
 # <a name="setting-up-the-contact-manager-solution"></a>Einrichten der Contact Manager-Lösung
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird beschrieben, wie zum Herunterladen und konfigurieren Sie die Projektmappe Contact Manager lokal auf einer Entwicklerarbeitsstation ausgeführt wird.
+> In diesem Thema wird beschrieben, wie Sie die Contact Manager-Lösung herunterladen und konfigurieren, um lokal auf einer Entwickler Arbeitsstation auszuführen.
 
 ## <a name="system-requirements"></a>Systemanforderungen
 
-Contact Manager-Lösung lokal ausführen und die anderen in diesem Lernprogramm beschriebene Aufgaben ausführen, müssen Sie zum Installieren der Software auf der Entwicklerarbeitsstation:
+Wenn Sie die Contact Manager-Lösung lokal ausführen und die anderen in diesem Tutorial beschriebenen Aufgaben ausführen möchten, müssen Sie diese Software auf Ihrer Entwickler Arbeitsstation installieren:
 
 - Visual Studio 2010 Service Pack 1, Premium oder Ultimate Edition
-- Internetinformationsdienste (IIS) 7.5 Express
+- Internetinformationsdienste (IIS) 7,5 Express
 - SQL Server Express 2008 R2
-- IIS-Webbereitstellungstool (Web Deploy) 2.1 oder höher
+- IIS-Webbereitstellungs Tool (Web deploy) 2,1 oder höher
 - ASP.NET 4.0
 - ASP.NET MVC 3
 - .NET Framework 4
 - .NET Framework 3.5 SP1
 
-Mit Ausnahme von Visual Studio 2010 können Sie herunterladen und installieren Sie die neuesten Versionen der Produkte und Komponenten über die [Webplattform-Installer](https://go.microsoft.com/?linkid=9805118).
+Mit Ausnahme von Visual Studio 2010 können Sie die neuesten Versionen aller dieser Produkte und Komponenten über den [Webplattform-Installer](https://go.microsoft.com/?linkid=9805118)herunterladen und installieren.
 
-## <a name="download-and-extract-the-solution"></a>Herunterladen Sie und extrahieren Sie die Lösung
+## <a name="download-and-extract-the-solution"></a>Herunterladen und Extrahieren der Lösung
 
-Sie können die beispielanwendung Contact Manager aus der MSDN Code Gallery herunterladen [hier](https://code.msdn.microsoft.com/Deploying-Web-Applications-9d9093c0).
+Sie können die Beispielanwendung Contact Manager aus der MSDN Code Gallery [hier](https://code.msdn.microsoft.com/Deploying-Web-Applications-9d9093c0)herunterladen.
 
 ## <a name="configure-and-run-the-solution"></a>Konfigurieren und Ausführen der Lösung
 
-Zum Konfigurieren und Contact Manager-Lösung auf Ihrem lokalen Computer ausführen, müssen Sie diese allgemeinen Schritte ausführen:
+Zum Konfigurieren und Ausführen der Contact Manager-Lösung auf dem lokalen Computer müssen Sie die folgenden Grundschritte ausführen:
 
-1. Wenn Sie eine noch nicht, erstellen Sie eine lokale Datenbank für ASP.NET-Anwendungsdienste die Mitgliedschafts- und Rollendatenbanken Management-Features aktiviert.
-2. Bearbeiten von Verbindungszeichenfolgen in der *"Web.config"* Dateien, um auf Ihre lokale SQL Server Express-Instanz zu verweisen.
-3. Führen Sie die Projektmappe von Visual Studio 2010.
+1. Wenn Sie noch nicht über eins verfügen, erstellen Sie eine lokale ASP.NET-Anwendungs Dienst Datenbank mit aktivierten Mitgliedschafts-und Rollen Verwaltungsfunktionen.
+2. Bearbeiten Sie Verbindungs Zeichenfolgen in den *Web. config* -Dateien so, dass Sie auf Ihre lokale SQL Server Express Instanz verweisen.
+3. Führen Sie die Projekt Mappe aus Visual Studio 2010 aus.
 
-Der übrige Teil dieses Abschnitts enthält weitere Anleitungen dazu, wie diese Aufgaben ausführen.
+Im restlichen Teil dieses Abschnitts finden Sie weitere Anleitungen zum Ausführen dieser Aufgaben.
 
-**Zum Erstellen der Anwendung-Services-Datenbank**
+**So erstellen Sie die Anwendungs Dienst Datenbank**
 
-1. Öffnen Sie eine Visual Studio 2010-Eingabeaufforderung. Zu diesem Zweck die **starten** , zeigen Sie auf **Programme**, klicken Sie auf **Microsoft Visual Studio 2010**, klicken Sie auf **Visual Studio-Tools**, und klicken Sie dann Klicken Sie auf **Visual Studio-Eingabeaufforderung (2010)**.
-2. Geben Sie folgenden Befehl an der Eingabeaufforderung, und drücken Sie dann die EINGABETASTE:
+1. Öffnen Sie eine Visual Studio 2010-Eingabeaufforderung. Zeigen Sie dazu im Menü **Start** auf **Alle Programme**, klicken Sie auf **Microsoft Visual Studio 2010**, klicken Sie auf **Visual Studio-Tools**, und klicken Sie dann auf **Visual Studio-Eingabeaufforderung (2010)** .
+2. Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, und drücken Sie dann die EINGABETASTE:
 
     [!code-console[Main](setting-up-the-contact-manager-solution/samples/sample1.cmd)]
 
-    1. Verwenden der **-c** verwenden, um die Verbindungszeichenfolge für Ihren Datenbankserver anzugeben.
-    2. Verwenden der **– ein** verwenden, um anzugeben, die Anwendung services-Funktionen, die Sie in der Datenbank hinzufügen möchten. In diesem Fall **m** gibt an, dass Sie zum Hinzufügen der Unterstützung für den Mitgliedschaftsanbieter und **r** gibt an, dass die Unterstützung für die Rollen-Manager hinzugefügt werden soll.
-    3. Verwenden der **– d** verwenden, um einen Namen für die Anwendung-Services-Datenbank anzugeben. Wenn Sie diese Option weglassen, erstellt das Dienstprogramm eine Datenbank mit dem Standardnamen der **Aspnetdb**.
-3. Wenn die Datenbank wurde erfolgreich erstellt wurde, wird der Eingabeaufforderung eine Bestätigung angezeigt.
+    1. Verwenden Sie den Schalter **– C** , um die Verbindungs Zeichenfolge für den Datenbankserver anzugeben.
+    2. Verwenden Sie den Schalter **– A** , um die Anwendungs Dienst Features anzugeben, die Sie der Datenbank hinzufügen möchten. In diesem Fall gibt **m** an, dass Sie Unterstützung für den Mitgliedschafts Anbieter hinzufügen möchten, und **r** gibt an, dass Sie Unterstützung für den Rollen-Manager hinzufügen möchten.
+    3. Verwenden Sie den Schalter **– d** , um einen Namen für die Anwendungs Dienst Datenbank anzugeben. Wenn Sie diesen Schalter weglassen, erstellt das Hilfsprogramm eine Datenbank mit dem Standardnamen **aspnetdb**.
+3. Wenn die Datenbank erfolgreich erstellt wurde, wird in der Eingabeaufforderung eine Bestätigung angezeigt.
 
     ![](setting-up-the-contact-manager-solution/_static/image1.png)
 
 > [!NOTE]
-> Weitere Informationen zu den Aspnet\_Regsql Hilfsprogramm finden Sie unter [ASP.NET SQL Server-Registrierungstool (Aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx).
+> Weitere Informationen zum ASPNET\_RegSql-Hilfsprogramm finden Sie unter [ASP.NET SQL Server Registration Tool (ASPNET\_RegSql. exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx).
 
-Der nächste Schritt ist, um sicherzustellen, dass die Verbindungszeichenfolgen in der Contact Manager-Lösung für Ihre lokale Instanz von SQL Server Express zeigen.
+Im nächsten Schritt müssen Sie sicherstellen, dass die Verbindungs Zeichenfolgen in der Contact Manager-Lösung auf Ihre lokale Instanz von SQL Server Express verweisen.
 
-**Um die Verbindungszeichenfolgen zu aktualisieren.**
+**So aktualisieren Sie die Verbindungs Zeichenfolgen**
 
-1. Öffnen Sie die Projektmappe Contact Manager, klicken Sie in Visual Studio 2010.
-2. In der **Projektmappen-Explorer** Fenster, erweitern Sie die **ContactManager.Mvc** Projekt, und doppelklicken Sie dann auf die **"Web.config"** Knoten.
+1. Öffnen Sie die Contact Manager-Lösung in Visual Studio 2010.
+2. Erweitern Sie im Fenster **Projektmappen-Explorer** das Projekt **ContactManager. MVC** , und doppelklicken Sie dann auf den Knoten **Web. config** .
 
     > [!NOTE]
-    > Das ContactManager.Mvc-Projekt enthält zwei *"Web.config"* Dateien. Sie müssen die Datei auf Projektebene bearbeiten.
+    > Das ContactManager. MVC-Projekt enthält zwei *Web. config* -Dateien. Sie müssen die Datei auf Projektebene bearbeiten.
 
     ![](setting-up-the-contact-manager-solution/_static/image2.png)
-3. In der **ConnectionStrings** -Element, stellen Sie sicher, dass die Verbindungszeichenfolge mit dem Namen **ApplicationServices** verweist auf Ihre lokale Datenbank für ASP.NET-Anwendungsdienste.
+3. Überprüfen Sie im **connectionStrings** -Element, ob die Verbindungs Zeichenfolge mit dem Namen **ApplicationServices** auf Ihre lokale ASP.NET-Anwendungs Dienst Datenbank verweist.
 
     [!code-xml[Main](setting-up-the-contact-manager-solution/samples/sample2.xml)]
-4. In der **Projektmappen-Explorer** Fenster, erweitern Sie die **ContactManager.Service** Projekt, und doppelklicken Sie dann auf die **"Web.config"** Knoten.
+4. Erweitern Sie im Fenster **Projektmappen-Explorer** das Projekt **ContactManager. Service** , und doppelklicken Sie dann auf den Knoten **Web. config** .
 
     ![](setting-up-the-contact-manager-solution/_static/image3.png)
-5. In der **ConnectionStrings** Elements in der Verbindungszeichenfolge, die mit dem Namen **ContactManagerContext**, überprüfen Sie, ob die **Datenquelle** -Eigenschaftensatz auf Ihre lokale Instanz von SQL Server Express. Sie müssen nicht alles in der Verbindungszeichenfolge ändern.
+5. Überprüfen Sie im **connectionStrings** -Element in der Verbindungs Zeichenfolge mit dem Namen **contactmanagercontext**, ob die **Datenquellen** Eigenschaft auf Ihre lokale Instanz von SQL Server Express festgelegt ist. Sie müssen nichts anderes in der Verbindungs Zeichenfolge ändern.
 
     [!code-xml[Main](setting-up-the-contact-manager-solution/samples/sample3.xml)]
 6. Speichern Sie alle geöffneten Dateien.
 
-Sie sollten jetzt Contact Manager-Lösung auf Ihrem lokalen Computer ausführen können.
+Jetzt sollten Sie bereit sein, die Contact Manager-Lösung auf dem lokalen Computer auszuführen.
 
 > [!NOTE]
-> Wenn Sie folgende Schritte ausführen, ohne zuvor eine Datenbank, erstellt ASP.NET die Datenbank erstmals Sie versuchen, einen Benutzer zu erstellen. Allerdings haben Sie die Datenbank manuell erstellen Sie noch viel mehr Kontrolle über die Anwendung Dienste Funktionsgruppe, die Sie unterstützen möchten.
+> Wenn Sie diese Schritte ausführen, ohne zuerst eine Anwendungs Dienst-Datenbank zu erstellen, erstellt ASP.net die Datenbank, wenn Sie zum ersten Mal versuchen, einen Benutzer zu erstellen. Wenn Sie die Datenbank manuell erstellen, haben Sie jedoch viel mehr Kontrolle über die Anwendungs Dienst-Funktionsgruppe, die Sie unterstützen möchten.
 
-**Die Projektmappe Contact Manager ausführen**
+**So führen Sie die Contact Manager-Lösung aus**
 
-1. Drücken Sie F5, klicken Sie in Visual Studio 2010.
-2. Internet Explorer startet und die URL der Anwendung wenden Sie sich an Manager ASP.NET MVC 3-Anforderungen. Standardmäßig zeigt die Anwendung die **alle Kontakte** Seite.
+1. Drücken Sie in Visual Studio 2010 die Taste F5.
+2. Internet Explorer wird gestartet und fordert die URL der Anwendung Contact Manager ASP.NET MVC 3 an. Standardmäßig wird von der Anwendung die Seite **alle Kontakte** angezeigt.
 
     ![](setting-up-the-contact-manager-solution/_static/image4.png)
-3. Fügen Sie einige Kontakte, und stellen Sie sicher, dass die Anwendung wie erwartet funktioniert.
+3. Fügen Sie einige Kontakte hinzu, und überprüfen Sie dann, ob die Anwendung erwartungsgemäß funktioniert.
 
     ![](setting-up-the-contact-manager-solution/_static/image5.png)
-4. Navigieren Sie zu `http://localhost:50114/Account/Register` (passen Sie die URL aus, wenn Sie die Anwendung auf einen anderen Port hosten). Fügen Sie einen Benutzernamen, e-Mail-Adresse und Kennwort hinzu, und stellen Sie sicher, dass Sie ein Konto erfolgreich registrieren können.
+4. Navigieren Sie zu `http://localhost:50114/Account/Register` (passen Sie die URL an, wenn Sie die Anwendung auf einem anderen Port verwenden). Fügen Sie einen Benutzernamen, eine e-Mail-Adresse und ein Kennwort hinzu, und überprüfen Sie, ob ein Konto erfolgreich registriert werden kann.
 
     ![](setting-up-the-contact-manager-solution/_static/image6.png)
-5. Navigieren Sie zu `http://localhost:50114/Account/LogOn` (passen Sie die URL aus, wenn Sie die Anwendung auf einen anderen Port hosten). Stellen Sie sicher, dass Sie mit dem soeben erstellten Konto anmelden können.
+5. Navigieren Sie zu `http://localhost:50114/Account/LogOn` (passen Sie die URL an, wenn Sie die Anwendung auf einem anderen Port verwenden). Vergewissern Sie sich, dass Sie sich mit dem soeben erstellten Konto anmelden können.
 
     ![](setting-up-the-contact-manager-solution/_static/image7.png)
-6. Schließen Sie Internet Explorer zum Beenden des Debuggens.
+6. Schließen Sie Internet Explorer, um das Debugging zu beenden.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-An diesem Punkt sollte Contact Manager-Lösung vollständig konfiguriert werden, führen Sie auf dem lokalen Computer. Sie können die Lösung als Verweis verwenden, wenn Sie über die anderen Themen in diesem Tutorial arbeiten.
+An diesem Punkt sollte die Contact Manager-Lösung vollständig so konfiguriert sein, dass Sie auf dem lokalen Computer ausgeführt wird. Sie können die Lösung als Referenz verwenden, wenn Sie die anderen Themen in diesem Tutorial durcharbeiten.
 
-Im nächsten Thema, [Grundlegendes zur Projektdatei](understanding-the-project-file.md), wird erläutert, wie Sie die benutzerdefinierte Microsoft Build Engine (MSBuild)-Projektdateien in der Contact Manager-Lösung verwenden können, um den Bereitstellungsprozess zu steuern.
+Im nächsten Thema, Grundlegendes [zur Projektdatei](understanding-the-project-file.md), wird erläutert, wie Sie die Projektdateien für benutzerdefinierte Microsoft-Build-Engine (MSBuild) in der Contact Manager-Lösung verwenden können, um den Bereitstellungs Prozess zu steuern.
 
 > [!div class="step-by-step"]
 > [Zurück](the-contact-manager-solution.md)

@@ -1,115 +1,115 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
-title: Konfigurieren eine TFS-Buildserver für die Webbereitstellung | Microsoft-Dokumentation
+title: Konfigurieren eines TFS-Buildservers für die Webbereitstellung | Microsoft-Dokumentation
 author: jrjlee
-description: Dieses Thema beschreibt das Vorbereiten von einem Team Foundation Server (TFS)-Build-Server zum Erstellen und Bereitstellen Ihrer Lösungen mithilfe von Team Build und der Internet-Informationen...
+description: In diesem Thema wird beschrieben, wie ein Team Foundation Server-Buildserver (TFS) zum Erstellen und Bereitstellen Ihrer Lösungen mithilfe von TeamBuild und Internet Information (Internet Information) vorbereitet wird...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: f8400241-4f4b-4bbd-9994-54fb64909e6e
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: b3aaf7234706d149a3c784347528923f662c3511
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133879"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512223"
 ---
 # <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Konfigurieren eines TFS-Buildservers für die Webbereitstellung
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Dieses Thema beschreibt, wie Sie einen Team Foundation Server (TFS)-Build-Server zum Erstellen und Bereitstellen Ihrer Lösungen mithilfe von Team Build und das Internet Information Services (IIS)-Webbereitstellungstool (Web Deploy) vorbereiten.
+> In diesem Thema wird beschrieben, wie ein Team Foundation Server-Buildserver (TFS) zum Erstellen und Bereitstellen Ihrer Lösungen mithilfe von TeamBuild und Internetinformationsdienste (IIS)-Webbereitstellungs Tools (Web deploy) vorbereitet wird.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-Die Methode für die Bereitstellung das Kernstück des in diesen Tutorials basiert auf den geteilten Projekt Dateiansatz beschrieben, die [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), in dem der Buildprozess durch gesteuert wird zwei Projektdateien&#x2014;enthält Erstellen Sie die Anweisungen, die für jede zielumgebung, und enthält umgebungsspezifische Build & Deployment-Einstellungen gelten. Zur Erstellungszeit wird die umgebungsspezifischen-Projektdatei in die Unabhängigkeit von der Umgebung Projektdatei, um einen vollständigen Satz von einrichtungsanweisungen bilden zusammengeführt.
+Die Bereitstellungs Methode im Kern dieser Tutorials basiert auf dem Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz, in dem der Buildprozess von zwei Projektdateien&#x2014;gesteuert wird, die Buildanweisungen enthalten, die für jede Zielumgebung gelten, und eine mit Umgebungs spezifischen Build-und Bereitstellungs Einstellungen. Zum Zeitpunkt der Erstellung wird die Umgebungs spezifische Projektdatei in der Umgebungs unabhängigen Projektdatei zusammengeführt, um einen kompletten Satz von Buildanweisungen zu bilden.
 
-## <a name="task-overview"></a>Übersicht über den Task
+## <a name="task-overview"></a>Aufgaben Übersicht
 
-Zur Vorbereitung eines Buildservers zum Erstellen und Ihre Lösungen bereitstellen, müssen Sie:
+Um einen Buildserver für die Erstellung und Bereitstellung Ihrer Lösungen vorzubereiten, müssen Sie folgende Schritte ausführen:
 
-- Installieren Sie und konfigurieren Sie der TFS-Build-Diensts.
+- Installieren und konfigurieren Sie den TFS-Builddienst.
 - Installieren Sie Visual Studio 2010.
-- Installieren Sie Produkte oder Komponenten, die erforderlich sind, um die Projektmappe, ebenso wie Versionen von .NET Framework oder ASP.NET MVC erstellen.
-- Installieren Sie Web Deploy 2.0 oder höher.
+- Installieren Sie alle Produkte oder Komponenten, die für die Erstellung der Lösung erforderlich sind, wie z. b. Versionen der .NET Framework oder ASP.NET MVC.
+- Installieren Sie Web deploy 2,0 oder höher.
 
-In diesem Thema erfahren Sie, wie diese Verfahren ausführen, oder zeigen Sie auf andere Ressourcen, in dem sie vorhanden sind. Die Aufgaben und exemplarische Vorgehensweisen in diesem Thema wird angenommen, dass:
+In diesem Thema wird gezeigt, wie Sie diese Prozeduren ausführen oder auf andere Ressourcen verweisen, in denen Sie vorhanden sind. In den Aufgaben und exemplarischen Vorgehensweisen in diesem Thema wird Folgendes vorausgesetzt:
 
-- Sie beginnen mit einem "sauberen" Server-Build Ausführen von Windows Server 2008 R2 Service Pack 1.
-- Der Server ist die Domäne mit einer statischen IP-Adresse.
-- Sie haben die TFS-Anwendungsebene auf einem separaten Server installiert, wie in beschrieben [webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md).
+- Sie beginnen mit einem sauberen Server Build, auf dem Windows Server 2008 R2 Service Pack 1 ausgeführt wird.
+- Der Server ist mit einer statischen IP-Adresse verbunden.
+- Sie haben die TFS-Anwendungsebene auf einem separaten Server installiert, wie unter [Unternehmensweb Bereitstellung: Szenarioübersicht](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)beschrieben.
 
-### <a name="who-performs-these-procedures"></a>Wem diese Verfahren werden?
+### <a name="who-performs-these-procedures"></a>Wer führt diese Prozeduren aus?
 
-In den meisten Fällen wird ein TFS-Administrator für das Konfigurieren von Buildservern zuständig sein. In einigen Fällen kann das Entwicklerteam den Besitz von bestimmten Buildservern dauern.
+In den meisten Fällen ist ein TFS-Administrator für die Konfiguration von Buildservern verantwortlich. In einigen Fällen übernimmt das Entwicklerteam möglicherweise den Besitz bestimmter Buildserver.
 
-## <a name="install-and-configure-the-tfs-build-service"></a>Installieren Sie und konfigurieren Sie der TFS-Build-Diensts
+## <a name="install-and-configure-the-tfs-build-service"></a>Installieren und Konfigurieren des TFS-builddienstanbieter
 
-Wenn Sie einen Buildserver konfigurieren, ist Ihre erste Aufgabe zum Installieren und Konfigurieren der TFS-Build-Diensts. Im Rahmen dieses Prozesses müssen Sie:
+Wenn Sie einen Buildserver konfigurieren, besteht die erste Aufgabe darin, den TFS-Builddienst zu installieren und zu konfigurieren. Im Rahmen dieses Prozesses müssen Sie folgende Schritte ausführen:
 
-- Installieren Sie den TFS-Build-Dienst, und Konfigurieren eines Dienstkontos. Alle BuildTasks, einschließlich der Bereitstellung werden ausgeführt, mit der Identität des Build Service-Konto.
-- Erstellen Sie eine *Buildcontroller* und einem oder mehreren *build-Agents*. Jeder Buildcontroller verwaltet einen Satz von Build-Agents. Wenn Sie einen Build in die Warteschlange, weist der Buildcontroller die Build-Aufgabe an eine verfügbare Build-Agent. Jede teamprojektauflistung in TFS wird ein einzelner Buildcontroller zugeordnet.
-- Konfigurieren Sie einen Ablageordner für die Buildausgaben. Dies ist eine Netzwerkfreigabe. Alle Ausgaben, wie bei Webpaketen für die Bereitstellung zu erstellen, werden an den Ablageordner gesendet.
+- Installieren Sie den TFS-Builddienst, und konfigurieren Sie ein Dienst Konto. Alle BuildTasks, einschließlich der Bereitstellung, werden mit der Identität des Builddienstkontos ausgeführt.
+- Erstellen Sie einen *BuildController* und einen oder mehrere *Build-Agents*. Jeder BuildController verwaltet einen Satz von Build-Agents. Wenn Sie einen Build in die Warteschlange stellen, weist der BuildController den Build-Task einem verfügbaren Build-Agent zu. Jede Teamprojekt Sammlung in TFS ist einem einzelnen BuildController zugeordnet.
+- Konfigurieren Sie einen Ablage Ordner für die Buildausgaben. Dies ist eine Netzwerkfreigabe. Alle Buildausgaben, wie z. b. Webbereitstellungs Pakete, werden an den Ablage Ordner gesendet.
 
-Die [Verwalten von Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx) Kapitel auf MSDN enthält alle Ressourcen, die Sie benötigen, um diese Aufgaben ausführen:
+Das Kapitel [Verwalten von Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx) auf MSDN enthält alle Ressourcen, die Sie benötigen, um die folgenden Aufgaben auszuführen:
 
-- Eine konzeptionelle Übersicht über Team Foundation Build, einschließlich den Builddienst Buildcontroller und Build-Agents finden Sie unter [Grundlegendes zu einem Team Foundation Build-System](https://msdn.microsoft.com/library/dd793166.aspx).
-- Informationen zum Installieren und konfigurieren den Build-Dienst finden Sie unter [Konfigurieren eines Buildcomputers](https://msdn.microsoft.com/library/ms181712.aspx).
-- Informationen zum Erstellen von Buildcontrollern finden Sie unter [erstellen und Verwenden von einem Buildcontroller](https://msdn.microsoft.com/library/ee330987.aspx).
-- Informationen zum Erstellen von Build-Agents finden Sie unter [erstellen und Verwenden von Build-Agents](https://msdn.microsoft.com/library/bb399135.aspx).
-- Informationen zum Erstellen und Konfigurieren der Ablageordner, finden Sie unter [Einrichten von Ablageordnern](https://msdn.microsoft.com/library/bb778394.aspx).
+- Eine konzeptionelle Übersicht über Team Foundation Build, einschließlich Builddienst, BuildController und Build-Agents, finden Sie Untergrund Legendes zu [einem Team Foundation-Buildsystem](https://msdn.microsoft.com/library/dd793166.aspx).
+- Weitere Informationen zum Installieren und Konfigurieren des builddienstanbieter finden Sie unter [Konfigurieren eines](https://msdn.microsoft.com/library/ms181712.aspx)Buildcomputers.
+- Weitere Informationen zum Erstellen von buildcontrollern finden Sie unter [Erstellen und arbeiten mit einem BuildController](https://msdn.microsoft.com/library/ee330987.aspx).
+- Weitere Informationen zum Erstellen von Build-Agents finden Sie unter [Erstellen und arbeiten mit Build-Agents](https://msdn.microsoft.com/library/bb399135.aspx).
+- Weitere Informationen zum Erstellen und Konfigurieren von Ablage Ordnern finden [Sie unter Einrichten](https://msdn.microsoft.com/library/bb778394.aspx)von Ablage Ordnern.
 
-## <a name="install-required-products-and-components"></a>Installieren der erforderlichen Produkte und Komponenten
+## <a name="install-required-products-and-components"></a>Erforderliche Produkte und Komponenten installieren
 
-Um dem Build-Server für Ihre Lösungen zu aktivieren, installieren Sie alle Produkte, Komponenten oder Assemblys, die Ihre Lösung erforderlich sind. Bevor Sie alle webplattformkomponenten installieren, sollten Sie Visual Studio 2010 (beliebige Version) auf dem Buildserver installieren. Dadurch wird sichergestellt, dass die Kerndateien von Microsoft Build Engine (MSBuild) Ziel und die Zieldateien Web Publishing Pipeline (WPP) für den Builddienst verfügbar sind. Visual Studio-Installer sollten auch Web Deploy installieren, die Sie benötigen, wenn Sie Web-Pakete als Teil des Buildprozesses bereitstellen möchten.
+Damit der Buildserver ihre Lösungen erstellen kann, müssen Sie alle Produkte, Komponenten oder Assemblys installieren, die für die Lösung erforderlich sind. Vor der Installation von webplatt Form Komponenten sollten Sie Visual Studio 2010 (beliebige Version) auf dem Buildserver installieren. Dadurch wird sichergestellt, dass die Zieldateien der Core-Microsoft-Build-Engine (MSBuild) und die WPP-Zieldateien (Web Publishing Pipeline) für den Builddienst verfügbar sind. Der Visual Studio-Installer sollte auch Web deploy installieren, den Sie benötigen, wenn Sie die Bereitstellung von Webpaketen als Teil des Buildprozesses planen.
 
-Die beste Möglichkeit, allgemeine Plattform-Webkomponenten installieren ist die Verwendung der [Webplattform-Installer](https://go.microsoft.com/?linkid=9805118). Dadurch wird sichergestellt, dass Sie die neueste Version jedes Produkts installieren, und auch automatisch erkannt und installiert alle erforderlichen Komponenten für jedes Produkt. Im Fall von der [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) Lösung, sollte Sie den Webplattform-Installer verwenden, um diese Produkte und Komponenten zu installieren:
+Die beste Möglichkeit, gängige Webplattform-Komponenten zu installieren, ist die Verwendung des [Webplattform-Installers](https://go.microsoft.com/?linkid=9805118). Dadurch wird sichergestellt, dass Sie die neueste Version der einzelnen Produkte installieren, und außerdem werden alle Voraussetzungen für die einzelnen Produkte automatisch erkannt und installiert. Im Fall der [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) -Lösung sollten Sie den Webplattform-Installer verwenden, um diese Produkte und Komponenten zu installieren:
 
-- **.NET Framework 4.0**. Dies ist erforderlich, um Anwendungen auszuführen, die in dieser Version von .NET Framework erstellt wurden.
-- **Webbereitstellungstool 2.1 oder höher**. Dadurch wird Web Deploy (und die zugrunde liegende ausführbare Datei, die MSDeploy.exe) auf dem Server installiert. Im Rahmen dieser Prozess wird es installiert und startet die Web-Agent-Dienst. Dieser Dienst können Sie die Webpakete von einem Remotecomputer bereitstellen.
-- **ASP.NET MVC 3**. Dadurch werden die Assemblys, die Sie zum Ausführen von ASP.NET MVC 3-Anwendungen müssen installiert.
+- **.NET Framework 4,0**. Dies ist erforderlich, um Anwendungen auszuführen, die auf dieser Version des .NET Framework erstellt wurden.
+- **Webbereitstellungs Tool 2,1 oder**höher. Dadurch wird Web deploy (und die zugrunde liegende ausführbare Datei msbereitstellung. exe) auf dem Server installiert. Im Rahmen dieses Prozesses wird der Web Deployment Agent-Dienst installiert und gestartet. Mit diesem Dienst können Sie Webpakete von einem Remote Computer aus bereitstellen.
+- **ASP.NET MVC 3**. Dadurch werden die Assemblys installiert, die Sie für die ASP.NET MVC 3-Anwendungen benötigen.
 
-**Installieren der erforderlichen Produkte und Komponenten**
+**So installieren Sie die erforderlichen Produkte und Komponenten**
 
-1. Installieren Sie Visual Studio 2010. Wenn Sie aufgefordert werden, die zu installierenden Funktionen auswählen, sollten Sie Folgendes hinzufügen:
+1. Installieren Sie Visual Studio 2010. Wenn Sie zur Auswahl der zu installier Zeitpunkt aufgefordert werden, sollten Sie Folgendes einschließen:
 
-    1. Alle Programmiersprachen, die Sie benötigen, um zu kompilieren.
-    2. Visual Web Developer. Dadurch wird sichergestellt, dass der Buildserver die WPP Ziele hinzugefügt werden.
+    1. Alle Programmiersprachen, die Sie kompilieren müssen.
+    2. Visual Web Developer. Dadurch wird sichergestellt, dass die WPP-Ziele dem Buildserver hinzugefügt werden.
 
         ![](configuring-a-tfs-build-server-for-web-deployment/_static/image1.png)
-2. Klicken Sie nach Abschluss der Installation von Visual Studio 2010 herunterladen und installieren [Visual Studio 2010 Service Pack 1](https://go.microsoft.com/?linkid=9805133) (sofern er noch nicht in den Installationsmedien enthalten ist).
+2. Wenn die Installation von Visual Studio 2010 fertig ist, laden Sie [Visual Studio 2010 Service Pack 1](https://go.microsoft.com/?linkid=9805133) herunter, und installieren Sie es (sofern es noch nicht in den Installationsmedien enthalten ist).
 
     > [!NOTE]
-    > Visual Studio 2010 Service Pack 1, löst einen Fehler, der MSBuild für die Suche nach der ausführbaren Datei MSDeploy verhindern kann.
-3. Herunterladen und Starten der [Webplattform-Installer](https://go.microsoft.com/?linkid=9805118).
-4. Am oberen Rand der **Web Platform Installer 3.0** Fenster, klicken Sie auf **Produkte**.
-5. Klicken Sie auf der linken Seite des Fensters, klicken Sie im Navigationsbereich auf **Frameworks**.
-6. In der **Microsoft .NET Framework 4** Zeile, wenn .NET Framework nicht bereits installiert ist, klicken Sie auf **hinzufügen**.
+    > Visual Studio 2010 Service Pack 1 löst einen Fehler auf, der verhindert, dass MSBuild die ausführbare Datei "msbereitstellung" findet.
+3. Herunterladen und Starten des [Webplattform-Installers](https://go.microsoft.com/?linkid=9805118).
+4. Klicken Sie oben im Fenster **Webplattform-Installer 3,0** auf **Produkte**.
+5. Klicken Sie im Navigationsbereich auf der linken Seite des Fensters auf **Frameworks**.
+6. Wenn die .NET Framework in der Zeile **Microsoft .NET Framework 4** nicht bereits installiert ist, klicken Sie auf **Hinzufügen**.
 
     > [!NOTE]
-    > Möglicherweise haben Sie bereits über Windows Update .NET Framework 4.0 installiert. Wenn ein Produkt oder eine Komponente bereits installiert ist, den Webplattform-Installer wird angegeben, dies durch Ersetzen der **hinzufügen** Schaltfläche mit dem Text **installiert**.
+    > Möglicherweise haben Sie den .NET Framework 4,0 bereits über Windows Update installiert. Wenn ein Produkt oder eine Komponente bereits installiert ist, zeigt der Webplattform-Installer dies an, indem die Schaltfläche " **Hinzufügen** " durch den **installierten**Text ersetzt wird.
 
     ![](configuring-a-tfs-build-server-for-web-deployment/_static/image2.png)
-7. In der **ASP.NET MVC 3 (Visual Studio 2010)** auf **hinzufügen**.
+7. Klicken Sie in der Zeile **ASP.NET MVC 3 (Visual Studio 2010)** auf **Hinzufügen**.
 8. Klicken Sie im Navigationsbereich auf **Server**.
-9. In der **Web Deployment Tool 2.1** auf **hinzufügen**.
-10. Klicken Sie auf **Installieren**. Der Webplattform-Installer zeigt Ihnen eine Liste der Produkte&#x2014;zusammen mit verknüpften Abhängigkeiten&#x2014;installiert werden und werden Sie aufgefordert, den Lizenzbedingungen zustimmen.
-11. Lesen Sie die Lizenzbedingungen, und wenn Sie den Bedingungen zustimmen, klicken Sie auf **akzeptieren**.
-12. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig stellen**, und schließen Sie dann die **Web Platform Installer 3.0** Fenster.
+9. Klicken Sie in der Zeile **Webbereitstellungs Tool 2,1** auf **Hinzufügen**.
+10. Klicken Sie auf **Installieren**. Der Webplattform-Installer zeigt eine Liste der Produkte&#x2014;zusammen mit allen zugehörigen Abhängigkeiten&#x2014;an, die installiert werden müssen, und fordert Sie auf, die Lizenzbedingungen zu akzeptieren.
+11. Lesen Sie die Lizenzbedingungen, und klicken Sie auf **akzeptieren**, wenn Sie den Bedingungen zustimmen.
+12. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig**stellen, und schließen Sie dann das Fenster **Webplattform-Installer 3,0** .
 
 > [!NOTE]
-> Wenn Ihr Bereitstellungsprozess die Verwendung von Tools wie VSDBCMD.exe oder SQLCMD.exe enthält, müssen Sie sicherstellen, dass diese auf dem Buildserver installiert werden. VSDBCMD.exe ist ein Visual Studio-Tool und wird in der Regel mit dem Server hinzugefügt, bei der Installation von Team Foundation Build. SQLCMD.exe ist ein SQL Server-Tool. Sie können eine eigenständige Version von SQLCMD.exe aus der [Microsoft SQL Server 2008 R2 Feature Pack](https://go.microsoft.com/?linkid=9805134) Seite.
+> Wenn der Bereitstellungs Prozess die Verwendung von Tools wie "VSDBCMD. exe" oder "sqlcmd. exe" umfasst, müssen Sie sicherstellen, dass diese auf dem Buildserver installiert sind. "VSDBCMD. exe" ist ein Visual Studio-Tool, das in der Regel dem Server beim Installieren von Team Foundation Build hinzugefügt wird. Sqlcmd. exe ist ein SQL Server Tool. Sie können eine eigenständige Version von sqlcmd. exe von der Seite [Microsoft SQL Server 2008 R2 Feature Pack](https://go.microsoft.com/?linkid=9805134) herunterladen.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-An diesem Punkt ist der Buildserver mit der Erstellung und Bereitstellung von Webanwendungsprojekten beginnen. Im nächsten Thema, [Erstellen einer Build-Definition, unterstützt Bereitstellung](creating-a-build-definition-that-supports-deployment.md), beschreibt, wie zum Erstellen und konfigurieren eine Builddefinition zum Steuern, wann und wie Ihre Projekte erstellt und bereitgestellt werden.
+An diesem Punkt ist der Buildserver bereit, mit dem Erstellen und Bereitstellen von Webanwendungs Projekten zu beginnen. Im nächsten Thema [Erstellen einer Builddefinition, die die Bereitstellung unterstützt](creating-a-build-definition-that-supports-deployment.md), wird beschrieben, wie Sie eine Builddefinition erstellen und konfigurieren, um zu steuern, wann und wie Ihre Projekte erstellt und bereitgestellt werden.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere allgemeine Anleitungen zum Arbeiten mit Team Build, finden Sie unter [Verwalten von Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx).
+Allgemeine Anleitungen zum Arbeiten mit Team Build finden Sie unter [Verwalten von Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx).
 
 > [!div class="step-by-step"]
 > [Zurück](adding-content-to-source-control.md)

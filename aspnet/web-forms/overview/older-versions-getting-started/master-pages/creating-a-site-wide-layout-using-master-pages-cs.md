@@ -9,11 +9,11 @@ ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1a5e85c443a2a3642ec185ab1897c43cdb2ab1f7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74619383"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507333"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Erstellen eines websiteweiten Layouts mit Masterseiten (C#)
 
@@ -46,7 +46,7 @@ Dies ist das erste Tutorial in einer Reihe von Tutorials, in denen die Verwendun
 
 Diese Lernprogramme sind so konzipiert, dass Sie präzise sind, und enthalten Schritt-für-Schritt-Anleitungen mit vielen Screenshots, um Sie durch den Prozess visuell zu führen. Jedes Tutorial ist in C# und Visual Basic Versionen verfügbar und enthält einen Download des gesamten verwendeten Codes.
 
-Dieses erste Tutorial beginnt mit einem Blick auf die Grundlagen der Master Seite. Es wird erläutert, wie Masterseiten funktionieren. Sie erfahren, wie Sie eine Master Seite und zugehörige Inhaltsseiten mithilfe von Visual Web Developer erstellen, und wie sich Änderungen an einer Master Seite sofort auf den Inhaltsseiten widerspiegeln. Fangen wir an!
+Dieses erste Tutorial beginnt mit einem Blick auf die Grundlagen der Master Seite. Es wird erläutert, wie Masterseiten funktionieren. Sie erfahren, wie Sie eine Master Seite und zugehörige Inhaltsseiten mithilfe von Visual Web Developer erstellen, und wie sich Änderungen an einer Master Seite sofort auf den Inhaltsseiten widerspiegeln. Erste Schritte
 
 ## <a name="understanding-how-master-pages-work"></a>Grundlegendes zur Funktionsweise von Master Seiten
 
@@ -227,7 +227,7 @@ Mit dem obigen Code wird die `Text`-Eigenschaft der Bezeichnung auf das aktuelle
 > [!NOTE]
 > Wie in diesem Beispiel veranschaulicht, können Masterseiten serverseitige websteuer Elemente, Code und Ereignishandler enthalten.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Master Seiten ermöglichen ASP.NET-Entwicklern das Entwerfen eines konsistenten Website weiten Layouts, das leicht aktualisierbar ist. Das Erstellen von Masterseiten und den zugehörigen Inhaltsseiten ist so einfach wie das Erstellen von standardmäßigen ASP.NET-Seiten, da Visual Web Developer umfassende Entwurfszeit Unterstützung bietet.
 
@@ -235,7 +235,7 @@ Das Beispiel für eine Master Seite, das wir in diesem Tutorial erstellt haben, 
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -246,7 +246,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Master Seiten in ASP.net](http://www.odetocode.com/articles/419.aspx)
 - [Schnellstart-Tutorials für Master Seiten](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/masterpages/default.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -255,4 +255,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)ablegen.
 
 > [!div class="step-by-step"]
-> [Nächste](multiple-contentplaceholders-and-default-content-cs.md)
+> [Weiter](multiple-contentplaceholders-and-default-content-cs.md)

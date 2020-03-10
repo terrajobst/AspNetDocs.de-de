@@ -9,11 +9,11 @@ ms.assetid: f175278c-6079-4d91-b9b4-2493ed43d9ec
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 955592320e7d36c7ae3b9c03a361bee2183f1776
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625482"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512979"
 ---
 # <a name="creating-user-accounts-c"></a>Hinzufügen von Benutzerkonten (C#)
 
@@ -29,7 +29,7 @@ von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Zusätzlich zu den Informationen zum Erstellen neuer Benutzerkonten müssen wir auch die zuvor erstellte Demo Website aktualisieren, indem wir das *<a id="_msoanchor_2"></a>[Tutorial zur Formular Authentifizierung](../introduction/an-overview-of-forms-authentication-cs.md)* (Übersicht über die Formular Authentifizierung) und anschließend im *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"></a> Tutorial zur Konfiguration der Formular Authentifizierung und zu erweiterten Themen* erweitert haben. Unsere demowebanwendung verfügt über eine Anmeldeseite, mit der die Benutzer Anmelde Informationen anhand von hart codierten Benutzernamen/Kennwort-Paaren überprüft werden. Darüber hinaus enthält `Global.asax` Code, mit dem benutzerdefinierte `IPrincipal` und `IIdentity` Objekte für authentifizierte Benutzer erstellt werden. Wir aktualisieren die Anmeldeseite, um die Benutzer Anmelde Informationen anhand des Mitgliedschafts-Framework zu überprüfen und die benutzerdefinierte Prinzipal-und Identitätslogik zu entfernen.
 
-Fangen wir an!
+Erste Schritte
 
 ## <a name="the-forms-authentication-and-membership-checklist"></a>Prüfliste zur Formular Authentifizierung und Mitgliedschaft
 
@@ -334,7 +334,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Master Seiten und Website Navigation](https://asp.net/learn/data-access/tutorial-03-vb.aspx)
 - [Der SQL Site Map-Anbieter, auf den Sie gewartet haben](https://msdn.microsoft.com/msdnmag/issues/06/02/WickedCode/default.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein neueste Buch wird *[Sams Schulen selbst ASP.NET 2.0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott erreicht werden kann, zur [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/).
 

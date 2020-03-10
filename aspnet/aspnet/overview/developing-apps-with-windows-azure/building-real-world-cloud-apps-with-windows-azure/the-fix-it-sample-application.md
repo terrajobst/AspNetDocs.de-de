@@ -9,11 +9,11 @@ ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
 ms.openlocfilehash: 896196bdb6a6b0d12a6c798ead510e37dd38a9fc
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456880"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471393"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Anhang: die Anwendung zum Beheben von IT-Beispielen (entwickeln realer Cloud-apps mit Azure)
 
@@ -333,7 +333,7 @@ Bei diesen Anweisungen wird vorausgesetzt, dass Sie die Lösung zum Beheben von 
 
 Die häufigsten Fehler, die beim Ausführen dieser Skripts aufgetreten sind, beziehen sich auf Berechtigungen. Stellen Sie sicher, dass `Add-AzureAccount` und `Import-AzurePublishSettingsFile` erfolgreich waren und dass Sie Sie für dasselbe Azure-Abonnement verwendet haben. Auch wenn `Add-AzureAccount` erfolgreich war, müssen Sie ihn möglicherweise erneut ausführen. Die von `Add-AzureAccount` hinzugefügten Berechtigungen laufen in 12 Stunden ab.
 
-### <a name="object-reference-not-set-to-an-instance-of-an-object"></a>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.
+### <a name="object-reference-not-set-to-an-instance-of-an-object"></a>Der Objekt Verweis ist nicht auf eine Instanz eines Objekts festgelegt.
 
 Wenn das Skript Fehler zurückgibt, wie z. b. "Objekt Verweis ist nicht auf eine Instanz eines Objekts festgelegt", was bedeutet, dass Windows PowerShell kein zu verarbeitende Objekt finden kann (Dies ist eine NULL-Verweis Ausnahme), führen Sie das `Add-AzureAccount` Cmdlet aus, und versuchen Sie es erneut.
 

@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 527b4392846e60dae0b216fdeabf21fd6618e4d7
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456737"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499869"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>Zweistufige Authentifizierung mit SMS und e-Mail mit ASP.net Identity
 
@@ -272,7 +272,7 @@ Obwohl Sie die Kontosperrung bei Fehlern beim Versuch eines Anmelde Kennworts fe
 
 <a id="addRes"></a>
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [Empfohlene Ressourcen ASP.net Identity](../getting-started/aspnet-identity-recommended-resources.md) Eine umfassende Liste mit Identitäts Blogs, Videos, Tutorials und tollen Links.
 - Die [MVC 5-App mit Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) zeigt außerdem, wie Sie der Tabelle "Users" Profilinformationen hinzufügen.

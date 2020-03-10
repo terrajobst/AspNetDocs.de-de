@@ -9,11 +9,11 @@ ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 66b727b69ca4f9a3d35b67f492f9a554146e09ef
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590711"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474813"
 ---
 # <a name="url-routing"></a>URL-Routing
 
@@ -25,7 +25,7 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial ändern Sie die Wingtip Toys-Beispielanwendung, um das URL-Routing zu unterstützen. Das Routing ermöglicht Ihrer Webanwendung die Verwendung von URLs, die benutzerfreundlich, leichter zu merken und besser von Suchmaschinen unterstützt werden. Dieses Tutorial baut auf dem vorherigen Tutorial "Mitgliedschaft und Administration" auf und ist Teil der Wingtip Toys-tutorialreihe.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 - Vorgehensweise beim Registrieren von Routen für eine ASP.net-Web Forms Anwendung
 - Vorgehensweise beim Hinzufügen von Routen zu einer Webseite.
@@ -138,7 +138,7 @@ Sie können die Anwendung jetzt ausführen, um die aktualisierten Routen anzuzei
     `https://localhost:44300/ProductDetails.aspx?productID=2`  
  Der Code erkennt weiterhin eine URL, die eine Abfrage Zeichenfolge enthält, wenn ein Benutzer einen Link mit Lesezeichen aufweist.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie Routen für Kategorien und Produkte hinzugefügt. Sie haben gelernt, wie Routen in Daten Steuerelemente integriert werden können, die die Modell Bindung verwenden. Im nächsten Tutorial implementieren Sie die globale Fehlerbehandlung.
 

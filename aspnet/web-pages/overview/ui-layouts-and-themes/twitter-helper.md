@@ -1,89 +1,89 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/twitter-helper
-title: Twitter-Hilfsprogramm mit ASP.NET Web Pages | Microsoft-Dokumentation
+title: Twitter-Hilfsprogramm mit ASP.net Web Pages | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Dieses Thema und die Anwendung zeigen, wie ein Twitter-Hilfsprogramm das WebMatrix 3-Projekt hinzu. Es enthält den Code für die Twitter-Hilfsprogramm und zeigt, wie Sie das Hilfsobjekt aufrufen...
+description: In diesem Thema und dieser Anwendung wird gezeigt, wie Sie Ihrem webmatrix 3-Projekt ein Twitter-Hilfsprogramm hinzufügen. Sie enthält den Twitter-hilfsscode und zeigt, wie das Hilfsprogramm aufgerufen wird...
 ms.author: riande
 ms.date: 11/26/2018
 ms.assetid: c1a1244e-b9c8-42e6-a00b-8456a4ec027c
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/twitter-helper
 msc.type: authoredcontent
 ms.openlocfilehash: 76e32b7c808467a9a87c70017dac02bdb895e1df
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132769"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518619"
 ---
 # <a name="twitter-helper-with-aspnet-web-pages"></a>Twitter-Hilfsprogramm mit ASP.NET Web Pages
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
 > [!IMPORTANT]
-> Twitter-Hilfsprogramme sind veraltet. Der Twitter neueste Engagement-Tools für Websites, finden Sie unter [Twitter-Übersicht über die Websites](https://developer.twitter.com/en/docs/twitter-for-websites/overview).
+> Twitter-Hilfsprogramme sind veraltet. Informationen zu den neuesten Engagement-Tools für Twitter finden Sie unter [Übersicht über Twitter für Websites](https://developer.twitter.com/en/docs/twitter-for-websites/overview).
 
-> Dieses Thema und die Anwendung zeigen, wie ein Twitter-Hilfsprogramm das WebMatrix 3-Projekt hinzu. Es enthält den Code für die Twitter-Hilfsprogramm und zeigt, wie die Hilfsmethoden.
+> In diesem Thema und dieser Anwendung wird gezeigt, wie Sie Ihrem webmatrix 3-Projekt ein Twitter-Hilfsprogramm hinzufügen. Sie enthält den Twitter-hilfsscode und zeigt, wie die Hilfsmethoden aufgerufen werden.
 > 
-> Dieser Code für die Datei Twitter.cshtml wurde entwickelt, indem **Tian Pan** von Microsoft.
+> Dieser Code für die Twitter. cshtml-Datei wurde von der **Tian Pan** von Microsoft entwickelt.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - ASP.NET Web Pages (Razor) 3
+> - ASP.net Web Pages (Razor) 3
 >   
 > 
-> In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
+> Dieses Tutorial funktioniert auch mit ASP.net Web Pages 2.
 
 ## <a name="introduction"></a>Einführung
 
-Dieses Thema veranschaulicht das Hinzufügen einer Twitter-Hilfsprogramm zu Ihrer Anwendung und Razor-Syntax zum Aufrufen von der Hilfsmethoden verwenden. Die Twitter-Hilfsprogramm vereinfacht das Twitter-Schaltflächen und Widgets in Ihrer Anwendung zu integrieren. Verwenden ein Twitter-Widgets, wie z. B. die Timeline eines Benutzers oder der Ergebnisse der Suche nach einem Hashtag, erstellen Sie zuerst die [Widget auf Twitter](https://twitter.com/settings/widgets). Nach dem Erstellen Ihres Widgets, erhalten Sie eine Widget-Id. Sie übergeben dieses Widget-Id als Parameter beim Aufrufen von Methoden des Hilfsprogramms, die Widget anzeigen.
+In diesem Thema wird veranschaulicht, wie Sie Ihrer Anwendung ein Twitter-Hilfsprogramm hinzufügen und Razor-Syntax verwenden, um die Hilfsmethoden aufzurufen. Mit dem Twitter-Hilfsprogramm können Sie ganz einfach Twitter-Schaltflächen und Widgets in Ihre Anwendung integrieren. Wenn Sie ein Twitter-Widget verwenden möchten, z. b. die Zeitachse eines Benutzers oder die Suchergebnisse für ein hashtag, müssen Sie zuerst das [Widget auf Twitter](https://twitter.com/settings/widgets)erstellen. Nachdem Sie Ihr Widget erstellt haben, erhalten Sie eine Widget-ID. Sie übergeben diese Widget-ID als Parameter, wenn Sie die Hilfsmethoden aufrufen, die das Widget anzeigen.
 
-In diesem Thema wurde für Version 1.1 der Twitter-API geschrieben. Durch das direkte Hinzufügen des Twitter-Hilfsprogramm-Codes zu Ihrem Projekt können Sie des hilfscodes aktualisieren, wenn der Twitter-API ändern.
+Dieses Thema wurde für Version 1,1 der Twitter-API geschrieben. Wenn Sie den Twitter-Hilfscode direkt zu Ihrem Projekt hinzufügen, können Sie den hilfsscode aktualisieren, wenn sich die Twitter-API ändert.
 
-Weitere Informationen zum Installieren von WebMatrix, finden Sie unter [Einführung in ASP.NET Web Pages 2 - erste Schritte](../getting-started/introducing-aspnet-web-pages-2/getting-started.md).
+Weitere Informationen zum Installieren von webmatrix finden Sie unter [Introducing ASP.net Web Pages 2-Getting Started](../getting-started/introducing-aspnet-web-pages-2/getting-started.md).
 
-## <a name="add-twitter-helper-to-your-project"></a>Hinzufügen von Twitter-Hilfsprogramm zu Ihrem Projekt
+## <a name="add-twitter-helper-to-your-project"></a>Twitter-Hilfsprogramm zu Ihrem Projekt hinzufügen
 
-Um die Twitter-Hilfsprogramm hinzuzufügen, fügen Sie zunächst einen Ordner namens **App\_Code** zu Ihrem Projekt. Erstellen Sie dann eine Datei namens **Twitter.cshtml**.
+Fügen Sie zum Hinzufügen des Twitter-Hilfsprogramms zunächst dem Projekt einen Ordner mit dem Namen **App\_Code** hinzu. Erstellen Sie dann eine Datei mit dem Namen **Twitter. cshtml**.
 
-![Ordner "App_Code"](twitter-helper/_static/image1.png)
+![App_Code Ordner](twitter-helper/_static/image1.png)
 
-Ersetzen Sie den Standardcode in Twitter.cshtml durch den folgenden Code ein.
+Ersetzen Sie den Standard Code in Twitter. cshtml durch den folgenden Code.
 
 [!code-cshtml[Main](twitter-helper/samples/sample1.cshtml)]
 
-## <a name="call-twitter-methods-from-your-web-pages"></a>Rufen Sie Ihren Webseiten Twitter-Methoden
+## <a name="call-twitter-methods-from-your-web-pages"></a>Twitter-Methoden von ihren Webseiten aus anrufen
 
-Das folgende Beispiel zeigt, wie Sie die Twitter-Hilfsprogramm-Methoden von einer Seite in Ihrem Projekt zu verwenden. In Ihrem Projekt möchten Sie die Parameterwerte durch Werte ersetzen, die an Ihre Anforderungen relevant sind. Können Sie die bereitgestellten Widget-Ids um zu untersuchen, wie die Methoden funktionieren, aber Sie möchten eigene Widgets für Ihr Projekt zu generieren.
+Im folgenden Beispiel wird gezeigt, wie Sie die Twitter-Hilfsmethoden von einer Seite in Ihrem Projekt verwenden können. In Ihrem Projekt möchten Sie die Parameterwerte durch Werte ersetzen, die für Ihre Anforderungen relevant sind. Sie können die bereitgestellten Widget-IDs verwenden, um zu untersuchen, wie die Methoden funktionieren, aber Sie möchten Ihre eigenen Widgets für Ihr Projekt generieren.
 
-Nicht alle der unten angezeigte Parameter sind erforderlich. Die optionalen Parameter werden verwendet, um anzupassen, wie die Schaltfläche oder das Widget angezeigt wird. Z. B. die Schaltfläche "folgen" erfordert den Benutzernamen ein, führen, aber das Beispiel zeigt, wie die Anzahl der Follower, und wie die Größe der Schaltfläche und die Sprache angeben.
+Nicht alle unten gezeigten Parameter sind erforderlich. Die optionalen Parameter werden verwendet, um anzupassen, wie die Schaltfläche oder das Widget angezeigt wird. Beispielsweise muss auf die Schaltfläche "nachverfolgen" nur der Benutzername befolgt werden, aber im Beispiel wird gezeigt, wie Sie die Anzahl von Followern einschließen und wie Sie die Größe der Schaltfläche und der Sprache angeben.
 
 [!code-html[Main](twitter-helper/samples/sample2.html)]
 
-## <a name="see-the-results"></a>Die Ergebnisse angezeigt
+## <a name="see-the-results"></a>Anzeigen der Ergebnisse
 
-Der obige Code generiert die folgenden Schaltflächen und Widgets. Diese Schaltflächen und die Widgets sind voll funktionsfähige, nicht-Screenshots. Die Schaltfläche "folgen" wird in Spanisch angezeigt, da es sich bei der Language-Parameter festgelegt wurde, um **es**.
+Der obige Code erzeugt die folgenden Schaltflächen und Widgets. Diese Schaltflächen und Widgets sind voll funktionsfähig, keine Screenshots. Die Schaltfläche Nachverfolgung wird auf Spanisch angezeigt, da der sprach Parameter auf **es**festgelegt wurde.
 
-### <a name="follow-button"></a>Führen Sie die Schaltfläche "
+### <a name="follow-button"></a>Schaltfläche "folgen
 
-[Führen Sie @aspnet)](https://twitter.com/aspnet)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>`
+[@aspnetfolgen)](https://twitter.com/aspnet)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>`
 
-### <a name="tweet-button"></a>Schaltfläche "Tweet"
+### <a name="tweet-button"></a>Tweet-Schaltfläche
 
-[Tweet](https://twitter.com/share)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>`
+[Tweet](https://twitter.com/share) -`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>`
 
-### <a name="user-timeline-profile"></a>Timeline des Benutzers (Profil)
+### <a name="user-timeline-profile"></a>Benutzer Zeitachse (Profil)
 
-[TWEETS nach @aspnet](https://twitter.com/aspnet)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
+[Tweets nach @aspnet](https://twitter.com/aspnet)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
 
 ### <a name="favorites"></a>Favoriten
 
-[Bevorzugte Tweets nach @Microsoft](https://twitter.com/Microsoft/favorites)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
+Die [bevorzugten tweets nach @Microsoft](https://twitter.com/Microsoft/favorites)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
 
 ### <a name="list"></a>Liste
 
-[TWEETS aus @Microsoft/MS \_Consumer\_Bänder](https://twitter.com/microsoft/ms-consumer-brands/)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
+[Tweets von @Microsoft/MS\_Consumer\_Bänder](https://twitter.com/microsoft/ms-consumer-brands/)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
 
-### <a name="search"></a>Suchen
+### <a name="search"></a>Suche
 
-[Einen Tweet zu &quot;#asp.net&quot;](https://twitter.com/search?q=%23asp.net)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`
+[Tweets zu &quot;#ASP .net&quot;](https://twitter.com/search?q=%23asp.net)`<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>`

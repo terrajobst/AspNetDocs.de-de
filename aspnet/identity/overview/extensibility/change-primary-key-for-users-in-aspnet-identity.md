@@ -10,15 +10,15 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 0afea8eacfc646f1489b87629fdb2d437815d88c
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519140"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472263"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>Ändern des Primärschlüssels für Benutzer in ASP.NET Identity
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
 > In Visual Studio 2013 verwendet die Standardweb Anwendung einen Zeichen folgen Wert für den Schlüssel für Benutzerkonten. ASP.net Identity ermöglicht es Ihnen, den Typ des Schlüssels zu ändern, um Ihre Datenanforderungen zu erfüllen. Beispielsweise können Sie den Typ des Schlüssels von einer Zeichenfolge in eine ganze Zahl ändern.
 > 
@@ -43,7 +43,7 @@ Dieses Thema enthält folgende Abschnitte:
 - [Ändern Sie für Web Forms mit Update 2 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.](#webformsupdate2)
 - [Ändern Sie für Web Forms mit Update 3 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.](#webformsupdate3)
 - [Anwendung ausführen](#run)
-- [Andere Ressourcen](#other)
+- [Weitere Ressourcen](#other)
 
 <a id="userclass"></a>
 ## <a name="change-the-type-of-the-key-in-the-identity-user-class"></a>Ändern Sie den Typ des Schlüssels in der Identity-Benutzerklasse.

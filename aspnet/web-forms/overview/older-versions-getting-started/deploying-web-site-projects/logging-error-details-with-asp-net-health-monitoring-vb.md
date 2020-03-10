@@ -9,11 +9,11 @@ ms.assetid: 09a6c74e-936a-4c04-8547-5bb313a4e4a3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f57aca41771adfd9a7c7f38da1916db9197262da
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587770"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507597"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Protokollieren von Fehlerdetails mit der ASP.NET-Systemüberwachung (VB)
 
@@ -128,7 +128,7 @@ Der Abschnitt "`<rules>`" enthält jetzt zwei Regeln. Der erste mit dem Namen "a
 **Abbildung 2**: die Fehler Details werden in einer e-Mail-Nachricht gesendet.  
 ([Klicken Sie, um das Bild in voller Größe anzuzeigen](logging-error-details-with-asp-net-health-monitoring-vb/_static/image6.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das ASP.NET-System Überwachungssystem ist so konzipiert, dass Administratoren die Integrität einer bereitgestellten Webanwendung überwachen können. Ereignisse der Integritäts Überwachung werden ausgelöst, wenn bestimmte Aktionen ausgeführt werden, z. b. wenn die Anwendung beendet wird, wenn sich ein Benutzer erfolgreich bei der Website anmeldet oder wenn eine nicht behandelte Ausnahme auftritt. Diese Ereignisse können auf einer beliebigen Anzahl von Protokoll Quellen protokolliert werden. In diesem Tutorial wurde gezeigt, wie die Details von nicht behandelten Ausnahmen in einer Datenbank und per e-Mail protokolliert werden.
 
@@ -136,7 +136,7 @@ Dieses Tutorial konzentriert sich auf die Verwendung der Integritäts Überwachu
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

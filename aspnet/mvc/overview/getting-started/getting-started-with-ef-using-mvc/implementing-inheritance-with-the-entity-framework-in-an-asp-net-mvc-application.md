@@ -10,11 +10,11 @@ ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: 73a01ed47b0935a1a9734c197377470defb1fe36
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519387"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471063"
 ---
 # <a name="tutorial-implement-inheritance-with-ef-in-an-aspnet-mvc-5-app"></a>Tutorial: Implementieren der Vererbung mit EF in einer ASP.NET MVC 5-App
 
@@ -22,7 +22,7 @@ Im vorherigen Tutorial haben Sie Parallelitäts Ausnahmen behandelt. In diesem T
 
 In der objektorientierten Programmierung können Sie die [Vererbung](http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) verwenden, um die [Wiederverwendung von Code](http://en.wikipedia.org/wiki/Code_reuse)zu vereinfachen. In diesem Tutorial ändern Sie die Klassen `Instructor` und `Student` so, dass sie von einer `Person`-Basisklasse abgeleitet werden, die Eigenschaften wie `LastName` enthält. Diese Eigenschaften sind für Dozenten und Studenten gängig. Sie fügen keine Webseiten hinzu oder ändern diese, aber Sie werden Teile des Codes ändern. Diese Änderungen werden automatisch in der Datenbank widergespiegelt.
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Weitere Informationen zum Zuordnen der Vererbung zu einer Datenbank
@@ -31,9 +31,9 @@ In diesem Tutorial:
 > * Person zum Modell hinzufügen
 > * Erstellen und Aktualisieren von Migrationen
 > * Testen der Implementierung
-> * Auf Azure bereitstellen
+> * Bereitstellung in Azure
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 * [Verarbeiten von Parallelitätsfehlern](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 
@@ -143,7 +143,7 @@ Das folgende Diagramm veranschaulicht die Struktur der neuen Datenbank "School":
 
 ![School_database_diagram](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
-## <a name="deploy-to-azure"></a>Auf Azure bereitstellen
+## <a name="deploy-to-azure"></a>Bereitstellung in Azure
 
 Dieser Abschnitt erfordert, dass Sie den optionalen Abschnitt bereitstellen **der APP für Azure** in [Teil 3, sortieren, Filtern und Paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md) dieser tutorialreihe abgeschlossen haben. Wenn Migrations Fehler aufgetreten sind, die Sie durch Löschen der Datenbank im lokalen Projekt aufgelöst haben, überspringen Sie diesen Schritt. oder erstellen Sie eine neue Website und eine neue Datenbank, und stellen Sie Sie in der neuen Umgebung bereit.
 
@@ -161,7 +161,7 @@ Dieser Abschnitt erfordert, dass Sie den optionalen Abschnitt bereitstellen **de
 
 [Herunterladen des abgeschlossenen Projekts](https://webpifeed.blob.core.windows.net/webpifeed/Partners/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip)
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Links zu anderen Entity Framework Ressourcen finden Sie unter [ASP.NET Data Access-Empfohlene Ressourcen](../../../../whitepapers/aspnet-data-access-content-map.md).
 
@@ -169,7 +169,7 @@ Weitere Informationen zu dieser und anderen Vererbungs Strukturen finden Sie unt
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Es wurde gelernt, Vererbung der Datenbank zuzuordnen.

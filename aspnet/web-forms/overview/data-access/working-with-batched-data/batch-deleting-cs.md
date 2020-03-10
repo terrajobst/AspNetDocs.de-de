@@ -9,11 +9,11 @@ ms.assetid: ac6916d0-a5ab-4218-9760-7ba9e72d258c
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ed832c38b4972f440ab64c141e29c85f0a9df920
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588890"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78476607"
 ---
 # <a name="batch-deleting-c"></a>Löschen in Batches (C#)
 
@@ -82,7 +82,7 @@ Abbildung 4 zeigt die GridView, nachdem eine Reihe von Zeilen zum Löschen ausge
 > [!NOTE]
 > Fügen Sie zum Testen der `DeleteProductsWithTransaction` Method s Atomicity manuell einen Eintrag für ein Produkt in der `Order Details` Tabelle hinzu, und versuchen Sie dann, das Produkt (zusammen mit anderen) zu löschen. Wenn Sie versuchen, das Produkt mit einer zugeordneten Bestellung zu löschen, erhalten Sie eine Verletzung der Fremdschlüssel Einschränkung, aber beachten Sie, dass für die anderen ausgewählten Produkt Löschungen ein Rollback ausgeführt wird.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Erstellen einer Schnittstelle zum Löschen von Batches umfasst das Hinzufügen einer GridView-Spalte mit einer Spalte mit Kontrollkästchen und einem Schaltflächen-websteuer Element, mit dem alle ausgewählten Zeilen als einzelner atomarer Vorgang gelöscht werden. In diesem Tutorial haben wir eine solche Schnittstelle erstellt, indem wir die Arbeit in zwei vorherigen Tutorials zusammengefasst, [eine GridView-Spalte mit Kontrollkästchen hinzugefügt](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md) und [Daten Bank Änderungen innerhalb einer Transaktion](wrapping-database-modifications-within-a-transaction-cs.md)Umtragen. Im ersten Tutorial haben wir eine GridView mit einer Spalte mit Kontrollkästchen erstellt, und in der letzteren Zeit haben wir eine Methode in der BLL implementiert, bei der eine `List<T>` `ProductID` Werte übertragen wurde, die alle innerhalb des Gültigkeits Bereichs einer Transaktion gelöscht wurden.
 
@@ -90,7 +90,7 @@ Im nächsten Tutorial erstellen wir eine Schnittstelle zum Ausführen von Batch 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-security/index
-title: Ältere Versionen – Sicherheit | Microsoft-Dokumentation
+title: 'Ältere Versionen: Sicherheit | Microsoft-Dokumentation'
 author: rick-anderson
-description: Sicherheit, Authentifizierung und Autorisierung Themen für ASP.NET 4 und früheren Web Forms-Anwendungen.
+description: Themen zu Sicherheit, Authentifizierung und Autorisierung für ASP.NET 4 und ältere Web Forms Anwendungen.
 ms.author: riande
 ms.date: 10/18/2014
 ms.assetid: 2f952638-6b1f-48b6-b019-1c5d1e9ab746
 msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
 ms.openlocfilehash: cb511b13278dcf2a20652b53d2dbbec341c56b84
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130383"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520707"
 ---
 # <a name="older-versions---security"></a>Ältere Versionen – Sicherheit
 
-> Sicherheit, Authentifizierung und Autorisierung Themen für ASP.NET 4 und früheren Web Forms-Anwendungen.
+> Themen zu Sicherheit, Authentifizierung und Autorisierung für ASP.NET 4 und ältere Web Forms Anwendungen.
 
 - [ASP.NET 3.5 – Einführung zur Sicherheit](introduction/index.md)
 

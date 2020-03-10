@@ -1,23 +1,23 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/index
-title: Erste Schritte mit ASP.NET MVC 3 (VB.NET) | Microsoft-Dokumentation
+title: Getting Started with ASP.NET MVC 3 (VB.net) | Microsoft-Dokumentation
 author: rick-anderson
-description: Die Grundlagen der Erstellung einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Visual Basic.NET verwenden.
+description: Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express mithilfe von VB.net.
 ms.author: riande
 ms.date: 04/12/2012
 ms.assetid: c2f134f3-fc6b-4603-823f-d1eabe55bba2
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb
 msc.type: chapter
 ms.openlocfilehash: 5a0d16a9fe1750d9d47d9bc8fcf37717fb587770
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129998"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485499"
 ---
 # <a name="getting-started-with-aspnet-mvc-3-vbnet"></a>Erste Schritte mit ASP.NET MVC 3 (VB.NET)
 
-> Die Grundlagen der Erstellung einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Visual Basic.NET verwenden.
+> Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express mithilfe von VB.net.
 
 - [Einführung zu ASP.NET MVC 3 (VB)](intro-to-aspnet-mvc-3.md)
 - [Hinzufügen eines Controllers (VB)](adding-a-controller.md)

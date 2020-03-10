@@ -2,26 +2,26 @@
 uid: web-forms/overview/deployment/index
 title: Bereitstellung | Microsoft-Dokumentation
 author: rick-anderson
-description: Informationen zum ASP.NET Web Forms-Projekte auf einem Server bereitstellen.
+description: Bereitstellen von ASP.net-Web Forms Projekten auf einem Server.
 ms.author: riande
 ms.date: 08/18/2011
 ms.assetid: 05e4c88f-5101-4277-a323-b6774d98f69e
 msc.legacyurl: /web-forms/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 1483abc212b5f122ad3e2b88474c42b208bb748e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134289"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520377"
 ---
 # <a name="deployment"></a>Bereitstellung
 
-> Informationen zum ASP.NET Web Forms-Projekte auf einem Server bereitstellen.
+> Bereitstellen von ASP.net-Web Forms Projekten auf einem Server.
 
 - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](visual-studio-web-deployment/index.md)
 
-    - [Introduction (Einführung)](visual-studio-web-deployment/introduction.md)
+    - [Einführung](visual-studio-web-deployment/introduction.md)
     - [Vorbereiten für die Datenbankbereitstellung](visual-studio-web-deployment/preparing-databases.md)
     - [Umwandlungen für die Datei „Web.config“](visual-studio-web-deployment/web-config-transformations.md)
     - [Projekteigenschaften](visual-studio-web-deployment/project-properties.md)
@@ -36,8 +36,8 @@ ms.locfileid: "65134289"
 - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](deploying-web-applications-in-enterprise-scenarios/index.md)
 
     - [Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010](deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-    - [Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-    - [Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+    - [Webbasierte Unternehmensbereitstellung: Szenarioübersicht](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+    - [Application Lifecycle Management: Von der Entwicklung bis zur Produktion](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
 - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](web-deployment-in-the-enterprise/index.md)
 
     - [Webbereitstellung im Unternehmen](web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)

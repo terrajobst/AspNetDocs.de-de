@@ -2,103 +2,103 @@
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 title: Webbereitstellung im Unternehmen | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Tutorial wird beschrieben, wie viele der Herausforderungen beim erfüllen, die Sie begegnen, wenn Sie die Bereitstellung von Webanwendungen für Unternehmen, bei verwalten...
+description: In diesem Tutorial wird beschrieben, wie Sie viele der Herausforderungen erfüllen, die bei der Verwaltung der Bereitstellung von Webanwendungen auf Unternehmens Niveau für die deplizerstellung auftreten...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: b8283698-7b82-42a8-8d83-3aeb18ca7fcc
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
 ms.openlocfilehash: bc7bb676a71af4ec3451aa3adf3c03ce3b5200d5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114770"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509715"
 ---
 # <a name="web-deployment-in-the-enterprise"></a>Webbereitstellung im Unternehmen
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Tutorial wird beschrieben, wie viele der Herausforderungen beim erfüllen, die auftreten müssen, wenn Sie die Bereitstellung von Webanwendungen für Unternehmen angemessenen in Umgebungen für Entwicklungs-, Test-, Staging- und produktionsumgebungen verwalten. Das Lernprogramm enthält eine referenzlösung zusammen mit einer Mischung aus konzeptionelle und aufgabenbezogene Inhalte, die Sie über die verschiedenen Aufgaben und Verfahren zu führen.
+> In diesem Tutorial wird beschrieben, wie Sie viele der Herausforderungen erfüllen, die beim Verwalten der Bereitstellung von Webanwendungen für Unternehmen in Entwicklungs-, Test-, Staging-und Produktionsumgebungen auftreten. Das Tutorial enthält eine Referenzlösung sowie eine Mischung aus konzeptionellen und aufgabenorientierten Inhalten, die Sie durch verschiedene gängige Aufgaben und Verfahren führen.
 > 
-> Ein italienischen Übersetzung mit diesen Lernprogrammen finden Sie unter [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
+> Eine italienische Übersetzung dieser Tutorials finden Sie unter [http://www.lucamorelli.it](http://www.lucamorelli.it).
 
-## <a name="enterprise-deployment-challenges"></a>Herausforderungen bei der Bereitstellung von Enterprise
+## <a name="enterprise-deployment-challenges"></a>Unternehmen
 
-Organisationen auftreten oft diese Herausforderungen, wenn sie die Bereitstellung von Lösungen für komplexe, unternehmensweite aussehen:
+Organisationen stoßen häufig auf diese Herausforderungen, wenn Sie die Bereitstellung komplexer, Unternehmens basierter Lösungen verwalten:
 
-- Sie müssen zum Bereitstellen von Projekten für mehrere Umgebungen, wie Entwickler oder testumgebungen, staging-Plattformen und Produktionsserver. Die Lösung muss mit anderen Konfigurationseinstellungen für jede Umgebung bereitgestellt werden.
-- Sie müssen mehrere abhängige Projekte gleichzeitig im Rahmen eines einzigen Schritt oder automatisierte Build & Deployment-Prozesses bereitstellen.
-- Sie müssen auf die Bereitstellung mithilfe eines automatisierten Prozesses können. Sie möchten z. B. einen fortlaufende Integration (CI)-Prozess verwenden, um Webanwendungen in einer testumgebung bereitstellen, wenn Sie neuer Code eingecheckt wird.
-- Sie müssen möglicherweise steuern den Bereitstellungsprozess und legen Sie die Bereitstellung-Variablen von außerhalb von Visual Studio, wie Entwickler es unwahrscheinlich, dass die richtigen Konfigurationseinstellungen oder den notwendigen Anmeldeinformationen für jede zielumgebung verfügen.
-- Schema-basierte Datenbank-Projekte bereitzustellen und vorhandene Daten bei nachfolgenden Bereitstellungen beibehalten werden sollen.
-- In diesem Fall müssen Sie eine Mitgliedschaft-Datenbanken auf einer ad-hoc-Basis bereitstellen, ohne Benutzerkontodaten bereitzustellen. Sie müssen auch das Schema der bereitgestellten Membership-Datenbanken zu aktualisieren, ohne die bestehende Konto-Benutzerdaten zu verlieren.
-- Sie müssen bestimmte Dateien oder Ordner ausschließen, wenn Sie Inhalte in verschiedenen zielumgebungen bereitstellen.
+- Sie müssen Projekte in mehreren Umgebungen bereitstellen können, z. b. in Entwickler-oder Testumgebungen, Staging-und Produktionsservern. Die Lösung muss mit unterschiedlichen Konfigurationseinstellungen für jede Umgebung bereitgestellt werden.
+- Sie müssen mehrere abhängige Projekte gleichzeitig im Rahmen eines einstufigen oder automatisierten Build-und Bereitstellungs Prozesses bereitstellen.
+- Sie müssen in der Lage sein, die Bereitstellung aus einem automatisierten Prozess zu steuern. Sie möchten z. b. einen Continuous Integration (CI)-Prozess zum Bereitstellen von Webanwendungen in einer Testumgebung verwenden, wenn neuer Code eingeglichen wird.
+- Sie müssen in der Lage sein, den Bereitstellungs Prozess zu steuern und Bereitstellungs Variablen von außerhalb von Visual Studio festzulegen, da es unwahrscheinlich ist, dass Entwickler die richtigen Konfigurationseinstellungen oder die erforderlichen Anmelde Informationen für jede Zielumgebung haben.
+- Sie müssen Schema basierte Datenbankprojekte bereitstellen und vorhandene Daten in nachfolgenden bereit Stellungen beibehalten.
+- Sie müssen Mitgliedschafts Datenbanken auf Ad-hoc-Basis bereitstellen, ohne Benutzerkontodaten bereitzustellen. Sie müssen möglicherweise auch das Schema der bereitgestellten Mitgliedschafts Datenbanken aktualisieren, ohne vorhandene Benutzerkontodaten zu verlieren.
+- Sie müssen bestimmte Dateien oder Ordner ausschließen, wenn Sie Inhalte in verschiedenen Ziel Umgebungen bereitstellen.
 
-## <a name="overview-of-approach"></a>Übersicht über die Vorgehensweise
+## <a name="overview-of-approach"></a>Übersicht über den Ansatz
 
-Dieses Lernprogramm zusammen mit anderen Tutorials dieser Reihe, verwendet dieser allgemeinen Ansatz, um die oben beschriebenen Herausforderungen zu meistern.
+In diesem Tutorial wird zusammen mit den anderen Tutorials dieser Reihe dieser allgemeine Ansatz verwendet, um die oben beschriebenen Herausforderungen zu erfüllen.
 
-- **Verwenden Sie benutzerdefinierte Microsoft Build Engine (MSBuild)-Projektdateien, um der gesamte Build & Deployment-Prozess zu steuern.**
-- Dadurch können Sie das Erstellen und Bereitstellen von jedes Projekt in der Projektmappe als Teil von einem einzigen Vorgang skriptfähig.
-- Umgebungsspezifische Einstellungen werden mithilfe von einfachen umgebungsspezifische Projektdateien konfiguriert. Im Gegensatz zu den Visual Studio-orientierten Ansatz Projektmappenkonfigurationen und Veröffentlichen von Profilen zum Konfigurieren von Bereitstellungen für unterschiedliche Umgebungen, mit diesem Ansatz können Sie konfigurieren und verwalten den Bereitstellungsprozess außerhalb von Visual Studio. Dies bedeutet, dass Entwickler Kenntnisse in Verbindungszeichenfolgen, Dienstendpunkte, Anmeldeinformationen und andere Variablen Bereitstellung für zielumgebungen fahren Sie fort, müssen nicht.
-- Die benutzerdefinierte Projektdateien können durch Team Build als Teil eines Team Foundation Server (TFS)-Workflows aufgerufen werden. Dadurch können Sie die automatische Bereitstellung für CI-Szenarien zu konfigurieren.
+- **Verwenden Sie benutzerdefinierte Microsoft-Build-Engine (MSBuild)-Projektdateien, um den gesamten Build-und Bereitstellungs Prozess zu steuern.**
+- Auf diese Weise können Sie jedes Projekt in der Projekt Mappe als Teil eines einzelnen Skript fähigen Vorgangs erstellen und bereitstellen.
+- Umgebungs spezifische Einstellungen werden mithilfe einfacher Umgebungs spezifischer Projektdateien konfiguriert. Im Gegensatz zum Visual Studio – zentrierten Ansatz der Verwendung von Projektmappenkonfigurationen und Veröffentlichungs Profilen zum Konfigurieren von bereit Stellungen für verschiedene Umgebungen können Sie mit diesem Ansatz den Bereitstellungs Prozess von außerhalb von Visual Studio konfigurieren und verwalten. Dies bedeutet, dass Entwickler keine voraus Kenntnisse über Verbindungs Zeichenfolgen, Dienst Endpunkte, Server Anmelde Informationen und andere Bereitstellungs Variablen für Ziel Umgebungen benötigen.
+- Die benutzerdefinierten Projektdateien können von Team Build als Teil eines Team Foundation Server-Workflows (TFS) aufgerufen werden. Auf diese Weise können Sie die automatisierte Bereitstellung für CI-Szenarien konfigurieren.
 
-**Verwenden Sie die Internetinformationsdienste (Internet Information Services, IIS)-Webbereitstellungstool (Web Deploy) zum Verpacken und Bereitstellen von Web-Anwendungsprojekte.**
+**Verwenden Sie das Internetinformationsdienste (IIS)-Webbereitstellungs Tool (Web deploy), um Webanwendungs Projekte zu verpacken und bereitzustellen.**
 
-- Web Deploy bietet ein Framework, mit dem Sie das Packen und Bereitstellen von Inhalt Ihrer Web-Anwendung auf einem Ziel IIS-Webserver zusammen mit Abhängigkeiten, Einstellungen, Sicherheitseinstellungen und anderen Anforderungen an.
-- Sie können den gesamten Packen und-Bereitstellen Prozess in Ihre benutzerdefinierte MSBuild-Projektdateien steuern. Sie können auch die Konfigurationseinstellungen verändern, die Ihr Webbereitstellungspaket, z.B. Verbindungszeichenfolgen, Dienstendpunkte und Zieldetails für IIS zu begleiten.
-- Web Deploy, zusammen mit der Veröffentlichung Webpipeline, bietet viele Erweiterungspunkte, mit die Sie Ihre Bereitstellungen anpassen können. Beispielsweise ist es einfach, Ihre Web-Bereitstellungspakete unerwünschten Dateien und Ordner ausgeschlossen werden sollen.
+- Web deploy bietet ein Framework, mit dem Sie Ihren Webanwendungs Inhalt Verpacken und auf einem IIS-Ziel Webserver sowie Abhängigkeiten, Konfigurationseinstellungen, Sicherheitseinstellungen und andere Anforderungen bereitstellen können.
+- Sie können den gesamten Verpackungs-und Bereitstellungs Prozess innerhalb Ihrer benutzerdefinierten MSBuild-Projektdateien steuern. Sie können auch die Konfigurationseinstellungen ändern, die das Webbereitstellungs Paket begleiten, wie z. b. Verbindungs Zeichenfolgen, Dienst Endpunkte und Details zum IIS-Ziel.
+- Web deploy bietet neben der Webpublishing Pipeline viele Erweiterbarkeits Punkte, mit denen Sie Ihre bereit Stellungen anpassen können. Beispielsweise ist es ganz einfach, unerwünschte Dateien und Ordner aus ihren Webbereitstellungs Paketen auszuschließen.
 
-**Verwenden Sie das Dienstprogramm VSDBCMD.exe, bereitstellen und Aktualisieren des Datenbankschemas.**
+**Verwenden Sie das Hilfsprogramm "VSDBCMD. exe" zum Bereitstellen und Aktualisieren von Datenbankschemas.**
 
-- VSDBCMD ermöglicht Ihnen das Bereitstellen von Datenbanken aus einer Datenbank-Schema-Datei (.dbschema), die generiert wird, wenn Sie ein Visual Studio-Datenbankprojekt erstellen. Im Gegensatz dazu ist Web Deploy enthaltene Funktionen für die Bereitstellung der Datenbank besser geeignet, für die Bereitstellung von vorhandenen Datenbanken aus einer lokalen SQL Server-Instanz.
-- Im Gegensatz zu Visual Studio Funktionen für die Bereitstellung von Datenbankprojekten Sie können VSDBCMD differenzielle Updates für eine vorhandene Zieldatenbank bereitstellen. Dadurch können Sie alle vorhandenen Daten beibehalten, während Sie das Datenbankschema aktualisieren.
-- Sie können Befehle VSDBCMD in Ihre benutzerdefinierte MSBuild-Projektdateien ausführen.
+- VSDBCMD ermöglicht Ihnen die Bereitstellung von Datenbanken aus einer Datenbankschema Datei (. dbschema), die generiert wird, wenn Sie ein Visual Studio-Datenbankprojekt erstellen. Im Gegensatz dazu eignet sich die in Web deploy enthaltene Daten Bank Bereitstellungs Funktionalität besser zum Bereitstellen vorhandener Datenbanken aus einer lokalen SQL Server Instanz.
+- Anders als die Funktionen von Visual Studio zum Bereitstellen von Datenbankprojekten können Sie mit VSDBCmd differenzielle Updates für eine vorhandene Zieldatenbank bereitstellen. Dies ermöglicht es Ihnen, vorhandene Daten beizubehalten, während Sie das Datenbankschema aktualisieren.
+- Sie können VSDBCmd-Befehle in Ihren benutzerdefinierten MSBuild-Projektdateien ausführen.
 
-## <a name="content-map"></a>Inhaltszuordnung
+## <a name="content-map"></a>Inhalts Karte
 
-Dieses Lernprogramm enthält Themen, die in vier Hauptbereiche fallen.
+Dieses Tutorial enthält Themen, die in vier Hauptbereiche unterteilt sind.
 
-Diese Themen enthalten eine Einführung referenzlösung&#x2014;Contact Manager-Lösung&#x2014;und beschrieben, wie Sie es herunterladen und konfigurieren Sie ihn auf Ihrem lokalen Computer:
+In diesen Themen wird die Referenz&#x2014;Lösung der Contact Manager&#x2014;-Lösung vorgestellt, und es wird beschrieben, wie Sie heruntergeladen und auf Ihrem lokalen Computer konfiguriert werden:
 
 - [Contact Manager-Lösung](the-contact-manager-solution.md)
 - [Einrichten der Contact Manager-Lösung](setting-up-the-contact-manager-solution.md)
 
-Diese Themen führen MSBuild-Projektdateien, beschrieben, wie Sie erstellen und Verwenden benutzerdefinierter Projektdateien und Schritt für Schritt durch den Bereitstellungsprozess für die Projektmappe Contact Manager:
+In diesen Themen werden MSBuild-Projektdateien vorgestellt, es wird beschrieben, wie Sie benutzerdefinierte Projektdateien erstellen und verwenden und wie Sie den Bereitstellungs Prozess für die Contact Manager-Lösung durchlaufen:
 
 - [Grundlegendes zur Projektdatei](understanding-the-project-file.md)
 - [Grundlegendes zum Buildprozess](understanding-the-build-process.md)
 
-Die folgenden Themen beschreiben die Bereitstellung von Webanwendungen, einschließlich zur des erstellungs- und Packvorgangs-Prozess, wie der Buildprozess mit der Web-Publishing-Pipeline integriert, Bereitstellungsparameter ändern und Bereitstellen von Webpaketen für Ziel Umgebungen:
+Diese Themen beschreiben die Bereitstellung von Webanwendungen, einschließlich der Funktionsweise des Build-und Verpackungsprozesses, der Integration des Buildprozesses in die Webpublishing Pipeline, das Ändern von Bereitstellungs Parametern und das Bereitstellen von Webpaketen für das Ziel. Umgebungen
 
 - [Erstellen von Webanwendungsprojekten und Paketerstellung](building-and-packaging-web-application-projects.md)
 - [Konfigurieren von Parametern für die Bereitstellung von Webpaketen](configuring-parameters-for-web-package-deployment.md)
 - [Bereitstellen von Webpaketen](deploying-web-packages.md)
 
-- [Bereitstellen von Datenbankprojekten](deploying-database-projects.md) beschreibt die verschiedenen Techniken zum Bereitstellen von Visual Studio-Datenbankprojekte, sowie die vor- und Nachteile jeder Vorgehensweise können. [Erstellen und Ausführen einer Befehlsdatei Bereitstellung](creating-and-running-a-deployment-command-file.md) wird beschrieben, wie eine einfache Befehlsdatei zu erstellen, die Ihrer Bereitstellungslogik kapselt und ermöglicht Ihnen das Bereitstellen von komplexer Lösungen als Prozess Schritt für Schritt.
-- Zum Schluss [Manuelles Installieren von Webpaketen](manually-installing-web-packages.md) ist das Lernprogramm abgeschlossen wird, durch die Anzeige von Webpaketen in IIS importieren.
+- Beim Bereitstellen von [Datenbankprojekten](deploying-database-projects.md) werden die verschiedenen Techniken beschrieben, mit denen Sie Visual Studio-Datenbankprojekte bereitstellen können, sowie die vor-und Nachteile der einzelnen Ansätze. Beim [Erstellen und Ausführen einer Befehlsdatei für die Bereitstellung](creating-and-running-a-deployment-command-file.md) wird beschrieben, wie Sie eine einfache Befehlsdatei erstellen, die Ihre Bereitstellungs Logik kapselt, und Sie können komplexe Lösungen als einen Schritt bereitstellen.
+- Schließlich wird das Tutorial durch [Manuelles Installieren von Webpaketen](manually-installing-web-packages.md) beendet, indem Sie das Importieren von Webpaketen in IIS veranschaulichen.
 
-## <a name="key-technologies"></a>Schlüsseltechnologien
+## <a name="key-technologies"></a>Wichtige Technologien
 
-In die Themen in diesem Tutorial verwenden Sie diese Technologien in erster Linie zum Verwalten von Build und Bereitstellung:
+Die Themen in diesem Tutorial verwenden diese Technologien hauptsächlich zur Verwaltung von Build und Bereitstellung:
 
 - Visual Studio 2010
 - MSBuild
 - IIS 7.5
 - Web Deploy 2.0
-- Das bereitstellungshilfsprogramm für VSDBCMD.exe-Datenbank
+- Das Hilfsprogramm zur Daten Bank Bereitstellung von VSDBCMD. exe
 
-## <a name="other-tutorials-in-this-series"></a>Andere Tutorials in dieser Reihe
+## <a name="other-tutorials-in-this-series"></a>Weitere Tutorials in dieser Reihe
 
-Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webbereitstellung. Dies sind die anderen Tutorials der Reihe:
+Dies ist Teil einer Reihe von fünf Tutorials für die Webbereitstellung im Unternehmen. Dies sind die anderen Tutorials in der Reihe:
 
-- [Bereitstellen von Webanwendungen in Unternehmensszenarien](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md). Dieser einführenden Inhalt enthält die kontextbezogenen Hintergrundinformationen zum der Tutorial-Reihe. Das tutorialszenario beschrieben und veranschaulicht, wie die Aufgaben und exemplarische Vorgehensweisen beschrieben, die in der gesamten Reihe in einem größeren Application Lifecycle Management (ALM)-Prozess passen.
-- [Konfigurieren von Serverumgebungen für die Webbereitstellung](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie Windows Server zur Unterstützung verschiedener Bereitstellungsszenarien, einschließlich der remote-Web-Paket-Bereitstellung mithilfe der Webbereitstellungs-Agent-Dienst (der remote-Agent) oder Bereitstellen von Web-Handler und remote-Datenbank-Bereitstellung konfiguriert. Sie erhalten Anweisungen zum Auswählen der geeigneten Bereitstellungsmethode für Ihre eigene Umgebung, und es wird beschrieben, wie das Web Farm Framework (WFF) verwenden, um bereitgestellten Webanwendungen für alle Webserver in einer Serverfarm zu replizieren.
-- [Konfigurieren von Team Foundation Server für die Webbereitstellung](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie zum Konfigurieren von TFS zur Unterstützung verschiedener Bereitstellungsszenarien, einschließlich der automatisierten Bereitstellung im Rahmen eines CI-Prozesses und bestimmte Builds Bereitstellungen manuell ausgelöst wird.
-- [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie verschiedene erweiterte Bereitstellung, z. B. Anpassen von datenbankbereitstellungen für mehrere Umgebungen und Ausschließen von Dateien und Ordner von der Bereitstellung von Webanwendungen während der Bereitstellung und Aufgaben .
+- Bereitstellen von [Webanwendungen in Unternehmens Szenarios](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) Dieser einführende Inhalt enthält den kontextbezogenen Hintergrund der tutorialreihe. Es beschreibt das Tutorial-Szenario und veranschaulicht, wie die in der Reihe beschriebenen Aufgaben und exemplarischen Vorgehensweisen in einen umfassenderen Application Lifecycle Management (ALM)-Prozess passen.
+- [Konfigurieren von Server Umgebungen für die Webbereitstellung](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie Sie Windows Server zur Unterstützung verschiedener Bereitstellungs Szenarien konfigurieren, einschließlich der Remoteweb Paket Bereitstellung mithilfe des Web Deployment Agent-Diensts (Remote-Agent) oder des Web deploy Handlers und der Remote Datenbank Es enthält Anleitungen zum Auswählen der geeigneten Bereitstellungs Methode für Ihre eigene Umgebung. Außerdem wird beschrieben, wie Sie das Web Farm Framework (WFF) verwenden, um bereitgestellte Webanwendungen auf allen Webservern in einer Server Farm zu replizieren.
+- [Konfigurieren von Team Foundation Server für die Webbereitstellung](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie Sie TFS zur Unterstützung verschiedener Bereitstellungs Szenarien konfigurieren, einschließlich automatisierter Bereitstellung als Teil eines CI-Prozesses und Manuelles Auslösen von bereit Stellungen spezifischer Builds.
+- [Erweiterte Unternehmensweb Bereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie Sie verschiedene erweiterte Bereitstellungs Aufgaben durchführen können, wie z. b. das Anpassen von Daten Bank Bereitstellungen für mehrere Umgebungen, das Ausschließen von Dateien und Ordnern aus der Bereitstellung und das offline schalten von Webanwendungen .
 
 > [!div class="step-by-step"]
-> [Nächste](the-contact-manager-solution.md)
+> [Weiter](the-contact-manager-solution.md)

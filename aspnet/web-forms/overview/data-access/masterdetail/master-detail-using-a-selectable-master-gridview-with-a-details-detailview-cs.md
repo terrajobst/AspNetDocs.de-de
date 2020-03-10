@@ -9,11 +9,11 @@ ms.assetid: 0f982827-f8f9-420d-b36b-57b23f5aa519
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 04c427341f063729bd23b416a96f5acb20702792
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74632283"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78503625"
 ---
 # <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>Master-/Detailbericht unter Verwendung eines auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (C#)
 
@@ -123,7 +123,7 @@ Nachdem der `productDetailsDataSource` ObjectDataSource ordnungsgemäß konfigur
 
 **Abbildung 12**: Wenn Sie eine Zeile auswählen, werden die Details des Produkts angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image36.png)).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem und den vorherigen drei Tutorials haben wir eine Reihe von Techniken zum Anzeigen von Master-/Detailberichten kennengelernt. In diesem Tutorial haben wir die Verwendung eines auswählbaren GridView-Tools für die Master Datensätze und eine DetailsView untersucht, um Details zum ausgewählten Master Daten Satz auf derselben Seite anzuzeigen. In den vorherigen Tutorials haben wir uns mit dem Anzeigen von Master-/Detailberichten mithilfe von Dropdown Listen und dem Anzeigen von Master Datensätzen auf einer Webseite und detaillierten Datensätzen auf einer anderen Seite beschäftigt.
 
@@ -131,7 +131,7 @@ In diesem Tutorial wird die Untersuchung von Master-/Detailberichten abgeschloss
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

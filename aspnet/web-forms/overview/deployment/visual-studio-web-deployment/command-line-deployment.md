@@ -9,11 +9,11 @@ ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 13cfe4492398b59f2c80394689cc113ccb218c60
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634206"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512073"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Befehlszeilen Bereitstellung
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie Sie die Visual Studio-Webveröffentlichungs Pipeline von der Befehlszeile aus aufrufen. Dies ist nützlich für Szenarien, in denen Sie [den Bereitstellungs Prozess automatisieren](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) möchten, anstatt ihn manuell in Visual Studio zu verwenden, in der Regel mit einem [Quell Code Versionskontrollsystem](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md).
 
@@ -41,7 +41,7 @@ Ersetzen Sie dies durch Code, der eine Zusammenfassung der Schüler-/Studentenre
 
 Führen Sie das Projekt aus, und wählen Sie **die Seite Info** aus.
 
-![Seite „Info“](command-line-deployment/_static/image2.png)
+![Infoseite](command-line-deployment/_static/image2.png)
 
 ## <a name="deploy-to-test-by-using-the-command-line"></a>Bereitstellen für Tests über die Befehlszeile
 
@@ -102,7 +102,7 @@ Drei Veröffentlichungs Methoden werden für die Veröffentlichung von Befehlsze
 
 Die Buildkonfiguration und-Plattform müssen in Visual Studio oder in der Befehlszeile festgelegt werden. Die Veröffentlichungs Profile enthalten Eigenschaften mit dem Namen `LastUsedBuildConfiguration` und `LastUsedPlatform`. Sie können diese Eigenschaften jedoch nicht festlegen, um zu bestimmen, wie das Projekt erstellt wird. Weitere Informationen finden Sie unter [MSBuild: So legen Sie die Konfigurations Eigenschaft für den](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) Blog von Sayed Hashimi fest.
 
-## <a name="deploy-to-staging"></a>Bereitstellung für Staging
+## <a name="deploy-to-staging"></a>Bereitstellen in der Stagingumgebung
 
 Zum Bereitstellen in Azure müssen Sie das Kennwort der Befehlszeile hinzufügen. Wenn Sie das Kennwort im Veröffentlichungs Profil in Visual Studio gespeichert haben, wurde es in verschlüsselter Form in der *pubxml. User* -Datei gespeichert. Der Zugriff auf diese Datei erfolgt nicht durch MSBuild, wenn Sie eine Befehlszeilen Bereitstellung ausführen, sodass Sie das Kennwort in einem Befehlszeilenparameter übergeben müssen.
 
@@ -119,7 +119,7 @@ Zum Bereitstellen in Azure müssen Sie das Kennwort der Befehlszeile hinzufügen
 
     Wie Sie bereits gesehen haben, müssen Sie möglicherweise einige Studenten erstellen **, um Statistiken auf der Seite** "Info" anzuzeigen.
 
-## <a name="deploy-to-production"></a>In Produktionsumgebungen bereitstellen
+## <a name="deploy-to-production"></a>Bereitstellen für die Produktion
 
 Der Prozess für die Bereitstellung in der Produktion ähnelt dem Stagingprozess.
 
@@ -132,7 +132,7 @@ Der Prozess für die Bereitstellung in der Produktion ähnelt dem Stagingprozess
     Bei einer realen Produktions Site kopieren Sie in der Regel vor der Bereitstellung die APP\_Datei " *Offline. htm* " auf die Website, und löschen Sie Sie nach erfolgreicher Bereitstellung.
 4. Öffnen Sie einen Browser, navigieren Sie zur URL Ihrer Stagingwebsite, und klicken Sie dann auf die Seite Info, um **zu überprüfen** , ob die Bereitstellung erfolgreich war.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben nun ein Anwendungs Update über die Befehlszeile bereitgestellt.
 

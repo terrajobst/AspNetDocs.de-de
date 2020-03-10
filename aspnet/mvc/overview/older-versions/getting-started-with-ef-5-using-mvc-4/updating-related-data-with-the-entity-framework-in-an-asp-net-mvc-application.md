@@ -9,11 +9,11 @@ ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: d29cb172d642b67947b461d1a7e55d01872bb8c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74592437"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468285"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Aktualisieren verwandter Daten mit dem Entity Framework in einer ASP.NET MVC-Anwendung (6 von 10)
 
@@ -103,7 +103,7 @@ Ersetzen Sie die `HttpPost` `Edit`-Methode durch den folgenden Code. die Office-
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs)]
 
-Der Code führt Folgendes aus:
+Im Code werden folgende Schritte ausgeführt:
 
 - Ruft die aktuelle Entität `Instructor` von der Datenbank über Eager Loading für die Navigationseigenschaft `OfficeAssignment` ab. Dies entspricht dem, was Sie in der `HttpGet` `Edit`-Methode getan haben.
 - Aktualisiert die abgerufene Entität `Instructor` mit Werten aus der Modellbindung. Mit der verwendeten [tryupdatemodel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) -Überladung können Sie die Eigenschaften in die *Whitelist* aufnehmen, die Sie einschließen möchten. Dies verhindert eine Übertragung, wie im [zweiten Tutorial](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)erläutert wird.
@@ -202,7 +202,7 @@ Klicken Sie in einem Dozenten auf **Bearbeiten** , um die Seite bearbeiten anzuz
 
 Wenn Sie versuchen, einen Dozenten zu löschen, der einer Abteilung als Administrator zugewiesen ist, erhalten Sie einen Fehler bei der referenziellen Integrität. In [der aktuellen Version dieses Tutorials](../../getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) finden Sie zusätzlichen Code, mit dem der Dozenten automatisch aus einer Abteilung entfernt wird, in der der Dozenten als Administrator zugewiesen ist.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Nun haben Sie diese Einführung in die Arbeit mit verwandten Daten abgeschlossen. Bisher haben Sie in diesen Tutorials eine vollständige Palette von CRUD-Vorgängen durchgeführt, aber Sie haben keine Parallelitäts Probleme behandelt. Im nächsten Tutorial wird das Thema neben läufigkeits Optionen erläutert, die Optionen für die Verarbeitung erläutert und die Parallelitäts Behandlung für den CRUD-Code hinzugefügt, den Sie bereits für einen Entitätstyp geschrieben haben.
 

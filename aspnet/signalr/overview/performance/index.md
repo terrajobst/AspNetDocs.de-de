@@ -1,23 +1,23 @@
 ---
 uid: signalr/overview/performance/index
-title: SignalR-Leistung | Microsoft-Dokumentation
+title: Signalr-Leistung | Microsoft-Dokumentation
 author: bradygaster
-description: Informationen zum Maximieren der Leistung von SignalR-Anwendungen.
+description: So maximieren Sie die Leistung von signalr-Anwendungen
 ms.author: bradyg
 ms.date: 09/19/2014
 ms.assetid: fda81611-b67b-4c62-915e-8adc1924a401
 msc.legacyurl: /signalr/overview/performance
 msc.type: chapter
 ms.openlocfilehash: 91ca2688f3d5fd21e6f5eb818fe94e3b2985ff1a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113726"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78467829"
 ---
 # <a name="signalr-performance"></a>SignalR-Leistung
 
-> Informationen zum Maximieren der Leistung von SignalR-Anwendungen.
+> So maximieren Sie die Leistung von signalr-Anwendungen
 
 - [SignalR-Leistung](signalr-performance.md)
 - [Einführung zur horizontalen Skalierung in SignalR](scaleout-in-signalr.md)

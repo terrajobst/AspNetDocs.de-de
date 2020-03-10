@@ -9,11 +9,11 @@ ms.assetid: 4830d984-bd2c-4a08-bfe5-2385599f1f7d
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 85ec7bdde6b2bffbbda066b0441bbd36b7072197
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585206"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78479253"
 ---
 # <a name="customizing-the-data-modification-interface-vb"></a>Anpassen der Oberfläche zum Ändern von Daten (VB)
 
@@ -220,7 +220,7 @@ Mit diesen Änderungen wurde die `Discontinued` Spalte aus einer Liste von Kontr
 > [!NOTE]
 > Da die `Discontinued` Spalte in der `Products`-Datenbank keine `NULL` Werte aufweisen kann, müssen Sie sich keine Gedanken über die Erfassung `NULL` Informationen in der Schnittstelle machen. Wenn `Discontinued` Spalte jedoch `NULL` Werte enthalten kann, sollten Sie der Liste ein drittes Optionsfeld hinzufügen, dessen `Value` auf eine leere Zeichenfolge (`Value=""`) festgelegt ist, genau wie bei der Kategorie und den Lieferanten Dropdown Listen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Obwohl BoundField und CheckBoxField automatisch schreibgeschützte, Bearbeitungs-und einfügeschnittstellen erzeugen, ist Ihnen die Anpassung nicht möglich. Häufig müssen wir jedoch die Bearbeitungs-oder einfügeschnittstelle anpassen und ggf. Validierungs Steuerelemente hinzufügen (wie im vorherigen Tutorial erläutert) oder indem wir die Benutzeroberfläche für die Datenerfassung angepasst haben (wie in diesem Tutorial erläutert). Das Anpassen der-Schnittstelle mit einem TemplateField-Element kann in den folgenden Schritten summiert werden:
 
@@ -232,7 +232,7 @@ Zusätzlich zur Verwendung der integrierten ASP.net-websteuer Elemente können S
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

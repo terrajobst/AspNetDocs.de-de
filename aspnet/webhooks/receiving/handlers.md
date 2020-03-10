@@ -1,39 +1,39 @@
 ---
 uid: webhooks/receiving/handlers
-title: ASP.NET WebHooks Handler | Microsoft-Dokumentation
+title: ASP.net-webhooks-Handler | Microsoft-Dokumentation
 author: rick-anderson
-description: Informationen zur Verarbeitung von Anforderungen in ASP.NET WebHooks.
+description: 'Gewusst wie: Verarbeiten von Anforderungen in ASP.net-webhooks'
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
 ms.openlocfilehash: 01c9a283d105c4a0973ff88c8de646c5f49a34db
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030097"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518031"
 ---
-# <a name="aspnet-webhooks-handlers"></a>ASP.NET WebHooks-Handler
+# <a name="aspnet-webhooks-handlers"></a>ASP.net-webhooks-Handler
 
-Nach der WebHooks Anforderungen durch einen webhookempfänger bestätigt wurde, ist es für die Verarbeitung von Benutzercode bereit. Hier kommt *Handler* eingehen. Handler zu leiten, von der [IWebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) -Schnittstelle, aber in der Regel verwendet der [WebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) Klasse nicht direkt über die Benutzeroberfläche.
+Nachdem webhooks-Anforderungen von einem webhook-Empfänger überprüft wurden, können Sie von Benutzercode verarbeitet werden. An dieser Stelle kommen *Handler* ins Spiel. Handler werden von der [iwebhost](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) -Handlerschnittstelle abgeleitet, verwenden jedoch in der Regel die [Webhost-Handler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) -Klasse, anstatt direkt von der Schnittstelle abgeleitet zu werden.
 
-Eine webhookanforderung kann von ein oder mehrere Handler verarbeitet werden. Ereignishandler werden aufgerufen, in der Reihenfolge, basierend auf den jeweiligen *Reihenfolge* Eigenschaft vor sich geht von der niedrigsten zur höchsten, in denen Reihenfolge einer einfachen ganzen Zahl (zwischen 1 und 100 liegen empfohlen):
+Eine webhookanforderung kann von einem oder mehreren Handlern verarbeitet werden. Handler werden in der Reihenfolge aufgerufen, basierend auf ihrer jeweiligen *Order* -Eigenschaft, die von der niedrigsten zum höchsten ist, wobei Order eine einfache Ganzzahl ist (empfohlen von 1 bis 100):
 
-![Diagramm für Webhookhandler Order-Eigenschaft](_static/Handlers.png)
+![Eigenschaften Diagramm für die Reihenfolge der webhooks](_static/Handlers.png)
 
-Optional können Sie ein Handler Festlegen der *Antwort* Eigenschaft für die WebHookHandlerContext die führt die Verarbeitung zu beenden und die Antwort wieder als HTTP-Antwort an den WebHook gesendet werden. Im obigen Fall Handler C wird nicht aufgerufen, da höheren Ordnung sein als die Antwort legt, B und B fest hat.
+Ein Handler kann optional die *Response* -Eigenschaft für den Webhost-handlercontext festlegen, wodurch die Verarbeitung beendet wird und die Antwort als HTTP-Antwort an den webhook zurückgesendet wird. Im obigen Fall wird Handler C nicht aufgerufen, da er eine höhere Reihenfolge als B aufweist und b die Antwort festlegt.
 
-Festlegen der Antwort ist in der Regel nur relevant für WebHooks, in dem die Antwort Informationen zurück an die Ursprungs-API ausführen können. Dies ist beispielsweise der Fall bei Slack-WebHooks, in dem die Antwort zurück an den Kanal gesendet wird, in dem der WebHook stammt. Handler können die Empfänger-Eigenschaft festlegen, wenn sie nur die WebHooks von diesem speziellen Empfänger empfangen möchten. Wenn sie nicht, dass den Empfänger festlegen, die sie für alle von ihnen aufgerufen werden.
+Das Festlegen der Antwort ist in der Regel nur für webhooks relevant, bei denen die Antwortinformationen an die ursprüngliche API zurückgeben kann. Dies ist z. b. der Fall mit Slack-webhooks, bei denen die Antwort zurück an den Kanal gesendet wird, von dem aus der webhook stammt. Handler können die Eigenschaft Receiver festlegen, wenn Sie nur webhooks von diesem bestimmten Empfänger empfangen möchten. Wenn Sie den Empfänger nicht festlegen, werden Sie für alle aufgerufen.
 
-Eine andere allgemeine Verwendung einer Antwort ist die Verwendung einer *410 – Fehlend* Antwort, um anzugeben, dass der WebHook nicht mehr aktiv ist und keine weiteren Anforderungen gesendet werden soll.
+Eine andere häufige Verwendung einer Antwort besteht darin, dass eine Antwort mit dem Wert " *410* " verwendet wird, um anzugeben, dass der webhook nicht mehr aktiv ist und keine weiteren Anforderungen gesendet werden sollen.
 
-Standardmäßig wird ein Handler von allen Empfängern der WebHook aufgerufen werden. Aber wenn die *Empfänger* -Eigenschaftensatz auf den Namen eines Handlers, und klicken Sie dann diesen Handler webhookanforderungen nur von diesem Empfänger erhalten.
+Standardmäßig wird ein Handler von allen webhook-Empfängern aufgerufen. Wenn die Eigenschaft *Receiver* jedoch auf den Namen eines Handlers festgelegt ist, empfängt dieser Handler nur webhook-Anforderungen von diesem Empfänger.
 
-## <a name="processing-a-webhook"></a>Verarbeiten eines Webhooks
+## <a name="processing-a-webhook"></a>Verarbeiten eines webhooks
 
-Wenn ein Handler aufgerufen wird, wird eine [WebHookHandlerContext](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandlerContext.cs) mit Informationen über die WebHook-Anforderung. Die Daten in der Regel HTTP-Anforderungstext, steht die *Daten* Eigenschaft.
+Wenn ein Handler aufgerufen wird, ruft er einen [Webhost-handlercontext](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandlerContext.cs) ab, der Informationen über die webhookanforderung enthält. Die Daten, in der Regel der HTTP-Anforderungs Text, sind über die *Data* -Eigenschaft verfügbar.
 
-Der Typ der Daten ist in der Regel JSON oder HTML-Formulardaten, aber es ist möglich, in einen spezifischeren Typ umgewandelt werden soll, falls gewünscht. Beispielsweise benutzerdefinierte WebHooks von ASP.NET WebHooks generiert in den Typ umgewandelt werden kann [CustomNotifications](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers.Custom/WebHooks/CustomNotifications.cs) wie folgt:
+Der Typ der Daten ist in der Regel JSON-oder HTML-Formulardaten, aber es ist möglich, bei Bedarf in einen spezifischeren Typ umzuwandeln. Beispielsweise können die von ASP.net webhooks generierten benutzerdefinierten webhooks wie folgt in den Typ " [CustomNotification](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers.Custom/WebHooks/CustomNotifications.cs) " umgewandelt werden:
 
 ```csharp
 public class MyWebHookHandler : WebHookHandler
@@ -55,13 +55,13 @@ public class MyWebHookHandler : WebHookHandler
 }
 ```
 
-  ## <a name="queued-processing"></a>In der Warteschlange verarbeiten.
+  ## <a name="queued-processing"></a>Verarbeitung in der Warteschlange
 
-Die meisten Absender der WebHook werden einen WebHook erneut senden, wenn eine Antwort innerhalb von ein paar Sekunden nicht generiert werden. Dies bedeutet, dass der Handler die Verarbeitung innerhalb dieses Zeitrahmens, in der Reihenfolge, damit er erneut aufgerufen werden, nicht abgeschlossen werden muss.
+Die meisten webhook-Absender senden einen webhook erneut, wenn eine Antwort nicht innerhalb weniger Sekunden generiert wird. Dies bedeutet, dass der Handler die Verarbeitung innerhalb dieses Zeitrahmens beenden muss, damit er nicht erneut aufgerufen werden kann.
 
-Wenn die Verarbeitung länger dauert, oder besser getrennt verarbeitet die [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) kann verwendet werden, um die WebHook-Anforderung an eine Warteschlange, z. B. senden [Azure Storage-Warteschlange](https://msdn.microsoft.com/library/azure/dd179353.aspx).
+Wenn die Verarbeitung länger dauert oder separat verarbeitet wird, kann der [webhook-queuehandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) verwendet werden, um die webhookanforderung an eine Warteschlange zu senden, z. b. [Azure Storage Warteschlange](https://msdn.microsoft.com/library/azure/dd179353.aspx).
 
-Einen Überblick über eine [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) Implementierung finden Sie hier:
+Eine Gliederung einer [Webhost-queuehandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) -Implementierung finden Sie hier:
 
 ```csharp
 public class QueueHandler : WebHookQueueHandler

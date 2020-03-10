@@ -9,11 +9,11 @@ ms.assetid: 2646968c-2826-4418-b1d0-62610ed177e3
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 28c39fe2a290cc3a5b093fdd09de341630606137
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74628741"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78492363"
 ---
 # <a name="implementing-optimistic-concurrency-vb"></a>Implementieren von optimistischer Parallelität (VB)
 
@@ -354,7 +354,7 @@ Bei einer Parallelitäts Verletzung wird die Löschanforderung des Benutzers abg
 
 **Abbildung 20**: der Löschvorgang eines Benutzers wird bei einer Parallelitäts Verletzung abgebrochen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](implementing-optimistic-concurrency-vb/_static/image58.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Möglichkeiten für Parallelitäts Verletzungen sind in jeder Anwendung vorhanden, die mehreren, gleichzeitigen Benutzern das Aktualisieren oder Löschen von Daten ermöglicht. Wenn solche Verstöße nicht berücksichtigt werden, wenn zwei Benutzer gleichzeitig dieselben Daten aktualisieren, die sich im letzten Schreibvorgang befinden, ändert sich das Überschreiben der Änderungen des anderen Benutzers. Alternativ können Entwickler entweder die vollständige oder die pessimistische Parallelitäts Steuerung implementieren. Die Steuerung der vollständigen Parallelität geht davon aus, dass neben läufigkeits Verletzungen selten auftreten und ein Update-oder DELETE-Befehl, der eine Parallelitäts Verletzung darstellen würde, nicht zulässt. Die pessimistische Parallelitäts Steuerung geht davon aus, dass Parallelitäts Verletzungen häufig auftreten und dass der Update-oder DELETE-Befehl eines Benutzers nicht akzeptiert wird. Bei der Steuerung der pessimistischen Parallelität umfasst das Aktualisieren eines Datensatzes das Sperren. Dadurch wird verhindert, dass andere Benutzer den Datensatz ändern oder löschen, während er gesperrt ist.
 
@@ -364,7 +364,7 @@ Wie in diesem Tutorial gezeigt, umfasst das Implementieren der Steuerung der vol
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

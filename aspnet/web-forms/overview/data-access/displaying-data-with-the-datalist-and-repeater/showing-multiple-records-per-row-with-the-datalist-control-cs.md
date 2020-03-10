@@ -9,11 +9,11 @@ ms.assetid: cf5acaf5-d4f6-4957-badc-b89956b285f3
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 3280a7b5f28207d3e640a6480f47869ce19692bc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74638545"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481107"
 ---
 # <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (C#)
 
@@ -89,11 +89,11 @@ Die `RepeatDirection`-Eigenschaft wirkt sich darauf aus, wie die Elemente im Dat
 
 Die Anzahl der Zeilen, die in der resultierenden Tabelle angezeigt werden, hängt von der Anzahl der Datensätze ab, die an den DataList gebunden sind. Genau, ist die Obergrenze der Gesamtzahl der Datenquellen Elemente dividiert durch den `RepeatColumns`-Eigenschafts Wert. Da die `Products` Tabelle derzeit 84 Produkte enthält, die durch 3 teilbar sind, gibt es 28 Zeilen. Wenn die Anzahl der Elemente in der Datenquelle und der `RepeatColumns`-Eigenschafts Wert nicht teilbar sind, enthält die letzte Zeile oder Spalte leere Zellen. Wenn die `RepeatDirection` auf `Vertical`festgelegt ist, enthält die letzte Spalte leere Zellen. Wenn `RepeatDirection` `Horizontal`ist, enthält die letzte Zeile die leeren Zellen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Der DataList listet standardmäßig seine Elemente in einer einspaltigen Tabelle mit mehreren Zeilen auf, die das Layout eines GridView-Objekts mit einem einzelnen TemplateField imitiert. Obwohl dieses Standardlayout akzeptabel ist, können wir die Bildschirmfläche maximieren, indem wir mehrere Datenquellen Elemente pro Zeile anzeigen. Dies ist einfach das Festlegen der DataList s `RepeatColumns`-Eigenschaft auf die Anzahl der Spalten, die pro Zeile angezeigt werden. Darüber hinaus kann die DataList s-`RepeatDirection` Eigenschaft verwendet werden, um anzugeben, ob der Inhalt der mehrzeiligen Tabelle mit mehreren Zeilen horizontal von links nach rechts, von oben nach unten oder vertikal von oben nach unten, von links nach rechts angeordnet werden soll.
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

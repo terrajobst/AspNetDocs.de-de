@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 4b2c88280df39aa81d60f9508910e8fe5d6db6b8
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519114"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499983"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Konto Bestätigung und Kenn Wort Wiederherstellung mitC#ASP.net Identity ()
 
@@ -224,7 +224,7 @@ Der folgende Code zeigt die e-Mail-Bestätigungs Methode:
  ASP.net Identity unterstützt die zweistufige Authentifizierung (2FA), um Ihre APP sicherer zu machen. Weitere Informationen finden [Sie unter ASP.net Identity 2,0: Einrichten der Konto Validierung und der zweistufigen Autorisierung](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) durch John Atten. Obwohl Sie die Kontosperrung bei Fehlern beim Versuch eines Anmelde Kennworts festlegen können, ist der Anmelde Name für die [DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack) -Sperrung anfällig. Es wird empfohlen, die Kontosperrung nur mit 2FA zu verwenden.  
 <a id="addRes"></a>
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - Die [MVC 5-App mit Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) zeigt außerdem, wie Sie der Tabelle "Users" Profilinformationen hinzufügen.

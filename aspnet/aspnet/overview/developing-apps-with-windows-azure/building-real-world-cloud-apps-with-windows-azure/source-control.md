@@ -9,11 +9,11 @@ ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
 ms.openlocfilehash: 5a1e0d7cd3c396d4be79c8958422602055eb3db1
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457101"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500529"
 ---
 # <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Quell Code Verwaltung (entwickeln realer Cloud-apps mit Azure)
 
@@ -95,7 +95,7 @@ Und fügen die Skriptdateien dem Projektmappenordner hinzu.
 
 ![Menü Auswahl für vorhandenes Element hinzufügen](source-control/_static/image6.png)
 
-![Vorhandenes Element hinzufügen (Dialogfeld)](source-control/_static/image7.png)
+![Dialogfeld "Vorhandenes Element hinzufügen"](source-control/_static/image7.png)
 
 Die Skriptdateien sind nun in Ihrem Projekt enthalten, und die Quell Code Verwaltung verfolgt ihre Versionsänderungen zusammen mit den entsprechenden Quell Codeänderungen nach.
 
