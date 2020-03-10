@@ -2,22 +2,22 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/index
 title: Animation | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Tutorial veranschaulicht, wie Animationen mithilfe der Steuerung der Animation und Animationsframework erstellen.
+description: In diesem Tutorial wird gezeigt, wie Animationen mit dem Animations Steuerelement und dem Animations Framework erstellt werden.
 ms.author: riande
 ms.date: 11/11/2011
 ms.assetid: 90b3a37e-2694-41c4-8b10-d6893b53a9d4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation
 msc.type: chapter
 ms.openlocfilehash: 1c0d8eac0314d989afecc5dcbd149f265a022bb6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127360"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497775"
 ---
 # <a name="animation"></a>Animation
 
-> In diesem Tutorial veranschaulicht, wie Animationen mithilfe der Steuerung der Animation und Animationsframework erstellen.
+> In diesem Tutorial wird gezeigt, wie Animationen mit dem Animations Steuerelement und dem Animations Framework erstellt werden.
 
 - [Hinzufügen von Animationen zu einem Steuerelement (C#)](adding-animation-to-a-control-cs.md)
 - [Gleichzeitiges Ausführen mehrerer Animationen (C#)](executing-several-animations-at-the-same-time-cs.md)

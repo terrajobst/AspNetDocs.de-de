@@ -9,11 +9,11 @@ ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f0bb83b17585876dd6d28a5893a223cce15da31d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74591238"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78501309"
 ---
 # <a name="batch-updating-vb"></a>Aktualisieren in Batches (VB)
 
@@ -60,7 +60,7 @@ Bevor wir uns Gedanken über das Erstellen einer GridView machen, in der die Zei
 
 **Abbildung 3**: Abrufen der Produktdaten mit der `GetProducts`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](batch-updating-vb/_static/image6.png))
 
-Wie bei GridView sind die Modifizierungs Features von ObjectDataSource für zeilenweise so konzipiert, dass Sie auf Zeilen Basis funktionieren. Um einen Satz von Datensätzen zu aktualisieren, müssen wir ein Bit Code in der Code Behind-Klasse der ASP.net page s schreiben, die die Daten stapelt und an die BLL übergibt. Legen Sie daher die Dropdown Listen in den Registerkarten Update, INSERT und DELETE von ObjectDataSource auf (keine) fest. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Wie bei GridView sind die Modifizierungs Features von ObjectDataSource für zeilenweise so konzipiert, dass Sie auf Zeilen Basis funktionieren. Um einen Satz von Datensätzen zu aktualisieren, müssen wir ein Bit Code in der Code Behind-Klasse der ASP.net page s schreiben, die die Daten stapelt und an die BLL übergibt. Legen Sie daher die Dropdown Listen in den Registerkarten Update, INSERT und DELETE von ObjectDataSource auf (keine) fest. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![die Dropdown Listen auf den Registerkarten aktualisieren, einfügen und löschen auf (keine) festgelegt.](batch-updating-vb/_static/image4.gif)](batch-updating-vb/_static/image7.png)
 
@@ -124,7 +124,7 @@ Ziehen Sie eine Dropdown List aus der Toolbox auf die `CategoryName` TemplateFie
 
 **Abbildung 9**: Abrufen der Kategorieinformationen mithilfe der `GetCategories`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](batch-updating-vb/_static/image16.png))
 
-Da diese ObjectDataSource lediglich zum Abrufen von Daten verwendet wird, legen Sie die Dropdown Listen auf den Registerkarten aktualisieren und löschen auf (keine) fest. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Da diese ObjectDataSource lediglich zum Abrufen von Daten verwendet wird, legen Sie die Dropdown Listen auf den Registerkarten aktualisieren und löschen auf (keine) fest. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![die Dropdown Listen auf den Registerkarten aktualisieren und löschen auf (keine) festgelegt.](batch-updating-vb/_static/image10.gif)](batch-updating-vb/_static/image17.png)
 
@@ -232,7 +232,7 @@ Dies kann durch Hinzufügen einer neuen Methode zur BLL namens `UpdateProductsWi
 
 [!code-vb[Main](batch-updating-vb/samples/sample8.vb)]
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die GridView bietet integrierte Zeilen übergreifende Bearbeitungsfunktionen, bietet jedoch keine Unterstützung für das Erstellen von vollständig bearbeitbaren Schnittstellen. Wie in diesem Tutorial gezeigt, sind solche Schnittstellen möglich, erfordern jedoch etwas Arbeit. Zum Erstellen einer GridView-Tabelle, in der jede Zeile bearbeitet werden kann, müssen die GridView s-Felder in templatefields konvertiert und die Bearbeitungs Schnittstelle innerhalb der `ItemTemplate` s definiert werden. Darüber hinaus müssen der Seite, getrennt von der GridView, die websteuer Elemente für alle Typen aktualisieren hinzugefügt werden. Diese Schaltflächen `Click` Ereignishandler müssen die GridView s `Rows` Auflistung auflisten, die Änderungen in einem `ProductsDataTable`speichern und die aktualisierten Informationen an die entsprechende BLL-Methode übergeben.
 
@@ -240,7 +240,7 @@ Im nächsten Tutorial wird erläutert, wie eine Schnittstelle für das Löschen 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

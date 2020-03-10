@@ -9,11 +9,11 @@ ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
 ms.openlocfilehash: fe4074c701159a137be3644d65ca844f160c2399
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599989"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484449"
 ---
 # <a name="part-7-creating-the-main-page"></a>Teil 7: Erstellen der Hauptseite
 
@@ -44,7 +44,7 @@ Basierend auf dem zuvor skizzierten Entwurf benötigt unser Ansichts Modell Obse
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample3.js)]
 
-Benutzer können Elemente aus der Liste Produkte zum Warenkorb hinzufügen und Elemente aus dem Warenkorb entfernen. Um diese Funktionen zu kapseln, erstellen wir eine weitere Ansichts Modell Klasse, die ein Produkt darstellt. Fügen Sie den folgenden Code zu `AppViewModel` hinzu:
+Benutzer können Elemente aus der Liste Produkte zum Warenkorb hinzufügen und Elemente aus dem Warenkorb entfernen. Um diese Funktionen zu kapseln, erstellen wir eine weitere Ansichts Modell Klasse, die ein Produkt darstellt. Fügen Sie `AppViewModel` den folgenden Code zu folgenden Code hinzu:
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample4.js?highlight=4)]
 
@@ -72,7 +72,7 @@ Initialisieren Sie schließlich das Ansichts Modell, indem Sie AJAX-Anforderunge
 
 OK, das ist zwar viel Code, aber wir haben das Schritt-für-Schritt-Code erstellt, und ich hoffe, dass der Entwurf eindeutig ist. Nun können dem HTML einige Knockout. js-Bindungen hinzugefügt werden.
 
-**Rodu**
+**Produkte**
 
 Im folgenden finden Sie die Bindungen für die Produktliste:
 
@@ -90,7 +90,7 @@ Hier sind die Bindungen für den Warenkorb:
 
 Dadurch wird das waren Korb Array durchlaufen, und der Name, der Preis und die Menge werden angezeigt. Beachten Sie, dass der Link "Remove" und die Schaltfläche "Create Order" an View-Model-Funktionen gebunden sind.
 
-**Vergabe**
+**Bestellungen**
 
 Im folgenden finden Sie die Bindungen für die Liste Bestellungen:
 
@@ -106,7 +106,7 @@ Im folgenden finden Sie die Bindungen für die Bestelldetails:
 
 Dadurch werden die Elemente in der Reihenfolge durchlaufen, und das Produkt, der Preis und die Menge werden angezeigt. Das umgebende div-Element ist nur sichtbar, wenn das Detail Array mindestens ein Element enthält.
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie eine Anwendung erstellt, die Entity Framework verwendet, um mit der Datenbank zu kommunizieren, und ASP.net-Web-API, um eine öffentlich ausgerichtete Schnittstelle oberhalb der Datenschicht bereitzustellen. Wir verwenden ASP.NET MVC 4 zum Rendering der HTML-Seiten und Knockout. js Plus jQuery, um dynamische Interaktionen ohne Seiten Umladungen bereitzustellen.
 
@@ -116,4 +116,4 @@ Zusätzliche Ressourcen:
 - [Entity Framework Developer Center](https://msdn.microsoft.com/data/ef)
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-web-api-with-entity-framework-part-6.md)
+> [Previous](using-web-api-with-entity-framework-part-6.md)

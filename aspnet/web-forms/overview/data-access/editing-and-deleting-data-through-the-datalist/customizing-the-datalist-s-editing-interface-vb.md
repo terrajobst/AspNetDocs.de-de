@@ -9,11 +9,11 @@ ms.assetid: 718628e2-224c-455f-b33a-a41efd48d5a0
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
 ms.openlocfilehash: adee419764cff2f39ee16962080c24b52553aa14
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74637600"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78480459"
 ---
 # <a name="customizing-the-datalists-editing-interface-vb"></a>Anpassen der Oberfläche für die Bearbeitung von DataList (VB)
 
@@ -151,7 +151,7 @@ Zum Speichern der Option (None) als Daten Bank `NULL` Wert müssen wir zum `Upda
 
 Mit dieser Änderung wird der Wert `Nothing` an die `UpdateProduct` BLL-Methode übermittelt, wenn der Benutzer die Option (None) aus einer der Dropdown Listen ausgewählt hat, die einem `NULL` Daten Bank Wert entspricht.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wurde erläutert, wie eine komplexere DataList-Bearbeitungs Schnittstelle erstellt wird, die drei verschiedene websteuer Elemente für Eingaben, zwei Dropdown Listen und ein Kontrollkästchen mit Validierungs Steuerelementen enthielt. Wenn Sie die Bearbeitungs Schnittstelle entwickeln, sind die Schritte unabhängig von den verwendeten websteuer Elementen identisch: beginnen Sie mit dem Hinzufügen der websteuer Elemente zum DataList-`EditItemTemplate`; Verwenden Sie die Datenbindung-Syntax, um die entsprechenden Daten Feldwerte den entsprechenden websteuer Element Eigenschaften zuzuweisen. und in der `UpdateCommand` Ereignishandler Programm gesteuert auf die websteuer Elemente und die entsprechenden Eigenschaften zugreifen, wobei ihre Werte an die BLL übergeben werden.
 
@@ -159,7 +159,7 @@ Wenn Sie eine Bearbeitungs Schnittstelle erstellen, unabhängig davon, ob es sic
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -168,4 +168,4 @@ Fröhliche Programmierung!
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Die führenden Reviewer für dieses Tutorial waren Dennis Patterson, David suru und Randy Schmidt. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](adding-validation-controls-to-the-datalist-s-editing-interface-vb.md)
+> [Previous](adding-validation-controls-to-the-datalist-s-editing-interface-vb.md)

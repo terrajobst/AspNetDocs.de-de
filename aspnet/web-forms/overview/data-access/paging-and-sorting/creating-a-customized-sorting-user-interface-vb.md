@@ -9,11 +9,11 @@ ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 66127630560141cd795beb15f525a7fba85f3993
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607368"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78502647"
 ---
 # <a name="creating-a-customized-sorting-user-interface-vb"></a>Erstellen einer angepassten Benutzeroberfläche zum Sortieren (VB)
 
@@ -163,15 +163,15 @@ Mit dem obigen Code Additions sind die Sortierungs Gruppen Header nun beim Sorti
 > [!NOTE]
 > Wenn Sie über Produkte mit `NULL` Daten bankwerten für die Felder "`CategoryID`", "`SupplierID`" oder "`UnitPrice`" verfügen, werden diese Werte standardmäßig als leere Zeichen folgen in der GridView angezeigt. Dies bedeutet, dass der Text der Trenn Zeile für diese Produkte mit `NULL` Werten wie die Kategorie lautet: (das heißt, es gibt keinen Namen nach Kategorie: wie bei Kategorie: Getränke). Wenn Sie hier einen Wert anzeigen möchten, können Sie entweder die Eigenschaft boundfields [`NullDisplayText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) auf den Text festlegen, der angezeigt werden soll, oder Sie können eine Bedingungs Anweisung in der Methode "Rendering" hinzufügen, wenn Sie die `currentValue` der Eigenschaft "`Text` der Trenn zeichenzeile" zuweisen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In der GridView sind nicht viele integrierte Optionen zum Anpassen der Sortier Schnittstelle enthalten. Allerdings ist es mit einem wenig Code auf niedriger Ebene möglich, die GridView s-Steuerelement Hierarchie zu optimieren, um eine benutzerdefinierte Schnittstelle zu erstellen. In diesem Tutorial haben Sie erfahren, wie Sie eine Sortierungs Gruppe für Sortiergruppen für eine sortierbare GridView-Struktur hinzufügen, mit der die verschiedenen Gruppen und Gruppen Grenzen leichter identifiziert werden. Weitere Beispiele für angepasste Sortier Schnittstellen finden Sie im Blogeintrag [Scott Guthrie](https://weblogs.asp.net/scottgu/) s [A few ASP.NET 2,0 GridView Sortierungs Tipps und Tricks](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx) .
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Vorheriges](sorting-custom-paged-data-vb.md)
+> [Previous](sorting-custom-paged-data-vb.md)

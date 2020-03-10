@@ -9,11 +9,11 @@ ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
 ms.openlocfilehash: ce0d246afdfb65c2ea15a287064511e7d1d58622
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589053"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457701"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Konfigurieren eines Webservers für die Web Deploy-Veröffentlichung (Remote-Agent)
 
@@ -214,7 +214,7 @@ Standardmäßig lauscht der Remote-Agent-Dienst unter dieser URL an TCP-Port 80:
 
 In den meisten Fällen müssen Sie keine zusätzlichen Firewallregeln für den Remote-Agent-Dienst konfigurieren, da Webserver in der Regel auf HTTP-Anforderungen auf Port 80 lauschen. Wenn Sie die Installation so angepasst haben, dass Sie an einem nicht standardmäßigen Port lauscht, müssen Sie Firewallausnahmen nach Bedarf konfigurieren.
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Zusammenfassung
 
 An diesem Punkt ist der Webserver bereit, Webpakete von einem Remote Computer aus zu akzeptieren und zu installieren. Bevor Sie versuchen, eine Webanwendung auf dem Server bereitzustellen, sollten Sie diese wichtigen Punkte überprüfen:
 
@@ -222,7 +222,7 @@ An diesem Punkt ist der Webserver bereit, Webpakete von einem Remote Computer au
 - Hat die Anwendungs Pool Identität Lesezugriff auf den Quellordner für Ihre Website?
 - Wird der Web Deployment Agent-Dienst ausgeführt?
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Eine Anleitung zum Konfigurieren von Projektdateien für benutzerdefinierte Microsoft-Build-Engine (MSBuild) zum Bereitstellen von Webpaketen für den Remote-Agent-Dienst finden Sie unter [Konfigurieren von Bereitstellungs Eigenschaften für eine Zielumgebung](configuring-deployment-properties-for-a-target-environment.md).
 

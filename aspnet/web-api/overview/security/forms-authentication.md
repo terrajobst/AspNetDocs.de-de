@@ -1,48 +1,48 @@
 ---
 uid: web-api/overview/security/forms-authentication
-title: Formularauthentifizierung in ASP.NET Web-API | Microsoft-Dokumentation
+title: Formular Authentifizierung in ASP.net-Web-API | Microsoft-Dokumentation
 author: MikeWasson
-description: Beschreibt die Verwendung der Formularauthentifizierung in ASP.NET Web-API.
+description: Beschreibt die Verwendung der Formular Authentifizierung in ASP.net-Web-API.
 ms.author: riande
 ms.date: 12/12/2012
 ms.assetid: 9f06c1f2-ffaa-4831-94a0-2e4a3befdf07
 msc.legacyurl: /web-api/overview/security/forms-authentication
 msc.type: authoredcontent
 ms.openlocfilehash: 147bfab76e48497f35a72b28cd935f40ec4193bf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59410075"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484377"
 ---
-# <a name="forms-authentication-in-aspnet-web-api"></a>Formularauthentifizierung in ASP.NET Web-API
+# <a name="forms-authentication-in-aspnet-web-api"></a>Formular Authentifizierung in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-Die Formularauthentifizierung verwendet ein HTML-Formular, um die Anmeldeinformationen des Benutzers an den Server gesendet. Es ist kein Internetstandard. Die Formularauthentifizierung eignet sich nur für Web-APIs, die aus einer Webanwendung aufgerufen werden, damit der Benutzer mit dem HTML-Formular interagieren kann.
+Bei der Formular Authentifizierung wird ein HTML-Formular verwendet, um die Anmelde Informationen des Benutzers an den Server zu senden. Es handelt sich nicht um einen Internet Standard. Die Formular Authentifizierung eignet sich nur für Web-APIs, die von einer Webanwendung aufgerufen werden, damit der Benutzer mit dem HTML-Formular interagieren kann.
 
 | Vorteile | Nachteile |
 | --- | --- |
-| – Leicht zu implementieren: In ASP.NET integriert. – Verwendet ASP.NET-Mitgliedschaftsanbieter ab, der Verwaltung von Benutzerkonten vereinfacht. | – Keiner standard-HTTP-Authentifizierungsmechanismus; verwendet HTTP-Cookies anstelle der standardmäßigen Authorization-Header. – Einen Browserclient erfordert. -Anmeldeinformationen werden als Klartext gesendet. -Anfällig für websiteübergreifende anforderungsfälschung (CSRF); erfordert, dass Anti-CSRF-Measures. -Schwierig, von nichtsuchdienst Clients zu verwenden. Anmeldung erfordert einen Browser. -Benutzer Anmeldeinformationen werden in der Anforderung gesendet. – Einige Benutzer deaktivieren Cookies. |
+| -Einfach zu implementieren: in ASP.NET integriert. -Verwendet den ASP.net-Mitgliedschafts Anbieter, der die Verwaltung von Benutzerkonten erleichtert. | -Kein standardmäßiger HTTP-Authentifizierungsmechanismus; verwendet HTTP-Cookies anstelle des standardmäßigen Autorisierungs Headers. -Erfordert einen Browser Client. -Anmelde Informationen werden als Klartext gesendet. -Anfällig für Website übergreifende Anforderungs Fälschung (CSRF); erfordert Anti-CSRF-Measures. -Die Verwendung von nicht-Browser-Clients ist schwierig. Der Anmelde Name erfordert einen Browser. -Benutzer Anmelde Informationen werden in der Anforderung gesendet. : Einige Benutzer deaktivieren Cookies. |
 
-Kurz gesagt, Formularauthentifizierung in ASP.NET funktioniert wie folgt:
+Die Formular Authentifizierung in ASP.NET funktioniert wie folgt:
 
-1. Der Client fordert eine Ressource, die eine Authentifizierung erforderlich ist.
-2. Wenn der Benutzer nicht authentifiziert ist, wird der Server Gibt HTTP 302 (Found) und an eine Anmeldeseite umgeleitet.
-3. Der Benutzer Anmeldeinformationen eingibt und das Formular übermittelt.
-4. Der Server gibt eine andere HTTP-302, der an den ursprünglichen URI umleitet. Diese Antwort enthält ein Authentifizierungscookie.
-5. Der Client fordert die Ressource erneut aus. Die Anforderung enthält das Authentifizierungscookie und damit der Server die Anforderung gewährt.
+1. Der Client fordert eine Ressource an, für die eine Authentifizierung erforderlich ist.
+2. Wenn der Benutzer nicht authentifiziert ist, gibt der Server HTTP 302 (gefunden) zurück und leitet ihn an eine Anmeldeseite um.
+3. Der Benutzer gibt die Anmelde Informationen ein und sendet das Formular.
+4. Der Server gibt einen weiteren HTTP 302-Wert zurück, der zurück an den ursprünglichen URI umgeleitet wird. Diese Antwort enthält ein Authentifizierungs Cookie.
+5. Der Client fordert die Ressource erneut an. Die Anforderung enthält das Authentifizierungs Cookie, sodass der Server die Anforderung erteilt.
 
 ![](forms-authentication/_static/image1.png)
 
-Weitere Informationen finden Sie unter [eine Übersicht der Formularauthentifizierung.](../../../web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs.md)
+Weitere Informationen finden Sie unter [Übersicht über die Formular Authentifizierung.](../../../web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs.md)
 
-## <a name="using-forms-authentication-with-web-api"></a>Verwenden der Formularauthentifizierung mit Web-API
+## <a name="using-forms-authentication-with-web-api"></a>Verwenden der Formular Authentifizierung mit der Web-API
 
-Wählen Sie zum Erstellen einer Anwendung, die Formularauthentifizierung verwendet, die "Internetanwendung"-Vorlage im Assistenten für MVC 4. Diese Vorlage erstellt die MVC-Controller für die kontoverwaltung. Sie können auch die Vorlage "Single Page Application", die in der ASP.NET Herbst 2012-Update verfügbar.
+Um eine Anwendung zu erstellen, die die Formular Authentifizierung verwendet, wählen Sie die Vorlage "Internet Anwendung" im MVC 4-Projekt-Assistenten aus. Mit dieser Vorlage werden MVC-Controller für die Kontoverwaltung erstellt. Sie können auch die Vorlage "Single-Page Application" verwenden, die in der ASP.net Fall 2012-Aktualisierung verfügbar ist.
 
-In Ihren Web-API-Controllern, können Sie den Zugriff mithilfe der `[Authorize]` Attribut, wie in beschrieben [mit dem [Authorize]-Attribut](authentication-and-authorization-in-aspnet-web-api.md#auth3).
+In Ihren Web-API-Controllern können Sie den Zugriff mithilfe des `[Authorize]`-Attributs einschränken, wie unter [Verwenden des [autorisieren]-Attributs](authentication-and-authorization-in-aspnet-web-api.md#auth3)beschrieben.
 
-Formularauthentifizierung verwendet ein Sitzungscookie zum Authentifizieren von Anforderungen an. Browser senden automatisch alle relevanten Cookies an die Ziel-Website. Dieses Feature macht Formularauthentifizierung potenziell anfällige Cross-Site Request Forgery (CSRF) attacks finden Sie unter [verhindern von Cross-Site Request Forgery (CSRF) Angriffe](preventing-cross-site-request-forgery-csrf-attacks.md).
+Bei der Formular Authentifizierung wird ein Sitzungs Cookie verwendet, um Anforderungen zu authentifizieren. Browser senden automatisch alle relevanten Cookies an die Zielwebsite. Durch diese Funktion wird die Formular Authentifizierung potenziell anfällig für Angriffe gegen Website übergreifende Anforderungs Fälschungen (CSRF). Weitere Informationen finden Sie unter [verhindern von Cross-Site Request Fälschungs Angriffen (CSRF)](preventing-cross-site-request-forgery-csrf-attacks.md).
 
-Formular-Authentifizierung werden die Anmeldeinformationen des Benutzers nicht verschlüsselt werden. Aus diesem Grund ist die Formularauthentifizierung nicht sicher, es sei denn, der mit SSL verwendet. Finden Sie unter [arbeiten mit SSL in Web-API](working-with-ssl-in-web-api.md).
+Bei der Formular Authentifizierung werden die Anmelde Informationen des Benutzers nicht verschlüsselt. Daher ist die Formular Authentifizierung nicht sicher, es sei denn, Sie wird mit SSL verwendet. Siehe [Arbeiten mit SSL in der Web-API](working-with-ssl-in-web-api.md).

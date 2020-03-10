@@ -2,22 +2,22 @@
 uid: web-forms/videos/net-4/index
 title: .NET 4 | Microsoft-Dokumentation
 author: rick-anderson
-description: Die neuen Features von ASP.NET und die Funktionen von .NET Framework 4.
+description: Die neuen ASP.NET-Features und-Funktionen, die in der .NET Framework 4 verfügbar sind.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: bac10aee-6731-4a0f-84d7-9eef5e560ae5
 msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
 ms.openlocfilehash: 47d4c49762768351246402b48373374f99fd636f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128472"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78501081"
 ---
 # <a name="net-4"></a>.NET 4
 
-> Die neuen Features von ASP.NET und die Funktionen von .NET Framework 4.
+> Die neuen ASP.NET-Features und-Funktionen, die in der .NET Framework 4 verfügbar sind.
 
 - [AJAX](ajax/index.md)
 
@@ -25,17 +25,17 @@ ms.locfileid: "65128472"
     - [ScriptLoader](ajax/aspnet-4-quick-hit-the-scriptloader.md)
     - [jQuery-Syntax für Microsoft AJAX](ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
     - [AJAX-Datenvorlagen](ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-- [Chart](chart/index.md)
+- [Diagramm](chart/index.md)
 
     - [Chart Control](chart/aspnet-4-quick-hit-chart-control.md)
     - [Einführung zum neuen Chart-Steuerelement in Visual Studio 2010](chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
-- [Kernspeicher](core/index.md)
+- [Core](core/index.md)
 
     - [Automatischer Start](core/aspnet-4-quick-hit-auto-start.md)
     - [Bereinigen von „Web.config“-Dateien](core/aspnet-4-quick-hit-clean-webconfig-files.md)
     - [Vorhersagbare Client-IDs](core/aspnet-4-quick-hit-predictable-client-ids.md)
     - [HtmlEncoder-Hilfsprogrammmethode](core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-- [Data](data/index.md)
+- [Daten](data/index.md)
 
     - [Persistente GridView-Zeilenauswahl](data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
 - [Markup-Steuerelement](markup-control/index.md)

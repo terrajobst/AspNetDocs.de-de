@@ -9,11 +9,11 @@ ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
 ms.openlocfilehash: 003e7939accd7a68dab97441b3d999bca835b85a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600865"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78456627"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>Grundlegendes zur Lokalisierung in ASP.NET AJAX
 
@@ -57,12 +57,12 @@ Neutrale Kultur Skripts sollten keinen Kultur Bezeichner in den Namen der Datei 
 
 In der folgenden Tabelle werden die Benennungs Konventionen für Dateien zusammengefasst. Beispiele:
 
-| Filename | Bedeutung |
+| Dateiname | Bedeutung |
 | --- | --- |
-| Skript. js | Ein Kultur neutrales Skript für die Releaseversion. |
-| Skript. Debug. js | Ein Kultur neutrales Skript für die Debugversion. |
+| Script.js | Ein Kultur neutrales Skript für die Releaseversion. |
+| Script.debug.js | Ein Kultur neutrales Skript für die Debugversion. |
 | Skript. en-US. js | Eine Version in englischer Sprache, USA Skript. |
-| Script.Debug.es-Co. js | Ein "Debug-Version Spanish"-Skript (Columbia). |
+| Script.debug.es-CO.js | Ein "Debug-Version Spanish"-Skript (Columbia). |
 
 ## <a name="walkthrough-create-an-localized-embedded-script"></a>Exemplarische Vorgehensweise: Erstellen eines lokalisierten, eingebetteten Skripts
 
@@ -136,7 +136,7 @@ Der ScriptManager ermöglicht mehrere automatische Verhalten für lokalisierte A
 
 Skript Verweise können dem ScriptManager-Steuerelement entweder Programm gesteuert oder durch deklaratives Markup hinzugefügt werden. Deklaratives Markup ist besonders nützlich beim Arbeiten mit Skripts, die in anderen Assemblys als dem Website Projekt selbst eingebettet sind, da der Name des Skripts wahrscheinlich nicht geändert wird, wenn Revisionen durchlaufen werden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wenn Webanwendungen größer werden, um eine größere Zielgruppe zu erreichen, ist es erforderlich, umfassendere Kulturen und Communitys zu erreichen, die zu einem Kern für ein Geschäftsmodell werden. e-Commerce-Webanwendungen müssen in der Lage sein, mit fremden Währungen umzugehen, Inhalts Verwaltungssysteme müssen nicht nur ihren Inhalt, sondern auch Ihre Navigationshinweise und Formularfelder in anderen Sprachen präsentieren können, und Unternehmen müssen wissen, dass dies erforderlich ist. zugegriffen.
 

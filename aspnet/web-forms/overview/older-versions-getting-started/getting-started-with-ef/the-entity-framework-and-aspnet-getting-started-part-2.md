@@ -1,29 +1,29 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
-title: Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 2 | Microsoft-Dokumentation
+title: Einführung in Entity Framework 4,0 Database First und ASP.NET 4 Web Forms-Teil 2 | Microsoft-Dokumentation
 author: tdykstra
-description: Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mithilfe von Entity Framework. Die beispielanwendung ist...
+description: Die Beispiel-Webanwendung der Beispiel-Web-App veranschaulicht, wie Sie mithilfe der Entity Framework Web Forms Anwendungen erstellen. Die Beispielanwendung ist...
 ms.author: riande
 ms.date: 12/03/2010
 ms.assetid: fb63a326-a4ae-4b0c-a4f5-412327197216
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: bd6a2e29e6f0df04e39be29160e2e08cc99c4706
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126853"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78456447"
 ---
-# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 2
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Die ersten Schritte mit Entity Framework 4,0 Database First und ASP.NET 4 Web Forms-Teil 2
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-> Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mit dem Entity Framework 4.0 und Visual Studio 2010. Weitere Informationen zu dieser tutorialreihe finden Sie unter [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md)
+> Die Beispiel-Webanwendung der Beispiel-Web-App veranschaulicht, wie Sie ASP.net-Web Forms Anwendungen mithilfe von Entity Framework 4,0 und Visual Studio 2010 erstellen. Weitere Informationen zur tutorialreihe finden Sie [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md) .
 
 ## <a name="the-entitydatasource-control"></a>Das EntityDataSource-Steuerelement
 
-Im vorherigen Tutorial haben Sie eine Website, eine Datenbank und einem Datenmodell erstellt. In diesem Tutorial arbeiten Sie mit der `EntityDataSource` -Steuerelement, das ASP.NET bietet, um die Arbeit mit einem Entity Framework-Datenmodell zu vereinfachen. Erstellen Sie eine `GridView` Steuerelement zum Anzeigen und Bearbeiten von Studentendaten für Schüler und, eine `DetailsView` Steuerelement für das Hinzufügen von neuer Schüler/Students, und ein `DropDownList` Steuerelement zum Auswählen einer Abteilung (die Sie später verwenden werden für die Anzeige von zugeordneten Kurse).
+Im vorherigen Tutorial haben Sie eine Website, eine Datenbank und ein Datenmodell erstellt. In diesem Tutorial arbeiten Sie mit dem `EntityDataSource`-Steuerelement, das ASP.net bereitstellt, um die Arbeit mit einem Entity Framework Datenmodell zu vereinfachen. Sie erstellen ein `GridView`-Steuerelement zum Anzeigen und Bearbeiten von Studenten Daten, ein `DetailsView` Steuerelement zum Hinzufügen neuer Studenten und ein `DropDownList` Steuerelement für die Auswahl einer Abteilung (die Sie später zum Anzeigen der zugeordneten Kurse verwenden).
 
 [![Image20](the-entity-framework-and-aspnet-getting-started-part-2/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image1.png)
 
@@ -31,219 +31,219 @@ Im vorherigen Tutorial haben Sie eine Website, eine Datenbank und einem Datenmod
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image5.png)
 
-Beachten Sie, dass in dieser Anwendung Sie wird nicht fügen eingabeüberprüfung zu Seiten, die die Datenbank zu aktualisieren, einige der Fehlerbehandlung werden nicht in der so stabil, wie in einer produktionsanwendung benötigt werden. Das hält das Lernprogramm konzentriert sich auf Entity Framework und verhindert, dass er zu lang. Informationen dazu, wie Sie diese Features zu Ihrer Anwendung hinzufügen, finden Sie unter [Validieren der Benutzereingabe in ASP.NET-Webseiten](https://msdn.microsoft.com/library/7kh55542.aspx) und [Fehlerbehandlung in ASP.NET-Seiten und-Anwendungen](https://msdn.microsoft.com/library/w16865z6.aspx).
+Beachten Sie, dass Sie in dieser Anwendung keine Eingabevalidierung zu Seiten hinzufügen, die die Datenbank aktualisieren, und einige der Fehlerbehandlung sind nicht so robust, wie Sie in einer Produktionsanwendung erforderlich sind. Dadurch konzentriert sich das Lernprogramm auf die Entity Framework und hält es nicht mehr zu lange. Ausführliche Informationen dazu, wie Sie diese Funktionen zu Ihrer Anwendung hinzufügen, finden Sie unter [Validieren von Benutzereingaben in ASP.net Web Pages](https://msdn.microsoft.com/library/7kh55542.aspx) und [Fehlerbehandlung in ASP.net Pages and Applications](https://msdn.microsoft.com/library/w16865z6.aspx).
 
-## <a name="adding-and-configuring-the-entitydatasource-control"></a>Hinzufügen und konfigurieren das EntityDataSource-Steuerelement
+## <a name="adding-and-configuring-the-entitydatasource-control"></a>Hinzufügen und Konfigurieren des EntityDataSource-Steuer Elements
 
-Beginnen Sie mit der Konfiguration einer `EntityDataSource` Steuerelement lesen `Person` Entitäten aus der `People` Entitätenmenge.
+Zunächst konfigurieren Sie ein `EntityDataSource`-Steuerelement, um `Person` Entitäten aus der `People` Entitätenmenge zu lesen.
 
-Stellen Sie sicher, dass Sie Visual Studio geöffnet haben, und, dass Sie mit dem Projekt arbeiten, ist Sie in Teil 1 erstellt. Wenn Sie seit Sie das Datenmodell erstellt oder seit der letzten Änderung, die Sie an ihr vorgenommenen das Projekt erstellt haben, erstellen Sie jetzt das Projekt. Änderungen am Datenmodell stehen nicht zur Verfügung in dem Designer, bis das Projekt erstellt wird.
+Stellen Sie sicher, dass Sie Visual Studio geöffnet haben und dass Sie mit dem Projekt arbeiten, das Sie in Teil 1 erstellt haben. Wenn Sie das Projekt seit dem Erstellen des Datenmodells oder seit der letzten Änderung, die Sie vorgenommen haben, nicht erstellt haben, erstellen Sie das Projekt jetzt. Änderungen am Datenmodell werden dem Designer erst zur Verfügung gestellt, wenn das Projekt erstellt wurde.
 
-Erstellen einer neuen Webseite mit den **Webformular mit Gestaltungsvorlage** Vorlage, und nennen Sie sie *Students.aspx*.
+Erstellen Sie eine neue Webseite mithilfe des **Webformulars unter Verwendung** der Vorlage "Master Seite", und nennen Sie Sie " *students. aspx*".
 
 [![Image23](the-entity-framework-and-aspnet-getting-started-part-2/_static/image8.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image7.png)
 
-Geben Sie *Site.Master* als Masterseite. Alle Seiten, die Sie für diese Tutorials erstellen werden diese Masterseite verwenden.
+Geben Sie *Site. Master* als Master Seite an. Auf allen Seiten, die Sie für diese Tutorials erstellen, wird diese Master Seite verwendet.
 
-[![image24](the-entity-framework-and-aspnet-getting-started-part-2/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image9.png)
+[![Image24](the-entity-framework-and-aspnet-getting-started-part-2/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image9.png)
 
-In **Quelle** anzeigen, Hinzufügen einer `h2` Spaltenüberschrift, um die `Content` Steuerelement mit dem Namen `Content2`, wie im folgenden Beispiel gezeigt:
+Fügen Sie in der **Quell** Ansicht dem `Content` Steuerelement mit dem Namen `Content2`eine `h2` Überschrift hinzu, wie im folgenden Beispiel gezeigt:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample1.aspx)]
 
-Von der **Daten** Registerkarte die **Toolbox**, ziehen Sie ein `EntityDataSource` auf der Seite zu steuern, legen Sie es unter der Überschrift und ändern Sie die ID, die `StudentsEntityDataSource`:
+Ziehen Sie auf der Registerkarte **Daten** der **Toolbox**ein `EntityDataSource`-Steuerelement auf die Seite, legen Sie es unterhalb der Überschrift ab, und ändern Sie die ID in `StudentsEntityDataSource`:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample2.aspx)]
 
-Wechseln Sie zur **Entwurf** anzuzeigen, klicken Sie auf das Datenquellensteuerelement Smarttag, und klicken Sie dann auf **Konfigurieren von Datenquellen** zum Starten der **Konfigurieren von Datenquellen** Assistenten.
+Wechseln Sie zur **Entwurfs** Ansicht, klicken Sie auf das Smarttag des Datenquellen Steuer Elements, und klicken Sie dann auf **Datenquelle konfigurieren** , um den Assistenten zum **Konfigurieren von Datenquellen** zu starten.
 
-[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-2/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image11.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-2/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image11.png)
 
-In der **ObjectContext konfigurieren** Assistentenschritt, select **SchoolEntities** als Wert für **Verbindung mit dem Namen**, und wählen Sie **SchoolEntities**als die **DefaultContainerName** Wert. Klicken Sie dann auf **Weiter**.
+Wählen Sie im Schritt **configure ObjectContext** Wizard die Option **SchoolEntities** als Wert für **benannte Verbindung**aus, und wählen Sie **SchoolEntities** als Wert von **DefaultContainerName** aus. Klicken Sie dann auf **Weiter**.
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-2/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image13.png)
 
-Hinweis: Wenn Sie das folgende Dialogfeld an diesem Punkt erhalten, müssen Sie zum Erstellen des Projekts, bevor Sie fortfahren.
+Hinweis: Wenn an dieser Stelle das folgende Dialogfeld angezeigt wird, müssen Sie das Projekt erstellen, bevor Sie den Vorgang fortsetzen.
 
-[![image25](the-entity-framework-and-aspnet-getting-started-part-2/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image15.png)
+[![Image25](the-entity-framework-and-aspnet-getting-started-part-2/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image15.png)
 
-In der **Datenauswahl konfigurieren** Schritt select **Personen** als Wert für **EntitySetName**. Unter **wählen**, stellen Sie sicher, dass die **wählen Sie ein** alle Kontrollkästchen aktiviert ist. Wählen Sie dann die Optionen zum Aktivieren von aktualisieren und löschen. Wenn Sie fertig sind, klicken Sie auf **Fertig stellen**.
+Wählen Sie im Schritt **Datenauswahl konfigurieren** die Option **People** als Wert für **entitySetName**aus. Vergewissern Sie sich unter **auswählen**, dass das Kontrollkästchen ll **auswählen** aktiviert ist. Wählen Sie dann die Optionen zum Aktivieren von Update und DELETE aus. Wenn Sie fertig sind, klicken Sie auf **Fertig**stellen.
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-2/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image17.png)
 
-## <a name="configuring-database-rules-to-allow-deletion"></a>Konfigurieren von Datenbankregeln für zu löschen
+## <a name="configuring-database-rules-to-allow-deletion"></a>Konfigurieren von Daten Bank Regeln, um das Löschen zuzulassen
 
-Erstellen Sie eine Seite, die Benutzer löschen von Schülern und Studenten kann die `Person` -Tabelle, die drei Beziehungen mit anderen Tabellen verfügt (`Course`, `StudentGrade`, und `OfficeAssignment`). In der Standardeinstellung die Datenbank ist es nicht das Löschen einer Zeile im `Person` Wenn verknüpfte Zeilen in einem der anderen Tabellen vorhanden sind. Sie können die zugehörigen Zeilen manuell zuerst löschen, oder Sie können die Datenbank so konfigurieren sie automatisch gelöscht, wenn Sie löschen eine `Person` Zeile. Für die Studentendatensätze für Schüler und in diesem Tutorial konfigurieren Sie die Datenbank, um die verwandten Daten automatisch gelöscht. Da der Schüler/Studenten Zeilen verknüpft haben, können nur in der `StudentGrade` Tabelle müssen Sie nur eine der drei Beziehungen konfigurieren.
+Sie erstellen eine Seite, auf der Benutzer Studenten aus der `Person` Tabelle löschen können, die drei Beziehungen zu anderen Tabellen hat (`Course`, `StudentGrade`und `OfficeAssignment`). Standardmäßig verhindert die Datenbank, dass Sie eine Zeile in `Person` löschen, wenn in einer der anderen Tabellen Verwandte Zeilen vorhanden sind. Sie können die verknüpften Zeilen zuerst manuell löschen, oder Sie können die Datenbank so konfigurieren, dass Sie automatisch gelöscht werden, wenn Sie eine `Person` Zeile löschen. Für Student-Datensätze in diesem Tutorial konfigurieren Sie die Datenbank so, dass die zugehörigen Daten automatisch gelöscht werden. Da Schüler/Studenten Verwandte Zeilen nur in der `StudentGrade` Tabelle haben können, müssen Sie nur eine der drei Beziehungen konfigurieren.
 
-Bei Verwendung der *School.mdf* Datei, die Sie aus dem Projekt heruntergeladen haben, die in diesem Tutorial geht, können Sie diesen Abschnitt überspringen, da diese Änderungen an der Konfiguration bereits erfolgt sind. Wenn Sie die Datenbank durch Ausführen eines Skripts erstellt haben, können konfigurieren Sie die Datenbank durch Ausführen der folgenden Prozeduren.
+Wenn Sie die Datei " *School. mdf* " verwenden, die Sie aus dem Projekt heruntergeladen haben, das in diesem Tutorial enthalten ist, können Sie diesen Abschnitt überspringen, da diese Konfigurationsänderungen bereits vorgenommen wurden. Wenn Sie die Datenbank durch Ausführen eines Skripts erstellt haben, konfigurieren Sie die Datenbank, indem Sie die folgenden Verfahren ausführen.
 
-In **Server-Explorer**, öffnen Sie das Datenbankdiagramm ein, die Sie in Teil 1 erstellt haben. Mit der rechten Maustaste in der Beziehung zwischen `Person` und `StudentGrade` (die Zeile, die zwischen Tabellen), und wählen Sie dann **Eigenschaften**.
+Öffnen Sie in **Server-Explorer**das Daten Bank Diagramm, das Sie in Teil 1 erstellt haben. Klicken Sie mit der rechten Maustaste auf die Beziehung zwischen `Person` und `StudentGrade` (die Zeile zwischen Tabellen), und wählen Sie dann **Eigenschaften**aus.
 
 [![Image04](the-entity-framework-and-aspnet-getting-started-part-2/_static/image20.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image19.png)
 
-In der **Eigenschaften** Fenster erweitern **INSERT- und UPDATE-Spezifikation** und legen Sie die **DeleteRule** Eigenschaft **Cascade**.
+Erweitern Sie im Fenster **Eigenschaften** die Option **INSERT-und Update Specification** , und legen Sie die **DeleteRule** -Eigenschaft auf **Cascade**fest.
 
 [![Image05](the-entity-framework-and-aspnet-getting-started-part-2/_static/image22.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image21.png)
 
-Speichern Sie und schließen Sie das Diagramm. Wenn Sie aufgefordert werden, ob Sie die Datenbank aktualisieren möchten, klicken Sie auf **Ja**.
+Speichern und schließen Sie das Diagramm. Wenn Sie gefragt werden, ob Sie die Datenbank aktualisieren möchten, klicken Sie auf **Ja**.
 
-Um sicherzustellen, dass das Modell Entitäten, die im Arbeitsspeicher, die abgestimmt werden verfolgt, die Datenbank Wozu dient sind, müssen Sie die entsprechende Regeln im Datenmodell festlegen. Open *SchoolModel.edmx*, mit der rechten Maustaste der Zuordnungslinie zwischen `Person` und `StudentGrade`, und wählen Sie dann **Eigenschaften**.
+Um sicherzustellen, dass das Modell Entitäten im Arbeitsspeicher synchron mit der Datenbank speichert, müssen Sie die entsprechenden Regeln im Datenmodell festlegen. Öffnen Sie *School Model. edmx*, klicken Sie mit der rechten Maustaste auf die Zuordnungs Linie zwischen `Person` und `StudentGrade`, und wählen Sie dann **Eigenschaften**aus.
 
 [![Image21](the-entity-framework-and-aspnet-getting-started-part-2/_static/image24.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image23.png)
 
-In der **Eigenschaften** legen **End1 OnDelete** zu **Cascade**.
+Legen Sie im Fenster **Eigenschaften** **End1 OnDelete** auf **Cascade**fest.
 
 [![Image22](the-entity-framework-and-aspnet-getting-started-part-2/_static/image26.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image25.png)
 
-Speichern und schließen Sie die *SchoolModel.edmx* Datei, und klicken Sie dann das Projekt neu erstellen.
+Speichern und schließen Sie die Datei *School Model. edmx* , und erstellen Sie dann das Projekt neu.
 
-Wenn die Datenbank geändert wird, haben Sie in der Regel mehrere Optionen für das Modell zu synchronisieren:
+Im Allgemeinen haben Sie bei einer Änderung der Datenbank verschiedene Möglichkeiten, um das Modell zu synchronisieren:
 
-- Für bestimmte Arten von Änderungen (z. B. hinzufügen oder Aktualisieren von Tabellen, Sichten oder gespeicherte Prozeduren), mit der rechten Maustaste im Designer, und wählen Sie **Modell aus der Datenbank aktualisieren** damit der Designer stellen die Änderungen automatisch.
-- Generieren Sie das Datenmodell.
-- Stellen Sie die manuelle Updates dieser Art.
+- Für bestimmte Arten von Änderungen (z. b. das Hinzufügen oder Aktualisieren von Tabellen, Sichten oder gespeicherten Prozeduren) klicken Sie mit der rechten Maustaste in den Designer, und wählen Sie **Modell aus Datenbank aktualisieren aus** , damit der Designer die Änderungen automatisch vornimmt.
+- Generieren Sie das Datenmodell neu.
+- Nehmen Sie manuelle Updates wie diese vor.
 
-In diesem Fall Sie konnte das Modell generiert haben, oder aktualisiert die Tabellen, die von der Änderung betroffen sind, aber dann müssten Sie die Feldnamen Änderung erneut vorgenommen werden (von `FirstName` zu `FirstMidName`).
+In diesem Fall können Sie das Modell neu generieren oder die Tabellen aktualisieren, die von der Beziehungs Änderung betroffen sind. dann müssten Sie die Feldnamen Änderung erneut vornehmen (von `FirstName` bis `FirstMidName`).
 
-## <a name="using-a-gridview-control-to-read-and-update-entities"></a>Verwenden ein GridView-Steuerelement zum Lesen und Aktualisieren von Entitäten
+## <a name="using-a-gridview-control-to-read-and-update-entities"></a>Verwenden eines GridView-Steuer Elements zum Lesen und Aktualisieren von Entitäten
 
-In diesem Abschnitt verwenden Sie eine `GridView` Steuerelement zum Anzeigen, aktualisieren oder Löschen der Schüler/Studenten.
+In diesem Abschnitt verwenden Sie ein `GridView`-Steuerelement, um Studenten anzuzeigen, zu aktualisieren oder zu löschen.
 
-Öffnen oder wechseln Sie zur *Students.aspx* und wechseln Sie zur **Entwurf** anzeigen. Von der **Daten** Registerkarte die **Toolbox**, ziehen Sie eine `GridView` Steuerelement rechts neben der `EntityDataSource` steuern, nennen Sie es `StudentsGridView`, klicken Sie auf das Smarttag, und wählen Sie dann  **StudentsEntityDataSource** als Datenquelle.
+Öffnen Sie, oder wechseln Sie zu *students. aspx* , und wechseln Sie zur **Entwurfs** Ansicht. Ziehen Sie ein `GridView`-Steuerelement auf der Registerkarte **Daten** der **Toolbox**rechts neben das Steuerelement `EntityDataSource`, benennen Sie es `StudentsGridView`, klicken Sie auf das Smarttag, und wählen Sie dann **studentsentitydatasource** als Datenquelle aus.
 
 [![Image06](the-entity-framework-and-aspnet-getting-started-part-2/_static/image28.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image27.png)
 
-Klicken Sie auf **Schema aktualisieren** (klicken Sie auf **Ja** Wenn Sie aufgefordert werden, um zu bestätigen), klicken Sie dann auf **Paging aktivieren**, **Sortieren aktivieren**, **Bearbeitung aktivieren**, und **löschen aktivieren**.
+Klicken Sie auf **Schema aktualisieren** (Klicken Sie auf **Ja** , wenn Sie zur Bestätigung aufgefordert werden), klicken Sie dann auf **Paging aktivieren**, **Sortierung aktivieren**, **Bearbeiten**aktivieren und **Löschen aktivieren**.
 
 Klicken Sie auf **Spalten bearbeiten**.
 
 [![Image10](the-entity-framework-and-aspnet-getting-started-part-2/_static/image30.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image29.png)
 
-In der **ausgewählte Felder** löschen **PersonID**, **"LastName"**, und **HireDate**. Sie nicht in der Regel eine Datensatzschlüssel für Benutzer anzeigen, Einstellungsdatum ist nicht relevant für Schüler/Studenten und fügen Sie beide Teile des Namens in einem Feld, benötigen Sie nur eines der Namensfelder.)
+Löschen Sie im Feld **Ausgewählte Felder** den Text **PersonID**, **LastName**und **HireDate**. In der Regel wird Benutzern kein Daten Satz Schlüssel angezeigt, das Einstellungs Datum ist für Schüler und Studenten nicht relevant, und Sie fügen beide Teile des Namens in einem Feld ein, sodass Sie nur eines der namens Felder benötigen.)
 
 [![Image11](the-entity-framework-and-aspnet-getting-started-part-2/_static/image32.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image31.png)
 
-Wählen Sie die **"firstmidname"** ein, und klicken Sie dann auf **dieses Feld in ein TemplateField konvertieren**.
+Wählen Sie das Feld **firstmittelname** aus, und klicken Sie dann auf **dieses Feld in ein TemplateField konvertieren**.
 
-Gleiches gilt für **EnrollmentDate**.
+Gehen Sie für " **anmelmentdate**" genauso vor.
 
 [![Image13](the-entity-framework-and-aspnet-getting-started-part-2/_static/image34.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image33.png)
 
-Klicken Sie auf **OK** und wechseln Sie zur **Quelle** anzeigen. Die verbleibenden Änderungen werden einfacher, direkt im Markup. Die `GridView` Markup sieht wie im folgenden Beispiel zu steuern.
+Klicken Sie auf **OK** , und wechseln Sie dann zur **Quell** Ansicht. Die restlichen Änderungen werden im Markup einfacher durchzuführen. Das `GridView`-Steuerelement Markup sieht nun wie im folgenden Beispiel aus.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample3.aspx)]
 
-Die erste Spalte nach Befehlsfeld ein Vorlagenfeld, die derzeit ist zeigt den Vornamen an. Ändern Sie das Markup für dieses Vorlagenfeld wie im folgenden Beispiel aussehen:
+Die erste Spalte nach dem Befehlsfeld ist ein Vorlagen Feld, in dem der Vorname derzeit angezeigt wird. Ändern Sie das Markup für dieses Vorlagen Feld so, dass es wie im folgenden Beispiel aussieht:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample4.aspx)]
 
-Im Anzeigemodus zwei `Label` Steuerelemente zeigen Sie die erste und letzte Bezeichnung. Im Bearbeitungsmodus befindet werden zwei Textfelder bereitgestellt, damit Sie den ersten und letzten Namen ändern können. Wie bei der `Label` Steuerelemente im Anzeigemodus, den Sie verwenden `Bind` und `Eval` Ausdrücke, wie Sie mit ASP.NET Datenquellen-Steuerelemente, die direkt mit Datenbanken verbinden würden. Der einzige besteht Unterschied darin, dass Sie die Eigenschaften der Entität anstatt Datenbankspalten angegeben sind.
+Im Anzeigemodus zeigen zwei `Label` Steuerelemente den vor-und Nachnamen an. Im Bearbeitungsmodus werden zwei Textfelder bereitgestellt, sodass Sie den vor-und Nachnamen ändern können. Wie bei den `Label`-Steuerelementen im Anzeigemodus verwenden Sie `Bind` und `Eval` Ausdrücke genau so wie bei ASP.NET-Datenquellen-Steuerelementen, die direkt mit Datenbanken verbunden sind. Der einzige Unterschied besteht darin, dass Sie anstelle von Daten Bank Spalten Entitäts Eigenschaften angeben.
 
-Die letzte Spalte ist eine Vorlagenfeld, das die Anmeldedatum zeigt. Ändern Sie das Markup für dieses Feld, wie im folgenden Beispiel aussehen:
+Die letzte Spalte ist ein Vorlagen Feld, das das Registrierungsdatum anzeigt. Ändern Sie das Markup für dieses Feld so, dass es wie im folgenden Beispiel aussieht:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample5.aspx)]
 
-In beiden anzuzeigen, und in den Bearbeitungsmodus die Formatzeichenfolge "{0, d}" führt dazu, dass das Datum im Format "kurzes Datum" angezeigt werden. (Ihren Computer möglicherweise konfiguriert werden, um dieses Format anders als die Bilder in diesem Tutorial gezeigt anzuzeigen.)
+Im Anzeige-und Bearbeitungsmodus bewirkt die Format Zeichenfolge "{0, d}", dass das Datum im Format "kurzes Datum" angezeigt wird. (Ihr Computer kann so konfiguriert werden, dass dieses Format unterschiedlich angezeigt wird, und zwar von den in diesem Tutorial gezeigten Bildschirmbildern.)
 
-Beachten Sie, dass in jedem dieser Felder für die Vorlage, die der Designer verwendet eine `Bind` Ausdruck, durch die standardmäßige, aber Sie geändert haben, um eine `Eval` Ausdruck in der `ItemTemplate` Elemente. Die `Bind` Ausdruck werden die Daten in verfügbar `GridView` Steuerelementeigenschaften, falls Sie auf die Daten im Code zugreifen müssen. Auf dieser Seite, die Sie auf diese Daten im Code, damit Sie verwenden können, müssen keine `Eval`, dies ist effizienter. Weitere Informationen finden Sie unter [Abrufen Ihrer Daten aus den Datensteuerelementen](https://weblogs.asp.net/davidfowler/archive/2008/12/12/getting-your-data-out-of-the-data-controls.aspx).
+Beachten Sie, dass der Designer in jedem dieser Vorlagen Felder standardmäßig einen `Bind` Ausdruck verwendet hat, Sie diesen jedoch in einen `Eval` Ausdruck in den `ItemTemplate` Elementen geändert haben. Der `Bind` Ausdruck macht die Daten in `GridView` Steuerelement Eigenschaften verfügbar, wenn Sie im Code auf die Daten zugreifen müssen. Auf dieser Seite benötigen Sie keinen Zugriff auf diese Daten im Code, sodass Sie `Eval`verwenden können, was effizienter ist. Weitere Informationen finden Sie unter [erhalten von Daten aus den Daten Steuerelementen](https://weblogs.asp.net/davidfowler/archive/2008/12/12/getting-your-data-out-of-the-data-controls.aspx).
 
-## <a name="revising-entitydatasource-control-markup-to-improve-performance"></a>Überarbeiten EntityDataSource-Steuerelement-Markup zur Verbesserung der Leistung
+## <a name="revising-entitydatasource-control-markup-to-improve-performance"></a>Überarbeiten von EntityDataSource-Steuerelement Markup zur Verbesserung der Leistung
 
-Im Markup für die `EntityDataSource` steuern, entfernen Sie die `ConnectionString` und `DefaultContainerName` Attribute aus, und Ersetzen Sie sie durch eine `ContextTypeName="ContosoUniversity.DAL.SchoolEntities"` Attribut. Dies ist eine Änderung, Sie stellen jedes Mal, wenn Sie erstellen, eine `EntityDataSource` zu steuern, es sei denn, Sie müssen eine Verbindung zu verwenden, die sich von dem unterscheidet, die in der Objektkontextklasse hartcodiert ist. Mithilfe der `ContextTypeName` Attribut bietet die folgenden Vorteile:
+Entfernen Sie im Markup für das `EntityDataSource`-Steuerelement die Attribute `ConnectionString` und `DefaultContainerName`, und ersetzen Sie Sie durch ein `ContextTypeName="ContosoUniversity.DAL.SchoolEntities"` Attribut. Dies ist eine Änderung, die Sie jedes Mal vornehmen sollten, wenn Sie ein `EntityDataSource`-Steuerelement erstellen, es sei denn, Sie müssen eine Verbindung verwenden, die sich von der unterscheidet, die in der Objekt Kontext Klasse hart codiert ist. Die Verwendung des `ContextTypeName`-Attributs bietet die folgenden Vorteile:
 
-- Bessere Leistung. Wenn die `EntityDataSource` Steuerelement initialisiert, das Modell mithilfe der `ConnectionString` und `DefaultContainerName` Attribute, es werden zusätzliche Aufgaben zum Laden von Metadaten für jede Anforderung ausgeführt. Dies ist nicht erforderlich, wenn Sie angeben, die `ContextTypeName` Attribut.
-- Lazy Loading ist standardmäßig aktiviert, in der generierten Objektkontextklassen (z. B. `SchoolEntities` in diesem Tutorial) im Entity Framework 4.0. Dies bedeutet, dass Navigationseigenschaften mit verbundenen Daten automatisch geladen werden bei Bedarf. Lazy Loading wird später in diesem Lernprogramm ausführlicher erläutert.
-- Alle Anpassungen, die Sie auf die Objektkontextklasse angewendet haben (in diesem Fall die `SchoolEntities` Klasse) stehen für Steuerelemente, mit denen die `EntityDataSource` Steuerelement. Anpassen der Objektkontextklasse ist ein Thema für fortgeschrittene, die in diesem Tutorial nicht behandelt wird. Weitere Informationen finden Sie unter [Erweitern von Entity Framework generierten Typen](https://msdn.microsoft.com/library/dd456844.aspx).
+- Bessere Leistung. Wenn das `EntityDataSource` Steuerelement das Datenmodell mit den Attributen `ConnectionString` und `DefaultContainerName` initialisiert, werden zusätzliche Aufgaben ausgeführt, um Metadaten für jede Anforderung zu laden. Dies ist nicht erforderlich, wenn Sie das `ContextTypeName`-Attribut angeben.
+- Lazy Load ist in den generierten Objekt Kontext Klassen (z. b. `SchoolEntities` in diesem Tutorial) in Entity Framework 4,0 standardmäßig aktiviert. Dies bedeutet, dass Navigations Eigenschaften bei Bedarf automatisch mit verwandten Daten geladen werden. Lazy Load wird weiter unten in diesem Tutorial ausführlicher erläutert.
+- Alle Anpassungen, die Sie auf die Objekt Kontext Klasse angewendet haben (in diesem Fall die `SchoolEntities`-Klasse), stehen für Steuerelemente zur Verfügung, die das `EntityDataSource`-Steuerelement verwenden. Das Anpassen der Objekt Kontext Klasse ist ein erweitertes Thema, das in dieser tutorialreihe nicht behandelt wird. Weitere Informationen finden Sie unter [Erweitern von Entity Framework generierten Typen](https://msdn.microsoft.com/library/dd456844.aspx).
 
-Das Markup wird nun im folgende Beispiel aussehen (die Reihenfolge der Eigenschaften möglicherweise unterschiedliche):
+Das Markup ähnelt nun dem folgenden Beispiel (die Reihenfolge der Eigenschaften kann abweichen):
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample6.aspx)]
 
-Die `EnableFlattening` -Attribut verweist auf eine Funktion, die in früheren Versionen von Entity Framework benötigt wurde, da die foreign Key-Spalten nicht als Entitätseigenschaften verfügbar gemacht wurden. Die aktuelle Version ist es möglich, *fremdschlüsselzuordnungen*, was bedeutet, dass Fremdschlüsseleigenschaften werden verfügbar gemacht werden, für alle außer m: n-Zuordnungen. Wenn Ihre Entitäten Fremdschlüsseleigenschaften und keine [komplexe Typen](https://msdn.microsoft.com/library/bb738472.aspx), lassen Sie dieses Attribut auf `False`. Das Attribut nicht aus dem Markup, entfernt werden, da der Standardwert ist `True`. Weitere Informationen finden Sie unter [vereinfachen Objekte (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx).
+Das `EnableFlattening`-Attribut verweist auf eine Funktion, die in früheren Versionen der Entity Framework erforderlich war, da Fremdschlüssel Spalten nicht als Entitäts Eigenschaften verfügbar gemacht wurden. Die aktuelle Version ermöglicht die Verwendung von *Fremdschlüssel Zuordnungen*, d. h. Fremdschlüssel Eigenschaften werden für alle n:n-Zuordnungen offengelegt. Wenn Ihre Entitäten Fremdschlüssel Eigenschaften und keine [komplexen Typen](https://msdn.microsoft.com/library/bb738472.aspx)aufweisen, können Sie dieses Attribut auf `False`festlegen. Entfernen Sie das Attribut nicht aus dem Markup, da der Standardwert `True`ist. Weitere Informationen finden Sie unter Vereinfachen von [Objekten (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx).
 
-Führen Sie die Seite, und Sie sehen eine Liste der Studierenden und Mitarbeiter (Sie werden für nur Schüler und Studenten im nächsten Tutorial Filtern). Der Vorname und Nachname werden zusammen angezeigt.
+Führen Sie die Seite aus, und Sie sehen eine Liste der Schüler/Studenten und Mitarbeiter (im nächsten Tutorial können Sie nach nur Schülern Filtern). Der Vorname und Nachname werden gleichzeitig angezeigt.
 
 [![Image07](the-entity-framework-and-aspnet-getting-started-part-2/_static/image36.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image35.png)
 
-Um die Anzeige zu sortieren, klicken Sie auf einen Spaltennamen an.
+Um die Anzeige zu sortieren, klicken Sie auf einen Spaltennamen.
 
-Klicken Sie auf **bearbeiten** in einer Zeile. Textfelder werden angezeigt, in dem Sie den ersten und letzten Namen ändern können.
+Klicken Sie in einer beliebigen Zeile auf **Bearbeiten** . Text Felder werden angezeigt, in denen Sie den vor-und Nachnamen ändern können.
 
 [![Image08](the-entity-framework-and-aspnet-getting-started-part-2/_static/image38.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image37.png)
 
-Die **löschen** Schaltfläche auch funktioniert. Klicken Sie auf "löschen", um eine Zeile mit einer Registrierungsdatum und die Zeile nicht mehr angezeigt wird. (Zeilen ohne Registrierungsdatum darstellen, Dozenten und erhalten Sie möglicherweise einen Fehler der referenziellen Integrität. Im nächsten Tutorial müssen Sie diese Liste, um nur Schüler und Studenten einzubeziehen filtern.)
+Die Schaltfläche **Löschen** funktioniert ebenfalls. Klicken Sie für eine Zeile mit einem Registrierungsdatum auf löschen, um die Zeile zu löschen. (Zeilen ohne Anmeldungs Datum stellen Dozenten dar, und Sie erhalten möglicherweise einen Fehler bei der referenziellen Integrität. Im nächsten Tutorial Filtern Sie diese Liste so, dass Sie nur Studenten enthält.)
 
-## <a name="displaying-data-from-a-navigation-property"></a>Anzeigen von Daten von einer Navigationseigenschaft
+## <a name="displaying-data-from-a-navigation-property"></a>Anzeigen von Daten aus einer Navigations Eigenschaft
 
-Jetzt wird angenommen, Sie möchten wissen, wie viele Kurse jeder Schüler/Student bei registriert. Das Entity Framework enthält diese Informationen in den `StudentGrades` Navigationseigenschaft der `Person` Entität. Da ein Schüler/Student einen Kurs registriert werden, ohne dass eine Grade-Eigenschaft zugewiesen von Entwurf der Datenbank nicht möglich ist, für dieses Tutorial können Sie davon ausgehen, dass durch eine Zeile der `StudentGrade` Tabellenzeile, die mit einem Kurs zugewiesen ist entspricht, das in diesem Kurs registriert. (Die `Courses` Navigationseigenschaft ist nur für Dozenten.)
+Nehmen Sie nun an, Sie möchten wissen, in wie vielen Kursen die einzelnen Studenten angemeldet sind. Der Entity Framework stellt diese Informationen in der `StudentGrades`-Navigations Eigenschaft der `Person`-Entität bereit. Da der Daten bankentwurf nicht zulässt, dass ein Student in einem Kurs registriert wird, ohne dass ein Grade zugewiesen ist, können Sie in diesem Tutorial davon ausgehen, dass das vorhanden sein einer Zeile in der `StudentGrade` Tabellenzeile, die einem Kurs zugeordnet ist, mit der Registrierung im Kurs identisch ist. (Die `Courses` Navigations Eigenschaft ist nur für Dozenten.)
 
-Bei Verwendung der `ContextTypeName` Attribut der `EntityDataSource` -Steuerelement, das Entity Framework automatisch Ruft Informationen für eine Navigationseigenschaft beim Zugriff auf diese Eigenschaft. Dies wird als bezeichnet *Lazy Load*. Dies kann jedoch ineffizient sein, da es einen separaten Aufruf von der Datenbank führt, die jedes Mal zusätzliche Informationen benötigt werden. Wenn Sie Daten aus der Navigationseigenschaft für jede zurückgegebene Entität benötigen die `EntityDataSource` -Steuerelement, ist es effizienter sein, um die verknüpften Daten zusammen mit der Entität selbst in einem einzigen Aufruf in der Datenbank abzurufen. Dies wird als bezeichnet *Eager Load*, und geben Sie eager Loading für eine Navigationseigenschaft, durch Festlegen der `Include` Eigenschaft der `EntityDataSource` Steuerelement.
+Wenn Sie das `ContextTypeName`-Attribut des `EntityDataSource` Steuer Elements verwenden, ruft der Entity Framework automatisch Informationen für eine Navigations Eigenschaft ab, wenn Sie auf diese Eigenschaft zugreifen. Dies wird als *Lazy Loading*bezeichnet. Dies kann jedoch ineffizient sein, da dies zu einem separaten Aufruf der Datenbank führt, wenn zusätzliche Informationen benötigt werden. Wenn Sie für jede Entität, die vom `EntityDataSource`-Steuerelement zurückgegeben wird, Daten aus der Navigations Eigenschaft benötigen, ist es effizienter, die verknüpften Daten zusammen mit der Entität selbst in einem einzigen Daten Bank Abruf abzurufen. Dies wird als *Eager Loading*bezeichnet, und Sie geben Eager Loading für eine Navigations Eigenschaft an, indem Sie die `Include`-Eigenschaft des `EntityDataSource` Steuer Elements festlegen.
 
-In *Students.aspx*, die Anzahl der Kurse für alle Schüler/Studenten angezeigt werden sollen, also eager Loading ist die beste Wahl. Wenn Sie alle Schüler/Studenten anzeigen, aber mit der Anzahl der Kurse wurden kann nur für einige davon (die Schreiben von Code neben dem Markup erfordern würden), Lazy Load eine bessere Wahl sein.
+In *students. aspx*möchten Sie die Anzahl von Kursen für jeden Schüler/Student anzeigen, sodass Eager Loading die beste Wahl ist. Wenn Sie alle Schüler/Studenten anzeigen, aber die Anzahl der Kurse nur für einige davon anzeigen (was das Schreiben von Code zusätzlich zum Markup erfordern würde), ist Lazy Loading möglicherweise besser geeignet.
 
-Öffnen, oder wechseln Sie zur *Students.aspx*, wechseln Sie zur **Entwurf** Ansicht `StudentsEntityDataSource`, und klicken Sie in der **Eigenschaften** legen die **Include**Eigenschaft **StudentGrades**. (Wenn Sie mehrere Navigationseigenschaften abrufen möchten, geben Sie Namen durch Kommas getrennt, z. B. **StudentGrades, Kursen**.)
+Öffnen Sie, oder wechseln Sie zu *students. aspx*, wechseln Sie zur **Entwurfs** Ansicht, wählen Sie `StudentsEntityDataSource`aus, und legen Sie im Fenster **Eigenschaften** die **include** -Eigenschaft auf **studentgrades**fest. (Wenn Sie mehrere Navigations Eigenschaften erhalten möchten, können Sie die Namen durch Kommas getrennt angeben – z. b. **studentgrades, Kurse**.)
 
 [![Image19](the-entity-framework-and-aspnet-getting-started-part-2/_static/image40.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image39.png)
 
-Wechseln Sie zur **Quelle** anzeigen. In der `StudentsGridView` -Steuerelement, nach dem letzten `asp:TemplateField` -Element, das folgende neue Vorlagenfeld hinzufügen:
+Wechseln Sie zur **Quell** Ansicht. Fügen Sie im `StudentsGridView`-Steuerelement hinter dem letzten `asp:TemplateField`-Element das folgende neue Vorlagen Feld hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample7.aspx)]
 
-In der `Eval` Ausdruck können Sie die Navigationseigenschaft verweisen `StudentGrades`. Da diese Eigenschaft eine Auflistung enthält, hat eine `Count` -Eigenschaft, die Sie verwenden können, um die Anzahl der Kurse anzuzeigen, in dem der Student, der registriert wird. In einem späteren Tutorial sehen Sie, wie Sie zum Anzeigen von Daten von Navigationseigenschaften, die einzelne Entitäten anstelle von Sammlungen enthalten. (Beachten Sie, dass Sie können nicht `BoundField` Elemente zum Anzeigen von Daten von Navigationseigenschaften.)
+Im `Eval` Ausdruck können Sie auf die Navigations Eigenschaft `StudentGrades`verweisen. Da diese Eigenschaft eine Auflistung enthält, verfügt sie über eine `Count`-Eigenschaft, die Sie verwenden können, um die Anzahl von Kursen anzuzeigen, in denen der Student registriert ist. In einem späteren Tutorial erfahren Sie, wie Sie Daten aus Navigations Eigenschaften anzeigen, die einzelne Entitäten anstelle von Auflistungen enthalten. (Beachten Sie, dass Sie `BoundField` Elemente nicht zum Anzeigen von Daten aus Navigations Eigenschaften verwenden können.)
 
-Führen Sie die Seite, und Sie jetzt sehen, wie viele Kurse für Schüler und Studenten registriert ist.
+Führen Sie die Seite aus, und Sie sehen nun, wie viele Kurse die einzelnen Studenten angemeldet sind.
 
 [![Image20](the-entity-framework-and-aspnet-getting-started-part-2/_static/image42.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image41.png)
 
-## <a name="using-a-detailsview-control-to-insert-entities"></a>Verwenden von einem DetailsView-Steuerelement zum Einfügen von Entitäten
+## <a name="using-a-detailsview-control-to-insert-entities"></a>Verwenden eines DetailsView-Steuer Elements zum Einfügen von Entitäten
 
-Der nächste Schritt ist die Erstellung eine Seite, die eine `DetailsView` Steuerelement, mit denen Sie die neue Studenten hinzufügen. Schließen Sie den Browser, und klicken Sie dann erstellen Sie eine neue Webseite mit den *Site.Master* Masterseite. Nennen Sie die Seite *StudentsAdd.aspx*, und wechseln Sie zur **Quelle** anzeigen.
+Der nächste Schritt besteht darin, eine Seite mit einem `DetailsView`-Steuerelement zu erstellen, mit dem Sie neue Studenten hinzufügen können. Schließen Sie den Browser, und erstellen Sie dann eine neue Webseite mithilfe der Master Seite *Site. Master* . Benennen Sie die Seite *studentsadd. aspx*, und wechseln Sie dann zur **Quell** Ansicht.
 
-Fügen Sie das folgende Markup zum Ersetzen Sie des vorhandenen Markups für die `Content` Steuerelement mit dem Namen `Content2`:
+Fügen Sie das folgende Markup hinzu, um das vorhandene Markup für das `Content` Steuerelement mit dem Namen `Content2`zu ersetzen:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample8.aspx)]
 
-Dieses Markup erstellt eine `EntityDataSource` Steuerelement, das ähnlich dem im erstellten *Students.aspx*, es sei denn sie einfügen kann. Wie bei der `GridView` zu steuern, die gebundene Felder der `DetailsView` Steuerelement codiert werden, genau wie bei der für ein Steuerelement, das direkt mit einer Datenbank, verbunden mit dem Unterschied, dass sie die Eigenschaften der Entität verweisen. In diesem Fall die `DetailsView` Steuerelement wird verwendet, nur für das Einfügen von Zeilen, aus, damit Sie den Standardmodus, um eingerichtet haben `Insert`.
+Dieses Markup erstellt ein `EntityDataSource` Steuerelement, das dem in *students. aspx*erstellten ähnelt, mit dem Unterschied, dass es Einfügevorgänge ermöglicht. Wie beim `GridView`-Steuerelement sind die gebundenen Felder des `DetailsView` Steuer Elements genau so codiert wie für ein Daten Steuerelement, das eine direkte Verbindung mit einer Datenbank herstellt, mit dem Unterschied, dass Sie auf Entitäts Eigenschaften verweisen. In diesem Fall wird das `DetailsView`-Steuerelement nur zum Einfügen von Zeilen verwendet, sodass Sie den Standardmodus auf `Insert`festgelegt haben.
 
-Führen Sie die Seite, und fügen Sie einen neuen Studenten hinzu.
+Führen Sie die Seite aus, und fügen Sie einen neuen Studenten hinzu.
 
 [![Image09](the-entity-framework-and-aspnet-getting-started-part-2/_static/image44.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image43.png)
 
-"Nothing" erfolgt, nachdem Sie einen neuen Studenten eingefügt, aber wenn Sie jetzt ausführen *Students.aspx*, sehen Sie die Informationen des neuen für Schüler und Studenten.
+Nachdem Sie einen neuen Schüler/Student eingefügt haben, werden die Informationen zu den *neuen Schülern angezeigt*.
 
-## <a name="displaying-data-in-a-drop-down-list"></a>Anzeigen von Daten in einem Dropdown-Liste
+## <a name="displaying-data-in-a-drop-down-list"></a>Anzeigen von Daten in einer Dropdown Liste
 
-In den folgenden Schritten müssen Sie die Databind eine `DropDownList` Steuerelement eine Entitätenmenge, die mit einem `EntityDataSource` Steuerelement. In diesem Teil des Tutorials nicht Sie viel mit dieser Liste. Im weiteren Verlauf werden Sie die Liste jedoch verwenden, können Benutzer die Auswahl einer Abteilung zum Anzeigen der Kurse, die die Abteilung zugeordnet.
+In den folgenden Schritten wird ein `DropDownList`-Steuerelement mithilfe eines `EntityDataSource` Steuer Elements an eine Entitätenmenge übernehmen In diesem Teil des Tutorials wird diese Liste nicht wesentlich behandelt. In nachfolgenden Teilen verwenden Sie die Liste, um Benutzern die Auswahl von Kursen zu gestatten, die mit der Abteilung verknüpft sind.
 
-Erstellen einer neuen Webseite mit dem Namen *Courses.aspx*. In **Quelle** anzuzeigen, fügen Sie eine Spaltenüberschrift, um die `Content` Steuerelement mit dem Namen `Content2`:
+Erstellen Sie eine neue Webseite namens " *Courses. aspx*". Fügen Sie in der **Quell** Ansicht dem `Content`-Steuerelement, das `Content2`heißt, eine Überschrift hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample9.aspx)]
 
-In **Entwurf** anzeigen, Hinzufügen einer `EntityDataSource` Steuerelement auf der Seite wie zuvor, außer dass diesmal fußballfanartikel `DepartmentsEntityDataSource`. Wählen Sie **Abteilungen** als die **EntitySetName** Wert ein, und wählen Sie nur die **"DepartmentID"** und **Namen** Eigenschaften.
+Fügen Sie der Seite in der **Entwurfs** Ansicht wie zuvor ein `EntityDataSource`-Steuerelement hinzu, mit der Ausnahme, dass Sie `DepartmentsEntityDataSource`. Wählen Sie **Abteilungen** als Wert für **entitySetName** aus, und wählen Sie nur die Eigenschaften **DepartmentID** und **Name** aus.
 
 [![Image15](the-entity-framework-and-aspnet-getting-started-part-2/_static/image46.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image45.png)
 
-Aus der **Standard** Registerkarte die **Toolbox**, ziehen Sie eine `DropDownList` die Steuerung an die Seite, nennen Sie es `DepartmentsDropDownList`, klicken Sie auf das Smarttag, und wählen **Datenquelle auswählen** auf Starten Sie den **DataSource-Konfigurations-Assistenten**.
+Ziehen Sie auf der Registerkarte **Standard** der **Toolbox**ein `DropDownList`-Steuerelement auf die Seite, benennen Sie es `DepartmentsDropDownList`, klicken Sie auf das Smarttag, und wählen Sie **Datenquelle auswählen** aus, um den **Assistenten zum Konfigurieren von Daten**Quellen zu starten.
 
 [![Image16](the-entity-framework-and-aspnet-getting-started-part-2/_static/image48.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image47.png)
 
-In der **Auswählen einer Datenquelle** Schritt select **DepartmentsEntityDataSource** als Datenquelle, klicken Sie auf **Schema aktualisieren**, und wählen Sie dann **Namen** wie das Datenfeld angezeigt und **"DepartmentID"** als Datenfeld Wert. Klicken Sie auf **OK**.
+Wählen Sie im Schritt **Wählen Sie eine Datenquelle** aus die Option **departmentsentitydatasource** als Datenquelle aus, klicken Sie auf **Schema aktualisieren**, und wählen Sie dann **Name** als Datenfeld zum Anzeigen und **DepartmentID** als WertDatenfeld aus. Klicken Sie auf **OK**.
 
 [![Image17](the-entity-framework-and-aspnet-getting-started-part-2/_static/image50.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image49.png)
 
-Die Methode man das Steuerelement mit dem Entity Framework entspricht derjenigen mit anderen ASP.NET-Daten Datenquellen-Steuerelemente, außer dass Sie Entitäten und Eigenschaften der Entität angeben.
+Die Methode, die Sie verwenden, um das Steuerelement mit dem Entity Framework zu übernehmen, ist identisch mit anderen ASP.NET-Datenquellen-Steuerelementen, außer Sie geben Entitäten und Entitäts Eigenschaften an.
 
-Wechseln Sie zur **Quelle** anzeigen und hinzufügen "Wählen Sie einen Fachbereich:" direkt vor der `DropDownList` Steuerelement.
+Wechseln Sie zur **Quell** Ansicht, und fügen Sie "Select a Department:" direkt vor dem `DropDownList`-Steuerelement ein.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample10.aspx)]
 
-Zur Erinnerung: Ändern Sie das Markup für die `EntityDataSource` Steuerelement an diesem Punkt durch Ersetzen der `ConnectionString` und `DefaultContainerName` Attribute mit einem `ContextTypeName="ContosoUniversity.DAL.SchoolEntities"` Attribut. Es ist oft sinnvoll, zu warten, bis Sie die vom datengebundenen Steuerelement erstellt haben, die mit den Datenquellen-Steuerelement verknüpft ist, bevor Sie ändern die `EntityDataSource` Markup zu steuern, da nach dem vornehmen der Änderung der Designer keine Ihnen wird ein **aktualisieren Schema** Option im datengebundenen Steuerelement.
+Zur Erinnerung: Ändern Sie das Markup für das `EntityDataSource` Steuerelement an dieser Stelle, indem Sie die Attribute `ConnectionString` und `DefaultContainerName` durch ein `ContextTypeName="ContosoUniversity.DAL.SchoolEntities"` Attribut ersetzen. Es ist oft am besten, zu warten, bis Sie das Daten gebundene Steuerelement erstellt haben, das mit dem Datenquellen-Steuerelement verknüpft ist, bevor Sie das `EntityDataSource`-Steuerelement Markup ändern, denn nachdem Sie die Änderung vorgenommen haben, stellt der Designer im Daten gebundenen Steuerelement keine **Aktualisierungs Schema** Option bereit.
 
-Führen Sie die Seite, und Sie können eine Abteilung auswählen, aus der Dropdown-Liste.
+Führen Sie die Seite aus, und Sie können eine Abteilung aus der Dropdown Liste auswählen.
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image52.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image51.png)
 
-Dies schließt die Einführung in die Verwendung der `EntityDataSource` Steuerelement. Arbeiten mit diesem Steuerelement unterscheidet sich in der Regel nicht von der Arbeit mit anderen ASP.NET-Daten-Datenquellen-Steuerelemente, mit dem Unterschied, dass Sie Entitäten und Eigenschaften anstelle von Tabellen und Spalten verweisen. Die einzige Ausnahme ist, wenn Sie Navigationseigenschaften zugreifen möchten. Im nächsten Tutorial sehen Sie, dass Sie die Syntax mit verwenden `EntityDataSource` Steuerelement möglicherweise auch unterscheiden sich von anderen Datenquellen-Steuerelemente, wenn Sie filtern, gruppieren und Sortieren von Daten.
+Dies schließt die Einführung in die Verwendung des `EntityDataSource`-Steuer Elements ein. Das Arbeiten mit diesem Steuerelement unterscheidet sich in der Regel nicht von der Arbeit mit anderen ASP.NET-Datenquellen-Steuerelementen, mit der Ausnahme, dass Sie anstelle von Tabellen und Spalten auf Entitäten Die einzige Ausnahme ist, wenn Sie auf Navigations Eigenschaften zugreifen möchten. Im nächsten Tutorial sehen Sie, dass sich die Syntax, die Sie mit `EntityDataSource`-Steuerelement verwenden, möglicherweise auch von anderen Datenquellen-Steuerelementen unterscheidet, wenn Sie Daten filtern, gruppieren und sortieren.
 
 > [!div class="step-by-step"]
 > [Zurück](the-entity-framework-and-aspnet-getting-started-part-1.md)

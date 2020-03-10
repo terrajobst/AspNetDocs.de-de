@@ -1,149 +1,149 @@
 ---
 uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
-title: ASP.NET MVC-Ansichten – Übersicht (c#) | Microsoft-Dokumentation
+title: Übersicht über ASP.NET MVC-C#Ansichten () | Microsoft-Dokumentation
 author: StephenWalther
-description: Was ist eine ASP.NET MVC-Ansicht, und wie unterscheidet es sich von einem HTML-Seite? In diesem Tutorial Stephen Walther bietet eine Einführung zu Ansichten und veranschaulicht, wie Sie t...
+description: Was ist eine ASP.NET MVC-Ansicht, und wie unterscheidet Sie sich von einer HTML-Seite? In diesem Tutorial stellt Stephen Walther Sie in Ansichten vor und veranschaulicht, wie Sie es tun können...
 ms.author: riande
 ms.date: 02/16/2008
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: b3f44aa9654a2a718381eaf9c856ca3e15ed1e27
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117318"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485853"
 ---
 # <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC-Ansichten – Übersicht (C#)
 
-durch [Stephen Walther](https://github.com/StephenWalther)
+von [Stephen Walther](https://github.com/StephenWalther)
 
-> Was ist eine ASP.NET MVC-Ansicht, und wie unterscheidet es sich von einem HTML-Seite? In diesem Tutorial Stephen Walther bietet eine Einführung zu Ansichten und veranschaulicht, wie Sie Daten anzeigen und HTML-Hilfsprogramme in einer Ansicht nutzen können.
+> Was ist eine ASP.NET MVC-Ansicht, und wie unterscheidet Sie sich von einer HTML-Seite? In diesem Tutorial stellt Stephen Walther Sie in Ansichten vor und veranschaulicht, wie Sie die Vorteile von Anzeigedaten und HTML-Hilfsprogrammen in einer Ansicht nutzen können.
 
-Der Zweck dieses Lernprogramms ist eine kurze Einführung in ASP.NET MVC-Ansichten, Anzeigen von Daten und HTML-Hilfsprogramme bereit. Am Ende dieses Tutorials sollten Sie verstehen, wie Sie neue Ansichten erstellen, Daten von einem Controller an eine Ansicht übergeben und HTML-Hilfsprogramme verwenden, um Inhalte in einer Ansicht zu generieren.
+Der Zweck dieses Tutorials besteht darin, Ihnen eine kurze Einführung in ASP.NET MVC-Ansichten, Daten anzeigen und HTML-Hilfsprogramme zu bieten. Am Ende dieses Tutorials sollten Sie wissen, wie neue Sichten erstellt, Daten von einem Controller an eine Ansicht übergeben werden und wie HTML-Hilfsprogramme verwendet werden, um Inhalte in einer Ansicht zu generieren.
 
 ## <a name="understanding-views"></a>Grundlegendes zu Sichten
 
-Für ASP.NET oder Active Server Pages enthält ASP.NET MVC nicht alles, der direkt auf eine Seite entspricht. In einer ASP.NET MVC-Anwendung besteht keine Seite auf dem Datenträger, der den Pfad in der URL entspricht, die Sie in die Adressleiste des Browsers eingeben. Am ehesten mit einer Seite in einer ASP.NET MVC-Anwendung ist etwas bezeichnet ein *Ansicht*.
+Für ASP.net-oder Active Server Seiten enthält ASP.NET MVC nichts, das direkt einer Seite entspricht. In einer ASP.NET-MVC-Anwendung gibt es keine Seite auf dem Datenträger, die dem Pfad in der URL entspricht, die Sie in die Adressleiste Ihres Browsers eingeben. Die nächstgelegene Seite einer Seite in einer ASP.NET MVC-Anwendung wird als *Ansicht*bezeichnet.
 
-In einer ASP.NET MVC-Anwendung werden die eingehenden Browseranforderungen zu Controlleraktionen zugeordnet. Eine Controlleraktion kann es sich um eine Ansicht zurückgeben. Eine Controlleraktion kann jedoch eine andere Art von Aktion, z. B. umleiten Sie zu einer anderen Controlleraktion durchführen.
+In einer ASP.NET-MVC-Anwendung werden eingehende Browser Anforderungen Controller Aktionen zugeordnet. Eine Controller Aktion kann eine Ansicht zurückgeben. Eine Controller Aktion kann jedoch eine andere Art von Aktion ausführen, z. b. eine Umleitung an eine andere Controller Aktion.
 
-Codebeispiel 1 enthält einen einfachen Controller, mit dem Namen HomeController. HomeController macht zwei Controller-Aktionen, die mit dem Namen Index() und Details() verfügbar.
+In der Liste 1 ist ein einfacher Controller namens HomeController enthalten. Der HomeController macht zwei Controller Aktionen namens Index () und Details () verfügbar.
 
-**Codebeispiel 1 - Datei "HomeController.cs"**
+**Codebeispiel 1-HomeController.cs**
 
 [!code-csharp[Main](asp-net-mvc-views-overview-cs/samples/sample1.cs)]
 
-Sie können die erste Aktion, die Aktion Index() aufrufen, indem Sie die folgende URL in die Adressleiste Ihres Browsers eingeben:
+Sie können die erste Aktion, die Index ()-Aktion, aufrufen, indem Sie die folgende URL in die Adressleiste Ihres Browsers eingeben:
 
-/ Home/Index
+/Home/Index
 
-Sie können die zweite Aktion, die Aktion Details() aufrufen, indem Sie diese Adresse in Ihren Browser eingeben:
+Sie können die zweite Aktion, die Aktion "Details ()" aufrufen, indem Sie diese Adresse in Ihrem Browser eingeben:
 
-/ Home/Details
+/Home/Details
 
-Die Index()-Aktion gibt eine Ansicht zurück. Die meisten Aktionen, die Sie erstellen werden Sichten zurückgegeben. Sie können jedoch eine Aktion andere Arten von Aktionsergebnissen zurückgeben. Beispielsweise gibt die Details()-Aktion ein, die eingehende Anforderung an die Aktion Index() leitet RedirectToActionResult zurück.
+Die Index ()-Aktion gibt eine Ansicht zurück. Bei den meisten von Ihnen erstellten Aktionen werden Sichten zurückgegeben. Eine Aktion kann jedoch andere Arten von Aktions Ergebnissen zurückgeben. Beispielsweise gibt die Aktion Details () ein redirecttoaction-Ergebnis zurück, das die eingehende Anforderung an die Index ()-Aktion umleitet.
 
-Die Aktion Index() enthält die folgende Codezeile:
+Die Index ()-Aktion enthält die folgende einzelne Codezeile:
 
-View();
+Anzeigen ();
 
-Diese Codezeile gibt es sich um eine Ansicht, die sich unter folgendem Pfad auf dem Webserver sein müssen:
+Diese Codezeile gibt eine Ansicht zurück, die sich unter folgendem Pfad auf dem Webserver befinden muss:
 
-\Views\Home\Index.aspx
+\Views\home\index.aspx
 
-Der Pfad für die Ansicht wird von den Namen des Controllers und der Name der Controlleraktion abgeleitet.
+Der Pfad zur Ansicht wird vom Namen des Controllers und vom Namen der Controller Aktion abgeleitet.
 
-Falls gewünscht, können Sie über die Ansicht explizite sein. Die folgende Codezeile gibt eine Ansicht namens Fred zurück:
+Wenn Sie möchten, können Sie die Ansicht explizit angeben. In der folgenden Codezeile wird eine Ansicht mit dem Namen Fred zurückgegeben:
 
 Ansicht (Fred);
 
-Wenn diese Codezeile ausgeführt wird, wird eine Ansicht aus dem folgenden Pfad zurückgegeben:
+Wenn diese Codezeile ausgeführt wird, wird eine Ansicht von folgendem Pfad zurückgegeben:
 
-\Views\Home\Fred.aspx
+\Views\home\fred.aspx
 
 > [!NOTE] 
 > 
-> Wenn Sie planen, Erstellen von Komponententests für Ihre ASP.NET MVC-Anwendung ist es eine gute Idee, die explizit über den Sichtnamen sein. Auf diese Weise können Sie einen Komponententest, um sicherzustellen, dass die erwarteten Ansicht durch eine Controlleraktion zurückgegeben wurde erstellen.
+> Wenn Sie Vorhaben, Komponententests für Ihre ASP.NET MVC-Anwendung zu erstellen, empfiehlt es sich, explizit über Ansichts Namen zu sprechen. Auf diese Weise können Sie einen Komponenten Test erstellen, um zu überprüfen, ob die erwartete Ansicht von einer Controller Aktion zurückgegeben wurde.
 
-## <a name="adding-content-to-a-view"></a>Hinzufügen von Inhalten zu einer Ansicht
+## <a name="adding-content-to-a-view"></a>Hinzufügen von Inhalt zu einer Ansicht
 
-Eine Sicht ist ein Standard (HTML-Dokument, das Skripts enthalten kann X). Sie können Skripts verwenden, um dynamischen Inhalt an eine Ansicht hinzuzufügen.
+Eine Sicht ist ein Standard-HTML-Dokument (X), das Skripts enthalten kann. Mithilfe von Skripts können Sie dynamische Inhalte zu einer Ansicht hinzufügen.
 
-Beispielsweise zeigt die Ansicht im Codebeispiel 2 an das aktuelle Datum und die Uhrzeit.
+In der Ansicht in der Liste 2 werden z. b. das aktuelle Datum und die Uhrzeit angezeigt.
 
-**Codebeispiel 2 - \Views\Home\Index.aspx**
+**Codebeispiel 2: \views\home\index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample2.aspx)]
 
-Beachten Sie, dass der Text der HTML-Seite in Liste 2 das folgende Skript enthält:
+Beachten Sie, dass der Text der HTML-Seite in der Liste 2 das folgende Skript enthält:
 
-&lt;"% Response.Write(DateTime.Now);"&gt;
+&lt;% Response. Write (DateTime. Now);%&gt;
 
-Verwenden Sie die Skript-Trennzeichen &lt;% "und"&gt; Anfang und Ende eines Skripts zu markieren. Dieses Skript ist in c# geschrieben. Es zeigt das aktuelle Datum und die Uhrzeit durch Aufrufen der Response.Write()-Methode, um Inhalt an den Browser zu rendern. Die Skript-Trennzeichen &lt;% "und"&gt; können verwendet werden, um eine oder mehrere Anweisungen ausführen.
+Sie verwenden die Skript Trennzeichen &lt;% und%&gt;, um den Anfang und das Ende eines Skripts zu markieren. Dieses Skript wird in C#geschrieben. Es zeigt das aktuelle Datum und die aktuelle Uhrzeit durch Aufrufen der Response. Write ()-Methode zum Rendering von Inhalten im Browser an. Die Skript Trennzeichen &lt;% und%&gt; können verwendet werden, um eine oder mehrere-Anweisungen auszuführen.
 
-Da Sie so oft Response.Write() aufrufen, bietet Microsoft eine Verknüpfung zum Aufrufen der Response.Write()-Methode. Die Ansicht in Programmausdruck 3 verwendet die Trennzeichen &lt;% = "und"&gt; als Abkürzung für Response.Write() aufrufen.
+Da Sie "Response. Write ()" so oft aufrufen, stellt Microsoft Ihnen eine Verknüpfung zum Aufrufen der Response. Write ()-Methode zur Verfügung. Die Ansicht in der Liste 3 verwendet die Trennzeichen &lt;% = und%&gt; als Verknüpfung zum Aufrufen von Response. Write ().
 
-**Codebeispiel 3 - Views\Home\Index2.aspx**
+**Codebeispiel 3: views\home\index2.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample3.aspx)]
 
-Sie können jeder verwenden, um dynamischen Inhalt in einer Ansicht zu generieren. Normalerweise verwenden Sie entweder Visual Basic .NET oder C# , Controllern und Ansichten zu schreiben.
+Sie können eine beliebige .NET-Sprache verwenden, um dynamischen Inhalt in einer Ansicht zu generieren. Normalerweise verwenden Sie entweder Visual Basic .net oder C# zum Schreiben von Controllern und Ansichten.
 
-## <a name="using-html-helpers-to-generate-view-content"></a>Verwenden von HTML-Hilfsmethoden zum Generieren von Inhalt anzeigen
+## <a name="using-html-helpers-to-generate-view-content"></a>Verwenden von HTML-Hilfsprogrammen zum Generieren von Ansichts Inhalten
 
-Zum Hinzufügen von Inhalt an eine Ansicht zu vereinfachen, können Sie nutzen der so genannte ein *HTML-Hilfsobjekt*. Ein HTML-Hilfsobjekt, ist in der Regel eine Methode, die eine Zeichenfolge generiert. Sie können HTML-Hilfsprogramme verwenden, um standard-HTML-Elemente wie z. B. Textfelder, Links, Dropdownlisten und Listenfelder zu generieren.
+Um das Hinzufügen von Inhalt zu einer Ansicht zu vereinfachen, können Sie die Vorteile eines *HTML*-Hilfsobjekts nutzen. Ein HTML-Hilfsprogramm ist in der Regel eine Methode, die eine Zeichenfolge generiert. Sie können HTML-Hilfsprogramme verwenden, um HTML-Standardelemente wie Textfelder, Links, Dropdown Listen und Listenfelder zu generieren.
 
-Bilden beispielsweise die Ansicht in Listing 4 nutzt drei HTML-Hilfsprogrammen – Hilfsprogramme BeginForm(), TextBox() und Password() – um eine Anmeldung zu generieren (siehe Abbildung 1).
+Die Ansicht in der Liste 4 nutzt beispielsweise drei HTML-Hilfsprogramme: die BeginForm ()-, TextBox-und Password ()-Hilfsprogramme, um ein Anmeldeformular zu generieren (siehe Abbildung 1).
 
-**Programmausdruck 4 – \Views\Home\Login.aspx**
+**Codebeispiel 4: \views\home\login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
-[![Das Dialogfeld "Neues Projekt"](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
+[![des Dialog Felds "Neues Projekt"](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
 
-**Abbildung 01**: Ein standard Anmeldeformular ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-views-overview-cs/_static/image2.png))
+**Abbildung 01**: ein Standard Anmeldeformular ([Klicken Sie, um das Bild in voller Größe anzuzeigen](asp-net-mvc-views-overview-cs/_static/image2.png))
 
-Alle HTML-Hilfsprogramme Methoden werden in der Eigenschaft Html der Ansicht aufgerufen. Rendern Sie z. B. ein Textfeld durch Aufrufen der Html.TextBox()-Methode.
+Alle HTML-Hilfsmethoden werden in der HTML-Eigenschaft der Ansicht aufgerufen. Beispielsweise können Sie ein Textfeld durch Aufrufen der HTML. TextBox ()-Methode Rendering.
 
-Beachten Sie, dass Sie die Skript-Trennzeichen verwenden &lt;% = "und"&gt; beim Aufrufen von Html.TextBox() sowohl Html.Password() Hilfsprogramme. Diese Hilfsprogramme werden einfach eine Zeichenfolge zurückgeben. Sie müssen Response.Write() aufrufen, um die Zeichenfolge an den Browser zu rendern.
+Beachten Sie, dass Sie die Skript Trennzeichen &lt;% = und%&gt; verwenden, wenn Sie sowohl die HTML. TextBox ()-als auch die HTML. Password ()-Hilfsprogramme aufrufen. Diese Hilfsprogramme geben einfach eine Zeichenfolge zurück. Sie müssen Response. Write () aufzurufen, um die Zeichenfolge im Browser zu erzeugen.
 
-Verwendung von HTML-Hilfsmethoden ist optional. Sie erleichtern sich das Leben durch Verringern der Menge von HTML und Skripts, die Sie schreiben müssen. Die Ansicht in Listing 5 wird genaue dasselbe Format wie die Ansicht in Listing 4 ohne Verwendung von HTML-Hilfsprogramme gerendert.
+Die Verwendung von HTML-Hilfsmethoden ist optional. Dadurch wird das Leben vereinfacht, indem die Menge an HTML und Skript reduziert wird, die Sie schreiben müssen. Die Ansicht in Auflistung 5 rendert genau dasselbe Formular wie die Ansicht in der Ansicht 4, ohne HTML-Hilfsprogramme zu verwenden.
 
-**Programmausdruck 5 – \Views\Home\Login.aspx**
+**Codebeispiel 5: \views\home\login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample5.aspx)]
 
-Sie können auch das Erstellen eigener HTML-Hilfsprogrammen. Beispielsweise können Sie eine Hilfsmethode GridView() erstellen, die einen Satz von Datenbank-Datensätzen in einer HTML-Tabelle automatisch anzeigt. Erläutert, in diesem Thema im Lernprogramm **Erstellen von benutzerdefinierten HTML-Hilfsprogrammen**.
+Sie haben auch die Möglichkeit, eigene HTML-Hilfsprogramme zu erstellen. Sie können z. b. eine GridView ()-Hilfsmethode erstellen, die einen Satz von Datenbankdaten Sätzen in einer HTML-Tabelle automatisch anzeigt. Dieses Thema wird im Tutorial Erstellen von **benutzerdefinierten HTML**-Hilfsprogrammen erläutert.
 
-## <a name="using-view-data-to-pass-data-to-a-view"></a>Anzeigen von Daten verwenden, um Daten an eine Ansicht übergeben
+## <a name="using-view-data-to-pass-data-to-a-view"></a>Verwenden von Ansichts Daten zum Übergeben von Daten an eine Sicht
 
-Sie verwenden die Anzeigedaten, Daten von einem Controller an eine Ansicht zu übergeben. Stellen Sie Anzeigedaten, wie ein Paket, die Sie über die e-Mail zu senden. Alle Daten, die von einem Controller an eine Ansicht übergeben müssen mit diesem Paket gesendet werden. Der Controller im Codebeispiel 6 fügt beispielsweise eine Nachricht zum Anzeigen von Daten.
+Sie verwenden Daten anzeigen, um Daten von einem Controller an eine Ansicht zu übergeben. Betrachten Sie Daten wie ein Paket, das Sie über die e-Mail senden. Alle Daten, die von einem Controller an eine Ansicht übermittelt werden, müssen mithilfe dieses Pakets gesendet werden. Der Controller in der Liste 6 fügt z. b. eine Meldung zum Anzeigen von Daten hinzu.
 
-**Codebeispiel 6: ProductController.cs**
+**Codebeispiel 6-ProductController.cs**
 
 [!code-csharp[Main](asp-net-mvc-views-overview-cs/samples/sample6.cs)]
 
-Der Controller die ViewData-Eigenschaft stellt eine Auflistung von Name-Wert-Paaren dar. Auflisten von 6 wurde der Erfassung von Ansicht namens "Message" mit dem Hello World-Wert die Index()-Methode ein Element hinzugefügt. Wenn die Ansicht von der Index()-Methode zurückgegeben wird, werden die Anzeigen von Daten automatisch an die Ansicht übergeben.
+Die Eigenschaft "ViewData" des Controllers stellt eine Auflistung von Name-Wert-Paaren dar. In der Liste 6 fügt die Index ()-Methode der Ansichts Datensammlung mit dem Wert Hallo Welt! ein Element hinzu. Wenn die Ansicht von der Index ()-Methode zurückgegeben wird, werden die Ansichts Daten automatisch an die Ansicht übermittelt.
 
-Die Ansicht im Codebeispiel 7 Ruft die Nachricht von den Daten ab und rendert die Nachricht an den Browser.
+Die Ansicht in der Liste 7 Ruft die Nachricht aus den Ansichts Daten ab und rendert die Nachricht im Browser.
 
-**Codebeispiel 7: \Views\Product\Index.aspx**
+**Codebeispiel 7: \views\product\index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample7.aspx)]
 
-Beachten Sie, dass die Ansicht die Html.Encode() HTML-Hilfsmethode beim Rendern der Nachricht nutzt. Das HTML-Hilfsobjekt Html.Encode() codiert Sonderzeichen wie z. B. &lt; und &gt; in Zeichen, die sicher auf einer Webseite angezeigt werden. Wenn Sie Inhalt, die ein Benutzer auf einer Website sendet rendern, sollten Sie den Inhalt, der JavaScript-Injection-Angriffe zu verhindern, dass codieren.
+Beachten Sie, dass die-Sicht beim Rendern der Nachricht die HTML. Encode ()-HTML-Hilfsmethode nutzt. Das HTML-Hilfsprogramm HTML. Encode () codiert Sonderzeichen, z. b. &lt; und &gt; in Zeichen, die auf einer Webseite sicher angezeigt werden können. Wenn Sie Inhalte, die von einem Benutzer an eine Website übermittelt werden, wiederzugeben, sollten Sie den Inhalt codieren, um JavaScript Injection-Angriffe zu verhindern.
 
-(Da wir die Nachricht selbst im ProductController erstellt haben, müssen wir unbedingt auf die Meldung zu codieren. Es ist jedoch ein sollte zur guten Gewohnheit, immer die Html.Encode()-Methode aufgerufen wird, bei der Anzeige von Inhalten aus der sichtdaten in einer Sicht abgerufen.)
+(Da wir die Nachricht selbst in ProductController erstellt haben, müssen wir die Nachricht nicht codieren. Es ist jedoch eine gute Gewohnheit, immer die HTML. Encode ()-Methode aufzurufen, wenn Inhalte angezeigt werden, die aus Sicht Daten innerhalb einer Ansicht abgerufen werden.)
 
-Auflisten von 7 haben wir nutzen Anzeigedaten, eine einfache Zeichenfolge-Nachricht anhand eines Controllers zu einer Ansicht zu übergeben. Sie können auch anzeigen von Daten verwenden, um andere Arten von Daten, z. B. eine Auflistung von Datenbank-Datensätzen von einem Controller an eine Ansicht zu übergeben. Beispielsweise sollten Sie den Inhalt der Datenbank Products-Tabelle in einer Sicht, zeigen Sie die Auflistung der Datenbank übergeben würde Datensätze in der Ansicht Daten.
+In der Liste 7 haben wir die Anzeigedaten genutzt, um eine einfache Zeichen folgen Nachricht von einem Controller an eine Ansicht zu übergeben. Sie können auch Daten anzeigen verwenden, um andere Datentypen, z. b. eine Sammlung von Datenbankdaten Sätzen, von einem Controller an eine Ansicht zu übergeben. Wenn Sie z. b. den Inhalt der Datenbanktabelle "Products" in einer Ansicht anzeigen möchten, übergeben Sie die Sammlung der Datenbankdaten Sätze in "Daten anzeigen".
 
-Sie können auch die stark typisierte Ansichtsdaten anhand eines Controllers zu einer Ansicht zu übergeben. Erläutert, in diesem Thema im Lernprogramm **Grundlegendes zu stark typisierten Daten anzeigen und Ansichten**.
+Sie haben auch die Möglichkeit, stark typisierte Ansichts Daten von einem Controller an eine Ansicht zu übergeben. Dieses Thema wird im Lernprogramm Grundlegendes zu **stark typisierten Ansichts Daten und Ansichten**beschrieben.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Tutorial bereitgestellt, eine kurze Einführung in ASP.NET MVC-Ansichten, Anzeigen von Daten und HTML-Hilfsprogramme. Im ersten Abschnitt haben Sie gelernt, wie neue Ansichten zu Ihrem Projekt hinzufügen. Sie haben gelernt, dass Sie eine Ansicht und den richtigen Ordner hinzufügen, um über einen bestimmten Controller aufrufen. Als Nächstes erläutert das Thema des HTML-Hilfsprogramme. Sie erfahren, wie HTML-Hilfsprogramme standard-HTML-Inhalt einfach erstellen können. Schließlich haben Sie Gewusst wie: Anzeigen von Daten zur Datenübergabe von einem Controller zu einer Ansicht nutzen.
+Dieses Tutorial bot eine kurze Einführung in ASP.NET MVC-Ansichten, Ansichts Daten und HTML-Hilfsprogramme. Im ersten Abschnitt haben Sie erfahren, wie Sie Ihrem Projekt neue Ansichten hinzufügen. Sie haben gelernt, dass Sie dem richtigen Ordner eine Ansicht hinzufügen müssen, um Sie von einem bestimmten Controller aus aufzurufen. Als nächstes haben wir das Thema der HTML-Hilfsprogramme erläutert. Sie haben gelernt, wie HTML-Hilfsprogramme Ihnen die einfache Generierung von HTML-Standard Inhalten ermöglichen. Schließlich haben Sie gelernt, wie Sie die Anzeige von Daten nutzen können, um Daten von einem Controller an eine Ansicht zu übergeben.
 
 > [!div class="step-by-step"]
-> [Nächste](creating-custom-html-helpers-cs.md)
+> [Weiter](creating-custom-html-helpers-cs.md)

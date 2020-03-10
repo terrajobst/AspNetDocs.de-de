@@ -9,11 +9,11 @@ ms.assetid: a4a25a75-d71f-4509-98b4-df72e748985a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 88a5f1037d93ef3bdc95bf60b6005ebb254ab440
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588588"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78469527"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-vb"></a>Erstellen von Modellklassen mit LINQ to SQL (VB)
 
@@ -63,11 +63,11 @@ Wir müssen unserer Datenbank eine Tabelle hinzufügen, die unsere Filme repräs
 
 Wir müssen der Datenbanktabelle die folgenden Spalten hinzufügen:
 
-| **Spalten Name** | **Datentyp** | **NULL-Werten zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
-| Id | Int | Falsch |
-| Title | Nvarchar (200) | Falsch |
-| Direktors | Nvarchar (50) | Falsch |
+| Id | Int | False |
+| Titel | Nvarchar (200) | False |
+| Regisseur | Nvarchar (50) | False |
 
 Sie müssen für die ID-Spalte zwei besondere Dinge tun. Zuerst müssen Sie die ID-Spalte als Primärschlüssel Spalte markieren, indem Sie die Spalte in der Tabellen-Designer auswählen und auf das Symbol einer Taste klicken. LINQ to SQL müssen Sie beim Ausführen von Einfügungen oder Updates für die Datenbank Ihre Primärschlüssel Spalten angeben.
 
@@ -177,7 +177,7 @@ Wenn Sie die von der Anwendung verwendete Datenzugriffs Technologie ändern möc
 
 Wenn Sie die Klasse "moviescontroller" testen möchten, können Sie außerdem eine Klasse "Fake Movie Repository" an den "moviescontroller" übergeben. Sie können die imuvierepository-Klasse mit einer Klasse implementieren, die nicht auf die Datenbank zugreift, sondern alle erforderlichen Methoden der imuvierepository-Schnittstelle enthält. Auf diese Weise können Sie einen Komponenten Test für die Klasse "moviescontroller" durchlaufen, ohne tatsächlich auf eine echte Datenbank zuzugreifen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wird veranschaulicht, wie Sie MVC-Modellklassen erstellen können, indem Sie die Vorteile von Microsoft LINQ to SQL nutzen. Wir haben zwei Strategien zum Anzeigen von Datenbankdaten in einer ASP.NET MVC-Anwendung untersucht. Zuerst haben wir LINQ to SQL Klassen erstellt und die Klassen direkt innerhalb einer Controller Aktion verwendet. Die Verwendung von LINQ to SQL Klassen in einem Controller ermöglicht das schnelle und einfache Anzeigen von Datenbankdaten in einer MVC-Anwendung.
 

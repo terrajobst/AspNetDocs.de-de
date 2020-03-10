@@ -9,11 +9,11 @@ ms.assetid: 7d821db5-6cbb-4b38-af14-198f9155fc82
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
 ms.openlocfilehash: dee95ee2789a69aac5aa79b8358e58e3ee99e1b2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636594"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78475887"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-vb"></a>Umschließen von Datenbankänderungen innerhalb einer Transaktion (VB)
 
@@ -199,7 +199,7 @@ Klicken Sie jetzt auf die Schaltfläche Kategorien ändern (ohne Transaktion). D
 
 **Abbildung 10**: einige Produkte `CategoryID` Werte wurden aktualisiert, während andere nicht waren ([Klicken Sie, um das Bild in voller Größe anzuzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image14.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Standardmäßig wrappen die TableAdapter s-Methoden nicht die ausgeführten Daten Bank Anweisungen innerhalb des Bereichs einer Transaktion, aber mit wenigen Aufgaben können wir Methoden hinzufügen, die eine Transaktion erstellen, Committe und zurücksetzen. In diesem Tutorial haben wir drei Methoden in der `ProductsTableAdapter`-Klasse erstellt: `BeginTransaction`, `CommitTransaction`und `RollbackTransaction`. Wir haben gesehen, wie diese Methoden zusammen mit einem `Try...Catch`-Block verwendet werden, um eine Reihe von Daten Änderungs Anweisungen atomarisch zu machen. Insbesondere haben wir die `UpdateWithTransaction` Methode in der `ProductsTableAdapter`erstellt, die das Batch Aktualisierungs Muster verwendet, um die erforderlichen Änderungen an den Zeilen eines angegebenen `ProductsDataTable`auszuführen. Wir haben auch die `DeleteProductsWithTransaction`-Methode zur `ProductsBLL`-Klasse in der BLL hinzugefügt, die eine `List` von `ProductID` Werten als Eingabe akzeptiert und die DB-Direct Pattern-Methode `Delete` für jede `ProductID`aufruft. Beide Methoden beginnen, indem Sie eine Transaktion erstellen und dann die Daten Änderungs Anweisungen in einem `Try...Catch`-Block ausführen. Wenn eine Ausnahme auftritt, wird ein Rollback für die Transaktion ausgeführt; andernfalls wird ein Commit ausgeführt.
 
@@ -207,7 +207,7 @@ In Schritt 5 wurden die Auswirkungen von transaktionalen Batch Updates im Vergle
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -217,7 +217,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Transaktionscope und DataAdapters](http://andyclymer.blogspot.com/2007/01/transactionscope-and-dataadapters.html)
 - [Verwenden von Oracle Database Transaktionen in .net](http://www.oracle.com/technology/pub/articles/price_dbtrans_dotnet.html)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

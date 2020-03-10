@@ -1,81 +1,81 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
-title: Überprüfen der Benutzereingabe in der ASP.NET Web Pages (Razor) Sites | Microsoft-Dokumentation
+title: Validieren von Benutzereingaben in ASP.net Web Pages (Razor)-Sites | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Artikel wird erläutert, wie Informationen zu überprüfen, Sie von Benutzern erhalten &mdash; , also stellen Sie sicher, dass die Benutzer geben Sie gültige Informationen in HTML forms in einem Auftragsschritt...
+description: In diesem Artikel wird erläutert, wie Sie Informationen überprüfen können, die Sie von Benutzern erhalten &mdash; d. h. um sicherzustellen, dass Benutzer gültige Informationen in HTML-Formularen in einem AS...
 ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: 4eb060cc-cf14-41ae-bab1-14a2c15332d0
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
 ms.openlocfilehash: e6f8e1051d09d11f1756bfada44a73ba7c2a1db2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108596"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78454299"
 ---
-# <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>Überprüfen der Benutzereingabe in ASP.NET Web Pages (Razor)-Websites
+# <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>Überprüfen von Benutzereingaben in ASP.net Web Pages-Websites (Razor)
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Artikel wird erläutert, wie Informationen zu überprüfen, Sie von Benutzern erhalten &mdash; , also stellen Sie sicher, dass die Benutzer geben Sie gültige Informationen in HTML forms in einer ASP.NET Web Pages (Razor)-Website.
+> In diesem Artikel wird erläutert, wie Sie Informationen überprüfen können, die Sie von Benutzern erhalten &mdash; das heißt, um sicherzustellen, dass Benutzer gültige Informationen in HTML-Formularen auf einer ASP.net Web Pages (Razor)-Website eingeben.
 > 
 > Sie lernen Folgendes:
 > 
-> - So prüfen Sie, dass eine Benutzereingaben entspricht Überprüfungskriterien, die Sie definieren.
-> - Informationen zum bestimmen, ob alle Überprüfungstests bestanden haben.
-> - Vorgehensweise beim Anzeigen von Validierungsfehlern (und wie sie formatiert).
-> - So überprüfen Sie die Daten, die direkt von Benutzern keine.
+> - Überprüfen, ob die Eingabe eines Benutzers mit den von Ihnen definierten Validierungs Kriterien übereinstimmt.
+> - Bestimmen, ob alle Validierungstests bestanden wurden.
+> - Vorgehensweise beim Anzeigen von Validierungs Fehlern (und Formatierungs Fehlern).
+> - Validieren von Daten, die nicht direkt von Benutzern stammen.
 > 
-> Hierbei handelt es sich um das ASP.NET-PROGRAMMIERMODELL in diesem Artikel vorgestellten Konzepten:
+> Dies sind die ASP.net-Programmier Konzepte, die im Artikel vorgestellt werden:
 > 
-> - Die `Validation` Helper.
-> - Die `Html.ValidationSummary` und `Html.ValidationMessage` Methoden.
+> - Das `Validation`-Hilfsprogramm.
+> - Die Methoden `Html.ValidationSummary` und `Html.ValidationMessage`.
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - ASP.NET Web Pages (Razor) 3
+> - ASP.net Web Pages (Razor) 3
 >   
 > 
-> In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
+> Dieses Tutorial funktioniert auch mit ASP.net Web Pages 2.
 
 Dieser Artikel enthält folgende Abschnitte:
 
-- [Übersicht über die Validierung von Benutzereingaben](#Overview_of_User_Input_Validation)
+- [Übersicht über die Überprüfung der Benutzereingaben](#Overview_of_User_Input_Validation)
 - [Überprüfen der Benutzereingabe](#Validating_User_Input)
-- [Die clientseitige Validierung hinzufügen](#Adding_Client-Side_Validation)
-- [Formatieren von Validierungsfehlern](#Formatting_Validation_Errors)
-- [Überprüfen von Daten, die direkt von Benutzern keine](#Validating_Data_That_Doesnt_Come_Directly_from_Users)
+- [Hinzufügen der Client seitigen Validierung](#Adding_Client-Side_Validation)
+- [Formatieren von Validierungs Fehlern](#Formatting_Validation_Errors)
+- [Validieren von Daten, die nicht direkt von Benutzern stammen](#Validating_Data_That_Doesnt_Come_Directly_from_Users)
 
 <a id="Overview_of_User_Input_Validation"></a>
-## <a name="overview-of-user-input-validation"></a>Übersicht über die Validierung von Benutzereingaben
+## <a name="overview-of-user-input-validation"></a>Übersicht über die Überprüfung der Benutzereingaben
 
-Wenn Sie Benutzer zur Eingabe von Informationen auf einer Seite anfordern, z. B. in einem Formular – es ist wichtig, sicherzustellen, dass die Werte, die sie eingeben gültig sind. Sie möchten z. B. keine Form zu verarbeiten, die wichtigen Informationen fehlen.
+Wenn Sie Benutzer dazu auffordern, Informationen in eine Seite einzugeben, z. –. in ein Formular – müssen Sie sicherstellen, dass die eingegebenen Werte gültig sind. Sie möchten z. b. nicht ein Formular verarbeiten, das wichtige Informationen fehlt.
 
-Wenn der Benutzer Werte in einem HTML-Formular eingeben, sind die Werte, die sie eingeben Zeichenfolgen. In vielen Fällen sind die Werte, die Sie benötigen einige andere Datentypen, z. B. ganze Zahlen oder Datumsangaben. Aus diesem Grund müssen Sie auch sicherstellen, dass die Werte, die Benutzer geben Sie ordnungsgemäß in die entsprechenden Datentypen konvertiert werden können.
+Wenn Benutzer Werte in ein HTML-Formular eingeben, sind die Werte, die Sie eingeben, Zeichen folgen. In vielen Fällen sind die Werte, die Sie benötigen, einige andere Datentypen, wie z. b. ganze Zahlen oder Datumsangaben. Daher müssen Sie auch sicherstellen, dass die von Benutzern eingegebenen Werte ordnungsgemäß in die entsprechenden Datentypen konvertiert werden können.
 
-Sie können auch bestimmte Einschränkungen für die Werte verfügen. Selbst wenn Benutzer ordnungsgemäß eine ganze Zahl eingeben, können beispielsweise müssen Sie sicherstellen, dass der Wert innerhalb eines bestimmten Bereichs liegt.
+Möglicherweise haben Sie auch bestimmte Einschränkungen für die Werte. Auch wenn Benutzer eine ganze Zahl ordnungsgemäß eingeben, müssen Sie möglicherweise sicherstellen, dass der Wert innerhalb eines bestimmten Bereichs liegt.
 
-![Validierungsfehler, die CSS-Formatklassen verwenden](validating-user-input-in-aspnet-web-pages-sites/_static/image1.png)
+![Validierungs Fehler, die CSS-Stil Klassen verwenden](validating-user-input-in-aspnet-web-pages-sites/_static/image1.png)
 
 > [!NOTE] 
 > 
-> **Wichtige** Validieren von Benutzereingaben ist auch wichtig für die Sicherheit. Wenn Sie die Werte, die Benutzer in Formularen eingeben können beschränken, verringern Sie die Wahrscheinlichkeit, dass ein Benutzer einen Wert eingeben kann, der die Sicherheit Ihrer Website gefährden können.
+> **Wichtig** Die Überprüfung von Benutzereingaben ist auch wichtig für die Sicherheit. Wenn Sie die Werte einschränken, die Benutzer in Formularen eingeben können, verringern Sie die Wahrscheinlichkeit, dass ein Benutzer einen Wert eingeben kann, der die Sicherheit Ihrer Website beeinträchtigen kann.
 
 <a id="Validating_User_Input"></a>
 ## <a name="validating-user-input"></a>Überprüfen der Benutzereingabe
 
-In ASP.NET Web Pages 2 können Sie die `Validator` Hilfsmethode zum Testen der Benutzereingabe. Grundsätzlich wird die folgenden Schritte ausführen:
+In ASP.net Web Pages 2 können Sie das `Validator`-Hilfsprogramm verwenden, um Benutzereingaben zu testen. Die grundlegende Vorgehensweise besteht darin, die folgenden Schritte durchzuführen:
 
-1. Bestimmen Sie, welche Elemente (Felder) Eingabe-, die Sie überprüfen möchten.
+1. Bestimmen Sie, welche Eingabeelemente (Felder) Sie überprüfen möchten.
 
-    Überprüfen Sie in der Regel Werte, die in `<input>` Elemente in einem Formular. Allerdings ist es empfiehlt sich, alle Eingaben überprüfen, geben Sie auch, das von einem eingeschränkten Element wie ist eine `<select>` Liste. Dadurch wird sichergestellt, dass Benutzer nicht umgehen die Steuerelemente auf einer Seite und senden Sie ein Formular.
-2. Fügen Sie einzelne Überprüfungen im Seitencode, für jedes Element mithilfe der Methoden der Eingabe der `Validation` Helper.
+    In der Regel werden Werte in `<input>` Elementen in einem Formular überprüft. Es empfiehlt sich jedoch, alle Eingaben zu validieren, auch Eingaben, die von einem eingeschränkten Element wie einer `<select>` Liste stammen. Dadurch wird sichergestellt, dass die Benutzer die Steuerelemente auf einer Seite nicht umgehen und ein Formular übermitteln.
+2. Fügen Sie im Seitencode individuelle Validierungs Überprüfungen für jedes Eingabe Element hinzu, indem Sie Methoden des `Validation` Hilfsprogramms verwenden.
 
-    Verwenden Sie zum Überprüfen erforderlichen Felder `Validation.RequireField(field, [error message])` (für ein einzelnes Feld) oder `Validation.RequireFields(field1, field2, ...))` (für eine Liste von Feldern). Verwenden Sie für andere Arten der Validierung, `Validation.Add(field, ValidationType)`. Für `ValidationType`, Sie können diese Optionen verwenden:
+    Um die erforderlichen Felder zu überprüfen, verwenden Sie `Validation.RequireField(field, [error message])` (für ein einzelnes Feld) oder `Validation.RequireFields(field1, field2, ...))` (für eine Liste von Feldern). Verwenden Sie für andere Validierungs Typen `Validation.Add(field, ValidationType)`. Für `ValidationType`können Sie die folgenden Optionen verwenden:
 
     `Validator.DateTime ([error message])`  
    `Validator.Decimal([error message])`  
@@ -87,43 +87,43 @@ In ASP.NET Web Pages 2 können Sie die `Validator` Hilfsmethode zum Testen der B
    `Validator.Required([error message])`  
    `Validator.StringLength(length)`  
    `Validator.Url([error message])`
-3. Wenn die Seite gesendet wird, überprüfen Sie, ob Überprüfung, indem Sie überprüfen bestanden hat `Validation.IsValid`:
+3. Wenn die Seite übermittelt wird, überprüfen Sie, ob die Überprüfung erfolgreich war, indem Sie `Validation.IsValid`:
 
     [!code-csharp[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample1.cs)]
 
-    Treten Validierungsfehler auf, überspringen Sie die normale Verarbeitung. Beispielsweise ist der Zweck der Seite zum Aktualisieren einer Datenbank, tun nicht Sie dies, bis alle Validierungsfehler behoben wurden.
-4. Wenn Validierungsfehler vorhanden sind, können Sie Fehlermeldungen in das Markup der Seite anzeigen, indem Sie mithilfe von `Html.ValidationSummary` oder `Html.ValidationMessage`, oder beides.
+    Wenn Validierungs Fehler vorliegen, überspringen Sie die normale Seiten Verarbeitung. Wenn z. b. der Zweck der Seite darin besteht, eine Datenbank zu aktualisieren, tun Sie dies erst, wenn alle Validierungs Fehler behoben wurden.
+4. Wenn Validierungs Fehler vorliegen, zeigen Sie die Fehlermeldungen im Markup der Seite an, indem Sie `Html.ValidationSummary` oder `Html.ValidationMessage`oder beides verwenden.
 
 Das folgende Beispiel zeigt eine Seite, die diese Schritte veranschaulicht.
 
 [!code-cshtml[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample2.cshtml)]
 
-Um die Funktionsweise der Validierung angezeigt wird, führen Sie diese Seite, und machen Sie bewusst Fehler. Beispielsweise sieht die Seite wie nicht vergessen, wenn Sie zur Eingabe eines Namens Kurs bei der Eingabe ein, und wenn Sie ein ungültiges Datum eingeben:
+Um zu sehen, wie die Validierung funktioniert, führen Sie diese Seite aus und führen absichtlich zu Fehlern. So sieht die Seite z. b. aus, wenn Sie vergessen, einen Kursnamen einzugeben, wenn Sie einen eingeben und ein ungültiges Datum eingeben:
 
-![Überprüfungsfehler in der gerenderten Seite](validating-user-input-in-aspnet-web-pages-sites/_static/image2.png)
+![Validierungs Fehler auf der gerenderten Seite](validating-user-input-in-aspnet-web-pages-sites/_static/image2.png)
 
 <a id="Adding_Client-Side_Validation"></a>
-## <a name="adding-client-side-validation"></a>Die clientseitige Validierung hinzufügen
+## <a name="adding-client-side-validation"></a>Hinzufügen der Client seitigen Validierung
 
-Standardmäßig wird der Benutzereingabe überprüft, nachdem der Benutzer die Seite senden – d. h. die Validierung wird im Servercode durchgeführt. Ein Nachteil dieses Ansatzes ist, dass Benutzer nicht wissen, dass sie einen Fehler erst nach dem sie die Seite senden vorgenommen wurden. Wenn ein Formular lang oder zu komplex ist, kann Fehler melden, erst nach der Übermittlung der Seite für den Benutzer unpraktisch.
+Standardmäßig wird die Benutzereingabe überprüft, nachdem die Benutzer die Seite gesendet haben – das heißt, die Überprüfung wird im Servercode ausgeführt. Ein Nachteil dieses Ansatzes ist, dass die Benutzer wissen, dass Sie erst nach dem Senden der Seite einen Fehler ausgegeben haben. Wenn ein Formular lang oder komplex ist, kann es für den Benutzer unpraktisch sein, Fehler zu melden, nachdem die Seite übermittelt wurde.
 
-Sie können den Support, um die Validierung im Clientskript hinzufügen. In diesem Fall wird die Überprüfung ausgeführt, während die Benutzer im Browser arbeiten. Nehmen wir beispielsweise an, dass Sie angeben, dass ein Wert eine ganze Zahl sein muss. Wenn ein Benutzer einen nicht ganzzahligen Wert eingibt, wird der Fehler gemeldet, sobald der Benutzer das Feld lässt. Benutzer erhalten unmittelbar Feedback, das für sie zweckmäßig ist. Client-basierter Validierung kann auch die Anzahl der reduzieren, denen der Benutzer zum Senden des Formulars, um mehrere Fehler zu beheben.
+Sie können Unterstützung hinzufügen, um die Validierung in Client Skripts auszuführen. In diesem Fall wird die Überprüfung ausgeführt, wenn Benutzer im Browser arbeiten. Angenommen, Sie geben an, dass ein Wert eine ganze Zahl sein soll. Wenn ein Benutzer einen nicht ganzzahligen Wert eingibt, wird der Fehler angezeigt, sobald der Benutzer das Eingabefeld verlässt. Benutzer erhalten sofortiges Feedback, was für Sie praktisch ist. Die Client basierte Validierung kann auch die Häufigkeit verringern, mit der der Benutzer das Formular einreichen muss, um mehrere Fehler zu beheben.
 
 > [!NOTE]
-> Auch wenn Sie die clientseitige Validierung verwenden, ist die Überprüfung immer auch im Servercode ausgeführt. Ausführen der Überprüfung im Server-Code ist eine Sicherheitsmaßnahme, für den Fall, dass Benutzer, Client-basierten Überprüfung umgehen.
+> Auch wenn Sie die Client seitige Validierung verwenden, wird die Validierung immer auch im Servercode ausgeführt. Das Durchführen der Validierung in Servercode ist eine Sicherheitsmaßnahme, wenn Benutzer die Client basierte Validierung umgehen.
 
-1. Registrieren Sie die folgenden JavaScript-Bibliotheken auf der Seite an:  
+1. Registrieren Sie die folgenden JavaScript-Bibliotheken auf der Seite:  
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
 
-   Zwei Bibliotheken sind aus der ein Content Delivery Network (CDN) geladen werden kann, müssen Sie unbedingt nicht damit sie auf Ihrem Computer oder Server. Allerdings benötigen Sie eine lokale Kopie des *jquery.validate.unobtrusive.js*. Wenn Sie nicht bereits mit einer WebMatrix-Vorlage arbeiten (z. B. **Starter Site** ), die die Bibliothek enthält, erstellen Sie eine Web Pages-Website auf der Grundlage **Starter Site**. Kopieren Sie dann die *js* Datei, die der aktuellen Website.
-2. Fügen Sie im Markup für jedes Element, das Sie überprüfen können, die einen Aufruf von `Validation.For(field)`. Diese Methode gibt die Attribute, die durch die clientseitige Validierung verwendet werden. (Statt der tatsächlichen JavaScript-Code ausgegeben werden, gibt die Methode Attribute wie `data-val-...`. Diese Attribute unterstützen unaufdringlichen Validierung, die jQuery verwendet, um die Arbeit zu erledigen.)
+   Zwei der Bibliotheken können aus einem Content Delivery Network (CDN) geladen werden, sodass Sie nicht unbedingt auf dem Computer oder Server vorhanden sein müssen. Sie müssen jedoch über eine lokale Kopie von *jQuery. Validate. Unaufdring. js*verfügen. Wenn Sie noch nicht mit einer webmatrix-Vorlage (z. b. einer **Starter Site** ) arbeiten, die die Bibliothek enthält, erstellen Sie eine Web Pages-Website, die auf der **Starter Site**basiert. Kopieren Sie dann die *js* -Datei auf die aktuelle Website.
+2. Fügen Sie im Markup für jedes Element, das Sie überprüfen, einen-`Validation.For(field)`hinzu. Diese Methode gibt Attribute aus, die von der Client seitigen Validierung verwendet werden. (Anstelle von tatsächlichem JavaScript-Code gibt die-Methode Attribute wie `data-val-...`aus. Diese Attribute unterstützen unaufdringliche Client Validierung, bei der jQuery verwendet wird, um die Arbeit zu erledigen.)
 
-Die folgende Seite zeigt wie das oben gezeigte Beispiel Validierungsfunktionen Client hinzugefügt.
+Auf der folgenden Seite wird gezeigt, wie Sie dem oben gezeigten Beispiel Client Validierungs Funktionen hinzufügen.
 
 [!code-cshtml[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample4.cshtml?highlight=35-39,51,61,71)]
 
-Nicht alle Überprüfungen, die auf dem Client ausgeführt werden. Insbesondere nicht die Datentyp-Überprüfung (ganze Zahl, Datum usw.) auf dem Client ausgeführt. Die folgenden Prüfungen auf dem Client und Server arbeiten:
+Nicht alle Validierungs Überprüfungen werden auf dem Client ausgeführt. Insbesondere wird die Datentyp Validierung (Integer, Date usw.) nicht auf dem Client ausgeführt. Die folgenden Überprüfungen funktionieren sowohl auf dem Client als auch auf dem Server:
 
 - `Required`
 - `Range(minValue, maxValue)`
@@ -131,63 +131,63 @@ Nicht alle Überprüfungen, die auf dem Client ausgeführt werden. Insbesondere 
 - `Regex(pattern)`
 - `EqualsTo(otherField)`
 
-In diesem Beispiel funktioniert nicht der Test für ein gültiges Datum im Clientcode. Der Test wird jedoch im Server-Code ausgeführt werden.
+In diesem Beispiel funktioniert der Test für ein gültiges Datum nicht im Client Code. Der Test wird jedoch im Servercode ausgeführt.
 
 <a id="Formatting_Validation_Errors"></a>
-## <a name="formatting-validation-errors"></a>Formatieren von Validierungsfehlern
+## <a name="formatting-validation-errors"></a>Formatieren von Validierungs Fehlern
 
-Sie können steuern, wie Validierungsfehler angezeigt werden, durch Definieren von CSS-Klassen, die die folgenden reservierten Namen aufweisen:
+Sie können steuern, wie Validierungs Fehler angezeigt werden, indem Sie CSS-Klassen definieren, die die folgenden reservierten Namen haben:
 
-- `field-validation-error`. Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn es einen Fehler angezeigt wird.
-- `field-validation-valid`. Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn kein Fehler vorliegt.
-- `input-validation-error`. Definiert, wie `<input>` Elemente werden gerendert, wenn ein Fehler auftritt. (Z. B. können diese Klasse, legen Sie die Farbe des Hintergrunds einer &lt;Eingabe&gt; Element in einer anderen Farbe, wenn der Wert ungültig ist.) Diese CSS-Klasse wird nur während der Validierung (in ASP.NET Web Pages 2) verwendet.
-- `input-validation-valid`. Definiert die Darstellung der `<input>` Elemente, wenn kein Fehler vorliegt.
-- `validation-summary-errors`. Definiert die Ausgabe der `Html.ValidationSummary` Methode, die sie eine Liste der Fehler anzeigt.
-- `validation-summary-valid`. Definiert die Ausgabe der `Html.ValidationSummary` Methode, wenn kein Fehler vorliegt.
+- [https://login.microsoftonline.com/consumers/](`field-validation-error`). Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn ein Fehler angezeigt wird.
+- [https://login.microsoftonline.com/consumers/](`field-validation-valid`). Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn kein Fehler vorliegt.
+- [https://login.microsoftonline.com/consumers/](`input-validation-error`). Definiert, wie `<input>` Elemente gerendert werden, wenn ein Fehler auftritt. (Sie können diese Klasse z. b. verwenden, um die Hintergrundfarbe einer &lt;Eingabe&gt;-Elements auf eine andere Farbe festzulegen, wenn der Wert ungültig ist.) Diese CSS-Klasse wird nur während der Client Validierung verwendet (in ASP.net Web Pages 2).
+- [https://login.microsoftonline.com/consumers/](`input-validation-valid`). Definiert die Darstellung von `<input>` Elementen, wenn kein Fehler vorliegt.
+- [https://login.microsoftonline.com/consumers/](`validation-summary-errors`). Definiert die Ausgabe der `Html.ValidationSummary` Methode, die eine Liste von Fehlern anzeigt.
+- [https://login.microsoftonline.com/consumers/](`validation-summary-valid`). Definiert die Ausgabe der `Html.ValidationSummary` Methode, wenn kein Fehler vorliegt.
 
-Die folgenden `<style>` Block Regeln für fehlerbedingungen angezeigt.
+Der folgende `<style>` Block zeigt Regeln für Fehlerbedingungen an.
 
 [!code-css[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample5.css)]
 
-Wenn Sie auf den Beispielseiten von weiter oben im Artikel dieses Stilblock einschließen, wird die Anzeige wie in der folgenden Abbildung aussehen:
+Wenn Sie diesen Stilblock in den Beispielseiten von weiter oben in diesem Artikel einfügen, sieht die Fehleranzeige wie in der folgenden Abbildung aus:
 
-![Validierungsfehler, die CSS-Formatklassen verwenden](validating-user-input-in-aspnet-web-pages-sites/_static/image3.png)
+![Validierungs Fehler, die CSS-Stil Klassen verwenden](validating-user-input-in-aspnet-web-pages-sites/_static/image3.png)
 
 > [!NOTE]
-> Wenn Sie nicht die Clientvalidierung in ASP.NET Web Pages 2 verwenden, die CSS-Klassen für die `<input>` Elemente (`input-validation-error` und `input-validation-valid` haben keinerlei Auswirkung.
+> Wenn Sie die Client Validierung nicht in ASP.net Web Pages 2 verwenden, haben die CSS-Klassen für die `<input>` Elemente (`input-validation-error` und `input-validation-valid` keine Auswirkung.
 
 ### <a name="static-and-dynamic-error-display"></a>Statische und dynamische Fehleranzeige
 
-Die CSS-Regeln paarweise, z. B. `validation-summary-errors` und `validation-summary-valid`. Diese Paare können Sie die Regeln für beide Bedingungen definieren: eine fehlerbedingung und eine "normale" (nicht-Fehler)-Bedingung. Es ist wichtig zu verstehen, dass immer das Markup für die Fehleranzeige gerendert wird, auch wenn keine Fehler vorliegen. Wenn eine Seite hat z. B. eine `Html.ValidationSummary` -Methode in das Markup, den Quellcode der Seite enthält das folgende Markup auch, wenn die Seite zum ersten Mal angefordert wird:
+Die CSS-Regeln treten paarweise auf, z. b. `validation-summary-errors` und `validation-summary-valid`. Mit diesen Paaren können Sie Regeln für beide Bedingungen definieren: eine Fehlerbedingung und eine "normale" Bedingung (nicht fehlerhaft). Es ist wichtig zu verstehen, dass das Markup für die Fehleranzeige immer gerendert wird, auch wenn keine Fehler vorliegen. Wenn eine Seite z. b. über eine `Html.ValidationSummary`-Methode im Markup verfügt, enthält die Seitenquelle das folgende Markup, auch wenn die Seite zum ersten Mal angefordert wird:
 
 `<div class="validation-summary-valid" data-valmsg-summary="true"><ul></ul></div>`
 
-Das heißt, die `Html.ValidationSummary` Methode stellt immer eine `<div>` Element und eine Liste, auch wenn die Fehlerliste leer ist. Auf ähnliche Weise die `Html.ValidationMessage` Methode stellt immer eine `<span>` Element als Platzhalter für ein einzelnes feldfehler, auch wenn kein Fehler vorliegt.
+Mit anderen Worten, die `Html.ValidationSummary`-Methode rendert immer ein `<div>` Element und eine Liste, auch wenn die Fehlerliste leer ist. Ebenso rendert die `Html.ValidationMessage`-Methode immer ein `<span>`-Element als Platzhalter für einen einzelnen Feld Fehler, auch wenn kein Fehler vorliegt.
 
-In einigen Situationen können dazu führen, dass die Seite, um dynamisch umgebrochen eine Fehlermeldung angezeigt und können dazu führen, dass Elemente auf der Seite verschieben. Die CSS-Regeln, die auf Enden `-valid` können Sie ein Layout zu definieren, mit deren Hilfe kann dieses Problem zu vermeiden. Sie können z. B. definieren `field-validation-error` und `field-validation-valid` sowohl haben die gleiche feste Größe. Auf diese Weise der Anzeigebereich für das Feld ist statisch und die Seitenfluss wird nicht geändert werden, wenn eine Fehlermeldung angezeigt wird.
+In einigen Situationen kann das Anzeigen einer Fehlermeldung bewirken, dass die Seite erneut fließt und die Elemente auf der Seite verschoben werden können. Die CSS-Regeln, die auf `-valid` enden, ermöglichen es Ihnen, ein Layout zu definieren, das zur Vermeidung dieses Problems beiträgt. Beispielsweise können Sie `field-validation-error` und `field-validation-valid` definieren, sodass beide die gleiche festgelegte Größe aufweisen. Auf diese Weise ist der Anzeigebereich für das Feld statisch und ändert den Seiten Fluss nicht, wenn eine Fehlermeldung angezeigt wird.
 
 <a id="Validating_Data_That_Doesnt_Come_Directly_from_Users"></a>
-## <a name="validating-data-that-doesnt-come-directly-from-users"></a>Überprüfen von Daten, die direkt von Benutzern keine
+## <a name="validating-data-that-doesnt-come-directly-from-users"></a>Validieren von Daten, die nicht direkt von Benutzern stammen
 
-Manchmal müssen Sie an, die direkt von einem HTML-Formular keine Informationen zu überprüfen. Ein typisches Beispiel ist eine Seite, in dem ein Wert in einer Abfragezeichenfolge, wie im folgenden Beispiel übergeben wird:
+Manchmal müssen Sie Informationen überprüfen, die nicht direkt aus einem HTML-Formular stammen. Ein typisches Beispiel ist eine Seite, bei der ein Wert in einer Abfrage Zeichenfolge wie im folgenden Beispiel dargestellt wird:
 
 `http://server/myapp/EditClassInformation?classid=1022`
 
-In diesem Fall soll sicherstellen, dass der Wert, der auf der Seite übergeben wird (hier 1022 für den Wert des `classid`) gültig ist. Sie können nicht direkt verwenden die `Validation` Hilfsprogramm zum Ausführen dieser Validierung. Allerdings können Sie andere Funktionen des Systems Validierung, z.B. die Möglichkeit, die Überprüfungsfehlermeldungen anzuzeigen.
+In diesem Fall müssen Sie sicherstellen, dass der Wert, der an die Seite (hier 1022 für den Wert von `classid`), an die Seite übermittelt wird, gültig ist. Sie können das `Validation`-Hilfsprogramm nicht direkt verwenden, um diese Validierung auszuführen. Sie können jedoch auch andere Funktionen des validierungssystems verwenden, z. b. die Möglichkeit, Validierungs Fehlermeldungen anzuzeigen.
 
 > [!NOTE] 
 > 
-> **Wichtige** immer überprüfen von Werten, die Sie von erhalten *alle* Quellcode, einschließlich Formularfeld Werte, Abfragezeichenfolgen-Werte und Cookiewerte. Es ist einfach, Personen diese Werte (z. B. für böswillige Zwecke) zu ändern. Daher müssen Sie diese Werte prüfen, um Ihre Anwendung zu schützen.
+> **Wichtig** Überprüfen Sie immer die Werte, die Sie aus *beliebigen* Quellen erhalten, einschließlich Formular Feldwerten, Werte von Abfrage Zeichenfolgen und Cookie-Werten. Es ist einfach, dass die Benutzer diese Werte ändern können (vielleicht für böswillige Zwecke). Sie müssen diese Werte also überprüfen, um Ihre Anwendung zu schützen.
 
-Das folgende Beispiel zeigt, wie Sie einen Wert überprüfen können, der in einer Abfragezeichenfolge übergeben wird. Der Code überprüft, dass der Wert nicht leer ist und es sich um eine ganze Zahl ist.
+Im folgenden Beispiel wird gezeigt, wie Sie einen Wert validieren können, der in einer Abfrage Zeichenfolge übermittelt wird. Der Code testet, ob der Wert nicht leer ist und eine ganze Zahl ist.
 
 [!code-csharp[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample6.cs)]
 
-Beachten Sie, dass der Test ausgeführt wird, wenn die Anforderung keiner Formularübergabe (`if(!IsPost)`). Dieser Test übergeben beim ersten, die die Seite angefordert wird, aber nicht bei die Anforderung ist eine formularübertragung.
+Beachten Sie, dass der Test ausgeführt wird, wenn es sich bei der Anforderung nicht um eine Formular Übermittlung (`if(!IsPost)`) handelt. Dieser Test wird bei der ersten Anforderung der Seite bestanden, jedoch nicht, wenn es sich bei der Anforderung um eine Formular Übermittlung handelt.
 
-Um diesen Fehler anzuzeigen, können Sie den Fehler zur Liste der Validierungsfehler hinzufügen, durch den Aufruf `Validation.AddFormError("message")`. Wenn die Seite mit einen Aufruf von enthält die `Html.ValidationSummary` -Methode, der Fehler wird angezeigt, genau wie einen Fehler für die Validierung von Benutzereingaben.
+Zum Anzeigen dieses Fehlers können Sie den Fehler der Liste der Validierungs Fehler hinzufügen, indem Sie `Validation.AddFormError("message")`aufrufen. Wenn die Seite einen aufzurufenden `Html.ValidationSummary` Methode enthält, wird der Fehler an dieser Stelle angezeigt, genau wie bei einem Validierungs Fehler bei der Benutzereingabe.
 
 <a id="AdditionalResources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Arbeiten mit HTML-Formularen in ASP.NET Web Pages-Websites](https://go.microsoft.com/fwlink/?LinkID=202892)
+[Arbeiten mit HTML-Formularen an ASP.net Web Pages Websites](https://go.microsoft.com/fwlink/?LinkID=202892)

@@ -9,11 +9,11 @@ ms.assetid: 19c4d042-4e34-4b44-9f1d-6bf2253ba366
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8c07b8a3c36e4863c6d2d356b8483544ac4cafeb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576623"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457191"
 ---
 # <a name="recovering-and-changing-passwords-c"></a>Wiederherstellen und Ändern von Kennwörtern (C#)
 
@@ -144,7 +144,7 @@ Die `MailDefinition`-Eigenschaft ist nicht eindeutig für die PasswordRecovery-K
 
 ### <a name="programmatically-resetting-a-users-password"></a>Programm gesteuertes Zurücksetzen des Kennworts eines Benutzers
 
-Beim Zurücksetzen des Kennworts eines Benutzers Ruft das PasswordRecovery-Steuerelement die [`ResetPassword`-Methode](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)des `MembershipUser` Objekts auf. Diese Methode verfügt über zwei über Ladungen:
+Beim Zurücksetzen des Kennworts eines Benutzers Ruft das PasswordRecovery-Steuerelement die [`ResetPassword`-Methode](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)des `MembershipUser` Objekts auf. Diese Methode verfügt über zwei Überladungen:
 
 - **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)** : setzt das Kennwort eines Benutzers zurück. Verwenden Sie diese Überladung, wenn `RequiresQuestionAndAnswer` false ist.
 - **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)** : setzt das Kennwort eines Benutzers nur zurück, wenn die angegebene *securityanswer* korrekt ist. Verwenden Sie diese Überladung, wenn `RequiresQuestionAndAnswer` true ist.
@@ -253,7 +253,7 @@ Nachdem Sie das neue Kennwort eingegeben, im zweiten Textfeld bestätigt und auf
 > [!NOTE]
 > Die `UserInformation.aspx` Seite funktioniert zurzeit nur, wenn das Mitgliedschafts Framework zum Speichern von Kenn Wörtern im Clear-oder Hashformat konfiguriert ist. Der Code zum Verschlüsseln des neuen Kennworts fehlt, obwohl Sie dazu eingeladen sind, diese Funktionalität hinzuzufügen. Ich empfehle Ihnen, den erforderlichen Code hinzuzufügen, indem Sie einen Decompiler wie [Reflektor](http://www.aisto.com/roeder/dotnet/) zum Untersuchen des Quellcodes für Methoden in der .NET Framework verwenden. beginnen Sie, indem Sie die `ChangePassword`-Methode der `SqlMembershipProvider` Klasse untersuchen. Dies ist das Verfahren, das ich zum Schreiben des Codes zum Erstellen eines Hashwerts für das Kennwort verwendet habe.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 ASP.net bietet zwei Steuerelemente, die Benutzern helfen, Ihr Kennwort zu verwalten. Das PasswordRecovery-Steuerelement ist hilfreich für Benutzer, die ihre Kenn Wörter vergessen haben. Abhängig von der Konfiguration des Mitgliedschafts-Frameworks wird der Benutzer entweder sein vorhandenes Kennwort oder ein neues, nach dem Zufallsprinzip generiertes Kennwort per e-Mail gesendet. Mit dem ChangePassword-Steuerelement kann ein Benutzer sein Kennwort aktualisieren.
 
@@ -261,7 +261,7 @@ Wie die-Steuerelemente Login und anateuserwizard können die PasswordRecovery-un
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -270,7 +270,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Senden von e-Mails in ASP.net](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [`System.Net.Mail` FAQs](http://www.systemnetmail.com/)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

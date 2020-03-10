@@ -9,11 +9,11 @@ ms.assetid: b83ab819-2b05-4776-b7b4-79ef78d457a5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: db838633accdedd7c0693b126a007e254ca681e4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74627266"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458169"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen in der Produktionsumgebung-7 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Tutorial, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung für Azure App Service Web-Apps ausführen. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial richten Sie ein Konto mit einem Hostinganbieter ein und stellen Ihre ASP.NET-Webanwendung mithilfe der Visual Studio-Funktion zum Veröffentlichen mit nur einem Mausklick in der Produktionsumgebung bereit.
 
@@ -99,7 +99,7 @@ Wählen Sie die Registerkarte **Webpublishing** aus.
 
 ![Registerkarte "Webveröffentlichung"](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image21.png)
 
-Erstellen Sie Anmelde Informationen für die Webveröffentlichung, indem Sie einen Benutzernamen und ein Kennwort eingeben. Sie können dieselben Anmelde Informationen eingeben, die Sie zum Anmelden bei der Systemsteuerung verwenden. Klicken Sie dann auf **aktivieren**.
+Erstellen Sie Anmelde Informationen für die Webveröffentlichung, indem Sie einen Benutzernamen und ein Kennwort eingeben. Sie können dieselben Anmelde Informationen eingeben, die Sie zum Anmelden bei der Systemsteuerung verwenden. Klicken Sie dann auf **Enable** (Aktivieren).
 
 ![Systemsteuerung Erstellen von Veröffentlichungs Anmelde Informationen](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image22.png)
 
@@ -127,7 +127,7 @@ Klicken Sie auf **Verbindung** überprüfen, um sicherzustellen, dass die Einste
 
 Wenn Sie auf Verbindung überprüfen klicken, wird möglicherweise das Dialogfeld **Zertifikat Fehler** angezeigt. Wenn Sie dies tun, überprüfen Sie, ob der Servername den Erwartungen entspricht. Wenn dies der Fall ist, wählen Sie **dieses Zertifikat in zukünftigen Sitzungen von Visual Studio speichern** aus, und klicken Sie auf **annehmen**. (Dieser Fehler weist darauf hin, dass der Hostinganbieter die Kosten für den Erwerb eines SSL-Zertifikats für die URL, für die Sie die Bereitstellung bereitstellen, vermieden hat. Wenn Sie eine sichere Verbindung mit einem gültigen Zertifikat herstellen möchten, wenden Sie sich an Ihren Hostinganbieter.)
 
-![Zertifikatfehler](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image27.png)
+![Zertifikat Fehler](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image27.png)
 
 Klicken Sie auf **Weiter**.
 

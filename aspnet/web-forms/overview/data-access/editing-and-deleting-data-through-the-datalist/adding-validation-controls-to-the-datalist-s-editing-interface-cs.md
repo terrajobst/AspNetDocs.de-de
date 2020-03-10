@@ -9,11 +9,11 @@ ms.assetid: 3ecc21c5-da0e-40ab-abb4-fac1e47398ad
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e3c14b7098da832bd28f57026e81dcb7f7ba7130
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640551"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78480855"
 ---
 # <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (C#)
 
@@ -29,7 +29,7 @@ In den bisherigen Lernprogrammen für die DataList-Bearbeitung haben die DataLis
 
 In diesem Lernprogramm erfahren Sie, wie einfach es ist, dem DataList-`EditItemTemplate` Validierungs Steuerelemente hinzuzufügen, um eine Benutzeroberfläche mit einer weiteren narrensicher-Bearbeitung bereitzustellen. Insbesondere wird in diesem Tutorial das Beispiel erstellt, das im vorherigen Tutorial erstellt wurde, und die Bearbeitungs Schnittstelle wird so erweitert, dass Sie die entsprechende Validierung einschließt.
 
-## <a name="step-1-replicating-the-example-fromhandling-bll--and-dal-level-exceptionshandling-bll-and-dal-level-exceptions-csmd"></a>Schritt 1: Replizieren des Beispiels aus der[Behandlung von Ausnahmen auf BLL-und Dal-Ebene](handling-bll-and-dal-level-exceptions-cs.md)
+## <a name="step-1-replicating-the-example-fromhandling-bll--and-dal-level-exceptions"></a>Schritt 1: Replizieren des Beispiels aus der[Behandlung von Ausnahmen auf BLL-und Dal-Ebene](handling-bll-and-dal-level-exceptions-cs.md)
 
 Im Tutorial [Behandeln von BLL-und Dal-Ebenen-Ausnahmen](handling-bll-and-dal-level-exceptions-cs.md) haben wir eine Seite erstellt, die die Namen und Preise der Produkte in einem bearbeitbaren DataList mit zwei Spalten aufführte. Unser Ziel dieses Tutorials besteht darin, die Bearbeitungs Schnittstelle von DataList zu erweitern, um Validierungs Steuerelemente einzuschließen. Die Validierungs Logik führt insbesondere Folgendes aus:
 
@@ -156,7 +156,7 @@ Ziehen Sie hierzu ein ValidationSummary-Steuerelement aus der Toolbox auf den De
 
 **Abbildung 6**: die Validierungs Fehler werden in einer Client seitigen MessageBox zusammengefasst ([Klicken Sie, um das Bild in voller Größe anzuzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image18.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wurde erläutert, wie Sie die Wahrscheinlichkeit von Ausnahmen verringern, indem Sie Validierungs Steuerelemente verwenden, um proaktiv sicherzustellen, dass unsere Benutzereingaben gültig sind, bevor Sie versuchen, Sie im Aktualisierungs Workflow zu verwenden. ASP.net bietet fünf Validierungs-websteuer Elemente, die entworfen wurden, um eine bestimmte websteuer Element Eingaben zu überprüfen und die Gültigkeit der Eingaben zu melden. In diesem Tutorial haben wir zwei dieser fünf Steuerelemente verwendet: "Requirements dfieldvalidator" und "CompareValidator", um sicherzustellen, dass der Name des Produkts angegeben wurde und dass der Preis ein Währungs Format mit einem Wert größer oder gleich 0 (null) aufweist.
 
@@ -166,7 +166,7 @@ Alle bisher untersuchten DataList-Bearbeitungs Lernprogramme haben eine TextBox 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
