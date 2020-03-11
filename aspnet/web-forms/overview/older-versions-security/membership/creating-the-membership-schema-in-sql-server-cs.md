@@ -9,11 +9,11 @@ ms.assetid: b4ac129d-1b8e-41ca-a38f-9b19d7c7bb0e
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 97623e7c13ab7799b9dadbb8e52be8e0cd99e252
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595010"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464439"
 ---
 # <a name="creating-the-membership-schema-in-sql-server-c"></a>Erstellen des Mitgliedschaftsschemas in SQL Server (C#)
 
@@ -33,7 +33,7 @@ Wie im Lernprogramm <a id="Tutorial1"> </a>zu den [*Sicherheitsgrundlagen und AS
 
 In diesem Tutorial werden zunächst Techniken zum Hinzufügen des erforderlichen Schemas zur-Datenbank erläutert, um die `SqlMembershipProvider`zu verwenden. Danach untersuchen wir die Schlüsseltabellen im Schema und besprechen deren Zweck und Wichtigkeit. In diesem Tutorial wird erläutert, wie einer ASP.NET-Anwendung mitgeteilt wird, welchen Anbieter das Mitgliedschafts Framework verwenden sollte.
 
-Fangen wir an!
+Erste Schritte
 
 ## <a name="step-1-deciding-where-to-place-the-user-store"></a>Schritt 1: entscheiden, wo der Benutzerspeicher platziert werden soll
 
@@ -202,13 +202,13 @@ Die verwendete Kenn Wort Speichermethode hängt von den in `Web.config`angegeben
 
 Die für das Speichern des Kennworts Verantwortlichen Spalten sind `Password`, `PasswordFormat`und `PasswordSalt`. `PasswordFormat` ist ein Feld vom Typ `int`, dessen Wert das Verfahren angibt, das zum Speichern des Kennworts verwendet wird: 0 für Clear; 1 für Hashwert; 2 für verschlüsselt. `PasswordSalt` wird unabhängig von der verwendeten Kenn Wort Speichermethode eine zufällig generierte Zeichenfolge zugewiesen. der Wert von `PasswordSalt` wird nur beim Berechnen des Hashwerts des Kennworts verwendet. Zum Schluss enthält die Spalte "`Password`" die eigentlichen Kenn Wort Daten, das nur-Text-Kennwort, der Hashwert des Kennworts oder das verschlüsselte Kennwort.
 
-Tabelle 1 zeigt, wie diese drei Spalten für die verschiedenen Speichertechniken aussehen können, wenn das Kennwort MySecret gespeichert wird. .
+Tabelle 1 zeigt, wie diese drei Spalten für die verschiedenen Speichertechniken aussehen können, wenn das Kennwort MySecret gespeichert wird. erforderlich.
 
 | **Speichertechnik&lt;\_o3a\_p/&gt;** | **Kennwort&lt;\_o3a\_p/&gt;** | **PasswordFormat&lt;\_o3a\_p/&gt;** | **PasswordSalt&lt;\_o3a\_p/&gt;** |
 | --- | --- | --- | --- |
-| Löschen | MySecret! | 0 | tTnkPlesqissc2y2SMEygA = = |
-| Hash | 2oxm6szhwbthf gjgkgqsc2ec9zm = | 1 | wFgjUfhdUFOCKQiI61vtiQ = = |
-| Verschlüsselt | 62rzgdvhxykkqsmchz0yly7hs6onhpaocyarxv8g0f4cw56oxuu3e7inza9j9bkp | 2 | Lsrzhgs/AA/oqaxglhjnbw = = |
+| Clear | MySecret! | 0 | tTnkPlesqissc2y2SMEygA== |
+| Hash | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |
+| Verschlüsselt | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw== |
 
 **Tabelle 1**: Beispiel Werte für die Kenn Wort bezogenen Felder, wenn das Kennwort MySecret gespeichert wird.
 
@@ -250,17 +250,17 @@ Zusätzlich zu den `name`-und `type` Attributen enthält das `<add>`-Element Att
 | `commandTimeout` | Gibt den Timeout Wert für den SQL-Befehl (in Sekunden) an. Der Standardwert ist 30. |
 | `connectionStringName` | Der Name der Verbindungs Zeichenfolge im `<connectionStrings>`-Element, das zum Herstellen einer Verbindung mit der Benutzerspeicher-Datenbank verwendet werden soll. Dieser Wert ist erforderlich. |
 | `description` | Stellt eine benutzerfreundliche Beschreibung des registrierten Anbieters bereit. |
-| `enablePasswordRetrieval` | Gibt an, ob Benutzer ihr vergessenes Kennwort abrufen dürfen. Der Standardwert ist `false`sein. |
+| `enablePasswordRetrieval` | Gibt an, ob Benutzer ihr vergessenes Kennwort abrufen dürfen. Standardwert: `false`. |
 | `enablePasswordReset` | Gibt an, ob Benutzer Ihr Kennwort zurücksetzen können. Wird standardmäßig auf `true` festgelegt. |
 | `maxInvalidPasswordAttempts` | Die maximale Anzahl von erfolglosen Anmelde versuchen, die für einen bestimmten Benutzer während des angegebenen `passwordAttemptWindow` auftreten können, bevor der Benutzer gesperrt wird. Der Standardwert ist 5. |
 | `minRequiredNonalphanumericCharacters` | Die Mindestanzahl nicht alphanumerischer Zeichen, die im Kennwort eines Benutzers angezeigt werden müssen. Dieser Wert muss zwischen 0 und 128 liegen. der Standardwert ist 1. |
 | `minRequiredPasswordLength` | Die Mindestanzahl von Zeichen, die in einem Kennwort erforderlich sind. Dieser Wert muss zwischen 0 und 128 liegen. der Standardwert ist 7. |
 | `name` | Der Name des registrierten Anbieters. Dieser Wert ist erforderlich. |
 | `passwordAttemptWindow` | Die Anzahl der Minuten, während der fehlgeschlagene Anmeldeversuche nachverfolgt werden. Wenn ein Benutzer innerhalb dieses angegebenen Fensters `maxInvalidPasswordAttempts` Zeiten ungültige Anmelde Informationen angibt, werden diese gesperrt. Der Standardwert ist 10. |
-| `PasswordFormat` | Das Kenn Wort Speicherformat: `Clear`, `Hashed`oder `Encrypted`. Der Standardwert ist `Hashed`. |
+| `PasswordFormat` | Das Kenn Wort Speicherformat: `Clear`, `Hashed`oder `Encrypted`. Der Standardwert lautet `Hashed`. |
 | `passwordStrengthRegularExpression` | Wenn angegeben, wird dieser reguläre Ausdruck zum Auswerten der Stärke des ausgewählten Kennworts des Benutzers verwendet, wenn ein neues Konto erstellt oder das Kennwort geändert wird. Der Standardwert ist eine leere Zeichenfolge. |
-| `requiresQuestionAndAnswer` | Gibt an, ob ein Benutzer seine Sicherheitsfrage beim Abrufen oder Zurücksetzen seines Kennworts beantworten muss. Der Standardwert ist `true`sein. |
-| `requiresUniqueEmail` | Gibt an, ob alle Benutzerkonten in einer bestimmten Anwendungs Partition über eine eindeutige e-Mail-Adresse verfügen müssen. Der Standardwert ist `true`sein. |
+| `requiresQuestionAndAnswer` | Gibt an, ob ein Benutzer seine Sicherheitsfrage beim Abrufen oder Zurücksetzen seines Kennworts beantworten muss. Standardwert: `true`. |
+| `requiresUniqueEmail` | Gibt an, ob alle Benutzerkonten in einer bestimmten Anwendungs Partition über eine eindeutige e-Mail-Adresse verfügen müssen. Standardwert: `true`. |
 | `type` | Gibt den Typ des Anbieters an. Dieser Wert ist erforderlich. |
 
 **Tabelle 2**: Mitgliedschafts-und `SqlMembershipProvider` Konfigurationseinstellungen
@@ -303,7 +303,7 @@ Beachten Sie, dass die `connectionStringName` Einstellung des `SecurityTutorials
 > [!NOTE]
 > Beachten Sie, dass das Mitgliedschafts Framework ermöglicht, dass ein einzelner Benutzerspeicher über mehrere Anwendungen hinweg partitioniert werden kann. Die `applicationName` Einstellung des Mitgliedschafts Anbieters gibt an, welche Anwendung der Anbieter bei der Arbeit mit dem Benutzerspeicher verwendet. Es ist wichtig, dass Sie explizit einen Wert für die `applicationName` Konfigurationseinstellung festlegen, denn wenn die `applicationName` nicht explizit festgelegt ist, wird Sie zur Laufzeit dem virtuellen Stammpfad der Webanwendung zugewiesen. Dies funktioniert einwandfrei, solange der virtuelle Stammpfad der Anwendung nicht geändert wird. Wenn Sie die Anwendung jedoch in einen anderen Pfad verschieben, ändert sich auch die `applicationName` Einstellung. In diesem Fall wird der Mitgliedschafts Anbieter mit einer anderen Anwendungs Partition arbeiten, als zuvor verwendet wurde. Benutzerkonten, die vor dem Verschieben erstellt wurden, befinden sich in einer anderen Anwendungs Partition, und diese Benutzer können sich nicht mehr bei der Website anmelden. Eine ausführlichere Erläuterung zu diesem Thema finden Sie unter [Festlegen der `applicationName`-Eigenschaft beim Konfigurieren der ASP.NET 2,0-Mitgliedschaft und anderer Anbieter](https://weblogs.asp.net/scottgu/443634).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 An dieser Stelle verfügen wir über eine Datenbank mit den konfigurierten Anwendungsdiensten (`SecurityTutorials.mdf`) und haben die Webanwendung so konfiguriert, dass das Mitgliedschafts Framework den `SecurityTutorialsSqlMembershipProvider` Anbieter verwendet, den wir gerade registriert haben. Dieser registrierte Anbieter weist den Typ "`SqlMembershipProvider`" auf und ist dessen `connectionStringName` auf die entsprechende Verbindungs Zeichenfolge (`SecurityTutorialsConnectionString`) und dessen `applicationName` Wert explizit festgelegt.
 
@@ -311,7 +311,7 @@ Wir sind nun bereit, das Mitgliedschafts Framework aus unserer Anwendung zu verw
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -331,7 +331,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Konfigurieren von SQL für die Arbeit mit Mitgliedschaftsschemas](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
 - [Ändern der Mitgliedschaftseinstellungen im Mitgliedschaftsschema](../../../videos/authentication/changing-membership-settings-in-the-default-membership-schema.md)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -340,4 +340,4 @@ Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRo
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Alicja Maziarz. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.com](mailto:mitchell@4guysfromrolla.com)ablegen.
 
 > [!div class="step-by-step"]
-> [Nächste](creating-user-accounts-cs.md)
+> [Weiter](creating-user-accounts-cs.md)

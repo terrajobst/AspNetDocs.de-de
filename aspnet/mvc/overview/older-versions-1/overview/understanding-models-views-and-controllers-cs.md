@@ -1,93 +1,93 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
-title: Grundlegendes zu Modellen, Ansichten und Controllern (c#) | Microsoft-Dokumentation
+title: Grundlegendes zu Modellen, Ansichten und Controllern (C#) | Microsoft-Dokumentation
 author: StephenWalther
-description: Fragen Sie sich zu Modellen, Ansichten und Controllern? In diesem Tutorial erläutert Stephen Walther die verschiedenen Teile einer ASP.NET MVC-Anwendung.
+description: Sie sind mit Modellen, Ansichten und Controllern verwechselt? In diesem Tutorial führt Stephen Walther Sie in die verschiedenen Teile einer ASP.NET-MVC-Anwendung ein.
 ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: 87313792-0a96-4caf-89fc-1457d54e5c1e
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 57dc82d02d38adc2514aa2c02c6f156ed0fb88a6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122057"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78486087"
 ---
 # <a name="understanding-models-views-and-controllers-c"></a>Grundlegendes zu Modellen, Ansichten und Controllern (C#)
 
-durch [Stephen Walther](https://github.com/StephenWalther)
+von [Stephen Walther](https://github.com/StephenWalther)
 
-> Fragen Sie sich zu Modellen, Ansichten und Controllern? In diesem Tutorial erläutert Stephen Walther die verschiedenen Teile einer ASP.NET MVC-Anwendung.
+> Sie sind mit Modellen, Ansichten und Controllern verwechselt? In diesem Tutorial führt Stephen Walther Sie in die verschiedenen Teile einer ASP.NET-MVC-Anwendung ein.
 
-Dieses Tutorial bietet eine allgemeine Übersicht über ASP.NET MVC-Modelle, Ansichten und Controllern. Das heißt, es wird erläutert, das M ", V", und C "in ASP.NET MVC.
+Dieses Tutorial bietet eine allgemeine Übersicht über ASP.NET MVC-Modelle,-Ansichten und-Controller. Anders ausgedrückt: Es werden das M ", V" und C "in ASP.NET MVC erläutert.
 
-Nach der Lektüre dieses Tutorial, sollten Sie verstehen, wie die verschiedenen Teile einer ASP.NET MVC-Anwendung zusammenarbeiten. Sie sollten auch wissen, wie die Architektur einer ASP.NET MVC-Anwendung von einer ASP.NET Web Forms-Anwendung oder eine Active Server Pages-Anwendung unterscheidet.
+Nachdem Sie dieses Tutorial gelesen haben, sollten Sie wissen, wie die verschiedenen Teile einer ASP.NET MVC-Anwendung zusammenarbeiten. Außerdem sollten Sie verstehen, wie sich die Architektur einer ASP.NET MVC-Anwendung von einer Web Forms ASP.NET-Anwendung oder Active Server Pages-Anwendung unterscheidet.
 
-## <a name="the-sample-aspnet-mvc-application"></a>Die ASP.NET MVC-Beispielanwendung
+## <a name="the-sample-aspnet-mvc-application"></a>Das Beispiel ASP.NET MVC-Anwendung
 
-Die Standard-Visual Studio-Vorlage zum Erstellen von ASP.NET MVC-Webanwendungen enthält eine sehr einfache beispielanwendung, die verwendet werden kann, um die verschiedenen Teile einer ASP.NET MVC-Anwendung zu verstehen. Wir nutzen diese einfache Anwendung in diesem Tutorial.
+Die standardmäßige Visual Studio-Vorlage zum Erstellen von ASP.NET-MVC-Webanwendungen enthält eine äußerst einfache Beispielanwendung, die verwendet werden kann, um die verschiedenen Teile einer ASP.NET MVC-Anwendung zu verstehen. Wir nutzen diese einfache Anwendung in diesem Tutorial.
 
-Erstellen Sie eine neue ASP.NET MVC-Anwendung mit der MVC-Vorlage durch Starten von Visual Studio 2008 und Auswahl der Menüoption im Datei neu Projekt (siehe Abbildung 1). Klicken Sie im Dialogfeld "Neues Projekt" Wählen Sie Ihre bevorzugte Programmiersprache unter Projekttypen (Visual Basic oder c#), und wählen Sie **ASP.NET MVC-Webanwendung** unter Vorlagen. Klicken Sie auf die Schaltfläche "OK".
+Sie erstellen eine neue ASP.NET MVC-Anwendung mit der MVC-Vorlage, indem Sie Visual Studio 2008 starten und die Menü Optionsdatei, neues Projekt auswählen (siehe Abbildung 1). Wählen Sie im Dialogfeld Neues Projekt Unterprojekt Typen (Visual Basic oder C#) Ihre bevorzugte Programmiersprache aus, und wählen Sie unter Vorlagen die Option **ASP.NET MVC-Webanwendung** aus. Klicken Sie auf die Schaltfläche "OK".
 
-[![Dialogfeld "Neues Projekt"](understanding-models-views-and-controllers-cs/_static/image1.jpg)](understanding-models-views-and-controllers-cs/_static/image1.png)
+[Dialog Feld "Neues Projekt !["](understanding-models-views-and-controllers-cs/_static/image1.jpg)](understanding-models-views-and-controllers-cs/_static/image1.png)
 
-**Abbildung 01**: Dialogfeld "Neues Projekt" ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-cs/_static/image2.png))
+**Abbildung 01**: Dialog Feld "Neues Projekt" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-models-views-and-controllers-cs/_static/image2.png))
 
-Bei der Erstellung einer ASP.NET MVC-Anwendung, die **Komponententestprojekt erstellen** angezeigt (siehe Abbildung 2). In diesem Dialogfeld können Sie ein separates Projekt in der Projektmappe für das Testen Ihrer ASP.NET MVC-Anwendung zu erstellen. Wählen Sie die Option **Nein, kein Komponententestprojekt erstellen** , und klicken Sie auf die **OK** Schaltfläche.
+Wenn Sie eine neue ASP.NET MVC-Anwendung erstellen, wird das Dialogfeld Komponenten **Test Projekt erstellen** angezeigt (siehe Abbildung 2). In diesem Dialogfeld können Sie ein separates Projekt in der Projekt Mappe erstellen, um Ihre ASP.NET MVC-Anwendung zu testen. Wählen Sie die Option **Nein, kein Komponenten Testprojekt erstellen aus,** und klicken Sie auf die Schaltfläche **OK** .
 
-[![Unit Test-Dialogfeld "erstellen"](understanding-models-views-and-controllers-cs/_static/image2.jpg)](understanding-models-views-and-controllers-cs/_static/image3.png)
+[![Dialog Feld "Komponenten Test erstellen"](understanding-models-views-and-controllers-cs/_static/image2.jpg)](understanding-models-views-and-controllers-cs/_static/image3.png)
 
-**Abbildung 02**: Unit Test-Dialogfeld "erstellen" ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-cs/_static/image4.png))
+**Abbildung 02**: Dialog Feld "Komponenten Test erstellen" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-models-views-and-controllers-cs/_static/image4.png))
 
-Nach der neuen ASP.NET MVC wird die Anwendung erstellt. Mehrere Ordner und Dateien im Projektmappen-Explorer-Fenster wird angezeigt. Insbesondere sehen Sie drei Ordner namens Modelle, Ansichten und Controllern. Wie Sie aus dem Ordnernamen sich denken können, enthalten diese Ordner die Dateien für die Implementierung von Modellen, Ansichten und Controllern aus.
+Nachdem die neue ASP.NET MVC-Anwendung erstellt wurde. Im Fenster Projektmappen-Explorer werden mehrere Ordner und Dateien angezeigt. Insbesondere werden drei Ordner mit den Namen "Models", "Views" und "Controllers" angezeigt. Wie Sie möglicherweise von den Ordnernamen ausgehen, enthalten diese Ordner die Dateien zum Implementieren von Modellen, Ansichten und Controllern.
 
-Wenn Sie den Ordner "Controllers" erweitern, sehen Sie eine Datei namens AccountController.cs und eine Datei namens "HomeController.cs". Wenn Sie den Ordner "Views" erweitern, sehen Sie drei Unterordner namens "Konto", "Home" und "freigegeben. Wenn Sie den Ordner "Home" erweitern, sehen Sie zwei zusätzliche Dateien, die mit dem Namen About.aspx und Index.aspx (siehe Abbildung 3). Diese Dateien bilden zusammen die beispielanwendung, die mit der standardmäßigen ASP.NET MVC-Vorlage enthalten.
+Wenn Sie den Ordner "Controllers" erweitern, sollte eine Datei mit dem Namen AccountController.cs und eine Datei mit dem Namen HomeController.cs angezeigt werden. Wenn Sie den Ordner "Views" erweitern, sollten drei Unterordner namens "Account", "Home" und "Shared" angezeigt werden. Wenn Sie den Basisordner erweitern, sehen Sie zwei weitere Dateien mit den Namen "about. aspx" und "index. aspx" (siehe Abbildung 3). Diese Dateien bilden die Beispielanwendung, die in der standardmäßigen ASP.NET-MVC-Vorlage enthalten ist.
 
-[![Das Fenster des Projektmappen-Explorer](understanding-models-views-and-controllers-cs/_static/image3.jpg)](understanding-models-views-and-controllers-cs/_static/image5.png)
+[Fenster "Projektmappen-Explorer" ![](understanding-models-views-and-controllers-cs/_static/image3.jpg)](understanding-models-views-and-controllers-cs/_static/image5.png)
 
-**Abbildung 03**: Das Fenster des Projektmappen-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-cs/_static/image6.png))
+**Abbildung 03**: das Fenster "Projektmappen-Explorer" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-models-views-and-controllers-cs/_static/image6.png))
 
-Sie können die beispielanwendung ausführen, indem Sie durch Auswählen der Menüoption **Debuggen, Debugging starten**. Alternativ können Sie die F5-Taste drücken.
+Sie können die Beispielanwendung ausführen, indem Sie die Menüoption **Debuggen, Debuggen starten**auswählen. Alternativ können Sie die Taste F5 drücken.
 
-Beim ersten eine ASP.NET-Anwendung ausführen wird das Dialogfeld in Abbildung 4, die empfohlen, dass Sie den Debugmodus aktivieren angezeigt. Klicken Sie auf die Schaltfläche "OK", und die Anwendung ausgeführt wird.
+Wenn Sie eine ASP.NET-Anwendung zum ersten Mal ausführen, wird das Dialogfeld in Abbildung 4 angezeigt, in dem Sie den Debugmodus aktivieren. Klicken Sie auf die Schaltfläche OK, damit die Anwendung ausgeführt wird.
 
-[![Debuggen von Dialogfeld nicht aktiviert](understanding-models-views-and-controllers-cs/_static/image4.jpg)](understanding-models-views-and-controllers-cs/_static/image7.png)
+[Dialogfeld ![Debuggen nicht aktiviert](understanding-models-views-and-controllers-cs/_static/image4.jpg)](understanding-models-views-and-controllers-cs/_static/image7.png)
 
-**Abbildung 04**: Debuggen von Dialogfeld nicht aktiviert ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-cs/_static/image8.png))
+**Abbildung 04**: Dialogfeld "Debuggen deaktiviert" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-models-views-and-controllers-cs/_static/image8.png))
 
-Wenn Sie eine ASP.NET MVC-Anwendung ausführen, startet Visual Studio die Anwendung in Ihrem Webbrowser. Die beispielanwendung umfasst nur zwei Seiten: die Seite "Index" und die Seite "Info". Beim ersten Start die Anwendung wird auf der Indexseite angezeigt, die (siehe Abbildung 5). Sie können auf der Seite "Info" navigieren, auf den Link im Menü oben rechts auf der die Anwendung.
+Wenn Sie eine ASP.NET MVC-Anwendung ausführen, wird die Anwendung von Visual Studio in Ihrem Webbrowser gestartet. Die Beispielanwendung besteht nur aus zwei Seiten: der Index Seite und der Info-Seite. Wenn die Anwendung zum ersten Mal gestartet wird, wird die Index Seite angezeigt (siehe Abbildung 5). Sie können zur Info-Seite navigieren, indem Sie oben rechts in der Anwendung auf den Menü Link klicken.
 
-[![Die Indexseite](understanding-models-views-and-controllers-cs/_static/image10.png)](understanding-models-views-and-controllers-cs/_static/image9.png)
+[![der Index Seite](understanding-models-views-and-controllers-cs/_static/image10.png)](understanding-models-views-and-controllers-cs/_static/image9.png)
 
-**Abbildung 05**: Die Indexseite ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-cs/_static/image11.png))
+**Abbildung 05**: die Index Seite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-models-views-and-controllers-cs/_static/image11.png))
 
-Beachten Sie die URLs in die Adressleiste Ihres Browsers ein. Wenn Sie den Info-Menü-Link klicken, die URL in die Adressleiste des Browsers ändert sich beispielsweise um **/Home/About**.
+Beachten Sie die URLs in der Adressleiste Ihres Browsers. Wenn Sie z. b. auf den Link info (Info) klicken, wird die URL in der Adressleiste des Browsers in **/Home/About**geändert.
 
-Wenn Sie das Browserfenster schließen und zurück zu Visual Studio, nicht Sie können eine Datei zu suchen, wobei der Pfad-Start- > über. Die Dateien nicht vorhanden sind. Wie ist dies möglich?
+Wenn Sie das Browserfenster schließen und zu Visual Studio zurückkehren, sind Sie nicht in der Lage, eine Datei mit dem Pfad "Home/Info" zu finden. Die Dateien sind nicht vorhanden. Wie ist dies möglich?
 
-## <a name="a-url-does-not-equal-a-page"></a>Eine URL entspricht keine Seite
+## <a name="a-url-does-not-equal-a-page"></a>Eine URL entspricht nicht der Seite.
 
-Wenn Sie eine herkömmliche ASP.NET Web Forms-Anwendung oder eine Active Server Pages-Anwendung erstellen, besteht eine 1: 1-Entsprechung zwischen eine URL und eine Seite. Wenn Sie eine Seite namens SomePage.aspx vom Server angefordert, dann wäre gibt es besser eine Seite auf dem Datenträger, die mit dem Namen SomePage.aspx. Wenn die SomePage.aspx-Datei nicht vorhanden ist, erhalten Sie eine unschöne **404 - Seite wurde nicht gefunden.** Fehler.
+Wenn Sie ein herkömmliches ASP.net-Web Forms Anwendung oder eine Active Server Pages-Anwendung erstellen, besteht eine 1:1-Entsprechung zwischen einer URL und einer Seite. Wenn Sie eine Seite mit dem Namen "somepage. aspx" vom Server anfordern, gab es eine Seite auf dem Datenträger mit dem Namen "somepage. aspx". Wenn die Datei "somepage. aspx" nicht vorhanden ist, erhalten Sie den Fehler "ungeschützte **404-Seite nicht gefunden** ".
 
-Beim Erstellen einer ASP.NET MVC-Anwendung im Gegensatz dazu besteht keine Übereinstimmung zwischen der URL, die Sie in der Adressleiste des Browsers eingeben und die Dateien, die Sie in Ihrer Anwendung finden. In einer ASP.NET MVC-Anwendung entspricht eine Controlleraktion anstelle einer Seite, auf dem Datenträger eine URL.
+Wenn Sie eine ASP.NET MVC-Anwendung entwickeln, besteht im Gegensatz dazu keine Übereinstimmung zwischen der URL, die Sie in die Adressleiste Ihres Browsers eingeben, und den Dateien, die Sie in der Anwendung finden. In einer ASP.NET-MVC-Anwendung entspricht eine URL einer Controller Aktion anstelle einer Seite auf dem Datenträger.
 
-In einer herkömmlichen ASP.NET oder ASP-Anwendung werden die Browseranforderungen für Seiten zugeordnet. In einer ASP.NET MVC-Anwendung werden im Gegensatz dazu Browseranforderungen zu Controlleraktionen zugeordnet. Eine ASP.NET Web Forms-Anwendung ist Content-orientierte. Eine ASP.NET MVC-Anwendung ist im Gegensatz dazu zentrierte Anwendungslogik.
+In einer herkömmlichen ASP.net-oder ASP-Anwendung werden Browser Anforderungen Seiten zugeordnet. In einer ASP.NET MVC-Anwendung werden Browser Anforderungen dagegen Controller Aktionen zugeordnet. Eine ASP.net Web Forms-Anwendung ist Inhalts orientiert. Eine ASP.NET MVC-Anwendung dagegen ist Anwendungslogik zentrisch.
 
-## <a name="understanding-aspnet-routing"></a>Grundlegendes zu ASP.NET-Routing
+## <a name="understanding-aspnet-routing"></a>Grundlegendes ASP.NET Routing
 
-Eine Browseranforderung zugeordnet wird, um eine Controlleraktion über ein Feature von ASP.NET-Framework namens *ASP.NET-Routing*. ASP.NET-Routing wird von der ASP.NET MVC-Framework verwendet *Route* eingehende Anforderungen zu Controlleraktionen.
+Eine Browser Anforderung wird einer Controller Aktion durch eine Funktion des ASP.NET-Frameworks namens *ASP.NET Routing*zugeordnet. ASP.NET Routing wird vom ASP.NET MVC-Framework verwendet, um eingehende Anforderungen an Controller Aktionen weiter *zuleiten* .
 
-ASP.NET-Routing verwendet eine Routentabelle zum Verarbeiten eingehender Anforderungen. Diese Routentabelle wird erstellt, beim ersten Starten von Ihrer Webanwendung. Die Routentabelle ist die Einrichtung in der Datei "Global.asax". Die standardmäßige MVC Global.asax-Datei, die in Codebeispiel 1 enthalten ist.
+ASP.NET Routing verwendet eine Routing Tabelle, um eingehende Anforderungen zu verarbeiten. Diese Routing Tabelle wird erstellt, wenn Ihre Webanwendung zum ersten Mal gestartet wird. Die Routing Tabelle wird in der Datei Global. asax eingerichtet. Die MVC-Standarddatei "Global. asax" ist in der Liste 1 enthalten.
 
-**Codebeispiel 1 – "Global.asax"**
+**Codebeispiel 1: Global. asax**
 
 [!code-csharp[Main](understanding-models-views-and-controllers-cs/samples/sample1.cs)]
 
-Wenn eine ASP.NET-Anwendung zuerst gestartet wird, die Anwendung\_Start()-Methode wird aufgerufen. Klicken Sie in Codebeispiel 1 diese Methode ruft die RegisterRoutes()-Methode, und die RegisterRoutes()-Methode erstellt die Standardroutingtabelle.
+Wenn eine ASP.NET-Anwendung zum ersten Mal gestartet wird, wird die Anwendung\_Start ()-Methode aufgerufen. In der Liste 1 ruft diese Methode die Methode "RegisterRoutes ()" auf, und die Methode "RegisterRoutes ()" erstellt die Standardrouten Tabelle.
 
-Die Standardroutingtabelle besteht eine Route aus. Diese Standardroute unterbricht alle eingehende Anforderungen in drei Segmente (ein URL-Segment ist alles zwischen Schrägstriche). Das erste Segment eines Controllernamens zugeordnet ist, das zweite Segment einen Aktionsnamen zugeordnet ist und das letzte Segment einen an die Aktion, die mit dem Namen Id. übergebenen Parameter zugeordnet ist
+Die Standardrouten Tabelle besteht aus einer Route. Diese Standardroute unterbricht alle eingehenden Anforderungen in drei Segmente (ein URL-Segment ist alles zwischen Schrägstrichen). Das erste Segment ist einem Controller Namen zugeordnet, das zweite Segment ist einem Aktions Namen zugeordnet, und das letzte Segment wird einem Parameter zugeordnet, der an die Aktion mit dem Namen ID übergeben wird.
 
 Nehmen wir beispielsweise die folgende URL:
 
@@ -99,78 +99,78 @@ Controller = Produkt
 
 Aktion = Details
 
-Id = 3
+ID = 3
 
-Die Standardroute, die in der Datei "Global.asax" definiert enthält Standardwerte für alle drei Parameter. Der Standardwert Controller Startseite ist, der Standard-Aktion ist Index und der Standard-Id ist eine leere Zeichenfolge. Beachten Sie mit diesen Standardwerten Denken Sie daran, wie die folgende URL analysiert wird:
+Die Standardroute, die in der Datei Global. asax definiert ist, enthält Standardwerte für alle drei Parameter. Der Standard Controller ist Home, die Standardaktion ist Index, und die Standard-ID ist eine leere Zeichenfolge. Berücksichtigen Sie bei diesen Standardeinstellungen die Analyse der folgenden URL:
 
-/ Mitarbeiter
+/Employee
 
 Diese URL wird in drei Parameter wie folgt analysiert:
 
 Controller = Mitarbeiter
 
-Aktion = Index
+Action = Index
 
 Id = ��
 
-Schließlich, wenn Sie eine ASP.NET MVC-Anwendung öffnen, ohne Angabe einer URLs (z. B. `http://localhost`) wird die URL wie folgt analysiert:
+Wenn Sie schließlich eine ASP.NET MVC-Anwendung ohne Angabe einer URL öffnen (z. b. `http://localhost`), wird die URL wie folgt analysiert:
 
-Controller = Home
+Controller = Startseite
 
-Aktion = Index
+Action = Index
 
 Id = ��
 
-Die Anforderung wird an die Index()-Aktion für die HomeController-Klasse weitergeleitet.
+Die Anforderung wird an die Index ()-Aktion für die HomeController-Klasse weitergeleitet.
 
-## <a name="understanding-controllers"></a>Grundlegendes zu Controllern
+## <a name="understanding-controllers"></a>Grundlagen der Controller
 
-Ein Controller ist verantwortlich für die Möglichkeit, die Interaktion eines Benutzers mit einer MVC-Anwendung steuern. Ein Controller enthält die datenflusskontrolllogik für eine ASP.NET MVC-Anwendung. Ein Controller bestimmt, welche Antwort, die mit einem Benutzer zu senden, wenn ein Benutzer einen Browser anfordert.
+Ein Controller ist verantwortlich für die Steuerung der Art und Weise, in der ein Benutzer mit einer MVC-Anwendung interagiert. Ein Controller enthält die Fluss Steuerungslogik für eine ASP.NET MVC-Anwendung. Ein Controller bestimmt, welche Antwort an einen Benutzer zurückgesendet wird, wenn ein Benutzer eine Browser Anforderung sendet.
 
-Ein Controller ist nur eine Klasse (z. B. eine Visual Basic oder c#-Klasse). Die ASP.NET MVC-beispielanwendung enthält einen Controller namens "HomeController.cs" im Ordner "Controller". Der Inhalt der Datei "HomeController.cs" wird im Codebeispiel 2 reproduziert.
+Ein Controller ist nur eine Klasse (z. b. ein Visual Basic C# oder eine Klasse). Die MVC-Beispielanwendung enthält einen Controller namens HomeController.cs, der sich im Ordner Controller befindet. Der Inhalt der Datei HomeController.cs wird in der Liste 2 reproduziert.
 
-**Codebeispiel 2 - Datei "HomeController.cs"**
+**Codebeispiel 2: HomeController.cs**
 
 [!code-csharp[Main](understanding-models-views-and-controllers-cs/samples/sample2.cs)]
 
-Beachten Sie, dass die HomeController zwei Methoden namens Index() und About(). Diese beiden Methoden entsprechen die beiden Aktionen, die von der Controller verfügbar gemacht werden. Die URL/Home/Index Ruft die HomeController.Index()-Methode auf und ruft die URL/Home/About die HomeController.About()-Methode.
+Beachten Sie, dass der HomeController zwei Methoden mit dem Namen "Index ()" und "about ()" aufweist. Diese beiden Methoden entsprechen den beiden Aktionen, die vom Controller verfügbar gemacht werden. Die URL/Home/Index Ruft die Methode HomeController. Index () auf, und die URL/Home/About Ruft die Methode HomeController. about () auf.
 
-Jede öffentliche Methode in einem Controller wird als eine Controlleraktion verfügbar gemacht. Sie müssen dies vorsichtig sein. Dies bedeutet, dass jede öffentliche Methode, die in einem Controller enthalten durch Eingeben der richtigen URL in einem Browser von jedem Benutzer mit Zugriff auf das Internet aufgerufen werden kann.
+Alle öffentlichen Methoden in einem Controller werden als Controller Aktion verfügbar gemacht. Hierfür müssen Sie vorsichtig vorgehen. Dies bedeutet, dass jede öffentliche Methode, die in einem Controller enthalten ist, von jeder Person mit Zugriff auf das Internet aufgerufen werden kann, indem die richtige URL in einen Browser eingegeben wird.
 
 ## <a name="understanding-views"></a>Grundlegendes zu Sichten
 
-Die beiden Controller-Aktionen, die verfügbar gemacht werden, indem Sie die HomeController-Klasse, Index() und About(), sowohl eine Ansicht zurückgeben. Eine Ansicht enthält die HTML-Markup und den Inhalt, der an den Browser gesendet wird. Eine Sicht ist die Entsprechung einer Seite an, bei der Arbeit mit einer ASP.NET MVC-Anwendung.
+Die beiden Controller Aktionen, die von der HomeController-Klasse, Index () und about () verfügbar gemacht werden, geben eine Ansicht zurück. Eine Ansicht enthält das HTML-Markup und den Inhalt, die an den Browser gesendet werden. Eine Sicht entspricht einer Seite bei der Arbeit mit einer ASP.NET MVC-Anwendung.
 
-Sie müssen Ihre Ansichten am richtigen Speicherort erstellen. Die HomeController.Index()-Aktion gibt eine Ansicht befindet sich unter folgendem Pfad:
+Sie müssen die Ansichten am richtigen Speicherort erstellen. Die Aktion HomeController. Index () gibt eine Ansicht zurück, die sich unter folgendem Pfad befindet:
 
-\Views\Home\Index.aspx
+\Views\home\index.aspx
 
-Die HomeController.About()-Aktion gibt eine Ansicht befindet sich unter folgendem Pfad:
+Die Aktion HomeController. about () gibt eine Ansicht zurück, die sich unter folgendem Pfad befindet:
 
-\Views\Home\About.aspx
+\Views\home\about.aspx
 
-Im Allgemeinen, wenn Sie eine Ansicht für eine Controlleraktion zurückgeben möchten, müssen Sie einen Unterordner im Ordner "Views" mit dem gleichen Namen wie Ihrem Controller zu erstellen. In den Unterordner müssen Sie eine ASPX-Datei mit dem gleichen Namen wie die Controlleraktion erstellen.
+Im Allgemeinen müssen Sie, wenn Sie eine Ansicht für eine Controller Aktion zurückgeben möchten, einen Unterordner im Ordner "Views" mit dem gleichen Namen wie Ihr Controller erstellen. Im Unterordner müssen Sie eine ASPX-Datei mit dem gleichen Namen wie die Controller Aktion erstellen.
 
-Die Datei in Programmausdruck 3 enthält die About.aspx-Ansicht.
+Die Datei in der Liste 3 enthält die Ansicht Info. aspx.
 
-**Codebeispiel 3 - About.aspx**
+**Codebeispiel 3: about. aspx**
 
 [!code-aspx[Main](understanding-models-views-and-controllers-cs/samples/sample3.aspx)]
 
-Wenn Sie die erste Zeile in Programmausdruck 3 ignorieren, die meisten den Rest der Ansicht besteht aus standard-HTML. Sie können den Inhalt der Ansicht ändern, indem Sie die HTML-Code, die sollen hier eingeben.
+Wenn Sie die erste Zeile in der Liste 3 ignorieren, besteht der größte Teil der Ansicht aus HTML-Standard. Sie können den Inhalt der Ansicht ändern, indem Sie einen beliebigen HTML-Code eingeben, den Sie hier wünschen.
 
-Eine Ansicht ist sehr ähnlich ist, auf eine Seite in Active Server Pages "oder" ASP.NET Web Forms. Eine Sicht kann es sich um HTML-Inhalte und Skripts enthalten. Sie können die Skripts in Ihre bevorzugte .NET schreiben Programmiersprache (z. B. c# oder Visual Basic .NET). Sie können Skripts verwenden, um dynamischen Inhalt wie z. B. Daten anzuzeigen.
+Eine Ansicht ähnelt einer Seite in Active Server Seiten oder ASP.net Web Forms. Eine Sicht kann HTML-Inhalt und Skripts enthalten. Sie können die Skripts in Ihre bevorzugte .NET-Programmiersprache schreiben (z C# . b. oder Visual Basic .net). Skripts werden zum Anzeigen dynamischer Inhalte verwendet, z. b. Datenbankdaten.
 
 ## <a name="understanding-models"></a>Grundlegendes zu Modellen
 
-Wir haben Controller und haben wir Ansichten diskutiert. Das letzte Thema, das wir besprechen müssen, ist Modelle. Was ist eine MVC-Modell?
+Wir haben auf Controller eingegangen, und wir haben die Ansichten erläutert. Das letzte Thema, das wir erörtern müssen, sind Modelle. Was ist ein MVC-Modell?
 
-Ein MVC-Modell enthält alle Ihre Anwendungslogik, die nicht in einer Ansicht oder einen Controller enthalten ist. Das Modell sollten alle Ihre Geschäftslogik der Anwendung, Validierungslogik und Datenbankzugriffslogik enthalten. Z. B. Wenn Sie Ihre Datenbank den Zugriff auf das Microsoft Entity Framework verwenden, würde dann Sie die Entity Framework-Klassen (EDMX-Datei) im Ordner "Models" erstellen.
+Ein MVC-Modell enthält die gesamte Anwendungslogik, die nicht in einer Ansicht oder einem Controller enthalten ist. Das Modell sollte sämtliche Anwendungs Geschäftslogik, Validierungs Logik und Datenbankzugriffs Logik enthalten. Wenn Sie z. b. den Microsoft-Entity Framework verwenden, um auf Ihre Datenbank zuzugreifen, erstellen Sie Ihre Entity Framework Klassen (die EDMX-Datei) im Ordner "Models".
 
-Eine Sicht sollte nur Logik, die für das Generieren der Benutzeroberfläche enthalten. Ein Controller darf nur das absolute Minimum Logik erforderlich, um die richtige Ansicht zurückzugeben, oder leiten Sie den Benutzer zu einer anderen Aktion (Steuerung) enthalten. Alles sollte im Modell enthalten sein.
+Eine Sicht sollte nur Logik enthalten, die sich auf das Erstellen der Benutzeroberfläche bezieht. Ein Controller sollte nur das erforderliche Minimum an Logik enthalten, die erforderlich ist, um die Rechte Ansicht zurückzugeben oder den Benutzer an eine andere Aktion (Fluss Steuerung) umzuleiten. Alles andere sollte im Modell enthalten sein.
 
-Im Allgemeinen sollten Sie sich für fat-Modelle und skinny Controller bemühen. Die Controllermethoden sollten nur ein paar Zeilen Code enthalten. Wenn eine Controlleraktion zu fat abruft, dann sollten Sie die Logik um eine neue Klasse im Ordner "Models" zu verschieben.
+Im Allgemeinen sollten Sie sich für FAT-Modelle und Dinge-Controller bemühen. Die Controller Methoden sollten nur einige wenige Codezeilen enthalten. Wenn eine Controller Aktion zu dick ist, sollten Sie erwägen, die Logik in eine neue Klasse im Ordner Models zu verschieben.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Tutorial Ihnen zur Verfügung gestellt eines allgemeinen Überblick über die verschiedenen Teile einer ASP.NET MVC-Webanwendung. Sie erfahren, wie ASP.NET-Routing eingehenden Browseranforderungen bestimmten Controlleraktionen zugeordnet. Sie erfahren, wie der Controller orchestriert wie Ansichten an den Browser zurückgegeben werden. Schließlich haben Sie gelernt, wie Modelle Anwendung Business, Validierung und Datenbankzugriffslogik enthalten.
+In diesem Tutorial haben Sie einen Überblick über die verschiedenen Bestandteile einer ASP.NET MVC-Webanwendung erhalten. Sie haben gelernt, wie ASP.NET-Routing eingehende Browser Anforderungen bestimmten Controller Aktionen zuordnet. Sie haben gelernt, wie Controller orchestrieren, wie Ansichten an den Browser zurückgegeben werden. Schließlich haben Sie gelernt, wie Modelle Anwendungs Geschäfts-, Validierungs-und Datenbankzugriffs Logik enthalten.

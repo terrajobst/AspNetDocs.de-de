@@ -9,11 +9,11 @@ ms.assetid: 213eea41-1ab4-4371-8b24-1a1a66c515de
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c6aec9ca70fe3ab568b3d17fea6bfd56671edc03
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74605402"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78428613"
 ---
 # <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>Verwenden von gespeicherten Prozeduren und benutzerdefinierten Funktionen mit verwaltetem Code (C#)
 
@@ -44,7 +44,7 @@ In diesem Tutorial können Sie jedoch die Northwind-Datenbank aus `App_Data` ver
 
 Der Download für dieses Tutorial enthält die beiden Datenbankdateien `NORTHWND.MDF` und `NORTHWND_log.LDF` in einem Ordner mit dem Namen `DataFiles`platziert. Wenn Sie mit ihrer eigenen Implementierung der Tutorials fortfahren, schließen Sie Visual Studio, und verschieben Sie die `NORTHWND.MDF`-und `NORTHWND_log.LDF` Dateien aus dem Ordner "Website" `App_Data` Ordner in einen Ordner außerhalb der Website. Nachdem die Datenbankdateien in einen anderen Ordner verschoben wurden, müssen Sie die Northwind-Datenbank bei der SQL Server 2005 Express Edition Daten Bank Instanz registrieren. Dies kann über SQL Server Management Studio erfolgen. Wenn Sie eine nicht-Express-Edition von SQL Server 2005 auf Ihrem Computer installiert haben, sind Sie wahrscheinlich bereits Management Studio installiert. Wenn Sie nur über SQL Server 2005 Express Edition auf dem Computer verfügen, nehmen Sie sich einen Moment Zeit, um [Microsoft SQL Server Management Studio Express](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796)herunterzuladen und zu installieren.
 
-Starten Sie SQL Server Management Studio. Wie in Abbildung 1 gezeigt, wird Management Studio zunächst gefragt, mit welchem Server eine Verbindung hergestellt werden soll. Geben Sie localhost\SQLExpress als Servernamen ein, wählen Sie in der Dropdown Liste Authentifizierung die Option Windows-Authentifizierung aus, und klicken Sie auf verbinden.
+Starten Sie SQL Server Management Studio. Wie in Abbildung 1 gezeigt, wird Management Studio zunächst gefragt, mit welchem Server eine Verbindung hergestellt werden soll. Geben Sie localhost\SQLExpress als Servernamen ein, wählen Sie in der Dropdown Liste Authentifizierung die Option Windows-Authentifizierung aus, und klicken Sie auf verbinden.
 
 ![Herstellen einer Verbindung mit der entsprechenden Daten Bank Instanz](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image1.png)
 
@@ -136,7 +136,7 @@ Alle verwalteten Datenbankobjekte haben Zugriff auf ein [`SqlContext` Objekt](ht
 
 ## <a name="step-4-deploying-the-managed-stored-procedure"></a>Schritt 4: Bereitstellen der verwalteten gespeicherten Prozedur
 
-Mit dieser Code Complete können wir Sie in der Northwind-Datenbank bereitstellen. Beim Bereitstellen eines SQL Server Projekts wird der Code in eine Assembly kompiliert, die Assembly wird bei der Datenbank registriert, und die entsprechenden Objekte werden in der Datenbank erstellt, sodass Sie mit den entsprechenden Methoden in der Assembly verknüpft werden. Der genaue Satz von Tasks, der von der Bereitstellungs Option ausgeführt wird, wird in Schritt 13 genauer beschrieben. Klicken Sie mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts im Projektmappen-Explorer, und wählen Sie die Option bereitstellen aus. Die Bereitstellung schlägt jedoch mit folgendem Fehler fehl: falsche Syntax in der Nähe von "extern". Möglicherweise müssen Sie den Kompatibilitäts Grad der aktuellen Datenbank auf einen höheren Wert festlegen, um dieses Feature zu aktivieren. Weitere Informationen finden Sie in der Hilfe zum `sp_dbcmptlevel`der gespeicherten Prozedur
+Mit dieser Code Complete können wir Sie in der Northwind-Datenbank bereitstellen. Beim Bereitstellen eines SQL Server Projekts wird der Code in eine Assembly kompiliert, die Assembly wird bei der Datenbank registriert, und die entsprechenden Objekte werden in der Datenbank erstellt, sodass Sie mit den entsprechenden Methoden in der Assembly verknüpft werden. Der genaue Satz von Tasks, der von der Bereitstellungs Option ausgeführt wird, wird in Schritt 13 genauer beschrieben. Klicken Sie mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts im Projektmappen-Explorer, und wählen Sie die Option bereitstellen aus. Die Bereitstellung schlägt jedoch mit folgendem Fehler fehl: falsche Syntax in der Nähe von "extern". Möglicherweise müssen Sie für den Kompatibilitätsgrad der aktuellen Datenbank einen höheren Wert festlegen, um diese Funktion zu aktivieren. Weitere Informationen finden Sie in der Hilfe zum `sp_dbcmptlevel`der gespeicherten Prozedur
 
 Diese Fehlermeldung tritt auf, wenn versucht wird, die Assembly bei der Northwind-Datenbank zu registrieren. Um eine Assembly bei einer SQL Server 2005-Datenbank zu registrieren, muss der Kompatibilitäts Grad der Datenbank auf 90 festgelegt werden. Standardmäßig haben neue SQL Server 2005-Datenbanken einen Kompatibilitäts Grad von 90. Datenbanken, die mit Microsoft SQL Server 2000 erstellt wurden, haben jedoch den Standard Kompatibilitäts Grad 80. Da die Northwind-Datenbank anfänglich eine Microsoft SQL Server 2000-Datenbank war, ist Ihr Kompatibilitäts Grad derzeit auf 80 festgelegt und muss daher auf 90 erweitert werden, um verwaltete Datenbankobjekte registrieren zu können.
 
@@ -190,13 +190,13 @@ Viele der Abfragen und gespeicherten Prozeduren, die wir in diesen Tutorials ers
 
 Um eine verwaltete gespeicherte Prozedur zu erstellen, die Eingabeparameter akzeptiert, geben Sie diese Parameter einfach in der Definition der Methode an. Um dies zu veranschaulichen, fügen Sie dem `ManagedDatabaseConstructs` Projekt mit dem Namen `GetProductsWithPriceLessThan`eine weitere verwaltete gespeicherte Prozedur hinzu. Diese verwaltete gespeicherte Prozedur akzeptiert einen Eingabeparameter, der einen Preis angibt, und gibt alle Produkte zurück, deren `UnitPrice` Feld kleiner ist als der Wert des-Parameters.
 
-Um dem Projekt eine neue gespeicherte Prozedur hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts, und wählen Sie eine neue gespeicherte Prozedur hinzufügen aus. Nennen Sie die Datei `GetProductsWithPriceLessThan.cs`. Wie in Schritt 3 gezeigt, wird dadurch eine neue C# Klassendatei mit einer Methode namens `GetProductsWithPriceLessThan` erstellt, die innerhalb der `partial` Klasse `StoredProcedures`platziert wird.
+Um dem Projekt eine neue gespeicherte Prozedur hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts, und wählen Sie eine neue gespeicherte Prozedur hinzufügen aus. Benennen Sie die Datei `GetProductsWithPriceLessThan.cs`. Wie in Schritt 3 gezeigt, wird dadurch eine neue C# Klassendatei mit einer Methode namens `GetProductsWithPriceLessThan` erstellt, die innerhalb der `partial` Klasse `StoredProcedures`platziert wird.
 
 Aktualisieren Sie die Definition der `GetProductsWithPriceLessThan`-Methode, sodass Sie einen [`SqlMoney`](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) Eingabeparameter mit dem Namen `price` annimmt und den Code zum Ausführen und Zurückgeben der Abfrageergebnisse zu schreiben:
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample6.cs)]
 
-Die Definition und der Code der `GetProductsWithPriceLessThan`-Methode ähneln genau der Definition und dem Code der in Schritt 3 erstellten `GetDiscontinuedProducts` Methode. Der einzige Unterschied besteht darin, dass die `GetProductsWithPriceLessThan`-Methode als Eingabeparameter (`price`) akzeptiert, dass die `SqlCommand` s-Abfrage einen Parameter (`@MaxPrice`) enthält und dass der `SqlCommand`-Auflistung ein Parameter hinzugefügt wird und der Wert der `Parameters` Variable zugewiesen wird.
+Die Definition und der Code der `GetProductsWithPriceLessThan`-Methode ähneln genau der Definition und dem Code der in Schritt 3 erstellten `GetDiscontinuedProducts` Methode. Der einzige Unterschied besteht darin, dass die `GetProductsWithPriceLessThan`-Methode als Eingabeparameter (`price`) akzeptiert, dass die `SqlCommand` s-Abfrage einen Parameter (`@MaxPrice`) enthält und dass der `SqlCommand`-Auflistung ein Parameter hinzugefügt wird und der Wert der `Parameters` Variable zugewiesen wird.`price`
 
 Nachdem Sie diesen Code hinzugefügt haben, stellen Sie das SQL Server Projekt erneut bereit. Kehren Sie als nächstes zu SQL Server Management Studio zurück, und aktualisieren Sie den Ordner gespeicherte Prozeduren. Es sollte ein neuer Eintrag, `GetProductsWithPriceLessThan`, angezeigt werden. Geben Sie in einem Abfragefenster den Befehl `exec GetProductsWithPriceLessThan 25`ein, und führen Sie ihn aus, in dem alle Produkte aufgeführt werden, die kleiner als $25 sind, wie in Abbildung 14 gezeigt
 
@@ -231,7 +231,7 @@ Anschließend werden wir aufgefordert, anzugeben, ob die gespeicherte Prozedur Z
 
 **Abbildung 17**: Auswählen der Option für tabellarische Daten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image37.png))
 
-Im letzten Assistenten können wir die verwendeten Datenzugriffs Muster und die Namen der resultierenden Methoden angeben. Lassen Sie beide Kontrollkästchen aktiviert, und benennen Sie die Methoden `FillByDiscontinued` und `GetDiscontinuedProducts`. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Im letzten Assistenten können wir die verwendeten Datenzugriffs Muster und die Namen der resultierenden Methoden angeben. Lassen Sie beide Kontrollkästchen aktiviert, und benennen Sie die Methoden `FillByDiscontinued` und `GetDiscontinuedProducts`. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![den Namen der Methoden fillbyeingestellt und getdiscontinuedproducts.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image38.png)
 
@@ -448,7 +448,7 @@ Wie in Abbildung 32 gezeigt, zeigt der obige Befehl Informationen für diese Pro
 
 **Abbildung 32**: die `ManuallyCreatedDBObjects.dll` ist im Objekt-Explorer aufgelistet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image78.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Microsoft SQL Server 2005 bietet die Integration mit der Common Language Runtime (CLR), die das Erstellen von Datenbankobjekten mithilfe von verwaltetem Code ermöglicht. Zuvor konnten diese Datenbankobjekte nur mit T-SQL erstellt werden. Nun können wir diese Objekte jedoch mit .NET-Programmiersprachen wie C#erstellen. In diesem Tutorial haben wir zwei verwaltete gespeicherte Prozeduren und eine verwaltete benutzerdefinierte Funktion erstellt.
 
@@ -456,7 +456,7 @@ Der Visual Studio s-SQL Server Projekttyp erleichtert das Erstellen, kompilieren
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -471,7 +471,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Transact-SQL-Referenz](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
 - [Exemplarische Vorgehensweise: Erstellen einer gespeicherten Prozedur in verwaltetem Code](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

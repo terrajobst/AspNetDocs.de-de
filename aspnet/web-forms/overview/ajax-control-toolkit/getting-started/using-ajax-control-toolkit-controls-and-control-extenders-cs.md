@@ -1,95 +1,95 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
-title: Mithilfe von AJAX Control Toolkit-Steuerelementen und Steuerelement-Extendern (c#) | Microsoft-Dokumentation
+title: Verwenden von AJAX Control Toolkit-Steuerelementen und SteuerC#Element-Extendern () | Microsoft-Dokumentation
 author: microsoft
-description: Erfahren Sie, wie ASP.NET-Seiten AJAX Control Toolkit-Steuerelemente und Extender hinzugefügt.
+description: Erfahren Sie, wie Sie Ihren ASP.NET Seiten AJAX Control Toolkit-Steuerelemente und-Erweiterungen hinzufügen.
 ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: c1e6b51c-3bc3-4bf7-9916-9991197af3dd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1acafaadaf373b488b9e85b7ba31f08cd3b53e85
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127105"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430221"
 ---
 # <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>Verwenden von AJAX Control Toolkit-Steuerelementen und -Steuerelement-Extendern (C#)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Erfahren Sie, wie ASP.NET-Seiten AJAX Control Toolkit-Steuerelemente und Extender hinzugefügt.
+> Erfahren Sie, wie Sie Ihren ASP.NET Seiten AJAX Control Toolkit-Steuerelemente und-Erweiterungen hinzufügen.
 
-Das AJAX Control Toolkit enthält eine Reihe von Steuerelementen und Steuerelement-Extendern. In diesem kurzen Tutorial erfahren Sie, wie Steuerelemente und Extender hinzuzufügen, zu einer ASP.NET-Seite.
+Das AJAX Control Toolkit enthält eine Reihe von Steuerelementen und Steuerelement Erweiterungen. In diesem kurzen Tutorial erfahren Sie, wie Sie einer ASP.NET Seite sowohl Steuerelemente als auch Steuerelement Erweiterungen hinzufügen.
 
 > [!NOTE] 
 > 
-> Anweisungen zum Installieren von AJAX Control Toolkit, und Hinzufügen von AJAX Control Toolkit zur Toolbox Visual Studio/Visual Web Developer, finden Sie im Tutorial [erste Schritte mit dem AJAX Control Toolkit](get-started-with-the-ajax-control-toolkit-cs.md).
+> Anweisungen zum Installieren des AJAX Control Toolkit und zum Hinzufügen des AJAX Control Toolkit zur Visual Studio-/Visual Web Developer-Toolbox finden Sie im Tutorial ersten [Einstieg in das AJAX Control Toolkit](get-started-with-the-ajax-control-toolkit-cs.md).
 
-## <a name="using-ajax-control-toolkit-controls"></a>Mithilfe von AJAX Control Toolkit-Steuerelementen
+## <a name="using-ajax-control-toolkit-controls"></a>Verwenden von AJAX Control Toolkit-Steuerelementen
 
-Ein AJAX Control Toolkit-Steuerelement funktioniert genauso wie ein normaler ASP.NET-Steuerelement. Sie können das Steuerelement aus der Toolbox auf einer ASP.NET-Seite ziehen. Sie können das Steuerelement auf der Seite in der Entwurfsansicht oder die Datenquellensicht hinzufügen.
+Ein AJAX Control Toolkit-Steuerelement funktioniert genau wie ein normales ASP.NET-Steuerelement. Sie können das Steuerelement aus der Toolbox auf eine ASP.NET Seite ziehen. Sie können das Steuerelement der Seite entweder in Designansicht oder in der Quell Ansicht hinzufügen.
 
-Es ist eine spezielle Anforderung, bei der Verwendung der Steuerelemente aus dem AJAX Control Toolkit. Die Seite muss ein ScriptManager-Steuerelement enthalten. Das ScriptManager-Steuerelement ist dafür verantwortlich, alle notwendigen JavaScript das AJAX Control Toolkit-Steuerelemente erforderlich ist.
+Es gibt eine besondere Anforderung, wenn die Steuerelemente aus dem AJAX Control Toolkit verwendet werden. Die Seite muss ein ScriptManager-Steuerelement enthalten. Das ScriptManager-Steuerelement ist dafür verantwortlich, das gesamte erforderliche JavaScript zu einschließen, das von den AJAX Control Toolkit-Steuerelementen benötigt wird.
 
-Die Registerkarte "AJAX Control Toolkit" enthält beispielsweise ein Steuerelement mit dem Namen der Editor-Steuerelement. Dieses Steuerelement zeigt einen umfassenden HTML-Editor. Um das Editor-Steuerelement zu einer Seite hinzufügen, gehen Sie wie folgt vor:
+Beispielsweise enthält die Registerkarte AJAX Control Toolkit ein Steuerelement mit dem Namen Editor-Steuerelement. Dieses Steuerelement zeigt einen Rich HTML-Editor an. Führen Sie die folgenden Schritte aus, um das Editor-Steuerelement einer Seite hinzuzufügen:
 
-1. Erstellen Sie eine neue ASP.NET-Seite mit dem Namen ShowEditor.aspx
-2. Wählen Sie das ScriptManager-Steuerelement vom der Registerkarte "AJAX-Erweiterungen" in der Toolbox, und ziehen Sie das Steuerelement auf der Seite.
-3. Wählen Sie die Editor-Steuerelement vom dem AJAX Control Toolkit-Registerkarte in der Toolbox, und ziehen Sie das Steuerelement auf der Seite (siehe Abbildung 1). Der Designer sollte wie in Abbildung 2 aussehen.
-4. Führen Sie die Website, indem Sie durch Auswählen der Menüoption **Debuggen, Debugging starten** oder F5 drücken.
+1. Erstellen Sie eine neue ASP.NET-Seite mit dem Namen Showeditor. aspx.
+2. Wählen Sie in der Toolbox unter der Registerkarte AJAX-Erweiterungen das ScriptManager-Steuerelement aus, und ziehen Sie das Steuerelement auf die Seite.
+3. Wählen Sie in der Toolbox unter der Registerkarte AJAX-Steuerelement-Toolkit das Steuerelement Editor aus, und ziehen Sie das Steuerelement auf die Seite (siehe Abbildung 1). Der Designer sollte wie in Abbildung 2 aussehen.
+4. Führen Sie die Website aus, indem Sie die Menüoption **Debuggen, Debuggen starten** oder F5 drücken.
 5. Die Seite in Abbildung 3 sollte angezeigt werden.
 
-[![Wählen das HTML-Editor-Steuerelement](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.png)
+[![auswählen des HTML-Editor-Steuer Elements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.png)
 
-**Abbildung 01**: Auswählen des HTML-Editor-Steuerelements ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.png))
+**Abbildung 01**: Auswählen des HTML-Editor-Steuer Elements ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.png))
 
-[![Visual Studio-Designer mit ScriptManager "und" Bearbeiten-Steuerelement](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.png)
+[![von Visual Studio Designer mit ScriptManager und Bearbeitungs Steuerelement](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.png)
 
-**Abbildung 02**: Visual Studio-Designer mit ScriptManager "und" Bearbeiten-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.png))
+**Abbildung 02**: Visual Studio-Designer mit ScriptManager und Bearbeitungs Steuerelement ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.png))
 
-[![Die Seite "DisplayEditor.aspx"](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.png)
+[![der Seite "displayeditor. aspx"](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.png)
 
-**Abbildung 03**: Die Seite "DisplayEditor.aspx" ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.png))
+**Abbildung 03**: die Seite "displayeditor. aspx" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.png))
 
-## <a name="using-ajax-control-toolkit-control-extenders"></a>Mithilfe von AJAX Control Toolkit-Steuerelement-Extendern
+## <a name="using-ajax-control-toolkit-control-extenders"></a>Verwenden von AJAX Control Toolkit-Steuerelement Erweiterungen
 
-Das AJAX Control Toolkit enthält auch die Steuerelement-Extendern. Wie der Name schon sagt, wird ein Extender-Steuerelements die Funktionalität eines vorhandenen Steuerelements erweitert. Beispielsweise erweitert einen ConfirmButton-Extender-Steuerelement das standardmäßige ASP.NET Schaltflächen-Steuerelement. Der Extender ändert das Verhalten des Schaltfläche Steuerelements s, damit die Schaltfläche ein Bestätigungsdialogfeld angezeigt, wenn Sie darauf klicken.
+Das AJAX Control Toolkit enthält auch Steuerelement Erweiterungen. Wie der Name bereits vermuten lässt, erweitert ein Steuerelement-Extender die Funktionalität eines vorhandenen Steuer Elements. Der Steuerelement-Extender von ConfirmButton erweitert z. b. das Standard-ASP.NET Button-Steuerelement. Der Extender ändert das Verhalten des Schaltflächen-Steuer Elements, sodass die Schaltfläche ein Bestätigungs Dialogfeld anzeigt, wenn Sie darauf klicken.
 
-Ein Extender-Steuerelements, wie ein AJAX Control Toolkit-Steuerelement erfordert ein ScriptManager-Steuerelement. Sie müssen ein ScriptManager-Steuerelement zu einer Seite hinzufügen, bevor Sie Steuerelement-Extendern auf der Seite verwenden.
+Ein Steuerelement-Extender, wie ein AJAX Control Toolkit-Steuerelement, erfordert ein ScriptManager-Steuerelement. Sie müssen ein ScriptManager-Steuerelement zu einer Seite hinzufügen, bevor Sie mit der Verwendung von Steuerelement Erweiterungen auf der Seite beginnen.
 
-Um einen ConfirmButton-Extender-Steuerelement verwenden, gehen Sie wie folgt vor:
+Führen Sie diese Schritte aus, um den ConfirmButton-Steuerelement-Extender zu verwenden
 
-1. Erstellen Sie eine neue ASP.NET-Seite mit dem Namen ShowConfirmButton.aspx
-2. Fügen Sie ein ScriptManager-Steuerelement auf der Seite durch Ziehen des Steuerelements auf der Seite vom der Registerkarte "AJAX-Erweiterungen".
-3. Fügen Sie eine standardmäßige Schaltflächen-Steuerelement auf der Seite vom die Registerkarte "Standard" die Schaltfläche mit den in der Toolbox auf die Entwurfsoberfläche ziehen.
-4. Klicken Sie auf die **Extender hinzufügen** aufgabenoption (siehe Abbildung 4).
-5. Wählen Sie im Dialogfeld für die auswählen-Extender ConfirmButtonExtender (siehe Abbildung 5), und klicken Sie auf die Schaltfläche "OK".
-6. Wählen Sie das Schaltflächen-Steuerelement im Designer, und erweitern Sie den Extender, "Button1"\_ConfirmButtonExtender-Knotens im Eigenschaftenfenster (siehe Abbildung 6). Weisen Sie den Wert *wirklich?* der ConfirmText-Eigenschaft.
-7. Führen Sie die Seite im Menü die Option **Debuggen, Debugging starten** oder die F5-Taste drücken.
+1. Erstellen einer neuen ASP.NET-Seite mit dem Namen "showconfirmbutton. aspx"
+2. Fügen Sie der Seite ein ScriptManager-Steuerelement hinzu, indem Sie das Steuerelement von unterhalb der Registerkarte AJAX-Erweiterungen auf die Seite ziehen.
+3. Fügen Sie der Seite ein Standard-Schaltflächen-Steuerelement hinzu, indem Sie die Schaltfläche von unterhalb der Registerkarte Standard in der Toolbox auf die Designer Oberfläche ziehen.
+4. Klicken Sie auf die Option **extenderaufgabe hinzufügen** (siehe Abbildung 4).
+5. Wählen Sie im Dialogfeld Extender auswählen die Option ConfirmButtonExtender (siehe Abbildung 5) aus, und klicken Sie auf die Schaltfläche OK.
+6. Wählen Sie im Designer das Schaltflächen-Steuerelement aus, und erweitern Sie den Knoten Extenders, Button1\_ConfirmButtonExtender in der Eigenschaftenfenster (siehe Abbildung 6). Weisen Sie den Wert *wirklich* der ConfirmText-Eigenschaft zu.
+7. Führen Sie die Seite aus, indem Sie die Menüoption **Debuggen, Debuggen starten** oder die Taste F5 drücken.
 
-[![Die registerkartenoption Extender hinzufügen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.png)
+[![der Option "extenderaufgabe hinzufügen"](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.png)
 
-**Abbildung 04**: Die registerkartenoption Extender hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image8.png))
+**Abbildung 04**: die Option "extenderaufgabe hinzufügen" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image8.png))
 
-[![Auswählen des ConfirmButton-Extenders-Steuerelements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image9.png)
+[![auswählen des ConfirmButton-Steuerelement-Extenders](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image9.png)
 
-**Abbildung 05**: Auswählen des ConfirmButton-Extenders-Steuerelements ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image10.png))
+**Abbildung 05**: Auswählen des ConfirmButton-Steuerelement-Extenders ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image10.png))
 
-[![Festlegen einer Eigenschaft ConfirmButton-Steuerelements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image11.png)
+[![Festlegen einer ConfirmButton-Eigenschaft](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image11.png)
 
-**Abbildung 06**: Festlegen einer Eigenschaft ConfirmButton-Steuerelements ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image12.png))
+**Abbildung 06**: Festlegen einer ConfirmButton-Eigenschaft ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image12.png))
 
-Wenn die Seite geöffnet wird, sollte eine Schaltfläche angezeigt werden. Wenn Sie die Schaltfläche klicken, erhalten Sie im Bestätigungsdialogfeld in Abbildung 7.
+Wenn die Seite geöffnet wird, sollte eine Schaltfläche angezeigt werden. Wenn Sie auf die Schaltfläche klicken, wird das Bestätigungs Dialogfeld in Abbildung 7 angezeigt.
 
-[![Das Dialogfeld "Bestätigung" anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image13.png)
+[![Anzeigen des Bestätigungs Dialogfelds](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image13.png)
 
-**Abbildung 07**: Das Dialogfeld "Bestätigung" angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image14.png))
+**Abbildung 07**: Anzeigen des Bestätigungs Dialogfelds ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image14.png))
 
-Beachten Sie, dass Sie normalerweise nicht den einen Extender-Steuerelements auf einer Seite ziehen. Verwenden Sie stattdessen die **Extender hinzufügen** aufgabenoption Extender an ein Steuerelement hinzufügen, die Sie bereits zu einer Seite hinzugefügt haben. Beachten Sie außerdem, dass Sie Control Extender-Eigenschaften festzulegen, öffnen das Eigenschaftenblatt für das Steuerelement erweitert wird.
+Beachten Sie, dass Sie einen Steuerelement-Extender normalerweise nicht auf eine Seite ziehen. Stattdessen verwenden Sie die Option **Extender-Aufgabe hinzufügen** , um einem Steuerelement, das Sie bereits einer Seite hinzugefügt haben, einen Extender hinzuzufügen. Beachten Sie, dass Sie die Steuerelement-Extendereigenschaften festlegen, indem Sie das Eigenschaften Blatt für das erweiterte Steuerelement öffnen.
 
-Ein einzelnes ASP.NET-Steuerelement kann durch mehrere Steuerelement-Extendern erweitert werden. Das Eigenschaftenblatt für das Steuerelement erweitert wird, werden alle der Steuerelement-Extendern, die dem Steuerelement zugeordnete aufgelistet.
+Ein einzelnes ASP.NET-Steuerelement kann von mehreren Steuerelement Erweiterungen erweitert werden. Auf dem Eigenschaften Blatt für das Steuerelement, das erweitert wird, werden alle Steuerelement Erweiterungen aufgelistet, die dem Steuerelement zugeordnet sind.
 
 > [!div class="step-by-step"]
 > [Zurück](get-started-with-the-ajax-control-toolkit-cs.md)

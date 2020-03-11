@@ -9,11 +9,11 @@ ms.assetid: 0e91842c-7f10-4aed-8c23-4ee3e2774014
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5bc27a08e39606c25b8f99d6ea057d2a853f08a6
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611950"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78443085"
 ---
 # <a name="using-sql-cache-dependencies-c"></a>Verwenden von SQL-Cacheabhängigkeiten (C#)
 
@@ -21,7 +21,7 @@ von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_61_CS.zip) oder [PDF herunterladen](using-sql-cache-dependencies-cs/_static/datatutorial61cs1.pdf)
 
-> Die einfachste Strategie zum Zwischenspeichern besteht darin, die zwischengespeicherten Daten nach einem bestimmten Zeitraum ablaufen zu lassen. Diese einfache Vorgehensweise bedeutet aber, dass die zwischengespeicherten Daten nicht mit der zugrunde liegenden Datenquelle zusammengeführt werden. Dies führt zu veralteten Daten, die zu lange dauern, oder aktuelle Daten, die zu bald abgelaufen sind. Ein besserer Ansatz ist die Verwendung der sqlcachedepend-Klasse, damit die Daten zwischengespeichert bleiben, bis die zugrunde liegenden Daten in der SQL-Datenbank geändert wurden. In diesem Tutorial wird gezeigt, wie Sie.
+> Die einfachste Strategie zum Zwischenspeichern besteht darin, die zwischengespeicherten Daten nach einem bestimmten Zeitraum ablaufen zu lassen. Diese einfache Vorgehensweise bedeutet aber, dass die zwischengespeicherten Daten nicht mit der zugrunde liegenden Datenquelle zusammengeführt werden. Dies führt zu veralteten Daten, die zu lange dauern, oder aktuelle Daten, die zu bald abgelaufen sind. Ein besserer Ansatz ist die Verwendung der sqlcachedepend-Klasse, damit die Daten zwischengespeichert bleiben, bis die zugrunde liegenden Daten in der SQL-Datenbank geändert wurden. In diesem Tutorial erfahren Sie, wie.
 
 ## <a name="introduction"></a>Einführung
 
@@ -248,13 +248,13 @@ Testen Sie diesen neuen Code. Änderungen an den Tabellen `Products`, `Categorie
 > [!NOTE]
 > SQL-Cache Abhängigkeiten können auch mit der [Ausgabe](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)Zwischenspeicherung verwendet werden. Eine Demonstration dieser Funktionalität finden Sie unter Verwenden von [ASP.net Output Caching with SQL Server](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Zwischenspeichern von Datenbankdaten verbleiben die Daten idealerweise im Cache, bis Sie in der Datenbank geändert werden. Mit ASP.NET 2,0 können SQL-Cache Abhängigkeiten in deklarativen und programmgesteuerten Szenarien erstellt und verwendet werden. Eine der Herausforderungen bei diesem Ansatz besteht darin, herauszufinden, wann die Daten geändert wurden. Die vollständigen Versionen von Microsoft SQL Server 2005 bieten Benachrichtigungsfunktionen, die eine Anwendung Benachrichtigen können, wenn sich ein Abfrageergebnis geändert hat. Für die Express Edition von SQL Server 2005 und älteren Versionen von SQL Server muss stattdessen ein Abrufsystem verwendet werden. Glücklicherweise ist das Einrichten der erforderlichen Abruf Infrastruktur recht unkompliziert.
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -264,7 +264,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [ASP.NET SQL Server Registrierungs Tool (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
 - [Übersicht über `SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

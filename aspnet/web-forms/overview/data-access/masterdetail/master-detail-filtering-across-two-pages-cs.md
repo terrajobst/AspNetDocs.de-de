@@ -9,11 +9,11 @@ ms.assetid: 552d2d50-fe73-4153-9a7f-2b379bec4625
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ccb3bfa5f215ba6e65b8a10b40041d5c2896c7e3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74620073"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424875"
 ---
 # <a name="masterdetail-filtering-across-two-pages-c"></a>Filtern von Master-/Detailberichten über zwei Seiten (C#)
 
@@ -168,7 +168,7 @@ Standardmäßig wird von allen Lieferanten in der Northwind-Datenbank mindestens
 
 **Abbildung 18**: Benutzer werden darüber informiert, dass der Lieferant keine Produkte bereitstellt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-filtering-across-two-pages-cs/_static/image52.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Während Master/Detail-Berichte sowohl die Master-als auch die Detaildaten Sätze auf einer einzelnen Seite anzeigen können, werden Sie in vielen Websites auf zwei Webseiten voneinander getrennt. In diesem Tutorial haben wir uns mit der Implementierung eines solchen Master/Detail-Berichts beschäftigt, indem die Lieferanten in einer GridView auf der Webseite "Master" und die zugehörigen Produkte auf der Seite "Details" aufgeführt werden. Jede Lieferanten Zeile in der Master Webseite enthielt einen Link zur Detailseite, die an den `SupplierID` Wert der Zeile weitergegeben wurde. Solche Zeilen spezifischen Links können problemlos mithilfe des HyperLinkField von GridView hinzugefügt werden.
 
@@ -178,7 +178,7 @@ Das [nächste Tutorial](master-detail-using-a-selectable-master-gridview-with-a-
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
