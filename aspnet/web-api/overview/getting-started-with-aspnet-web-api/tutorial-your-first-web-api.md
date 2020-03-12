@@ -8,12 +8,12 @@ ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 2717d93f47be9d4a6548731d8deeca312b25f39f
+ms.sourcegitcommit: 9e3ca74997a67c18589729d4b7303799905473eb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78448551"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79084057"
 ---
 # <a name="get-started-with-aspnet-web-api-2-c"></a>Beginnen Sie mit ASP.net-Web-API 2 (C#)
 
@@ -55,7 +55,7 @@ Wählen Sie im Dialogfeld **Neues ASP.net-Projekt** die Vorlage **leer** aus. Ü
 
 ## <a name="adding-a-model"></a>Hinzufügen eines Modells
 
-Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. ASP.net-Web-API können das Modell automatisch in JSON, XML oder ein anderes Format serialisieren und dann die serialisierten Daten in den Text der http-Antwortnachricht schreiben. Solange ein Client das Serialisierungsformat lesen kann, kann das Objekt deserialisiert werden. Die meisten Clients können entweder XML oder JSON analysieren. Darüber hinaus kann der Client das gewünschte Format angeben, indem der Accept-Header in der HTTP-Anforderungs Nachricht festgelegt wird.
+Ein *Modell* ist ein Objekt, das für die Daten in Ihrer Anwendung steht. ASP.net-Web-API können das Modell automatisch in JSON, XML oder ein anderes Format serialisieren und dann die serialisierten Daten in den Text der http-Antwortnachricht schreiben. Solange ein Client das Serialisierungsformat lesen kann, kann das Objekt deserialisiert werden. Die meisten Clients können entweder XML oder JSON analysieren. Darüber hinaus kann der Client das gewünschte Format angeben, indem der Accept-Header in der HTTP-Anforderungs Nachricht festgelegt wird.
 
 Erstellen Sie zunächst ein einfaches Modell, das ein Produkt darstellt.
 
@@ -137,7 +137,7 @@ Es gibt mehrere Möglichkeiten, um jQuery herunterzuladen. In diesem Beispiel ha
 
 Senden Sie eine HTTP GET-Anforderung an &quot;/API/Products-&quot;, um eine Liste der Produkte zu erhalten.
 
-Die jQuery-Funktion [getjson](http://api.jquery.com/jQuery.getJSON/) sendet eine AJAX-Anforderung. Für Response enthält ein Array von JSON-Objekten. Die `done`-Funktion gibt einen Rückruf an, der aufgerufen wird, wenn die Anforderung erfolgreich ist. Im Rückruf aktualisieren wir das DOM mit den Produktinformationen.
+Die jQuery-Funktion [getjson](http://api.jquery.com/jQuery.getJSON/) sendet eine AJAX-Anforderung. Die Antwort enthält ein Array von JSON-Objekten. Die `done`-Funktion gibt einen Rückruf an, der aufgerufen wird, wenn die Anforderung erfolgreich ist. Im Rückruf aktualisieren wir das DOM mit den Produktinformationen.
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample4.html)]
 
@@ -165,7 +165,7 @@ Wenn Sie eine ungültige ID eingeben, gibt der Server einen HTTP-Fehler zurück:
 
 ## <a name="using-f12-to-view-the-http-request-and-response"></a>Verwenden von F12 zum Anzeigen der HTTP-Anforderung und-Antwort
 
-Wenn Sie mit einem HTTP-Dienst arbeiten, kann es sehr nützlich sein, die HTTP-Anforderung anzuzeigen und Nachrichten anzufordern. Hierfür können Sie die F12-Entwicklertools in Internet Explorer 9 verwenden. Drücken Sie in Internet Explorer 9 die Taste **F12** , um die Tools zu öffnen. Klicken Sie auf die Registerkarte **Netzwerk** , und drücken Sie **Aufzeichnung starten**. Kehren Sie nun zurück zur Webseite, und drücken Sie **F5** , um die Webseite neu zu laden. Internet Explorer erfasst den HTTP-Datenverkehr zwischen dem Browser und dem Webserver. In der Zusammenfassungs Ansicht wird der gesamte Netzwerk Datenverkehr für eine Seite angezeigt:
+Wenn Sie mit einem HTTP-Dienst arbeiten, kann es sehr nützlich sein, die HTTP-Anforderungs-und-Antwort Nachrichten anzuzeigen. Hierfür können Sie die F12-Entwicklertools in Internet Explorer 9 verwenden. Drücken Sie in Internet Explorer 9 die Taste **F12** , um die Tools zu öffnen. Klicken Sie auf die Registerkarte **Netzwerk** , und drücken Sie **Aufzeichnung starten**. Kehren Sie nun zurück zur Webseite, und drücken Sie **F5** , um die Webseite neu zu laden. Internet Explorer erfasst den HTTP-Datenverkehr zwischen dem Browser und dem Webserver. In der Zusammenfassungs Ansicht wird der gesamte Netzwerk Datenverkehr für eine Seite angezeigt:
 
 ![](tutorial-your-first-web-api/_static/image14.png)
 
