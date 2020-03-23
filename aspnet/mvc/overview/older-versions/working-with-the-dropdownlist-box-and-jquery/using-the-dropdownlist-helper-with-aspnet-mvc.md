@@ -9,11 +9,11 @@ ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 6375bb2be158cea18309ffa71c71ac3e67bc91ed
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
-ms.translationtype: MT
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78433077"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457868"
 ---
 # <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Verwenden des DropDownList-Hilfsprogramms mit ASP.NET MVC
 
@@ -125,7 +125,7 @@ Durch Übergeben einer `eMovieCategories` Enumeration an die `POST`-Methode kön
 
 ### <a name="creating-a-multiple-section-select-element"></a>Erstellen eines SELECT-Elements für mehrere Abschnitte
 
-Das [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) -HTML-Hilfsprogramm rendert das HTML-`<select>`-Element mit dem `multiple`-Attribut, das es Benutzern ermöglicht, mehrere Auswahlmöglichkeiten zu treffen. Navigieren Sie zum Link "Test", und wählen Sie dann den Link **Mehrfachauswahl Land** aus. Mit der gerenderten Benutzeroberfläche können Sie mehrere Länder auswählen. In der folgenden Abbildung sind Kanada und China ausgewählt.
+Das [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) -HTML-Hilfsprogramm rendert das HTML-`<select>`-Element mit dem `multiple`-Attribut, das es Benutzern ermöglicht, mehrere Auswahlmöglichkeiten zu treffen. Navigieren Sie zum Link "Test", und wählen Sie dann den Link **Mehrfachauswahl Land/Region** aus. Mit der gerenderten Benutzeroberfläche können Sie mehrere Länder auswählen. In der folgenden Abbildung sind Kanada und China ausgewählt.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image8.png)
 
@@ -139,7 +139,7 @@ Die `GetCountries`-Methode erstellt eine Liste von Ländern und übergibt sie an
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample9.cs)]
 
-1. *Items*: ein [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) -Element, das die Elemente in der Liste enthält. Im obigen Beispiel ist die Liste der Länder.
+1. *Items*: ein [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) -Element, das die Elemente in der Liste enthält. Im obigen Beispiel ist die Liste der Länder/Regionen.
 2. *DataValueField*: der Name der Eigenschaft in der **IEnumerable** -Liste, die den Wert enthält. Im obigen Beispiel wird die `ID`-Eigenschaft.
 3. *DataTextField*: der Name der Eigenschaft in der **IEnumerable** -Liste, die die anzuzeigenden Informationen enthält. Im obigen Beispiel wird die `name`-Eigenschaft.
 4. *selectedvalues*: die Liste der ausgewählten Werte.
@@ -152,7 +152,7 @@ Die oben verwendete HTML- [hilfslistbox](https://msdn.microsoft.com/library/dd47
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample11.cs)]
 
-Die dynamische `ViewBag.YouSelected`-Eigenschaft enthält die ausgewählten Länder, die für den `Countries` Eintrag in der Formular Auflistung abgerufen wurden. In dieser Version wird der getländer-Methode eine Liste der ausgewählten Länder angezeigt, sodass beim Anzeigen der `MultiSelectCountry` Ansicht die ausgewählten Länder in der Benutzeroberfläche ausgewählt werden.
+Die dynamische `ViewBag.YouSelected`-Eigenschaft enthält die ausgewählten Länder/Regionen, die für den `Countries` Eintrag in der Formular Auflistung abgerufen wurden. In dieser Version wird der getländer-Methode eine Liste der ausgewählten Länder angezeigt, sodass beim Anzeigen der `MultiSelectCountry` Ansicht die ausgewählten Länder in der Benutzeroberfläche ausgewählt werden.
 
 ### <a name="making-a-select-element-friendly-with-the-harvest-chosen-jquery-plugin"></a>Ausgewähltes auswählen eines SELECT-Elements mit dem von der ausgewählten jQuery-Plug-in
 

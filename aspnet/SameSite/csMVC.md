@@ -6,18 +6,18 @@ ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/csMVC
 ms.openlocfilehash: dcbd0bee009669fb747d74e6ccef07fbae70a236
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
-ms.translationtype: MT
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78438201"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77458396"
 ---
 # <a name="samesite-cookie-sample-for-aspnet-472-c-mvc"></a>SameSite-Cookie-Beispiel für C# ASP.NET 4.7.2 MVC
 
 .NET Framework 4,7 verfügt über eine integrierte Unterstützung für das [SameSite](https://www.owasp.org/index.php/SameSite) -Attribut, entspricht jedoch dem ursprünglichen Standard.
 Das gepatchte Verhalten änderte die Bedeutung von `SameSite.None`, um das Attribut mit dem Wert `None`auszugeben, anstatt den Wert überhaupt auszugeben. Wenn Sie den Wert nicht ausgeben möchten, können Sie die `SameSite`-Eigenschaft für ein Cookie auf-1 festlegen.
 
-## <a name="sampleCode"></a>Schreiben des SameSite-Attributs
+## <a name="writing-the-samesite-attribute"></a><a name="sampleCode"></a>Schreiben des SameSite-Attributs
 
 Im folgenden finden Sie ein Beispiel für das Schreiben eines SameSite-Attributs für ein Cookie.
 
@@ -95,13 +95,13 @@ Der systemwebcookiemanager wird verwendet, um [bekannte Probleme](https://github
 ### <a name="running-the-sample"></a>Ausführen des Beispiels
 
 Wenn Sie das Beispiel Projekt ausführen, laden Sie Ihren Browser Debugger auf der ersten Seite, und verwenden Sie ihn, um die Cookie-Sammlung für die Website anzuzeigen.
-Wenn Sie dies in Edge und Chrome tun möchten `F12` klicken Sie dann auf die Registerkarte `Application`, und klicken Sie im Abschnitt `Storage` unter der Option `Cookies` auf die Website-URL.
+Wenn Sie dies in Microsoft Edge und Chrome tun möchten `F12` klicken Sie dann auf die Registerkarte `Application`, und klicken Sie im Abschnitt `Storage` unter der Option `Cookies` auf die Website-URL.
 
 ![Liste der Browser Debugger-Cookies](sample/img/BrowserDebugger.png)
 
 In der obigen Abbildung sehen Sie, dass das Cookie, das durch das Beispiel erstellt wird, wenn Sie auf die Schaltfläche "Cookies erstellen" klicken, einen SameSite-Attribut Wert `Lax`aufweist, der mit dem im [Beispielcode](#sampleCode)festgelegten Wert übereinstimmt.
 
-## <a name="interception"></a>Abfangen von Cookies, die Sie nicht steuern
+## <a name="intercepting-cookies-you-do-not-control"></a><a name="interception"></a>Abfangen von Cookies, die Sie nicht steuern
 
 .NET 4.5.2 hat ein neues Ereignis für das Abfangen des Schreibens von Headern, `Response.AddOnSendingHeaders`, eingeführt. Dies kann verwendet werden, um Cookies abzufangen, bevor Sie an den Client Computer zurückgegeben werden. Im Beispiel verknüpfen wir das Ereignis mit einer statischen Methode, die überprüft, ob der Browser die neuen SameSite-Änderungen unterstützt, und wenn nicht, ändert die Cookies so, dass das Attribut nicht ausgegeben wird, wenn der neue `None` Wert festgelegt wurde.
 

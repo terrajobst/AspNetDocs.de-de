@@ -6,11 +6,11 @@ ms.author: riande
 ms.date: 12/6/2019
 uid: owin-samesite
 ms.openlocfilehash: a3353fd0f0332899aaba26b83aea0ff7c3a6d19b
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
-ms.translationtype: MT
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78439479"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455736"
 ---
 # <a name="samesite-cookies-and-the-open-web-interface-for-net-owin"></a>SameSite-Cookies und die Open Web Interface für .net (owin)
 
@@ -132,13 +132,13 @@ Safari 12 hat den vorherigen Entwurf streng implementiert und schlägt fehl, wen
 
 Die Firefox-Unterstützung für den neuen Standard kann auf Version 68 + getestet werden, indem Sie sich auf der Seite "`about:config`" mit dem Feature-Flag `network.cookie.sameSite.laxByDefault`anmelden. Es gab keine Berichte über Kompatibilitätsprobleme mit älteren Versionen von Firefox.
 
-### <a name="test-with-edge-browser"></a>Testen mit dem Edge-Browser
+### <a name="test-with-edge-browser"></a>Testen mit dem Microsoft Edge-Browser
 
-Edge unterstützt den alten `SameSite` Standard. Edge Version 44 hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
+Microsoft Edge unterstützt den alten `SameSite` Standard. Microsoft Edge Version 44 hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
 
-### <a name="test-with-edge-chromium"></a>Testen mit Edge (Chrom)
+### <a name="test-with-edge-chromium"></a>Testen mit Microsoft Edge (Chrom)
 
-`SameSite` Flags werden auf der `edge://flags/#same-site-by-default-cookies` Seite festgelegt. Es wurden keine Kompatibilitätsprobleme mit Edge-Chrom erkannt.
+`SameSite` Flags werden auf der `edge://flags/#same-site-by-default-cookies` Seite festgelegt. Es wurden keine Kompatibilitätsprobleme mit Microsoft Edge-Chrom erkannt.
 
 ### <a name="test-with-electron"></a>Testen mit einem Elektron
 
